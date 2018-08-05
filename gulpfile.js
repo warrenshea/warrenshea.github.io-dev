@@ -19,7 +19,7 @@ const gulp = require('gulp'),
       argv = require('yargs').argv,
       del = require('del');
 
-gulp.task('css', ['clean'], () => {
+gulp.task('css', () => {
   if (process.env.NODE_ENV === 'development') {
     return gulp.src('./_dev/resources/stylesheets/**/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -35,7 +35,7 @@ gulp.task('css', ['clean'], () => {
   }
 });
 
-gulp.task('js', ['clean'], () => {
+gulp.task('js', () => {
   if (process.env.NODE_ENV === 'development') {
     return gulp.src('./_dev/resources/scripts/**/*.js')
       .pipe(babel({
@@ -52,12 +52,6 @@ gulp.task('js', ['clean'], () => {
       .pipe(uglify())
       .pipe(gulp.dest('./resources/scripts'))
   }  
-});
-
-gulp.task('images', ['clean'], () => {
-  return gulp.src('./_dev/assets/images/**/*')
-    .pipe(gulp.dest('./assets/images/'))
-    .on('error', function(e){console.log("ERROR 2",e);});
 });
 
 gulp.task('html', function() {
@@ -89,17 +83,8 @@ gulp.task('serve', function (done) {
   });
 });
 
-gulp.task('prod-set-env', ['clean'], function () {
+gulp.task('prod-set-env', function () {
   return process.env.NODE_ENV = 'production';
-});
-
-gulp.task('clean', function () {
-  if (process.env.NODE_ENV === 'production') {
-    return del([
-      '*',
-      '**/*'
-    ]);
-  }
 });
 
 gulp.task('build', ['prod-set-env'], () => {
