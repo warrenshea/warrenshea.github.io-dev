@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Warren Shea's Sandbox, Code Examples, Notes, and Misc",
   "main": "index.js",
-  "author": "Warren Shea, Farhan Iqbal",
+  "author": "Warren Shea",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
