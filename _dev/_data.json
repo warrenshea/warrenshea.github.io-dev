@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "warrenshea.github.io Sandbox and Code Examples",
+                "urlEn": "/",
+                "urlCanonical": "/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css",
+                "/resources/stylesheets/core.css",
+                "/resources/stylesheets/home.css"
+            ],            
+            "scripts": {}
+        }
+    }
+}

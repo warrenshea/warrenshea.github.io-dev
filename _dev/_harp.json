@@ -1,0 +1,5 @@
+{
+  "globals": {
+    "//": "These are available throughout the whole application."
+  }
+}

@@ -1,0 +1,229 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <style type="text/css">
+      .wrapper {margin:50px auto 0;width:100%;max-width:1200px}
+      form[name="example-form"] .row {padding-bottom:20px;overflow:hidden}
+      form[name="example-form"] input[type="text"].error,
+      form[name="example-form"] input[type="number"].error,
+      form[name="example-form"] select.error {border:1px solid red}
+      form[name="example-form"] .error-message {display:none}
+      form[name="example-form"] .error-message.active {display:block;color:red}
+      form[name="example-form"] label.screen-reader-only {overflow:hidden;position:absolute;width:1px;height:1px;border:0;clip:rect(0,0,0,0);margin:-1px;padding:0;top:-500px}
+      form[name="example-form"] input[type="text"],
+      form[name="example-form"] input[type="number"],
+      form[name="example-form"] select {margin-bottom:3px}
+      form[name="example-form"] input[type="text"]::-webkit-input-placeholder,
+      form[name="example-form"] input[type="number"]::-webkit-input-placeholder {color:#444}
+      form[name="example-form"] input[type="text"],
+      form[name="example-form"] input[type="number"] {width:100%;padding:7px 8px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;line-height:1.4em}
+      form[name="example-form"] input[type="checkbox"] + label {padding-left:2%}
+      form[name="example-form"] input[type="radio"] + label {padding-left:2%}
+      form[name="example-form"] select {width:100%;padding:7px;box-sizing:border-box;border:1px solid #cacaca;border-radius:3px;background-color:#fff;appearance:none;overflow-wrap:initial}
+    </style>
+    <main>
+      <form name="example-form" action="" method="post">
+        <div class="row">
+          <label for="firstname" class="screen-reader-only">First Name</label>
+          <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
+          <span class="firstName error-message">Please enter your first name</span>
+        </div>
+        <div class="row">
+          <label for="lastname" class="screen-reader-only">Last Name</label>
+          <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
+          <span class="lastName error-message">Please enter your last name</span>
+        </div>
+        <div class="row">
+          <label for="email" class="screen-reader-only">Email</label>
+          <input type="text" placeholder="Email Address *" name="email" id="email" value="">
+          <span class="email error-message">Please enter a valid email</span>
+        </div>
+        <div class="row">
+          <label for="phone" class="screen-reader-only">Phone Number</label>
+          <input type="number" placeholder="Phone Number *" name="phone" id="phone" value="">
+          <span class="phone error-message">Please enter your phone</span>
+        </div>
+        <div class="row">
+          <label for="address" class="screen-reader-only">Address</label>
+          <input type="text" placeholder="Address *" name="address" id="address" value="">
+          <span class="address error-message">Please enter your address</span>
+        </div>
+        <div class="row">
+          <label for="province" class="screen-reader-only">Province</label>
+          <select name="province" id="province">
+            <optgroup label="Provinces">
+            <option value="" disabled selected>Province/Terrority *</option>
+            <option value="ON">Ontario</option>
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+            <option value="YT">Yukon</option>
+            </optgroup>
+          </select>
+          <span class="province error-message">Please enter your province</span>
+        </div>
+        <div class="row">
+          <label for="postalcode" class="screen-reader-only">Postal Code</label>
+          <input type="text" placeholder="Postal Code * (e.g. A1A1A1)" name="postalCode" id="postalcode" value="">
+          <span class="postalCode error-message">Please enter your postal code</span>
+        </div>
+        <div class="row">
+          <label for="zipcode" class="screen-reader-only">Zip Code</label>
+          <input type="text" placeholder="Zip Code * (e.g. 90210)" name="zipCode" id="zipcode" value="">
+          <span class="zipCode error-message">Please enter your zip code</span>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkbox" id="checkbox_yes" value="Yes">
+          <label for="checkbox_yes">Checkbox Label Yes</label>
+        </div>
+        <div class="row">
+          <input type="checkbox" name="checkbox" id="checkbox_no" value="No">
+          <label for="checkbox_no">Checkbox Label No</label>
+          <span class="checkbox error-message">Please check the checkbox</span>
+        </div>
+        <div class="row">
+          <fieldset>
+            <legend>Radio Buttons</legend>
+            <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
+            <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
+            <span class="radioButton error-message">Please select a radio button</span>
+          </fieldset>
+        </div>
+        <div>
+          <button type="submit" name="button" class="primary">Submit</button>
+        </div>
+      </form>
+    </main>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/resources/scripts/core.js"></script>
+    <script>    
+      sandbox.core.extend('formValidation', function(){
+        return {
+        //checkField(): form validation based on input type
+        //@param {string} elementName is the name of the form element being checked
+        //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
+        //@returns true to show an error
+        //@returns false to hide an error
+        checkField:function(elementName,type) {
+          var itemSelected = false;
+          $element = $(`[name=${elementName}]`); //returns array, $element gets first $element
+          $val = $element.val();
+          if (type == "radioButton" || type == "checkBox") {
+            for (i = 0; i < $element.length; i++) {
+              if ($element[i].checked) {
+                itemSelected = true;
+              }
+            }
+            if (!itemSelected) {
+              for (i = 0; i < $element.length; i++) {
+                return true;
+              }
+            } else {
+              return false;
+            }
+          } else if (type == "dropDown") {
+            if ($element) {
+              $val = $(`[name=${elementName}] option:selected`).val();
+              if ($val == "" || !(this.isValueValid("alphaNumeric",$val)))
+                return true;
+              else
+                return false;
+            }
+          } else { //input boxes, email, postcalcode
+            if ($element) {
+              if ($val == "" || !(this.isValueValid(type,$val)))
+                return true;
+              else
+                return false;
+            }
+          }
+        },
+        //isValueValid(): returns true if value successfully tested again regex
+        //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
+        //@param {string} value is the value being tested
+        isValueValid:function(type,value) {
+          var regex;
+          switch (type) {
+            case "alphaNumeric": // alphaNumeric + french characters
+              regex = /^[A-Za-z\u00E0-\u00FC0-9 ]/;
+              break;
+            case "numeric": // numbers
+              regex = /^\d+$/;
+              break;
+            case "email": //email
+              regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              break;
+            case "postalCode": //postal code
+              regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+              break;
+            case "zipCode": //zip code
+              regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+              break;
+            }
+            return regex.test(value);
+          }
+        }
+      });
+
+      sandbox.core.extend("exampleForm", function() {
+        var errormessage = "";
+        return {
+          _ready: function(){
+            var self = this;
+            self.submitListener();
+          },
+          //validateForm(): returns true when all fields are validated successfuly
+          validateForm: function() {
+            var self = this;
+            errormessage = "";
+            self.displayStatus("firstName","alphaNumeric");
+            if ($("[name=lastName]").val() != "") { //optional - validates if input is filled
+              self.displayStatus("lastName","alphaNumeric");
+            }
+            self.displayStatus("email","email");
+            self.displayStatus("phone","alphaNumeric");
+            self.displayStatus("address","alphaNumeric");
+            self.displayStatus("province","dropDown");
+            self.displayStatus("postalCode","postalCode");
+            self.displayStatus("zipCode","zipCode");
+            self.displayStatus("checkbox","checkBox");
+            self.displayStatus("radioButton","radioButton");
+            if (errormessage != "") {
+              return false;
+            }
+            return true;
+          },
+          //displayStatus(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
+          //@param {string} elementName is the name of the DOM object being tested - used here for 'error-message'  
+          //@param {string} type is the character set to be validated again (e.g. alphaNumeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
+          displayStatus: function(elementName,type) {
+            if (sandbox.formValidation.checkField(elementName,type)) {
+              $element.addClass("error");
+              $(`.${elementName}.error-message`).addClass("active");
+              errormessage += elementName + " ";
+            } else {
+              $element.removeClass("error");
+              $(`.${elementName}.error-message.active`).removeClass("active");
+            }
+          },
+          submitListener: function() {
+            var self = this;
+            $('form[name=example-form]').submit(function(ev) {
+              ev.preventDefault(); // to stop the form from submitting
+              if (self.validateForm()) { // if all the validations succeeded
+                this.submit();
+              }
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
