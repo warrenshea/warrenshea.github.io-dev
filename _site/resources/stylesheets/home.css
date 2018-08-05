@@ -1,0 +1,65 @@
+.home {
+  padding: 0 1rem; }
+  @media screen and (min-width: 40em) {
+    .home h2 {
+      margin-top: 2rem;
+      text-shadow: 3px 3px 3px #DEDEDE; } }
+  .home .columns {
+    margin: 0 0 1rem;
+    padding: 0 0.5rem; }
+    .home .columns .card {
+      border: 1px solid #DEDEDE;
+      background: #fff;
+      position: relative; }
+      @media screen and (min-width: 40em) {
+        .home .columns .card {
+          -webkit-box-shadow: 2px 2px 3px #DEDEDE;
+                  box-shadow: 2px 2px 3px #DEDEDE;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          margin-bottom: 1rem; } }
+      .home .columns .card .title {
+        padding: 0 1rem;
+        color: #FFF; }
+        @media screen and (min-width: 40em) {
+          .home .columns .card .title {
+            position: relative;
+            height: 5rem; } }
+        .home .columns .card .title h3 {
+          margin: 0;
+          padding: 0.2rem 0 0.3rem; }
+          @media screen and (min-width: 40em) {
+            .home .columns .card .title h3 {
+              padding: 0 0 0.5rem;
+              line-height: 2rem;
+              position: absolute;
+              bottom: 0; } }
+        .home .columns .card .title.js {
+          background: linear-gradient(105deg, #e5a32b 0, #e5a32b 93%, #e6c61d 93%, #e6c61d 100%); }
+        .home .columns .card .title.html {
+          background: linear-gradient(105deg, #e45028 0, #e45028 93%, #f1662b 93%, #f1662b 100%); }
+        .home .columns .card .title.css {
+          background: linear-gradient(105deg, #0873b9 0, #0873b9 93%, #28a9e0 93%, #28a9e0 100%); }
+        .home .columns .card .title.angular {
+          background: linear-gradient(105deg, #b92933 0, #b92933 93%, #e62a39 93%, #e62a39 100%); }
+        .home .columns .card .title.react {
+          background: linear-gradient(105deg, #222222 0, #222222 93%, #61dafb 93%, #61dafb 100%); }
+      .home .columns .card .blurb {
+        padding: 0.5rem 1rem; }
+        @media screen and (min-width: 40em) {
+          .home .columns .card .blurb {
+            padding: 1rem; } }
+      .home .columns .card .code {
+        margin: 0;
+        border-top: 1px solid #DEDEDE;
+        background: #F5F5F5;
+        padding: 0.5rem 1rem; }
+        .home .columns .card .code li {
+          list-style: none; }
