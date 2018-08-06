@@ -31,7 +31,7 @@ gulp.task('css', () => {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('./resources/stylesheets'))
+    .pipe(gulp.dest('./_dist/resources/stylesheets'))
   }
 });
 
@@ -50,7 +50,7 @@ gulp.task('js', () => {
         presets: ['es2015']
       }))
       .pipe(uglify())
-      .pipe(gulp.dest('./resources/scripts'))
+      .pipe(gulp.dest('./_dist/resources/scripts'))
   }  
 });
 
