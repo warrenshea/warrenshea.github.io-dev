@@ -59,9 +59,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @media screen and (min-width: 40em) {
   .top-bar {
-    background: #5C6BC0; }
+    background: #0a0a0a; }
   .top-bar ul.dropdown {
-    background: #5C6BC0;
+    background: #0a0a0a;
     color: #fff; }
   .top-bar ul.dropdown li.is-dropdown-submenu-parent > a {
     color: #fff; }
