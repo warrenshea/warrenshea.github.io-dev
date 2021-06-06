@@ -1,0 +1,27 @@
+/* $mediaqueries object : "breakpoint" "prefix"
+  small down   sm- //not used
+  small up     sm+
+  small only   sm=
+  medium down  md-
+  medium only  md=
+  medium up    md+
+  large down   lg-
+  large only   lg=
+  large up     lg+
+  xlarge down  xl- //not used
+  xlarge only  xl=
+  xlarge up    xl+
+*/
+$mediaqueries: (
+  small       : '',
+  small only  : sm\=\:,
+  small up    : sm\+\:,
+  medium down : md\-\:,
+  medium only : md\=\:,
+  medium up   : md\+\:,
+  large down  : lg\-\:,
+  large only  : lg\=\:,
+  large up    : lg\+\:,
+  xlarge only : xl\=\:,
+  xlarge up   : xl\+\:
+);

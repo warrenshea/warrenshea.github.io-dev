@@ -1,0 +1,49 @@
+html.chill-penguin {
+  font-size: 16px;
+  color: $slate;
+  font-family:"heebo-light", Arial, Sans-Serif;
+  box-sizing: border-box;
+  body {
+    min-width: $min-page-width-320;
+    margin:0;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  /* Get rid of gap under images by making them display: inline-block; by default */
+  display: inline-block;
+  vertical-align: middle;
+
+  /* Grid defaults to get images and embeds to work properly */
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin-top:0;
+  margin-bottom:0;
+}
+
+table {
+  border-collapse: collapse;
+}

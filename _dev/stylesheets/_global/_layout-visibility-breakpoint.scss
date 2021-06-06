@@ -1,0 +1,54 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}hide { display: none !important; }
+  }
+}
+
+@include breakpoint(medium) {
+  .sm\=\:show {
+    display: none !important;
+  }
+}
+@include breakpoint(small only) {
+  .md\+\:show {
+    display: none !important;
+  }
+}
+@media screen and #{breakpoint(large)}, screen and #{breakpoint(small only)} {
+  .md\=\:show {
+    display: none !important;
+  }
+}
+@media screen and #{breakpoint(large up)} {
+  .md\-\:show {
+    display: none !important;
+  }
+}
+@include breakpoint(medium down) {
+  .lg\+\:show {
+    display: none !important;
+  }
+}
+@media screen and #{breakpoint(xlarge)}, screen and #{breakpoint(medium down)} {
+  .lg\=\:show {
+    display: none !important;
+  }
+}
+@media screen and #{breakpoint(xlarge up)} {
+  .lg\-\:show {
+    display: none !important;
+  }
+}
+@include breakpoint(large down) {
+  .xl\+\:show {
+    display: none !important;
+  }
+}
+@include breakpoint(large down) {
+  .xl\=\:show {
+    display: none !important;
+  }
+}

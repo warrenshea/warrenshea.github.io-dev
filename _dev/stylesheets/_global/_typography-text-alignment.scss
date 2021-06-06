@@ -1,0 +1,11 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}text-align\:left { text-align: left; }
+    .#{$prefix}text-align\:center { text-align: center; }
+    .#{$prefix}text-align\:right { text-align: right; }
+    .#{$prefix}text-align\:justify { text-align: justify; }
+  }
+}

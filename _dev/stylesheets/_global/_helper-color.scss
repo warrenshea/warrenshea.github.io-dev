@@ -1,0 +1,52 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}color\:white { color: $white; }
+    .#{$prefix}color\:blue { color: $blue; }
+    .#{$prefix}color\:bluea { color: $bluea; }
+    .#{$prefix}color\:slate { color: $slate; }
+    .#{$prefix}color\:ultramarine { color: $ultramarine; }
+  }
+}
+
+/* Probably only used for icons */
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}color-fill\:white { fill: $white; }
+    .#{$prefix}color-fill\:blue { fill: $blue; }
+    .#{$prefix}color-fill\:bluea { fill: $bluea; }
+    .#{$prefix}color-fill\:ultramarine { fill: $ultramarine; }
+    .#{$prefix}color-fill\:granite { fill: $granite; }
+  }
+}
+
+/* Probably only used for icons */
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}color-stroke\:white { stroke: $white; }
+    .#{$prefix}color-stroke\:blue { stroke: $blue; }
+    .#{$prefix}color-stroke\:bluea { stroke: $bluea; }
+    .#{$prefix}color-stroke\:ultramarine { stroke: $ultramarine; }
+    .#{$prefix}color-stroke\:granite { stroke: $granite; }
+  }
+}
+
+/* Probably only used in the CMS - doubt we'll ever use it in the site */
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}text-shadow\:slate {
+      text-shadow: 0 0 rem-calc(3) $slate;
+    }
+  }
+}

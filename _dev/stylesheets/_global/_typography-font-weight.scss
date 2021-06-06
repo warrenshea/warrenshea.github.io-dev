@@ -1,0 +1,19 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}fw\:light {
+      font-weight: 300;
+    }
+    .#{$prefix}fw\:normal {
+      font-weight: 400;
+    }
+    .#{$prefix}fw\:medium {
+      font-weight: 500;
+    }
+    .#{$prefix}fw\:bold {
+      font-weight: 700;
+    }
+  }
+}

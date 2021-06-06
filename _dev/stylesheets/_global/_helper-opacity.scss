@@ -1,0 +1,18 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}opacity\:0\% {
+      opacity: 0;
+    }
+
+    .#{$prefix}opacity\:50\% {
+      opacity: .5;
+    }
+
+    .#{$prefix}opacity\:100\% {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    /* for flex parent container */
+    .#{$prefix}align\:right {justify-content: flex-end;}
+    .#{$prefix}align\:center {justify-content: center;}
+    .#{$prefix}align\:justify {justify-content: space-between;}
+    .#{$prefix}align\:spaced {justify-content: space-around;}
+
+    .#{$prefix}align\:top {align-items: flex-start;}
+    .#{$prefix}align\:bottom {align-items: flex-end;}
+    .#{$prefix}align\:middle {align-items: center;}
+    .#{$prefix}align\:stretch {align-items: stretch;}
+
+     /* for flex childen */
+    .#{$prefix}align-self\:top {align-self: flex-start;}
+    .#{$prefix}align-self\:bottom {align-self: flex-end;}
+    .#{$prefix}align-self\:middle {align-self: center;}
+    .#{$prefix}align-self\:stretch {align-self: stretch;}
+    /* the non-flex way to center a block element, so you don't need a parent flex container */
+    .#{$prefix}align-self\:centered {
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+      clear: both;
+      &:last-child:not(:first-child) {
+        float: none;
+        clear: both;
+      }
+     }
+  }
+}
+
+.flex-grow\:0 {
+  flex-grow: 0;
+}
+
+.flex-grow\:1 {
+  flex-grow: 1;
+}
+
+.shrink {
+  flex: 0 0 auto;
+  max-width: 100%;
+}

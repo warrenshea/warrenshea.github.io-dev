@@ -1,0 +1,91 @@
+/* PRIMARY COLOURS */
+$blue: #0079c1;
+$bluea: #0075be; /*#b13ddb;*/
+$red: #ed1c24; /*#41bf30;*/
+$ultramarine: #005587;
+$slate: #001928;
+$granite: #646c76;
+$grey: #929ba9;
+$light-grey: #d9dce1;
+$albicant: #f5f6f7;
+$white: #fff;
+$cerulean: #73c3eb;
+$azure: #bedceb;
+
+/* Not part of DDS */
+$polar: #e6f9fe;
+$premium-blue: #004370;
+
+/* FEEDBACK COLOURS */
+$negative-light: #d39fa3;
+$negative: #c81414;
+$negative-dark: #630909;
+$positive-light: #9ac0a8;
+$positive: #0b8224;
+$positive-dark: #054011;
+$warning: #ffc827;
+$disabled: #ececee;
+
+/* COMPLIMENTARY COLOURS */
+
+/* SKY BLUE */
+$sky-blue: #009ec9;
+$sky-blue-lighter: #96dfee;
+$sky-blue-light: #00bddd;
+$sky-blue-dark: #0085ac;
+$sky-blue-darker: #00698b;
+
+/* OLIVE*/
+$olive: #c3c070;
+$olive-lighter: #eae9ca;
+$olive-light: #d5d393;
+$olive-dark: #9b9f58;
+$olive-darker: #737e4e;
+
+/* POOLSIDE */
+$poolside: #2cbfc1;
+$poolside-lighter: #a7ebeb;
+$poolside-light: #36d5d4;
+$poolside-dark: #00a0a4;
+$poolside-darker: #007e85;
+
+/* SUNFLOWER */
+$sunflower: #ffc700;
+$sunflower-lighter: #ffecac;
+$sunflower-light: #ffd84d;
+$sunflower-dark: #d3a400;
+$sunflower-darker: #9d8200;
+
+/* LILAC */
+$lilac: #6a88c3;
+$lilac-lighter: #c9d6ec;
+$lilac-light: #91abd9;
+$lilac-dark: #4d71a8;
+$lilac-darker: #375b89;
+
+/* RETROSPECT */
+$retrospect: #00e7b4;
+$retrospect-lighter: #8bfae4;
+$retrospect-light: #00f3c8;
+$retrospect-dark: #00c196;
+$retrospect-darker: #00977b;
+
+/* ORCHID */
+$orchid: #d061a1;
+$orchid-lighter: #f3d8e8;
+$orchid-light: #e29dc5;
+$orchid-dark: #b1357d;
+$orchid-darker: #762353;
+
+$border-color: #cecece;
+
+$icon-white : invert(100%) sepia(95%) saturate(6015%) hue-rotate(193deg) brightness(139%) contrast(100%);
+$icon-blue : invert(29%) sepia(96%) saturate(1132%) hue-rotate(177deg) brightness(100%) contrast(101%);
+$icon-bluea : invert(33%) sepia(56%) saturate(1989%) hue-rotate(179deg) brightness(90%) contrast(101%);
+$icon-red : invert(21%) sepia(61%) saturate(3647%) hue-rotate(343deg) brightness(95%) contrast(107%); /*Loss .6*/
+$icon-ultramarine : invert(19%) sepia(78%) saturate(2335%) hue-rotate(183deg) brightness(93%) contrast(101%);
+$icon-granite : invert(44%) sepia(10%) saturate(401%) hue-rotate(173deg) brightness(92%) contrast(98%);
+$icon-slate : invert(7%) sepia(48%) saturate(2434%) hue-rotate(178deg) brightness(95%) contrast(101%);
+$icon-negative : invert(24%) sepia(71%) saturate(1985%) hue-rotate(337deg) brightness(87%) contrast(124%); /*Loss ?*/
+$icon-positive : invert(15%) sepia(97%) saturate(4968%) hue-rotate(146deg) brightness(98%) contrast(91%);
+$icon-warning : invert(76%) sepia(94%) saturate(2350%) hue-rotate(336deg) brightness(111%) contrast(106%);

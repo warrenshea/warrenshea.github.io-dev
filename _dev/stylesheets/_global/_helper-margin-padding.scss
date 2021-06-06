@@ -1,0 +1,76 @@
+$properties: (
+  m\:  : margin,
+  mt\: : margin-top,
+  ml\: : margin-left,
+  mr\: : margin-right,
+  mb\: : margin-bottom,
+  p\:  : padding,
+  pt\: : padding-top,
+  pl\: : padding-left,
+  pr\: : padding-right,
+  pb\: : padding-bottom
+);
+
+$values: (
+  auto : auto,
+  0    : 0,
+  1px  : .0625rem,
+  2px  : .125rem,
+  4px  : .25rem,
+  8px  : .5rem,
+  12px : .75rem,
+  16px : 1rem,
+  20px : 1.25rem,
+  24px : 1.5rem,
+  32px : 2rem,
+  40px : 2.5rem,
+  48px : 3rem,
+  56px : 3.5rem,
+  64px : 4rem,
+  72px : 4.5rem,
+  80px : 5rem,
+  96px : 6rem
+);
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+
+    @each $value in $values {
+      $css-value: nth($value, 1);
+      $actual-value: nth($value, 2);
+
+      @each $property in $properties {
+        $key: nth($property, 1);
+        $css-property: nth($property, 2);
+
+        .#{$prefix}#{$key}#{$css-value} {
+          #{$css-property}: #{$actual-value};
+        }
+      }
+
+      .#{$prefix}mx\:#{$css-value} {
+        margin-left: #{$actual-value};
+        margin-right: #{$actual-value};
+      }
+
+      .#{$prefix}my\:#{$css-value} {
+        margin-top: #{$actual-value};
+        margin-bottom: #{$actual-value};
+      }
+
+      .#{$prefix}px\:#{$css-value} {
+        padding-left: #{$actual-value};
+        padding-right: #{$actual-value};
+      }
+
+      .#{$prefix}py\:#{$css-value} {
+        padding-top: #{$actual-value};
+        padding-bottom: #{$actual-value};
+      }
+
+    }
+  }
+}

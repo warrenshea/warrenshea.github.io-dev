@@ -1,0 +1,13 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}order\:1 { order: 1; }
+    .#{$prefix}order\:2 { order: 2; }
+    .#{$prefix}order\:3 { order: 3; }
+    .#{$prefix}order\:4 { order: 4; }
+    .#{$prefix}order\:5 { order: 5; }
+    .#{$prefix}order\:6 { order: 6; }
+  }
+}

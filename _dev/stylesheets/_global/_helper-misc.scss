@@ -1,0 +1,95 @@
+/* Visibility Helper Classes */
+.show-for-sr,
+.show-for-screen-reader-only, /* preferred class */
+.show-on-focus { @include element-invisible }
+/*hide-for-screen-reader-only doesn't exist as a CSS class - use aria-hidden="true" */
+
+.show-on-focus:active,
+.show-on-focus:focus { @include element-invisible-off }
+
+.visibility\:hidden { visibility: hidden; }
+.visibility\:visible { visibility: visible; }
+
+.overflow\:hidden { overflow: hidden; }
+
+.outline\:0 { outline: 0; }
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}display\:none { display: none; }
+    .#{$prefix}display\:flex { display: flex; }
+    .#{$prefix}display\:inline-flex { display: inline-flex; }
+    .#{$prefix}display\:block { display: block; }
+    .#{$prefix}display\:inline { display: inline; }
+    .#{$prefix}display\:inline-block { display: inline-block; }
+    .#{$prefix}display\:table-cell { display: table-cell; }
+  }
+}
+
+/* Float Helper Classes */
+.clearfix { @include clearfix }
+
+/* Width Helper Classes */
+.w\:100\% { width: 100%; }
+.mw\:1200px { max-width: $max-page-width-1200; }
+.mw\:1280px { max-width: $max-page-width-1280; }
+.mw\:640px { max-width: 40rem; }
+
+/* Height Helper Classes */
+.h\:100\% { height: 100%; }
+
+/* Layout Classes */
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}flex-flow\:row-wrap { flex-flow: row wrap; }
+    .#{$prefix}flex-flow\:row-nowrap { flex-flow: row nowrap; }
+  }
+}
+
+.vertical-align\:middle { vertical-align: middle; }
+
+/* Sizing Helper Classes */
+.box-sizing\:border-box { box-sizing: border-box; }
+
+/* Other Helper Classes */
+.cursor\:pointer { cursor: pointer; } /* would like to call this 'cursor' but conflicts with name */
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}position\:absolute { position:absolute; }
+    .#{$prefix}position\:relative { position:relative; }
+    .#{$prefix}position\:fixed { position:fixed; }
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}top\:0 { top:0; }
+    .#{$prefix}right\:0 { right:0;; }
+    .#{$prefix}bottom\:0 { bottom:0; }
+    .#{$prefix}left\:0 { left:0; }
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}z-index\:0 { z-index:0; }
+    .#{$prefix}z-index\:1 { z-index:1; }
+    .#{$prefix}z-index\:2 { z-index:2; }
+  }
+}

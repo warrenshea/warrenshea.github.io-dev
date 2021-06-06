@@ -1,0 +1,35 @@
+.breadcrumbs ul {
+  li {
+    align-items: center;
+    display:none;
+    @include breakpoint(xlarge) {
+      display:inline-flex;
+    }
+    &:nth-last-child(2) {
+      display:inline-flex;
+      &:before{
+        white-space: pre;
+        content:" ";
+        width:24px;
+        line-height:1.5;
+        background:url('../assets/icon/24/arrow-left.svg') center center;
+        @include breakpoint(xlarge) {
+          display:none;
+        }
+      }
+    }
+    &:nth-last-child(1) {
+      white-space:nowrap;
+    }
+    a{
+      white-space:nowrap;
+    }
+  }
+  li span.breadcrumb-chevron-right {
+    align-items: center;
+    display:none;
+    @include breakpoint(xlarge) {
+      display:inline-flex;
+    }
+  }
+}

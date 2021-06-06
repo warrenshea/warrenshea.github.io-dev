@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* page width, common colors */
+@import '_config/variables-colors.scss';
+@import '_config/variables-sizes.scss';
+@import '_config/unit.scss';
+@import '_config/breakpoint.scss';
+@import '_config/mixins.scss';
+@import '_config/media-queries.scss';
+
+/*normalize.css v8.0.1*/
+@import '_global/normalize.scss';
+@import '_global/default.scss';
+@import '_global/helper-margin-padding.scss';
+@import '_global/helper-border.scss';
+@import '_global/helper-border-box-shadow.scss';
+@import '_global/helper-border-radius.scss';
+@import '_global/helper-background.scss';
+@import '_global/helper-color.scss';
+@import '_global/helper-opacity.scss';
+@import '_global/helper-misc.scss';
+@import '_global/layout-row-column.scss';
+@import '_global/layout-column-width.scss';
+@import '_global/layout-column-width-equal.scss';
+@import '_global/layout-column-width-offset.scss';
+@import '_global/layout-visibility-breakpoint.scss';
+@import '_global/layout-visibility-orientation.scss';
+@import '_global/layout-alignment.scss';
+@import '_global/layout-order.scss';
+@import '_global/interactive-anchors-buttons.scss';
+@import '_global/interactive-form.scss';
+@import '_global/typography-font--heebo.scss';
+@import '_global/typography-font-size.scss';
+@import '_global/typography-font-weight.scss';
+@import '_global/typography-line-height.scss';
+@import '_global/typography-text-alignment.scss';
+@import '_global/typography-misc.scss';
+@import '_global/visual-icons.scss';
+@import '_global/visual-illustrations.scss';
+
+@import '_global/module-breadcrumbs.scss';
+@import '_global/module-modal.scss';
+@import '_global/module-popover.scss';

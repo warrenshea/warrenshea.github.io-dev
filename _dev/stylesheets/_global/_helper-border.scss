@@ -1,0 +1,81 @@
+$colors: (
+  blue        : $blue,
+  bluea       : $bluea,
+  red         : $red,
+  ultramarine : $ultramarine,
+  slate       : $slate,
+  granite     : $granite,
+  grey        : $grey,
+  light-grey  : $light-grey,
+  albicant    : $albicant,
+  white       : $white,
+  cerulean    : $cerulean,
+  azure       : $azure,
+  negative    : $negative,
+  positive    : $positive,
+  warning     : $warning,
+  sky-blue    : $sky-blue,
+  olive       : $olive,
+  poolside    : $poolside,
+  sunflower   : $sunflower,
+  lilac       : $lilac,
+  retrospect  : $retrospect,
+  cecece      : $border-color,
+  transparent : transparent
+);
+
+$sizes: (
+  1px : rem-calc(1),
+  2px : rem-calc(2),
+  4px : rem-calc(4)
+);
+
+$directions: (
+  bt : top,
+  bb : bottom,
+  bl : left,
+  br : right
+);
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}b\:0{
+       border: 0;
+    }
+
+    @each $direction in $directions {
+      $direction-name: nth($direction, 1);
+      $direction-value: nth($direction, 2);
+
+      .#{$prefix}#{$direction-name}-w\:0 {
+        border-#{$direction-value}-width: 0;
+      }
+    }
+
+    @each $size in $sizes {
+      $size-name: nth($size, 1);
+      $size-value: nth($size, 2);
+
+      @each $color in $colors {
+        $color-name: nth($color, 1);
+        $color-value: nth($color, 2);
+
+        .#{$prefix}b-#{$color-name}\:#{$size-name} {
+          border: #{$size-value} #{$color-value} solid;
+        }
+
+        @each $direction in $directions {
+          $direction-name: nth($direction, 1);
+          $direction-value: nth($direction, 2);
+
+          .#{$prefix}#{$direction-name}-#{$color-name}\:#{$size-name} {
+            border-#{$direction-value}: #{$size-value} #{$color-value} solid;
+          }
+        }
+      }
+    }
+  }
+}

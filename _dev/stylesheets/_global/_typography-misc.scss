@@ -1,0 +1,61 @@
+/* Unordered/Ordered List: Unstyle a list */
+ul.unstyle,
+ol.unstyle { list-style: none; }
+ul.unstyle-pl\:0,
+ol.unstyle-pl\:0 { list-style: none; padding-left:0; }
+
+$whitespaces: (
+  normal    : normal,
+  nowrap    : nowrap,
+  breakword : break-word
+);
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+
+    @each $whitespace in $whitespaces {
+      $whitespace-name: nth($whitespace, 1);
+      $whitespace-value: nth($whitespace, 2);
+
+      .#{$prefix}ws\:#{$whitespace-name} {
+        white-space: #{$whitespace-value};
+      }
+    }
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}uppercase { text-transform: uppercase; }
+    .#{$prefix}capitalize { text-transform: capitalize; }
+  }
+}
+
+.h1 {
+  @include breakpoint(small up) {
+    font-size: rem-calc(28);
+    line-height: 2rem;
+  }
+  @include breakpoint(medium up) {
+    font-size: rem-calc(36);
+    line-height: 2.5rem;
+  }
+  font-weight:700;
+}
+
+.h2 {
+  @include breakpoint(small up) {
+    font-size: rem-calc(22);
+    line-height: 2rem;
+  }
+  @include breakpoint(medium up) {
+    font-size: rem-calc(28);
+  }
+  font-weight:700;
+}

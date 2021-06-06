@@ -1,0 +1,519 @@
+/* Button: Unstyle a button */
+button.unstyle {
+  border: 0;
+  background-color:transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    a.#{$prefix}anchor\:primary,
+    button.#{$prefix}anchor\:primary,
+    a.#{$prefix}anchor\:secondary,
+    button.#{$prefix}anchor\:secondary,
+    a.#{$prefix}anchor\:white,
+    button.#{$prefix}anchor\:white,
+    a.#{$prefix}anchor\:attention,
+    button.#{$prefix}anchor\:attention,
+    a.#{$prefix}anchor\:ultramarine,
+    button.#{$prefix}anchor\:ultramarine {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      font-size: rem-calc(14);
+      font-family: 'heebo-bold';
+      border: none;
+      border-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      > .icon.icon-size\:24px {
+        margin: rem-calc(-4) rem-calc(4) 0;
+      }
+      > .icon.icon-size\:16px {
+        margin: rem-calc(-1) rem-calc(2) 0;
+      }
+    }
+
+    a.#{$prefix}anchor\:primary,
+    button.#{$prefix}anchor\:primary {
+      color: $bluea;
+      > .icon {
+        filter: $icon-bluea;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        color: $ultramarine;
+        text-decoration: underline;
+        > .icon {
+          filter: $icon-ultramarine;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        color: $granite;
+        cursor: default;
+        text-decoration: none;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}anchor\:secondary,
+    button.#{$prefix}anchor\:secondary {
+      color: $bluea;
+      > .icon {
+        filter: $icon-bluea;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        color: $ultramarine;
+        text-decoration: underline;
+        > .icon {
+          filter: $icon-ultramarine;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        color: $granite;
+        cursor: default;
+        text-decoration: none;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}anchor\:white,
+    button.#{$prefix}anchor\:white {
+      color: $white;
+      > .icon {
+        filter: $icon-white;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        color: $white;
+        text-decoration: underline;
+        > .icon {
+          filter: $icon-white;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        color: $white;
+        cursor: default;
+        text-decoration: none;
+        > .icon {
+          filter: $icon-white;
+        }
+      }
+    }
+
+    a.#{$prefix}anchor\:attention,
+    button.#{$prefix}anchor\:attention {
+      color: $red;
+      > .icon {
+        filter: $icon-red;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        color: $red;
+        text-decoration: underline;
+        > .icon {
+          filter: $icon-red;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        color: $granite;
+        cursor: default;
+        text-decoration: none;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}anchor\:ultramarine,
+    button.#{$prefix}anchor\:ultramarine {
+      color: $ultramarine;
+      > .icon {
+        filter: $icon-ultramarine;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        color: $slate;
+        text-decoration: underline;
+        text-decoration: none;
+        > .icon {
+          filter: $icon-slate;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    a.#{$prefix}button\:primary,
+    button.#{$prefix}button\:primary,
+    a.#{$prefix}button\:secondary,
+    button.#{$prefix}button\:secondary,
+    a.#{$prefix}button\:white,
+    button.#{$prefix}button\:white,
+    a.#{$prefix}button\:attention,
+    button.#{$prefix}button\:attention,
+    a.#{$prefix}button\:ultramarine,
+    button.#{$prefix}button\:ultramarine {
+      position:relative;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      font-size: rem-calc(14);
+      text-align: center;
+      font-family: 'heebo-bold';
+      font-weight: 700;
+      padding: 0 2rem;
+      overflow: hidden;
+      height: rem-calc(56);
+      transition: all .2s ease;
+      border-radius: rem-calc(28);
+      line-height: 2rem;
+      box-sizing: border-box;
+      white-space: nowrap;
+      &.uppercase {
+        letter-spacing: rem-calc(.25);
+        line-height: rem-calc(52);
+        &.short {
+          line-height: 2.8rem;
+        }
+      }
+      &.short {
+        height: 3rem;
+        line-height: 2.8rem;
+      }
+      > .icon {
+        margin-top: rem-calc(-2);
+        margin-right: rem-calc(4);
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    a.#{$prefix}button\:primary,
+    button.#{$prefix}button\:primary {
+      border: rem-calc(2) solid $bluea;
+      background-color: $bluea;
+      color: $white;
+      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba(0,25,40,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba(0,25,40,0.1);
+      &:hover,
+      &:hover:enabled {
+        border: rem-calc(2) solid $ultramarine;
+        background-color: $ultramarine;
+      }
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba(115, 195, 235, 0.35);
+        border: rem-calc(2) solid $cerulean;
+        background-color: $ultramarine;
+      }
+      > .icon {
+        filter: $icon-white;
+      }
+      &:disabled,
+      &.disabled {
+        box-shadow: none;
+        border: rem-calc(2) solid $light-grey;
+        background-color: $light-grey;
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}button\:secondary,
+    button.#{$prefix}button\:secondary {
+      border: rem-calc(2) solid $bluea;
+      background-color: transparent;
+      color: $bluea;
+      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba(0,25,40,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba(0,25,40,0.1);
+      > .icon {
+        filter: $icon-bluea;
+      }
+      &:hover,
+      &:hover:enabled {
+        border: rem-calc(2) solid $ultramarine;
+        color: $ultramarine;
+        > .icon {
+          filter: $icon-ultramarine;
+        }
+      }
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba(115, 195, 235, 0.35);
+        border: rem-calc(2) solid $cerulean;
+        color: $ultramarine;
+        > .icon {
+          filter: $icon-ultramarine;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        box-shadow: none;
+        border: rem-calc(2) solid $light-grey;
+        background-color: transparent;
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}button\:white,
+    button.#{$prefix}button\:white {
+      border: rem-calc(2) solid transparent;
+      background-color: $white;
+      color: $bluea;
+      > .icon {
+        filter: $icon-bluea;
+      }
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        border: rem-calc(2) solid transparent;
+        background-color: $ultramarine;
+        color: $white;
+        > .icon {
+          filter: $icon-white;
+        }
+      }
+      &:disabled,
+      &.disabled {
+        border: rem-calc(2) solid $light-grey;
+        background-color: $light-grey;
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}button\:attention,
+    button.#{$prefix}button\:attention {
+      border: rem-calc(2) solid transparent;
+      background-color: $red;
+      color: $white;
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        border: rem-calc(2) solid transparent;
+        background-color: $negative;
+      }
+      > .icon {
+        filter: $icon-white;
+      }
+      &:disabled,
+      &.disabled {
+        border: rem-calc(2) solid $light-grey;
+        background-color: $light-grey;
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+
+    a.#{$prefix}button\:ultramarine,
+    button.#{$prefix}button\:ultramarine {
+      border: rem-calc(2) solid transparent;
+      background-color: $ultramarine;
+      color: $white;
+      &:hover,
+      &:hover:enabled,
+      &:focus,
+      &:focus:enabled,
+      &:active,
+      &:active:enabled {
+        border: rem-calc(2) solid transparent;
+        background-color: $slate;
+      }
+      > .icon {
+        filter: $icon-white;
+      }
+      &:disabled,
+      &.disabled {
+        border: rem-calc(2) solid $light-grey;
+        background-color: $light-grey;
+        color: $granite;
+        cursor: default;
+        > .icon {
+          filter: $icon-granite;
+        }
+      }
+    }
+  }
+}
+
+
+.button\:primary::-moz-focus-inner,
+.button\:secondary::-moz-focus-inner,
+.button\:white::-moz-focus-inner,
+.button\:attention::-moz-focus-inner,
+.button\:ultramarine::-moz-focus-inner {
+  border: 0;
+}
+
+.button\:primary:after,
+.button\:secondary:after,
+.button\:white:after,
+.button\:attention:after,
+.button\:ultramarine:after {
+  content: '';
+  display: block;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: rgba(1, 1, 1, 1.03);
+  border-radius: 100%;
+  opacity: .3;
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    a.#{$prefix}button\:primary:not(:active):after,
+    button.#{$prefix}button\:primary:not(:active):after,
+    a.#{$prefix}button\:secondary:not(:active):after,
+    button.#{$prefix}button\:secondary:not(:active):after,
+    a.#{$prefix}button\:white:not(:active):after,
+    button.#{$prefix}button\:white:not(:active):after,
+    a.#{$prefix}button\:attention:not(:active):after,
+    button.#{$prefix}button\:attention:not(:active):after,
+    a.#{$prefix}button\:ultramarine:not(:active):after,
+    button.#{$prefix}button\:ultramarine:not(:active):after {
+      animation: ripple .3s ease-in;
+    }
+
+    a.#{$prefix}button\:primary:after,
+    button.#{$prefix}button\:primary:after,
+    a.#{$prefix}button\:secondary:after,
+    button.#{$prefix}button\:secondary:after,
+    a.#{$prefix}button\:white:after,
+    button.#{$prefix}button\:white:after,
+    a.#{$prefix}button\:attention:after,
+    button.#{$prefix}button\:attention:after,
+    a.#{$prefix}button\:ultramarine:after,
+    button.#{$prefix}button\:ultramarine:after {
+      visibility: hidden;
+    }
+
+    a.#{$prefix}button\:focus:after,
+    button.#{$prefix}button\:focus:after,
+    a.#{$prefix}button\:focus:after,
+    button.#{$prefix}button\:focus:after,
+    a.#{$prefix}button\:focus:after,
+    button.#{$prefix}button\:focus:after,
+    a.#{$prefix}button\:focus:after,
+    button.#{$prefix}button\:focus:after,
+    a.#{$prefix}button\:focus:after,
+    button.#{$prefix}button\:focus:after {
+      visibility: visible;
+    }
+  }
+}
+
+.button\:primary:not(:active):after,
+.button\:secondary:not(:active):after,
+.button\:white:not(:active):after,
+.button\:attention:not(:active):after,
+.button\:ultramarine:not(:active):after {
+    animation: ripple .3s ease-in;
+}
+
+.button\:primary:after,
+.button\:secondary:after,
+.button\:white:after,
+.button\:attention:after,
+.button\:ultramarine:after {
+    visibility: hidden;
+}
+
+.button\:primary:focus:after,
+.button\:secondary:focus:after,
+.button\:white:focus:after,
+.button\:attention:focus:after,
+.button\:ultramarine:focus:after {
+    visibility: visible;
+}

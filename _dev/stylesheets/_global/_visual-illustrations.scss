@@ -1,0 +1,25 @@
+$sizes: (
+  xs : (96px,72px),
+  sm : (120px,96px),
+  md : (192px,144px),
+  lg : (240px,200px),
+  xl : (320px,280px)
+);
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+
+    @each $size-name, $specs in $sizes {
+      $size-width-value: nth($specs, 1);
+      $size-height-value: nth($specs, 2);
+
+      .#{$prefix}illustration-size\:#{$size-name} {
+        width: #{$size-width-value};
+        height: #{$size-height-value};
+      }
+    }
+  }
+}
