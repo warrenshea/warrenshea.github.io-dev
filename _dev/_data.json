@@ -11,11 +11,9 @@
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css",
-                "/resources/stylesheets/core.css",
-                "/resources/stylesheets/home.css"
+                "/stylesheets/core.css"
             ],            
-            "scripts": {}
+            "scripts": []
         }
     }
 }
