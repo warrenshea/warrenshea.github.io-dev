@@ -335,12 +335,12 @@ template {
 [hidden] {
   display: none; }
 
-html.chill-penguin {
+html.storm-eagle {
   font-size: 16px;
   color: #001928;
   font-family: "heebo-light", Arial, Sans-Serif;
   box-sizing: border-box; }
-  html.chill-penguin body {
+  html.storm-eagle body {
     min-width: 20rem;
     margin: 0; }
 
