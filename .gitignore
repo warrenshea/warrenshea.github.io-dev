@@ -3,4 +3,4 @@ package-lock.json
 node_modules
 npm-debug.log
 _dist
-notes
+_dev/notes
