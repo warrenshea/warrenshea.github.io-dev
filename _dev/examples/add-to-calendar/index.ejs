@@ -37,7 +37,7 @@
       </section>
     </main>
     <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="/resources/scripts/core.js"></script>
+    <script src="/scripts/core.js"></script>
     <script>
       //add 4 hours to event
       const inviteDetails = {
@@ -55,15 +55,15 @@
       }
       //%0A = <br>
 
-      sandbox.core.extend('addToCalendar', function(){
+      storm_eagle.module('addToCalendar', function(){
         function formatDate(date){
-          let date = sandbox.core.replaceAll(date,"-","");
-          date = sandbox.core.replaceAll(date," ","T");
-          date = sandbox.core.replaceAll(date,":","");
+          date = storm_eagle.util.replace_all(date,"-","");
+          date = storm_eagle.util.replace_all(date," ","T");
+          date = storm_eagle.util.replace_all(date,":","");
           return date;
         }
         return {
-          _initialize : function(){
+          initialize : function(){
             let self=this;
             self.populateForm();
             self.populateDataCalendarLink();
@@ -104,13 +104,13 @@
               googleURL,
               yahooURL,
               iCalendarURL;
-            start_date = sandbox.core.replaceAll(inviteDetails.start_date,"-","");
-            end_date = sandbox.core.replaceAll(inviteDetails.end_date,"-","");
+            start_date = storm_eagle.util.replace_all(inviteDetails.start_date,"-","");
+            end_date = storm_eagle.util.replace_all(inviteDetails.end_date,"-","");
             outlookOnlineURL = "https://outlook.live.com/owa?rru=addevent&startdt=" + start_date + "T" + inviteDetails.start_time + "Z&enddt=" + end_date + "T" + inviteDetails.end_time + "Z&subject=" + encodeURIComponent(inviteDetails.title) + "&location=" + encodeURIComponent(inviteDetails.location) + "&body=" + encodeURIComponent(inviteDetails.description) + "&allday=false&path=/calendar/view/Month";
             document.getElementById("outlook").setAttribute("href",outlookOnlineURL);
 
-            start_time = sandbox.core.replaceAll(inviteDetails.start_time,":","");
-            end_time = sandbox.core.replaceAll(inviteDetails.end_time,":","");
+            start_time = storm_eagle.util.replace_all(inviteDetails.start_time,":","");
+            end_time = storm_eagle.util.replace_all(inviteDetails.end_time,":","");
             document.getElementById("google").setAttribute("href","https://calendar.google.com/calendar/render?action=TEMPLATE&dates=" + start_date + "T" + start_time + "Z/" + end_date + "T" + end_time + "Z&location=" + encodeURIComponent(inviteDetails.location) + "&text=" + encodeURIComponent(inviteDetails.title) + "&inviteDetails=" + encodeURIComponent(inviteDetails.description));
             document.getElementById("yahoo").setAttribute("href","http://calendar.yahoo.com/?st=" + start_date + "T" + start_time + "Z&dur=" + inviteDetails.duration + "&view=d&v=60&type=20&title=" + encodeURIComponent(inviteDetails.title) + "&in_loc=" + encodeURIComponent(inviteDetails.location) + "&desc=" + encodeURIComponent(inviteDetails.description));
 
