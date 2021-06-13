@@ -1,211 +1,84 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-    <style>
-      .small-layer-level-2 {
-        transition-duration: 1s;
-        box-shadow: 0 0.1em 0.125em 0.125em rgba(0,25,40,.12);
-        padding:1rem 0 1rem;
-      }
-      .small-margin-top--3 {
-        margin-top: 3rem;
-      }
-      .small-margin-bottom--3 {
-        margin-bottom: 3rem;
-      }
-      .small-centered,
-      .small-centered:last-child:not(:first-child) {
-        float: none;
-        clear: both;
-      }
-      .small-centered {
-        margin-left: auto;
-        margin-right: auto;
-      }      
-      @media screen and (min-width: 40em) {
-        .medium-margin-bottom--3 {
-          margin-bottom: 3rem;
-        }
-      }
-      @media screen and (min-width: 64em) {
-        .large-margin-bottom--0 {
-          margin-bottom: 0;
-        }
-      }
-    </style>
-    <main>
-      <section class="row small-12 medium-10 small-margin-top--3">
-        <div class="small-12 medium-6 large-3">
-          <div class="small-10 medium-11 small-centered small-layer-level-2 small-margin-bottom--3 medium-margin-bottom--3 large-margin-bottom--0">
-            <div class="small-10 small-centered">
-              <h2 class="text-center" data-equalize-height="eqh-title-acronymn">HTML</h2>
-              <hr>
-              <div class="text-center" data-equalize-height="eqh-title" data-equalize-medium-up>
-                <p>Hypertext Markup Language</p>
-              </div>
-              <hr>
-              <div data-equalize-height="eqh-details" data-equalize-medium-up>
-                <p>Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
-              </div>
-              <hr>
-              <p class="text-center">Related article:</p>
-              <div class="text-center" data-equalize-height="eqh-links" data-equalize-medium-up>
-                <a href="https://en.wikipedia.org/wiki/HTML">HTML on Wikipedia</a>
-              </div>
+    <section class="row mw:1280px align-self:centered sm+:w:12 md+:w:10 sm+:mt:48px">
+      <div class="sm+:w:12 md+:w:6 lg+:w:3">
+        <div class="sm+:w:10 md+:w:11 align-self:centered box-shadow:layer-level-2 mb:48px py:16px">
+          <div class="sm+:w:10 align-self:centered">
+            <h2 class="text-align:center py:4px" data-equalize-height="eqh-title-acronymn">HTML</h2>
+            <hr>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-title" data-equalize-medium-up>
+              <p class="lh:24">Hypertext Markup Language</p>
+            </div>
+            <hr>
+            <div data-equalize-height="eqh-details" data-equalize-medium-up>
+              <p class="lh:24">Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+            </div>
+            <hr>
+            <p class="text-align:center py:4px">Related article:</p>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-links" data-equalize-medium-up>
+              <a href="https://en.wikipedia.org/wiki/HTML">HTML on Wikipedia</a>
             </div>
           </div>
         </div>
-        <div class="small-12 medium-6 large-3">
-          <div class="small-10 medium-11 small-centered small-layer-level-2 small-margin-bottom--3 medium-margin-bottom--3 large-margin-bottom--0">
-            <div class="small-10 small-centered">
-              <h2 class="text-center" data-equalize-height="eqh-title-acronymn">CSS</h2>
-              <hr>
-              <div class="text-center" data-equalize-height="eqh-title" data-equalize-medium-up>
-                <p>Cascading Style Sheets</p>
-              </div>
-              <hr>
-              <div data-equalize-height="eqh-details" data-equalize-medium-up>
-                <p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
-              </div>
-              <hr>
-              <p class="text-center">Related article:</p>
-              <div class="text-center" data-equalize-height="eqh-links" data-equalize-medium-up>
-                <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS on Wikipedia</a>
-              </div>
+      </div>
+      <div class="sm+:w:12 md+:w:6 lg+:w:3">
+        <div class="sm+:w:10 md+:w:11 align-self:centered box-shadow:layer-level-2 mb:48px py:16px">
+          <div class="sm+:w:10 align-self:centered">
+            <h2 class="text-align:center py:4px" data-equalize-height="eqh-title-acronymn">CSS</h2>
+            <hr>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-title" data-equalize-medium-up>
+              <p class="lh:24">Cascading Style Sheets</p>
+            </div>
+            <hr>
+            <div data-equalize-height="eqh-details" data-equalize-medium-up>
+              <p class="lh:24">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
+            </div>
+            <hr>
+            <p class="text-align:center py:4px">Related article:</p>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-links" data-equalize-medium-up>
+              <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS on Wikipedia</a>
             </div>
           </div>
         </div>
-        <div class="small-12 medium-6 large-3">
-          <div class="small-10 medium-11 small-centered small-layer-level-2 small-margin-bottom--3 medium-margin-bottom--3 large-margin-bottom--0">
-            <div class="small-10 small-centered">
-              <h2 class="text-center" data-equalize-height="eqh-title-acronymn">JavaScript</h2>
-              <hr>
-              <div class="text-center" data-equalize-height="eqh-title" data-equalize-medium-up>
-                <p></p>
-              </div>
-              <hr>
-              <div data-equalize-height="eqh-details" data-equalize-medium-up>
-                <p>JavaScript often abbreviated as JS, is a high-level, interpreted programming language.</p>
-              </div>
-              <hr>
-              <p class="text-center">Related article:</p>
-              <div class="text-center" data-equalize-height="eqh-links" data-equalize-medium-up>
-                <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript on Wikipedia</a>
-              </div>
+      </div>
+      <div class="sm+:w:12 md+:w:6 lg+:w:3">
+        <div class="sm+:w:10 md+:w:11 align-self:centered box-shadow:layer-level-2 mb:48px py:16px">
+          <div class="sm+:w:10 align-self:centered">
+            <h2 class="text-align:center py:4px" data-equalize-height="eqh-title-acronymn">JavaScript</h2>
+            <hr>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-title" data-equalize-medium-up>
+              <p class="lh:24"></p>
+            </div>
+            <hr>
+            <div data-equalize-height="eqh-details" data-equalize-medium-up>
+              <p class="lh:24">JavaScript often abbreviated as JS, is a high-level, interpreted programming language.</p>
+            </div>
+            <hr>
+            <p class="text-align:center py:4px">Related article:</p>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-links" data-equalize-medium-up>
+              <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript on Wikipedia</a>
             </div>
           </div>
         </div>
-        <div class="small-12 medium-6 large-3">
-          <div class="small-10 medium-11 small-centered small-layer-level-2 small-margin-bottom--3 medium-margin-bottom--3 large-margin-bottom--0">
-            <div class="small-10 small-centered">
-              <h2 class="text-center" data-equalize-height="eqh-title-acronymn">WCAG</h2>
-              <hr>
-              <div class="text-center" data-equalize-height="eqh-title" data-equalize-medium-up>
-                <p>Web Content Accessibility Guidelines</p>
-              </div>
-              <hr>
-              <div data-equalize-height="eqh-details" data-equalize-medium-up>
-                <p>The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.</p>
-              </div>
-              <hr>
-              <p class="text-center">Related article:</p>
-              <div class="text-center" data-equalize-height="eqh-links" data-equalize-medium-up>
-                <a href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines">WCAG on Wikipedia</a>
-              </div>
+      </div>
+      <div class="sm+:w:12 md+:w:6 lg+:w:3">
+        <div class="sm+:w:10 md+:w:11 align-self:centered box-shadow:layer-level-2 mb:48px py:16px">
+          <div class="sm+:w:10 align-self:centered">
+            <h2 class="text-align:center py:4px" data-equalize-height="eqh-title-acronymn">WCAG</h2>
+            <hr>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-title" data-equalize-medium-up>
+              <p class="lh:24">Web Content Accessibility Guidelines</p>
+            </div>
+            <hr>
+            <div data-equalize-height="eqh-details" data-equalize-medium-up>
+              <p class="lh:24">The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.</p>
+            </div>
+            <hr>
+            <p class="text-align:center py:4px">Related article:</p>
+            <div class="text-align:center py:4px" data-equalize-height="eqh-links" data-equalize-medium-up>
+              <a href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines">WCAG on Wikipedia</a>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
-    <script src="/resources/scripts/core.js"></script>
-    <script>
-      'use strict';
-      /*
-      * Allows the height of various divs to be the same by taking the biggest height and applying it to all items.
-      * This will occur for any item regardless of viewport. To affect medium size and up, see Options.
-      *
-      * How to use this:
-      * Add 'data-equalize-height="(key)"' to any item where key is a value you input yourself, to link the items.
-      * All the items with the same 'key' will have the same height
-      *
-      * Options:
-      * If you only want this to occur on medium size up, add 'data-equalize-medium-up' to the item as well
-      */
-      sandbox.core.extend('equalizeHeights', function() {
-        'use strict';
-      
-        let _dataEqualHeightArray = [];
-        let _highest = 0;
-        let _heights = [];
-      
-        /*
-        * Sorts items in array from smallest to largest
-        */
-        let sortNumber = function(a, b) {
-          return a - b;
-        };
-      
-        /*
-        * For each "key", determine the largest height and apply to all items with that key
-        */
-        let maxHeight = function() {
-          $.each(_dataEqualHeightArray, function(index, value) {
-            _highest = 0;
-            _heights = [];
-            $(`[data-equalize-height=${value}]`).css('height', 'auto');
-            $(`[data-equalize-height=${value}]`).each(function() {
-              /* get the height including the padding of an item */
-              _heights.push($(this).outerHeight());
-            });
-            _heights = _heights.sort(sortNumber).reverse();
-            _highest = _heights[0];
-            $(`[data-equalize-height=${value}]`).css('height', _highest);
-          });
-        };
-      
-        return {
-          _initialize: function() {
-            const self = this;
-            self.getDataEqualHeightItems();
-            self.resizeListener();
-          },
-          /*
-          * Checks all the items that need to equalize height, and add keys to array
-          */
-          getDataEqualHeightItems: function() {
-            $('[data-equalize-height]').each(function() {
-              let newItem = $(this).data('equalize-height');
-              if (_dataEqualHeightArray.indexOf(newItem) < 0) {
-                _dataEqualHeightArray.push(newItem);
-              }
-            });
-          },
-          /*
-          * Re-evaluate the equalizing of the height when the page loads or is resized
-          */
-          resizeListener: function() {
-            const self = this;
-            $(window).on('load resize', function(event) {
-              self.forceResize();
-            });
-          },
-          /*
-          * Check for any new items to equalize, and then equalize them
-          * Do not equalize height for small size if the item contains [data-equalize-medium-up] data attribute
-          */
-          forceResize: function() {
-            const self = this;
-            self.getDataEqualHeightItems();
-            maxHeight();
-            if (sandbox.core.getViewportWidth() < 640) {
-              $('[data-equalize-height][data-equalize-medium-up]').css('height', 'auto');
-            }
-            if(sandbox.core.getViewportWidth() >= 640) {
-              $('[data-equalize-height][data-equalize-small-only]').css('height', 'auto');
-            }
-          }
-        };
-      });
-    </script>
-  </body>
-</html>
+      </div>
+    </section>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

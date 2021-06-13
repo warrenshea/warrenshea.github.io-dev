@@ -5,13 +5,13 @@
             "lang": "en",
             "head": {
                 "title": "Height Equalize",
-                "urlEn": "/examples/height-equalize",
-                "urlCanonical": "/examples/height-equalize",
+                "urlEn": "/examples/height-equalize/",
+                "urlCanonical": "/examples/height-equalize/",
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "//cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation-flex.min.css"
+                "/stylesheets/core.css"
             ],
             "scripts": []
         }
