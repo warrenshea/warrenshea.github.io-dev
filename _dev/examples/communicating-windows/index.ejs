@@ -1,0 +1,173 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
+    <h1 class="play:bold pt:16px fs:28px color:slate">Parent Frame</h1>
+
+    <div class="row">
+      <div class="w:6 px:8px">
+        <form id="parent">
+          <div class="form:style:1">
+            <div class="position:relative pt:4px pb:16px">
+              <input id="message" name="message" type="text">
+              <label for="message">
+                <span class="description">Send Message to Child Frame</span>
+              </label>
+            </div>
+            <button type="button" class="button:primary uppercase" id="open-window-button">Open Child Frame</button> <button type="submit" class="button:primary uppercase">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="w:6 px:8px">
+        <div class="color:blue heebo:bold fs:14px">Message from Child Frame:</div>
+        <div id="from-child" class="py:12px"></div>
+      </div>
+    </div>
+
+    <hr class="mt:64px mb:32px">
+
+    <div class="row">
+      <div class="w:6 px:8px">
+        <h2 class="fs:28px play:bold pt:32px pb:8px">Parent Frame HTML</h2>
+<textarea data-code-reference="prism-code-parent-html" class="hide">
+  <div class="row">
+    <div class="w:6 px:8px">
+      <form id="parent">
+        <div class="form:style:1">
+          <div class="position:relative pt:4px pb:16px">
+            <input id="message" name="message" type="text">
+            <label for="message">
+              <span class="description">Send Message to Child Frame</span>
+            </label>
+          </div>
+          <button type="button" class="button:primary uppercase" id="open-window-button">Open Child Frame</button> <button type="submit" class="button:primary uppercase">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="w:6 px:8px">
+      <div class="color:blue heebo:bold fs:14px">Message from Child Frame:</div>
+      <div id="from-child" class="py:12px"></div>
+    </div>
+  </div>
+</textarea>
+        <pre><code class="language-html" data-code-snippet="prism-code-parent-html"></code></pre>
+        <h2 class="fs:28px play:bold pt:32px pb:8px">Parent Frame JavaScript</h2>
+<textarea data-code-reference="prism-code-parent-javascript" class="hide">
+  storm_eagle.module('communicating_window_parent', function () {
+    'use strict';
+    var __CHILD_WINDOW_HANDLE = null;
+    return {
+      initialize: function () {
+        const self = this;
+        self.addOpenWindowListener();
+        self.addFormSubmitListener();
+        self.addMessageListener();
+      },
+      addOpenWindowListener: function () {
+        document.getElementById("open-window-button").addEventListener('click', function (event) {
+          let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
+          __CHILD_WINDOW_HANDLE = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
+        });
+      },
+      addFormSubmitListener: function () {
+        document.getElementById("parent").addEventListener("submit", function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          __CHILD_WINDOW_HANDLE.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+        });
+      },
+      addMessageListener: function() {
+        window.addEventListener('message', e => {
+          document.getElementById("from-child").innerHTML = e.data;
+        });
+      }
+    };
+  })
+</textarea>
+        <pre><code class="language-javascript" data-code-snippet="prism-code-parent-javascript"></code></pre>
+      </div>
+      <div class="w:6 px:8px">
+        <h2 class="fs:28px play:bold pt:32px pb:8px">Child Frame HTML</h2>
+<textarea data-code-reference="prism-code-child-html" class="hide">
+  <div class="row pt:32px">
+    <div class="w:6 px:8px">
+      <form id="child">
+        <div class="form:style:1">
+          <div class="position:relative pt:4px pb:16px">
+            <input id="message" name="message" type="text">
+            <label for="message">
+              <span class="description">Send Message to Parent Frame</span>
+            </label>
+          </div>
+          <button type="submit" class="button:primary uppercase">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="w:6 px:8px">
+      <div class="color:blue heebo:bold fs:14px">Message from Parent Frame:</div>
+      <div id="from-parent" class="py:12px"></div>
+    </div>
+  </div>
+</textarea>
+        <pre><code class="language-html" data-code-snippet="prism-code-child-html"></code></pre>
+        <h2 class="fs:28px play:bold pt:32px pb:8px">Child Frame JavaScript</h2>
+<textarea data-code-reference="prism-code-child-javascript" class="hide">
+  storm_eagle.module('communicating_window_child', function () {
+    'use strict';
+    return {
+      initialize: function () {
+        const self = this;
+        self.addFormSubmitListener();
+        self.addMessageListener();
+      },
+      addFormSubmitListener: function () {
+        document.getElementById("child").addEventListener("submit", function(event) {
+          event.preventDefault();
+          window.opener.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+        });
+      },
+      addMessageListener: function() {
+        window.addEventListener('message', e => {
+          document.getElementById("from-parent").innerHTML = e.data;
+        });
+      }
+    };
+  })
+</textarea>
+        <pre><code class="language-javascript" data-code-snippet="prism-code-child-javascript"></code></pre>
+      </div>
+    </div>
+  </div>
+
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<script>
+  storm_eagle.module('communicating_window_parent', function () {
+    'use strict';
+    var __CHILD_WINDOW_HANDLE = null;
+    return {
+      initialize: function () {
+        const self = this;
+        self.addOpenWindowListener();
+        self.addFormSubmitListener();
+        self.addMessageListener();
+      },
+      addOpenWindowListener: function () {
+        document.getElementById("open-window-button").addEventListener('click', function (event) {
+          let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
+          __CHILD_WINDOW_HANDLE = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
+        });
+      },
+      addFormSubmitListener: function () {
+        document.getElementById("parent").addEventListener("submit", function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          __CHILD_WINDOW_HANDLE.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+        });
+      },
+      addMessageListener: function() {
+        window.addEventListener('message', e => {
+          document.getElementById("from-child").innerHTML = e.data;
+        });
+      }
+    };
+  })
+</script>

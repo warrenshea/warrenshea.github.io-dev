@@ -1,0 +1,23 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Communicating Windows - Parent",
+                "urlEn": "/examples/communicating-windows",
+                "urlCanonical": "/examples/communicating-windows",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css",
+                "/stylesheets/vendor.prism.v.1.23.0.css"
+            ],
+            "scripts": [
+                "/scripts/vendor.prism.v.1.23.0.js",
+                "/scripts/prism.js"
+            ]
+        }
+    }
+}

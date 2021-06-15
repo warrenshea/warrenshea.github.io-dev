@@ -1,0 +1,49 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
+    <h1 class="play:bold pt:16px fs:28px color:slate">Child Frame</h1>
+    <div class="row pt:32px">
+      <div class="w:6 px:8px">
+        <form id="child">
+          <div class="form:style:1">
+            <div class="position:relative pt:4px pb:16px">
+              <input id="message" name="message" type="text">
+              <label for="message">
+                <span class="description">Send Message to Parent Frame</span>
+              </label>
+            </div>
+            <button type="submit" class="button:primary uppercase">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="w:6 px:8px">
+        <div class="color:blue heebo:bold fs:14px">Message from Parent Frame:</div>
+        <div id="from-parent" class="py:12px"></div>
+      </div>
+    </div>
+  </div>
+
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<script>
+  storm_eagle.module('communicating_window_child', function () {
+    'use strict';
+    return {
+      initialize: function () {
+        const self = this;
+        self.addFormSubmitListener();
+        self.addMessageListener();
+      },
+      addFormSubmitListener: function () {
+        document.getElementById("child").addEventListener("submit", function(event) {
+          event.preventDefault();
+          window.opener.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+        });
+      },
+      addMessageListener: function() {
+        window.addEventListener('message', e => {
+          document.getElementById("from-parent").innerHTML = e.data;
+        });
+      }
+    };
+  })
+</script>
