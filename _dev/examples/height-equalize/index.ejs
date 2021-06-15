@@ -81,4 +81,193 @@
         </div>
       </div>
     </section>
+
+    <section>
+      <div class="row mw:1280px">
+<section data-code-reference="prism-code" class="hide">
+    <!-- HTML -->
+    <!-- classes omitted for simplicifty -->
+    <section>
+        <div>
+            <div>
+                <div>
+                    <h2 data-equalize-height="eqh-title-acronymn">HTML</h2>
+                    <hr>
+                    <div data-equalize-height="eqh-title" data-equalize-medium-up>
+                        <p class="lh:24">Hypertext Markup Language</p>
+                    </div>
+                    <hr>
+                    <div data-equalize-height="eqh-details" data-equalize-medium-up>
+                        <p class="lh:24">Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+                    </div>
+                    <hr>
+                    <p>Related article:</p>
+                    <div data-equalize-height="eqh-links" data-equalize-medium-up>
+                        <a href="">HTML on Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <h2 data-equalize-height="eqh-title-acronymn">CSS</h2>
+                    <hr>
+                    <div data-equalize-height="eqh-title" data-equalize-medium-up>
+                        <p class="lh:24">Cascading Style Sheets</p>
+                    </div>
+                    <hr>
+                    <div data-equalize-height="eqh-details" data-equalize-medium-up>
+                        <p class="lh:24">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
+                    </div>
+                    <hr>
+                    <p>Related article:</p>
+                    <div data-equalize-height="eqh-links" data-equalize-medium-up>
+                        <a href="">CSS on Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <h2 data-equalize-height="eqh-title-acronymn">JavaScript</h2>
+                    <hr>
+                    <div data-equalize-height="eqh-title" data-equalize-medium-up>
+                        <p class="lh:24"></p>
+                    </div>
+                    <hr>
+                    <div data-equalize-height="eqh-details" data-equalize-medium-up>
+                        <p class="lh:24">JavaScript often abbreviated as JS, is a high-level, interpreted programming language.</p>
+                    </div>
+                    <hr>
+                    <p>Related article:</p>
+                    <div data-equalize-height="eqh-links" data-equalize-medium-up>
+                        <a href="">JavaScript on Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <h2 data-equalize-height="eqh-title-acronymn">WCAG</h2>
+                    <hr>
+                    <div data-equalize-height="eqh-title" data-equalize-medium-up>
+                        <p class="lh:24">Web Content Accessibility Guidelines</p>
+                    </div>
+                    <hr>
+                    <div data-equalize-height="eqh-details" data-equalize-medium-up>
+                        <p class="lh:24">The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.</p>
+                    </div>
+                    <hr>
+                    <p>Related article:</p>
+                    <div data-equalize-height="eqh-links" data-equalize-medium-up>
+                        <a href="">WCAG on Wikipedia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- JavaScript -->
+    <script>
+        /**
+         * Allows the height of various divs to be the same by taking the biggest height and applying it to all items.
+         * This will occur for any item regardless of viewport. To affect medium size and up, see Options.
+         *
+         * How to use this:
+         * Add 'data-equalize-height="(key)"' to any item where key is a value you input yourself, to link the items.
+         * All the items with the same 'key' will have the same height
+         *
+         * Options:
+         * If you only want this to occur on medium size up, add 'data-equalize-medium-up' to the item as well
+         */
+        storm_eagle.module('equalize_heights', function () {
+            'use strict';
+
+            let _data_equal_height_array = [];
+
+            /*
+             * Sorts items in array from smallest to largest
+             */
+            let sortNumber = function (a, b) {
+                return a - b;
+            };
+
+            /*
+             * For each "key", determine the largest height and apply to all items with that key
+             */
+            let max_Height = function () {
+                _data_equal_height_array.forEach((index, value) => {
+                    let _highest = 0;
+                    let _heights = [];
+                    document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
+                        /* get the height including the padding of an item */
+                        el.style.height = "auto";
+                        _heights.push(el.getBoundingClientRect().height);
+                    });
+                    _heights = _heights.sort(sortNumber).reverse();
+                    _highest = _heights[0];
+                    document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
+                        el.style.height = _highest + 'px';
+                    });
+                });
+            };
+
+            return {
+                initialize: function () {
+                    const self = this;
+                    self.get_data_equal_height_items();
+                    self.resize_listener();
+                },
+                /*
+                * Checks all the items that need to equalize height, and add keys to array
+                */
+                get_data_equal_height_items: function () {
+                    document.querySelectorAll('[data-equalize-height]').forEach((el) => {
+                        let newItem = el.dataset['equalizeHeight'];
+                        if (_data_equal_height_array.indexOf(newItem) < 0) {
+                         _data_equal_height_array.push(newItem);
+                        }
+                    });
+                },
+                /*
+                * Re-evaluate the equalizing of the height when the page loads or is resized
+                */
+                resize_listener: function () {
+                    const self = this;
+                    window.addEventListener("resize", (event) => {
+                        self.force_resize();
+                    })
+                    window.addEventListener('DOMContentLoaded', (event) => {
+                        self.force_resize();
+                    });
+                },
+                /*
+                * Check for any new items to equalize, and then equalize them
+                * Do not equalize height for small size if the item contains [data-equalize-medium-up] data attribute
+                */
+                force_resize: function () {
+                    const self = this;
+                    self.get_data_equal_height_items();
+                    max_Height();
+                    if (storm_eagle.client.viewport.is_small()) {
+                        document.querySelectorAll('[data-equalize-height][data-equalize-medium-up]').forEach((el) => {
+                            el.style.height = "auto";
+                        });
+                    }
+                    if (!storm_eagle.client.viewport.is_small()) {
+                        document.querySelectorAll('[data-equalize-height][data-equalize-small-only]').forEach((el) => {
+                            el.style.height = "auto";
+                        });
+                    }
+                }
+            };
+        });
+    </script>
+</section>
+        <pre><code class="language-html" data-code-snippet="prism-code"></code></pre>
+      </div>
+    </section>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
