@@ -19,7 +19,7 @@ storm_eagle.module('prism', function () {
     linkCodeWithPrismSnippet: function () {
       document.querySelectorAll(`[data-code-reference]`).forEach((el) => {
         var $cleanse = el.cloneNode(true);
-        document.querySelector(`code[data-code-snippet=${el.getAttribute("data-code-reference")}`).innerHTML = htmlEncode($cleanse.innerHTML);
+        document.querySelector(`code[data-code-snippet=${el.getAttribute("data-code-reference")}`).innerHTML = $cleanse.innerHTML;
       });
     },
     forcePrismReinit: function () {
