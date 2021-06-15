@@ -692,7 +692,7 @@ storm_eagle.module('console_log', function () {
  * All the items with the same 'key' will have the same height
  *
  * Options:
- * If you only want this to occur on medium size up, add 'data-equalize-medium-up' to the item as well
+ * If you only want this to occur on medium size up, add 'data-equalize-md-up' to the item as well
  */
 storm_eagle.module('equalize_heights', function () {
   'use strict';
@@ -757,19 +757,19 @@ storm_eagle.module('equalize_heights', function () {
     },
     /*
     * Check for any new items to equalize, and then equalize them
-    * Do not equalize height for small size if the item contains [data-equalize-medium-up] data attribute
+    * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
     */
     force_resize: function () {
       const self = this;
       self.get_data_equal_height_items();
       max_Height();
       if (storm_eagle.client.viewport.is_small()) {
-        document.querySelectorAll('[data-equalize-height][data-equalize-medium-up]').forEach((el) => {
+        document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
           el.style.height = "auto";
         });
       }
       if (!storm_eagle.client.viewport.is_small()) {
-        document.querySelectorAll('[data-equalize-height][data-equalize-small-only]').forEach((el) => {
+        document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach((el) => {
           el.style.height = "auto";
         });
       }
