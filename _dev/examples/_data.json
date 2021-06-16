@@ -5,8 +5,8 @@
             "lang": "en",
             "head": {
                 "title": "Examples Page",
-                "urlEn": "/examples",
-                "urlCanonical": "/examples",
+                "urlEn": "/examples/",
+                "urlCanonical": "/examples/",
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
