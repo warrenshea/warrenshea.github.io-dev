@@ -419,7 +419,7 @@ fieldset.unstyle { border:0; padding:0 }
     transition: all 0.3s ease-out;
     &:hover {
       cursor: pointer;
-      box-shadow: $box-shadow-layer-level-3;
+      box-shadow: $box-shadow-custom-1;
     }
     div.check {
       opacity: 0;
@@ -528,7 +528,7 @@ fieldset.unstyle { border:0; padding:0 }
     &.active{
       background: $white;
       z-index:1;
-      box-shadow: $box-shadow-layer-level-2;
+      box-shadow: $box-shadow-custom-0;
       transition: background 0 linear;
     }
     input {

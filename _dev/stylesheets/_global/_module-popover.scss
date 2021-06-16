@@ -49,13 +49,13 @@
     }
   }
   &.active {
-    box-shadow: $box-shadow-layer-level-3;
+    box-shadow: $box-shadow-custom-1;
     display:block;
     bottom:0;
     z-index: 1051;
     visibility: visible;
     @include breakpoint(large) {
-      box-shadow: $box-shadow-layer-level-2;
+      box-shadow: $box-shadow-custom-0;
       position:absolute;
       bottom:auto;
       right:auto;
