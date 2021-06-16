@@ -1,8 +1,7 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-    <h1 class="play:bold pt:16px fs:28px color:slate">Parent Frame</h1>
-
+  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:32px">
+    <h1 class="play:bold pt:16px fs:28px color:slate px:8px pb:16px">Parent Frame</h1>
     <div class="row">
       <div class="w:6 px:8px">
         <form id="parent">
@@ -18,7 +17,7 @@
         </form>
       </div>
       <div class="w:6 px:8px">
-        <div class="color:blue heebo:bold fs:14px">Message from Child Frame:</div>
+        <div class="color:blue heebo:bold fs:14px">Message from Child Frame</div>
         <div id="from-child" class="py:12px"></div>
       </div>
     </div>
@@ -44,7 +43,7 @@
       </form>
     </div>
     <div class="w:6 px:8px">
-      <div class="color:blue heebo:bold fs:14px">Message from Child Frame:</div>
+      <div class="color:blue heebo:bold fs:14px">Message from Child Frame</div>
       <div id="from-child" class="py:12px"></div>
     </div>
   </div>
@@ -54,7 +53,7 @@
 <textarea data-code-reference="prism-code-parent-javascript" class="hide">
   storm_eagle.module('communicating_window_parent', function () {
     'use strict';
-    var __CHILD_WINDOW_HANDLE = null;
+    var _CHILD_WINDOW = null;
     return {
       initialize: function () {
         const self = this;
@@ -63,16 +62,15 @@
         self.addMessageListener();
       },
       addOpenWindowListener: function () {
-        document.getElementById("open-window-button").addEventListener('click', function (event) {
+        document.getElementById("open-window-button").addEventListener("click", event => {
           let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
-          __CHILD_WINDOW_HANDLE = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
+          _CHILD_WINDOW = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
         });
       },
       addFormSubmitListener: function () {
-        document.getElementById("parent").addEventListener("submit", function(event) {
+        document.getElementById("parent").addEventListener("submit", event => {
           event.preventDefault();
-          event.stopPropagation();
-          __CHILD_WINDOW_HANDLE.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+          _CHILD_WINDOW.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
         });
       },
       addMessageListener: function() {
@@ -103,7 +101,7 @@
       </form>
     </div>
     <div class="w:6 px:8px">
-      <div class="color:blue heebo:bold fs:14px">Message from Parent Frame:</div>
+      <div class="color:blue heebo:bold fs:14px">Message from Parent Frame</div>
       <div id="from-parent" class="py:12px"></div>
     </div>
   </div>
@@ -120,7 +118,7 @@
         self.addMessageListener();
       },
       addFormSubmitListener: function () {
-        document.getElementById("child").addEventListener("submit", function(event) {
+        document.getElementById("child").addEventListener("submit", event => {
           event.preventDefault();
           window.opener.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
         });
@@ -142,7 +140,7 @@
 <script>
   storm_eagle.module('communicating_window_parent', function () {
     'use strict';
-    var __CHILD_WINDOW_HANDLE = null;
+    var _CHILD_WINDOW = null;
     return {
       initialize: function () {
         const self = this;
@@ -151,16 +149,16 @@
         self.addMessageListener();
       },
       addOpenWindowListener: function () {
-        document.getElementById("open-window-button").addEventListener('click', function (event) {
+        document.getElementById("open-window-button").addEventListener("click", event => {
           let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
-          __CHILD_WINDOW_HANDLE = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
+          _CHILD_WINDOW = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
         });
       },
       addFormSubmitListener: function () {
-        document.getElementById("parent").addEventListener("submit", function(event) {
+        document.getElementById("parent").addEventListener("submit", event => {
           event.preventDefault();
           event.stopPropagation();
-          __CHILD_WINDOW_HANDLE.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+          _CHILD_WINDOW.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
         });
       },
       addMessageListener: function() {
