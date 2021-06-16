@@ -519,6 +519,16 @@ const storm_eagle = (function(window, document, undefined) {
     util : {
       replace_all : function(original_str,find_str,replace_str, ignore) {
         return original_str.replace(new RegExp(find_str.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(replace_str)=="string")?replace_str.replace(/\$/g,"$$$$"):replace_str);
+      },
+
+      index_in_parent : function(node) {
+        let children = node.parentNode.childNodes;
+        let num = 0;
+        for (let i=0; i<children.length; i++) {
+             if (children[i]==node) return num;
+             if (children[i].nodeType==1) num++;
+        }
+        return -1;
       }
     },
 
