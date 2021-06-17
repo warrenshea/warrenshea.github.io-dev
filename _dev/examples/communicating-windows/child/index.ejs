@@ -36,7 +36,7 @@
       addFormSubmitListener: function () {
         document.getElementById("child").addEventListener("submit", event => {
           event.preventDefault();
-          window.opener.postMessage(document.getElementById("message").value, 'http://localhost:3000/');
+          window.opener.postMessage(document.getElementById("message").value, window.location.hostname);
         });
       },
       addMessageListener: function() {
