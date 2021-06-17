@@ -145,7 +145,7 @@ storm_eagle.module("carousel", function () {
           "total_children": el.querySelectorAll("[data-module='carousel.item']").length,
           "item_height_variable": el.getAttribute("data-carousel-item-height-variable"),
           "breakpoint": el.getAttribute("data-carousel-breakpoint"),
-          "transition_duration": parseInt(el.getAttribute("data-carousel-transition-duration")),
+          "transition_duration": parseFloat(el.getAttribute("data-carousel-transition-duration") || 1),
           "number_of_active_array": JSON.parse(el.getAttribute("data-carousel-number-active")),
           "offset_left_array": JSON.parse(el.getAttribute("data-carousel-offset")),
           "number_of_active": "",
@@ -155,12 +155,11 @@ storm_eagle.module("carousel", function () {
         };
         console.log(carousel_state[carousel_id]);
         self.init_ui(carousel_id);
+        self.update_carousel_state(carousel_id);
         self.add_resize_listener();
         self.add_swipe_listener(carousel_id);
-        self.add_tab_carousel_id_listener(carousel_id);
-        self.add_carousel_indicators_listener(carousel_id);
-        self.update_carousel_state(carousel_id);
-        self.reinitialize_carousel(carousel_id);
+        //self.add_tab_carousel_id_listener(carousel_id);
+        //self.reinitialize_carousel(carousel_id);
       });
     },
     ready : function() {
@@ -171,7 +170,7 @@ storm_eagle.module("carousel", function () {
       const self = this;
 
       /* adds a carousel id attribute to the carousel for debugging only */
-      document.getElementById(carousel_id).setAttribute("data-carousel-id", carousel_id);
+      //document.getElementById(carousel_id).setAttribute("data-carousel-id", carousel_id);
 
       /* set the active item state property based on which DOM element has the 'active-item' class */
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']").forEach(function(el, index) {
@@ -186,13 +185,14 @@ storm_eagle.module("carousel", function () {
       self.set_active_items(carousel_id);
       self.update_controls(carousel_id);
 
+      console.log("number_of_active:",carousel_state[carousel_id]["number_of_active"]);
+      console.log("carousel_item_offset_left:",carousel_state[carousel_id]["carousel_item_offset_left"]);
+      console.log("carousel_item_width:",carousel_state[carousel_id]["carousel_item_width"]);
+      console.log("current_active_carousel_item:",carousel_state[carousel_id]["current_active_carousel_item"]);
+
       /* ensures only links in the active carousel or tab-able */
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").querySelectorAll(".item a").forEach(el => {
-        el.attr("tabindex","-1");
-      });
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").querySelectorAll(".item.active-item a").forEach(el => {
-        el.attr("tabindex","0");
-      });
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item a").forEach(el => { el.setAttribute("tabindex","-1"); });
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item.active-item a").forEach(el => { el.setAttribute("tabindex","0"); });
 
       /* changes the left offset */
       document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["carousel_item_offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
@@ -201,8 +201,6 @@ storm_eagle.module("carousel", function () {
       setTimeout(function(){
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = "0s";
       }, carousel_state[carousel_id]["transition_duration"] * 1000);
-
-      console.log(carousel_state[carousel_id]);
     },
     set_active_items : function(carousel_id) {
 
@@ -216,48 +214,49 @@ storm_eagle.module("carousel", function () {
       }
 
       /* resets the active classes on the carousel control and adds the proper active classes */
-      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.controls']").forEach((el, index) => {
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control").forEach((el) => {
         el.classList.remove("active-item");
       });
-      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.controls']")[carousel_state[carousel_id]["current_active_carousel_item"]].classList.add("active-item");
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control")[carousel_state[carousel_id]["current_active_carousel_item"]].classList.add("active-item");
     },
     update_controls : function(carousel_id) {
       /* show both chevrons */
       if (carousel_state[carousel_id]["total_children"] !== 1) {
-        if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev")) {
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").classList.remove("display:none");
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").classList.add("display:block");
-        }
-        if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next")) {
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").classList.remove("display:none");
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").classList.add("display:block");
-        }
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").classList.remove("display:none");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").classList.add("display:block");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").classList.remove("display:none");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").classList.add("display:block");
       }
       /* hide chevrons */
       if (carousel_state[carousel_id]["current_active_carousel_item"] === 0){
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").classList.add("display:none");
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").classList.remove("display:block");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").classList.add("display:none");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").classList.remove("display:block");
       } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").classList.add("display:none");
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").classList.remove("display:block");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").classList.add("display:none");
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").classList.remove("display:block");
       }
     },
     add_carousel_indicators_listener : function(carousel_id){
       const self = this;
 
-      /* reset the listeners */
-      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.controls']").forEach(el => {
-        el.removeEventListener("click", function(){});
-      });
-      if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next")) {
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").removeEventListener("click", function(){});
-      }
-      if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev")) {
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").removeEventListener("click", function(){});
+      function swipe_left(event) {
+        event.preventDefault();
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-left"));
       }
 
+      function swipe_right(event) {
+        event.preventDefault();
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-right"));
+      }
+      /* reset the listeners */
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control").forEach(el => {
+        el.removeEventListener("click", function(){});
+      });
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").removeEventListener("click", swipe_left);
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").removeEventListener("click", swipe_right);
+
       /* if a carousel control button is clicked, update the carousel and change the active state */
-      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.controls']").forEach(el => {
+      document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control").forEach(el => {
         el.addEventListener("click", function(e){
           e.preventDefault();
           document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
@@ -267,25 +266,14 @@ storm_eagle.module("carousel", function () {
       });
 
       /* if a carousel chevron is clicked, swipe the carousel */
-      if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next")) {
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .next").addEventListener("click", function(e){
-          e.preventDefault();
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-left"));
-        });
-      }
-
-      if (document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev")) {
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group'] .prev").addEventListener("click", function(e){
-          e.preventDefault();
-          document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-right"));
-        });
-      }
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").addEventListener("click", swipe_left);
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").addEventListener("click", swipe_right);
     },
     add_swipe_listener : function(carousel_id) {
       const self = this;
 
       /* if a coursel is swiped left */
-      document.getElementById(carousel_id).addEventListener("swiped-left", function(e){ //go -> in the carousel
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").addEventListener("swiped-left", function(e){ //go -> in the carousel
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
         if (carousel_state[carousel_id]["current_active_carousel_item"] !== carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
           carousel_state[carousel_id]["current_active_carousel_item"]++;
@@ -294,7 +282,7 @@ storm_eagle.module("carousel", function () {
       });
 
       /* if a coursel is swiped right */
-      document.getElementById(carousel_id).addEventListener("swiped-right", function(e){ //go <- in the carousel
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").addEventListener("swiped-right", function(e){ //go <- in the carousel
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
         if (carousel_state[carousel_id]["current_active_carousel_item"] !== 0){
           carousel_state[carousel_id]["current_active_carousel_item"]--;
@@ -302,20 +290,20 @@ storm_eagle.module("carousel", function () {
         }
       });
     },
-    add_tab_carousel_id_listener: function(carousel_id) {
-      const self = this;
+    // add_tab_carousel_id_listener: function(carousel_id) {
+    //   const self = this;
 
-      /* iterate through data-tabable and, on focus, move carousel */
-      document.getElementById(carousel_id).querySelectorAll("[data-tabable]").forEach(function(el) {
-        this.addEventListener("focus", function(e) {
-          if (document.getElementById(carousel_id).classList.contains("carousel-is-active")) {
-            document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
-            carousel_state[carousel_id]["current_active_carousel_item"] = el;
-            self.update_carousel(carousel_id);
-          }
-        });
-      });
-    },
+    //   /* iterate through data-tabable and, on focus, move carousel */
+    //   document.getElementById(carousel_id).querySelectorAll("[data-tabable]").forEach(function(el) {
+    //     el.addEventListener("focus", function(e) {
+    //       if (document.getElementById(carousel_id).classList.contains("carousel-is-active")) {
+    //         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
+    //         carousel_state[carousel_id]["current_active_carousel_item"] = el;
+    //         self.update_carousel(carousel_id);
+    //       }
+    //     });
+    //   });
+    // },
     add_resize_listener: function () {
       const self = this;
 
@@ -341,6 +329,8 @@ storm_eagle.module("carousel", function () {
 
       /* set the active item class on the control buttons */
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control")[carousel_state[carousel_id]["current_active_carousel_item"]].classList.add("active-item");
+      //console.log(document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control"));
+      //console.log([carousel_state[carousel_id]["current_active_carousel_item"]]);
 
       /* updates the carousel width state property and updates the carousel container */
       carousel_state[carousel_id]["carousel_item_width"] = (document.getElementById(carousel_id).offsetWidth - (2 * carousel_state[carousel_id]["carousel_item_offset_left"])) / carousel_state[carousel_id]["number_of_active"];
@@ -398,7 +388,8 @@ storm_eagle.module("carousel", function () {
             self.reinitialize_carousel(carousel_id);
           } else {
             document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").classList.add("hide-for-md");
-            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group']").classList.add("hide-for-md");
+            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group-prev']").classList.add("hide-for-md");
+            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group-next']").classList.add("hide-for-md");
             self.disable_carousel(carousel_id);
           }
         } else if (carousel_state[carousel_id]["breakpoint"] === "medium-down") {
@@ -406,7 +397,8 @@ storm_eagle.module("carousel", function () {
             self.reinitialize_carousel(carousel_id);
           } else {
             document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").classList.add("hide-for-lg");
-            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group']").classList.add("hide-for-lg");
+            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group-prev']").classList.add("hide-for-lg");
+            document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-group-next']").classList.add("hide-for-lg");
             self.disable_carousel(carousel_id);
           }
         } else {

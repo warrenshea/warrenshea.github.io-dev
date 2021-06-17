@@ -4,7 +4,18 @@
         <div class="pb:4px carousel carousel--center-mode-all-equal" data-module="carousel" id="test" data-carousel-number-active="[1,2,2,3]" data-carousel-offset="[16,0.1666667,0.1666667,0.125]" data-carousel-transition-duration="1">
           <div class="position:relative w:100% bgc:albicant">
             <ul data-module="carousel.item-group" class="items-group row unstyle-pl:0 small-align--stretch position:relative sm+:px:0">
-              <li data-module="carousel.item" class="item align-self:middle active-item">
+              <li data-module="carousel.item" class="item align-self:middle">
+                <div class="sm+:px:4px md+:px:16px">
+                  <div class="content-container bgc:white sm+:px:40px br:4px relative py:40px" data-tabable>
+                    <div class="small-text-align--center">
+                      <div class="fs:28px heebo:bold mb:8px">TEST</div>
+                      <div class="lh:24 pb:32px" data-equalize-height="ranbir-test-carousel-details">TEST2</div>
+                    </div>
+                    <div class="heebo:bold pb:8px">TEST3</div>
+                  </div>
+                </div>
+              </li>
+              <li data-module="carousel.item" class="item align-self:middle" data-tabable>
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container bgc:white sm+:px:40px br:4px relative py:40px">
                     <div class="small-text-align--center">
@@ -15,18 +26,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="item align-self:middle">
-                <div class="sm+:px:4px md+:px:16px">
-                  <div class="content-container bgc:white sm+:px:40px br:4px relative py:40px">
-                    <div class="small-text-align--center">
-                      <div class="fs:28px heebo:bold mb:8px">TEST</div>
-                      <div class="lh:24 pb:32px" data-equalize-height="ranbir-test-carousel-details">TEST2</div>
-                    </div>
-                    <div class="heebo:bold pb:8px">TEST3</div>
-                  </div>
-                </div>
-              </li>
-              <li data-module="carousel.item" class="item align-self:middle">
+              <li data-module="carousel.item" class="item align-self:middle active-item" data-tabable>
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container bgc:white sm+:px:40px br:4px relative py:40px">
                     <div class="small-text-align--center">
@@ -72,11 +72,11 @@
               </li>
             </ul>
             <div data-module="carousel.controls-group" class="controls-group">
-              <button data-module="carousel.controls" class="prev control cursor:pointer b:0 bgc:white sm+:py:24px sm+:pr:8px md+:px:12px box-shadow:custom-4 brtr:4px brbr:4px md+:brbr:8px md+:brbl:8px" aria-hidden="true" tabindex="-1">
+              <button data-module="carousel.controls-prev" class="prev control cursor:pointer b:0 bgc:white sm+:py:24px sm+:pr:8px md+:px:12px box-shadow:custom-4 brtr:4px brbr:4px md+:brbr:8px md+:brbl:8px" aria-hidden="true" tabindex="-1">
                 <span class="1show-for-sr">Previous</span>
                 <div class="icon display:block icon-color:blue sm+:icon-size:16px md+:icon-size:32px baby-chevy-left"></div>
               </button>
-              <button data-module="carousel.controls" class="next control cursor:pointer b:0 bgc:white sm+:py:24px sm+:pr:8px md+:px:12px box-shadow:custom-4 brtl:4px brbl:4px md+:brtr:8px md+:brbr:8px" aria-hidden="true" tabindex="-1">
+              <button data-module="carousel.controls-next" class="next control cursor:pointer b:0 bgc:white sm+:py:24px sm+:pr:8px md+:px:12px box-shadow:custom-4 brtl:4px brbl:4px md+:brtr:8px md+:brbr:8px" aria-hidden="true" tabindex="-1">
                 <span class="1show-for-sr">Next</span>
                 <div class="icon display:block icon-color:blue sm+:icon-size:16px md+:icon-size:32px baby-chevy-right"></div>
               </button>
