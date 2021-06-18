@@ -612,6 +612,10 @@ const LANG = storm_eagle.page.get_language_code();
 storm_eagle.module('javascript_utility', function () {
   return {
     initialize: function () {
+      const self = this;
+      self.add_class_prototype_functions();
+    },
+    add_class_prototype_functions: function() {
       let element = HTMLElement.prototype;
       element.addClass = function(cls) {
         this.classList.add(cls);
