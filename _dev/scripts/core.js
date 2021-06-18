@@ -65,6 +65,7 @@ const remove_focus_selector = `.form\\:style\\:1 input[type="radio"]+label, .for
  * storm_eagle.open_window()
  * storm_eagle.scroll_to()
  * storm_eagle.debounce()
+ * storm_eagle.resize_observer()
  **/
 
 const storm_eagle = (function(window, document, undefined) {
@@ -589,6 +590,19 @@ const storm_eagle = (function(window, document, undefined) {
         timeout = setTimeout(later, wait);
         if (callNow) func.apply(context, args);
       };
+    },
+
+    /**
+     * Observes an element and runs a function when the element is resized
+     * Replaces window.addEventListener("resize", (event) => { function(); }) as it performs better
+     *
+     * @param  { array } elements     elements we want to observe
+     * @param  { function } func      callback function
+     */
+    resize_observer : function(elements,func) {
+      let resize_observer = new ResizeObserver( el => { func(); });
+      //@TODO: write cleaner way to iterate through one DOM Element OR NodeList
+      (elements instanceof HTMLElement) ? resize_observer.observe(elements) : elements.forEach(el => { resize_observer.observe(el) });
     }
   };
 })(window, document);
@@ -658,14 +672,13 @@ storm_eagle.module('ie11_polyfill', function () {
 
         /* polyfill for DOMELEMENT.remove() */
         if (!('remove' in Element.prototype)) {
-            Element.prototype.remove = function() {
-                if (this.parentNode) {
-                    this.parentNode.removeChild(this);
-                }
-            };
+          Element.prototype.remove = function() {
+            if (this.parentNode) {
+              this.parentNode.removeChild(this);
+            }
+          };
         }
       }
-
     }
   };
 });
