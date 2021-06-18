@@ -609,6 +609,28 @@ const storm_eagle = (function(window, document, undefined) {
 
 const LANG = storm_eagle.page.get_language_code();
 
+storm_eagle.module('javascript_utility', function () {
+  return {
+    initialize: function () {
+      let element = HTMLElement.prototype;
+      element.addClass = function(cls) {
+        this.classList.add(cls);
+        return this;
+      };
+
+      element.removeClass = function(cls) {
+        this.classList.remove(cls);
+        return this;
+      };
+
+      element.toggleClass = function(cls) {
+        this.classList.toggle(cls);
+        return this;
+      }
+    }
+  }
+});
+
 storm_eagle.module('ie11_polyfill', function () {
   return {
     initialize: function () {
