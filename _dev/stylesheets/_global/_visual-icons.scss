@@ -29,6 +29,7 @@ $colors: (
 $sizes: (
   16px : rem-calc(16),
   24px : rem-calc(24),
+  32px : rem-calc(32),
   48px : rem-calc(48)
 );
 
@@ -55,6 +56,10 @@ $sizes: (
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.icon.chevron-circle-left { background-image: url('../assets/icon/chevron-circle-left.svg'); }
+.icon.chevron-circle-right { background-image: url('../assets/icon/chevron-circle-right.svg'); }
+
 .icon.icon-size\:16px.baby-chevy-up { background-image: url('../assets/icon/16/baby-chevy-up.svg'); }
 .icon.icon-size\:16px.baby-chevy-left { background-image: url('../assets/icon/16/baby-chevy-left.svg'); }
 .icon.icon-size\:16px.baby-chevy-right { background-image: url('../assets/icon/16/baby-chevy-right.svg'); }
