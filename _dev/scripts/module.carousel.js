@@ -182,10 +182,10 @@ storm_eagle.module("carousel", function () {
     add_resize_listener: function (carousel_id) {
       const self = this;
 
-      function test() {
+      function force_resize() {
         return self.force_resize(carousel_id);
       }
-      storm_eagle.resize_observer(document.getElementById(carousel_id), test);
+      storm_eagle.resize_observer(document.getElementById(carousel_id), force_resize);
     },
     reinitialize_carousel: function (carousel_id) {
       const self = this;
