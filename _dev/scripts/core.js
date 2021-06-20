@@ -414,10 +414,6 @@ const storm_eagle = (function(window, document, undefined) {
         is_lg_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
         is_lg_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"]) ? true : false; },
         is_xl_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["xl_min"]) ? true : false; },
-
-
-
-
       },
 
 
