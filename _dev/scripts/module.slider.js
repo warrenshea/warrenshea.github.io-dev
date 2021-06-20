@@ -13,6 +13,7 @@ storm_eagle.module('slider', function () {
         };
         self.add_slider_listener(slider_id);
         self.add_resize_listener(slider_id);
+        self.update_slider_track(slider_id);
       });
     },
     ready: function() {
@@ -34,13 +35,14 @@ storm_eagle.module('slider', function () {
       var self = this;
 
       let el = document.getElementById(slider_id).querySelector("[data-module='slider.input']");
-      function update_slider_track() {
-        var percentage = Math.round((el.value - el.getAttribute("min")) / (el.getAttribute("max") - el.getAttribute("min")) * 100);
-        document.getElementById(slider_id).querySelector("[data-module='slider.fill']").style.width = percentage + "%";
-      }
       el.addEventListener("input", function(e){
-        update_slider_track(slider_id);
+        self.update_slider_track(slider_id);
       });
+    },
+    update_slider_track: function(slider_id) {
+      let el = document.getElementById(slider_id).querySelector("[data-module='slider.input']");
+      var percentage = Math.round((el.value - el.getAttribute("min")) / (el.getAttribute("max") - el.getAttribute("min")) * 100);
+      document.getElementById(slider_id).querySelector("[data-module='slider.fill']").style.width = percentage + "%";
     },
     add_resize_listener: function (slider_id) {
       const self = this;
