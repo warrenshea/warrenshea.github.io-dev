@@ -1,0 +1,42 @@
+input[type="range"].slider {
+  height: 1.5rem;
+  -webkit-appearance: none;
+  background: none;
+  &:focus {
+      outline: none;
+  }
+  &::-webkit-slider-runnable-track {
+      width: 100%;
+      background: none;
+  }
+  &::-webkit-slider-thumb {
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, .5), 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+      height: 1.5rem;
+      width: 1.5rem;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      -webkit-appearance: none;
+  }
+  & + .slider-background{
+    z-index:-1; /* needed to go under the slider-thumb */
+    background-color: $light-grey;
+    height: .25rem;
+    border-radius: .25rem;
+    display:block;
+    margin: -.8rem auto .75rem;
+    position:relative;
+    .slider-fill{
+        background-color: $blue;
+        height: .25rem;
+        border-radius: .25rem;
+        position:absolute;
+    }
+  }
+}
+
+ul.slider-labels li {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
