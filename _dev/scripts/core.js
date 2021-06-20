@@ -596,6 +596,30 @@ const storm_eagle = (function(window, document, undefined) {
 
 const LANG = storm_eagle.page.get_language_code();
 
+storm_eagle.module('_temp_fill_ids', function () {
+  'use strict';
+
+  return {
+    initialize: function () {
+      const self = this;
+      self.fill_empty_ids();
+
+    },
+    fill_empty_ids: function() {
+
+      function get_random_id() {
+        return '_' + Math.random().toString(36).substr(2, 9);
+      }
+
+      document.querySelectorAll('*[id]').forEach(el => {
+        if (el.id === "") {
+          el.id = get_random_id();
+        }
+      });
+    }
+  }
+});
+
 storm_eagle.module('javascript_utility', function () {
   return {
     initialize: function () {
