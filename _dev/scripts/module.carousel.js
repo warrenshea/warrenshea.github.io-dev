@@ -17,11 +17,12 @@ storm_eagle.module("carousel", function () {
           "total_children": el.querySelectorAll("[data-module='carousel.item']:not(.display\\:none)").length,
           "item_height_variable": el.getAttribute("data-carousel-item-height-variable"),
           "breakpoint": el.getAttribute("data-carousel-breakpoint"),
-          "transition_duration": parseFloat(el.getAttribute("data-carousel-transition-duration") || 1),
+          "transition_duration_array": JSON.parse(el.getAttribute("data-carousel-transition-duration")),
+          "transition_duration": "",
           "number_of_active_array": JSON.parse(el.getAttribute("data-carousel-number-active")),
-          "offset_left_array": JSON.parse(el.getAttribute("data-carousel-offset")),
           "number_of_active": "",
-          "carousel_item_offset_left": "",
+          "offset_left_array": JSON.parse(el.getAttribute("data-carousel-offset")),
+          "offset_left": "",
           "carousel_item_width": "",
           "current_active_carousel_item": ""
         };
@@ -95,7 +96,7 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item.active-item a").forEach(el => { el.setAttribute("tabindex","0"); });
 
       /* changes the left offset */
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["carousel_item_offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
 
       /* ensures there's no transition duration except when we want the transition to occcur */
       setTimeout(function(){
@@ -209,11 +210,11 @@ storm_eagle.module("carousel", function () {
       //console.log([carousel_state[carousel_id]["current_active_carousel_item"]]);
 
       /* updates the carousel width state property and updates the carousel container */
-      carousel_state[carousel_id]["carousel_item_width"] = (document.getElementById(carousel_id).offsetWidth - (2 * carousel_state[carousel_id]["carousel_item_offset_left"])) / carousel_state[carousel_id]["number_of_active"];
+      carousel_state[carousel_id]["carousel_item_width"] = (document.getElementById(carousel_id).offsetWidth - (2 * carousel_state[carousel_id]["offset_left"])) / carousel_state[carousel_id]["number_of_active"];
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']").forEach(el => {
         el.style.width = carousel_state[carousel_id]["carousel_item_width"] + "px";
       });
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["carousel_item_offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"]) + "px";
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"]) + "px";
 
       /* if the carousel item height changes, a height needs to be set for the container */
       if (carousel_state[carousel_id]["item_height_variable"] === "true") {
@@ -253,17 +254,21 @@ storm_eagle.module("carousel", function () {
       }
 
       if (storm_eagle.client.viewport.is_sm_only()) {
-        carousel_state[carousel_id]["carousel_item_offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][0]);
+        carousel_state[carousel_id]["offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][0]);
         carousel_state[carousel_id]["number_of_active"] = carousel_state[carousel_id]["number_of_active_array"][0];
+        carousel_state[carousel_id]["transition_duration"] = carousel_state[carousel_id]["transition_duration_array"][0];
       } else if (storm_eagle.client.viewport.is_md_only()) {
-        carousel_state[carousel_id]["carousel_item_offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][1]);
+        carousel_state[carousel_id]["offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][1]);
         carousel_state[carousel_id]["number_of_active"] = carousel_state[carousel_id]["number_of_active_array"][1];
+        carousel_state[carousel_id]["transition_duration"] = carousel_state[carousel_id]["transition_duration_array"][1];
       } else if (storm_eagle.client.viewport.is_lg_only()) {
-        carousel_state[carousel_id]["carousel_item_offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][2]);
+        carousel_state[carousel_id]["offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][2]);
         carousel_state[carousel_id]["number_of_active"] = carousel_state[carousel_id]["number_of_active_array"][2];
+        carousel_state[carousel_id]["transition_duration"] = carousel_state[carousel_id]["transition_duration_array"][2];
       } else if (storm_eagle.client.viewport.is_xl_up()) {
-        carousel_state[carousel_id]["carousel_item_offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][3]);
+        carousel_state[carousel_id]["offset_left"] = calculate_pixel_value(carousel_id, carousel_state[carousel_id]["offset_left_array"][3]);
         carousel_state[carousel_id]["number_of_active"] = carousel_state[carousel_id]["number_of_active_array"][3];
+        carousel_state[carousel_id]["transition_duration"] = carousel_state[carousel_id]["transition_duration_array"][3];
       }
     },
     force_resize: function (carousel_id) {
@@ -279,6 +284,10 @@ storm_eagle.module("carousel", function () {
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("md+:hide");
           self.disable_carousel(carousel_id);
         }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "sm-up") {
+        if (storm_eagle.client.viewport.is_sm_up()) {
+          self.reinitialize_carousel(carousel_id);
+        }
       } else if (carousel_state[carousel_id]["breakpoint"] === "md-down") {
         if (storm_eagle.client.viewport.is_md_down()) {
           self.reinitialize_carousel(carousel_id);
@@ -288,9 +297,64 @@ storm_eagle.module("carousel", function () {
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("lg+:hide");
           self.disable_carousel(carousel_id);
         }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "md-only") {
+        if (storm_eagle.client.viewport.is_md_only()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("sm=:hide").addClass("lg+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("sm=:hide").addClass("lg+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("sm=:hide").addClass("lg+:hide");
+          self.disable_carousel(carousel_id);
+        }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "md-up") {
+        if (storm_eagle.client.viewport.is_md_up()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("sm=:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("sm=:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("sm=:hide");
+          self.disable_carousel(carousel_id);
+        }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "lg-down") {
+        if (storm_eagle.client.viewport.is_lg_down()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("xl+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("xl+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("xl+:hide");
+          self.disable_carousel(carousel_id);
+        }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "lg-only") {
+        if (storm_eagle.client.viewport.is_lg_only()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("md-:hide").addClass("xl+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("md-:hide").addClass("xl+:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("md-:hide").addClass("xl+:hide");
+          self.disable_carousel(carousel_id);
+        }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "lg-up") {
+        if (storm_eagle.client.viewport.is_lg_up()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("md-:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("md-:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("md-:hide");
+          self.disable_carousel(carousel_id);
+        }
+      } else if (carousel_state[carousel_id]["breakpoint"] === "xl-up") {
+        if (storm_eagle.client.viewport.is_xl_up()) {
+          self.reinitialize_carousel(carousel_id);
+        } else {
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").addClass("lg-:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev']").addClass("lg-:hide");
+          document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next']").addClass("lg-:hide");
+          self.disable_carousel(carousel_id);
+        }
       } else {
         self.reinitialize_carousel(carousel_id);
       }
+
     }
   };
 });
