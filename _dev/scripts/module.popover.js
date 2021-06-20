@@ -96,7 +96,7 @@ storm_eagle.module('popover', function () {
     get_popover_focusable_elements: function(popover_id) {
       const self = this;
       popover_state[popover_id]["focusable_elements"] = document.getElementById(popover_id).querySelectorAll(focus_trap_selector);
-      console.log(popover_state[popover_id]["focusable_elements"]);
+      //console.log(popover_state[popover_id]["focusable_elements"]);
     },
     add_popover_overlay_close_listener: function() {
       const self = this;
