@@ -107,7 +107,7 @@ storm_eagle.module('form_validation', function () {
 storm_eagle.module('form_style_1_floating_labels', function () {
   "use strict";
 
-  function setActiveLabel() {
+  function set_active_label() {
     this.nextElementSibling.classList[(this.value.length ? 'add' : 'remove')]('active-label');
   }
 
@@ -115,11 +115,10 @@ storm_eagle.module('form_style_1_floating_labels', function () {
     initialize: function () {
       document.querySelectorAll('.form\\:style\\:1 input, .form\\:style\\:1 select, .form\\:style\\:1 textarea').forEach((el) => {
         if (el.type !== 'radio') {
-            setActiveLabel.call(el);
-            el.addEventListener('change', setActiveLabel);
+            set_active_label.call(el);
+            el.addEventListener('change', set_active_label);
         }
       });
     }
-
   };
 });
