@@ -28,6 +28,7 @@ $colors: (
 
 $sizes: (
   16px : rem-calc(16),
+  20px : rem-calc(20),
   24px : rem-calc(24),
   32px : rem-calc(32),
   48px : rem-calc(48)
@@ -57,5 +58,15 @@ $sizes: (
   background-position: center center;
 }
 
+
+.icon.chevron-circle-down { background-image: url('../assets/icon/chevron-circle-down.svg'); }
 .icon.chevron-circle-left { background-image: url('../assets/icon/chevron-circle-left.svg'); }
 .icon.chevron-circle-right { background-image: url('../assets/icon/chevron-circle-right.svg'); }
+.icon.chevron-circle-up { background-image: url('../assets/icon/chevron-circle-up.svg'); }
+.icon.chevron-down { background-image: url('../assets/icon/chevron-down.svg'); }
+.icon.chevron-left { background-image: url('../assets/icon/chevron-left.svg'); }
+.icon.chevron-right { background-image: url('../assets/icon/chevron-right.svg'); }
+.icon.chevron-up { background-image: url('../assets/icon/chevron-up.svg'); }
+.icon.info-circle { background-image: url('../assets/icon/info-circle.svg'); }
+.icon.times { background-image: url('../assets/icon/times.svg'); }
+
