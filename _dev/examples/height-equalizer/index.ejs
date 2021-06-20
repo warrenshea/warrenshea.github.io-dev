@@ -227,12 +227,12 @@
                     const self = this;
                     self.get_data_equal_height_items();
                     max_Height();
-                    if (storm_eagle.client.viewport.is_small()) {
+                    if (storm_eagle.client.viewport.is_sm_only()) {
                         document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
                             el.style.height = "auto";
                         });
                     }
-                    if (!storm_eagle.client.viewport.is_small()) {
+                    if (storm_eagle.client.viewport.is_md_up()) {
                         document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach((el) => {
                             el.style.height = "auto";
                         });

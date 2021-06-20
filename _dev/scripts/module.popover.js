@@ -118,10 +118,10 @@ storm_eagle.module('popover', function () {
       let popover_trigger = document.querySelector("[data-module='popover.trigger'].active");
       let popover = document.getElementById(popover_id);
 
-      if (storm_eagle.client.viewport.is_small() || storm_eagle.client.viewport.is_medium()) {
+      if (storm_eagle.client.viewport.is_md_down()) {
         popover.style.top = "initial";
         popover.style.left = "0px";
-      } else if (storm_eagle.client.viewport.is_large() || storm_eagle.client.viewport.is_xlarge()) {
+      } else if (storm_eagle.client.viewport.is_lg_up()) {
         popover.style.top = popover_trigger.offsetTop + "px";
         popover.style.left = popover_trigger.offsetLeft + 40 + "px";
       }

@@ -17,13 +17,13 @@ keyboard.keys = {
 };
 
 const breakpoints = {
-  'small_min': 320,
-  'small_max': 767,
-  'medium_min': 768,
-  'medium_max': 1023,
-  'large_min': 1024,
-  'large_max': 1279,
-  'xlarge_min': 1280
+  'sm_min': 320,
+  'sm_max': 767,
+  'md_min': 768,
+  'md_max': 1023,
+  'lg_min': 1024,
+  'lg_max': 1279,
+  'xl_min': 1280
 };
 
 const focus_trap_selector = `a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), li[role="tab"]:not([disabled]), div[role="tabpanel"]:not([disabled]), label`;
@@ -45,11 +45,15 @@ const remove_focus_selector = `.form\\:style\\:1 input[type="radio"]+label, .for
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
  * storm_eagle.client.viewport.get_height()
- * storm_eagle.client.viewport.is_retina()
- * storm_eagle.client.viewport.is_xlarge()
- * storm_eagle.client.viewport.is_large()
- * storm_eagle.client.viewport.is_medium()
- * storm_eagle.client.viewport.is_small()
+ * storm_eagle.client.viewport.sm_only()
+ * storm_eagle.client.viewport.sm_up()
+ * storm_eagle.client.viewport.md_down()
+ * storm_eagle.client.viewport.md_only()
+ * storm_eagle.client.viewport.md_up()
+ * storm_eagle.client.viewport.lg_down()
+ * storm_eagle.client.viewport.lg_only()
+ * storm_eagle.client.viewport.lg_up()
+ * storm_eagle.client.viewport.xl_up()
  * storm_eagle.client.get_user_agent()
  * storm_eagle.client.is_android()
  * storm_eagle.client.is_blackberry()
@@ -346,13 +350,13 @@ const storm_eagle = (function(window, document, undefined) {
         get_breakpoint : function() {
           const viewportWidth = storm_eagle.client.viewport.get_width();
 
-          if (viewportWidth >= breakpoints["xlarge_min"])
+          if (viewportWidth >= breakpoints["xl_min"])
             return 'xl'
-          else if (viewportWidth >= breakpoints["large_min"])
+          else if (viewportWidth >= breakpoints["lg_min"])
             return 'lg'
-          else if (viewportWidth >= breakpoints["medium_min"])
+          else if (viewportWidth >= breakpoints["md_min"])
             return 'md'
-          else if (viewportWidth >= breakpoints["small_min"])
+          else if (viewportWidth >= breakpoints["sm_min"])
             return 'sm'
           else {
             storm_eagle.throw_exception("smaller than sm");
@@ -388,44 +392,31 @@ const storm_eagle = (function(window, document, undefined) {
         },
 
         /**
-         * Checks if the viewport is within the "xlarge" threshhold
+         * Checks if the viewport is within "sm_only" threshhold
+         * Checks if the viewport is within "sm_up" threshhold
+         * Checks if the viewport is within "md_down" threshhold
+         * Checks if the viewport is within "md_only" threshhold
+         * Checks if the viewport is within "md_up" threshhold
+         * Checks if the viewport is within "lg_down" threshhold
+         * Checks if the viewport is within "lg_only" threshhold
+         * Checks if the viewport is within "lg_up" threshhold
+         * Checks if the viewport is within "xl_up" threshhold
          *
          * @return boolean
          * @scope public
          */
-        is_xlarge : function() {
-          return (storm_eagle.client.viewport.get_width() >= breakpoints["xlarge_min"]) ? true : false;
-        },
+        is_sm_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["sm_max"]) ? true : false; },
+        is_sm_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"]) ? true : false; },
+        is_md_down : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
+        is_md_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
+        is_md_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"]) ? true : false; },
+        is_lg_down : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
+        is_lg_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
+        is_lg_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"]) ? true : false; },
+        is_xl_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["xl_min"]) ? true : false; },
 
-        /**
-         * Checks if the viewport is within the "xlarge" threshhold
-         *
-         * @return boolean
-         * @scope public
-         */
-        is_large : function() {
-          return (storm_eagle.client.viewport.get_width() >= breakpoints["large_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["large_max"]) ? true : false;
-        },
 
-        /**
-         * Checks if the viewport is within the "medium" threshhold
-         *
-         * @return boolean
-         * @scope public
-         */
-        is_medium : function() {
-          return (storm_eagle.client.viewport.get_width() >= breakpoints["medium_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["medium_max"]) ? true : false;
-        },
 
-        /**
-         * Checks if the viewport is within the "small" threshhold
-         *
-         * @return boolean
-         * @scope public
-         */
-        is_small : function() {
-          return (storm_eagle.client.viewport.get_width() >= breakpoints["small_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["small_max"]) ? true : false;
-        },
 
       },
 
@@ -812,12 +803,12 @@ storm_eagle.module('equalize_heights', function () {
       const self = this;
       self.get_data_equal_height_items();
       max_Height();
-      if (storm_eagle.client.viewport.is_small()) {
+      if (storm_eagle.client.viewport.is_sm_only()) {
         document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
           el.style.height = "auto";
         });
       }
-      if (!storm_eagle.client.viewport.is_small()) {
+      if (storm_eagle.client.viewport.is_md_up()) {
         document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach((el) => {
           el.style.height = "auto";
         });
@@ -834,7 +825,7 @@ storm_eagle.module('disable_tel_medium_up', function () {
     initialize: function () {
       document.querySelectorAll('a[href^="tel"]').forEach((el) => {
         el.addEventListener("click", function(event) {
-          if (!storm_eagle.client.viewport.is_small()) {
+          if (storm_eagle.client.viewport.is_md_up()) {
             event.preventDefault();
           }
         });
