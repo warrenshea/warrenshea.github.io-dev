@@ -174,7 +174,7 @@ fieldset.unstyle { border:0; padding:0 }
     font-size: rem-calc(14);
     font-family: 'heebo';
     color: $negative;
-    background: url(../assets/icon/16/inline-error.svg) no-repeat top left;
+    background: url(../assets/icon/exclamation-circle.svg) no-repeat top left;
     background-size: 16px 16px;
     visibility: hidden;
     opacity: 0;
@@ -210,15 +210,15 @@ fieldset.unstyle { border:0; padding:0 }
     li {
       line-height: 24px;
       padding: 4px 6px 4px 32px;
-      background-image: url(../assets/icon/24/close.svg);
+      background-image: url(../assets/icon/times.svg);
       background-repeat: no-repeat;
       background-position: top 2px left 2px;
       background-size: 24px 24px;
       &.pass {
-        background-image: url(../assets/icon/24/checkmark.svg);
+        background-image: url(../assets/icon/check.svg);
       }
       &.fail {
-        background-image: url(../assets/icon/24/cross.svg);
+        background-image: url(../assets/icon/times.svg);
       }
     }
 
@@ -228,7 +228,7 @@ fieldset.unstyle { border:0; padding:0 }
   select {
     cursor: pointer;
     background-color: transparent;
-    background-image: url('../assets/icon/16/baby-chevy-down.svg');
+    background-image: url('../assets/icon/chevron-down.svg');
     background-repeat: no-repeat;
     background-position: right 8px top 10px;
     background-size: 16px 16px;
@@ -311,7 +311,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked+label:before {
       background-color: $bluea;
-      background-image: url('../assets/icon/16/checkmark.svg');
+      background-image: url('../assets/icon/check.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 15px;
@@ -322,7 +322,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked:disabled+label:before {
       background-color: $granite;
-      background-image: url('../assets/icon/16/checkmark.svg');
+      background-image: url('../assets/icon/check.svg');
       border: 2px solid $granite;
     }
   }
@@ -338,7 +338,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     & > input[type="checkbox"][aria-checked="true"] + label:before {
         background-color: $bluea;
-        background-image: url('../assets/icon/16/checkmark.svg');
+        background-image: url('../assets/icon/check.svg');
     }
   }
 
@@ -433,7 +433,7 @@ fieldset.unstyle { border:0; padding:0 }
       width: 24px;
       height: 24px;
       border-radius: 0 0 0 4px;
-      background-image: url('../assets/icon/16/checkmark.svg');
+      background-image: url('../assets/icon/chevron-down.svg');
       background-repeat: no-repeat;
       background-color: #68bbe8;
       background-size: 16px 16px;
@@ -466,7 +466,7 @@ fieldset.unstyle { border:0; padding:0 }
     div.check {
       opacity: 1;
       visibility: visible;
-      background: $bluea url('../assets/icon/16/checkmark.svg') 8px no-repeat;
+      background: $bluea url('../assets/icon/check.svg') 8px no-repeat;
       background-position: center center;
       background-size: 16px;
     }
@@ -503,7 +503,7 @@ fieldset.unstyle { border:0; padding:0 }
     font-size: rem-calc(14);
     font-family: 'heebo';
     color: $negative;
-    background: url(../assets/icon/16/inline-error.svg) no-repeat top left;
+    background: url(../assets/icon/exclamation-circle.svg) no-repeat top left;
     background-size: 16px 16px;
     visibility: hidden;
     opacity: 0;
@@ -534,7 +534,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     input {
       &.magnifying-glass{
-        background: url(../assets/icon/24/search.svg) center right no-repeat;
+        background: url(../assets/icon/search.svg) center right no-repeat;
       }
     }
     .autocomplete-results{
@@ -570,6 +570,6 @@ fieldset.unstyle { border:0; padding:0 }
 
 @media all and (-ms-high-contrast:none) {
   *::-ms-backdrop, .form\:style\:2 .autocomplete input.magnifying-glass {
-    background: url(../assets/icon/24/search.svg) 94% center no-repeat
+    background: url(../assets/icon/search.svg) 94% center no-repeat
   }
 }
