@@ -1,11 +1,13 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-<button class="flex-grow:0 unstyle ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item');" aria-label="Additional information about cash holdings, opens in a new pop-up"><span class="icon display:block icon-color:blue icon-size:32px info-circle" aria-hidden="true"></span></button>
-<div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item" aria-labelledby="focused-item-id">
-  <div class="bgc:white w:100% md-:brtl:4px md-:brtr:4px lg+:br:4px">
-    <button class="unstyle close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="icon display:block icon-color:blue icon-size:24px times" aria-hidden="true"></span></button>
-    <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-      <p id="focused-item-id">Test</p>
+<div class="position:relative">
+  <button class="flex-grow:0 unstyle ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item');" aria-label="Additional information about cash holdings, opens in a new pop-up"><span class="icon display:block icon-color:blue icon-size:32px info-circle" aria-hidden="true"></span></button>
+  <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item" aria-labelledby="focused-item-id">
+    <div class="bgc:white w:100% md-:brtl:4px md-:brtr:4px lg+:br:4px">
+      <button class="unstyle close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="icon display:block icon-color:blue icon-size:24px times" aria-hidden="true"></span></button>
+      <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+        <p id="focused-item-id">Test</p>
+      </div>
     </div>
   </div>
 </div>
