@@ -200,7 +200,7 @@ storm_eagle.module("carousel", function () {
       // });
       document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML = "";
       for (let i=0;i<=(carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]);i++){
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML += '<button name="carousel-control-button" class="control cursor:pointer" aria-hidden="true" tabindex="-1"><span class="show-for-sr">Go to slide #' + (i + 1) + '</button>';
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML += '<button name="carousel-control-button" class="control cursor:pointer"><span class="show-for-sr">Go to slide #' + (i + 1) + '</button>';
       }
       self.indicators_listener(carousel_id);
 

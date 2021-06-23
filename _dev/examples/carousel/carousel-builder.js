@@ -72,9 +72,9 @@ storm_eagle.module("carousel_builder", function () {
       }
       document.querySelectorAll("[data-module='carousel']").forEach(function (el) {
         let carousel_id = el.getAttribute("id");
-        storm_eagle.carousel.disable_carousel(carousel_id)
-        storm_eagle.carousel.reinitialize_carousel(carousel_id);
+        storm_eagle.carousel.disable_carousel(carousel_id);
       });
+      storm_eagle.carousel.initialize();
     }
   };
 });
