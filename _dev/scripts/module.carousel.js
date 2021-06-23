@@ -66,7 +66,7 @@ storm_eagle.module("carousel", function () {
         for (let i=0;i<carousel_state[carousel_id]["number_of_active"];i++) {
           let temp = carousel_state[carousel_id]["current_active_carousel_item"];
           if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
-            document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"] + i].addClass("active");
+            document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active");
           } else { //odd # of slides
             // if (
             //   temp >= (-1 * (parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1) * .5) &&
@@ -112,7 +112,12 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item.active-item a").forEach(el => { el.setAttribute("tabindex","0"); });
 
       /* changes the left offset */
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - ((carousel_state[carousel_id]["current_active_carousel_item"] - (carousel_state[carousel_id]["number_of_active"]-1)/2) * carousel_state[carousel_id]["carousel_item_width"])) + "px";
+      if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
+      } else { //odd # of slides
+        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - ((carousel_state[carousel_id]["current_active_carousel_item"] - (carousel_state[carousel_id]["number_of_active"]-1)/2) * carousel_state[carousel_id]["carousel_item_width"])) + "px";
+      }
+
 
       /* ensures there's no transition duration except when we want the transition to occcur */
       setTimeout(function(){
