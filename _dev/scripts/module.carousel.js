@@ -64,7 +64,17 @@ storm_eagle.module("carousel", function () {
         });
         document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active-item");
         for (let i=0;i<carousel_state[carousel_id]["number_of_active"];i++) {
-          document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"] + i].addClass("active");
+          let temp = carousel_state[carousel_id]["current_active_carousel_item"];
+          if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
+            document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"] + i].addClass("active");
+          } else { //odd # of slides
+            if (temp >= (-1 * (parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1)/2)) {
+
+               // && temp <= ([carousel_state[carousel_id]["current_active_carousel_item"] - 1)/2)
+
+              document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active");
+            }
+          }
         }
 
         /* resets the active classes on the carousel control and adds the proper active classes */
@@ -83,7 +93,7 @@ storm_eagle.module("carousel", function () {
         /* hide chevrons */
         if (carousel_state[carousel_id]["current_active_carousel_item"] === 0){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").addClass("display:none").removeClass("display:block");
-        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
+        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"]){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").addClass("display:none").removeClass("display:block");
         }
       }
@@ -199,7 +209,7 @@ storm_eagle.module("carousel", function () {
       //   el.remove();
       // });
       document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML = "";
-      for (let i=0;i<=(carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]);i++){
+      for (let i=0;i<(carousel_state[carousel_id]["total_children"]);i++){
         document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML += '<button name="carousel-control-button" class="control cursor:pointer" aria-hidden="true" tabindex="-1"><span class="show-for-sr">Go to slide #' + (i + 1) + '</button>';
       }
       self.add_carousel_indicators_listener(carousel_id);
@@ -214,7 +224,7 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']").forEach(el => {
         el.style.width = carousel_state[carousel_id]["carousel_item_width"] + "px";
       });
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"]) + "px";
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"] + carousel_state[carousel_id]["number_of_active"] + 1) + "px";
 
       /* if the carousel item height changes, a height needs to be set for the container */
       if (carousel_state[carousel_id]["item_height_variable"] === "true") {
