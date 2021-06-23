@@ -38,8 +38,8 @@ storm_eagle.module('popover', function () {
         }
         self.get_popover_focusable_elements(popover_id);
       });
-      self.add_popover_resize_listener();
-      self.add_popover_overlay_close_listener();
+      self.resize_listener();
+      self.overlay_close_listener();
     },
     open: function(popover_trigger,popover_id) {
       const self = this;
@@ -98,7 +98,7 @@ storm_eagle.module('popover', function () {
       popover_state[popover_id]["focusable_elements"] = document.getElementById(popover_id).querySelectorAll(focus_trap_selector);
       //console.log(popover_state[popover_id]["focusable_elements"]);
     },
-    add_popover_overlay_close_listener: function() {
+    overlay_close_listener: function() {
       const self = this;
       if (document.querySelector("[data-module='popover.overlay']")) {
         document.querySelector("[data-module='popover.overlay']").addEventListener('click', function() {
@@ -106,13 +106,15 @@ storm_eagle.module('popover', function () {
         });
       }
     },
-    add_popover_resize_listener: function() {
+    resize_listener: function () {
       const self = this;
-      window.addEventListener("resize", function (event) {
+
+      function force_resize() {
         if (document.querySelector("[data-module='popover'].active")){
           self.set_popover_location(document.querySelector("[data-module='popover'].active").getAttribute("id"));
         }
-      });
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
     },
     set_popover_location: function(popover_id) {
       let popover_trigger = document.querySelector("[data-module='popover.trigger'].active");

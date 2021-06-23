@@ -29,16 +29,16 @@ storm_eagle.module("carousel", function () {
         self.init_ui(carousel_id);
         self.update_carousel_state(carousel_id);
 
-        //self.add_tab_carousel_id_listener(carousel_id);
+        //self.tab_carousel_id_listener(carousel_id);
       });
     },
     ready : function() {
       const self = this;
       document.querySelectorAll("[data-module='carousel']").forEach(function (el,index) {
         let carousel_id = el.getAttribute("id");
-        self.add_swipe_listener(carousel_id);
-        self.add_carousel_control_buttons_listener(carousel_id);
-        self.add_resize_listener(carousel_id);
+        self.swipe_listener(carousel_id);
+        self.control_buttons_listener(carousel_id);
+        self.resize_listener(carousel_id);
       });
     },
     init_ui : function(carousel_id){
@@ -64,21 +64,7 @@ storm_eagle.module("carousel", function () {
         });
         document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active-item");
         for (let i=0;i<carousel_state[carousel_id]["number_of_active"];i++) {
-          let temp = carousel_state[carousel_id]["current_active_carousel_item"];
-          if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
-            document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active");
-          } else { //odd # of slides
-            // if (
-            //   temp >= (-1 * (parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1) * .5) &&
-            //   temp <= ((parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1) * .5)) {
-
-
-
-
-
-              document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active");
-            // }
-          }
+          document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"] + i].addClass("active");
         }
 
         /* resets the active classes on the carousel control and adds the proper active classes */
@@ -97,14 +83,12 @@ storm_eagle.module("carousel", function () {
         /* hide chevrons */
         if (carousel_state[carousel_id]["current_active_carousel_item"] === 0){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").addClass("display:none").removeClass("display:block");
-        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"] - 1){
+        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").addClass("display:none").removeClass("display:block");
         }
       }
 
       set_active_items(carousel_id);
-      console.log(carousel_state[carousel_id]["current_active_carousel_item"]);
-      console.log(carousel_state[carousel_id]);
       update_controls(carousel_id);
 
       /* ensures only links in the active carousel or tab-able */
@@ -112,19 +96,14 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item.active-item a").forEach(el => { el.setAttribute("tabindex","0"); });
 
       /* changes the left offset */
-      if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
-      } else { //odd # of slides
-        document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - ((carousel_state[carousel_id]["current_active_carousel_item"] - (carousel_state[carousel_id]["number_of_active"]-1)/2) * carousel_state[carousel_id]["carousel_item_width"])) + "px";
-      }
-
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
 
       /* ensures there's no transition duration except when we want the transition to occcur */
       setTimeout(function(){
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = "0s";
       }, carousel_state[carousel_id]["transition_duration"] * 1000);
     },
-    add_carousel_indicators_listener : function(carousel_id){
+    indicators_listener : function(carousel_id){
       const self = this;
 
       /* reset the listeners */
@@ -143,7 +122,7 @@ storm_eagle.module("carousel", function () {
       });
 
     },
-    add_carousel_control_buttons_listener : function(carousel_id){
+    control_buttons_listener : function(carousel_id){
       const self = this;
 
       function swipe_left(event) {
@@ -166,13 +145,13 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").addEventListener("click", swipe_left);
       document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").addEventListener("click", swipe_right);
     },
-    add_swipe_listener : function(carousel_id) {
+    swipe_listener : function(carousel_id) {
       const self = this;
 
       /* if a coursel is swiped left */
       document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").addEventListener("swiped-left", function(e){ //go -> in the carousel
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
-        if (carousel_state[carousel_id]["current_active_carousel_item"] !== carousel_state[carousel_id]["total_children"]){
+        if (carousel_state[carousel_id]["current_active_carousel_item"] !== carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
           carousel_state[carousel_id]["current_active_carousel_item"]++;
           self.update_carousel(carousel_id);
         }
@@ -187,7 +166,7 @@ storm_eagle.module("carousel", function () {
         }
       });
     },
-    // add_tab_carousel_id_listener: function(carousel_id) {
+    // tab_carousel_id_listener: function(carousel_id) {
     //   const self = this;
 
     //   /* iterate through data-tabable and, on focus, move carousel */
@@ -201,7 +180,7 @@ storm_eagle.module("carousel", function () {
     //     });
     //   });
     // },
-    add_resize_listener: function (carousel_id) {
+    resize_listener: function (carousel_id) {
       const self = this;
 
       function force_resize() {
@@ -220,10 +199,10 @@ storm_eagle.module("carousel", function () {
       //   el.remove();
       // });
       document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML = "";
-      for (let i=0;i<(carousel_state[carousel_id]["total_children"]);i++){
+      for (let i=0;i<=(carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]);i++){
         document.getElementById(carousel_id).querySelector("[data-module='carousel.indicators-group']").innerHTML += '<button name="carousel-control-button" class="control cursor:pointer" aria-hidden="true" tabindex="-1"><span class="show-for-sr">Go to slide #' + (i + 1) + '</button>';
       }
-      self.add_carousel_indicators_listener(carousel_id);
+      self.indicators_listener(carousel_id);
 
       /* set the active item class on the control buttons */
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.indicators-group'] .control")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active-item");
@@ -235,7 +214,7 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']").forEach(el => {
         el.style.width = carousel_state[carousel_id]["carousel_item_width"] + "px";
       });
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"] + carousel_state[carousel_id]["number_of_active"] + 1) + "px";
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.width = carousel_state[carousel_id]["offset_left"] + (carousel_state[carousel_id]["carousel_item_width"] * carousel_state[carousel_id]["total_children"]) + "px";
 
       /* if the carousel item height changes, a height needs to be set for the container */
       if (carousel_state[carousel_id]["item_height_variable"] === "true") {

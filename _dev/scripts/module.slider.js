@@ -11,8 +11,8 @@ storm_eagle.module('slider', function () {
         slider_state[slider_id] = {
           "num_labels": document.getElementById(slider_id).querySelectorAll("[data-module='slider.labels'] > * ").length
         };
-        self.add_slider_listener(slider_id);
-        self.add_resize_listener(slider_id);
+        self.slider_listener(slider_id);
+        self.resize_listener(slider_id);
         self.update_slider_track(slider_id);
       });
     },
@@ -31,7 +31,7 @@ storm_eagle.module('slider', function () {
       document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.width = container_width + "px";
       document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.left = (0 + (slider_thumb_width/2) - (new_label_width / 2)) +  "px";
     },
-    add_slider_listener: function(slider_id) {
+    slider_listener: function(slider_id) {
       var self = this;
 
       let el = document.getElementById(slider_id).querySelector("[data-module='slider.input']");
@@ -44,7 +44,7 @@ storm_eagle.module('slider', function () {
       var percentage = Math.round((el.value - el.getAttribute("min")) / (el.getAttribute("max") - el.getAttribute("min")) * 100);
       document.getElementById(slider_id).querySelector("[data-module='slider.fill']").style.width = percentage + "%";
     },
-    add_resize_listener: function (slider_id) {
+    resize_listener: function (slider_id) {
       const self = this;
 
       function force_resize() {

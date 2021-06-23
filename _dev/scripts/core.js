@@ -792,6 +792,10 @@ storm_eagle.module('equalize_heights', function () {
       self.get_data_equal_height_items();
       self.resize_listener();
     },
+    ready: function() {
+      const self = this;
+      self.force_resize();
+    },
     /*
     * Checks all the items that need to equalize height, and add keys to array
     */
@@ -808,12 +812,11 @@ storm_eagle.module('equalize_heights', function () {
     */
     resize_listener: function () {
       const self = this;
-      window.addEventListener("resize", (event) => {
-        self.force_resize();
-      })
-      window.addEventListener('DOMContentLoaded', (event) => {
-        self.force_resize();
-      });
+
+      function force_resize() {
+        return self.force_resize();
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
     },
     /*
     * Check for any new items to equalize, and then equalize them
