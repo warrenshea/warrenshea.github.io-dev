@@ -68,12 +68,16 @@ storm_eagle.module("carousel", function () {
           if (carousel_state[carousel_id]["number_of_active"] % 2 === 0) { //even # of slides
             document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"] + i].addClass("active");
           } else { //odd # of slides
-            if (temp >= (-1 * (parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1)/2)) {
+            // if (
+            //   temp >= (-1 * (parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1) * .5) &&
+            //   temp <= ((parseInt(carousel_state[carousel_id]["current_active_carousel_item"]) - 1) * .5)) {
 
-               // && temp <= ([carousel_state[carousel_id]["current_active_carousel_item"] - 1)/2)
+
+
+
 
               document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item']:not(.display\\:none)")[carousel_state[carousel_id]["current_active_carousel_item"]].addClass("active");
-            }
+            // }
           }
         }
 
@@ -93,12 +97,14 @@ storm_eagle.module("carousel", function () {
         /* hide chevrons */
         if (carousel_state[carousel_id]["current_active_carousel_item"] === 0){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-prev").addClass("display:none").removeClass("display:block");
-        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"]){
+        } else if (carousel_state[carousel_id]["current_active_carousel_item"] === carousel_state[carousel_id]["total_children"] - 1){
           document.getElementById(carousel_id).querySelector("[data-module='carousel.controls-next").addClass("display:none").removeClass("display:block");
         }
       }
 
       set_active_items(carousel_id);
+      console.log(carousel_state[carousel_id]["current_active_carousel_item"]);
+      console.log(carousel_state[carousel_id]);
       update_controls(carousel_id);
 
       /* ensures only links in the active carousel or tab-able */
@@ -106,7 +112,7 @@ storm_eagle.module("carousel", function () {
       document.getElementById(carousel_id).querySelectorAll("[data-module='carousel.item-group'] .item.active-item a").forEach(el => { el.setAttribute("tabindex","0"); });
 
       /* changes the left offset */
-      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - (carousel_state[carousel_id]["current_active_carousel_item"] * carousel_state[carousel_id]["carousel_item_width"])) + "px";
+      document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.left = (carousel_state[carousel_id]["offset_left"] - ((carousel_state[carousel_id]["current_active_carousel_item"] - (carousel_state[carousel_id]["number_of_active"]-1)/2) * carousel_state[carousel_id]["carousel_item_width"])) + "px";
 
       /* ensures there's no transition duration except when we want the transition to occcur */
       setTimeout(function(){
@@ -161,7 +167,7 @@ storm_eagle.module("carousel", function () {
       /* if a coursel is swiped left */
       document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").addEventListener("swiped-left", function(e){ //go -> in the carousel
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
-        if (carousel_state[carousel_id]["current_active_carousel_item"] !== carousel_state[carousel_id]["total_children"] - carousel_state[carousel_id]["number_of_active"]){
+        if (carousel_state[carousel_id]["current_active_carousel_item"] !== carousel_state[carousel_id]["total_children"]){
           carousel_state[carousel_id]["current_active_carousel_item"]++;
           self.update_carousel(carousel_id);
         }
