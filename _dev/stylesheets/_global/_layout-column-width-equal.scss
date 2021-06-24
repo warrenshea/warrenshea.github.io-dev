@@ -3,107 +3,78 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}w\-divided-by\:1 {
+    .#{$prefix}w-divided-by\:1,
+    .#{$prefix}w-divided-by\:2,
+    .#{$prefix}w-divided-by\:3,
+    .#{$prefix}w-divided-by\:4,
+    .#{$prefix}w-divided-by\:5,
+    .#{$prefix}w-divided-by\:6,
+    .#{$prefix}w-divided-by\:7,
+    .#{$prefix}w-divided-by\:8 {
       flex-wrap: wrap;
     }
-    .#{$prefix}w\-divided-by\:1 > .column,
-    .#{$prefix}w\-divided-by\:1 > .columns {
+    .#{$prefix}w-divided-by\:1 > * {
       flex: 0 0 100%;
       max-width: 100%;
     }
-    .#{$prefix}w\-divided-by\:2 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:2 > .column,
-    .#{$prefix}w\-divided-by\:2 > .columns {
+    .#{$prefix}w-divided-by\:2 > * {
       flex: 0 0 50%;
       max-width: 50%;
     }
-    .#{$prefix}w\-divided-by\:3 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:3 > .column,
-    .#{$prefix}w\-divided-by\:3 > .columns {
+    .#{$prefix}w-divided-by\:3 > * {
       flex: 0 0 33.33333%;
       max-width: 33.33333%;
     }
-    .#{$prefix}w\-divided-by\:4 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:4 > .column,
-    .#{$prefix}w\-divided-by\:4 > .columns {
+    .#{$prefix}w-divided-by\:4 > * {
       flex: 0 0 25%;
       max-width: 25%;
     }
-    .#{$prefix}w\-divided-by\:5 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:5 > .column,
-    .#{$prefix}w\-divided-by\:5 > .columns {
+    .#{$prefix}w-divided-by\:5 > * {
       flex: 0 0 20%;
       max-width: 20%;
     }
-    .#{$prefix}w\-divided-by\:6 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:6 > .column,
-    .#{$prefix}w\-divided-by\:6 > .columns {
+    .#{$prefix}w-divided-by\:6 > * {
       flex: 0 0 16.66667%;
       max-width: 16.66667%;
     }
-    .#{$prefix}w\-divided-by\:7 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:7 > .column,
-    .#{$prefix}w\-divided-by\:7 > .columns {
+    .#{$prefix}w-divided-by\:7 > * {
       flex: 0 0 14.28571%;
       max-width: 14.28571%;
     }
-    .#{$prefix}w\-divided-by\:8 {
-      flex-wrap: wrap;
-    }
-    .#{$prefix}w\-divided-by\:8 > .column,
-    .#{$prefix}w\-divided-by\:8 > .columns {
+    .#{$prefix}w-divided-by\:8 > * {
       flex: 0 0 12.5%;
       max-width: 12.5%;
     }
   }
 }
 
-.row.sm\:unstack > .column,
-.row.sm\:unstack > .columns {
+.row.sm\+\:unstack > * {
   flex: 1 1 0px;
 }
 
-.row.md\:unstack > .column,
-.row.md\:unstack > .columns {
+.row.md\+\:unstack > * {
   flex: 0 0 100%;
 }
 @include breakpoint(medium) {
-  .row.md\:unstack > .column,
-  .row.md\:unstack > .columns {
+  .row.md\+\:unstack > * {
     flex: 1 1 0px;
   }
 }
 
-.row.lg\:unstack > .column,
-.row.lg\:unstack > .columns {
+.row.lg\+\:unstack > * {
   flex: 0 0 100%;
 }
 @include breakpoint(large) {
-  .row.lg\:unstack > .column,
-  .row.lg\:unstack > .columns {
+  .row.lg\+\:unstack > * {
     flex: 1 1 0px;
   }
 }
 
-.row.xl\:unstack > .column,
-.row.xl\:unstack > .columns {
+.row.xl\+\:unstack > * {
   flex: 0 0 100%;
 }
 @include breakpoint(xlarge) {
-  .row.xl\:unstack > .column,
-  .row.xl\:unstack > .columns {
+  .row.xl\+\:unstack > * {
     flex: 1 1 0px;
   }
 }
