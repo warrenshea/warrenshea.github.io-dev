@@ -1,2 +1,73 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+    <main class="w:100% bgc:albicant pb:96px">
+      <section class="mw:1200px align-self:centered pt:32px">
+        <h1 class="play:bold fs:36px color:slate sm+:px:8px xl+:px:0">Carousels</h1>
+      </section>
+
+      <section class="mw:1200px align-self:centered pt:32px">
+
+        <ul class="accordion unstyle-pl:0 sm=:pb:32px md+:pb:48px xl+:pb:64px" data-accordion-transition-duration=".25">
+          <li class="bb-grey:1px">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-asset-allocation');" aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="pr:16px print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon display:block icon-color:blue icon-size:32px chevron-down"></div></span>
+                <span class="accordion:show-less-button display:none"><div class="icon display:block icon-color:blue icon-size:32px chevron-up"></div></span>
+              </span>
+              <h3 class="sm=:fs:18px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
+                Dog 1
+              </h3>
+            </button>
+            <div class="xl+:pt:8px active" data-module="accordion">
+              <img src="https://placedog.net/600/200" alt=""><img src="https://placedog.net/600/200" alt="">
+            </div>
+          </li>
+          <li class="bb-grey:1px">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-rating');" aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="pr:16px print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon display:block icon-color:blue icon-size:32px chevron-down"></div></span>
+                <span class="accordion:show-less-button display:none"><div class="icon display:block icon-color:blue icon-size:32px chevron-up"></div></span>
+              </span>
+              <h3 class="sm=:fs:18px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
+                Dog 2
+              </h3>
+            </button>
+            <div class="xl+:pt:8px active" data-module="accordion">
+              <img src="https://placedog.net/600/200" alt=""><img src="https://placedog.net/600/200" alt="">
+            </div>
+          </li>
+          <li class="bb-grey:1px">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-risk');" aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="pr:16px print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon display:block icon-color:blue icon-size:32px chevron-down"></div></span>
+                <span class="accordion:show-less-button display:none"><div class="icon display:block icon-color:blue icon-size:32px chevron-up"></div></span>
+              </span>
+              <h3 class="sm=:fs:18px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
+                Dog 3
+              </h3>
+            </button>
+            <div class="xl+:pt:8px active" data-module="accordion">
+              <img src="https://placedog.net/600/200" alt=""><img src="https://placedog.net/600/200" alt="">
+            </div>
+          </li>
+          <li class="bb-grey:1px">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-diversification');" aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="pr:16px print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon display:block icon-color:blue icon-size:32px chevron-down"></div></span>
+                <span class="accordion:show-less-button display:none"><div class="icon display:block icon-color:blue icon-size:32px chevron-up"></div></span>
+              </span>
+              <h3 class="sm=:fs:18px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
+                Dog 4
+              </h3>
+            </button>
+            <div class="xl+:pt:8px active" data-module="accordion">
+              <img src="https://placedog.net/600/200" alt=""><img src="https://placedog.net/600/200" alt="">
+            </div>
+          </li>
+        </ul>
+
+      </section>
+
+    </main>
+
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

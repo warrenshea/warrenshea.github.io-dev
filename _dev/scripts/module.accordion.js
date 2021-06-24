@@ -11,6 +11,7 @@ storm_eagle.module("accordion", function () {
           "focusable_elements": []
         };
        self.get_accordion_focusable_elements(accordion_id);
+       self.toggle_listener(accordion_id);
       });
     },
     open: function(accordion_id) {
@@ -45,12 +46,13 @@ storm_eagle.module("accordion", function () {
       const accordion = document.getElementById(accordion_id);
       accordion_state[accordion_id]["focusable_elements"] = accordion.querySelectorAll(focus_trap_selector);
     },
-    toggle: function (accordion_trigger, accordion_id) {
+    toggle: function (accordion_trigger) {
       const self = this;
       accordion_trigger.querySelector(".accordion\\:show-more-button").classList.toggle("display:none");
       accordion_trigger.querySelector(".accordion\\:show-less-button").classList.toggle("display:none");
 
-      if (document.getElementById(accordion_id).classList.contains("active")) {
+      console.log(accordion_trigger);
+      if (accordion_trigger.nextSibling.classList.contains("active")) {
         /* if the accordion is open */
         accordion_trigger.setAttribute("aria-expanded", false);
         accordion_trigger.classList.remove("active");
@@ -61,6 +63,17 @@ storm_eagle.module("accordion", function () {
         accordion_trigger.classList.add("active");
         self.open(accordion_id);
       }
+    },
+    toggle_listener: function(accordion_id) {
+      const self = this;
+
+      /* if a carousel control button is clicked, update the carousel and change the active state */
+      document.getElementById(accordion_id).querySelectorAll("[data-module='accordion.trigger']").forEach(el => {
+        el.addEventListener("click", function(e){
+          e.preventDefault();
+          self.toggle(this);
+        });
+      });
     }
   }
 });
