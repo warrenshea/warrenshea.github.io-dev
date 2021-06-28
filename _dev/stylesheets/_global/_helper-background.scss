@@ -7,22 +7,22 @@
     .#{$prefix}bgc\:transparent { background-color: transparent; }
     .#{$prefix}bgc\:blue { background-color: $blue; }
     .#{$prefix}bgc\:bluea { background-color: $bluea; }
-    .#{$prefix}bgc\:bluea\:80\%{ background-color: rgba(0,117,190,.8); }
+    .#{$prefix}bgc\:bluea\:80\%{ background-color: rgba($bluea,.8); }
     .#{$prefix}bgc\:red { background-color: $red; }
     .#{$prefix}bgc\:ultramarine { background-color: $ultramarine; }
     .#{$prefix}bgc\:slate { background-color: $slate; }
     .#{$prefix}bgc\:grey { background-color: $grey; }
     .#{$prefix}bgc\:light-grey { background-color: $light-grey; }
     .#{$prefix}bgc\:albicant { background-color: $albicant; }
-    .#{$prefix}bgc\:albicant\:75\% { background-color: rgba(245,246,247,.75); }
+    .#{$prefix}bgc\:albicant\:75\% { background-color: rgba($albicant,.75); }
     .#{$prefix}bgc\:granite { background-color: $granite; }
-    .#{$prefix}bgc\:granite\:50\% { background-color: rgba(100,108,118,.5); }
+    .#{$prefix}bgc\:granite\:50\% { background-color: rgba($granite,.5); }
     .#{$prefix}bgc\:white { background-color: $white; }
-    .#{$prefix}bgc\:white\:40\% { background-color: rgba(255,255,255,.4); }
+    .#{$prefix}bgc\:white\:40\% { background-color: rgba($white,.4); }
     .#{$prefix}bgc\:cerulean { background-color: $cerulean; }
     .#{$prefix}bgc\:black { background-color: black; }
-    .#{$prefix}bgc\:black\:40\% { background-color: rgba(0,0,0,.4); }
-    .#{$prefix}bgc\:black\:50\% { background-color: rgba(0,0,0,.5); }
+    .#{$prefix}bgc\:black\:40\% { background-color: rgba($black,.4); }
+    .#{$prefix}bgc\:black\:50\% { background-color: rgba($black,.5); }
     .#{$prefix}bgc\:azure { background-color: $azure; }
     .#{$prefix}bgc\:polar { background-color: $polar; }
     .#{$prefix}bgc\:premium-blue { background-color: $premium-blue; }
@@ -42,21 +42,21 @@
     /* ~ means it's a transitional gradient */
 
     /* Gradients Y-Axis Top to Bottom */
-    .#{$prefix}bgcgy\:albicant\|white{ background: linear-gradient(0deg, #fff 0, #fff calc(50%), $albicant calc(50%), $albicant 100%); }
-    .#{$prefix}bgcgy\:albicant\|16px-white{ background: linear-gradient(0deg, #fff 0, #fff 1rem, $albicant 1rem); }
-    .#{$prefix}bgcgy\:albicant\|32px-white{ background: linear-gradient(0deg, #fff 0, #fff 2rem, $albicant 2rem); }
-    .#{$prefix}bgcgy\:16px-albicant\|white{ background: linear-gradient(180deg, $albicant 1rem, #fff 1rem); }
-    .#{$prefix}bgcgy\:32px-albicant\|white{ background: linear-gradient(180deg, $albicant 2rem, #fff 2rem); }
-    .#{$prefix}bgcgy\:64px-albicant\|white{ background: linear-gradient(180deg, $albicant 4rem, #fff 4rem); }
+    .#{$prefix}bgcgy\:albicant\|white{ background: linear-gradient(0deg, $white 0, $white calc(50%), $albicant calc(50%), $albicant 100%); }
+    .#{$prefix}bgcgy\:albicant\|16px-white{ background: linear-gradient(0deg, $white 0, $white 1rem, $albicant 1rem); }
+    .#{$prefix}bgcgy\:albicant\|32px-white{ background: linear-gradient(0deg, $white 0, $white 2rem, $albicant 2rem); }
+    .#{$prefix}bgcgy\:16px-albicant\|white{ background: linear-gradient(180deg, $albicant 1rem, $white 1rem); }
+    .#{$prefix}bgcgy\:32px-albicant\|white{ background: linear-gradient(180deg, $albicant 2rem, $white 2rem); }
+    .#{$prefix}bgcgy\:64px-albicant\|white{ background: linear-gradient(180deg, $albicant 4rem, $white 4rem); }
     .#{$prefix}bgcgy\:transparent\|albicant{ background: linear-gradient(0deg, $albicant 0, $albicant calc(50%), transparent calc(50%), transparent 100%); }
     .#{$prefix}bgcgy\:transparent\|16px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 1rem, transparent 1rem); }
     .#{$prefix}bgcgy\:transparent\|80px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 5rem, transparent 5rem); }
-    .#{$prefix}bgcgy\:transparent\|white{ background: linear-gradient(0deg, #fff 0, #fff calc(50%), transparent calc(50%), transparent 100%); }
-    .#{$prefix}bgcgy\:white\|albicant{ background: linear-gradient(0deg, $albicant 0, $albicant calc(50%), #fff calc(50%), #fff 100%); }
-    .#{$prefix}bgcgy\:white\|8px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant .5rem, #fff .5rem); }
-    .#{$prefix}bgcgy\:white\|16px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 1rem, #fff 1rem); }
-    .#{$prefix}bgcgy\:white\|112px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 7rem, #fff 7rem); }
-    .#{$prefix}bgcgy\:48px-white\|albicant{ background: linear-gradient(180deg, #fff 3rem, $albicant 3rem); }
+    .#{$prefix}bgcgy\:transparent\|white{ background: linear-gradient(0deg, $white 0, $white calc(50%), transparent calc(50%), transparent 100%); }
+    .#{$prefix}bgcgy\:white\|albicant{ background: linear-gradient(0deg, $albicant 0, $albicant calc(50%), $white calc(50%), $white 100%); }
+    .#{$prefix}bgcgy\:white\|8px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant .5rem, $white .5rem); }
+    .#{$prefix}bgcgy\:white\|16px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 1rem, $white 1rem); }
+    .#{$prefix}bgcgy\:white\|112px-albicant{ background: linear-gradient(0deg, $albicant 0, $albicant 7rem, $white 7rem); }
+    .#{$prefix}bgcgy\:48px-white\|albicant{ background: linear-gradient(180deg, $white 3rem, $albicant 3rem); }
 
     /* Gradients X-Axis Left to Right */
     .#{$prefix}bgcgx\:transparent\~40\%-black{ background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }

@@ -241,7 +241,7 @@ button.unstyle {
       border: rem-calc(2) solid $bluea;
       background-color: $bluea;
       color: $white;
-      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba(0,25,40,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba(0,25,40,0.1);
+      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba($slate,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba($slate,0.1);
       &:hover,
       &:hover:enabled {
         border: rem-calc(2) solid $ultramarine;
@@ -251,7 +251,7 @@ button.unstyle {
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba(115, 195, 235, 0.35);
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($cerulean, 0.35);
         border: rem-calc(2) solid $cerulean;
         background-color: $ultramarine;
       }
@@ -276,7 +276,7 @@ button.unstyle {
       border: rem-calc(2) solid $bluea;
       background-color: transparent;
       color: $bluea;
-      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba(0,25,40,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba(0,25,40,0.1);
+      box-shadow: 0 rem-calc(2) rem_calc(8) 0 rgba($slate,0.04), 0 rem_calc(4) rem_calc(24) 0 rgba($slate,0.1);
       > .icon {
         filter: $icon-bluea;
       }
@@ -292,7 +292,7 @@ button.unstyle {
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba(115, 195, 235, 0.35);
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($cerulean, 0.35);
         border: rem-calc(2) solid $cerulean;
         color: $ultramarine;
         > .icon {
