@@ -59,7 +59,7 @@
     .#{$prefix}bgcgy\:48px-white\|albicant{ background: linear-gradient(180deg, $white 3rem, $albicant 3rem); }
 
     /* Gradients X-Axis Left to Right */
-    .#{$prefix}bgcgx\:transparent\~40\%-black{ background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }
+    .#{$prefix}bgcgx\:transparent\~40\%-black{ background: linear-gradient(90deg, transparent 0%, rgba($black,.4) 100%); }
     .#{$prefix}bgcgx\:ultramarine\~slate{ background: linear-gradient(90deg, $ultramarine 0%, $slate 100%); }
     .#{$prefix}bgcgx\:15\%-white\~70\%-red\~15\%-white{ background: linear-gradient(90deg, white 0%, red 15%, red 85%, white 100%); }
     .#{$prefix}bgcgx\:15\%-light-grey\~70\%-albicant\~15\%-light-grey{ background: linear-gradient(90deg, $light-grey 0%, $albicant 15%, $albicant 85%, $light-grey 100%); }

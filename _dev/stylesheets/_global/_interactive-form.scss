@@ -286,10 +286,10 @@ fieldset.unstyle { border:0; padding:0 }
       outline: 2px solid #000;
     }
     &:focus+label:before {
-      box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.65);
+      box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
     }
     &:checked:focus+label:before {
-      box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.65);
+      box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
     }
     &.has-error+label:before {
       border: 2px solid $negative;
@@ -381,7 +381,7 @@ fieldset.unstyle { border:0; padding:0 }
         border: 2px solid $granite;
         border-radius: 4px;
         transition: all .3s ease;
-        box-shadow: 0 0 0 0 rgba(115, 195, 235, 0.65);
+        box-shadow: 0 0 0 0 rgba($cerulean, 0.65);
         white-space:nowrap;
         &:before {
           display:none;
@@ -395,7 +395,7 @@ fieldset.unstyle { border:0; padding:0 }
       }
       &:checked:focus+label {
         border: 2px $cerulean solid;
-        box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.65);
+        box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
       }
     }
   }
@@ -458,7 +458,7 @@ fieldset.unstyle { border:0; padding:0 }
     background: $bluea;
     border: 3px solid $bluea;
     color: $white;
-    box-shadow: 0 0 4px 3px rgba(115, 195, 235, 0.65);
+    box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
   }
   &:checked+label,
   &:checked:focus+label {
