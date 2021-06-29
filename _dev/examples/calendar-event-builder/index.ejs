@@ -1,0 +1,39 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <style>
+      section{float:left;margin-right:50px;}
+      form {border:1px solid #ccc;width:350px;padding:20px;display:inline-block;}
+      label {width:115px;display:inline-block;}
+      input {width:200px;}
+      div.results {border:1px solid green;padding:20px;width:350px;}
+      textarea {width:100%;height:300px;}
+    </style>
+    <main>
+      <section class="calendar-invite">
+        <h2>Calendar Invite</h2>
+        <form name="calendar-form" action="" method="post">
+          <label for="start_date">Start Date</label> <input type="text" name="start_date" id="start_date" value=""><br>
+          <label for="start_time">Start Time</label> <input type="text" name="start_time" id="start_time" value=""><br>
+          <label for="end_date">End Date</label> <input type="text" name="end_date" id="end_date" value=""><br>
+          <label for="end_time">End Time</label> <input type="text" name="end_time" id="end_time" value=""><br>
+          <label for="duration">Duration</label> <input type="text" name="duration" id="duration" value=""><br>
+          <label for="timezone">Timezone</label> <input type="text" name="timezone" id="timezone" value=""><br>
+          <label for="title">Title</label> <input type="text" name="title" id="title" value=""><br>
+          <label for="description">Description</label> <input type="text" name="description" id="description" value=""><br>
+          <label for="location">Location</label> <input type="text" name="location" id="location" value=""><br>
+          <label for="organizer">Organizer</label> <input type="text" name="organizer" id="organizer" value=""><br>
+          <label for="organizer_email">Organizer Email</label> <input type="text" name="organizer_email" id="organizer_email" value=""><br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+      <section class="results">
+        <h2>Results</h2>
+        <div class="results">
+          <a href="" target="_blank" id="outlook">Outlook</a><br>
+          <a href="" target="_blank" id="google">Google Calendar</a><br>
+          <a href="" target="_blank" id="yahoo">Yahoo</a><br>
+          iCalendar<br>
+          <textarea id="icalendar"></textarea></a><br>
+        </div>
+      </section>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

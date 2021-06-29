@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Calendar Event Builder",
+                "urlEn": "/examples/calendar-event-builder/",
+                "urlCanonical": "/examples/calendar-event-builder/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.calendar-event-builder.js"
+            ]
+        }
+    }
+}
