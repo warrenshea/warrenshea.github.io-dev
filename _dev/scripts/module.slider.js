@@ -32,7 +32,7 @@ storm_eagle.module('slider', function () {
       document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.left = (0 + (slider_thumb_width/2) - (new_label_width / 2)) +  "px";
     },
     slider_listener: function(slider_id) {
-      var self = this;
+      const self = this;
 
       let el = document.getElementById(slider_id).querySelector("[data-module='slider.input']");
       el.addEventListener("input", function(e){

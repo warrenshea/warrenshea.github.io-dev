@@ -6,7 +6,7 @@ storm_eagle.module("show_more", function () {
 
   return {
     initialize: function() {
-      var self = this;
+      const self = this;
       $(".table--show-more").each(function (index) {
         tableState[index] = {
           "tableShowMore": $(this),
@@ -21,7 +21,7 @@ storm_eagle.module("show_more", function () {
       });
     },
     initUI: function(index) {
-      var self = this;
+      const self = this;
       var $table = tableState[index];
       $table["tableShowMoreContainer"].css("transition-property", "height");
       $table["tableShowMoreContainer"].css("transition-timing-function", "ease");
@@ -36,7 +36,7 @@ storm_eagle.module("show_more", function () {
       $table["tableShowMoreContainer"].css("height", $table["tableShowMoreContainerHeight"] - $table["tableShowMoreOffset"]);
     },
     addTableShowMoreListener: function(index) {
-      var self = this;
+      const self = this;
       var $table = tableState[index];
 
       $table["tableShowMoreContainer"].siblings().find(".table--show-more-button, .table--show-less-button").on("click", function (e) {
@@ -59,13 +59,13 @@ storm_eagle.module("show_more", function () {
       });
     },
     resizeListener: function(index) {
-      var self = this;
+      const self = this;
       $w.on('load resize', function (event) {
         self.forceResize();
       });
     },
     forceResize: function() {
-      var self = this;
+      const self = this;
       var $table = void 0;
 
       $(".table--show-more").each(function (index) {

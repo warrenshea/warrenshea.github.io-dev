@@ -176,12 +176,12 @@
         var errormessage = "";
         return {
           _ready: function(){
-            var self = this;
+            const self = this;
             self.submitListener();
           },
           //validateForm(): returns true when all fields are validated successfuly
           validateForm: function() {
-            var self = this;
+            const self = this;
             errormessage = "";
             self.displayStatus("firstName","alphaNumeric");
             if ($("[name=lastName]").val() != "") { //optional - validates if input is filled
@@ -214,7 +214,7 @@
             }
           },
           submitListener: function() {
-            var self = this;
+            const self = this;
             $('form[name=example-form]').submit(function(ev) {
               ev.preventDefault(); // to stop the form from submitting
               if (self.validateForm()) { // if all the validations succeeded

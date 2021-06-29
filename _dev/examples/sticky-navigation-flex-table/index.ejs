@@ -108,11 +108,11 @@
         $w = $(window);
         return {
           _initialize: function () {
-            var self = this;
+            const self = this;
             self.initUI();
           },
           initUI: function () {
-            var self = this;
+            const self = this;
             //create a sticky header navigation for EACH responsive table
             $('.responsive-table').each(function () {
               if ($(this).find('.sticky-header-flex').length > 0) {
@@ -194,7 +194,7 @@
           //scrollAndResizeListener(): watches for scrolling and resizing of page
           //@param {object} $responsiveTable is the .responsive-table div
           scrollAndResizeListener: function ($responsiveTable) {
-            var self = this;
+            const self = this;
             self.setWidths($responsiveTable);
             $w
               .load(self.setWidths($responsiveTable))
