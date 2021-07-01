@@ -26,7 +26,7 @@ storm_eagle.module('calendar_event_builder', function(){
     initialize : function(){
       const self = this;
       self.populateForm();
-      self.populateDataCalendarLink();
+      self.populate_data_calendar_link();
       self.submitListener();
     },
     populateForm : function() {
@@ -42,7 +42,7 @@ storm_eagle.module('calendar_event_builder', function(){
       document.querySelector("input[name=organizer]").value = invite_details.organizer;
       document.querySelector("input[name=organizer_email]").value = invite_details.organizer_email;
     },
-    populateJSON : function() {
+    populate_json : function() {
       invite_details.start_date = document.querySelector("input[name=start_date]").value;
       invite_details.start_time = document.querySelector("input[name=start_time]").value;
       invite_details.end_date = document.querySelector("input[name=end_date]").value;
@@ -55,7 +55,7 @@ storm_eagle.module('calendar_event_builder', function(){
       invite_details.organizer = document.querySelector("input[name=organizer]").value;
       invite_details.organizer_email = document.querySelector("input[name=organizer_email]").value;
     },
-    populateDataCalendarLink : function() {
+    populate_data_calendar_link : function() {
       let start_date,
         start_time,
         end_date,
@@ -93,14 +93,15 @@ storm_eagle.module('calendar_event_builder', function(){
         "DTSTAMP: " + start_date + "T" + start_time + "Z" + "&#10;" +
         "END:VEVENT" + "&#10;" +
         "END:VCALENDAR";
-      $("#icalendar").html(iCalendarURL);
+      document.querySelector("#icalendar").innerHTML = iCalendarURL;
     },
     submitListener: function() {
       const self = this;
-      $('form[name=calendar-form]').submit(function(ev) {
-        ev.preventDefault(); // to stop the form from submitting
-        self.populateJSON();
-        self.populateDataCalendarLink();
+
+      document.querySelector('form[name=calendar-form]').addEventListener("submit", event => {
+        event.preventDefault(); // to stop the form from submitting
+        self.populate_json();
+        self.populate_data_calendar_link();
       });
     }
   };
