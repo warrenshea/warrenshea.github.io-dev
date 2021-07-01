@@ -66,33 +66,33 @@ storm_eagle.module('calendar_event_builder', function(){
         iCalendarURL;
       start_date = storm_eagle.util.replace_all(invite_details.start_date,"-","");
       end_date = storm_eagle.util.replace_all(invite_details.end_date,"-","");
-      outlookOnlineURL = "https://outlook.live.com/owa?rru=addevent&startdt=" + start_date + "T" + invite_details.start_time + "Z&enddt=" + end_date + "T" + invite_details.end_time + "Z&subject=" + encodeURIComponent(invite_details.title) + "&location=" + encodeURIComponent(invite_details.location) + "&body=" + encodeURIComponent(invite_details.description) + "&allday=false&path=/calendar/view/Month";
+      outlookOnlineURL = `https://outlook.live.com/owa?rru=addevent&startdt=${start_date}T${invite_details.start_time}Z&enddt=${end_date}T${invite_details.end_time}Z&subject=${encodeURIComponent(invite_details.title)}&location=${encodeURIComponent(invite_details.location)}&body=${encodeURIComponent(invite_details.description)}&allday=false&path=/calendar/view/Month`;
       document.getElementById("outlook").setAttribute("href",outlookOnlineURL);
 
       start_time = storm_eagle.util.replace_all(invite_details.start_time,": ","");
       end_time = storm_eagle.util.replace_all(invite_details.end_time,": ","");
-      document.getElementById("google").setAttribute("href","https://calendar.google.com/calendar/render?action=TEMPLATE&dates=" + start_date + "T" + start_time + "Z/" + end_date + "T" + end_time + "Z&location=" + encodeURIComponent(invite_details.location) + "&text=" + encodeURIComponent(invite_details.title) + "&invite_details=" + encodeURIComponent(invite_details.description));
-      document.getElementById("yahoo").setAttribute("href","http://calendar.yahoo.com/?st=" + start_date + "T" + start_time + "Z&dur=" + invite_details.duration + "&view=d&v=60&type=20&title=" + encodeURIComponent(invite_details.title) + "&in_loc=" + encodeURIComponent(invite_details.location) + "&desc=" + encodeURIComponent(invite_details.description));
+      document.getElementById("google").setAttribute("href",`https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${start_date}T${start_time}Z/${end_date}T${end_time}Z&location=${encodeURIComponent(invite_details.location)}&text=${encodeURIComponent(invite_details.title)}&invite_details=${encodeURIComponent(invite_details.description)}`);
+      document.getElementById("yahoo").setAttribute("href",`http://calendar.yahoo.com/?st=${start_date}T${start_time}Z&dur=${invite_details.duration}&view=d&v=60&type=20&title=${encodeURIComponent(invite_details.title)}&in_loc=${encodeURIComponent(invite_details.location)}&desc=${encodeURIComponent(invite_details.description)}`);
 
-      iCalendarURL = "" +
-        "BEGIN:VCALENDAR" + "&#10;" +
-        "VERSION:2.0" + "&#10;" +
-        "PRODID: " + "&#10;" +
-        "X-PUBLISHED-TTL:P1W" + "&#10;" +
-        "BEGIN:VEVENT" + "&#10;" +
-        "UID:58dc86628ac31" + "&#10;" +
-        "DTSTART: " + start_date + "T" + start_time + "Z" + "&#10;" +
-        "SEQUENCE:0" + "&#10;" +
-        "TRANSP:OPAQUE" + "&#10;" +
-        "DTEND: " + end_date + "T" + end_time + "Z" + "&#10;" +
-        "LOCATION: " + invite_details.location + "&#10;" +
-        "SUMMARY: " + invite_details.title + "&#10;" +
-        "CLASS:PUBLIC" + "&#10;" +
-        "DESCRIPTION: " + invite_details.description + "&#10;" +
-        "ORGANIZER: " + invite_details.organizer + "<" + invite_details.organizer_email + ">" + "&#10;" +
-        "DTSTAMP: " + start_date + "T" + start_time + "Z" + "&#10;" +
-        "END:VEVENT" + "&#10;" +
-        "END:VCALENDAR";
+      iCalendarURL = `
+        BEGIN:VCALENDAR${&#10;}
+        VERSION:2.0${&#10;}
+        PRODID:${&#10;}
+        X-PUBLISHED-TTL:P1W${&#10;}
+        BEGIN:VEVENT${&#10;}
+        UID:58dc86628ac31${&#10;}
+        DTSTART: ${start_date}T${start_time}Z${&#10;}
+        SEQUENCE:0${&#10;}
+        TRANSP:OPAQUE${&#10;}
+        DTEND: ${end_date}T${end_time}Z${&#10;}
+        LOCATION: ${invite_details.location}${&#10;}
+        SUMMARY: ${invite_details.title}${&#10;}
+        CLASS:PUBLIC${&#10;}
+        DESCRIPTION: ${invite_details.description}${&#10;}
+        ORGANIZER: ${invite_details.organizer}<${invite_details.organizer_email}>${&#10;}
+        DTSTAMP: ${start_date}T${start_time}Z${&#10;}
+        END:VEVENT${&#10;}
+        END:VCALENDAR`;
       document.querySelector("#icalendar").innerHTML = iCalendarURL;
     },
     submitListener: function() {
