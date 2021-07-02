@@ -25,11 +25,11 @@ storm_eagle.module('calendar_event_builder', function(){
   return {
     initialize : function(){
       const self = this;
-      self.populateForm();
+      self.populate_form();
       self.populate_data_calendar_link();
-      self.submitListener();
+      self.submit_listener();
     },
-    populateForm : function() {
+    populate_form : function() {
       document.querySelector("input[name=start_date]").value = invite_details.start_date;
       document.querySelector("input[name=start_time]").value = invite_details.start_time;
       document.querySelector("input[name=end_date]").value = invite_details.end_date;
@@ -95,7 +95,7 @@ storm_eagle.module('calendar_event_builder', function(){
         END:VCALENDAR`;
       document.querySelector("#icalendar").innerHTML = iCalendarURL;
     },
-    submitListener: function() {
+    submit_listener: function() {
       const self = this;
 
       document.querySelector('form[name=calendar-form]').addEventListener("submit", event => {
