@@ -113,7 +113,7 @@ storm_eagle.module('form_style_1_floating_labels', function () {
 
   return {
     initialize: function () {
-      document.querySelectorAll('.form\\:style\\:1 input, .form\\:style\\:1 select, .form\\:style\\:1 textarea').forEach((el) => {
+      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach((el) => {
         if (el.type !== 'radio') {
           set_active_label.call(el);
           el.addEventListener('change', set_active_label);
