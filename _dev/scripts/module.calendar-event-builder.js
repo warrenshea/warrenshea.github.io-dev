@@ -28,6 +28,7 @@ storm_eagle.module('calendar_event_builder', function(){
       self.populate_form();
       self.populate_data_calendar_link();
       self.submit_listener();
+      storm_eagle.form_style_1_floating_labels.initialize();
     },
     populate_form : function() {
       document.querySelector("input[name=start_date]").value = invite_details.start_date;
@@ -75,23 +76,23 @@ storm_eagle.module('calendar_event_builder', function(){
       document.getElementById("yahoo").setAttribute("href",`http://calendar.yahoo.com/?st=${start_date}T${start_time}Z&dur=${invite_details.duration}&view=d&v=60&type=20&title=${encodeURIComponent(invite_details.title)}&in_loc=${encodeURIComponent(invite_details.location)}&desc=${encodeURIComponent(invite_details.description)}`);
 
       iCalendarURL = `
-        BEGIN:VCALENDAR${&#10;}
-        VERSION:2.0${&#10;}
-        PRODID:${&#10;}
-        X-PUBLISHED-TTL:P1W${&#10;}
-        BEGIN:VEVENT${&#10;}
-        UID:58dc86628ac31${&#10;}
-        DTSTART: ${start_date}T${start_time}Z${&#10;}
-        SEQUENCE:0${&#10;}
-        TRANSP:OPAQUE${&#10;}
-        DTEND: ${end_date}T${end_time}Z${&#10;}
-        LOCATION: ${invite_details.location}${&#10;}
-        SUMMARY: ${invite_details.title}${&#10;}
-        CLASS:PUBLIC${&#10;}
-        DESCRIPTION: ${invite_details.description}${&#10;}
-        ORGANIZER: ${invite_details.organizer}<${invite_details.organizer_email}>${&#10;}
-        DTSTAMP: ${start_date}T${start_time}Z${&#10;}
-        END:VEVENT${&#10;}
+        BEGIN:VCALENDAR&#10;
+        VERSION:2.0&#10;
+        PRODID:&#10;
+        X-PUBLISHED-TTL:P1W&#10;
+        BEGIN:VEVENT&#10;
+        UID:58dc86628ac31&#10;
+        DTSTART: ${start_date}T${start_time}Z&#10;
+        SEQUENCE:0&#10;
+        TRANSP:OPAQUE&#10;
+        DTEND: ${end_date}T${end_time}Z&#10;
+        LOCATION: ${invite_details.location}&#10;
+        SUMMARY: ${invite_details.title}&#10;
+        CLASS:PUBLIC&#10;
+        DESCRIPTION: ${invite_details.description}&#10;
+        ORGANIZER: ${invite_details.organizer}<${invite_details.organizer_email}>&#10;
+        DTSTAMP: ${start_date}T${start_time}Z&#10;
+        END:VEVENT&#10;
         END:VCALENDAR`;
       document.querySelector("#icalendar").innerHTML = iCalendarURL;
     },
