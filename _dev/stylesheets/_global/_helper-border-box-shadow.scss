@@ -1,9 +1,9 @@
-$box-shadow-custom-0: 0 0 rem-calc(2) 0 rgba($slate,0.12), 0 rem-calc(2) rem-calc(2) 0 rgba($slate,0.07);
-$box-shadow-custom-1: 0 rem-calc(2) rem-calc(8) 0 rgba($slate,0.04), 0 rem-calc(4) rem-calc(24) 0 rgba($slate,0.1);
-$box-shadow-custom-2: 0 0.1rem rem-calc(2) rem-calc(2) rgba($slate, 0.12);
-$box-shadow-custom-3: 0 0 rem-calc(2) 0 rgba($slate,0.04), 0 rem-calc(2) rem-calc(2) 0 rgba($slate,0.04), 0 .25rem .25rem 0 rgba($slate,0.1);
-$box-shadow-custom-4: 0 rem-calc(2) .625rem 0 rgba($black,.3);
-$box-shadow-custom-5: 0 rem-calc(2) rem-calc(8) 0 rgba($slate,0.04), 0 rem-calc(4) rem-calc(24) 0 rgba($slate,0.1);
+$box-shadow-maverick-a: 0 0 rem-calc(2) 0 rgba($slate,0.12), 0 rem-calc(2) rem-calc(2) 0 rgba($slate,0.07);
+$box-shadow-maverick-b: 0 rem-calc(2) rem-calc(8) 0 rgba($slate,0.04), 0 rem-calc(4) rem-calc(24) 0 rgba($slate,0.1);
+$box-shadow-maverick-c: 0 0.1rem rem-calc(2) rem-calc(2) rgba($slate, 0.12);
+$box-shadow-maverick-d: 0 0 rem-calc(2) 0 rgba($slate,0.04), 0 rem-calc(2) rem-calc(2) 0 rgba($slate,0.04), 0 .25rem .25rem 0 rgba($slate,0.1);
+$box-shadow-maverick-e: 0 rem-calc(2) .625rem 0 rgba($black,.3);
+$box-shadow-maverick-f: 0 rem-calc(2) rem-calc(8) 0 rgba($slate,0.04), 0 rem-calc(4) rem-calc(24) 0 rgba($slate,0.1);
 
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
@@ -14,28 +14,28 @@ $box-shadow-custom-5: 0 rem-calc(2) rem-calc(8) 0 rgba($slate,0.04), 0 rem-calc(
       box-shadow: none;
     }
 
-    .#{$prefix}box-shadow\:custom-0 {
-      box-shadow: $box-shadow-custom-0;
+    .#{$prefix}box-shadow\:maverick-a {
+      box-shadow: $box-shadow-maverick-a;
     }
 
-    .#{$prefix}box-shadow\:custom-1 {
-      box-shadow: $box-shadow-custom-1;
+    .#{$prefix}box-shadow\:maverick-b {
+      box-shadow: $box-shadow-maverick-b;
     }
 
-    .#{$prefix}box-shadow\:custom-2 {
-      box-shadow: $box-shadow-custom-2;
+    .#{$prefix}box-shadow\:maverick-c {
+      box-shadow: $box-shadow-maverick-c;
     }
 
-    .#{$prefix}box-shadow\:custom-3 {
-      box-shadow: $box-shadow-custom-3;
+    .#{$prefix}box-shadow\:maverick-d {
+      box-shadow: $box-shadow-maverick-d;
     }
 
-    .#{$prefix}box-shadow\:custom-4 {
-      box-shadow: $box-shadow-custom-4;
+    .#{$prefix}box-shadow\:maverick-e {
+      box-shadow: $box-shadow-maverick-e;
     }
 
-    .#{$prefix}box-shadow\:custom-5 {
-      box-shadow: $box-shadow-custom-5;
+    .#{$prefix}box-shadow\:maverick-f {
+      box-shadow: $box-shadow-maverick-f;
     }
   }
 }
