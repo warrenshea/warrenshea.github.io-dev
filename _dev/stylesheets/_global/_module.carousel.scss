@@ -27,12 +27,12 @@
     .item {
       .content-container {
         z-index:0;
-        box-shadow: $box-shadow-custom-0;
+        box-shadow: $box-shadow-maverick-a;
       }
       &.carousel-disabled-active {
         .content-container {
           z-index:1;
-          box-shadow: $box-shadow-custom-1;
+          box-shadow: $box-shadow-maverick-b;
           padding-bottom: rem-calc(50);
         }
       }
@@ -53,7 +53,7 @@
         &.active {
           .content-container {
             z-index:1;
-            box-shadow: $box-shadow-custom-1;
+            box-shadow: $box-shadow-maverick-b;
             padding-top: rem-calc(40);
             padding-bottom: rem-calc(40);
             transition-property:padding;
@@ -99,7 +99,7 @@
   .items-group {
     .item {
       .content-container {
-        box-shadow: $box-shadow-custom-0;
+        box-shadow: $box-shadow-maverick-a;
       }
     }
   }
