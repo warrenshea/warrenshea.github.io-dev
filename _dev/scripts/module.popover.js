@@ -101,7 +101,7 @@ storm_eagle.module('popover', function () {
     overlay_close_listener: function() {
       const self = this;
       if (document.querySelector("[data-module='popover.overlay']")) {
-        document.querySelector("[data-module='popover.overlay']").addEventListener('click', function() {
+        document.querySelector("[data-module='popover.overlay']").addEventListener('click', () => {
           self.close();
         });
       }
