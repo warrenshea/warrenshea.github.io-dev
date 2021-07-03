@@ -212,10 +212,10 @@
                 */
                 resize_listener: function () {
                     const self = this;
-                    window.addEventListener("resize", (event) => {
+                    window.addEventListener("resize", event = {
                         self.force_resize();
                     })
-                    window.addEventListener('DOMContentLoaded', (event) => {
+                    window.addEventListener('DOMContentLoaded', event = {
                         self.force_resize();
                     });
                 },

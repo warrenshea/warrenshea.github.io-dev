@@ -581,7 +581,7 @@ const storm_eagle = (function(window, document, undefined) {
 
     /**
      * Observes an element and runs a function when the element is resized
-     * Replaces window.addEventListener("resize", (event) => { function(); }) as it performs better
+     * Replaces window.addEventListener("resize", event = { function(); }) as it performs better
      *
      * @param  { array } elements     elements we want to observe
      * @param  { function } func      callback function
