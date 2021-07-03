@@ -1,9 +1,9 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-    <main class="w:100% bgc:albicant">
+    <main class="w:100%">
       <section class="mw:1200px align-self:centered pt:32px">
-        <h2>Calendar Invite</h2>
         <div class="row form:theme:maverick-a">
           <div class="w:4 offset:2">
+            <h1 class="play:bold fs:36px color:slate pb:16px">Calendar Event Builder</h1>
             <form name="calendar-form" action="" method="post">
               <div class="position:relative pb:4px"><input type="text" name="start_date" id="start_date" value=""><label for="start_date"><span class="description">Start Date</span></label></div>
               <div class="position:relative pb:4px"><input type="text" name="start_time" id="start_time" value=""><label for="start_time"><span class="description">Start Time</span></label></div>
@@ -16,17 +16,19 @@
               <div class="position:relative pb:4px"><input type="text" name="location" id="location" value=""><label for="location"><span class="description">Location</span></label></div>
               <div class="position:relative pb:4px"><input type="text" name="organizer" id="organizer" value=""><label for="organizer"><span class="description">Organizer</span></label></div>
               <div class="position:relative pb:4px"><input type="text" name="organizer_email" id="organizer_email" value=""><label for="organizer_email"><span class="description">Organizer Email</span></label></div>
-              <button type="submit" value="Submit" class="button:primary">Submit</button>
+              <div class="pt:8px"><button type="submit" value="Submit" class="button:primary uppercase">Submit</button></div>
             </form>
           </div>
-          <div class="w:4">
-            <h2>Results</h2>
+          <div class="w:5 offset:1">
+            <h2 class="fs:28px play:bold pt:8px pb:16px">Results</h2>
             <div class="results">
-              <a href="" target="_blank" id="outlook">Outlook</a><br>
-              <a href="" target="_blank" id="google">Google Calendar</a><br>
-              <a href="" target="_blank" id="yahoo">Yahoo</a><br>
-              iCalendar<br>
-              <textarea id="icalendar"></textarea></a><br>
+              <a href="" target="_blank" id="outlook">Outlook</a><br><br>
+              <a href="" target="_blank" id="google">Google Calendar</a><br><br>
+              <a href="" target="_blank" id="yahoo">Yahoo</a><br><br>
+              <div class="position:relative pt:16px">
+                <textarea id="icalendar" class="" rows="4" placeholder="" style="min-height:435px"></textarea>
+                <label for="icalendar"><span class="description">iCalendar</span></label>
+              </div>
             </div>
           </div>
         </div>
