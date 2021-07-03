@@ -35,19 +35,6 @@ storm_eagle.module('calendar_event_builder', function(){
       document.querySelector("input[name=organizer]").value = invite_details.organizer;
       document.querySelector("input[name=organizer_email]").value = invite_details.organizer_email;
     },
-    populate_json : function() {
-      invite_details.start_date = document.querySelector("input[name=start_date]").value;
-      invite_details.start_time = document.querySelector("input[name=start_time]").value;
-      invite_details.end_date = document.querySelector("input[name=end_date]").value;
-      invite_details.end_time = document.querySelector("input[name=end_time]").value;
-      invite_details.duration = document.querySelector("input[name=duration]").value;
-      invite_details.timezone = document.querySelector("input[name=timezone]").value;
-      invite_details.title = document.querySelector("input[name=title]").value;
-      invite_details.description = document.querySelector("input[name=description]").value;
-      invite_details.location = document.querySelector("input[name=location]").value;
-      invite_details.organizer = document.querySelector("input[name=organizer]").value;
-      invite_details.organizer_email = document.querySelector("input[name=organizer_email]").value;
-    },
     populate_data_calendar_link : function() {
       let start_date,
         start_time,
@@ -89,6 +76,20 @@ END:VCALENDAR`;
     },
     submit_listener: function() {
       const self = this;
+
+      function populate_json() {
+        invite_details.start_date = document.querySelector("input[name=start_date]").value;
+        invite_details.start_time = document.querySelector("input[name=start_time]").value;
+        invite_details.end_date = document.querySelector("input[name=end_date]").value;
+        invite_details.end_time = document.querySelector("input[name=end_time]").value;
+        invite_details.duration = document.querySelector("input[name=duration]").value;
+        invite_details.timezone = document.querySelector("input[name=timezone]").value;
+        invite_details.title = document.querySelector("input[name=title]").value;
+        invite_details.description = document.querySelector("input[name=description]").value;
+        invite_details.location = document.querySelector("input[name=location]").value;
+        invite_details.organizer = document.querySelector("input[name=organizer]").value;
+        invite_details.organizer_email = document.querySelector("input[name=organizer_email]").value;
+      }
 
       document.querySelector('form[name=calendar-form]').addEventListener("submit", event => {
         event.preventDefault(); // to stop the form from submitting
