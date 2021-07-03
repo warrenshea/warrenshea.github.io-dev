@@ -239,12 +239,7 @@ fieldset.unstyle { border:0; padding:0 }
   /* textarea styles */
   textarea {
     transition: all .3s ease;
-    height: unset;
     min-height:36px;
-    padding-top:10px;
-    resize: none;
-    overflow-y: auto;
-    overflow-x: hidden;
     word-wrap: normal;
     white-space: pre-wrap;
   }
