@@ -93,7 +93,7 @@ END:VCALENDAR`;
 
       document.querySelector('form[name=calendar-form]').addEventListener("submit", event => {
         event.preventDefault(); // to stop the form from submitting
-        self.populate_json();
+        populate_json();
         self.populate_data_calendar_link();
       });
     }
