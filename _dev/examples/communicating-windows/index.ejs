@@ -74,8 +74,8 @@
         });
       },
       addMessageListener: function() {
-        window.addEventListener('message', e => {
-          document.getElementById("from-child").innerHTML = e.data;
+        window.addEventListener('message', event => {
+          document.getElementById("from-child").innerHTML = event.data;
         });
       }
     };
@@ -124,8 +124,8 @@
         });
       },
       addMessageListener: function() {
-        window.addEventListener('message', e => {
-          document.getElementById("from-parent").innerHTML = e.data;
+        window.addEventListener('message', event => {
+          document.getElementById("from-parent").innerHTML = event.data;
         });
       }
     };
@@ -162,8 +162,8 @@
         });
       },
       addMessageListener: function() {
-        window.addEventListener('message', e => {
-          document.getElementById("from-child").innerHTML = e.data;
+        window.addEventListener('message', event => {
+          document.getElementById("from-child").innerHTML = event.data;
         });
       }
     };
