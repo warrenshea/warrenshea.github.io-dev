@@ -104,20 +104,49 @@ storm_eagle.module('form_validation', function () {
 /**
  * Enables floating labels
  */
-storm_eagle.module('form_style_1_floating_labels', function () {
+storm_eagle.module('form_theme_maverick_a', function () {
   "use strict";
-
-  function set_active_label() {
-    this.nextElementSibling.classList[(this.value.length ? 'add' : 'remove')]('active-label');
-  }
 
   return {
     initialize: function () {
-      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach((el) => {
-        if (el.type !== 'radio') {
-          set_active_label.call(el);
-          el.addEventListener('change', set_active_label);
+      const self = this;
+      self.set_active_labels();
+      self.textarea_auto_expand_listener();
+    },
+    ready: function() {
+      const self = this;
+      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach( element => {
+        if (element.type !== 'radio') {
+          self.force_set_active_label(element);
         }
+      });
+      document.querySelectorAll(".form\\:theme\\:maverick-a textarea").forEach( element => {
+        self.force_textarea_auto_expand(element);
+      });
+    },
+    force_set_active_label: function(element) {
+      element.nextElementSibling.classList[(element.value.length ? 'add' : 'remove')]('active-label');
+    },
+    set_active_labels: function() {
+      const self = this;
+      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach( element => {
+        if (element.type !== 'radio') {
+          element.addEventListener('change', () => {
+            self.force_set_active_label(this);
+          });
+        }
+      });
+    },
+    force_textarea_auto_expand(element) {
+      element.style.height = 'inherit';
+      element.style.height = element.scrollHeight + 'px';
+    },
+    textarea_auto_expand_listener: function() {
+      const self = this;
+      document.querySelectorAll(".form\\:theme\\:maverick-a textarea").forEach( element => {
+        element.addEventListener('input', () => {
+          self.textarea_auto_expand(this);
+        });
       });
     }
   };
