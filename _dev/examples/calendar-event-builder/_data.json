@@ -14,8 +14,8 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.form.js",
-                "/scripts/module.calendar-event-builder.js"
+                "/scripts/module.calendar-event-builder.js",
+                "/scripts/module.form.js"
             ]
         }
     }
