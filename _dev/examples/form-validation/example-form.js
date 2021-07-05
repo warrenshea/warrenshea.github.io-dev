@@ -1,12 +1,12 @@
 storm_eagle.module("example_form", () => {
-  let errormessage = "";
+
   return {
     validate_form: function() {
       const self = this;
-      errormessage = "";
 
       if (
-        storm_eagle.form_validation.validate("name", "alpha_numeric") &&
+        storm_eagle.form_validation.validate("name-mandatory", ["not_empty","alpha_numeric"]) &&
+        (true)
 
 
       ) {

@@ -4,14 +4,16 @@ storm_eagle.module('form_validation', function () {
   return {
     //validate(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
     //@param {string} element_name is the name of the DOM object being tested - used here for 'error-message'
-    //@param {string} type is the character set to be validated again (e.g. alpha_numeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
-    validate: function (element_name, type) {
+    //@param {array} validation_rules is the character set to be validated again (e.g. alpha_numeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
+    validate: function (element_name, validation_rules) {
       const self = this;
-      let status = self.check_field(element_name, type);
-      self.display_error(element_name, type, status);
+      let status = self.check_field(element_name, validation_rules);
+      self.display_error(element_name, validation_rules, status);
       return status;
     },
-    display_error:function(element_name,type,bool_show) {
+    display_error:function(element_name,validation_rules,bool_show) {
+
+
       if (bool_show) {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.add("error-field");
 

@@ -2,21 +2,23 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.header.ejs`, pageData) %>
 
     <main class="w:100% form:theme:maverick-a" role="main">
-      <form name="example-form" action="" method="post" onsubmit="return storm_eagle.example_form.validate_form(event);">
+      <form name="example-form" action="#" method="get" onsubmit="return storm_eagle.example_form.validate_form(event);">
         <div class="row">
-          <div class="w:4 offset:2">
+          <div class="w:12">
             <h1 class="play:bold fs:36px color:slate pb:16px">Form and Form Validation</h1>
           </div>
         </div>
         <div class="row">
           <div class="w:4">
             <div class="position:relative pt:4px">
-              <input id="name-mandatory" name="name-mandatory" type="text">
+              <input id="name-mandatory" name="name-mandatory" type="text" data-module="input-text" aria-describedby="">
               <label for="name-mandatory">
                 <span class="description">First Name*</span>
               </label>
-              <span class="error-message">Please provide a first namename</span>
-              <span class="helper-description">Optional Helper Text</span>
+              <span class="error-message" id="name-mandatory:is_mandatory">Please provide a value, this is mandatory</span>
+              <span class="error-message" id="name-mandatory:is_not_empty">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="error-message" id="name-mandatory:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Input("text") is mandatory, cannot be empty, is alpha_numeric</span>
             </div>
             <div class="position:relative pt:4px">
               <input id="name-optional" name="name-optional" type="text">
@@ -24,7 +26,7 @@
                 <span class="description">First Name</span>
               </label>
               <span class="error-message">Please provide a first name</span>
-              <span class="helper-description">Optional Helper Text</span>
+              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
             </div>
           </div>
           <div class="w:4">
