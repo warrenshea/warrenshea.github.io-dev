@@ -10,8 +10,14 @@
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
-            "stylesheets": [],
-            "scripts": []
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "example-form.js",
+                "/scripts/module.form-validation.js",
+                "/scripts/module.form-theme-maverick-a.js"
+            ]
         }
     }
 }
