@@ -24,8 +24,10 @@ storm_eagle.module('form_theme_maverick_a', function () {
     input_listener: function() {
       const self = this;
       document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach( element => {
+
         if (element.type !== 'radio') {
           element.addEventListener('change', () => {
+            console.log("test");
             self.force_set_active_label(element);
           });
         }

@@ -7,20 +7,23 @@ storm_eagle.module('form_validation', function () {
     //@param {string} type is the character set to be validated again (e.g. alpha_numeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
     validate: function (element_name, type) {
       const self = this;
-      if (self.check_field(element_name, type)) {
+      let status = self.check_field(element_name, type);
+      self.display_error(element_name, type, status);
+      return status;
+    },
+    display_error:function(element_name,type,bool_show) {
+      if (bool_show) {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.add("error-field");
 
-        if (type === "radiobutton") {
+        if (type === "radiobutton" || type === "checkbox") {
           document.getElementById(element_name).classList.add("has-error");
         } else {
           document.querySelector(`[name='${element_name}']`).parentElement.querySelector("span.error-message").classList.add("has-error");
         }
-
-        errormessage += element_name + " ";
       } else {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.remove("error-field");
 
-        if (type === "radiobutton") {
+        if (type === "radiobutton" || type === "checkbox") {
           document.getElementById(element_name).classList.remove("has-error");
         } else {
           document.querySelector(`[name='${element_name}']`).parentElement.querySelector("span.error-message").classList.remove("has-error");
@@ -29,26 +32,27 @@ storm_eagle.module('form_validation', function () {
     },
     //check_field(): form validation based on input type
     //@param {string} element_name is the name of the form element being checked
-    //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
+    //@param {string} type is the character set to test (e.g. alpha_numeric, numeric, email, postalCode)
     //@returns true to show an error
     //@returns false to hide an error
     check_field:function(element_name,type) {
-      let itemSelected = false;
+      const self = this;
+      let item_selected = false;
       let el;
       if (type == "radiobutton" || type == "checkbox") {
         el = document.querySelectorAll(`[name='${element_name}']`); //returns array, el gets first el
       } else {
-        el = document.querySelector(`[name='${element_name}']`); //returns array, el gets first el
+        el = document.querySelector(`[name='${element_name}']`);
       }
       let value = el.value;
 
       if (type == "radiobutton" || type == "checkbox") {
         for (let i = 0; i < el.length; i++) {
           if (el[i].checked) {
-            itemSelected = true;
+            item_selected = true;
           }
         }
-        if (!itemSelected) {
+        if (!item_selected) {
           for (let i = 0; i < el.length; i++) {
             return true;
           }
@@ -61,7 +65,7 @@ storm_eagle.module('form_validation', function () {
         }
       } else { //input boxes, email, postcalcode
         if (el) {
-          if (value === "" || !(this.is_value_valid(type,value)))
+          if (value === "" || !(self.is_value_valid(type,value)))
             return true;
           else
             return false;
