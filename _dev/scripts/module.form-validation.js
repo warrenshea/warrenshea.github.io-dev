@@ -4,7 +4,7 @@ storm_eagle.module('form_validation', function () {
   return {
     //validate(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
     //@param {string} element_name is the name of the DOM object being tested - used here for 'error-message'
-    //@param {array} validation_rules is the character set to be validated again (e.g. alpha_numeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
+    //@param {array} validation_rules is the character set to be validated again (e.g. alpha_numeric, numeric, email, postal_code, dropDown, checkBox, radioButton)
     validate: function (element_name, validation_rules) {
       const self = this;
       let status = self.check_field(element_name, validation_rules);
@@ -34,7 +34,7 @@ storm_eagle.module('form_validation', function () {
     },
     //check_field(): form validation based on input type
     //@param {string} element_name is the name of the form element being checked
-    //@param {string} type is the character set to test (e.g. alpha_numeric, numeric, email, postalCode)
+    //@param {string} type is the character set to test (e.g. alpha_numeric, numeric, email, postal_code)
     //@returns true to show an error
     //@returns false to hide an error
     check_field:function(element_name,type) {
@@ -65,7 +65,7 @@ storm_eagle.module('form_validation', function () {
         if (el) {
           return (value === "")
         }
-      } else { //input boxes, email, postcalcode
+      } else { //input boxes, email, postal_code
         if (el) {
           if (value === "" || !(self.is_value_valid(type,value)))
             return true;
@@ -75,7 +75,7 @@ storm_eagle.module('form_validation', function () {
       }
     },
     //is_value_valid(): returns true if value successfully tested again regex
-    //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
+    //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postal_code)
     //@param {string} value is the value being tested
     is_value_valid:function(type,value) {
       var regex;
