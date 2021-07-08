@@ -11,7 +11,7 @@
         <div class="row">
           <div class="w:4">
             <div class="position:relative pt:4px">
-              <input id="name-mandatory" name="name-mandatory" type="text" data-module="input-text" aria-describedby="">
+              <input id="name-mandatory" name="name-mandatory" type="text" aria-required="true" data-module="input-text" aria-describedby="">
               <label for="name-mandatory">
                 <span class="description">First Name*</span>
               </label>
@@ -24,10 +24,21 @@
               <label for="name-optional">
                 <span class="description">First Name</span>
               </label>
-              <span class="error-message" id="name-optional:is_mandatory">Please provide a value, this is mandatory</span>
+              <span class="error-message" id="name-optional:is_optional">Please provide a value, this is optional</span>
               <span class="error-message" id="name-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
               <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
             </div>
+            <div class="position:relative pt:4px">
+              <input id="email-mandatory" name="email-mandatory" type="text">
+              <label for="email-mandatory">
+                <span class="description">Email</span>
+              </label>
+              <span class="error-message" id="name-optional:is_mandatory">Please provide a value, this is optional</span>
+              <span class="error-message" id="name-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
+            </div>
+
+
           </div>
           <div class="w:4">
 
