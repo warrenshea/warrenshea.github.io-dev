@@ -13,6 +13,7 @@ fieldset.unstyle { border:0; padding:0 }
 */
   /* label styles */
   input[type="text"]+label,
+  input[type="number"]+label,
   input[type="email"]+label,
   input[type="password"]+label,
   input[type="search"]+label,
@@ -120,6 +121,7 @@ fieldset.unstyle { border:0; padding:0 }
   }
 
   input[type="text"],
+  input[type="number"],
   input[type="email"],
   input[type="password"],
   input[type="search"],
@@ -142,20 +144,22 @@ fieldset.unstyle { border:0; padding:0 }
     margin-top: 18px;
   }
 */
-  input[type="search"]:focus+label:before,
   input[type="text"]:focus+label:before,
+  input[type="number"]:focus+label:before,
   input[type="email"]:focus+label:before,
   input[type="password"]:focus+label:before,
+  input[type="search"]:focus+label:before,
   select:focus+label:before,
   textarea:focus+label:before {
     visibility: visible;
     transform: scaleX(1);
   }
 
-  input[type="search"]:focus+label span.description,
   input[type="text"]:focus+label span.description,
+  input[type="number"]:focus+label span.description,
   input[type="email"]:focus+label span.description,
   input[type="password"]:focus+label span.description,
+  input[type="search"]:focus+label span.description,
   select:focus+label span.description,
   textarea:focus+label span.description {
     top: rem-calc($label_active_top);
