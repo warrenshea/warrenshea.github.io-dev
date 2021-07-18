@@ -9,7 +9,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="w:4">
+          <div class="w:3">
+            <h2>Mandatory Inputs, Emails, Zip Code, Postal Code</h2>
             <div class="position:relative pt:4px">
               <input id="name-mandatory" name="name-mandatory" type="text" aria-required="true" data-module="input-text" aria-describedby="">
               <label for="name-mandatory">
@@ -18,15 +19,6 @@
               <span class="error-message" id="name-mandatory:is_mandatory">Please provide a value, this is mandatory</span>
               <span class="error-message" id="name-mandatory:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
               <span class="helper-description">Input("text") is mandatory, cannot be empty, is alpha_numeric</span>
-            </div>
-            <div class="position:relative pt:4px">
-              <input id="name-optional" name="name-optional" type="text">
-              <label for="name-optional">
-                <span class="description">First Name</span>
-              </label>
-              <span class="error-message" id="name-optional:is_optional">Please provide a value, this is optional</span>
-              <span class="error-message" id="name-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
             </div>
             <div class="position:relative pt:4px">
               <input id="email-mandatory" name="email-mandatory" type="text">
@@ -53,9 +45,44 @@
             </div>
 
           </div>
-          <div class="w:4">
+          <div class="w:3">
+            <h2>Optional Inputs, Emails, Zip Code, Postal Code</h2>
+            <div class="position:relative pt:4px">
+              <input id="name-optional" name="name-optional" type="text">
+              <label for="name-optional">
+                <span class="description">First Name</span>
+              </label>
+              <span class="error-message" id="name-optional:is_optional">Please provide a value, this is optional</span>
+              <span class="error-message" id="name-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Input("text") is optional, is alpha_numeric</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input id="email-mandatory" name="email-mandatory" type="text">
+              <label for="email-mandatory">
+                <span class="description">Email</span>
+              </label>
+              <span class="error-message" id="name-optional:is_mandatory">Please provide a value, this is optional</span>
+              <span class="error-message" id="name-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input type="text" name="postalCode" id="postalcode" value="">
+              <label for="postalcode">
+                <span class="description">Postal Code * (e.g. A1A1A1)</span>
+              </label>
+              <span class="error-message">Please enter your postal code</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input type="text" name="zipCode" id="zipcode" value="">
+              <label for="zipcode">
+                <span class="description">"Zip Code * (e.g. 90210)</span>
+              </label>
+              <span class="zipCode error-message">Please enter your zip code</span>
+            </div>
           </div>
-          <div class="w:4">
+          <div class="w:3">
+          </div>
+          <div class="w:3">
           </div>
         </div>
       </section>
