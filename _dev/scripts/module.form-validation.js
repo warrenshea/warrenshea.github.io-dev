@@ -12,8 +12,6 @@ storm_eagle.module('form_validation', function () {
       return status;
     },
     display_error:function(element_name,validation_rules,bool_show) {
-
-
       if (bool_show) {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.add("error-field");
 
