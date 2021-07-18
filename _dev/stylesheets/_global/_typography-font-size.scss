@@ -1,5 +1,7 @@
 .fs\:0 { font-size: 0 }
 
+/* from https://type-scale.com/ - 1.2 - Minor Third */
+
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
@@ -7,10 +9,10 @@
     .#{$prefix}fs\:12px { font-size: rem-calc(12); }
     .#{$prefix}fs\:14px { font-size: rem-calc(14); }
     .#{$prefix}fs\:16px { font-size: rem-calc(16); }
-    .#{$prefix}fs\:18px { font-size: rem-calc(18); }
-    .#{$prefix}fs\:22px { font-size: rem-calc(22); }
-    .#{$prefix}fs\:24px { font-size: rem-calc(24); }
-    .#{$prefix}fs\:28px { font-size: rem-calc(28); }
-    .#{$prefix}fs\:36px { font-size: rem-calc(36); }
+    .#{$prefix}fs\:20px { font-size: rem-calc(20); }
+    .#{$prefix}fs\:24px { font-size: rem-calc(24); } /*h4*/
+    .#{$prefix}fs\:28px { font-size: rem-calc(28); } /*h3*/
+    .#{$prefix}fs\:32px { font-size: rem-calc(32); } /*h2*/
+    .#{$prefix}fs\:40px { font-size: rem-calc(40); } /*h1*/
   }
 }
