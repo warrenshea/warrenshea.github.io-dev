@@ -9,117 +9,85 @@
           </div>
         </div>
         <div class="row">
-          <div class="w:3">
-            <h2>Mandatory Inputs, Emails, Zip Code, Postal Code</h2>
+          <div class="w:3 px:8px">
+            <h2 class="fs:28px lh:24 pb:16px">Mandatory</h2>
+
+            <h3 class="fs:20px lh:24 pt:16px">Input (text)</h3>
             <div class="position:relative pt:4px">
-              <input id="name-mandatory" name="name-mandatory" type="text" aria-required="true" data-module="input-text" aria-describedby="">
-              <label for="name-mandatory">
-                <span class="description">First Name*</span>
+              <input id="text-mandatory" name="text-mandatory" type="text" aria-required="true" data-module="input-text" aria-describedby="">
+              <label for="text-mandatory">
+                <span class="description">Text Input*</span>
               </label>
-              <span class="error-message" id="name-mandatory:is_mandatory">Please provide a value, this is mandatory</span>
-              <span class="error-message" id="name-mandatory:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Input("text") is mandatory, cannot be empty, is alpha_numeric</span>
+              <span class="error-message" id="text-mandatory:is_mandatory">Please provide a value, this is mandatory</span>
+              <span class="error-message" id="text-mandatory:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <ul class="helper-description">
+                <li>Text Input is mandatory</li>
+                <li>Cannot be empty</li>
+                <li>Follows alphanumeric: </li>
+                <li>Examples: First Name, Last Name, Address</li>
+              </ul>
             </div>
+
+            <h3 class="fs:20px lh:24 pt:16px">Input (number)</h3>
+            <div class="position:relative pt:4px">
+              <input name="number-mandatory" id="number-mandatory" type="number">
+              <label for="number-mandatory">
+                <span class="description">Number*</span>
+              </label>
+              <span class="error-message" id="number-mandatory:is_mandatory">Please enter a number</span>
+              <ul class="helper-description">
+                <li>Number is mandatory</li>
+                <li>Cannot be empty</li>
+                <li>Is numeric</li>
+                <li>Follows number only format: </li>
+              </ul>
+            </div>
+
+            <h3 class="fs:20px lh:24 pt:16px">Input (email)</h3>
             <div class="position:relative pt:4px">
               <input id="email-mandatory" name="email-mandatory" type="text">
               <label for="email-mandatory">
-                <span class="description">Email</span>
+                <span class="description">Email*</span>
               </label>
-              <span class="error-message" id="name-optional:is_mandatory">Please provide a value, this is optional</span>
-              <span class="error-message" id="name-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
+              <span class="error-message" id="email-mandatory:is_mandatory">Please provide a value, this is optional</span>
+              <span class="error-message" id="email-mandatory:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <ul class="helper-description">
+                <li>Number is mandatory</li>
+                <li>Cannot be empty</li>
+                <li>Follows email format: </li>
+              </ul>
             </div>
+
+            <h3 class="fs:20px lh:24 pt:16px">Input (postal code)</h3>
             <div class="position:relative pt:4px">
-              <input type="text" name="postalCode" id="postalcode" value="">
-              <label for="postalcode">
+              <input type="text" name="postal-code" id="postal-code" value="">
+              <label for="postal-code">
                 <span class="description">Postal Code * (e.g. A1A1A1)</span>
               </label>
               <span class="error-message">Please enter your postal code</span>
             </div>
+
+            <h3 class="fs:20px lh:24 pt:16px">Input (zip code)</h3>
             <div class="position:relative pt:4px">
-              <input type="text" name="zipCode" id="zipcode" value="">
-              <label for="zipcode">
+              <input type="text" name="zip-code" id="zip-code" value="">
+              <label for="zip-code">
                 <span class="description">"Zip Code * (e.g. 90210)</span>
               </label>
-              <span class="zipCode error-message">Please enter your zip code</span>
+              <span class="zip-code error-message">Please enter your zip code</span>
             </div>
 
-          </div>
-          <div class="w:3">
-            <h2>Optional Inputs, Emails, Zip Code, Postal Code</h2>
-            <div class="position:relative pt:4px">
-              <input id="name-optional" name="name-optional" type="text">
-              <label for="name-optional">
-                <span class="description">First Name</span>
-              </label>
-              <span class="error-message" id="name-optional:is_optional">Please provide a value, this is optional</span>
-              <span class="error-message" id="name-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Input("text") is optional, is alpha_numeric</span>
+            <h3 class="fs:20px lh:24 pt:16px">Input (zip code)</h3>
+            <div class="row">
+              <div class="w:6">
+              </div>
+              <div class="w:6">
+              </div>
             </div>
-            <div class="position:relative pt:4px">
-              <input id="email-mandatory" name="email-mandatory" type="text">
-              <label for="email-mandatory">
-                <span class="description">Email</span>
-              </label>
-              <span class="error-message" id="name-optional:is_mandatory">Please provide a value, this is optional</span>
-              <span class="error-message" id="name-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
-            </div>
-            <div class="position:relative pt:4px">
-              <input type="text" name="postalCode" id="postalcode" value="">
-              <label for="postalcode">
-                <span class="description">Postal Code * (e.g. A1A1A1)</span>
-              </label>
-              <span class="error-message">Please enter your postal code</span>
-            </div>
-            <div class="position:relative pt:4px">
-              <input type="text" name="zipCode" id="zipcode" value="">
-              <label for="zipcode">
-                <span class="description">"Zip Code * (e.g. 90210)</span>
-              </label>
-              <span class="zipCode error-message">Please enter your zip code</span>
-            </div>
-          </div>
-          <div class="w:3">
-          </div>
-          <div class="w:3">
-          </div>
-        </div>
-      </section>
-    </main>
 
-
-      <form name="example-form" action="" method="post">
-        <div class="row">
-          <label for="firstname" class="screen-reader-only">First Name</label>
-          <input type="text" placeholder="First name *" name="firstName" id="firstname" value="">
-          <span class="firstName error-message">Please enter your first name</span>
-        </div>
-        <div class="row">
-          <label for="lastname" class="screen-reader-only">Last Name</label>
-          <input type="text" placeholder="Last name" name="lastName" id="lastname" value="">
-          <span class="lastName error-message">Please enter your last name</span>
-        </div>
-        <div class="row">
-          <label for="email" class="screen-reader-only">Email</label>
-          <input type="text" placeholder="Email Address *" name="email" id="email" value="">
-          <span class="email error-message">Please enter a valid email</span>
-        </div>
-        <div class="row">
-          <label for="phone" class="screen-reader-only">Phone Number</label>
-          <input type="number" placeholder="Phone Number *" name="phone" id="phone" value="">
-          <span class="phone error-message">Please enter your phone</span>
-        </div>
-        <div class="row">
-          <label for="address" class="screen-reader-only">Address</label>
-          <input type="text" placeholder="Address *" name="address" id="address" value="">
-          <span class="address error-message">Please enter your address</span>
-        </div>
-        <div class="row">
-          <label for="province" class="screen-reader-only">Province</label>
+        <div class="position:relative pt:4px">
           <select name="province" id="province">
             <optgroup label="Provinces">
-            <option value="" disabled selected>Province/Terrority *</option>
+            <option value="" selected>Province/Terrority *</option>
             <option value="ON">Ontario</option>
             <option value="AB">Alberta</option>
             <option value="BC">British Columbia</option>
@@ -136,18 +104,191 @@
             <option value="YT">Yukon</option>
             </optgroup>
           </select>
+          <label for="province" class="screen-reader-only">Province</label>
           <span class="province error-message">Please enter your province</span>
         </div>
-        <div class="row">
-          <label for="postalcode" class="screen-reader-only">Postal Code</label>
-          <input type="text" placeholder="Postal Code * (e.g. A1A1A1)" name="postalCode" id="postalcode" value="">
-          <span class="postalCode error-message">Please enter your postal code</span>
+
+
+<div class="position:relative">
+  <select id="select-example">
+    <option value="0" selected="">Select an Option</option>
+    <option value="1">Option One</option>
+    <option value="2">Option Two</option>
+    <option value="3">Option Three</option>
+    <option value="4">Option Four</option>
+    <option value="5">Option Five</option>
+    <option value="6">Option Six</option>
+    <option value="7">Option Seven</option>
+    <option value="8">Option Eight</option>
+  </select>
+  <label for="select-example" class="active-label">
+    <span class="description">Label</span>
+  </label>
+  <span class="error-message" role="alert" id="example-select-error">Select option error</span>
+  <span class="helper-description">Helper Text</span>
+</div>
+          </div>
+          <div class="w:3 px:8px">
+            <h2 class="fs:20px">Optional Inputs, Emails, Zip Code, Postal Code</h2>
+            <div class="position:relative pt:4px">
+              <input id="text-optional" name="text-optional" type="text">
+              <label for="text-optional">
+                <span class="description">First Name</span>
+              </label>
+              <span class="error-message" id="text-optional:is_optional">Please provide a value, this is optional</span>
+              <span class="error-message" id="text-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Input("text") is optional, is alpha_numeric</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input id="email-mandatory" name="email-mandatory" type="text">
+              <label for="email-mandatory">
+                <span class="description">Email</span>
+              </label>
+              <span class="error-message" id="text-optional:is_mandatory">Please provide a value, this is optional</span>
+              <span class="error-message" id="text-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input type="text" name="postal-code" id="postal-code" value="">
+              <label for="postal-code">
+                <span class="description">Postal Code * (e.g. A1A1A1)</span>
+              </label>
+              <span class="error-message">Please enter your postal code</span>
+            </div>
+            <div class="position:relative pt:4px">
+              <input type="text" name="zip-code" id="zip-code" value="">
+              <label for="zip-code">
+                <span class="description">"Zip Code * (e.g. 90210)</span>
+              </label>
+              <span class="zip-code error-message">Please enter your zip code</span>
+            </div>
+          </div>
+          <div class="w:3 px:8px">
+
+<h3>Traditional Checkboxes</h3>
+<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox1" checked="">
+<label for="traditionalCheckbox1" class="active-label">Checkbox Label</label>
+<br>
+<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox2">
+<label for="traditionalCheckbox2" class="active-label">Checkbox Label</label>
+<br>
+<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox3" disabled="" checked="">
+<label for="traditionalCheckbox3" class="active-label">Checkbox Label</label>
+
+<h3>Parent-Child Checkboxes</h3>
+<div class="parent-checkbox">
+<input aria-controls="checkboxChild1 checkboxChild2 checkboxChild3" type="checkbox" name="parentCheckbox" id="parentCheckbox1" aria-checked="mixed">
+<label for="parentCheckbox1" class="active-label">Checkbox Label</label>
+<ul class="checkboxes unstyle pl:16px">
+  <li>
+    <div class="input-wrap input-checkbox">
+      <input type="checkbox" name="checkboxChildInput" id="checkboxChild1" checked="">
+      <label for="checkboxChild1" class="active-label">Checkbox Label</label>
+    </div>
+  </li>
+  <li>
+    <div class="input-wrap input-checkbox">
+      <input type="checkbox" name="checkboxChildInput" id="checkboxChild2" checked="">
+      <label for="checkboxChild2" class="active-label">Checkbox Label</label>
+    </div>
+  </li>
+  <li>
+    <div class="input-wrap input-checkbox">
+      <input type="checkbox" name="checkboxChildInput" id="checkboxChild3">
+      <label for="checkboxChild3" class="active-label">Checkbox Label</label>
+    </div>
+  </li>
+</ul>
+</div>
+
+<h3>Traditional Radio Buttons</h3>
+<fieldset>
+    <legend>Traditional&nbsp;radio button</legend>
+    <input type="radio" name="radio" id="radio4" value="1" checked="">
+    <label for="radio4">Primary checking account (7878)</label>
+    <input type="radio" name="radio" id="radio5" value="2">
+    <label for="radio5">Smart saver account(9908)</label>
+    <input type="radio" name="radio" id="radio6" value="3">
+    <label for="radio6" role="alert">Premium savings account (1123)</label>
+</fieldset>
+
+<h3>Box Radio Buttons</h3>
+<fieldset class="box-radio-buttons">
+  <legend>Box radio button</legend>
+  <input type="radio" name="radio-box" id="radio-box4" value="radio-box1" checked="">
+  <label for="radio-box4" class="box-radio-label">yes</label>
+  <input type="radio" name="radio-box" id="radio-box5" value="radio-box2">
+  <label for="radio-box5" class="box-radio-label">no</label>
+</fieldset>
+
+<h3>TEXTAREA</h3>
+<div>
+  <div class="position:relative">
+    <textarea name="text-area-demo-1" id="text-area-demo-1" class="scrollbar" rows="1" placeholder=""></textarea>
+    <label for="text-area-demo-1">
+      <span class="description">Textarea</span>
+    </label>
+    <span class="error-message">Textarea error</span>
+    <span class="helper-description">Text box will expand as you type</span>
+  </div>
+</div>
+
+<h3>TEXTAREA DISABLED</h3>
+<div>
+  <div class="position:relative">
+    <textarea name="text-area-demo-3" id="text-area-demo-3" class="scrollbar" rows="1" disabled="">Disabled textarea</textarea>
+    <label class="active-label disabled" for="text-area-demo-3">
+      <span class="description">Disabled Textarea</span>
+    </label>
+    <span class="error-message">Textarea error</span>
+    <span class="helper-description">Text box will expand as you type</span>
+  </div>
+</div>
+
+<div class="form:style:card-checkboxes">
+  <input id="checkCard2" name="checkCardInput" type="checkbox">
+  <label for="checkCard2" class="box-shadow:layer-level-2 active-label">
+    <div class="check"></div>
+    <div class="image">
+      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
+    </div>
+    <div class="description">Card Checkbox Label.</div>
+  </label>
+</div>
+
+<h3>Card Radio Buttons</h3>
+<div class="form:style:card-radiobuttons">
+  <input id="checkCard4" name="checkCardInput" type="radio">
+  <label for="checkCard4" class="box-shadow:layer-level-2">
+    <div class="check"></div>
+    <div class="image">
+      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
+    </div>
+    <div class="description">Card Checkbox Label.</div>
+  </label>
+
+  <br><br>
+
+  <input id="checkCard5" name="checkCardInput" type="radio">
+  <label for="checkCard5" class="box-shadow:layer-level-2">
+    <div class="check"></div>
+    <div class="image">
+      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
+    </div>
+    <div class="description">Card Checkbox Label.</div>
+  </label>
+</div>
+          </div>
+          <div class="w:3 px:8px">
+          </div>
         </div>
-        <div class="row">
-          <label for="zipcode" class="screen-reader-only">Zip Code</label>
-          <input type="text" placeholder="Zip Code * (e.g. 90210)" name="zipCode" id="zipcode" value="">
-          <span class="zipCode error-message">Please enter your zip code</span>
-        </div>
+      </section>
+    </main>
+
+ <hr>
+
+      <form name="example-form" action="" method="post">
+
         <div class="row">
           <input type="checkbox" name="checkbox" id="checkbox_yes" value="Yes">
           <label for="checkbox_yes">Checkbox Label Yes</label>
