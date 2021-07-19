@@ -18,12 +18,12 @@
               <label for="text-mandatory">
                 <span class="description">Text Input*</span>
               </label>
-              <span class="error-message" id="text-mandatory:is_mandatory">Please provide a value, this is mandatory</span>
-              <span class="error-message" id="text-mandatory:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="error-message" id="text-mandatory:is_mandatory">Please provide a value</span>
+              <span class="error-message" id="text-mandatory:is_alphanumeric">The value provided has unacceptable characters</span>
               <ul class="helper-description">
-                <li>Text Input is mandatory</li>
+                <li>Input (text) is mandatory</li>
                 <li>Cannot be empty</li>
-                <li>Follows alphanumeric: </li>
+                <li>Is alphanumeric (+french characters): /^[A-Za-z\u00E0-\u00FC0-9 ]/</li>
                 <li>Examples: First Name, Last Name, Address</li>
               </ul>
             </div>
@@ -34,12 +34,13 @@
               <label for="number-mandatory">
                 <span class="description">Number*</span>
               </label>
-              <span class="error-message" id="number-mandatory:is_mandatory">Please enter a number</span>
+              <span class="error-message" id="number-mandatory:is_mandatory">Please provide a number</span>
+              <span class="error-message" id="number-mandatory:is_number">The value provided has unacceptable characters</span>
               <ul class="helper-description">
-                <li>Number is mandatory</li>
+                <li>Input (number) is mandatory</li>
                 <li>Cannot be empty</li>
-                <li>Is numeric</li>
-                <li>Follows number only format: </li>
+                <li>Is numeric: /^\d+$/</li>
+                <li>Examples: YYYYMMDD, YYYY, MM, DD, hh, ss</li>
               </ul>
             </div>
 
@@ -49,84 +50,183 @@
               <label for="email-mandatory">
                 <span class="description">Email*</span>
               </label>
-              <span class="error-message" id="email-mandatory:is_mandatory">Please provide a value, this is optional</span>
-              <span class="error-message" id="email-mandatory:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
+              <span class="error-message" id="email-mandatory:is_mandatory">Please provide a value</span>
+              <span class="error-message" id="email-mandatory:is_email">The value provided does not match an email format</span>
               <ul class="helper-description">
-                <li>Number is mandatory</li>
+                <li>Input (email) is mandatory</li>
                 <li>Cannot be empty</li>
-                <li>Follows email format: </li>
+                <li>Is email</li>
               </ul>
             </div>
 
             <h3 class="fs:20px lh:24 pt:16px">Input (postal code)</h3>
             <div class="position:relative pt:4px">
-              <input type="text" name="postal-code" id="postal-code" value="">
+              <input id="postal-code" name="postal-code" type="text">
               <label for="postal-code">
-                <span class="description">Postal Code * (e.g. A1A1A1)</span>
+                <span class="description">Postal Code*</span>
               </label>
-              <span class="error-message">Please enter your postal code</span>
+              <span class="error-message" id="postal-code:is_mandatory">Please provide a value</span>
+              <span class="error-message" id="postal-code:is_email">The value provided does not match a the postal code format (e.g. A1A1A1)</span>
+              <ul class="helper-description">
+                <li>Input (email) is mandatory</li>
+                <li>Cannot be empty</li>
+                <li>Is postal code: /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/</li>
+              </ul>
             </div>
 
             <h3 class="fs:20px lh:24 pt:16px">Input (zip code)</h3>
             <div class="position:relative pt:4px">
-              <input type="text" name="zip-code" id="zip-code" value="">
+              <input id="zip-code" name="zip-code" type="text">
               <label for="zip-code">
-                <span class="description">"Zip Code * (e.g. 90210)</span>
+                <span class="description">Postal Code*</span>
               </label>
-              <span class="zip-code error-message">Please enter your zip code</span>
+              <span class="error-message" id="zip-code:is_mandatory">Please provide a value</span>
+              <span class="error-message" id="zip-code:is_email">The value provided does not match a the postal code format (e.g. 90210)</span>
+              <ul class="helper-description">
+                <li>Input (email) is mandatory</li>
+                <li>Cannot be empty</li>
+                <li>Is postal code: /(^\d{5}$)|(^\d{5}-\d{4}$)/</li>
+              </ul>
             </div>
 
-            <h3 class="fs:20px lh:24 pt:16px">Input (zip code)</h3>
+            <h3 class="fs:20px lh:24 pt:16px">Select / Dropdown</h3>
+            <div class="position:relative pt:4px">
+              <select id="select-mandatory">
+                <option value="" selected="" disabled></option>
+                <option value="1">Option One</option>
+                <option value="2">Option Two</option>
+                <option value="3">Option Three</option>
+                <option value="4">Option Four</option>
+                <option value="5">Option Five</option>
+                <option value="6">Option Six</option>
+                <option value="7">Option Seven</option>
+                <option value="8">Option Eight</option>
+              </select>
+              </optgroup>
+              <label for="select-mandatory">
+                <span class="description">Select / Dropdown</span>
+              </label>
+              <span class="error-message" id="select-mandatory:is_mandatory">Please select an option</span>
+              <span class="helper-description">Helper Text</span>
+            </div>
             <div class="row">
               <div class="w:6">
+                <div class="position:relative pt:4px">
+                  <select id="provinces-en-mandatory">
+                    <optgroup label="Provinces">
+                    <option value="" selected disabled></option>
+                    <option value="ON">Ontario</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="YT">Yukon</option>
+                    </optgroup>
+                  </select>
+                  </optgroup>
+                  <label for="provinces-en-mandatory">
+                    <span class="description">Province/Terrority *</span>
+                  </label>
+                  <span class="error-message" id="provinces-en-mandatory:is_mandatory">Please select an option</span>
+                  <span class="helper-description">Provinces (EN)</span>
+                </div>
               </div>
               <div class="w:6">
+                <div class="position:relative pt:4px">
+                  <select id="provinces-en-mandatory">
+                    <optgroup label="Provinces">
+                    <option value="" selected disabled></option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="YT">Yukon</option>
+                    </optgroup>
+                  </select>
+                  </optgroup>
+                  <label for="provinces-en-mandatory">
+                    <span class="description">Province/Terrority *</span>
+                  </label>
+                  <span class="error-message" id="provinces-en-mandatory:is_mandatory">Please select an option</span>
+                  <span class="helper-description">Provinces (EN)</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="w:6">
+                <div class="position:relative pt:4px">
+                  <select id="month-en-mandatory">
+                    <optgroup label="Month">
+                    <option value="" selected disabled></option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                    </optgroup>
+                  </select>
+                  </optgroup>
+                  <label for="month-en-mandatory">
+                    <span class="description">Province/Terrority *</span>
+                  </label>
+                  <span class="error-message" id="month-en-mandatory:is_mandatory">Please select an option</span>
+                  <span class="helper-description">Month (EN)</span>
+                </div>
+              </div>
+              <div class="w:6">
+                <div class="position:relative pt:4px">
+                  <select id="month-fr-mandatory">
+                    <optgroup label="Provinces">
+                    <option value="" selected disabled></option>
+                    <option value="01">janvier</option>
+                    <option value="02">février</option>
+                    <option value="03">mars</option>
+                    <option value="04">avril</option>
+                    <option value="05">mai</option>
+                    <option value="06">juin</option>
+                    <option value="07">juillet</option>
+                    <option value="08">août</option>
+                    <option value="09">septembre</option>
+                    <option value="10">octobre</option>
+                    <option value="11">november</option>
+                    <option value="12">décembre</option>
+                    </optgroup>
+                  </select>
+                  </optgroup>
+                  <label for="month-fr-mandatory">
+                    <span class="description">Province/Terrority *</span>
+                  </label>
+                  <span class="error-message" id="month-fr-mandatory:is_mandatory">Please select an option</span>
+                  <span class="helper-description">Provinces (EN)</span>
+                </div>
               </div>
             </div>
 
-        <div class="position:relative pt:4px">
-          <select name="province" id="province">
-            <optgroup label="Provinces">
-            <option value="" selected>Province/Terrority *</option>
-            <option value="ON">Ontario</option>
-            <option value="AB">Alberta</option>
-            <option value="BC">British Columbia</option>
-            <option value="MB">Manitoba</option>
-            <option value="NB">New Brunswick</option>
-            <option value="NL">Newfoundland and Labrador</option>
-            <option value="NS">Nova Scotia</option>
-            <option value="ON">Ontario</option>
-            <option value="PE">Prince Edward Island</option>
-            <option value="QC">Quebec</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="NT">Northwest Territories</option>
-            <option value="NU">Nunavut</option>
-            <option value="YT">Yukon</option>
-            </optgroup>
-          </select>
-          <label for="province" class="screen-reader-only">Province</label>
-          <span class="province error-message">Please enter your province</span>
-        </div>
 
 
-<div class="position:relative">
-  <select id="select-example">
-    <option value="0" selected="">Select an Option</option>
-    <option value="1">Option One</option>
-    <option value="2">Option Two</option>
-    <option value="3">Option Three</option>
-    <option value="4">Option Four</option>
-    <option value="5">Option Five</option>
-    <option value="6">Option Six</option>
-    <option value="7">Option Seven</option>
-    <option value="8">Option Eight</option>
-  </select>
-  <label for="select-example" class="active-label">
-    <span class="description">Label</span>
-  </label>
-  <span class="error-message" role="alert" id="example-select-error">Select option error</span>
-  <span class="helper-description">Helper Text</span>
-</div>
           </div>
           <div class="w:3 px:8px">
             <h2 class="fs:20px">Optional Inputs, Emails, Zip Code, Postal Code</h2>
