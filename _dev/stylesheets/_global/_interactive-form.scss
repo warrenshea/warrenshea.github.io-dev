@@ -114,12 +114,12 @@ fieldset.unstyle { border:0; padding:0 }
       color: $granite;
     }
   }
-  input:focus,
+/*  input:focus,
   select:focus,
   textarea:focus {
     outline: none;
   }
-
+*/
   input[type="text"],
   input[type="number"],
   input[type="email"],
@@ -243,8 +243,9 @@ fieldset.unstyle { border:0; padding:0 }
   /* textarea styles */
   textarea {
     transition: all .3s ease;
-    min-height:36px;
-    word-wrap: normal;
+    padding-top:6px; /* to remain consistent with input boxes */
+    padding-bottom:6px; /* to remain consistent with input boxes */
+    margin-bottom:-4px; /* to remain consistent with input boxes */
     white-space: pre-wrap;
   }
 
@@ -311,7 +312,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked+label:before {
       background-color: $bluea;
-      background-image: url('../assets/icon/check.positive.svg');
+      background-image: url('../assets/icon/check.white.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 15px;
@@ -322,7 +323,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked:disabled+label:before {
       background-color: $granite;
-      background-image: url('../assets/icon/check.positive.svg');
+      background-image: url('../assets/icon/check.white.svg');
       border: 2px solid $granite;
     }
   }
