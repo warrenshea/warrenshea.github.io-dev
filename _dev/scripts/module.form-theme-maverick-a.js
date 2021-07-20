@@ -27,7 +27,6 @@ storm_eagle.module('form_theme_maverick_a', function () {
 
         if (element.type !== 'radio') {
           element.addEventListener('change', () => {
-            console.log("test");
             self.force_set_active_label(element);
           });
         }
