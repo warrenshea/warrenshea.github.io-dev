@@ -115,20 +115,19 @@
                   <select id="provinces-en-mandatory">
                     <optgroup label="Provinces">
                     <option value="" selected disabled></option>
-                    <option value="ON">Ontario</option>
-                    <option value="AB">Alberta</option>
-                    <option value="BC">British Columbia</option>
-                    <option value="MB">Manitoba</option>
-                    <option value="NB">New Brunswick</option>
-                    <option value="NL">Newfoundland and Labrador</option>
-                    <option value="NS">Nova Scotia</option>
-                    <option value="ON">Ontario</option>
-                    <option value="PE">Prince Edward Island</option>
-                    <option value="QC">Quebec</option>
-                    <option value="SK">Saskatchewan</option>
-                    <option value="NT">Northwest Territories</option>
-                    <option value="NU">Nunavut</option>
-                    <option value="YT">Yukon</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">British Columbia</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="New Brunswick">New Brunswick</option>
+                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                    <option value="Nova Scotia">Nova Scotia</option>
+                    <option value="Ontario">Ontario</option>
+                    <option value="Prince Edward Island">Prince Edward Island</option>
+                    <option value="Quebec">Quebec</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Northwest Territories">Northwest Territories</option>
+                    <option value="Nunavut">Nunavut</option>
+                    <option value="Yukon">Yukon</option>
                     </optgroup>
                   </select>
                   </optgroup>
@@ -144,27 +143,27 @@
                   <select id="provinces-en-mandatory">
                     <optgroup label="Provinces">
                     <option value="" selected disabled></option>
-                    <option value="AB">Alberta</option>
-                    <option value="BC">British Columbia</option>
-                    <option value="MB">Manitoba</option>
-                    <option value="NB">New Brunswick</option>
-                    <option value="NL">Newfoundland and Labrador</option>
-                    <option value="NS">Nova Scotia</option>
-                    <option value="ON">Ontario</option>
-                    <option value="PE">Prince Edward Island</option>
-                    <option value="QC">Quebec</option>
-                    <option value="SK">Saskatchewan</option>
-                    <option value="NT">Northwest Territories</option>
-                    <option value="NU">Nunavut</option>
-                    <option value="YT">Yukon</option>
+                    <option value="Alberta">Alberta</option>
+                    <option value="British Columbia">Colombie-Britannique</option>
+                    <option value="Manitoba">Manitoba</option>
+                    <option value="New Brunswick">Nouveau-Brunswick</option>
+                    <option value="Newfoundland and Labrador">Terre-Neuve-et-Labrador</option>
+                    <option value="Nova Scotia">Nouvelle-Écosse</option>
+                    <option value="Ontario">Ontario</option>
+                    <option value="Prince Edward Island">Île-du-Prince-Édouard</option>
+                    <option value="Quebec">Québec</option>
+                    <option value="Saskatchewan">Saskatchewan</option>
+                    <option value="Northwest Territories">Territoires du Nord-Ouest</option>
+                    <option value="Nunavut">Nunavut</option>
+                    <option value="Yukon">Yukon</option>
                     </optgroup>
                   </select>
                   </optgroup>
                   <label for="provinces-en-mandatory">
-                    <span class="description">Province/Terrority *</span>
+                    <span class="description">Province/Territoire *</span>
                   </label>
                   <span class="error-message" id="provinces-en-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Provinces (EN)</span>
+                  <span class="helper-description">Provinces (FR)</span>
                 </div>
               </div>
             </div>
@@ -190,7 +189,7 @@
                   </select>
                   </optgroup>
                   <label for="month-en-mandatory">
-                    <span class="description">Province/Terrority *</span>
+                    <span class="description">Month *</span>
                   </label>
                   <span class="error-message" id="month-en-mandatory:is_mandatory">Please select an option</span>
                   <span class="helper-description">Month (EN)</span>
@@ -217,15 +216,27 @@
                   </select>
                   </optgroup>
                   <label for="month-fr-mandatory">
-                    <span class="description">Province/Terrority *</span>
+                    <span class="description">mois *</span>
                   </label>
                   <span class="error-message" id="month-fr-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Provinces (EN)</span>
+                  <span class="helper-description">Month (FR)</span>
                 </div>
               </div>
             </div>
 
-
+            <h3 class="fs:20px lh:24 pt:16px">Textarea</h3>
+            <div class="position:relative pt:4px">
+              <textarea name="textarea" id="textarea" class="scrollbar" rows="1" placeholder=""></textarea>
+              <label for="textarea">
+                <span class="description">Textarea *</span>
+              </label>
+              <span class="error-message" id="textarea:is_mandatory">Please provide a value</span>
+              <ul class="helper-description">
+                <li>Textarea is mandatory</li>
+                <li>Textarea will expand as you type</li>
+                <li>Cannot be empty</li>
+              </ul>
+            </div>
 
           </div>
           <div class="w:3 px:8px">
@@ -323,14 +334,7 @@
 
 <h3>TEXTAREA</h3>
 <div>
-  <div class="position:relative">
-    <textarea name="text-area-demo-1" id="text-area-demo-1" class="scrollbar" rows="1" placeholder=""></textarea>
-    <label for="text-area-demo-1">
-      <span class="description">Textarea</span>
-    </label>
-    <span class="error-message">Textarea error</span>
-    <span class="helper-description">Text box will expand as you type</span>
-  </div>
+
 </div>
 
 <h3>TEXTAREA DISABLED</h3>
@@ -383,33 +387,6 @@
           </div>
         </div>
       </section>
-    </main>
-
- <hr>
-
-      <form name="example-form" action="" method="post">
-
-        <div class="row">
-          <input type="checkbox" name="checkbox" id="checkbox_yes" value="Yes">
-          <label for="checkbox_yes">Checkbox Label Yes</label>
-        </div>
-        <div class="row">
-          <input type="checkbox" name="checkbox" id="checkbox_no" value="No">
-          <label for="checkbox_no">Checkbox Label No</label>
-          <span class="checkbox error-message">Please check the checkbox</span>
-        </div>
-        <div class="row">
-          <fieldset>
-            <legend>Radio Buttons</legend>
-            <input name="radioButton" id="radio-button-yes" type="radio" value="Yes"><label for="radio-button-yes">Yes</label><br>
-            <input name="radioButton" id="radio-button-no" type="radio" value="No"><label for="radio-button-no">No</label>
-            <span class="radioButton error-message">Please select a radio button</span>
-          </fieldset>
-        </div>
-        <div>
-          <button type="submit" name="button" class="button:primary uppercase">Submit</button>
-        </div>
-      </form>
     </main>
   </body>
 </html>
