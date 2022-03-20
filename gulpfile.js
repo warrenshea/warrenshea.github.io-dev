@@ -65,6 +65,16 @@ const css = (done) => {
   }
 }
 
+const clean_notes = (done) => {
+  if (process.env.NODE_ENV === 'production') {
+    return del([
+      '_dist/notes*'
+    ]);
+  } else {
+    done();
+  }
+}
+
 const js = (done) => {
   if (process.env.NODE_ENV === 'development') {
     return gulp.src(['./_dev/scripts/**/*.js'])
@@ -127,6 +137,7 @@ const build = (done) => {
     console.log(stderr);
     css();
     js();
+    clean_notes();
     console.log("Build completed!");
   });
   done();
