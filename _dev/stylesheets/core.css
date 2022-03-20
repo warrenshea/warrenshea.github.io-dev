@@ -26991,6 +26991,12 @@ fieldset.unstyle {
     }
   }*/
   /* input (text, email, password, search), select, and textarea styles */
+  /*  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+  }
+*/
   /*  input[type="email"],
   input[type="password"],
   select {
@@ -27007,6 +27013,7 @@ fieldset.unstyle {
   /* select styles */
   /* textarea styles */ }
   .form\:theme\:maverick-a input[type="text"] + label,
+  .form\:theme\:maverick-a input[type="number"] + label,
   .form\:theme\:maverick-a input[type="email"] + label,
   .form\:theme\:maverick-a input[type="password"] + label,
   .form\:theme\:maverick-a input[type="search"] + label,
@@ -27020,6 +27027,7 @@ fieldset.unstyle {
     pointer-events: none;
     cursor: pointer; }
     .form\:theme\:maverick-a input[type="text"] + label:before,
+    .form\:theme\:maverick-a input[type="number"] + label:before,
     .form\:theme\:maverick-a input[type="email"] + label:before,
     .form\:theme\:maverick-a input[type="password"] + label:before,
     .form\:theme\:maverick-a input[type="search"] + label:before,
@@ -27039,6 +27047,7 @@ fieldset.unstyle {
       top: unset;
       display: block; }
     .form\:theme\:maverick-a input[type="text"] + label:after,
+    .form\:theme\:maverick-a input[type="number"] + label:after,
     .form\:theme\:maverick-a input[type="email"] + label:after,
     .form\:theme\:maverick-a input[type="password"] + label:after,
     .form\:theme\:maverick-a input[type="search"] + label:after,
@@ -27056,6 +27065,7 @@ fieldset.unstyle {
       top: unset;
       display: block; }
     .form\:theme\:maverick-a input[type="text"] + label.error-field:before,
+    .form\:theme\:maverick-a input[type="number"] + label.error-field:before,
     .form\:theme\:maverick-a input[type="email"] + label.error-field:before,
     .form\:theme\:maverick-a input[type="password"] + label.error-field:before,
     .form\:theme\:maverick-a input[type="search"] + label.error-field:before,
@@ -27063,6 +27073,7 @@ fieldset.unstyle {
     .form\:theme\:maverick-a textarea + label.error-field:before {
       background: #c81414; }
     .form\:theme\:maverick-a input[type="text"] + label.error-field:after,
+    .form\:theme\:maverick-a input[type="number"] + label.error-field:after,
     .form\:theme\:maverick-a input[type="email"] + label.error-field:after,
     .form\:theme\:maverick-a input[type="password"] + label.error-field:after,
     .form\:theme\:maverick-a input[type="search"] + label.error-field:after,
@@ -27070,6 +27081,7 @@ fieldset.unstyle {
     .form\:theme\:maverick-a textarea + label.error-field:after {
       background: #c81414; }
     .form\:theme\:maverick-a input[type="text"] + label.valid:before,
+    .form\:theme\:maverick-a input[type="number"] + label.valid:before,
     .form\:theme\:maverick-a input[type="email"] + label.valid:before,
     .form\:theme\:maverick-a input[type="password"] + label.valid:before,
     .form\:theme\:maverick-a input[type="search"] + label.valid:before,
@@ -27077,6 +27089,7 @@ fieldset.unstyle {
     .form\:theme\:maverick-a textarea + label.valid:before {
       background: #0B8224; }
     .form\:theme\:maverick-a input[type="text"] + label.disabled,
+    .form\:theme\:maverick-a input[type="number"] + label.disabled,
     .form\:theme\:maverick-a input[type="email"] + label.disabled,
     .form\:theme\:maverick-a input[type="password"] + label.disabled,
     .form\:theme\:maverick-a input[type="search"] + label.disabled,
@@ -27084,6 +27097,7 @@ fieldset.unstyle {
     .form\:theme\:maverick-a textarea + label.disabled {
       color: #646c76; }
       .form\:theme\:maverick-a input[type="text"] + label.disabled span.description,
+      .form\:theme\:maverick-a input[type="number"] + label.disabled span.description,
       .form\:theme\:maverick-a input[type="email"] + label.disabled span.description,
       .form\:theme\:maverick-a input[type="password"] + label.disabled span.description,
       .form\:theme\:maverick-a input[type="search"] + label.disabled span.description,
@@ -27091,6 +27105,7 @@ fieldset.unstyle {
       .form\:theme\:maverick-a textarea + label.disabled span.description {
         color: #646c76; }
     .form\:theme\:maverick-a input[type="text"] + label span.description,
+    .form\:theme\:maverick-a input[type="number"] + label span.description,
     .form\:theme\:maverick-a input[type="email"] + label span.description,
     .form\:theme\:maverick-a input[type="password"] + label span.description,
     .form\:theme\:maverick-a input[type="search"] + label span.description,
@@ -27108,6 +27123,7 @@ fieldset.unstyle {
       top: 1.6875rem;
       position: absolute; }
     .form\:theme\:maverick-a input[type="text"] + label.active-label span.description,
+    .form\:theme\:maverick-a input[type="number"] + label.active-label span.description,
     .form\:theme\:maverick-a input[type="email"] + label.active-label span.description,
     .form\:theme\:maverick-a input[type="password"] + label.active-label span.description,
     .form\:theme\:maverick-a input[type="search"] + label.active-label span.description,
@@ -27126,11 +27142,8 @@ fieldset.unstyle {
     .form\:theme\:maverick-a select :disabled,
     .form\:theme\:maverick-a textarea :disabled {
       color: #646c76; }
-  .form\:theme\:maverick-a input:focus,
-  .form\:theme\:maverick-a select:focus,
-  .form\:theme\:maverick-a textarea:focus {
-    outline: none; }
   .form\:theme\:maverick-a input[type="text"],
+  .form\:theme\:maverick-a input[type="number"],
   .form\:theme\:maverick-a input[type="email"],
   .form\:theme\:maverick-a input[type="password"],
   .form\:theme\:maverick-a input[type="search"],
@@ -27146,18 +27159,20 @@ fieldset.unstyle {
     border: none;
     background-color: transparent;
     transition: all 0.3s ease-out; }
-  .form\:theme\:maverick-a input[type="search"]:focus + label:before,
   .form\:theme\:maverick-a input[type="text"]:focus + label:before,
+  .form\:theme\:maverick-a input[type="number"]:focus + label:before,
   .form\:theme\:maverick-a input[type="email"]:focus + label:before,
   .form\:theme\:maverick-a input[type="password"]:focus + label:before,
+  .form\:theme\:maverick-a input[type="search"]:focus + label:before,
   .form\:theme\:maverick-a select:focus + label:before,
   .form\:theme\:maverick-a textarea:focus + label:before {
     visibility: visible;
     transform: scaleX(1); }
-  .form\:theme\:maverick-a input[type="search"]:focus + label span.description,
   .form\:theme\:maverick-a input[type="text"]:focus + label span.description,
+  .form\:theme\:maverick-a input[type="number"]:focus + label span.description,
   .form\:theme\:maverick-a input[type="email"]:focus + label span.description,
   .form\:theme\:maverick-a input[type="password"]:focus + label span.description,
+  .form\:theme\:maverick-a input[type="search"]:focus + label span.description,
   .form\:theme\:maverick-a select:focus + label span.description,
   .form\:theme\:maverick-a textarea:focus + label span.description {
     top: 0.125rem;
@@ -27170,7 +27185,7 @@ fieldset.unstyle {
     font-size: 0.875rem;
     font-family: 'heebo';
     color: #c81414;
-    background: url(../assets/icon/exclamation-circle.svg) no-repeat top left;
+    background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
     background-size: 16px 16px;
     visibility: hidden;
     opacity: 0;
@@ -27199,26 +27214,30 @@ fieldset.unstyle {
     .form\:theme\:maverick-a .helper-description-pass-fail li {
       line-height: 24px;
       padding: 4px 6px 4px 32px;
-      background-image: url(../assets/icon/times.svg);
+      background-image: url(../assets/icon/times.negative.svg);
       background-repeat: no-repeat;
       background-position: top 2px left 2px;
       background-size: 24px 24px; }
       .form\:theme\:maverick-a .helper-description-pass-fail li.pass {
-        background-image: url(../assets/icon/check.svg); }
+        background-image: url(../assets/icon/check.positive.svg); }
       .form\:theme\:maverick-a .helper-description-pass-fail li.fail {
-        background-image: url(../assets/icon/times.svg); }
+        background-image: url(../assets/icon/times.negative.svg); }
   .form\:theme\:maverick-a select {
     cursor: pointer;
     background-color: transparent;
-    background-image: url("../assets/icon/chevron-down.svg");
+    background-image: url("../assets/icon/chevron-down.bluea.svg");
     background-repeat: no-repeat;
     background-position: right 8px top 10px;
     background-size: 16px 16px;
     appearance: none; }
   .form\:theme\:maverick-a textarea {
     transition: all .3s ease;
-    min-height: 36px;
-    word-wrap: normal;
+    padding-top: 6px;
+    /* to remain consistent with input boxes */
+    padding-bottom: 6px;
+    /* to remain consistent with input boxes */
+    margin-bottom: -4px;
+    /* to remain consistent with input boxes */
     white-space: pre-wrap; }
   .form\:theme\:maverick-a input[type="checkbox"],
   .form\:theme\:maverick-a input[type="radio"] {
@@ -27277,7 +27296,7 @@ fieldset.unstyle {
     border-radius: 4px; }
   .form\:theme\:maverick-a input[type="checkbox"]:checked + label:before {
     background-color: #0075be;
-    background-image: url("../assets/icon/check.svg");
+    background-image: url("../assets/icon/check.white.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 15px;
@@ -27286,7 +27305,7 @@ fieldset.unstyle {
     border: 2px solid #73c3eb; }
   .form\:theme\:maverick-a input[type="checkbox"]:checked:disabled + label:before {
     background-color: #646c76;
-    background-image: url("../assets/icon/check.svg");
+    background-image: url("../assets/icon/check.white.svg");
     border: 2px solid #646c76; }
   .form\:theme\:maverick-a .parent-checkbox > input[type="checkbox"][aria-checked="mixed"] + label:before {
     background-color: #0075be;
@@ -27296,7 +27315,7 @@ fieldset.unstyle {
     background-image: none; }
   .form\:theme\:maverick-a .parent-checkbox > input[type="checkbox"][aria-checked="true"] + label:before {
     background-color: #0075be;
-    background-image: url("../assets/icon/check.svg"); }
+    background-image: url("../assets/icon/check.positive.svg"); }
   .form\:theme\:maverick-a input[type="radio"] + label:before {
     border-radius: 50%;
     transition: background-color ease-in-out 250ms, border ease-in-out 250ms; }
@@ -27370,7 +27389,7 @@ fieldset.unstyle {
       width: 24px;
       height: 24px;
       border-radius: 0 0 0 4px;
-      background-image: url("../assets/icon/chevron-down.svg");
+      background-image: url("../assets/icon/chevron-down.blue.svg");
       background-repeat: no-repeat;
       background-color: #68bbe8;
       background-size: 16px 16px;
@@ -27406,7 +27425,7 @@ fieldset.unstyle {
     .form\:theme\:card-radiobuttons input[type="radio"]:checked:focus + label div.check {
       opacity: 1;
       visibility: visible;
-      background: #0075be url("../assets/icon/check.svg") 8px no-repeat;
+      background: #0075be url("../assets/icon/check.white.svg") 8px no-repeat;
       background-position: center center;
       background-size: 16px; }
   .form\:theme\:card-checkboxes input[type="checkbox"]:focus + label,
@@ -27740,6 +27759,7 @@ fieldset.unstyle {
 .fs\:0 {
   font-size: 0; }
 
+/* from https://type-scale.com/ - 1.2 - Minor Third */
 .fs\:12px {
   font-size: 0.75rem; }
 
@@ -27749,21 +27769,25 @@ fieldset.unstyle {
 .fs\:16px {
   font-size: 1rem; }
 
-.fs\:18px {
-  font-size: 1.125rem; }
-
-.fs\:22px {
-  font-size: 1.375rem; }
+.fs\:20px {
+  font-size: 1.25rem; }
 
 .fs\:24px {
   font-size: 1.5rem; }
 
+/*h4*/
 .fs\:28px {
   font-size: 1.75rem; }
 
-.fs\:36px {
-  font-size: 2.25rem; }
+/*h3*/
+.fs\:32px {
+  font-size: 2rem; }
 
+/*h2*/
+.fs\:40px {
+  font-size: 2.5rem; }
+
+/*h1*/
 @media screen and (max-width: 47.9375rem) {
   .sm\=\:fs\:12px {
     font-size: 0.75rem; }
@@ -27771,16 +27795,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .sm\=\:fs\:16px {
     font-size: 1rem; }
-  .sm\=\:fs\:18px {
-    font-size: 1.125rem; }
-  .sm\=\:fs\:22px {
-    font-size: 1.375rem; }
+  .sm\=\:fs\:20px {
+    font-size: 1.25rem; }
   .sm\=\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .sm\=\:fs\:28px {
     font-size: 1.75rem; }
-  .sm\=\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .sm\=\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .sm\=\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 .sm\+\:fs\:12px {
   font-size: 0.75rem; }
@@ -27791,21 +27819,25 @@ fieldset.unstyle {
 .sm\+\:fs\:16px {
   font-size: 1rem; }
 
-.sm\+\:fs\:18px {
-  font-size: 1.125rem; }
-
-.sm\+\:fs\:22px {
-  font-size: 1.375rem; }
+.sm\+\:fs\:20px {
+  font-size: 1.25rem; }
 
 .sm\+\:fs\:24px {
   font-size: 1.5rem; }
 
+/*h4*/
 .sm\+\:fs\:28px {
   font-size: 1.75rem; }
 
-.sm\+\:fs\:36px {
-  font-size: 2.25rem; }
+/*h3*/
+.sm\+\:fs\:32px {
+  font-size: 2rem; }
 
+/*h2*/
+.sm\+\:fs\:40px {
+  font-size: 2.5rem; }
+
+/*h1*/
 @media screen and (max-width: 63.9375rem) {
   .md\-\:fs\:12px {
     font-size: 0.75rem; }
@@ -27813,16 +27845,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .md\-\:fs\:16px {
     font-size: 1rem; }
-  .md\-\:fs\:18px {
-    font-size: 1.125rem; }
-  .md\-\:fs\:22px {
-    font-size: 1.375rem; }
+  .md\-\:fs\:20px {
+    font-size: 1.25rem; }
   .md\-\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .md\-\:fs\:28px {
     font-size: 1.75rem; }
-  .md\-\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .md\-\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .md\-\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 48rem) and (max-width: 63.9375rem) {
   .md\=\:fs\:12px {
@@ -27831,16 +27867,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .md\=\:fs\:16px {
     font-size: 1rem; }
-  .md\=\:fs\:18px {
-    font-size: 1.125rem; }
-  .md\=\:fs\:22px {
-    font-size: 1.375rem; }
+  .md\=\:fs\:20px {
+    font-size: 1.25rem; }
   .md\=\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .md\=\:fs\:28px {
     font-size: 1.75rem; }
-  .md\=\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .md\=\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .md\=\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 48rem) {
   .md\+\:fs\:12px {
@@ -27849,16 +27889,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .md\+\:fs\:16px {
     font-size: 1rem; }
-  .md\+\:fs\:18px {
-    font-size: 1.125rem; }
-  .md\+\:fs\:22px {
-    font-size: 1.375rem; }
+  .md\+\:fs\:20px {
+    font-size: 1.25rem; }
   .md\+\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .md\+\:fs\:28px {
     font-size: 1.75rem; }
-  .md\+\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .md\+\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .md\+\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (max-width: 79.9375rem) {
   .lg\-\:fs\:12px {
@@ -27867,16 +27911,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .lg\-\:fs\:16px {
     font-size: 1rem; }
-  .lg\-\:fs\:18px {
-    font-size: 1.125rem; }
-  .lg\-\:fs\:22px {
-    font-size: 1.375rem; }
+  .lg\-\:fs\:20px {
+    font-size: 1.25rem; }
   .lg\-\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .lg\-\:fs\:28px {
     font-size: 1.75rem; }
-  .lg\-\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .lg\-\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .lg\-\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 64rem) and (max-width: 79.9375rem) {
   .lg\=\:fs\:12px {
@@ -27885,16 +27933,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .lg\=\:fs\:16px {
     font-size: 1rem; }
-  .lg\=\:fs\:18px {
-    font-size: 1.125rem; }
-  .lg\=\:fs\:22px {
-    font-size: 1.375rem; }
+  .lg\=\:fs\:20px {
+    font-size: 1.25rem; }
   .lg\=\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .lg\=\:fs\:28px {
     font-size: 1.75rem; }
-  .lg\=\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .lg\=\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .lg\=\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 64rem) {
   .lg\+\:fs\:12px {
@@ -27903,16 +27955,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .lg\+\:fs\:16px {
     font-size: 1rem; }
-  .lg\+\:fs\:18px {
-    font-size: 1.125rem; }
-  .lg\+\:fs\:22px {
-    font-size: 1.375rem; }
+  .lg\+\:fs\:20px {
+    font-size: 1.25rem; }
   .lg\+\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .lg\+\:fs\:28px {
     font-size: 1.75rem; }
-  .lg\+\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .lg\+\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .lg\+\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 80rem) {
   .xl\=\:fs\:12px {
@@ -27921,16 +27977,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .xl\=\:fs\:16px {
     font-size: 1rem; }
-  .xl\=\:fs\:18px {
-    font-size: 1.125rem; }
-  .xl\=\:fs\:22px {
-    font-size: 1.375rem; }
+  .xl\=\:fs\:20px {
+    font-size: 1.25rem; }
   .xl\=\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .xl\=\:fs\:28px {
     font-size: 1.75rem; }
-  .xl\=\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .xl\=\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .xl\=\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 @media screen and (min-width: 80rem) {
   .xl\+\:fs\:12px {
@@ -27939,16 +27999,20 @@ fieldset.unstyle {
     font-size: 0.875rem; }
   .xl\+\:fs\:16px {
     font-size: 1rem; }
-  .xl\+\:fs\:18px {
-    font-size: 1.125rem; }
-  .xl\+\:fs\:22px {
-    font-size: 1.375rem; }
+  .xl\+\:fs\:20px {
+    font-size: 1.25rem; }
   .xl\+\:fs\:24px {
     font-size: 1.5rem; }
+  /*h4*/
   .xl\+\:fs\:28px {
     font-size: 1.75rem; }
-  .xl\+\:fs\:36px {
-    font-size: 2.25rem; } }
+  /*h3*/
+  .xl\+\:fs\:32px {
+    font-size: 2rem; }
+  /*h2*/
+  .xl\+\:fs\:40px {
+    font-size: 2.5rem; }
+  /*h1*/ }
 
 .fw\:light {
   font-weight: 300; }
@@ -29001,6 +29065,9 @@ ol.unstyle-pl\:0 {
 
 .icon.times {
   background-image: url("../assets/icon/times.svg"); }
+
+.icon.dragon {
+  background-image: url("../assets/icon/dragon.svg"); }
 
 .illustration-size\:xs {
   width: 96px;
