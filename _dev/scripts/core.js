@@ -744,15 +744,15 @@ storm_eagle.module('console_log', function () {
 });
 
 /**
- * Allows the height of various divs to be the same by taking the biggest height and applying it to all items.
+ * Allows the height of various block level HTML elements to be the same by taking the largest height and applying it to all items.
  * This will occur for any item regardless of viewport. To affect medium size and up, see Options.
  *
  * How to use this:
- * Add 'data-equalize-height="(key)"' to any item where key is a value you input yourself, to link the items.
- * All the items with the same 'key' will have the same height
+ * Add the attribute 'data-equalize-height="(key)"' to any block level HTML element where key is a value you use to link the items you want to height equalize. All the items with the same 'key' will have the same height.
  *
  * Options:
- * If you only want this to occur on medium size up, add 'data-equalize-md-up' to the item as well
+ * If you only want height equalizing to occur on medium size up, add 'data-equalize-md-up' to the HTML element as well
+ * If you only want height equalizing to occur on small size only, add 'data-equalize-sm-only' to the HTML element as well
  */
 storm_eagle.module('equalize_heights', function () {
   'use strict';
@@ -762,14 +762,14 @@ storm_eagle.module('equalize_heights', function () {
   /*
    * Sorts items in array from smallest to largest
    */
-  let sortNumber = function (a, b) {
+  let sort_number = function (a, b) {
     return a - b;
   };
 
   /*
    * For each "key", determine the largest height and apply to all items with that key
    */
-  let max_Height = function () {
+  let max_height = function () {
     _data_equal_height_array.forEach((index, value) => {
       let _highest = 0;
       let _heights = [];
@@ -778,7 +778,7 @@ storm_eagle.module('equalize_heights', function () {
         el.style.height = "auto";
         _heights.push(el.getBoundingClientRect().height);
       });
-      _heights = _heights.sort(sortNumber).reverse();
+      _heights = _heights.sort(sort_number).reverse();
       _highest = _heights[0];
       document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
         el.style.height = _highest + 'px';
@@ -825,7 +825,7 @@ storm_eagle.module('equalize_heights', function () {
     force_resize: function () {
       const self = this;
       self.get_data_equal_height_items();
-      max_Height();
+      max_height();
       if (storm_eagle.client.viewport.is_sm_only()) {
         document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
           el.style.height = "auto";
