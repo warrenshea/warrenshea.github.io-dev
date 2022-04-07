@@ -63,7 +63,7 @@ $directions: (
         $color-name: nth($color, 1);
         $color-value: nth($color, 2);
 
-        .#{$prefix}b-#{$color-name}\:#{$size-name} {
+        .#{$prefix}b-#{"" + $color-name}\:#{$size-name} {
           border: #{$size-value} #{$color-value} solid;
         }
 
@@ -71,7 +71,7 @@ $directions: (
           $direction-name: nth($direction, 1);
           $direction-value: nth($direction, 2);
 
-          .#{$prefix}#{$direction-name}-#{$color-name}\:#{$size-name} {
+          .#{$prefix}#{$direction-name}-#{"" + $color-name}\:#{$size-name} {
             border-#{$direction-value}: #{$size-value} #{$color-value} solid;
           }
         }

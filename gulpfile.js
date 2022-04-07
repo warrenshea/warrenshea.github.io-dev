@@ -3,7 +3,7 @@
 const gulp = require('gulp'),
 
       //CSS
-      sass = require('gulp-sass'),
+      sass = require('gulp-dart-sass'),
       postcss = require('gulp-postcss'),
       cleanCSS = require('gulp-clean-css'),
 

@@ -19,7 +19,7 @@ $colors: (
       $color-name: nth($color, 1);
       $color-value: nth($color, 2);
 
-      .#{$prefix}icon-color\:#{$color-name} {
+      .#{$prefix}icon-color\:#{"" + $color-name} {
         filter: #{$color-value};
       }
     }
