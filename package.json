@@ -19,9 +19,9 @@
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "harp": "^0.31.0",
+    "harp": "^0.41.2",
     "yargs": "^15.4.1"
   },
   "scripts": {
