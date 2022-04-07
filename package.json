@@ -21,7 +21,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "harp": "^0.41.2",
+    "harp": "^0.27.0",
     "yargs": "^15.4.1"
   },
   "scripts": {
