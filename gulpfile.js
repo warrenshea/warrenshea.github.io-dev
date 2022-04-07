@@ -3,7 +3,7 @@
 const gulp = require('gulp'),
 
       //CSS
-      sass = require('gulp-dart-sass'),
+      sass = require('gulp-sass')(require('sass')),
       postcss = require('gulp-postcss'),
       cleanCSS = require('gulp-clean-css'),
 
@@ -100,10 +100,11 @@ const html = (done) => {
   done();
 }
 
-const watchFiles = () => {
+const watchFiles = (done) => {
   gulp.watch(['./_dev/stylesheets/*.scss', './_dev/stylesheets/**/*.scss','./_dev/style-guide/**/*.css'], css);
   gulp.watch(['./_dev/scripts/*.js', './_dev/scripts/**/*.js',,'./_dev/style-guide/**/*.js'], js);
   gulp.watch('./_dev/**/*.ejs', html);
+  done();
 }
 
 const devSetEnv = (done) => {
