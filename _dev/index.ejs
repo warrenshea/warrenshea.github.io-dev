@@ -1,46 +1,61 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.header.ejs`, pageData) %>
-
     <style>
-      .js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 93%, #e6c61d 93.5%, #e6c61d 100%); }
-      .html { background: linear-gradient(105deg, #e45028 0, #e45028 93%, #f1662b 93.5%, #f1662b 100%); }
-      .css { background: linear-gradient(105deg, #0873b9 0, #0873b9 93%, #28a9e0 93.5%, #28a9e0 100%); }
-      .angular { background: linear-gradient(105deg, #b92933 0, #b92933 93%, #e62a39 93.5%, #e62a39 100%); }
-      .react { background: linear-gradient(105deg, #222 0, #222 93%, #61dafb 93.5%, #61dafb 100%); }
-      .harpjs { background: linear-gradient(105deg, #6b919e 0, #6b919e 93%, #81586c 93.5%, #81586c 100%); }
-      .python { background: linear-gradient(105deg, #306998 0, #306998 93%, #ffd43b 93.5%, #ffd43b 100%); }
-      .sql { background: linear-gradient(105deg, #2687cf 0, #2687cf 93%, #b8d432 93.5%, #b8d432 100%); }
-      .regex { background: linear-gradient(105deg, #2a007c 0, #2a007c 93%, #fd5900 93.5%, #fd5900 100%); }
-      .markdown { background: linear-gradient(105deg, #606870 0, #606870 93%, #ddd 93.5%, #ddd 100%); }
-      .sublime { background: linear-gradient(105deg, #4b4b4b 0, #4b4b4b 93%, #ff9800 93.5%, #ff9800 100%); }
-      .es6 { background: linear-gradient(105deg, #f6d854 0, #f6d854 93%, #323230 93.5%, #323230 100%); }
-      .git { background: linear-gradient(105deg, #f54d27 0, #f54d27 93%, #efefe7 93.5%, #efefe7 100%); }
-      .a11y { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .power-of-habit { background: linear-gradient(105deg, #c52641 0, #c52641 93%, #f8e838 93.5%, #f8e838 100%); }
-      .magic-of-tidying-up { background: linear-gradient(105deg, #40b7b6 0, #40b7b6 93%, #a61407 93.5%, #a61407 100%); }
-      .design-of-everyday-things { background: linear-gradient(105deg, #91301f 0, #91301f 93%, #fedf13 93.5%, #fedf13 100%); }
-      .smashing-magazine { background: linear-gradient(105deg, #d33a2c 0, #d33a2c 93%, #fff 93.5%, #fff 100%); }
-      .css-mastery { background: linear-gradient(105deg, #006b33 0, #006b33 93%, #f9ea53 93.5%, #f9ea53 100%); }
-      .eric-meyer-on-css { background: linear-gradient(105deg, #045da2 0, #045da2 93%, #a04d6f 93.5%, #a04d6f 100%); }
-      .javascript-design-patterns { background: linear-gradient(105deg, #00a8a8 0, #00a8a8 93%, #fff 93.5%, #fff 100%); }
-      .udacity { background: linear-gradient(105deg, #017a9b 0, #017a9b 93%, #02b3e4 93.5%, #02b3e4 100%); }
-      .ryerson { background: linear-gradient(105deg, #004c9b 0, #004c9b 93%, #ffdc00 93.5%, #ffdc00 100%); }
-      .command-prompt{ background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .personal-brand { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .management { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .image-optimization { background: linear-gradient(105deg, #48b6db 0, #48b6db 93%, #fff 93.5%, #fff 100%); }
-      .seven-habits { background: linear-gradient(105deg, #144f87 0, #144f87 93%, #fff 93.5%, #fff 100%); }
-      .mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 93%, #035ba2 93.5%, #035ba2 100%); }
-      .design-systems-handbook { background: linear-gradient(105deg, #098c58 0, #098c58 93%, #58b38f 93.5%, #58b38f 100%); }
-      .clean-code { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .the-clean-coder { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .clean-architecture { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
-      .javascript-the-good-parts { background: linear-gradient(105deg, #000 0, #000 93%, #fff 93.5%, #fff 100%); }
+      .description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); }
+      .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); }
+      .html-css-js { background: linear-gradient(105deg,
+        #e45028 0, #e45028 84%,
+        #0873b9 84.5%, #0873b9 87.5%, #28a9e0 87.5%, #28a9e0 88%,
+        #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
+        #f1662b 92.5%, #f1662b 100%); }
+      .js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 92%, #e6c61d 92.5%, #e6c61d 100%); }
+      .html { background: linear-gradient(105deg, #e45028 0, #e45028 92%, #f1662b 92.5%, #f1662b 100%); }
+      .css { background: linear-gradient(105deg, #0873b9 0, #0873b9 92%, #28a9e0 92.5%, #28a9e0 100%); }
+      .angular { background: linear-gradient(105deg, #b92933 0, #b92933 92%, #e62a39 92.5%, #e62a39 100%); }
+      .react { background: linear-gradient(105deg, #222 0, #222 92%, #61dafb 92.5%, #61dafb 100%); }
+      .harpjs { background: linear-gradient(105deg, #6b919e 0, #6b919e 92%, #81586c 92.5%, #81586c 100%); }
+      .python { background: linear-gradient(105deg, #306998 0, #306998 92%, #ffd43b 92.5%, #ffd43b 100%); }
+      .sql { background: linear-gradient(105deg, #2687cf 0, #2687cf 92%, #b8d432 92.5%, #b8d432 100%); }
+      .regex { background: linear-gradient(105deg, #2a007c 0, #2a007c 92%, #fd5900 92.5%, #fd5900 100%); }
+      .markdown { background: linear-gradient(105deg, #606870 0, #606870 92%, #ddd 92.5%, #ddd 100%); }
+      .sublime { background: linear-gradient(105deg, #4b4b4b 0, #4b4b4b 92%, #ff9800 92.5%, #ff9800 100%); }
+      .es6 { background: linear-gradient(105deg, #f6d854 0, #f6d854 92%, #323230 92.5%, #323230 100%); }
+      .git { background: linear-gradient(105deg, #f54d27 0, #f54d27 92%, #efefe7 92.5%, #efefe7 100%); }
+      .a11y { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .power-of-habit { background: linear-gradient(105deg, #c52641 0, #c52641 92%, #f8e838 92.5%, #f8e838 100%); }
+      .magic-of-tidying-up { background: linear-gradient(105deg, #40b7b6 0, #40b7b6 92%, #a61407 92.5%, #a61407 100%); }
+      .design-of-everyday-things { background: linear-gradient(105deg, #91301f 0, #91301f 92%, #fedf13 92.5%, #fedf13 100%); }
+      .smashing-magazine { background: linear-gradient(105deg, #d33a2c 0, #d33a2c 92%, #ddd 92.5%, #ddd 100%); }
+      .css-mastery { background: linear-gradient(105deg, #006b33 0, #006b33 92%, #f9ea53 92.5%, #f9ea53 100%); }
+      .eric-meyer-on-css { background: linear-gradient(105deg, #045da2 0, #045da2 92%, #a04d6f 92.5%, #a04d6f 100%); }
+      .javascript-design-patterns { background: linear-gradient(105deg, #00a8a8 0, #00a8a8 92%, #fff 92.5%, #fff 100%); }
+      .udacity { background: linear-gradient(105deg, #017a9b 0, #017a9b 92%, #02b3e4 92.5%, #02b3e4 100%); }
+      .ryerson { background: linear-gradient(105deg, #004c9b 0, #004c9b 92%, #ffdc00 92.5%, #ffdc00 100%); }
+      .command-prompt{ background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .personal-brand { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .management { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .image-optimization { background: linear-gradient(105deg, #48b6db 0, #48b6db 92%, #fff 92.5%, #fff 100%); }
+      .seven-habits { background: linear-gradient(105deg, #144f87 0, #144f87 92%, #fff 92.5%, #fff 100%); }
+      .mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 92%, #035ba2 92.5%, #035ba2 100%); }
+      .design-systems-handbook { background: linear-gradient(105deg, #098c58 0, #098c58 92%, #58b38f 92.5%, #58b38f 100%); }
+      .clean-code { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .the-clean-coder { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .clean-architecture { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+      .javascript-the-good-parts { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
     </style>
 
-    <main class="w:100% bgc:albicant" role="main">
+    <main class="w:100% bgc:light-grey" role="main">
       <section class="mw:1200px align-self:centered pt:32px">
-        <h1 class="play:bold fs:40px color:slate">Warren Shea - warrenshea.github.io</h1>
+        <h1 class="display:flex play:bold fs:40px color:slate align:center">Warren Shea</h1>
+        <h2 class="display:flex play:bold fs:24px color:slate align:center">warrenshea.github.io</h2>
+        <nav><ul class="display:flex align:center unstyle-pl:0 pt:32px">
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('code-examples').scrollIntoView();">Code Examples</a></li>
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('in-progress-projects').scrollIntoView();">In Progress Projects</a></li>
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('completed-projects').scrollIntoView();">Completed Projects</a></li>
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('boilerplates').scrollIntoView();">Boilerplates</a></li>
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('general-notes').scrollIntoView();">General Notes</a></li>
+          <li class="px:16px"><a class="fw:bold" href="javascript:document.getElementById('book-course-notes').scrollIntoView();">Book + Course Notes</a></li>
+        </ul></nav>
       </section>
 
 <!--       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
@@ -59,15 +74,16 @@
       [ ] next-js<br>
       </section> -->
 
+
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">Code examples</h2>
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="code-examples">Code examples</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Form Validation</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <p>A simple form validation.</p>
                 <div><p>0 WCAG 2.0 A and AA errors.</p></div>
                 <div><a href="/examples/form-validation/" rel="noopener" target="_blank">See the example</a></div>
@@ -79,7 +95,7 @@
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Navigation</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <p>A simple sticky navigation.</p>
                 <div><p>0 WCAG 2.0 A and AA errors.</p></div>
                 <div><a href="/examples/sticky-navigation-flex-table/" rel="noopener" target="_blank">See the example</a></div>
@@ -91,7 +107,7 @@
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <p>An example of a JavaScript framework structure.</p>
                 <div><p>Allows modules to be namespaced with simple initialize and document.ready() functions.</p></div>
                 <div><a href="https://codepen.io/warrenshea/pen/mExbdd" rel="noopener" target="_blank">See the code on CodePen</a></div>
@@ -103,10 +119,20 @@
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <p>An example of a JavaScript framework structure.</p>
                 <div><p>Allows modules to be namespaced and extended.</p></div>
 
+              </div>
+            </div>
+          </li>
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+              <div class="position:relative html-css-js" style="height:70px;">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Aside</em></h3>
+              </div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div><a href="/examples/sticky-aside/" rel="noopener" target="_blank">See the example</a></div>
               </div>
             </div>
           </li>
@@ -114,42 +140,110 @@
       </section>
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">In Progress Projects</h2>
-        <h3 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">ZERO System - A Website Builder</h3>
-        <p class="fs:16px lh:24 sm+:px:8px xl+:px:40px pb:32px">This project is a culimination of all the skills I've learned from a Front-end perspective. I've built a number of components as consistently, performant, and accessible as possible, keeping in mind the goal is/was always to move this to a CMS based system that should allow any non-technical user to build webpages.</p>
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="in-progress-projects">In Progress Projects</h2>
+        <div class="xl+:bgc:ultramarine md+:br:16px xl+:box-shadow:maverick-d xl+:py:32px">
+          <h3 class="color:white fs:28px play:bold sm+:pl:8px xl+:pl:40px pb:16px">ZERO System - A Website Builder</h3>
+          <p class="color:white fs:16px lh:24 sm+:px:8px xl+:px:40px pb:32px">This project is a culimination of all the skills I've learned from a Front-end perspective. I've built a number of components as consistently, performant, and accessible as possible, keeping in mind the goal is/was always to move this to a CMS based system that should allow any non-technical user to build webpages.</p>
+          <ul class="row unstyle sm+:pl:0 xl+:px:32px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative html-css-js" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>ZERO System</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="fw:bold">* Password Protected</div>
+                  <div><a href="http://zero-system.poc.warrenshea.com/" rel="noopener" target="_blank" aria-label="">zero-system.poc.warrenshea.com</a>*</div>
+                  <div><a href="http://zero-system.poc.warrenshea.com/cms/" rel="noopener" target="_blank" aria-label="">Content Management System</a>*</div>
+                  <div><a href="http://zero-system.poc.warrenshea.com/api/" rel="noopener" target="_blank" aria-label="">API</a>*</div>
+                  <div><a href="http://zero-system.poc.warrenshea.com/codebase/chill-penguin/component-library/" rel="noopener" target="_blank" aria-label="">Component Library</a>*</div>
+                  <div><a href="http://zero-system.poc.warrenshea.com/codebase/chill-penguin/style-guide/" rel="noopener" target="_blank" aria-label="">Styleguide</a>*</div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative css" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.css</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>This CSS (SASS) framework is built under the Zero System framework, and invented by me.</p></div>
+                  <div><a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/core.scss" rel="noopener" target="_blank" aria-label="View the core.scss (source) code">Code (source)</a></div>
+                  <div><a href="https://github.com/warrenshea/warrenshea.github.io/blob/master/stylesheets/core.css" rel="noopener" target="_blank" aria-label="View the core.css (compiled) code">Code (compiled)</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative js" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.js</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>This Module JavaScript Design Pattern, namespaced storm_eagle, is a built under the Zero System framework.</p></div>
+                  <div><a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (source) code">Code (source)</a></div>
+                  <div><a href="https://github.com/warrenshea/warrenshea.github.io/blob/master/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (compiled) code">Code (compiled)</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative js" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Height Equalizer</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>A height equalizer function built under the Zero System framework.</p></div>
+                  <div><a href="/examples/height-equalizer/" rel="noopener" target="_blank" aria-label="View an example of the height equalizer code and code in action">Example and code</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative html-css-js" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Carousel</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>A mix of various responsive carousels and a Carousel Builder.</p></div>
+                  <div><a href="/examples/carousel/" rel="noopener" target="_blank">Example</a></div>
+                  <div>Code: <a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/carousel/index.ejs" rel="noopener" target="_blank">HTML</a> / <a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/_global/_module.carousel.scss" rel="noopener" target="_blank">SASS</a> / <a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.carousel.js" rel="noopener" target="_blank">JavaScript</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
+                <div class="position:relative html-css-js" style="height:70px;">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Accordion</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>In progress</p></div>
+                  <div><a href="/examples/accordion/" rel="noopener" target="_blank">Example</a></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="completed-projects">Completed Projects</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative css" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.css</em></h3>
+              <div class="position:relative html-css-js" style="height:70px;">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Glitch</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p>This CSS (SASS) framework is built under the Zero System framework, and invented by me.</p></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/core.scss" rel="noopener" target="_blank" aria-label="View the core.scss (source) code">Code (source)</a></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io/blob/master/stylesheets/core.css" rel="noopener" target="_blank" aria-label="View the core.css (compiled) code">Code (compiled)</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.js</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p>This Module JavaScript Design Pattern, namespaced storm_eagle, is a built under the Zero System framework.</p></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (source) code">Code (source)</a></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io/blob/master/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (compiled) code">Code (compiled)</a></div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div class="pb:16px"><p>This Bookmarklet keytool application runs various page checks and functions. Cannot mend tears.</p></div>
+                <div><a href="javascript:javascript: (function() {var _i = function(s, data_id, cb) {var sc = document.createElement('script');sc.setAttribute('data-id', data_id);sc.onload = function() {sc.onload = null;sc.onreadystatechange = null;cb.call(this);};sc.onreadystatechange = function() {if (/^(complete|loaded)$/.test(this.readyState) === true) {sc.onreadystatechange = null;sc.onload();}};sc.src = s;if (document.head) { document.head.appendChild(sc); } else { document.getElementsByTagName('head')[0].appendChild(sc); }};glitch = undefined;var bookmarklet_nodes_to_delete = document.querySelectorAll('[data-id=\'glitch\'], [data-id=\'bookmarklet-css\'], [data-id=\'html-validation\']');bookmarklet_nodes_to_delete.forEach((node) => {node.remove();});_i('https://warrenshea.github.io/glitch/app.js', 'glitch', function() {});})();" rel="noopener" aria-label="Opens Glitch Bookmarklet App">Bookmarklet</a></div>
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Height Equalizer</em></h3>
+              <div class="position:relative html-css-js" style="height:70px;">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Icon Library</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p>A height equalizer function built under the Zero System framework.</p></div>
-                <div><a href="/examples/height-equalizer/" rel="noopener" target="_blank" aria-label="View an example of the height equalizer code and code in action">Example and code</a></div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div class="pb:16px"><p>This small application is used to help find Font Awesome 5 icons</p></div>
+                <div>@TODO</div>
               </div>
             </div>
           </li>
@@ -158,7 +252,7 @@
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Cross window communication</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><p>Send messages between a window and its popup, built under the Zero System framework.</p></div>
                 <div><a href="/examples/communicating-windows/" rel="noopener" target="_blank" aria-label="View an example of the communicating code and code in action">Example and code</a></div>
               </div>
@@ -167,33 +261,11 @@
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Carousel</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p>A mix of responsive carousels. Ability to control number of slides per breakpoint, spacing around slides, different types of carousel (focusing one item, full width carousel, etc).</p></div>
-                <div><a href="/examples/carousel/" rel="noopener" target="_blank">See the carousel example</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Accordion</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p></p></div>
-                <div><a href="/examples/accordion/" rel="noopener" target="_blank">See the accordion example</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Calendar Event Builder</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><p>Using a form, helps build a Google Calendar Event, an iCalendar Event, an Outlook Event, and a Yahoo Event</p></div>
-                <div><a href="/examples/calendar-event-builder/" rel="noopener" target="_blank">See the Calendar Event Builder</a></div>
+                <div><a href="/examples/calendar-event-builder/" rel="noopener" target="_blank">Example</a></div>
               </div>
             </div>
           </li>
@@ -201,31 +273,15 @@
       </section>
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">Completed Projects</h2>
-        <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
-              <div class="position:relative css" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.css</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div class="pb:16px"><p>This CSS (SASS) framework is built under the Zero System framework, and invented by me.</p></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/core.scss" rel="noopener" target="_blank" aria-label="View the core.scss (source) code">Code (source)</a></div>
-                <div><a href="https://github.com/warrenshea/warrenshea.github.io/blob/master/stylesheets/core.css" rel="noopener" target="_blank" aria-label="View the core.css (compiled) code">Code (compiled)</a></div>
-              </div>
-            </div>
-          </li>
-
-      <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">Boilerplates</h2>
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="boilerplates">Boilerplates</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative harpjs" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HarpJS</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
-                <div><a href="https://github.com/warrenshea/boilerplate-harpjs-gulp-browsersync/" rel="noopener" target="_blank" aria-label="Review HarpJS Boilerplate code, opens in a new tab">HarpJS | Gulp 4</a></div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div><a href="https://github.com/warrenshea/boilerplate-harpjs-gulp-browsersync/" rel="noopener" target="_blank" aria-label="Review HarpJS Boilerplate code, opens in a new tab">HarpJS v0.34.0 / Gulp v4 / Node v12</a></div>
               </div>
             </div>
           </li>
@@ -234,7 +290,7 @@
               <div class="position:relative react" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: React</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
 
               </div>
             </div>
@@ -244,7 +300,7 @@
               <div class="position:relative angular" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: Angular</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
 
               </div>
             </div>
@@ -253,14 +309,14 @@
       </section>
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">General Notes</h2>
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="general-notes">General Notes</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative html" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HTML</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.html.html" rel="noopener" target="_blank" aria-label="Review Warren's H T M L Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -270,7 +326,7 @@
               <div class="position:relative css" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS (and Sass)</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.css.html" rel="noopener" target="_blank" aria-label="Review Warren's C S S Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -280,7 +336,7 @@
               <div class="position:relative js" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.javascript.html" rel="noopener" target="_blank" aria-label="Review Warren's JavaScript Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -290,7 +346,7 @@
               <div class="position:relative react" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.react.html" rel="noopener" target="_blank" aria-label="Review Warren's React Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -300,7 +356,7 @@
               <div class="position:relative a11y" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>a11y</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.a11y.html" rel="noopener" target="_blank" aria-label="Review Warren's Accessibility Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -310,7 +366,7 @@
               <div class="position:relative a11y" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Performance</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.performance.html" rel="noopener" target="_blank" aria-label="Review Warren's Performance Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -320,7 +376,7 @@
               <div class="position:relative python" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Python</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.python.html" rel="noopener" target="_blank" aria-label="Review Warren's Python Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -330,7 +386,7 @@
               <div class="position:relative regex" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Regex</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.regex.html" rel="noopener" target="_blank" aria-label="Review Warren's Regex Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -340,7 +396,7 @@
               <div class="position:relative sql" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>SQL</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.sql.html" rel="noopener" target="_blank" aria-label="Review Warren's sequel Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -350,7 +406,7 @@
               <div class="position:relative git" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>git</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/dev.git.html" rel="noopener" target="_blank" aria-label="Review Warren's git Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -360,7 +416,7 @@
               <div class="position:relative command-prompt" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Command Prompt / Terminal</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/general.terminal.html" rel="noopener" target="_blank" aria-label="Review Warren's command prompt and terminal Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -370,7 +426,7 @@
               <div class="position:relative personal-brand" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Personal Brand + NPS</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/general.personal-brand.html" rel="noopener" target="_blank" aria-label="Review Warren's Personal Brand Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -380,7 +436,7 @@
               <div class="position:relative management" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Management</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a href="/notes/general.management.html" rel="noopener" target="_blank" aria-label="Review Warren's Management Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
@@ -389,14 +445,14 @@
       </section>
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">Book + Course Notes</h2>
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="book-course-notes">Book + Course Notes</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative design-systems-handbook" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Design Systems Handbook</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by Invision</em></div>
                 <div>Completed Jul 2021</div>
                 <div><a href="/notes/book.design-systems-handbook.html" rel="noopener" target="_blank" aria-label="Review Design Systems Handbook notes, opens in a new tab">Notes</a></div>
@@ -408,7 +464,7 @@
               <div class="position:relative udacity" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://www.udacity.com/course/web-accessibility--ud891" rel="noopener" target="_blank" aria-label="Learn more about Google's Web Accessibility course on Udacity, opens in a new tab">Google (on Udacity)</a></em></div>
                 <div>Completed Jul 2020</div>
                 <div><a href="/notes/dev.web-a11y-udacity.online-course.html" rel="noopener" target="_blank" aria-label="Review Google's Web Accessibility course on notes, opens in a new tab">Notes</a></div>
@@ -420,7 +476,7 @@
               <div class="position:relative ryerson" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility for Developers</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://de.ryerson.ca/wa/advanced/" rel="noopener" target="_blank" aria-label="Learn more about Ryerson University's Web Accessibility for Developers course, opens in a new tab">Ryerson University: The Chang School of Continuing Education</a></em></div>
                 <div>Completed Oct 2018</div>
                 <div><a href="https://github.com/warrenshea/learnaria" rel="noopener" target="_blank" aria-label="Review my course's source code, opens in a new tab">GitHub Code</a></div>
@@ -433,7 +489,7 @@
               <div class="position:relative react" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Winter 2018 Full Stack Masterclass</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://junocollege.com/" rel="noopener" target="_blank" aria-label="Learn more about courses that Juno College has to offer, opens in a new tab">Juno College (formerly HackerYou)</a></em></div>
                 <div>Completed Mar 2018</div>
               </div>
@@ -444,7 +500,7 @@
               <div class="position:relative react" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React for Beginners</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://reactforbeginners.com/" rel="noopener" target="_blank" aria-label="Learn more about React for Beginners by Wes Bos, opens in a new tab">Wes Bos</a></em></div>
                 <div>Completed Jan 2018</div>
                 <div><a href="/notes/dev.react-for-beginners.online-course.html" rel="noopener" target="_blank" aria-label="Review React for Beginners notes, opens in a new tab">Notes</a></div>
@@ -456,7 +512,7 @@
               <div class="position:relative es6" style="height:70px;">
                 <h3 class="fs:24px play:normal color:black p:8px pr:16px lh:28 position:absolute bottom:0"><em>ES6 for Everyone</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://es6.io/" rel="noopener" target="_blank" aria-label="Learn more about ES6 for Everyone by Wes Bos, opens in a new tab">Wes Bos</a></em></div>
                 <div>Completed Dec 2017</div>
                 <div><a href="/notes/dev.es6-for-everyone.online-course.html" rel="noopener" target="_blank" aria-label="Review ES6 for Everyone notes, opens in a new tab">Notes</a></div>
@@ -468,7 +524,7 @@
               <div class="position:relative markdown" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Mastering Markdown</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://masteringmarkdown.com/" rel="noopener" target="_blank" aria-label="Learn more about Mastering Markdown by Wes Bos, opens in a new tab">Wes Bos</a></em></div>
                 <div>Completed Dec 2017</div>
                 <div><a href="/notes/dev.mastering-markdown.online-course.html" rel="noopener" target="_blank" aria-label="Review Mastering Markdown notes, opens in a new tab">Notes</a></div>
@@ -480,7 +536,7 @@
               <div class="position:relative sublime" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sublime Text Power User</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://sublimetextbook.com/" rel="noopener" target="_blank" aria-label="Learn more about Sublime Text Power User by Wes Bos, opens in a new tab">Wes Bos</a></em></div>
                 <div>Completed Dec 2017</div>
                 <div><a href="/notes/dev.sublime-text.book.html" rel="noopener" target="_blank" aria-label="Review Sublime Text Power User notes, opens in a new tab">Notes</a></div>
@@ -492,7 +548,7 @@
               <div class="position:relative javascript-design-patterns" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Patterns</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Addy Osmani</em></div>
                 <div><a href="/notes/book.javascript-design-patterns.html" rel="noopener" target="_blank" aria-label="Review JavaScript Design Patterns notes, opens in a new tab">Notes</a></div>
               </div>
@@ -503,7 +559,7 @@
               <div class="position:relative power-of-habit" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Power of Habit</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://en.wikipedia.org/wiki/The_Power_of_Habit" rel="noopener" target="_blank" aria-label="Learn more about The Power of Habit by Charles Duhigg, opens in a new tab">Charles Duhigg</a></em></div>
                 <div>Completed Nov 2016</div>
                 <div><a href="/notes/book.the-power-of-habit.html" rel="noopener" target="_blank" aria-label="Review The Power of Habit notes, opens in a new tab">Notes</a></div>
@@ -515,7 +571,7 @@
               <div class="position:relative magic-of-tidying-up" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Life-Changing Magic of Tidying Up</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://en.wikipedia.org/wiki/Marie_Kondo" rel="noopener" target="_blank" aria-label="Learn more about The Life-Changing Magic of Tidying Up by Marie Kondo, opens in a new tab">Marie Kondo</a></em></div>
                 <div>Completed Nov 2016</div>
                 <div><a href="/notes/book.the-life-changing-magic-of-tidying-up.html" rel="noopener" target="_blank" aria-label="Review The Life Changing Magic of Tidying Up notes, opens in a new tab">Notes</a></div>
@@ -527,7 +583,7 @@
               <div class="position:relative design-of-everyday-things" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Design of Everyday Things</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things" rel="noopener" target="_blank" aria-label="Learn more about The Design of Everyday Things by Donald Norman, opens in a new tab">Donald Norman</a></em></div>
                 <div>Completed Jun 2015</div>
                 <div><a href="/notes/book.design-of-everyday-things.html" rel="noopener" target="_blank" aria-label="Review The Design of Everyday Things notes, opens in a new tab">Notes</a></div>
@@ -537,9 +593,9 @@
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative smashing-magazine" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Smashing Magazine Book #2</em></h3>
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #2</em></h3>
               </div>
-              <div><div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div><div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div>Completed Apr 2013</div>
                 <div><a href="/notes/dev.smashing-magazine-book-2.html" rel="noopener" target="_blank" aria-label="Review Smashing Magazine Book number two notes, opens in a new tab">Notes</a></div>
               </div>
@@ -548,9 +604,9 @@
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:maverick-d">
               <div class="position:relative smashing-magazine" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Smashing Magazine Book #1</em></h3>
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #1</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div>Completed Apr 2013</div>
                 <div><a href="/notes/dev.smashing-magazine-book-1.html" rel="noopener" target="_blank" aria-label="Review Smashing Magazine Book number one notes, opens in a new tab">Notes</a></div>
               </div>
@@ -561,7 +617,7 @@
               <div class="position:relative eric-meyer-on-css" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Eric Meyer on CSS</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by Eric Meyer</em></div>
                 <div>Completed Jan 2011</div>
               </div>
@@ -572,7 +628,7 @@
               <div class="position:relative css-mastery" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS Mastery</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><em>by <a href="https://www.apress.com/gp/book/9781430223979" rel="noopener" target="_blank" aria-label="Learn more about Andy Budd's CSS Mastery book, opens in a new tab">Andy Budd</a></em></div>
                 <div>Completed Jan 2011</div>
                 <div><a href="/notes/dev.css-mastery.html" rel="noopener" target="_blank" aria-label="Review CSS Mastery notes, opens in a new tab">Notes</a></div>
@@ -590,7 +646,7 @@
               <div class="position:relative image-optimization" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Image Optimization</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Addy Osmani</em></div>
                 <div><a href="/notes/book.image-optimization.html" rel="noopener" target="_blank" aria-label="Review Image Optimization notes, opens in a new tab">Notes</a></div>
               </div>
@@ -601,7 +657,7 @@
               <div class="position:relative clean-code" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Code</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Robert C. Martin</em></div>
                 <div><a href="/notes/book.clean-code.html" rel="noopener" target="_blank" aria-label="Review Clean Code, opens in a new tab">Notes</a></div>
               </div>
@@ -612,7 +668,7 @@
               <div class="position:relative the-clean-coder" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The Clean Coder</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Robert C. Martin</em></div>
                 <div><a href="/notes/book.the-clean-coder.html" rel="noopener" target="_blank" aria-label="Review The Clean Coder, opens in a new tab">Notes</a></div>
               </div>
@@ -623,7 +679,7 @@
               <div class="position:relative clean-architecture" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Architecture</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Robert C. Martin</em></div>
                 <div><a href="/notes/book.clean-architecture.html" rel="noopener" target="_blank" aria-label="Review Clean Architecture, opens in a new tab">Notes</a></div>
               </div>
@@ -634,7 +690,7 @@
               <div class="position:relative javascript-the-good-parts" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: JavaScript: The Good Parts</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Douglas Crockford</em></div>
                 <div><a href="/notes/book.javascript-the-good-parts.html" rel="noopener" target="_blank" aria-label="Review JavaScript: The Good Parts, opens in a new tab">Notes</a></div>
               </div>
@@ -645,7 +701,7 @@
               <div class="position:relative seven-habits" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The 7 Habits of Highly Effective People</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Stephen R. Covey</em></div>
                 <div><a href="/notes/book.seven-habits.html" rel="noopener" target="_blank" aria-label="Review Image Optimization notes, opens in a new tab">Notes</a></div>
               </div>
@@ -656,7 +712,7 @@
               <div class="position:relative mindset" style="height:70px;">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Mindset: The New Psychology of Success</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24" data-equalize-height="description">
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><em>by Carol S. Dweck, Ph. D.</em></div>
                 <div><a href="/notes/book.mindset.html" rel="noopener" target="_blank" aria-label="Review Image Optimization notes, opens in a new tab">Notes</a></div>
               </div>
