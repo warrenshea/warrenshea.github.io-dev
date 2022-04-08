@@ -530,7 +530,7 @@ fieldset.unstyle { border:0; padding:0 }
     &.active{
       background: $white;
       z-index:1;
-      box-shadow: $box-shadow-maverick-a;
+      box-shadow: $box-shadow-custom-1;
       transition: background 0 linear;
     }
     input {

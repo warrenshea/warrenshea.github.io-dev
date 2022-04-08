@@ -55,7 +55,7 @@
     z-index: 1051;
     visibility: visible;
     @include breakpoint(large) {
-      box-shadow: $box-shadow-maverick-a;
+      box-shadow: $box-shadow-custom-1;
       position:absolute;
       bottom:auto;
       right:auto;

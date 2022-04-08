@@ -27,7 +27,7 @@
     .item {
       .content-container {
         z-index:0;
-        box-shadow: $box-shadow-maverick-a;
+        box-shadow: $box-shadow-custom-1;
       }
       &.carousel-disabled-active {
         .content-container {
@@ -99,7 +99,7 @@
   .items-group {
     .item {
       .content-container {
-        box-shadow: $box-shadow-maverick-a;
+        box-shadow: $box-shadow-custom-1;
       }
     }
   }
