@@ -27,7 +27,7 @@ const breakpoints = {
 };
 
 const focus_trap_selector = `a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), li[role="tab"]:not([disabled]), div[role="tabpanel"]:not([disabled]), label`;
-const remove_focus_selector = `.form\\:theme\\:maverick-a input[type="radio"]+label, .form\\:theme\\:maverick-a input[type="text"]+label, .form\\:theme\\:maverick-a input[type="email"]+label, .form\\:theme\\:maverick-b label, [data-module="popover"] button, [data-module="popover"] a`;
+const remove_focus_selector = `.form\\:theme\\:b33mOe input[type="radio"]+label, .form\\:theme\\:b33mOe input[type="text"]+label, .form\\:theme\\:b33mOe input[type="email"]+label, .form\\:theme\\:maverick-b label, [data-module="popover"] button, [data-module="popover"] a`;
 
 /**
  * storm_eagle Object

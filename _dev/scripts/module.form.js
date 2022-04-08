@@ -115,12 +115,12 @@ storm_eagle.module('form_theme_maverick_a', function () {
     },
     ready: function() {
       const self = this;
-      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach( element => {
+      document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
         if (element.type !== 'radio') {
           self.force_set_active_label(element);
         }
       });
-      document.querySelectorAll(".form\\:theme\\:maverick-a textarea").forEach( element => {
+      document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
         self.force_textarea_autoexpand(element);
       });
     },
@@ -131,7 +131,7 @@ storm_eagle.module('form_theme_maverick_a', function () {
     },
     input_listener: function() {
       const self = this;
-      document.querySelectorAll('.form\\:theme\\:maverick-a input, .form\\:theme\\:maverick-a select, .form\\:theme\\:maverick-a textarea').forEach( element => {
+      document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
         if (element.type !== 'radio') {
           element.addEventListener('change', () => {
             self.force_set_active_label(element);
@@ -145,7 +145,7 @@ storm_eagle.module('form_theme_maverick_a', function () {
     },
     textarea_autoexpand_listener: function() {
       const self = this;
-      document.querySelectorAll(".form\\:theme\\:maverick-a textarea").forEach( element => {
+      document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
         element.addEventListener('input', () => {
           self.force_textarea_autoexpand(element);
         });
