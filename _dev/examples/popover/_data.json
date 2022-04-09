@@ -4,20 +4,17 @@
         "pageData": {
             "lang": "en",
             "head": {
-                "title": "popover",
+                "title": "Popover",
                 "urlEn": "/examples/popover/",
                 "urlCanonical": "/examples/popover/",
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css",
-                "/stylesheets/vendor.prism.v.1.23.0.css"
+                "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.popover.js",
-                "/scripts/vendor.prism.v.1.23.0.js",
-                "/scripts/prism.js"
+                "/scripts/module.popover.js"
             ]
         }
     }
