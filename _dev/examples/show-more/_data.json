@@ -4,9 +4,9 @@
         "pageData": {
             "lang": "en",
             "head": {
-                "title": "Table Show More",
-                "urlEn": "/examples/table-show-more/",
-                "urlCanonical": "/examples/table-show-more/",
+                "title": "Show More",
+                "urlEn": "/examples/show-more/",
+                "urlCanonical": "/examples/show-more/",
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
