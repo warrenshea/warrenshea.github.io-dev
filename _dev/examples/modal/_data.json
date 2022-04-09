@@ -4,20 +4,17 @@
         "pageData": {
             "lang": "en",
             "head": {
-                "title": "modal",
+                "title": "Modal",
                 "urlEn": "/examples/modal/",
                 "urlCanonical": "/examples/modal/",
                 "metaPageKeywords": "",
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css",
-                "/stylesheets/vendor.prism.v.1.23.0.css"
+                "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.modal.js",
-                "/scripts/vendor.prism.v.1.23.0.js",
-                "/scripts/prism.js"
+                "/scripts/module.modal.js"
             ]
         }
     }
