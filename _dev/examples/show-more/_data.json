@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Table Show More",
+                "urlEn": "/examples/table-show-more/",
+                "urlCanonical": "/examples/table-show-more/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.show-more.js"
+            ]
+        }
+    }
+}

@@ -1,82 +1,77 @@
 storm_eagle.module("show_more", function () {
   "use strict";
 
-  var $w = $(window);
-  var tableState = [];
+  let show_more_state = {};
 
   return {
     initialize: function() {
       const self = this;
-      $(".table--show-more").each(function (index) {
-        tableState[index] = {
-          "tableShowMore": $(this),
-          "tableShowMoreTransitionDuration": $(this).data("table-show-more-transition-duration"),
-          "tableShowMoreOffset": $(this).data("table-show-more-offset"),
-          "tableShowMoreContainer": $(this).parent(".table--show-more-container"),
-          "tableShowMoreContainerHeight": ""
+      document.querySelectorAll("[data-module='show-more']").forEach(function(el){
+        let show_more_id = el.getAttribute("id");
+        show_more_state[show_more_id] = {
+          "transition_duration": el.getAttribute("data-show-more-transition-duration"),
+          "offset": el.getAttribute("data-show-more-offset"),
+          "container": el.querySelector("[data-module='show-more.container']"),
+          "container_height": "",
+          "more_button": el.nextElementSibling.querySelector("[data-module='show-more.more']"),
+          "less_button": el.nextElementSibling.querySelector("[data-module='show-more.less']")
         };
-        self.initUI(index);
-        self.resizeListener(index);
-        self.addTableShowMoreListener(index);
+        self.init_ui(show_more_id);
+        self.resize_listener(show_more_id);
+        self.add_button_listener(show_more_id);
       });
     },
-    initUI: function(index) {
+    init_ui: function(show_more_id) {
       const self = this;
-      var $table = tableState[index];
-      $table["tableShowMoreContainer"].css("transition-property", "height");
-      $table["tableShowMoreContainer"].css("transition-timing-function", "ease");
+      document.getElementById(show_more_id).style.transitionProperty = "height";
+      document.getElementById(show_more_id).style.transitionTimingFunction = "ease";
     },
-    updateTableShowMoreContainerHeight: function(index) {
-      var $table = tableState[index];
+    update_container_height: function(show_more_id) {
 
       setTimeout(function () {
-        $table["tableShowMoreContainer"].css("transition-duration", "0s");
-      }, tableState[index]["tableShowMoreTransitionDuration"] * 1000);
+        document.getElementById(show_more_id).style.transitionDuration = "0s";
+      }, show_more_state[show_more_id]["transition_duration"] * 1000);
 
-      $table["tableShowMoreContainer"].css("height", $table["tableShowMoreContainerHeight"] - $table["tableShowMoreOffset"]);
+      document.getElementById(show_more_id).style.height = show_more_state[show_more_id]["container_height"] - show_more_state[show_more_id]["offset"] + "px";
     },
-    addTableShowMoreListener: function(index) {
+    add_button_listener: function(show_more_id) {
       const self = this;
-      var $table = tableState[index];
 
-      $table["tableShowMoreContainer"].siblings().find(".table--show-more-button, .table--show-less-button").on("click", function (e) {
-        var $showMoreButton = $table["tableShowMoreContainer"].siblings().find(".table--show-more-button");
-        var $showLessButton = $table["tableShowMoreContainer"].siblings().find(".table--show-less-button");
-
+      show_more_state[show_more_id]["more_button"].addEventListener("click", function(e){
         e.preventDefault();
-        $table["tableShowMoreContainer"].css("transition-duration", tableState[index]["tableShowMoreTransitionDuration"] + "s");
+        document.getElementById(show_more_id).style.transitionDuration = show_more_state[show_more_id]["transition_duration"] + "s";
+        show_more_state[show_more_id]["more_button"].removeClass("display:inline").addClass("display:none");
+        show_more_state[show_more_id]["less_button"].removeClass("display:none").addClass("display:inline");
+        document.getElementById(show_more_id).addClass("active");
+        self.force_resize(show_more_id);
+      });
 
-        if ($table["tableShowMoreContainer"].hasClass("table-is-showing-more")) {
-          $showMoreButton.removeClass("display--none").addClass("display--flex");
-          $showLessButton.removeClass("display--flex").addClass("display--none");
-          $table["tableShowMoreContainer"].removeClass("table-is-showing-more");
-        } else {
-          $showMoreButton.removeClass("display--flex").addClass("display--none");
-          $showLessButton.removeClass("display--none").addClass("display--flex");
-          $table["tableShowMoreContainer"].addClass("table-is-showing-more");
-        }
-        self.forceResize();
+      show_more_state[show_more_id]["less_button"].addEventListener("click", function(e){
+        e.preventDefault();
+        document.getElementById(show_more_id).style.transitionDuration = show_more_state[show_more_id]["transition_duration"] + "s";
+        show_more_state[show_more_id]["more_button"].removeClass("display:none").addClass("display:inline");
+        show_more_state[show_more_id]["less_button"].removeClass("display:inline").addClass("display:none");
+        document.getElementById(show_more_id).removeClass("active");
+        self.force_resize(show_more_id);
       });
     },
-    resizeListener: function(index) {
+    resize_listener: function (show_more_id) {
       const self = this;
-      $w.on('load resize', function (event) {
-        self.forceResize();
-      });
-    },
-    forceResize: function() {
-      const self = this;
-      var $table = void 0;
 
-      $(".table--show-more").each(function (index) {
-        $table = tableState[index];
-        if ($table["tableShowMoreContainer"].hasClass("table-is-showing-more")) {
-          $table["tableShowMoreContainerHeight"] = $table["tableShowMore"].outerHeight();
-        } else {
-          $table["tableShowMoreContainerHeight"] = $table["tableShowMore"].find("[data-table-show-more-bottom]").offset().top - $table["tableShowMore"].find("[data-table-show-more-top]").offset().top;
-        }
-        self.updateTableShowMoreContainerHeight(index);
-      });
+      function force_resize() {
+        return self.force_resize(show_more_id);
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
+    },
+    force_resize(show_more_id) {
+      const self = this;
+
+      if (document.getElementById(show_more_id).classList.contains("active")) {
+        show_more_state[show_more_id]["container_height"] = show_more_state[show_more_id]["container"].getBoundingClientRect().height;
+      } else {
+        show_more_state[show_more_id]["container_height"] = show_more_state[show_more_id]["container"].querySelector("[data-show-more-bottom]").offsetTop - show_more_state[show_more_id]["container"].querySelector("[data-show-more-top]").offsetTop;
+      }
+      self.update_container_height(show_more_id);
     }
   };
 });

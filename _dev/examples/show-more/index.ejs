@@ -1,0 +1,157 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <main class="w:100%" role="main">
+      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0">
+        <h1 class="play:bold fs:40px color:slate pb:64px">Show More</h1>
+
+        <h2 class="play:bold fs:32px color:slate pb:32px">&lt;table&gt; Show More</h1>
+        <div class="w:100% overflow:hidden" id="show-more-1" data-module='show-more' data-show-more-transition-duration="1" data-show-more-offset="-1">
+          <table class="w:100% bb-grey:1px br-grey:1px" data-module='show-more.container' tabindex="0">
+            <caption class="show-for-screen-reader-only">
+              A Pokemon chart indicating Pokemon and their type
+            </caption>
+            <thead data-show-more-top>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th class="md-:hide lg+:show lg+:w:3">&nbsp;</th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center" style="background:#f66">
+                    Fire Type
+                </th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center sm+:bgc:cerulean">
+                    Water Type
+                </th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center sm+:bgc:sunflower">
+                    Electric Type
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Bulbasaur #1
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Charmander #4
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap" data-show-more-bottom>
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Squirtle #7
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Pikachu #25
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Volcanion #721
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="w:100% align:spaced md-:flex-flow:row-wrap">
+          <div class="row">
+            <div class="md-:hide lg+:show lg+:w:3"></div>
+            <div class="sm+:w:12 lg+:w:9">
+              <div class="text-align:center" style="transform:translateY(-50%);">
+                <button data-module="show-more.more" class="display:inline text-align:center ws:nowrap fw:bold color:blue fs:16px p:8px align:middle b:0 bgc:white cursor:pointer" aria-hidden="true">
+                  Show more Pokemon
+                </button>
+                <button data-module="show-more.less" class="display:none text-align:center ws:nowrap fw:bold color:blue fs:16px p:8px align:middle b:0 bgc:white cursor:pointer" aria-hidden="true">
+                  Show fewer Pokemon
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="play:bold fs:32px color:slate pt:48px pb:32px">&lt;div&gt; Show More</h1>
+        <div class="w:100% overflow:hidden" id="show-more-2" data-module='show-more' data-show-more-transition-duration="1" data-show-more-offset="0">
+          <div class="w:100%" data-module='show-more.container'>
+            <div data-show-more-top>
+              <p><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <p><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <p><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div data-show-more-bottom>
+              <p><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <p><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+          </div>
+        </div>
+        <div class="w:100% align:spaced md-:flex-flow:row-wrap">
+          <div class="row">
+            <div class="sm+:w:12">
+              <div class="text-align:center" style="transform:translateY(-50%);">
+                <button data-module="show-more.more" class="display:inline text-align:center ws:nowrap fw:bold color:blue fs:16px p:8px align:middle b:0 bgc:white cursor:pointer" aria-hidden="true">
+                  Show more Pokemon
+                </button>
+                <button data-module="show-more.less" class="display:none text-align:center ws:nowrap fw:bold color:blue fs:16px p:8px align:middle b:0 bgc:white cursor:pointer" aria-hidden="true">
+                  Show fewer Pokemon
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="play:bold fs:32px color:slate pt:64px pb:16px">Next section</h2>
+        <div class="pb:64px"><span class="fw:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      </div>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
