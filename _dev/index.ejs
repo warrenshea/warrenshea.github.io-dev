@@ -1,5 +1,4 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.header.ejs`, pageData) %>
     <style>
       .description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); }
       .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); }
@@ -7,6 +6,10 @@
         #e45028 0, #e45028 84%,
         #0873b9 84.5%, #0873b9 87.5%, #28a9e0 87.5%, #28a9e0 88%,
         #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
+        #f1662b 92.5%, #f1662b 100%); }
+      .html-css { background: linear-gradient(105deg,
+        #e45028 0, #e45028 88%,
+        #0873b9 88.5%, #0873b9 91.5%, #28a9e0 91.5%, #28a9e0 92%,
         #f1662b 92.5%, #f1662b 100%); }
       .js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 92%, #e6c61d 92.5%, #e6c61d 100%); }
       .html { background: linear-gradient(105deg, #e45028 0, #e45028 92%, #f1662b 92.5%, #f1662b 100%); }
@@ -133,6 +136,28 @@
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div><a href="/examples/sticky-aside/" rel="noopener" target="_blank">See the example</a></div>
+              </div>
+            </div>
+          </li>
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+              <div class="position:relative html-css" style="height:70px;">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Responsive 2D table</em></h3>
+              </div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div>Built with Flexbox</div>
+                <div><a href="/examples/responsive-2d-table/" rel="noopener" target="_blank">See the example</a></div>
+              </div>
+            </div>
+          </li>
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+              <div class="position:relative html-css" style="height:70px;">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Show more on a table</em></h3>
+              </div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div>Built with Flexbox</div>
+                <div><a href="/examples/table-show-more/" rel="noopener" target="_blank">See the example</a></div>
               </div>
             </div>
           </li>

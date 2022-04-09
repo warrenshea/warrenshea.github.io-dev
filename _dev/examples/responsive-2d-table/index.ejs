@@ -1,0 +1,98 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <main class="w:100%" role="main">
+      <div class="row mw:1280px sm+:px:8px xl+:px:0">
+        <h1 class="play:bold fs:40px color:slate pb:64px">Responsive 2D Table using Flexbox</h1>
+        <table class="w:100% bb-grey:1px br-grey:1px" tabindex="0">
+          <caption class="show-for-screen-reader-only">
+            A Pokemon chart indicating Pokemon and their type
+          </caption>
+          <thead>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th class="md-:hide lg+:show lg+:w:3">&nbsp;</th>
+              <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center" style="background:#f66">
+                  Fire Type
+              </th>
+              <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center sm+:bgc:cerulean">
+                  Water Type
+              </th>
+              <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 sm+:text-align:center sm+:bgc:sunflower">
+                  Electric Type
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                Bulbasaur #1
+              </th>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+            </tr>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                Charmander #4
+              </th>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+
+              </td>
+            </tr>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                Squirtle #7
+              </th>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+            </tr>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                Pikachu #25
+              </th>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+              </td>
+            </tr>
+            <tr class="display:flex md-:flex-flow:row-wrap">
+              <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px sm+:bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                Volcanion #721
+              </th>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+              </td>
+              <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                &nbsp;<span class="show-for-screen-reader-only">No</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
