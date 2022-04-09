@@ -32,7 +32,7 @@
       &.carousel-disabled-active {
         .content-container {
           z-index:1;
-          box-shadow: $box-shadow-maverick-b;
+          box-shadow: $box-shadow-custom-2;
           padding-bottom: rem-calc(50);
         }
       }
@@ -53,7 +53,7 @@
         &.active {
           .content-container {
             z-index:1;
-            box-shadow: $box-shadow-maverick-b;
+            box-shadow: $box-shadow-custom-2;
             padding-top: rem-calc(40);
             padding-bottom: rem-calc(40);
             transition-property:padding;
