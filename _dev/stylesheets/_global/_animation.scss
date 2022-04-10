@@ -1,0 +1,83 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    $easing_type: 'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out';
+    // .sm+:ani-timing:linear
+    @each $ease_fn in $easing_type {
+        .#{$prefix}ani-timing\:#{$ease_fn} {
+            animation-timing-function: #{$ease_fn};
+        }
+    }
+
+    $duration: '500ms','1s','2s','3s','4s';
+    // .sm+:ani-duration:1s
+    @each $duration_fn in $duration {
+        .#{$prefix}ani-duration\:#{$duration_fn} {
+            animation-duration: #{$duration_fn};
+        }
+    }
+
+    $distance: '16px','32px','48px','64px';
+    @each $distance_fn in $distance {
+        .#{$prefix}ani-to-move-up\:#{$distance_fn} {
+           transform: translateY(#{$distance_fn});
+        }
+        .#{$prefix}ani-to-move-right\:#{$distance_fn} {
+           transform: translateX(-#{$distance_fn});
+        }
+        .#{$prefix}ani-to-move-left\:#{$distance_fn} {
+           transform: translateX(#{$distance_fn});
+        }
+
+        .#{$prefix}ani-fadein-up\:#{$distance_fn} {
+            animation-name: ani-fadein-up\:#{$distance_fn};
+        }
+        @keyframes ani-fadein-up\:#{$distance_fn} {
+            0% { opacity: 0; transform: translateY(#{$distance_fn}); }
+            100% { opacity: 1; }
+        }
+
+        .#{$prefix}ani-fadein-right\:#{$distance_fn} {
+            animation-name: ani-fadein-right\:#{$distance_fn};
+        }
+        @keyframes ani-fadein-right\:#{$distance_fn} {
+            0% { opacity: 0; transform: translateX(-#{$distance_fn}); }
+            100% { opacity: 1; }
+        }
+
+        .#{$prefix}ani-fadein-left\:#{$distance_fn} {
+            animation-name: ani-fadein-left\:#{$distance_fn};
+        }
+        @keyframes ani-fadein-left\:#{$distance_fn} {
+            0% { opacity: 0; transform: translateX(#{$distance_fn}); }
+            100% { opacity: 1; }
+        }
+
+        .#{$prefix}ani-move-up\:#{$distance_fn} {
+            animation-name: ani-move-up\:#{$distance_fn};
+        }
+        @keyframes ani-move-up\:#{$distance_fn} {
+            0% { transform: translateY(#{$distance_fn}); }
+            100% { }
+        }
+
+        .#{$prefix}ani-move-right\:#{$distance_fn} {
+            animation-name: ani-move-right\:#{$distance_fn};
+        }
+        @keyframes ani-move-right\:#{$distance_fn} {
+            0% { transform: translateX(-#{$distance_fn}); }
+            100% { }
+        }
+
+        .#{$prefix}ani-move-left\:#{$distance_fn} {
+            animation-name: ani-move-left\:#{$distance_fn};
+        }
+        @keyframes ani-move-left\:#{$distance_fn} {
+            0% { transform: translateX(#{$distance_fn}); }
+            100% { }
+        }
+    }
+  }
+}
