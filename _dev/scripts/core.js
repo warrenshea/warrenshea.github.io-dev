@@ -45,15 +45,15 @@ const remove_focus_selector = `.form\\:theme\\:b33mOe input[type="radio"]+label,
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
  * storm_eagle.client.viewport.get_height()
- * storm_eagle.client.viewport.sm_only()
- * storm_eagle.client.viewport.sm_up()
- * storm_eagle.client.viewport.md_down()
- * storm_eagle.client.viewport.md_only()
- * storm_eagle.client.viewport.md_up()
- * storm_eagle.client.viewport.lg_down()
- * storm_eagle.client.viewport.lg_only()
- * storm_eagle.client.viewport.lg_up()
- * storm_eagle.client.viewport.xl_up()
+ * storm_eagle.client.viewport.is_sm_only()
+ * storm_eagle.client.viewport.is_sm_up()
+ * storm_eagle.client.viewport.is_md_down()
+ * storm_eagle.client.viewport.is_md_only()
+ * storm_eagle.client.viewport.is_md_up()
+ * storm_eagle.client.viewport.is_lg_down()
+ * storm_eagle.client.viewport.is_lg_only()
+ * storm_eagle.client.viewport.is_lg_up()
+ * storm_eagle.client.viewport.is_xl_up()
  * storm_eagle.client.get_user_agent()
  * storm_eagle.client.is_android()
  * storm_eagle.client.is_blackberry()
@@ -392,15 +392,15 @@ const storm_eagle = (function(window, document, undefined) {
         },
 
         /**
-         * Checks if the viewport is within "sm_only" threshhold
-         * Checks if the viewport is within "sm_up" threshhold
-         * Checks if the viewport is within "md_down" threshhold
-         * Checks if the viewport is within "md_only" threshhold
-         * Checks if the viewport is within "md_up" threshhold
-         * Checks if the viewport is within "lg_down" threshhold
-         * Checks if the viewport is within "lg_only" threshhold
-         * Checks if the viewport is within "lg_up" threshhold
-         * Checks if the viewport is within "xl_up" threshhold
+         * Checks if the viewport is within "is_sm_only" threshhold
+         * Checks if the viewport is within "is_sm_up" threshhold
+         * Checks if the viewport is within "is_md_down" threshhold
+         * Checks if the viewport is within "is_md_only" threshhold
+         * Checks if the viewport is within "is_md_up" threshhold
+         * Checks if the viewport is within "is_lg_down" threshhold
+         * Checks if the viewport is within "is_lg_only" threshhold
+         * Checks if the viewport is within "is_lg_up" threshhold
+         * Checks if the viewport is within "is_xl_up" threshhold
          *
          * @return boolean
          * @scope public
