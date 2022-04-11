@@ -1,12 +1,2 @@
-    <script src="/scripts/core.js"></script>
-    <%
-      if (pageData.scripts) {
-      let pageScripts = pageData.scripts;
-      if(!(Array.isArray(pageData.scripts))){
-        pageScripts = [pageData.scripts];
-      }      
-        pageScripts.forEach((script,index)=>{ %>
-    <script src="<%-script%>"/></script>
-    <% });}%>
   </body>
 </html>
