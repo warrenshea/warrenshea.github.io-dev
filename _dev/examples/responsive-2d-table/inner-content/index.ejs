@@ -91,21 +91,21 @@
             </tbody>
           </table>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('communicating_parent', function () {
+        'use strict';
+        return {
+          initialize: function () {
+            const self = this;
+            self.add_message_listener();
+          },
+          add_message_listener: function() {
+            window.addEventListener('message', event => {
+              let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+              parent.postMessage(height, window.location.origin);
+            });
+          }
+        };
+      })
+    </script>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
-<script>
-  storm_eagle.module('communicating_parent', function () {
-    'use strict';
-    return {
-      initialize: function () {
-        const self = this;
-        self.addMessageListener();
-      },
-      addMessageListener: function() {
-        window.addEventListener('message', event => {
-          let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
-          parent.postMessage(height, window.location.origin);
-        });
-      }
-    };
-  })
-</script>

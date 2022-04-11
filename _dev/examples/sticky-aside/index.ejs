@@ -42,32 +42,32 @@
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
-<script>
-  storm_eagle.module('sticky_aside', function () {
-    'use strict';
+    <script>
+      storm_eagle.module('sticky_aside', function () {
+        'use strict';
 
-    return {
-      initialize: function () {
-        const self = this;
-        self.initializeWaypoint();
-      },
-      initializeWaypoint: function () {
-        const waypointSticky50percent = new Waypoint({
-          element: document.getElementById('start-sticky'),
-          handler: function() {
-            document.getElementById("sticky-aside-50percent").classList.toggle("position:sticky");
+        return {
+          initialize: function () {
+            const self = this;
+            self.initialize_waypoint();
           },
-          offset:40
-        })
-        const waypointStickyTop = new Waypoint({
-          element: document.getElementById('start-sticky'),
-          handler: function() {
-            document.getElementById("sticky-aside-top").classList.toggle("position:sticky");
-          },
-          offset:40
-        })
-      }
-    };
-  })
-</script>
+          initialize_waypoint: function () {
+            const waypointSticky50percent = new Waypoint({
+              element: document.getElementById('start-sticky'),
+              handler: function() {
+                document.getElementById("sticky-aside-50percent").classList.toggle("position:sticky");
+              },
+              offset:40
+            })
+            const waypointStickyTop = new Waypoint({
+              element: document.getElementById('start-sticky'),
+              handler: function() {
+                document.getElementById("sticky-aside-top").classList.toggle("position:sticky");
+              },
+              offset:40
+            })
+          }
+        };
+      })
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
