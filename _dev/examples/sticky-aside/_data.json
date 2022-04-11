@@ -14,7 +14,8 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
-                "https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js"
+                "https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js",
+                "/scripts/module.waypoints.js"
             ]
         }
     }
