@@ -1,10 +1,8 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100% bgc:albicant" role="main">
-      <div class="row mw:1280px">
-        <div class="sm=:w:12">
-          <h1 class="play:bold fs:40px color:slate pb:16px">Sticky Aside</h1>
-          <p>This uses <a href="http://imakewebthings.com/waypoints/" class="fw:bold" target="_blank">Waypoint</a></p>
-        </div>
+      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
+        <h1 class="play:bold fs:40px color:slate pb:16px">Sticky Aside</h1>
+        <p>This uses <a class="anchor:primary" href="http://imakewebthings.com/waypoints/" target="_blank">Waypoint</a></p>
         <br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br>
         <br><br><br><br><br><br><br><br><br><br><br><br>
@@ -42,32 +40,4 @@
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<!--     <script>
-      storm_eagle.module('sticky_aside', function () {
-        'use strict';
-
-        return {
-          initialize: function () {
-            const self = this;
-            self.initialize_waypoint();
-          },
-          initialize_waypoint: function () {
-            const waypointSticky50percent = new Waypoint({
-              element: document.getElementById('start-sticky'),
-              handler: function() {
-                document.getElementById("sticky-aside-50percent").classList.toggle("position:sticky");
-              },
-              offset:40
-            })
-            const waypointStickyTop = new Waypoint({
-              element: document.getElementById('sticky-aside-top'),
-              handler: function() {
-                document.getElementById("sticky-aside-top").classList.toggle("position:sticky");
-              },
-              offset:40
-            })
-          }
-        };
-      })
-    </script> -->
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

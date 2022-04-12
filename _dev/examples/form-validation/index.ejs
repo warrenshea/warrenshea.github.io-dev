@@ -1,6 +1,6 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100% form:theme:b33mOe" role="main">
-      <h1 class="play:bold fs:40px color:slate px:8px pb:16px">Form and Form Validation</h1>
+      <h1 class="play:bold fs:40px color:slate px:8px py:32px">Form and Form Validation</h1>
       <form name="example-form" action="#" method="get" onsubmit="return storm_eagle.example_form.validate_form(event);">
         <div class="row">
           <div class="w:3 px:8px">
@@ -376,6 +376,16 @@
     <div class="description">Card Checkbox Label.</div>
   </label>
 </div>
+
+        <div class="position:relative pb:32px xl=:show" id="" data-module="slider">
+          <div data-module="slider.input-container">
+            <input data-module="slider.input" onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
+            <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
+          </div>
+          <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
+        </div>
+
+
           </div>
           <div class="w:3 px:8px">
           </div>

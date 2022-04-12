@@ -15,6 +15,7 @@
             ],
             "scripts": [
                 "example-form.js",
+                "/scripts/module.slider.js",
                 "/scripts/module.form-validation.js",
                 "/scripts/module.form-theme-b33mOe.js"
             ]
