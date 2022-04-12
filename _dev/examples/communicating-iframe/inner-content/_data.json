@@ -1,0 +1,19 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Responsive 2D Table",
+                "urlEn": "/examples/responsive-2d-table/inner-content/",
+                "urlCanonical": "/examples/responsive-2d-table/inner-content/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": []
+        }
+    }
+}

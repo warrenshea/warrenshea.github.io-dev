@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Communicating iframe",
+                "urlEn": "/examples/communicating-iframe/",
+                "urlCanonical": "/examples/communicating-iframe/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.slider.js"
+            ]
+        }
+    }
+}
