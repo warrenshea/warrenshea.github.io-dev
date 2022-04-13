@@ -17,9 +17,10 @@
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
-      storm_eagle.module('autocomplete', function () {
+      storm_eagle.module('autocomplete', () => {
         'use strict';
 
+        let self;
         let autocomplete_state = {};
         let query;
         const notify = {
@@ -27,9 +28,9 @@
           "fr": ""
         };
         return {
-          initialize: function () {
-            const self = this;
-            document.querySelectorAll("[data-module='autocomplete']").forEach(function (el) {
+          initialize: () => {
+            self = storm_eagle["autocomplete"];
+            document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
               let autocomplete_id = el.getAttribute("id");
               autocomplete_state[autocomplete_id] = {
                 "input_id": el.querySelector("[data-module='autocomplete.input']").getAttribute("id"),
@@ -42,7 +43,7 @@
               self.add_event_listeners(autocomplete_id);
             });
           },
-          update_sr_description: function (autocomplete_id, value) {
+          update_sr_description: (autocomplete_id, value) => {
             var sr_description_id = autocomplete_state[autocomplete_id]["sr_description_id"];
             if (value === "") {
               document.getElementById(sr_description_id).innerHTML = notify[LANG];
@@ -50,10 +51,10 @@
               document.getElementById(sr_description_id).innerHTML = value;
             }
           },
-          close: function (autocomplete_id) {
+          close: (autocomplete_id) => {
             const results_id = autocomplete_state[autocomplete_id]["results_id"];
             const input_id = autocomplete_state[autocomplete_id]["input_id"];
-            setTimeout(function () {
+            setTimeout(() => {
               document.getElementById(results_id).classList.add("display:none");
               document.getElementById(results_id).innerHTML = "";
               document.getElementById(autocomplete_id).classList.remove("active");
@@ -64,8 +65,7 @@
               }
             }, 250);
           },
-          execute_search: function (autocomplete_id) {
-            const self = this;
+          execute_search: (autocomplete_id) => {
             const results_id = autocomplete_state[autocomplete_id]["results_id"];
             const input_id = autocomplete_state[autocomplete_id]["input_id"];
             const search_function = autocomplete_state[autocomplete_id]["search_function"];
@@ -76,13 +76,12 @@
               (null,eval)(search_function)(query, input_id, results_id, autocomplete_id, num_results);
             }
           },
-          add_event_listeners: function (autocomplete_id) {
-            const self = this;
+          add_event_listeners: (autocomplete_id) => {
             const results_id = autocomplete_state[autocomplete_id]["results_id"];
             const input_id = autocomplete_state[autocomplete_id]["input_id"];
             const num_results = autocomplete_state[autocomplete_id]["num_results"];
             const error_message_id = autocomplete_state[autocomplete_id]["error_message_id"];
-            document.getElementById(input_id).addEventListener('keydown', function (event) {
+            document.getElementById(input_id).addEventListener('keydown', (event) => {
               var selected_dropdown = document.getElementById(results_id).querySelector('.selected');
 
               switch (event.keyCode) {
@@ -137,19 +136,19 @@
                   break;
               }
             });
-            document.getElementById(input_id).addEventListener('keydown', storm_eagle.debounce(function (e) {
+            document.getElementById(input_id).addEventListener('keydown', storm_eagle.debounce((e) => {
               if (e.keyCode != keyboard.keys.tab && e.keyCode != keyboard.keys.esc && e.keyCode != keyboard.keys.down && e.keyCode != keyboard.keys.up && e.keyCode != keyboard.keys.enter && e.keyCode != 16) {
                 self.execute_search(autocomplete_id);
               }
             }, 250));
-            document.getElementById(input_id).addEventListener('focus', function (e) {
+            document.getElementById(input_id).addEventListener('focus', (e) => {
               document.getElementById(autocomplete_id).classList.add("active");
               document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
               document.getElementById(error_message_id).classList.remove("has-error");
             });
-            document.getElementById(input_id).addEventListener('blur', function (e) {
+            document.getElementById(input_id).addEventListener('blur', (e) => {
               /* comment out to debug results disappearing results pane */
-              setTimeout(function () {
+              setTimeout(() => {
                 document.getElementById(results_id).classList.add("display:none");
                 document.getElementById(results_id).innerHTML = "";
                 document.getElementById(autocomplete_id).classList.remove("active");
@@ -160,16 +159,15 @@
         };
       });
 
-      storm_eagle.module('pokemon_search', function () {
+      storm_eagle.module('pokemon_search', () => {
         'use strict';
+        let self;
         var errormessage = "";
         return {
-          initialize: function () {
-            const self = this;
+          initialize: () => {
+            self = storm_eagle["pokemon_search"];
           },
-          get_pokemon_list: function (query, input_id, results_id, autocomplete_id, results_max_results) {
-            //const self = this; <-- won't work when calling the function via eval
-            const self = storm_eagle["pokemon_search"];
+          get_pokemon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
             var url = "pokedex.json";
 
             function _helper_reduce_database (database_temp) {
@@ -188,9 +186,9 @@
             }
 
             fetch(url)
-              .then(function (response) {
+              .then((response) => {
                 return response.json();
-              }).then(function (data) {
+              }).then((data) => {
 
                 data = _helper_reduce_database(data);
 
@@ -219,22 +217,20 @@
                     document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
                   }
                 }
-            }).catch(function (err) {
+            }).catch((err) => {
               // There was an error
               console.warn('Something went wrong.', err);
             });
           },
-          render_autocomplete_result: function (query, index, input_id, autocomplete_id, pokedex_entry) {
+          render_autocomplete_result: (query, index, input_id, autocomplete_id, pokedex_entry) => {
             const num = pokedex_entry["num"];
             const name = pokedex_entry["name"];
             return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${num} - ${name}" onclick="storm_eagle.pokemon_search.autocomplete_fill('${input_id}','${num}','${name}');storm_eagle.autocomplete.close('${autocomplete_id}');">${num} - ${name}</li>`;
           },
-          autocomplete_fill: function (input_id, num, name) {
-            const self = this;
+          autocomplete_fill: (input_id, num, name) => {
             document.getElementById(input_id).value = `${num} - ${name}`;
           },
-          // validate_add_pokemon: function () {
-          //   const self = this;
+          // validate_add_pokemon: () => {
           //   errormessage = "";
 
           //   //if error
