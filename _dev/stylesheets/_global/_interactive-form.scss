@@ -484,7 +484,7 @@ fieldset.unstyle { border:0; padding:0 }
     border: 3px solid $negative;
   }
 }
-
+/*
 .form\:theme\:maverick-b {
   input[type="text"] {
     color: $bluea;
@@ -521,56 +521,33 @@ fieldset.unstyle { border:0; padding:0 }
       }
     }
   }
-
-  .autocomplete{
-    position:absolute;
-    left:0;
-    top:0;
-    transition: background 0.3s linear;
-    &.active{
-      background: $white;
-      z-index:1;
-      box-shadow: $box-shadow-custom-1;
-      transition: background 0 linear;
-    }
-    input {
-      &.magnifying-glass{
-        background: url(../assets/icon/search.svg) center right no-repeat;
+*/
+  .autocomplete-results{
+    li {
+      display: flex;
+      font-size: rem-calc(14);
+      line-height: 1.5;
+      border-bottom: 1px solid $light-grey;
+      cursor:pointer;
+      width:100%;
+      padding: 12px 12px 10px;
+      span.symbol {
+        text-align:left;
+        min-width:64px;
+        width:64px;
+        flex-grow:0;
+      }
+      span.name {
+        text-align:left;
+        flex-grow:1;
+      }
+      .match {
+        color:$bluea;
+      }
+      &:hover,
+      &.selected{
+        background-color: $albicant;
       }
     }
-    .autocomplete-results{
-      li {
-        display: flex;
-        font-size: rem-calc(14);
-        line-height: 1.5;
-        border-bottom: 1px solid $light-grey;
-        cursor:pointer;
-        width:100%;
-        padding: 12px 12px 10px;
-        span.symbol {
-          text-align:left;
-          min-width:64px;
-          width:64px;
-          flex-grow:0;
-        }
-        span.name {
-          text-align:left;
-          flex-grow:1;
-        }
-        .match {
-          color:$bluea;
-        }
-        &:hover,
-        &.selected{
-          background-color: $albicant;
-        }
-      }
-    }
-  }
-}
-
-@media all and (-ms-high-contrast:none) {
-  *::-ms-backdrop, .form\:theme\:maverick-b .autocomplete input.magnifying-glass {
-    background: url(../assets/icon/search.svg) 94% center no-repeat
   }
 }
