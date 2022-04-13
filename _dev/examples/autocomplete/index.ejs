@@ -1,0 +1,256 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <main class="w:100% form:theme:b33mOe" role="main">
+      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
+        <h1 class="play:bold fs:40px color:slate pb:64px">Autocomplete</h1>
+
+        <div class="autocomplete p:16px w:4 align-self:centered" data-module="autocomplete" id="pokemon-autocomplete">
+          <div class="position:relative pt:4px">
+            <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('pokemon-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.pokemon_search.get_pokemon_list" id="pokemon" name="pokemon" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
+            <label for="pokemon" id="autocomplete_label"><span class="description">Find a Pokémon</span></label>
+          </div>
+          <div data-module="autocomplete.sr-description" id="pokemon-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
+          <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-light-grey:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="pokemon" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+          <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
+        </div>
+
+      </div>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('autocomplete', function () {
+        'use strict';
+
+        let autocomplete_state = {};
+        let query;
+        const notify = {
+          "en": "As you start typing the application might suggest similar search terms. Use tab, up, or down arrow keys to select a suggested search string. Use Enter key to confirm that value. Use ESC key to exit the results and return focus to the input.",
+          "fr": ""
+        };
+        return {
+          initialize: function () {
+            const self = this;
+            document.querySelectorAll("[data-module='autocomplete']").forEach(function (el) {
+              let autocomplete_id = el.getAttribute("id");
+              autocomplete_state[autocomplete_id] = {
+                "input_id": el.querySelector("[data-module='autocomplete.input']").getAttribute("id"),
+                "search_function": el.querySelector("[data-module='autocomplete.input']").getAttribute("data-autocomplete-search"),
+                "results_id": el.querySelector("[data-module='autocomplete.results']").getAttribute("id"),
+                "num_results": parseInt(el.querySelector("[data-module='autocomplete.results']").getAttribute("data-autocomplete-results")),
+                "sr_description_id": el.querySelector("[data-module='autocomplete.sr-description']").getAttribute("id"),
+                "error_message_id": el.querySelector("[data-module='autocomplete.error']").getAttribute("id")
+              };
+              self.add_event_listeners(autocomplete_id);
+            });
+          },
+          update_sr_description: function (autocomplete_id, value) {
+            var sr_description_id = autocomplete_state[autocomplete_id]["sr_description_id"];
+            if (value === "") {
+              document.getElementById(sr_description_id).innerHTML = notify[LANG];
+            } else {
+              document.getElementById(sr_description_id).innerHTML = value;
+            }
+          },
+          close: function (autocomplete_id) {
+            const results_id = autocomplete_state[autocomplete_id]["results_id"];
+            const input_id = autocomplete_state[autocomplete_id]["input_id"];
+            setTimeout(function () {
+              document.getElementById(results_id).classList.add("display:none");
+              document.getElementById(results_id).innerHTML = "";
+              document.getElementById(autocomplete_id).classList.remove("active");
+              document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+
+              if (document.activeElement !== document.getElementById(input_id)) {
+                document.getElementById(input_id).focus();
+              }
+            }, 250);
+          },
+          execute_search: function (autocomplete_id) {
+            const self = this;
+            const results_id = autocomplete_state[autocomplete_id]["results_id"];
+            const input_id = autocomplete_state[autocomplete_id]["input_id"];
+            const search_function = autocomplete_state[autocomplete_id]["search_function"];
+
+            const num_results = autocomplete_state[autocomplete_id]["num_results"];
+            query = document.getElementById(input_id).value.trim();
+            if (query.length > 0) {
+              (null,eval)(search_function)(query, input_id, results_id, autocomplete_id, num_results);
+            }
+          },
+          add_event_listeners: function (autocomplete_id) {
+            const self = this;
+            const results_id = autocomplete_state[autocomplete_id]["results_id"];
+            const input_id = autocomplete_state[autocomplete_id]["input_id"];
+            const num_results = autocomplete_state[autocomplete_id]["num_results"];
+            const error_message_id = autocomplete_state[autocomplete_id]["error_message_id"];
+            document.getElementById(input_id).addEventListener('keydown', function (event) {
+              var selected_dropdown = document.getElementById(results_id).querySelector('.selected');
+
+              switch (event.keyCode) {
+                case keyboard.keys.down:
+                  // select next suggestion from list
+                  if (selected_dropdown) {
+                    selected_dropdown.classList.remove('selected');
+
+                    if (selected_dropdown === document.getElementById(results_id).querySelector('li:last-child')) {
+                      document.getElementById(results_id).querySelector('li:nth-child(1)').classList.add('selected'); //.text();
+                    } else {
+                      selected_dropdown.nextElementSibling.classList.add("selected"); //.text();
+                    }
+                  } else {
+                    document.getElementById(results_id).querySelector('li:nth-child(1)').classList.add('selected'); //.text();
+                  }
+
+                  self.update_sr_description(autocomplete_id, document.getElementById(results_id).querySelector('.selected').getAttribute("data-sr-description"));
+                  document.getElementById(input_id).setAttribute("aria-activedescendant", document.getElementById(results_id).querySelector('.selected').getAttribute("id"));
+                  break;
+
+                case keyboard.keys.up:
+                  // select previous suggestion from list
+                  if (selected_dropdown) {
+                    selected_dropdown.classList.remove('selected');
+
+                    if (selected_dropdown === document.getElementById(results_id).querySelector('li:nth-child(1)')) {
+                      document.getElementById(results_id).querySelector('li:last-child').classList.add('selected'); //.text();
+                    } else {
+                      selected_dropdown.previousElementSibling.classList.add('selected'); //.text();
+                    }
+
+                    self.update_sr_description(autocomplete_id, document.getElementById(results_id).querySelector('.selected').getAttribute("data-sr-description"));
+                    document.getElementById(input_id).setAttribute("aria-activedescendant", document.getElementById(results_id).querySelector('.selected').getAttribute("id"));
+                  }
+                  break;
+
+                case keyboard.keys.esc:
+                case keyboard.keys.tab:
+                  document.getElementById(results_id).innerHTML = ""; //document.getElementById(results_id).classList.add("display:none"); // empty list and hide suggestion box
+                  document.getElementById(results_id).classList.add("display:none");
+                  document.getElementById(autocomplete_id).classList.remove("active");
+                  document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+                  break;
+
+                case keyboard.keys.enter:
+                  event.preventDefault();
+
+                  if (selected_dropdown) {
+                    selected_dropdown.click();
+                  }
+                  break;
+              }
+            });
+            document.getElementById(input_id).addEventListener('keydown', storm_eagle.debounce(function (e) {
+              if (e.keyCode != keyboard.keys.tab && e.keyCode != keyboard.keys.esc && e.keyCode != keyboard.keys.down && e.keyCode != keyboard.keys.up && e.keyCode != keyboard.keys.enter && e.keyCode != 16) {
+                self.execute_search(autocomplete_id);
+              }
+            }, 250));
+            document.getElementById(input_id).addEventListener('focus', function (e) {
+              document.getElementById(autocomplete_id).classList.add("active");
+              document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
+              document.getElementById(error_message_id).classList.remove("has-error");
+            });
+            document.getElementById(input_id).addEventListener('blur', function (e) {
+              /* comment out to debug results disappearing results pane */
+              setTimeout(function () {
+                document.getElementById(results_id).classList.add("display:none");
+                document.getElementById(results_id).innerHTML = "";
+                document.getElementById(autocomplete_id).classList.remove("active");
+                document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+              }, 250);
+            });
+          }
+        };
+      });
+
+      storm_eagle.module('pokemon_search', function () {
+        'use strict';
+        var errormessage = "";
+        return {
+          initialize: function () {
+            const self = this;
+          },
+          get_pokemon_list: function (query, input_id, results_id, autocomplete_id, results_max_results) {
+            //const self = this; <-- won't work when calling the function via eval
+            const self = storm_eagle["pokemon_search"];
+            var url = "pokedex.json";
+
+            function _helper_reduce_database (database_temp) {
+              let new_database = [];
+              let database_temp_keyword;
+
+              //iterate through json objects
+              for(let j=0;j<database_temp.length;j++) {
+                database_temp_keyword = database_temp[j]["name"].toLowerCase();
+                //if query inside name, add name to new database
+                if ((database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false) {
+                  new_database.push(database_temp[j]);
+                }
+              }
+              return new_database;
+            }
+
+            fetch(url)
+              .then(function (response) {
+                return response.json();
+              }).then(function (data) {
+
+                data = _helper_reduce_database(data);
+
+                if (data) {
+                  if (data.length > 0) {
+                    if (document.getElementById(input_id) === document.activeElement) {
+                      document.getElementById(results_id).classList.remove("display:none");
+                      document.getElementById(results_id).innerHTML = "";
+                      document.getElementById(autocomplete_id).classList.remove("active");
+                      document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+
+                      for (var i = 0; i < data.length; i++) {
+                        document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i]));
+                        document.getElementById(results_id).classList.remove("display:none");
+                        document.getElementById(autocomplete_id).classList.add("active");
+                        document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
+                        if (i === results_max_results) {
+                          break;
+                        }
+                      }
+                    }
+                  } else {
+                    document.getElementById(results_id).classList.remove("display:none");
+                    document.getElementById(results_id).innerHTML = "";
+                    document.getElementById(autocomplete_id).classList.remove("active");
+                    document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+                  }
+                }
+            }).catch(function (err) {
+              // There was an error
+              console.warn('Something went wrong.', err);
+            });
+          },
+          render_autocomplete_result: function (query, index, input_id, autocomplete_id, pokedex_entry) {
+            const num = pokedex_entry["num"];
+            const name = pokedex_entry["name"];
+            return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${num} - ${name}" onclick="storm_eagle.pokemon_search.autocomplete_fill('${input_id}','${num}','${name}');storm_eagle.autocomplete.close('${autocomplete_id}');">${num} - ${name}</li>`;
+          },
+          autocomplete_fill: function (input_id, num, name) {
+            const self = this;
+            document.getElementById(input_id).value = `${num} - ${name}`;
+          },
+          // validate_add_pokemon: function () {
+          //   const self = this;
+          //   errormessage = "";
+
+          //   //if error
+          //   // document.getElementById("autocomplete-error").classList.add("has-error");
+          //   // errormessage += pokemon + " ";
+
+          //   //if no error
+          //   //document.getElementById("autocomplete-error").classList.remove("has-error");
+
+          //   if (errormessage !== "") {
+          //     return false;
+          //   }
+
+          //   return true;
+          // }
+        };
+      });
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

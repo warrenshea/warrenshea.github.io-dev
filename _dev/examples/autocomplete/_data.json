@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "autocomplete",
+                "urlEn": "/examples/autocomplete/",
+                "urlCanonical": "/examples/autocomplete/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.form-theme-b33mOe.js"
+            ]
+        }
+    }
+}
