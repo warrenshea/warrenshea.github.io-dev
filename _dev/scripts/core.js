@@ -72,7 +72,7 @@ const remove_focus_selector = `.form\\:theme\\:b33mOe input[type="radio"]+label,
  * storm_eagle.resize_observer()
  **/
 
-const storm_eagle = (function(window, document, undefined) {
+storm_eagle = (function(window, document, undefined) {
   'use strict';
 
   return {
