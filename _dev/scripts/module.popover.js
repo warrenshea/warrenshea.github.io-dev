@@ -1,9 +1,10 @@
 /* data-module: poopver         the modal
  data-module: poopver-overlay the full screen part behind the modal
  data-module: poopver-trigger the button that opens the modal */
-storm_eagle.module('popover', function () {
+storm_eagle.module('popover', () => {
   'use strict';
 
+  let self;
   let focus_placeholder;
   let popover_first_tab_stop;
   let popover_last_tab_stop;
@@ -29,9 +30,9 @@ storm_eagle.module('popover', function () {
   }
 
   return {
-    initialize: function () {
-      const self = this;
-      document.querySelectorAll("[data-module='popover']").forEach(function(el,index){
+    initialize: () => {
+      self = storm_eagle["popover"];
+      document.querySelectorAll("[data-module='popover']").forEach((el,index) => {
         let popover_id = el.getAttribute("id");
         popover_state[popover_id] = {
           "focusable_elements": []
@@ -41,9 +42,7 @@ storm_eagle.module('popover', function () {
       self.resize_listener();
       self.overlay_close_listener();
     },
-    open: function(popover_trigger,popover_id) {
-      const self = this;
-
+    open: (popover_trigger,popover_id) => {
       /* updates popover visuals */
       document.querySelector("[data-module='popover.overlay']").classList.add('active');
       popover_trigger.classList.add('active');
@@ -51,7 +50,7 @@ storm_eagle.module('popover', function () {
       self.set_popover_location(popover_id);
 
       /* removes focus from elements except in popover */
-      popover_state[popover_id]["focusable_elements"].forEach(function (el) {
+      popover_state[popover_id]["focusable_elements"].forEach(el => {
         el.setAttribute("tabindex","0");
       });
 
@@ -66,49 +65,43 @@ storm_eagle.module('popover', function () {
       /* add keyboard event listener */
       document.getElementById(popover_id).addEventListener('keydown', keyboard_popover_focus_trap);
     },
-    close: function() {
-      const self = this;
-
+    close: () => {
       /* updates popover visuals */
       document.querySelector("[data-module='popover.overlay'].active").classList.remove('active');
       document.querySelector("[data-module='popover'].active").setAttribute('tabIndex', '-1');
       document.querySelector("[data-module='popover'].active").setAttribute('aria-expanded', false);
       document.querySelector("[data-module='popover'].active").classList.remove('active');
       document.querySelector("[data-module='popover.trigger'].active").classList.remove('active');
-      document.querySelectorAll("[data-target='popover']").forEach(function(popover,index) {
+      document.querySelectorAll("[data-target='popover']").forEach((popover,index) => {
         let popover_id =  popover.getAttribute("id");
 
         /* remove focus from popover elements */
-        popover_state[popover_id]["focusable_elements"].forEach(function (el) {
+        popover_state[popover_id]["focusable_elements"].forEach(el => {
           el.setAttribute("tabindex","-1");
         });
 
         /* remove keyboard event listener */
         document.getElementById(popover_id).removeEventListener('keydown', keyboard_popover_focus_trap);
       });
-      document.querySelectorAll("[data-module='popover.trigger']").forEach(function(popover_trigger) {
+      document.querySelectorAll("[data-module='popover.trigger']").forEach((popover_trigger) => {
         popover_trigger.setAttribute("aria-expanded",false);
       });
 
       /* set focus to focus_placeholder */
       focus_placeholder.focus();
     },
-    get_popover_focusable_elements: function(popover_id) {
-      const self = this;
+    get_popover_focusable_elements: (popover_id) => {
       popover_state[popover_id]["focusable_elements"] = document.getElementById(popover_id).querySelectorAll(focus_trap_selector);
       //console.log(popover_state[popover_id]["focusable_elements"]);
     },
-    overlay_close_listener: function() {
-      const self = this;
+    overlay_close_listener: () => {
       if (document.querySelector("[data-module='popover.overlay']")) {
         document.querySelector("[data-module='popover.overlay']").addEventListener('click', () => {
           self.close();
         });
       }
     },
-    resize_listener: function () {
-      const self = this;
-
+    resize_listener: () => {
       function force_resize() {
         if (document.querySelector("[data-module='popover'].active")){
           self.set_popover_location(document.querySelector("[data-module='popover'].active").getAttribute("id"));
@@ -116,7 +109,7 @@ storm_eagle.module('popover', function () {
       }
       storm_eagle.resize_observer(document.querySelector("body"), force_resize);
     },
-    set_popover_location: function(popover_id) {
+    set_popover_location: (popover_id) => {
       let popover_trigger = document.querySelector("[data-module='popover.trigger'].active");
       let popover = document.getElementById(popover_id);
 

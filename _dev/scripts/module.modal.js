@@ -1,6 +1,7 @@
-storm_eagle.module('modal', function () {
+storm_eagle.module('modal', () => {
   'use strict';
 
+  let self;
   let focus_placeholder;
   let modal_first_tab_stop;
   let modal_last_tab_stop;
@@ -33,9 +34,9 @@ storm_eagle.module('modal', function () {
   }
 
   return {
-    initialize: function () {
-      const self = this;
-      document.querySelectorAll("[data-module='modal']").forEach(function (el) {
+    initialize: () => {
+      self = storm_eagle["modal"];
+      document.querySelectorAll("[data-module='modal']").forEach(el => {
         let modal_id = el.getAttribute("id");
         modal_state[modal_id] = {
           "focusable_elements": [],
@@ -44,8 +45,7 @@ storm_eagle.module('modal', function () {
         self.get_modal_focusable_elements(modal_id);
       });
     },
-    open: function(modal_trigger, modal_id) {
-      const self = this;
+    open: (modal_trigger, modal_id) => {
       document.addEventListener('mousedown', modal_close);
 
       /* updates modal visuals */
@@ -57,15 +57,15 @@ storm_eagle.module('modal', function () {
       document.getElementById(modal_id).querySelector(".modal-container").classList.add('active');
 
       /* removes focus from elements except in modal */
-      modal_state[modal_id]["focusable_elements"].forEach(function (el) {
+      modal_state[modal_id]["focusable_elements"].forEach(el => {
         el.setAttribute("tabindex", "0");
       });
-      modal_state[modal_id]["remove_focusable_elements"].forEach(function (el) {
+      modal_state[modal_id]["remove_focusable_elements"].forEach(el => {
         el.setAttribute("tabindex", "-1");
       });
 
       /* remove focusable elements from nodelist, e.g. popover inside modal */
-      modal_state[modal_id]["focusable_elements"] = [...modal_state[modal_id]["focusable_elements"]].filter( function( el ) {
+      modal_state[modal_id]["focusable_elements"] = [...modal_state[modal_id]["focusable_elements"]].filter(el => {
         return ![...modal_state[modal_id]["remove_focusable_elements"]].includes(el);
       });
 
@@ -75,7 +75,7 @@ storm_eagle.module('modal', function () {
       modal_last_tab_stop = modal_state[modal_id]["focusable_elements"][modal_state[modal_id]["focusable_elements"].length - 1];
 
       /* set focus to modal (but not the modal_first_tab_stop */
-      setTimeout(function () {
+      setTimeout(() => {
         if (modal_first_tab_stop) {
           modal_first_tab_stop.focus();
         }
@@ -84,8 +84,7 @@ storm_eagle.module('modal', function () {
       /* add keyboard event listener */
       document.getElementById(modal_id).addEventListener('keydown', keyboard_modal_focus_trap);
     },
-    close: function() {
-      const self = this;
+    close: () => {
       document.removeEventListener('mousedown', modal_close);
       document.querySelector("body").classList.remove("overflow:hidden");
 
@@ -97,26 +96,25 @@ storm_eagle.module('modal', function () {
       }
       document.querySelector("[data-module='modal'].active").querySelector(".modal-container").classList.remove('active');
       document.querySelector("[data-module='modal'].active").classList.remove('active');
-      document.querySelectorAll("[data-module='modal']").forEach(function (modal, index) {
+      document.querySelectorAll("[data-module='modal']").forEach((modal, index) => {
         let modal_id = modal.getAttribute("id");
 
         /* remove focus from modal elements */
-        modal_state[modal_id]["focusable_elements"].forEach(function (el) {
+        modal_state[modal_id]["focusable_elements"].forEach(el => {
           el.setAttribute("tabindex", "-1");
         });
 
         /* remove keyboard event listener */
         document.getElementById(modal_id).removeEventListener('keydown', keyboard_modal_focus_trap);
       });
-      document.querySelectorAll("[data-module='modal.trigger']").forEach(function (modal_trigger) {
+      document.querySelectorAll("[data-module='modal.trigger']").forEach((modal_trigger) => {
         modal_trigger.setAttribute("aria-expanded", false);
       });
 
       /* set focus to focus_placeholder */
       focus_placeholder.focus();
     },
-    get_modal_focusable_elements: function get_modal_focusable_elements(modal_id) {
-      const self = this;
+    get_modal_focusable_elements: (modal_id) => {
       modal_state[modal_id]["focusable_elements"] = document.getElementById(modal_id).querySelectorAll(focus_trap_selector);
       console.log(modal_state[modal_id]["focusable_elements"]);
       modal_state[modal_id]["remove_focusable_elements"] = document.getElementById(modal_id).querySelectorAll(remove_focus_selector);

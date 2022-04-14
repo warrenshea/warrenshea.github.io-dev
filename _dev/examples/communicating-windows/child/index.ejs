@@ -25,21 +25,23 @@
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
-      storm_eagle.module('communicating_window_child', function () {
+      storm_eagle.module('communicating_with_parent_window', () => {
         'use strict';
+        let self;
+
         return {
-          initialize: function () {
-            const self = this;
+          initialize: () => {
+            const self = storm_eagle["communicating_with_parent_window"];
             self.add_form_submit_listener();
             self.add_message_listener();
           },
-          add_form_submit_listener: function () {
+          add_form_submit_listener: () => {
             document.getElementById("child").addEventListener("submit", event => {
               event.preventDefault();
               window.opener.postMessage(document.getElementById("message").value, window.location.origin);
             });
           },
-          add_message_listener: function() {
+          add_message_listener: () => {
             window.addEventListener('message', event => {
               document.getElementById("from-parent").innerHTML = event.data;
             });

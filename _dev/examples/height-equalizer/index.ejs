@@ -148,99 +148,99 @@
 
         <h2 class="fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
 <textarea data-code-reference="prism-code-javascript" class="hide">
-        /**
-         * Allows the height of various divs to be the same by taking the biggest height and applying it to all items.
-         * This will occur for any item regardless of viewport. To affect medium size and up, see Options.
-         *
-         * How to use this:
-         * Add 'data-equalize-height="(key)"' to any item where key is a value you input yourself, to link the items.
-         * All the items with the same 'key' will have the same height
-         *
-         * Options:
-         * If you only want this to occur on medium size up, add 'data-equalize-md-up' to the item as well
-         */
-        storm_eagle.module('equalize_heights', function () {
-            'use strict';
+/**
+ * Allows the height of various block level HTML elements to be the same by taking the largest height and applying it to all items.
+ * This will occur for any item regardless of viewport. To affect medium size and up, see Options.
+ *
+ * How to use this:
+ * Add the attribute 'data-equalize-height="(key)"' to any block level HTML element where key is a value you use to link the items you want to height equalize. All the items with the same 'key' will have the same height.
+ *
+ * Options:
+ * If you only want height equalizing to occur on medium size up, add 'data-equalize-md-up' to the HTML element as well
+ * If you only want height equalizing to occur on small size only, add 'data-equalize-sm-only' to the HTML element as well
+ */
+storm_eagle.module('equalize_heights', () => {
+  'use strict';
 
-            let _data_equal_height_array = [];
+  let self;
+  let _data_equal_height_array = [];
 
-            /*
-             * Sorts items in array from smallest to largest
-             */
-            let sortNumber = function (a, b) {
-                return a - b;
-            };
+  /*
+   * Sorts items in array from smallest to largest
+   */
+  let sort_number = (a, b) => {
+    return a - b;
+  };
 
-            /*
-             * For each "key", determine the largest height and apply to all items with that key
-             */
-            let max_Height = function () {
-                _data_equal_height_array.forEach((index, value) => {
-                    let _highest = 0;
-                    let _heights = [];
-                    document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
-                        /* get the height including the padding of an item */
-                        el.style.height = "auto";
-                        _heights.push(el.getBoundingClientRect().height);
-                    });
-                    _heights = _heights.sort(sortNumber).reverse();
-                    _highest = _heights[0];
-                    document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
-                        el.style.height = _highest + 'px';
-                    });
-                });
-            };
+  /*
+   * For each "key", determine the largest height and apply to all items with that key
+   */
+  let max_height = () => {
+    _data_equal_height_array.forEach((index, value) => {
+      let _highest = 0;
+      let _heights = [];
+      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach(el => {
+        /* get the height including the padding of an item */
+        el.style.height = "auto";
+        _heights.push(el.getBoundingClientRect().height);
+      });
+      _heights = _heights.sort(sort_number).reverse();
+      _highest = _heights[0];
+      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach(el => {
+        el.style.height = _highest + 'px';
+      });
+    });
+  };
 
-            return {
-                initialize: function () {
-                    const self = this;
-                    self.get_data_equal_height_items();
-                    self.resize_listener();
-                },
-                /*
-                * Checks all the items that need to equalize height, and add keys to array
-                */
-                get_data_equal_height_items: function () {
-                    document.querySelectorAll('[data-equalize-height]').forEach((el) => {
-                        let newItem = el.dataset['equalizeHeight'];
-                        if (_data_equal_height_array.indexOf(newItem) < 0) {
-                         _data_equal_height_array.push(newItem);
-                        }
-                    });
-                },
-                /*
-                * Re-evaluate the equalizing of the height when the page loads or is resized
-                */
-                resize_listener: function () {
-                    const self = this;
-                    window.addEventListener("resize", event = {
-                        self.force_resize();
-                    })
-                    window.addEventListener('DOMContentLoaded', event = {
-                        self.force_resize();
-                    });
-                },
-                /*
-                * Check for any new items to equalize, and then equalize them
-                * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
-                */
-                force_resize: function () {
-                    const self = this;
-                    self.get_data_equal_height_items();
-                    max_Height();
-                    if (storm_eagle.client.viewport.is_sm_only()) {
-                        document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
-                            el.style.height = "auto";
-                        });
-                    }
-                    if (storm_eagle.client.viewport.is_md_up()) {
-                        document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach((el) => {
-                            el.style.height = "auto";
-                        });
-                    }
-                }
-            };
+  return {
+    initialize: () => {
+      self = storm_eagle["equalize_heights"];
+      self.get_data_equal_height_items();
+      self.resize_listener();
+    },
+    ready: () => {
+      self.force_resize();
+    },
+    /*
+    * Checks all the items that need to equalize height, and add keys to array
+    */
+    get_data_equal_height_items: () => {
+      document.querySelectorAll('[data-equalize-height]').forEach(el => {
+        let newItem = el.dataset['equalizeHeight'];
+        if (_data_equal_height_array.indexOf(newItem) < 0) {
+         _data_equal_height_array.push(newItem);
+        }
+      });
+    },
+    /*
+    * Re-evaluate the equalizing of the height when the page loads or is resized
+    */
+    resize_listener: () => {
+      function force_resize() {
+        return self.force_resize();
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
+    },
+    /*
+    * Check for any new items to equalize, and then equalize them
+    * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
+    */
+    force_resize: () => {
+      self.get_data_equal_height_items();
+      max_height();
+      if (storm_eagle.client.viewport.is_sm_only()) {
+        document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach(el => {
+          el.style.height = "auto";
         });
+      }
+      if (storm_eagle.client.viewport.is_md_up()) {
+        document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach(el => {
+          el.style.height = "auto";
+        });
+      }
+    }
+  };
+});
 </textarea>
         <pre><code class="language-javascript" data-code-snippet="prism-code-javascript"></code></pre>
       </div>

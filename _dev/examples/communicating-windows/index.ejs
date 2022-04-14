@@ -51,29 +51,32 @@
         <pre><code class="language-html" data-code-snippet="prism-code-parent-html"></code></pre>
         <h2 class="fs:32px play:bold pt:32px pb:8px">Parent Frame JavaScript</h2>
 <textarea data-code-reference="prism-code-parent-javascript" class="hide">
-  storm_eagle.module('communicating_window_parent', function () {
+  storm_eagle.module('communicating_with_child_window', () => {
     'use strict';
-    var _CHILD_WINDOW = null;
+    let self;
+    let _CHILD_WINDOW = null;
+
     return {
-      initialize: function () {
-        const self = this;
+      initialize: () => {
+        self = storm_eagle["communicating_with_child_window"];
         self.add_open_window_listener();
         self.add_form_submit_listener();
         self.add_message_listener();
       },
-      add_open_window_listener: function () {
+      add_open_window_listener: () => {
         document.getElementById("open-window-button").addEventListener("click", event => {
           let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
           _CHILD_WINDOW = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
         });
       },
-      add_form_submit_listener: function () {
+      add_form_submit_listener: () => {
         document.getElementById("parent").addEventListener("submit", event => {
           event.preventDefault();
+          event.stopPropagation();
           _CHILD_WINDOW.postMessage(document.getElementById("message").value, window.location.origin);
         });
       },
-      add_message_listener: function() {
+      add_message_listener: () => {
         window.addEventListener('message', event => {
           document.getElementById("from-child").innerHTML = event.data;
         });
@@ -109,21 +112,23 @@
         <pre><code class="language-html" data-code-snippet="prism-code-child-html"></code></pre>
         <h2 class="fs:32px play:bold pt:32px pb:8px">Child Frame JavaScript</h2>
 <textarea data-code-reference="prism-code-child-javascript" class="hide">
-  storm_eagle.module('communicating_window_child', function () {
+  storm_eagle.module('communicating_with_parent_window', () => {
     'use strict';
+    let self;
+
     return {
-      initialize: function () {
-        const self = this;
+      initialize: () => {
+        const self = storm_eagle["communicating_with_parent_window"];
         self.add_form_submit_listener();
         self.add_message_listener();
       },
-      add_form_submit_listener: function () {
+      add_form_submit_listener: () => {
         document.getElementById("child").addEventListener("submit", event => {
           event.preventDefault();
           window.opener.postMessage(document.getElementById("message").value, window.location.origin);
         });
       },
-      add_message_listener: function() {
+      add_message_listener: () => {
         window.addEventListener('message', event => {
           document.getElementById("from-parent").innerHTML = event.data;
         });
@@ -138,30 +143,32 @@
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
-      storm_eagle.module('communicating_window_parent', function () {
+      storm_eagle.module('communicating_with_child_window', () => {
         'use strict';
-        var _CHILD_WINDOW = null;
+        let self;
+        let _CHILD_WINDOW = null;
+
         return {
-          initialize: function () {
-            const self = this;
+          initialize: () => {
+            self = storm_eagle["communicating_with_child_window"];
             self.add_open_window_listener();
             self.add_form_submit_listener();
             self.add_message_listener();
           },
-          add_open_window_listener: function () {
+          add_open_window_listener: () => {
             document.getElementById("open-window-button").addEventListener("click", event => {
               let params = 'location=1, status=1, menubar=1, toolbar=1, width=650, height=800, left=900, top=200';
               _CHILD_WINDOW = window.open(`/examples/communicating-windows/child/`, `_blank`, params);
             });
           },
-          add_form_submit_listener: function () {
+          add_form_submit_listener: () => {
             document.getElementById("parent").addEventListener("submit", event => {
               event.preventDefault();
               event.stopPropagation();
               _CHILD_WINDOW.postMessage(document.getElementById("message").value, window.location.origin);
             });
           },
-          add_message_listener: function() {
+          add_message_listener: () => {
             window.addEventListener('message', event => {
               document.getElementById("from-child").innerHTML = event.data;
             });

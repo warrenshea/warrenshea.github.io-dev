@@ -1,17 +1,20 @@
-storm_eagle.module('form_validation', function () {
+storm_eagle.module('form_validation', () => {
   "use strict";
+  let self;
 
   return {
+    initialize: () => {
+      self = storm_eagle["form_validation"];
+    },
     //validate(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
     //@param {string} element_name is the name of the DOM object being tested - used here for 'error-message'
     //@param {array} validation_rules is the character set to be validated again (e.g. alpha_numeric, numeric, email, postal_code, dropDown, checkBox, radioButton)
-    validate: function (element_name, validation_rules) {
-      const self = this;
+    validate: (element_name, validation_rules) => {
       let status = self.check_field(element_name, validation_rules);
       self.display_error(element_name, validation_rules, status);
       return status;
     },
-    display_error:function(element_name,validation_rules,bool_show) {
+    display_error: (element_name,validation_rules,bool_show) => {
       if (bool_show) {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.add("error-field");
 
@@ -35,8 +38,7 @@ storm_eagle.module('form_validation', function () {
     //@param {string} type is the character set to test (e.g. alpha_numeric, numeric, email, postal_code)
     //@returns true to show an error
     //@returns false to hide an error
-    check_field:function(element_name,type) {
-      const self = this;
+    check_field: (element_name,type) => {
       let item_selected = false;
       let el;
       if (type == "radiobutton" || type == "checkbox") {
@@ -75,8 +77,8 @@ storm_eagle.module('form_validation', function () {
     //is_value_valid(): returns true if value successfully tested again regex
     //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postal_code)
     //@param {string} value is the value being tested
-    is_value_valid:function(type,value) {
-      var regex;
+    is_value_valid: (type,value) => {
+      let regex;
       switch (type) {
         case "alpha_numeric": // alphaNumeric + french characters
           regex = /^[A-Za-z\u00E0-\u00FC0-9 ]/;

@@ -1,14 +1,14 @@
-storm_eagle.module('form_theme_b33mOe', function () {
+storm_eagle.module('form_theme_b33mOe', () => {
   "use strict";
+  let self;
 
   return {
-    initialize: function () {
-      const self = this;
+    initialize: () => {
+      self = storm_eagle["form_theme_b33mOe"];
       self.input_listener();
       self.textarea_autoexpand_listener();
     },
-    ready: function() {
-      const self = this;
+    ready: () => {
       document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
         if (element.type !== 'radio') {
           self.force_set_active_label(element);
@@ -18,11 +18,10 @@ storm_eagle.module('form_theme_b33mOe', function () {
         self.force_textarea_autoexpand(element);
       });
     },
-    force_set_active_label: function(element) {
+    force_set_active_label: (element) => {
       element.nextElementSibling.classList[(element.value.length ? 'add' : 'remove')]('active-label');
     },
-    input_listener: function() {
-      const self = this;
+    input_listener: () => {
       document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
 
         if (element.type !== 'radio') {
@@ -32,12 +31,11 @@ storm_eagle.module('form_theme_b33mOe', function () {
         }
       });
     },
-    force_textarea_autoexpand(element) {
+    force_textarea_autoexpand: (element) => {
       element.style.height = 'inherit';
       element.style.height = element.scrollHeight + 'px';
     },
-    textarea_autoexpand_listener: function() {
-      const self = this;
+    textarea_autoexpand_listener: () => {
       document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
         element.addEventListener('input', () => {
           self.force_textarea_autoexpand(element);

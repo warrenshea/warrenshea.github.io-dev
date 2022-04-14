@@ -16,14 +16,16 @@
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
-      storm_eagle.module('communicating_iframe', function () {
+      storm_eagle.module('communicating_with_iframe', () => {
         'use strict';
+
+        let self;
         return {
-          initialize: function () {
-            const self = this;
+          initialize: () => {
+            self = storm_eagle["communicating_with_iframe"];
             self.add_message_listener();
           },
-          add_message_listener: function() {
+          add_message_listener: () => {
             window.addEventListener('message', event => {
               document.getElementById("table-container").style.height = event.data + "px";
             });

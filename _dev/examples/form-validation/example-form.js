@@ -1,8 +1,10 @@
 storm_eagle.module("example_form", () => {
+  'use strict';
+  let self;
 
   return {
-    validate_form: function() {
-      const self = this;
+    validate_form: () => {
+      self = storm_eagle["example_form"];
 
       if (
         storm_eagle.form_validation.validate("name-mandatory", ["not_empty","alpha_numeric"]) &&

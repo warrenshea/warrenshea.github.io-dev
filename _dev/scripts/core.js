@@ -85,7 +85,7 @@ storm_eagle = (function(window, document, undefined) {
      * @return mixed
      * @scope public
      */
-    module : function(name_space, module_object) {
+    module: (name_space, module_object) => {
       if(storm_eagle[name_space] === undefined) {
         storm_eagle[name_space] = module_object();
         if(storm_eagle[name_space] !== undefined) {
@@ -93,7 +93,7 @@ storm_eagle = (function(window, document, undefined) {
             storm_eagle[name_space].initialize();
           }
           if(typeof storm_eagle[name_space].ready === 'function') {
-            storm_eagle.document_ready(function() {
+            storm_eagle.document_ready(() => {
               storm_eagle[name_space].ready();
             });
           }
@@ -104,7 +104,7 @@ storm_eagle = (function(window, document, undefined) {
       }
     },
 
-    destroy_module: function(name_space) {
+    destroy_module: (name_space) => {
       storm_eagle[name_space] = undefined;
     },
 
@@ -115,7 +115,7 @@ storm_eagle = (function(window, document, undefined) {
      * @return void
      * @scope public
      */
-    throw_exception : function(message) {
+    throw_exception: (message) => {
       if(message !== undefined) {
         throw message;
         console.log(message);
@@ -125,7 +125,7 @@ storm_eagle = (function(window, document, undefined) {
       console.trace();
     },
 
-    document_ready : function(fn) {
+    document_ready: (fn) => {
       /* see if DOM is already available */
       if (document.readyState === "complete" || document.readyState === "interactive") {
         setTimeout(fn, 1); /* call on next available tick */
@@ -134,7 +134,7 @@ storm_eagle = (function(window, document, undefined) {
       }
     },
 
-    cookie : {
+    cookie: {
      /**
        * Gets a cookie value
        *
@@ -142,7 +142,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      get : function(name) {
+      get: (name) => {
         let start = document.cookie.indexOf(name + '=');
         if(start == -1) {
           return null;
@@ -165,7 +165,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return void
        * @scope public
        */
-      set : function(name, value, expires) {
+      set: (name, value, expires) => {
         let milliseconds = (expires === undefined ? 0 : parseInt(expires) * 1000 * 60 * 60 * 24);
         let greenwichMeanTime = new Date(new Date().getTime() + milliseconds).toGMTString();
         document.cookie = name + '=' + escape(value) + ((expires > 0) ? ';expires=' + greenwichMeanTime : '') + '; path=/';
@@ -178,7 +178,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return void
        * @scope public
        */
-      unset : function(name) {
+      unset: (name) => {
         let value = storm_eagle.cookie.get(name);
         if(value !== null) {
           document.cookie = name + '=;expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/';
@@ -186,7 +186,7 @@ storm_eagle = (function(window, document, undefined) {
       }
     },
 
-    validation : {
+    validation: {
      /**
        * Checks if a value is of type Number
        *
@@ -194,7 +194,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return boolean
        * @scope public
        */
-      is_number : function(value) {
+      is_number: (value) => {
         switch(typeof value) {
           case 'number' :
             return true;
@@ -214,7 +214,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return boolean
        * @scope public
        */
-      is_string : function(value) {
+      is_string: (value) => {
         switch(typeof value) {
           case 'string' :
             return true;
@@ -228,7 +228,7 @@ storm_eagle = (function(window, document, undefined) {
       },
     },
 
-    format : {
+    format: {
      /**
        * Formats a number
        *
@@ -237,7 +237,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      number : function(number, factor) {
+      number: (number, factor) => {
         let decimal_symbol;
         let thousands_symbol;
         let sign;
@@ -275,7 +275,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      currency : function(number, factor) {
+      currency: (number, factor) => {
         factor = isNaN(factor = Math.abs(factor)) ? 2 : factor;
         number = storm_eagle.format.number(number, factor);
         switch(LANG) {
@@ -294,7 +294,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      percentage : function(number, factor) {
+      percentage: (number, factor) => {
         factor = isNaN(factor = Math.abs(factor)) ? 3 : factor;
         number = storm_eagle.format.number(number, factor);
         switch(LANG) {
@@ -306,7 +306,7 @@ storm_eagle = (function(window, document, undefined) {
       },
     },
 
-    reverse_format : {
+    reverse_format: {
       /**
        * Gets a formatted number as a number
        *
@@ -314,7 +314,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return float
        * @scope public
        */
-      get_numeric_value : function(number) {
+      get_numeric_value: (number) => {
         switch(LANG) {
           case 'fr':
             number = number.replace(',', '.');
@@ -328,16 +328,16 @@ storm_eagle = (function(window, document, undefined) {
       },
     },
 
-    client : {
+    client: {
 
-      viewport : {
+      viewport: {
         /**
          * Gets the viewport width
          *
          * @return float
          * @scope public
          */
-        get_width : function() {
+        get_width: () => {
           return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         },
 
@@ -347,7 +347,7 @@ storm_eagle = (function(window, document, undefined) {
          * @return string
          * @scope public
          */
-        get_breakpoint : function() {
+        get_breakpoint: () => {
           const viewportWidth = storm_eagle.client.viewport.get_width();
 
           if (viewportWidth >= breakpoints["xl_min"])
@@ -370,7 +370,7 @@ storm_eagle = (function(window, document, undefined) {
          * @return float
          * @scope public
          */
-        get_height : function() {
+        get_height: () => {
           return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
         },
 
@@ -380,7 +380,7 @@ storm_eagle = (function(window, document, undefined) {
          * @return boolean
          * @scope public
          */
-        is_retina : function() {
+        is_retina: () => {
           if(
             window.devicePixelRatio > 1 ||
             (window.matchMedia && window.matchMedia('(-webkit-min-device-pixel-ratio:1.5),(-moz-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5)').matches)
@@ -405,15 +405,15 @@ storm_eagle = (function(window, document, undefined) {
          * @return boolean
          * @scope public
          */
-        is_sm_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["sm_max"]) ? true : false; },
-        is_sm_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"]) ? true : false; },
-        is_md_down : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
-        is_md_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
-        is_md_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"]) ? true : false; },
-        is_lg_down : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
-        is_lg_only : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
-        is_lg_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"]) ? true : false; },
-        is_xl_up : function() { return (storm_eagle.client.viewport.get_width() >= breakpoints["xl_min"]) ? true : false; },
+        is_sm_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["sm_max"]) ? true : false; },
+        is_sm_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"]) ? true : false; },
+        is_md_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
+        is_md_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
+        is_md_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"]) ? true : false; },
+        is_lg_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
+        is_lg_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
+        is_lg_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"]) ? true : false; },
+        is_xl_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["xl_min"]) ? true : false; },
       },
 
 
@@ -422,7 +422,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      get_user_agent :  function(){
+      get_user_agent: () => {
         return(navigator.userAgent);
       },
 
@@ -432,27 +432,27 @@ storm_eagle = (function(window, document, undefined) {
         * @return boolean
         * @scope public
         **/
-      is_android: function() {
+      is_android: () => {
         return storm_eagle.client.get_user_agent().match(/Android/i) ? true : false;
       },
-      is_blackberry: function() {
+      is_blackberry: () => {
         return storm_eagle.client.get_user_agent().match(/BlackBerry|BB10/i) ? true : false;
       },
-      is_ios: function() {
+      is_ios: () => {
         return storm_eagle.client.get_user_agent().match(/iPhone|iPad|iPod/i) ? true : false;
       },
-      is_opera: function() {
+      is_opera: () => {
         return storm_eagle.client.get_user_agent().match(/Opera Mini/i) ? true : false;
       },
-      is_windows: function() {
+      is_windows: () => {
         return storm_eagle.client.get_user_agent().match(/IEMobile/i) ? true : false;
       },
-      is_any: function() {
+      is_any: () => {
         return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(storm_eagle.client.get_user_agent().substr(0,4)) ? true : false;
       }
     },
 
-    page : {
+    page: {
      /**
        * Gets a query parameter value from the query string
        *
@@ -460,7 +460,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      get_query_value : function(key) {
+      get_query_value: (key) => {
         key = key.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         let regex = new RegExp('[\\?&]' + key + '=([^&#]*)'),
             results = regex.exec(location.search);
@@ -477,7 +477,7 @@ storm_eagle = (function(window, document, undefined) {
        * @return string
        * @scope public
        */
-      get_hash : function() {
+      get_hash: () => {
         if (window.location.hash) {
           return window.location.hash.substr(1);
         } else {
@@ -492,24 +492,24 @@ storm_eagle = (function(window, document, undefined) {
        * @return void
        * @scope public
        */
-      set_hash : function(hash) {
+      set_hash: (hash) => {
         if (hash.length > 1) {
           window.location.replace(('' + window.location).split('#')[0] + '#' + hash);
         }
       },
 
-      get_language_code : function() {
+      get_language_code: () => {
         return document.getElementsByTagName('html')[0].getAttribute('lang');
       }
     },
 
 
-    util : {
-      replace_all : function(original_str,find_str,replace_str, ignore) {
+    util: {
+      replace_all: (original_str,find_str,replace_str, ignore) => {
         return original_str.replace(new RegExp(find_str.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(replace_str)=="string")?replace_str.replace(/\$/g,"$$$$"):replace_str);
       },
 
-      index_in_parent : function(node) {
+      index_in_parent: (node) => {
         let children = node.parentNode.childNodes;
         let num = 0;
         for (let i=0; i<children.length; i++) {
@@ -530,8 +530,7 @@ storm_eagle = (function(window, document, undefined) {
      * @param integer height
      * @return void
      */
-    open_window : function(url, name, width, height)
-    {
+    open_window: (url, name, width, height) => {
       name = (name === undefined ? '_blank' : name);
       width = (width === undefined ? 800 : parseInt(width) + "");
       height = (height === undefined ? 600 : parseInt(height) + "");
@@ -546,7 +545,7 @@ storm_eagle = (function(window, document, undefined) {
      * @return void
      * @scope public
      */
-    scroll_to : function(selector) {
+    scroll_to: (selector) => {
       window.scrollTo({
         'behavior': 'auto',
         'left': 0,
@@ -564,7 +563,7 @@ storm_eagle = (function(window, document, undefined) {
      * @param  { boolean } immediate  flag to trigger function on the leading edge or trailing
      * @return { function }           debounce function
      */
-    debounce : function(func, wait, immediate){
+    debounce: (func, wait, immediate) => {
       let timeout;
       return function() {
         let context = this, args = arguments;
@@ -586,7 +585,7 @@ storm_eagle = (function(window, document, undefined) {
      * @param  { array } elements     elements we want to observe
      * @param  { function } func      callback function
      */
-    resize_observer : function(elements,func) {
+    resize_observer: (elements,func) => {
       let resize_observer = new ResizeObserver( el => { func(); });
       //@TODO: write cleaner way to iterate through one DOM Element OR NodeList
       (elements instanceof HTMLElement) ? resize_observer.observe(elements) : elements.forEach(el => { resize_observer.observe(el) });
@@ -596,17 +595,16 @@ storm_eagle = (function(window, document, undefined) {
 
 const LANG = storm_eagle.page.get_language_code();
 
-storm_eagle.module('_temp_fill_ids', function () {
+storm_eagle.module('_temp_fill_ids', () => {
   'use strict';
+  let self;
 
   return {
-    initialize: function () {
-      const self = this;
+    initialize: () => {
+      self = storm_eagle["_temp_fill_ids"];
       self.fill_empty_ids();
-
     },
-    fill_empty_ids: function() {
-
+    fill_empty_ids: () => {
       function get_random_id() {
         return '_' + Math.random().toString(36).substr(2, 9);
       }
@@ -620,43 +618,17 @@ storm_eagle.module('_temp_fill_ids', function () {
   }
 });
 
-storm_eagle.module('javascript_utility', function () {
+storm_eagle.module('ie11_polyfill', () => {
   return {
-    initialize: function () {
-      const self = this;
-      self.add_class_prototype_functions();
-    },
-    add_class_prototype_functions: function() {
-      let element = HTMLElement.prototype;
-      element.addClass = function(cls) {
-        this.classList.add(cls);
-        return this;
-      };
-
-      element.removeClass = function(cls) {
-        this.classList.remove(cls);
-        return this;
-      };
-
-      element.toggleClass = function(cls) {
-        this.classList.toggle(cls);
-        return this;
-      }
-    }
-  }
-});
-
-storm_eagle.module('ie11_polyfill', function () {
-  return {
-    initialize: function () {
+    initialize: () => {
       if (window.document.documentMode) {
 
         // missing forEach on NodeList for IE11
         if ('NodeList' in window && !NodeList.prototype.forEach) {
           console.info('polyfill for IE11');
-          NodeList.prototype.forEach = function (callback, thisArg) {
+          NodeList.prototype.forEach = (callback, thisArg) => {
             thisArg = thisArg || window;
-            for (var i = 0; i < this.length; i++) {
+            for (let i = 0; i < this.length; i++) {
               callback.call(thisArg, this[i], i, this);
             }
           };
@@ -665,16 +637,16 @@ storm_eagle.module('ie11_polyfill', function () {
         // https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
         if (!Array.prototype.findIndex) {
           Object.defineProperty(Array.prototype, 'findIndex', {
-            value: function(predicate) {
+            value: (predicate) => {
              // 1. Let O be ? ToObject(this value).
               if (this == null) {
                 throw new TypeError('"this" is null or not defined');
               }
 
-              var o = Object(this);
+              let o = Object(this);
 
               // 2. Let len be ? ToLength(? Get(O, "length")).
-              var len = o.length >>> 0;
+              let len = o.length >>> 0;
 
               // 3. If IsCallable(predicate) is false, throw a TypeError exception.
               if (typeof predicate !== 'function') {
@@ -682,10 +654,10 @@ storm_eagle.module('ie11_polyfill', function () {
               }
 
               // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
-              var thisArg = arguments[1];
+              let thisArg = arguments[1];
 
               // 5. Let k be 0.
-              var k = 0;
+              let k = 0;
 
               // 6. Repeat, while k < len
               while (k < len) {
@@ -693,7 +665,7 @@ storm_eagle.module('ie11_polyfill', function () {
                 // b. Let kValue be ? Get(O, Pk).
                 // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
                 // d. If testResult is true, return k.
-                var kValue = o[k];
+                let kValue = o[k];
                 if (predicate.call(thisArg, kValue, k, o)) {
                   return k;
                 }
@@ -709,7 +681,7 @@ storm_eagle.module('ie11_polyfill', function () {
 
         /* polyfill for DOMELEMENT.remove() */
         if (!('remove' in Element.prototype)) {
-          Element.prototype.remove = function() {
+          Element.prototype.remove = () => {
             if (this.parentNode) {
               this.parentNode.removeChild(this);
             }
@@ -724,11 +696,11 @@ storm_eagle.module('ie11_polyfill', function () {
  * Allows console.log() to work in non-production environments and
  * Disable console.log() on production environments (unless a querystring on the page exists)
  */
-storm_eagle.module('console_log', function () {
+storm_eagle.module('console_log', () => {
   'use strict';
 
   return {
-    initialize: function () {
+    initialize: () => {
       if (window.location.hostname.indexOf("poc") > -1 || window.location.hostname.indexOf("localhost") > -1) {
         console.log('console.log() enabled');
       } else {
@@ -736,7 +708,7 @@ storm_eagle.module('console_log', function () {
           console.log('console.log() enabled');
         } else {
           console.log('console.log() disabled');
-          console.log = function() {}
+          console.log = () => {}
         }
       }
     }
@@ -754,53 +726,53 @@ storm_eagle.module('console_log', function () {
  * If you only want height equalizing to occur on medium size up, add 'data-equalize-md-up' to the HTML element as well
  * If you only want height equalizing to occur on small size only, add 'data-equalize-sm-only' to the HTML element as well
  */
-storm_eagle.module('equalize_heights', function () {
+storm_eagle.module('equalize_heights', () => {
   'use strict';
 
+  let self;
   let _data_equal_height_array = [];
 
   /*
    * Sorts items in array from smallest to largest
    */
-  let sort_number = function (a, b) {
+  let sort_number = (a, b) => {
     return a - b;
   };
 
   /*
    * For each "key", determine the largest height and apply to all items with that key
    */
-  let max_height = function () {
+  let max_height = () => {
     _data_equal_height_array.forEach((index, value) => {
       let _highest = 0;
       let _heights = [];
-      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
+      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach(el => {
         /* get the height including the padding of an item */
         el.style.height = "auto";
         _heights.push(el.getBoundingClientRect().height);
       });
       _heights = _heights.sort(sort_number).reverse();
       _highest = _heights[0];
-      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
+      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach(el => {
         el.style.height = _highest + 'px';
       });
     });
   };
 
   return {
-    initialize: function () {
-      const self = this;
+    initialize: () => {
+      self = storm_eagle["equalize_heights"];
       self.get_data_equal_height_items();
       self.resize_listener();
     },
-    ready: function() {
-      const self = this;
+    ready: () => {
       self.force_resize();
     },
     /*
     * Checks all the items that need to equalize height, and add keys to array
     */
-    get_data_equal_height_items: function () {
-      document.querySelectorAll('[data-equalize-height]').forEach((el) => {
+    get_data_equal_height_items: () => {
+      document.querySelectorAll('[data-equalize-height]').forEach(el => {
         let newItem = el.dataset['equalizeHeight'];
         if (_data_equal_height_array.indexOf(newItem) < 0) {
          _data_equal_height_array.push(newItem);
@@ -810,9 +782,7 @@ storm_eagle.module('equalize_heights', function () {
     /*
     * Re-evaluate the equalizing of the height when the page loads or is resized
     */
-    resize_listener: function () {
-      const self = this;
-
+    resize_listener: () => {
       function force_resize() {
         return self.force_resize();
       }
@@ -822,17 +792,16 @@ storm_eagle.module('equalize_heights', function () {
     * Check for any new items to equalize, and then equalize them
     * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
     */
-    force_resize: function () {
-      const self = this;
+    force_resize: () => {
       self.get_data_equal_height_items();
       max_height();
       if (storm_eagle.client.viewport.is_sm_only()) {
-        document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach((el) => {
+        document.querySelectorAll('[data-equalize-height][data-equalize-md-up]').forEach(el => {
           el.style.height = "auto";
         });
       }
       if (storm_eagle.client.viewport.is_md_up()) {
-        document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach((el) => {
+        document.querySelectorAll('[data-equalize-height][data-equalize-sm-only]').forEach(el => {
           el.style.height = "auto";
         });
       }
@@ -843,11 +812,11 @@ storm_eagle.module('equalize_heights', function () {
 /**
  * Disables the telephone number link from calling in medium and up
  */
-storm_eagle.module('disable_tel_medium_up', function () {
+storm_eagle.module('disable_tel_medium_up', () => {
   return {
-    initialize: function () {
-      document.querySelectorAll('a[href^="tel"]').forEach((el) => {
-        el.addEventListener("click", function(event) {
+    initialize: () => {
+      document.querySelectorAll('a[href^="tel"]').forEach(el => {
+        el.addEventListener("click", event => {
           if (storm_eagle.client.viewport.is_md_up()) {
             event.preventDefault();
           }

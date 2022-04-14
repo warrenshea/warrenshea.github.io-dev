@@ -30,7 +30,7 @@
         return {
           initialize: () => {
             self = storm_eagle["autocomplete"];
-            document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
+            document.querySelectorAll("[data-module='autocomplete']").forEach(el => {
               let autocomplete_id = el.getAttribute("id");
               autocomplete_state[autocomplete_id] = {
                 "input_id": el.querySelector("[data-module='autocomplete.input']").getAttribute("id"),
@@ -44,7 +44,7 @@
             });
           },
           update_sr_description: (autocomplete_id, value) => {
-            var sr_description_id = autocomplete_state[autocomplete_id]["sr_description_id"];
+            let sr_description_id = autocomplete_state[autocomplete_id]["sr_description_id"];
             if (value === "") {
               document.getElementById(sr_description_id).innerHTML = notify[LANG];
             } else {
@@ -93,7 +93,7 @@
             const num_results = autocomplete_state[autocomplete_id]["num_results"];
             const error_message_id = autocomplete_state[autocomplete_id]["error_message_id"];
             document.getElementById(input_id).addEventListener('keydown', event => {
-              var selected_dropdown = document.getElementById(results_id).querySelector('.selected');
+              let selected_dropdown = document.getElementById(results_id).querySelector('.selected');
 
               switch (event.keyCode) {
                 case keyboard.keys.down:
@@ -180,7 +180,7 @@
             self = storm_eagle["pokemon_search"];
           },
           get_pokemon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
-            var url = "pokedex.json";
+            let url = "pokedex.json";
 
             function _helper_reduce_database (database_temp) {
               let new_database = [];
@@ -198,9 +198,9 @@
             }
 
             fetch(url)
-              .then((response) => {
+              .then(response => {
                 return response.json();
-              }).then((data) => {
+              }).then(data => {
 
                 data = _helper_reduce_database(data);
 
@@ -212,7 +212,7 @@
                       document.getElementById(autocomplete_id).classList.remove("active");
                       document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
 
-                      for (var i = 0; i < data.length; i++) {
+                      for (let i = 0; i < data.length; i++) {
                         document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i]));
                         document.getElementById(results_id).classList.remove("display:none");
                         document.getElementById(autocomplete_id).classList.add("active");
@@ -229,7 +229,7 @@
                     document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
                   }
                 }
-            }).catch((err) => {
+            }).catch(err => {
               // There was an error
               console.warn('Something went wrong.', err);
             });

@@ -1,5 +1,6 @@
-storm_eagle.module('calendar_event_builder', function(){
+storm_eagle.module('calendar_event_builder', () => {
 
+  let self;
   //add 4 hours to event
   const invite_details = {
     start_date: "2017-05-04",
@@ -16,13 +17,13 @@ storm_eagle.module('calendar_event_builder', function(){
   }
 
   return {
-    initialize : function(){
-      const self = this;
+    initialize: () => {
+      self = storm_eagle["calendar_event_builder"];
       self.populate_form();
       self.populate_data_calendar_link();
       self.submit_listener();
     },
-    populate_form : function() {
+    populate_form: () => {
       document.querySelector("input[name=start_date]").value = invite_details.start_date;
       document.querySelector("input[name=start_time]").value = invite_details.start_time;
       document.querySelector("input[name=end_date]").value = invite_details.end_date;
@@ -35,7 +36,7 @@ storm_eagle.module('calendar_event_builder', function(){
       document.querySelector("input[name=organizer]").value = invite_details.organizer;
       document.querySelector("input[name=organizer_email]").value = invite_details.organizer_email;
     },
-    populate_data_calendar_link : function() {
+    populate_data_calendar_link: () => {
       let start_date,
         start_time,
         end_date,
@@ -74,9 +75,7 @@ END:VEVENT
 END:VCALENDAR`;
       document.querySelector("#icalendar").innerHTML = icalendar_url;
     },
-    submit_listener: function() {
-      const self = this;
-
+    submit_listener: () => {
       function populate_json() {
         invite_details.start_date = document.querySelector("input[name=start_date]").value;
         invite_details.start_time = document.querySelector("input[name=start_time]").value;

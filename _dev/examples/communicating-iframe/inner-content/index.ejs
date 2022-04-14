@@ -92,14 +92,16 @@
     </table>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
-      storm_eagle.module('communicating_parent', function () {
+      storm_eagle.module('communicating_with_iframe_parent', () => {
         'use strict';
+        let self;
+
         return {
-          initialize: function () {
-            const self = this;
+          initialize: () => {
+            self = storm_eagle["communicating_with_iframe_parent"];
             self.add_message_listener();
           },
-          add_message_listener: function() {
+          add_message_listener: () => {
             window.addEventListener('message', event => {
               let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
               parent.postMessage(height, window.location.origin);

@@ -1,12 +1,13 @@
-storm_eagle.module('waypoint', function () {
+storm_eagle.module('waypoint', () => {
   "use strict";
 
+  let self;
   let waypoint_state = {};
 
   return {
-    initialize: function () {
-      const self = this;
-      document.querySelectorAll("[data-module='waypoint']").forEach(function(el){
+    initialize: () => {
+      self = storm_eagle["waypoint"];
+      document.querySelectorAll("[data-module='waypoint']").forEach((el) =>{
         let waypoint_id = el.getAttribute("id");
         waypoint_state[waypoint_id] = {
           "element": el.getAttribute("data-waypoint-element"),
@@ -20,12 +21,12 @@ storm_eagle.module('waypoint', function () {
         self.add_waypoint_listeners(waypoint_id);
       });
     },
-    add_waypoint_listeners: function (waypoint_id) {
+    add_waypoint_listeners: (waypoint_id) => {
       waypoint_state[waypoint_id]["new_waypoint_obj"] = new Waypoint({
         element: ("this") ? document.getElementById(waypoint_id) : document.querySelector(waypoint_state[waypoint_id]["element"]),
-        handler: function() {
+        handler: () => {
           let delay = waypoint_state[waypoint_id]["delay"] || 0;
-          setTimeout(function(){
+          setTimeout(() => {
             if (waypoint_state[waypoint_id]["remove_class"]) {
               document.getElementById(waypoint_id).classList.remove(...waypoint_state[waypoint_id]["remove_class"].split(/[,]+/));
             }

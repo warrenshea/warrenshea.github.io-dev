@@ -1,12 +1,15 @@
-storm_eagle.module('form_validation', function () {
+storm_eagle.module('form_validation', () => {
   "use strict";
+  let self;
 
   return {
+    initialize: () => {
+      self = storm_eagle["form_validation"];
+    },
     //validate(): highlights/hides the border of the input that has an issue + adds/hides the error message; this function is customizable
     //@param {string} element_name is the name of the DOM object being tested - used here for 'error-message'
     //@param {string} type is the character set to be validated again (e.g. alpha_numeric, numeric, email, postalCode, dropDown, checkBox, radioButton)
-    validate: function (element_name, type) {
-      const self = this;
+    validate: (element_name, type) => {
       if (self.check_field(element_name, type)) {
         document.querySelector(`[name='${element_name}']`).parentElement.querySelector('label').classList.add("error-field");
 
@@ -32,7 +35,7 @@ storm_eagle.module('form_validation', function () {
     //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
     //@returns true to show an error
     //@returns false to hide an error
-    check_field:function(element_name,type) {
+    check_field: (element_name,type) => {
       let itemSelected = false;
       let el;
       if (type == "radiobutton" || type == "checkbox") {
@@ -71,8 +74,8 @@ storm_eagle.module('form_validation', function () {
     //is_value_valid(): returns true if value successfully tested again regex
     //@param {string} type is the character set to test (e.g. alphaNumeric, numeric, email, postalCode)
     //@param {string} value is the value being tested
-    is_value_valid:function(type,value) {
-      var regex;
+    is_value_valid: (type,value) => {
+      let regex;
       switch (type) {
         case "alpha_numeric": // alphaNumeric + french characters
           regex = /^[A-Za-z\u00E0-\u00FC0-9 ]/;
@@ -104,17 +107,17 @@ storm_eagle.module('form_validation', function () {
 /**
  * Enables floating labels
  */
-storm_eagle.module('form_theme_maverick_a', function () {
+storm_eagle.module('form_theme_b33mOe', () => {
   "use strict";
+  let self;
 
   return {
-    initialize: function () {
-      const self = this;
+    initialize: () => {
+      self = storm_eagle["form_theme_b33mOe"];
       self.input_listener();
       self.textarea_autoexpand_listener();
     },
-    ready: function() {
-      const self = this;
+    ready: () => {
       document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
         if (element.type !== 'radio') {
           self.force_set_active_label(element);
@@ -124,13 +127,10 @@ storm_eagle.module('form_theme_maverick_a', function () {
         self.force_textarea_autoexpand(element);
       });
     },
-    force_set_active_label: function(element) {
-      console.log(element);
-      console.log(element.nextElementSibling);
+    force_set_active_label: (element) => {
       element.nextElementSibling.classList[(element.value.length ? 'add' : 'remove')]('active-label');
     },
-    input_listener: function() {
-      const self = this;
+    input_listener: () => {
       document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
         if (element.type !== 'radio') {
           element.addEventListener('change', () => {
@@ -139,12 +139,11 @@ storm_eagle.module('form_theme_maverick_a', function () {
         }
       });
     },
-    force_textarea_autoexpand(element) {
+    force_textarea_autoexpand: (element) => {
       element.style.height = 'inherit';
       element.style.height = element.scrollHeight + 'px';
     },
-    textarea_autoexpand_listener: function() {
-      const self = this;
+    textarea_autoexpand_listener: () => {
       document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
         element.addEventListener('input', () => {
           self.force_textarea_autoexpand(element);
