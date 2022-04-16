@@ -14,6 +14,7 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
+                "/scripts/module.autocomplete.js",
                 "/scripts/module.form-theme-b33mOe.js"
             ]
         }
