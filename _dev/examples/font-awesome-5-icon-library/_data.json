@@ -1,0 +1,24 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Font Awesome 5.15.3 Icon Library",
+                "urlEn": "/examples/font-awesome-5-icon-library/",
+                "urlCanonical": "/examples/font-awesome-5-icon-library/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "assets.js",
+                "/scripts/module.autocomplete.js",
+                "/scripts/module.form-theme-b33mOe.js",
+                "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+            ]
+        }
+    }
+}
