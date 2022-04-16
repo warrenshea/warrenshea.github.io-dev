@@ -1,0 +1,302 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+<style>
+      .assets {
+        display:block;
+        width:100%;
+      }
+      .assets > div.asset {
+        float:left;
+        display:flex;
+      }
+      .assets > div.asset.hidden {
+        height: 16px;
+        width: 16px;
+        border:0;
+      }
+      .assets > div.asset.heading {
+        margin: 4px 0;
+        border:0;
+      }
+      .assets div:hover {
+        cursor: pointer;
+      }
+      .assets div .number,
+      .assets div .name {
+        font-size:12px;
+        display:none;
+      }
+      .isotope-size\:48 {width:48px;height:48px;margin:0 8px 8px 0;}
+    </style>
+    <div class="row max-width:1280px form:theme:b33mOe">
+      <div class="w:2 position:relative">
+        <div class="position:fixed" style="left:0;width:16.3%">
+          <h2 class="heebo:bold">Filters</h2>
+
+          <div class="mx:2px mb:8px b-grey:2px br:8px">
+            <div class="autocomplete p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete">
+              <div class="position:relative pt:4px">
+                <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('fa5dam-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.fa5dam.get_icon_list" id="fa5dam" name="fa5dam" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
+                <label for="fa5dam" id="autocomplete_label"><span class="description">Keyword Search</span></label>
+              </div>
+              <div data-module="autocomplete.sr-description" id="fa5dam-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
+              <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-light-grey:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="fa5dam" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter an icon</span>
+            </div>
+          </div>
+
+          <fieldset class="option-set-assets br:8px mb:8px" data-filter-group="type">
+            <legend class="hide">Type</legend>
+            <h3>Type</h3>
+            <input type="radio" name="type" id="all" value="all" data-filter-value=" *" checked>
+            <label for="all" class="display:block mb:4px">All</label>
+            <input type="radio" name="type" id="icon" value="icon" data-filter-value=".type-icon">
+            <label for="icon" class="display:block mb:4px">Icon</label>
+            <input type="radio" name="type" id="brand" value="brand" data-filter-value=".type-brand">
+            <label for="brand" class="display:block mb:4px">Brand</label>
+          </fieldset>
+
+          <fieldset class="option-set-assets br:8px" data-filter-group="color">
+            <legend class="hide">Color</legend>
+            <h3>Color</h3>
+            <input type="radio" name="color" id="color-all" value="all" data-filter-value=" *" checked>
+            <label for="color-all" class="display:block mb:4px">All</label>
+            <input type="radio" name="color" id="duotone" value="duotone" data-filter-value=".isotope-color:duotone">
+            <label for="duotone" class="display:block mb:4px color:duotone">Duotone</label>
+            <input type="radio" name="color" id="light" value="light" data-filter-value=".isotope-color:light">
+            <label for="light" class="display:block mb:4px color:light">Light</label>
+            <input type="radio" name="color" id="regular" value="regular" data-filter-value=".isotope-color:regular">
+            <label for="regular" class="display:block mb:4px color:regular">Regular</label>
+            <input type="radio" name="color" id="solid" value="solid" data-filter-value=".isotope-color:solid">
+            <label for="solid" class="display:block mb:4px color:solid">Solid</label>
+            <input type="radio" name="color" id="various" value="various" data-filter-value=".isotope-color:various">
+            <label for="various" class="display:block mb:4px color:various">Various</label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="w:7">
+        <h2 class="heebo:bold">Assets</h2>
+        <div class="assets hide">
+        </div>
+      </div>
+      <div class="w:3 position:relative">
+
+        <div class="position:fixed" style="right:8px;width:23%;">
+          <h2 class="heebo:bold">Preview</h2>
+          <div class="display:flex align:center" style="height:100%;flex-direction:column">
+            <div>
+              <div class="sm+:w:12 sm+:text-align:center display:flex align:center align:middle sm+:b-granite:2px sm+:br:8px" style="border-style:groove;border-color:threedface;height:300px">
+                <div id="asset" class="h:100%">
+                </div>
+              </div>
+              <div class="sm+:w:12" style="min-height:500px">
+                <h2 class="sm+:mb:16px sm+:mt:16px heebo:bold">Details</h2>
+                <h3 class="heebo:bold">Name: </h3>
+                <div class="sm+:mb:16px" id="name"></div>
+                <h3 class="heebo:bold">Pathname: </h3>
+                <div class="sm+:mb:16px" id="pathname"></div>
+                <h3 class="heebo:bold">Colour: </h3>
+                <div class="sm+:mb:16px" id="color"></div>
+                <h3 class="heebo:bold">Tags: </h3>
+                <div class="sm+:mb:16px" id="tags"></div>
+                <h3 class="heebo:bold">Notes: </h3>
+                <div class="sm+:mb:16px" id="notes"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<script>
+  storm_eagle.module('fa5dam', () => {
+    'use strict';
+    let self;
+    let errormessage = "";
+
+    let filter_group;
+    let filter_value;
+    let filters = {};
+    let keyword_database = [];
+
+    const isotope_container = document.querySelector(".assets");
+    let isotope_obj;
+
+    function _add_slashes(string) {
+      //no need to do (str+'') anymore because 'this' can only be a string
+      return string.replace(/[:]+/g, '\\\:').replace(/[&]/g, '\\\&').replace(/[$]/g, '\\\$').replace(/[?]/g, '\\\?').replace(/[!]/g, '\\\!');
+    }
+
+    function _concat_values(obj) {
+      let value = '';
+      for (let prop in obj) {
+        value += obj[prop];
+      }
+      return value;
+    }
+
+    return {
+      initialize: () => {
+        self = storm_eagle["fa5dam"];
+        self.init_ui();
+        self.add_event_listeners();
+      },
+      init_ui: () => {
+        let asset_html = "";
+        let tags_array = [];
+        assets.forEach((asset, index) => {
+          if (index < 100) {
+
+            let { name, type, pathname, tags, color } = asset;
+
+            //create the keyword database based off the tags
+            tags_array = tags.split(",");
+            let all_isotope_keywords = "";
+            tags_array.forEach((el,index) => {
+              all_isotope_keywords += " keyword:" + el.toString().replace(/ /g,"_"); //convert space to underscore;
+
+              if(keyword_database.indexOf(el) === -1) {
+                keyword_database.push(el.toString());
+              }
+            });
+
+            //create each asset's html
+            asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:albicant">`;
+            asset_html += `  <span class="number">${index}</span>`;
+            asset_html += `  <span class="name">${name}</span>`;
+            asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
+            asset_html += `</div>`;
+          }
+        });
+        keyword_database = [...new Set(keyword_database)].sort();
+
+        document.querySelector(".assets").innerHTML = asset_html;
+      },
+      ready: () => {
+        document.querySelector(".assets").classList.remove("hide");
+
+        //once everything has loaded, set the isotope
+        isotope_obj = new Isotope( isotope_container, {
+          itemSelector: ".asset",
+          sortBy : "number",
+          layoutMode: "masonry"
+        });
+
+      },
+      add_event_listeners: () => {
+
+        function _find_object_with_param(object_array,param,val) {
+          let result = object_array.filter(obj => {
+            return obj[param] === val;
+          })
+          return result;
+        }
+
+        document.querySelectorAll(".assets > div").forEach(el => {
+          el.addEventListener('click', () => {
+            asset = _find_object_with_param(assets,"name",el.getAttribute("data-asset"));
+            document.getElementById("asset").innerHTML = `<img src="${asset[0]["pathname"]}" class="w:100% h:100% object-fit:contain">`;
+            document.getElementById("name").innerHTML = asset[0]["name"];
+            document.getElementById("pathname").innerHTML = asset[0]["pathname"];
+            document.getElementById("color").innerHTML = asset[0]["color"];
+            document.getElementById("tags").innerHTML = asset[0]["tags"].replace(/,/g,"<br>");
+            document.getElementById("notes").innerHTML = asset[0]["notes"];
+          });
+        });
+
+        document.querySelectorAll(".option-set-assets input[type='radio']").forEach(el => {
+          let filter_button_group;
+          el.addEventListener('click', () => {
+            // get group key
+            filter_button_group = el.parentElement;
+            filter_group = filter_button_group.getAttribute('data-filter-group');
+            //console.log("filter_group",filter_group);
+            // set filter for group
+            //console.log("filters",filters);
+            filters[filter_group] = _add_slashes(el.getAttribute('data-filter-value'));
+            // console.log("filters[filter_group]",filters[filter_group]);
+            // console.log("filters",filters);
+            // combine filters
+            filter_value = _concat_values(filters);
+            isotope_obj.arrange({ filter: filter_value });
+          });
+        });
+      },
+      get_icon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
+        function _helper_tags_database (database_temp) {
+          const self = this;
+          let new_database = [];
+          let database_temp_keyword;
+          let isQueryIn_database_temp_keyword;
+
+          //name entries go next
+          for(let j=0;j<database_temp.length;j++) {
+            database_temp_keyword = database_temp[j].toLowerCase();
+            isQueryIn_database_temp_keyword = (database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false;
+            if (isQueryIn_database_temp_keyword) {
+              /*the site search will always do this as there are no categories to refine the data*/
+              new_database.push(database_temp[j]);
+            }
+          }
+          return new_database;
+        }
+
+        let data = [];
+
+        //console.log(keyword_database);
+        data = _helper_tags_database(keyword_database);
+        //console.log(data);
+
+        if (data) {
+          if (data.length > 0) {
+            if (document.getElementById(input_id) === document.activeElement) {
+              document.getElementById(results_id).classList.remove("display:none");
+              document.getElementById(results_id).innerHTML = "";
+              document.getElementById(autocomplete_id).classList.remove("active");
+              document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+
+              for (let i = 0; i < data.length; i++) {
+                document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i]));
+                document.getElementById(results_id).classList.remove("display:none");
+                document.getElementById(autocomplete_id).classList.add("active");
+                document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
+                if (i === results_max_results) {
+                  break;
+                }
+              }
+            }
+          } else {
+            document.getElementById(results_id).classList.remove("display:none");
+            document.getElementById(results_id).innerHTML = "";
+            document.getElementById(autocomplete_id).classList.remove("active");
+            document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+          }
+        }
+      },
+      render_autocomplete_result: (query, index, input_id, autocomplete_id, tag) => {
+        //console.log(tag);
+        return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${tag}" onclick="storm_eagle.fa5dam.autocomplete_fill('${input_id}','${tag}');storm_eagle.autocomplete.close('${autocomplete_id}');">${tag}</li>`;
+      },
+      autocomplete_fill: (input_id, name) => {
+        function _load_keyword(keyword) {
+          filter_group = "keyword";
+          //console.log("filter_group",filter_group);
+          //console.log("filters",filters);
+          if (keyword === "") {
+            filters[filter_group] = "*"
+          } else {
+            filters[filter_group] = _add_slashes(".keyword:" + keyword.replace(/ /g,"_"));
+          }
+          //console.log("filters[filter_group]",filters[filter_group]);
+          filter_value = _concat_values(filters);
+          isotope_obj.arrange({ filter: filter_value });
+        }
+
+        document.getElementById(input_id).value = `${name}`;
+        _load_keyword(name);
+      },
+    };
+  });
+</script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
