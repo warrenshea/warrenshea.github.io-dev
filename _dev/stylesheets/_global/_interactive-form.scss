@@ -331,7 +331,7 @@ fieldset.unstyle { border:0; padding:0 }
   .parent-checkbox {
     & > input[type="checkbox"][aria-checked="mixed"] + label:before {
       background-color: $bluea;
-      background-image: url('../assets/icon/16/dash.svg');
+      background-image: url('../assets/icon/dash.white.svg');
     }
     & > input[type="checkbox"][aria-checked="false"] + label:before {
         background-color: none;
@@ -339,7 +339,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     & > input[type="checkbox"][aria-checked="true"] + label:before {
         background-color: $bluea;
-        background-image: url('../assets/icon/check.positive.svg');
+        background-image: url('../assets/icon/check.white.svg');
     }
   }
 
