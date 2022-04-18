@@ -31,7 +31,9 @@ $sizes: (
   20px : rem-calc(20),
   24px : rem-calc(24),
   32px : rem-calc(32),
-  48px : rem-calc(48)
+  48px : rem-calc(48),
+  72px : rem-calc(72),
+  96px : rem-calc(96),
 );
 
 @each $mediaquery in $mediaqueries {
