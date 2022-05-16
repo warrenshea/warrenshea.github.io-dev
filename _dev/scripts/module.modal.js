@@ -116,9 +116,9 @@ storm_eagle.module('modal', () => {
     },
     get_modal_focusable_elements: (modal_id) => {
       modal_state[modal_id]["focusable_elements"] = document.getElementById(modal_id).querySelectorAll(focus_trap_selector);
-      console.log(modal_state[modal_id]["focusable_elements"]);
+      //console.log(modal_state[modal_id]["focusable_elements"]);
       modal_state[modal_id]["remove_focusable_elements"] = document.getElementById(modal_id).querySelectorAll(remove_focus_selector);
-      console.log(modal_state[modal_id]["remove_focusable_elements"]);
+      //console.log(modal_state[modal_id]["remove_focusable_elements"]);
     }
   };
 });
