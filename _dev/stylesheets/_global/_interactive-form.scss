@@ -374,83 +374,114 @@ fieldset.unstyle { border:0; padding:0 }
   }
 }
 
-.form\:theme\:card-checkboxes input[type="checkbox"],
-.form\:theme\:card-radiobuttons input[type="radio"] {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  position: absolute;
-  &+label {
-    position:relative;
-    width:100%;
-    min-height: 170px;
-    display:inline-block;
-    transition: all 0.3s ease-out;
-    &:hover {
-      cursor: pointer;
-      box-shadow: $box-shadow-custom-2;
-    }
-    div.check {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      top: -1px;
-      /* - Fix for IE11 - keep -1px, not 0px */
-      right: -1px;
-      /* - Fix for IE11 - keep -1px, not 0px */
-      width: 24px;
-      height: 24px;
-      border-radius: 0 0 0 4px;
-      background-image: url('../assets/icon/chevron-down.bluea.svg');
-      background-repeat: no-repeat;
-      background-color: #68bbe8;
-      background-size: 16px 16px;
-      background-position: center center;
-      transition: all .3s ease-in;
-    }
-    div.image {
-      text-align: center;
-      width: 96px;
-      height: 72px;
-      margin: 16px auto 0;
-    }
-    div.description {
-      text-align: center;
-      padding: 8px 0 0 0;
-      font-family: 'heebo-bold';
-      font-size: rem-calc(16);
-      color: $slate;
-    }
-  }
-  &:focus {
-    background: $bluea;
-    border: 3px solid $bluea;
-    color: $white;
-    box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
-  }
-  &:checked+label,
-  &:checked:focus+label {
-    border: 3px solid $bluea;
-    div.check {
-      opacity: 1;
+.form\:theme\:card-checkboxes,
+.form\:theme\:card-radiobuttons {
+
+  /* helper description styles */
+  .error-message {
+    width: 100%;
+    min-width: 150px;
+    padding: 0 0 0 19px;
+    font-size: rem-calc(14);
+    font-family: 'heebo';
+    color: $negative;
+    background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
+    background-size: 16px 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    margin-top: 4px;
+    display: none;
+    margin-bottom: 6px;
+    &.has-error {
       visibility: visible;
-      background: $bluea url('../assets/icon/check.white.svg') 8px no-repeat;
-      background-position: center center;
-      background-size: 16px;
-    }
-  }
-  &:focus+label,
-  &:checked:focus+label {
-    border: 3px solid $cerulean;
-    div.check {
-      background-color: $cerulean;
+      opacity: 1;
       display: block;
+      &.display\:inline {
+        display: inline;
+      }
     }
   }
-  .error-field label {
-    border: 3px solid $negative;
+
+  input[type="radio"],
+  input[type="checkbox"] {
+
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    &+label {
+      position:relative;
+      width:100%;
+      min-height: 170px;
+      display:inline-block;
+      transition: all 0.3s ease-out;
+      &:hover {
+        cursor: pointer;
+        box-shadow: $box-shadow-custom-2;
+      }
+      div.check {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: -1px;
+        /* - Fix for IE11 - keep -1px, not 0px */
+        right: -1px;
+        /* - Fix for IE11 - keep -1px, not 0px */
+        width: 24px;
+        height: 24px;
+        border-radius: 0 0 0 4px;
+        background-image: url('../assets/icon/chevron-down.bluea.svg');
+        background-repeat: no-repeat;
+        background-color: #68bbe8;
+        background-size: 16px 16px;
+        background-position: center center;
+        transition: all .3s ease-in;
+      }
+      div.image {
+        text-align: center;
+        width: 96px;
+        height: 72px;
+        margin: 16px auto 0;
+      }
+      div.description {
+        text-align: center;
+        padding: 8px 0 0 0;
+        font-family: 'heebo-bold';
+        font-size: rem-calc(16);
+        color: $slate;
+      }
+    }
+    &:focus {
+      background: $bluea;
+      border: 3px solid $bluea;
+      color: $white;
+      box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
+    }
+    &:checked+label,
+    &:checked:focus+label {
+      border: 3px solid $bluea;
+      div.check {
+        opacity: 1;
+        visibility: visible;
+        background: $bluea url('../assets/icon/check.white.svg') 8px no-repeat;
+        background-position: center center;
+        background-size: 16px;
+      }
+    }
+    &:focus+label,
+    &:checked:focus+label {
+      border: 3px solid $cerulean;
+      div.check {
+        background-color: $cerulean;
+        display: block;
+      }
+    }
+    .error-field label {
+      border: 3px solid $negative;
+    }
   }
 }
 
