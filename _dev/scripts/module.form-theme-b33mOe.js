@@ -135,7 +135,6 @@ storm_eagle.module('form_parent_checkbox', () => {
     _update_parent(parent_id);
   }
 
-
   return {
     initialize: () => {
       self = storm_eagle["form_parent_checkbox"];
