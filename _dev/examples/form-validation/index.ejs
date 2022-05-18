@@ -1,396 +1,1152 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-    <main class="w:100% form:theme:b33mOe" role="main">
-      <h1 class="play:bold fs:40px color:slate px:8px py:32px">Form and Form Validation</h1>
-      <form name="example-form" action="#" method="get" onsubmit="return storm_eagle.example_form.validate_form(event);">
+    <main class="w:100% pb:64px" role="main">
+      <div class="mw:1280px md-:px:16px align-self:centered">
+        <h1 class="play:bold fs:40px color:slate px:16px py:32px">Form and Form Validation</h1>
+
         <div class="row">
-          <div class="w:3 px:8px">
-            <h2 class="fs:28px lh:24 pb:16px">Mandatory</h2>
+          <form class="sm=:w:12 md+:w:6" name="required-form" id="required-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form_validation.validate_form(event,'required-form','storm_eagle.form_validation_example.required_success');">
 
-            <h3 class="fs:20px lh:24 pt:16px">Input (text)</h3>
-            <div class="position:relative pt:4px">
-              <input id="text-mandatory" name="text-mandatory" type="text" aria-required="true" data-module="input-text" aria-describedby="">
-              <label for="text-mandatory">
-                <span class="description">Text Input*</span>
-              </label>
-              <span class="error-message" id="text-mandatory:is_mandatory">Please provide a value</span>
-              <span class="error-message" id="text-mandatory:is_alphanumeric">The value provided has unacceptable characters</span>
-              <ul class="helper-description">
-                <li>Input (text) is mandatory</li>
-                <li>Cannot be empty</li>
-                <li>Is alphanumeric (+french characters): /^[A-Za-z\u00E0-\u00FC0-9 ]/</li>
-                <li>Examples: First Name, Last Name, Address</li>
-              </ul>
-            </div>
-
-            <h3 class="fs:20px lh:24 pt:16px">Input (number)</h3>
-            <div class="position:relative pt:4px">
-              <input name="number-mandatory" id="number-mandatory" type="number">
-              <label for="number-mandatory">
-                <span class="description">Number*</span>
-              </label>
-              <span class="error-message" id="number-mandatory:is_mandatory">Please provide a number</span>
-              <span class="error-message" id="number-mandatory:is_number">The value provided has unacceptable characters</span>
-              <ul class="helper-description">
-                <li>Input (number) is mandatory</li>
-                <li>Cannot be empty</li>
-                <li>Is numeric: /^\d+$/</li>
-                <li>Examples: YYYYMMDD, YYYY, MM, DD, hh, ss</li>
-              </ul>
-            </div>
-
-            <h3 class="fs:20px lh:24 pt:16px">Input (email)</h3>
-            <div class="position:relative pt:4px">
-              <input id="email-mandatory" name="email-mandatory" type="text">
-              <label for="email-mandatory">
-                <span class="description">Email*</span>
-              </label>
-              <span class="error-message" id="email-mandatory:is_mandatory">Please provide a value</span>
-              <span class="error-message" id="email-mandatory:is_email">The value provided does not match an email format</span>
-              <ul class="helper-description">
-                <li>Input (email) is mandatory</li>
-                <li>Cannot be empty</li>
-                <li>Is email</li>
-              </ul>
-            </div>
-
-            <h3 class="fs:20px lh:24 pt:16px">Input (postal code)</h3>
-            <div class="position:relative pt:4px">
-              <input id="postal-code" name="postal-code" type="text">
-              <label for="postal-code">
-                <span class="description">Postal Code*</span>
-              </label>
-              <span class="error-message" id="postal-code:is_mandatory">Please provide a value</span>
-              <span class="error-message" id="postal-code:is_email">The value provided does not match a the postal code format (e.g. A1A1A1)</span>
-              <ul class="helper-description">
-                <li>Input (email) is mandatory</li>
-                <li>Cannot be empty</li>
-                <li>Is postal code: /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/</li>
-              </ul>
-            </div>
-
-            <h3 class="fs:20px lh:24 pt:16px">Input (zip code)</h3>
-            <div class="position:relative pt:4px">
-              <input id="zip-code" name="zip-code" type="text">
-              <label for="zip-code">
-                <span class="description">Postal Code*</span>
-              </label>
-              <span class="error-message" id="zip-code:is_mandatory">Please provide a value</span>
-              <span class="error-message" id="zip-code:is_email">The value provided does not match a the postal code format (e.g. 90210)</span>
-              <ul class="helper-description">
-                <li>Input (email) is mandatory</li>
-                <li>Cannot be empty</li>
-                <li>Is postal code: /(^\d{5}$)|(^\d{5}-\d{4}$)/</li>
-              </ul>
-            </div>
-
-            <h3 class="fs:20px lh:24 pt:16px">Select / Dropdown</h3>
-            <div class="position:relative pt:4px">
-              <select id="select-mandatory">
-                <option value="" selected="" disabled></option>
-                <option value="1">Option One</option>
-                <option value="2">Option Two</option>
-                <option value="3">Option Three</option>
-                <option value="4">Option Four</option>
-                <option value="5">Option Five</option>
-                <option value="6">Option Six</option>
-                <option value="7">Option Seven</option>
-                <option value="8">Option Eight</option>
-              </select>
-              </optgroup>
-              <label for="select-mandatory">
-                <span class="description">Select / Dropdown</span>
-              </label>
-              <span class="error-message" id="select-mandatory:is_mandatory">Please select an option</span>
-              <span class="helper-description">Helper Text</span>
-            </div>
-            <div class="row">
-              <div class="w:6">
-                <div class="position:relative pt:4px">
-                  <select id="provinces-en-mandatory">
-                    <optgroup label="Provinces">
-                    <option value="" selected disabled></option>
-                    <option value="Alberta">Alberta</option>
-                    <option value="British Columbia">British Columbia</option>
-                    <option value="Manitoba">Manitoba</option>
-                    <option value="New Brunswick">New Brunswick</option>
-                    <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                    <option value="Nova Scotia">Nova Scotia</option>
-                    <option value="Ontario">Ontario</option>
-                    <option value="Prince Edward Island">Prince Edward Island</option>
-                    <option value="Quebec">Quebec</option>
-                    <option value="Saskatchewan">Saskatchewan</option>
-                    <option value="Northwest Territories">Northwest Territories</option>
-                    <option value="Nunavut">Nunavut</option>
-                    <option value="Yukon">Yukon</option>
-                    </optgroup>
-                  </select>
-                  </optgroup>
-                  <label for="provinces-en-mandatory">
-                    <span class="description">Province/Terrority *</span>
-                  </label>
-                  <span class="error-message" id="provinces-en-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Provinces (EN)</span>
-                </div>
+            <div class="bgc:light-grey bb-slate:1px br-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
+              <div class="bgc:light-grey pt:12px">
+                <h3 class="fs:28px lh:24 heebo:bold text-align:center">Required Form Fields</h3>
               </div>
-              <div class="w:6">
-                <div class="position:relative pt:4px">
-                  <select id="provinces-en-mandatory">
-                    <optgroup label="Provinces">
-                    <option value="" selected disabled></option>
-                    <option value="Alberta">Alberta</option>
-                    <option value="British Columbia">Colombie-Britannique</option>
-                    <option value="Manitoba">Manitoba</option>
-                    <option value="New Brunswick">Nouveau-Brunswick</option>
-                    <option value="Newfoundland and Labrador">Terre-Neuve-et-Labrador</option>
-                    <option value="Nova Scotia">Nouvelle-Écosse</option>
-                    <option value="Ontario">Ontario</option>
-                    <option value="Prince Edward Island">Île-du-Prince-Édouard</option>
-                    <option value="Quebec">Québec</option>
-                    <option value="Saskatchewan">Saskatchewan</option>
-                    <option value="Northwest Territories">Territoires du Nord-Ouest</option>
-                    <option value="Nunavut">Nunavut</option>
-                    <option value="Yukon">Yukon</option>
-                    </optgroup>
-                  </select>
-                  </optgroup>
-                  <label for="provinces-en-mandatory">
-                    <span class="description">Province/Territoire *</span>
-                  </label>
-                  <span class="error-message" id="provinces-en-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Provinces (FR)</span>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="w:6">
-                <div class="position:relative pt:4px">
-                  <select id="month-en-mandatory">
-                    <optgroup label="Month">
-                    <option value="" selected disabled></option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                    </optgroup>
-                  </select>
-                  </optgroup>
-                  <label for="month-en-mandatory">
-                    <span class="description">Month *</span>
-                  </label>
-                  <span class="error-message" id="month-en-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Month (EN)</span>
-                </div>
-              </div>
-              <div class="w:6">
-                <div class="position:relative pt:4px">
-                  <select id="month-fr-mandatory">
-                    <optgroup label="Provinces">
-                    <option value="" selected disabled></option>
-                    <option value="01">janvier</option>
-                    <option value="02">février</option>
-                    <option value="03">mars</option>
-                    <option value="04">avril</option>
-                    <option value="05">mai</option>
-                    <option value="06">juin</option>
-                    <option value="07">juillet</option>
-                    <option value="08">août</option>
-                    <option value="09">septembre</option>
-                    <option value="10">octobre</option>
-                    <option value="11">november</option>
-                    <option value="12">décembre</option>
-                    </optgroup>
-                  </select>
-                  </optgroup>
-                  <label for="month-fr-mandatory">
-                    <span class="description">mois *</span>
-                  </label>
-                  <span class="error-message" id="month-fr-mandatory:is_mandatory">Please select an option</span>
-                  <span class="helper-description">Month (FR)</span>
-                </div>
+              <div class="form:theme:b33mOe py:8px text-align:center" data-equalize-height="buttons">
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.required_clear();">Clear</button>
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="">Submit</button>
+                <div class="pt:8px fs:14px">* indicates the field is required</div>
               </div>
             </div>
 
-            <h3 class="fs:20px lh:24 pt:16px">Textarea</h3>
-            <div class="position:relative pt:4px">
-              <textarea name="textarea" id="textarea" class="scrollbar" rows="1" placeholder=""></textarea>
-              <label for="textarea">
-                <span class="description">Textarea *</span>
-              </label>
-              <span class="error-message" id="textarea:is_mandatory">Please provide a value</span>
-              <ul class="helper-description">
-                <li>Textarea is mandatory</li>
-                <li>Textarea will expand as you type</li>
-                <li>Cannot be empty</li>
-              </ul>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (text)</h3>
             </div>
 
-          </div>
-          <div class="w:3 px:8px">
-            <h2 class="fs:20px">Optional Inputs, Emails, Zip Code, Postal Code</h2>
-            <div class="position:relative pt:4px">
-              <input id="text-optional" name="text-optional" type="text">
-              <label for="text-optional">
-                <span class="description">First Name</span>
-              </label>
-              <span class="error-message" id="text-optional:is_optional">Please provide a value, this is optional</span>
-              <span class="error-message" id="text-optional:is_alphanumeric">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Input("text") is optional, is alpha_numeric</span>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-text">
+              <div class="position:relative px:16px">
+                <input type="text" id="text-required" name="text-required" aria-required="true" aria-describedby="" data-required="is_alphanumeric">
+                <label for="text-required">
+                  <span class="description">Text Input *</span>
+                </label>
+                <span class="error-message" id="text-required:is_not_empty">Please provide a value</span>
+                <span class="error-message" id="text-required:is_alphanumeric">The value provided has unacceptable characters</span>
+                <ul class="pl:24px helper-description">
+                  <li>Input (text) is required</li>
+                  <li>Cannot be empty</li>
+                  <li>Is alphanumeric (+french characters): /^[A-Za-z\u00E0-\u00FC\d]+$/</li>
+                  <li>Examples: First Name, Last Name, Address</li>
+                </ul>
+              </div>
             </div>
-            <div class="position:relative pt:4px">
-              <input id="email-mandatory" name="email-mandatory" type="text">
-              <label for="email-mandatory">
-                <span class="description">Email</span>
-              </label>
-              <span class="error-message" id="text-optional:is_mandatory">Please provide a value, this is optional</span>
-              <span class="error-message" id="text-optional:is_email">Mandatory Input("text") with not_empty & alpha_numeric</span>
-              <span class="helper-description">Optional Input("text") with not_empty & alpha_numeric</span>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (number)</h3>
             </div>
-            <div class="position:relative pt:4px">
-              <input type="text" name="postal-code" id="postal-code" value="">
-              <label for="postal-code">
-                <span class="description">Postal Code * (e.g. A1A1A1)</span>
-              </label>
-              <span class="error-message">Please enter your postal code</span>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-number">
+              <div class="position:relative px:16px">
+                <input name="number-required" id="number-required" type="number" aria-required="true" aria-describedby="" data-required="is_number">
+                <label for="number-required">
+                  <span class="description">Number *</span>
+                </label>
+                <span class="error-message" id="number-required:is_not_empty">Please provide a number</span>
+                <span class="error-message" id="number-required:is_number">The value provided has unacceptable characters</span>
+                <ul class="pl:24px helper-description">
+                  <li>Input (number) is required</li>
+                  <li>Cannot be empty</li>
+                  <li>Is numeric: /^\d+$/</li>
+                  <li>Examples: YYYYMMDD, YYYY, MM, DD, hh, ss</li>
+                </ul>
+              </div>
             </div>
-            <div class="position:relative pt:4px">
-              <input type="text" name="zip-code" id="zip-code" value="">
-              <label for="zip-code">
-                <span class="description">"Zip Code * (e.g. 90210)</span>
-              </label>
-              <span class="zip-code error-message">Please enter your zip code</span>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (email)</h3>
             </div>
-          </div>
-          <div class="w:3 px:8px">
 
-<h3>Traditional Checkboxes</h3>
-<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox1" checked="">
-<label for="traditionalCheckbox1" class="active-label">Checkbox Label</label>
-<br>
-<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox2">
-<label for="traditionalCheckbox2" class="active-label">Checkbox Label</label>
-<br>
-<input type="checkbox" name="traditionalCheckbox" id="traditionalCheckbox3" disabled="" checked="">
-<label for="traditionalCheckbox3" class="active-label">Checkbox Label</label>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-email">
+              <div class="position:relative px:16px">
+                <input type="text" id="email-required" name="email-required" aria-required="true" aria-describedby="" data-required="is_email">
+                <label for="email-required">
+                  <span class="description">Email *</span>
+                </label>
+                <span class="error-message" id="email-required:is_not_empty">Please provide a value</span>
+                <span class="error-message" id="email-required:is_email">The value provided does not match an email format</span>
+                <ul class="pl:24px helper-description">
+                  <li>Input (email) is required</li>
+                  <li>Cannot be empty</li>
+                  <li>Is email: /^(([^&lt;&gt;>()[\]\\.,;:\s@"]+(\.[^&lt;&gt;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/</li>
+                </ul>
+              </div>
+            </div>
 
-<h3>Parent-Child Checkboxes</h3>
-<div class="parent-checkbox">
-<input aria-controls="checkboxChild1 checkboxChild2 checkboxChild3" type="checkbox" name="parentCheckbox" id="parentCheckbox1" aria-checked="mixed">
-<label for="parentCheckbox1" class="active-label">Checkbox Label</label>
-<ul class="checkboxes unstyle pl:16px">
-  <li>
-    <div class="input-wrap input-checkbox">
-      <input type="checkbox" name="checkboxChildInput" id="checkboxChild1" checked="">
-      <label for="checkboxChild1" class="active-label">Checkbox Label</label>
-    </div>
-  </li>
-  <li>
-    <div class="input-wrap input-checkbox">
-      <input type="checkbox" name="checkboxChildInput" id="checkboxChild2" checked="">
-      <label for="checkboxChild2" class="active-label">Checkbox Label</label>
-    </div>
-  </li>
-  <li>
-    <div class="input-wrap input-checkbox">
-      <input type="checkbox" name="checkboxChildInput" id="checkboxChild3">
-      <label for="checkboxChild3" class="active-label">Checkbox Label</label>
-    </div>
-  </li>
-</ul>
-</div>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (postal code)</h3>
+            </div>
 
-<h3>Traditional Radio Buttons</h3>
-<fieldset>
-    <legend>Traditional&nbsp;radio button</legend>
-    <input type="radio" name="radio" id="radio4" value="1" checked="">
-    <label for="radio4">Test1</label>
-    <input type="radio" name="radio" id="radio5" value="2">
-    <label for="radio5">Test2</label>
-    <input type="radio" name="radio" id="radio6" value="3">
-    <label for="radio6" role="alert">Test3</label>
-</fieldset>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-postal-code">
+              <div class="position:relative px:16px">
+                <input type="text" id="postal-code-required" name="postal-code-required" aria-required="true" aria-describedby="" data-required="is_postal-code">
+                <label for="postal-code-required">
+                  <span class="description">Postal Code *</span>
+                </label>
+                <span class="error-message" id="postal-code-required:is_not_empty">Please provide a value</span>
+                <span class="error-message" id="postal-code-required:is_postal-code">The value provided does not match the postal code format</span>
+                <ul class="pl:24px helper-description">
+                  <li>Input (postal code) is required</li>
+                  <li>Cannot be empty</li>
+                  <li>Is postal code: /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/</li>
+                </ul>
+              </div>
+            </div>
 
-<h3>Box Radio Buttons</h3>
-<fieldset class="box-radio-buttons">
-  <legend>Box radio button</legend>
-  <input type="radio" name="radio-box" id="radio-box4" value="radio-box1" checked="">
-  <label for="radio-box4" class="box-radio-label">yes</label>
-  <input type="radio" name="radio-box" id="radio-box5" value="radio-box2">
-  <label for="radio-box5" class="box-radio-label">no</label>
-</fieldset>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (zip code)</h3>
+            </div>
 
-<h3>TEXTAREA</h3>
-<div>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-zip-code">
+              <div class="position:relative px:16px">
+                <input type="text" id="zip-code-required" name="zip-code-required" aria-required="true" aria-describedby="" data-required="is_zipcode">
+                <label for="zip-code-required">
+                  <span class="description">Zip Code *</span>
+                </label>
+                <span class="error-message" id="zip-code-required:is_not_empty">Please provide a value</span>
+                <span class="error-message" id="zip-code-required:is_zipcode">The value provided does not match a zip code (e.g. 90210)</span>
+                <ul class="pl:24px helper-description">
+                  <li>Input (zip code) is required</li>
+                  <li>Cannot be empty</li>
+                  <li>Is postal code: /(^\d{5}$)|(^\d{5}-\d{4}$)/</li>
+                </ul>
+              </div>
+            </div>
 
-</div>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (password)</h3>
+            </div>
 
-<h3>TEXTAREA DISABLED</h3>
-<div>
-  <div class="position:relative">
-    <textarea name="text-area-demo-3" id="text-area-demo-3" class="scrollbar" rows="1" disabled="">Disabled textarea</textarea>
-    <label class="active-label disabled" for="text-area-demo-3">
-      <span class="description">Disabled Textarea</span>
-    </label>
-    <span class="error-message">Textarea error</span>
-    <span class="helper-description">Text box will expand as you type</span>
-  </div>
-</div>
+            <div class="form:theme:b33mOe py:16px">
+              <div class="position:relative px:16px pb:16px" data-equalize-height="password">
+                <input type="text" id="password-required" name="password-required" aria-required="true" aria-describedby="" data-validation-type="inline" data-required="has_min_8_characters,has_min_1_number,has_min_1_special_character,has_min_1_lowercase_letter,has_min_1_uppercase_letter">
+                <label for="password-required">
+                  <span class="description">Create a password *</span>
+                </label>
+                <span class="error-message" id="password-required:is_not_empty">Please provide a value</span>
+                <ul class="row pl:24px helper-description helper-description-pass-fail">
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-required:has_min_8_characters">Minimum 8 characters</span></li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-required:has_min_1_number">Minimum 1 number</span></li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-required:has_min_1_special_character">Minimum 1 special character</span></li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-required:has_min_1_lowercase_letter">Minimum 1 lower case letter</span></li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-required:has_min_1_uppercase_letter">Minimum 1 upper case letter</span></li>
+                </ul>
+              </div>
+              <div class="position:relative px:16px" data-equalize-height="password-verify">
+                <input type="text" id="password-verify-required" name="password-verify-required" aria-required="true" aria-describedby="" data-matching="password-required" data-validation-type="inline" data-required="has_min_8_characters,has_min_1_number,has_min_1_special_character,has_min_1_lowercase_letter,has_min_1_uppercase_letter,equals">
+                <label for="password-verify-required">
+                  <span class="description">Verify your password *</span>
+                </label>
+                <span class="error-message" id="password-verify-required:is_not_empty">Please provide a value</span>
+                <ul class="row pl:24px helper-description helper-description-pass-fail">
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:has_min_8_characters">Minimum 8 characters</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:has_min_1_number">Minimum 1 number</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:has_min_1_special_character">Minimum 1 special character</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:has_min_1_lowercase_letter">Minimum 1 lower case letter</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:has_min_1_uppercase_letter">Minimum 1 upper case letter</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-required:equals">Matching</li>
+                </ul>
+              </div>
+            </div>
 
-<div class="form:style:card-checkboxes">
-  <input id="checkCard2" name="checkCardInput" type="checkbox">
-  <label for="checkCard2" class="box-shadow:layer-level-2 active-label">
-    <div class="check"></div>
-    <div class="image">
-      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
-    </div>
-    <div class="description">Card Checkbox Label.</div>
-  </label>
-</div>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (Disabled)</h3>
+            </div>
 
-<h3>Card Radio Buttons</h3>
-<div class="form:style:card-radiobuttons">
-  <input id="checkCard4" name="checkCardInput" type="radio">
-  <label for="checkCard4" class="box-shadow:layer-level-2">
-    <div class="check"></div>
-    <div class="image">
-      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
-    </div>
-    <div class="description">Card Checkbox Label.</div>
-  </label>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-disabled">
+              <div class="position:relative px:16px">
+                <input type="text" id="input-disabled" name="input-disabled" aria-required="true" aria-describedby="" disabled="" value="This is a disabled input">
+                <label class="active-label disabled" for="input-disabled">
+                  <span class="description">Input (Disabled)</span>
+                </label>
+              </div>
+            </div>
 
-  <br><br>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Select / Dropdown</h3>
+            </div>
 
-  <input id="checkCard5" name="checkCardInput" type="radio">
-  <label for="checkCard5" class="box-shadow:layer-level-2">
-    <div class="check"></div>
-    <div class="image">
-      <div class="icon display:block icon-color:blue icon-size:32px dragon"></div>
-    </div>
-    <div class="description">Card Checkbox Label.</div>
-  </label>
-</div>
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="select">
+              <div class="position:relative px:16px">
+                <div class="row">
+                  <select id="select-required" name="select-required" data-required="is_not_empty">
+                    <option value="" selected="" disabled></option>
+                    <option value="1">Option One</option>
+                    <option value="2">Option Two</option>
+                    <option value="3">Option Three</option>
+                    <option value="4">Option Four</option>
+                    <option value="5">Option Five</option>
+                    <option value="6">Option Six</option>
+                    <option value="7">Option Seven</option>
+                    <option value="8">Option Eight</option>
+                  </select>
+                  </optgroup>
+                  <label for="select-required">
+                    <span class="description">Select / Dropdown *</span>
+                  </label>
+                  <span class="error-message" id="select-required:is_not_empty">Please select an option</span>
+                  <span class="helper-description">Helper Text</span>
+                </div>
+                <div class="row">
+                  <div class="w:6 pr:16px">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="provinces-en-required" name="provinces-en-required" data-required="is_not_empty">
+                        <optgroup label="Provinces">
+                        <option value="" selected disabled></option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="British Columbia">British Columbia</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="New Brunswick">New Brunswick</option>
+                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                        <option value="Nova Scotia">Nova Scotia</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Prince Edward Island">Prince Edward Island</option>
+                        <option value="Quebec">Quebec</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Northwest Territories">Northwest Territories</option>
+                        <option value="Nunavut">Nunavut</option>
+                        <option value="Yukon">Yukon</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="provinces-en-required">
+                        <span class="description">Province/Terrority *</span>
+                      </label>
+                      <span class="error-message" id="provinces-en-required:is_not_empty">Please select an option</span>
+                      <span class="helper-description">Provinces (EN)</span>
+                    </div>
+                  </div>
+                  <div class="w:6">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="provinces-fr-required" name="provinces-fr-required" data-required="is_not_empty">
+                        <optgroup label="Provinces">
+                        <option value="" selected disabled></option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="British Columbia">Colombie-Britannique</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="New Brunswick">Nouveau-Brunswick</option>
+                        <option value="Newfoundland and Labrador">Terre-Neuve-et-Labrador</option>
+                        <option value="Nova Scotia">Nouvelle-Écosse</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Prince Edward Island">Île-du-Prince-Édouard</option>
+                        <option value="Quebec">Québec</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Northwest Territories">Territoires du Nord-Ouest</option>
+                        <option value="Nunavut">Nunavut</option>
+                        <option value="Yukon">Yukon</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="provinces-fr-required">
+                        <span class="description">Province/Territoire *</span>
+                      </label>
+                      <span class="error-message" id="provinces-fr-required:is_not_empty">Please select an option</span>
+                      <span class="helper-description">Provinces (FR)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="w:6 pr:16px">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="month-en-required" name="month-en-required" data-required="is_not_empty">
+                        <optgroup label="Month">
+                        <option value="" selected disabled></option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="month-en-required">
+                        <span class="description">Month *</span>
+                      </label>
+                      <span class="error-message" id="month-en-required:is_not_empty">Please select an option</span>
+                      <span class="helper-description">Month (EN)</span>
+                    </div>
+                  </div>
+                  <div class="w:6">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="month-fr-required" name="month-fr-required" data-required="is_not_empty">
+                        <optgroup label="mois">
+                        <option value="" selected disabled></option>
+                        <option value="01">janvier</option>
+                        <option value="02">février</option>
+                        <option value="03">mars</option>
+                        <option value="04">avril</option>
+                        <option value="05">mai</option>
+                        <option value="06">juin</option>
+                        <option value="07">juillet</option>
+                        <option value="08">août</option>
+                        <option value="09">septembre</option>
+                        <option value="10">octobre</option>
+                        <option value="11">november</option>
+                        <option value="12">décembre</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="month-fr-required">
+                        <span class="description">mois *</span>
+                      </label>
+                      <span class="error-message" id="month-fr-required:is_not_empty">Please select an option</span>
+                      <span class="helper-description">Month (FR)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="position:relative pb:32px xl=:show" id="" data-module="slider">
-          <div data-module="slider.input-container">
-            <input data-module="slider.input" onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
-            <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
-          </div>
-          <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-checkboxes">
+              <input type="checkbox" name="traditional-checkbox-required" value="0" id="traditional-checkbox-required-1" data-required="is_not_empty">
+              <label for="traditional-checkbox-required-1" class="display:block mb:8px">Checkbox Label</label>
+              <input type="checkbox" name="traditional-checkbox-required" value="1" id="traditional-checkbox-required-2">
+              <label for="traditional-checkbox-required-2" class="display:block mb:8px">Checkbox Label</label>
+              <input type="checkbox" name="traditional-checkbox-required" value="2" id="traditional-checkbox-required-3" disabled="">
+              <label for="traditional-checkbox-required-3" class="display:block mb:8px">Checkbox (Disabled) Label</label>
+              <span class="error-message" id="traditional-checkbox-required:is_not_empty">Please select an option</span>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Parent-Child Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="parent-child-checkboxes">
+              <div class="parent-checkbox">
+                <input type="checkbox" data-module='parent-checkbox' aria-controls="child-checkbox-required-1 child-checkbox-required-2 child-checkbox-required-3" name="checkbox-parent-required" id="checkbox-parent-required" aria-checked="mixed">
+                <label for="checkbox-parent-required" class="display:block mb:8px">Parent Checkbox Label</label>
+                <ul class="checkboxes unstyle pl:16px">
+                  <li>
+                    <input type="checkbox" name="child-checkbox-required-1" id="child-checkbox-required-1" checked="">
+                    <label for="child-checkbox-required-1" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="child-checkbox-required-2" id="child-checkbox-required-2" checked="">
+                    <label for="child-checkbox-required-2" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="child-checkbox-required-3" id="child-checkbox-required-3">
+                    <label for="child-checkbox-required-3" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
+            </div>
+
+            <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
+              <input type="checkbox" id="card-checkbox-required-1" name="card-checkbox-required">
+              <label for="card-checkbox-required-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <div class="check"></div>
+                <div class="image">
+                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                </div>
+                <div class="description">Card Checkbox Label 1</div>
+              </label>
+
+              <br><br>
+
+              <input type="checkbox" id="card-checkbox-required-2" name="card-checkbox-required">
+              <label for="card-checkbox-required-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <div class="check"></div>
+                <div class="image">
+                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                </div>
+                <div class="description">Card Checkbox Label 2</div>
+              </label>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-radio-buttons">
+              <fieldset>
+                <legend>Traditional&nbsp;radio buttons *</legend>
+                <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-1" value="1" data-required="is_not_empty">
+                <label class="display:block pb:4px" for="traditional-radio-button-required-1">Radio Button 1</label>
+                <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-2" value="2">
+                <label class="display:block pb:4px" for="traditional-radio-button-required-2">Radio Button 2</label>
+                <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-3" value="3">
+                <label class="display:block pb:4px" for="traditional-radio-button-required-3">Radio Button 3</label>
+                <span class="error-message" id="traditional-radio-button-required:is_not_empty">Please select an option</span>
+              </fieldset>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Box Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="box-radio-buttons">
+              <fieldset class="box-radio-buttons">
+                <legend>Box radio button *</legend>
+                <input type="radio" name="radio-box-required" id="radio-box-required-1" value="radio-box-required-1" data-required="is_not_empty">
+                <label for="radio-box-required-1" class="box-radio-label">Yes</label>
+                <input type="radio" name="radio-box-required" id="radio-box-required-2" value="radio-box-required-2">
+                <label for="radio-box-required-2" class="box-radio-label">No</label>
+                <span class="error-message" id="radio-box-required:is_not_empty">Please select an option</span>
+              </fieldset>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Card Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:card-radiobuttons p:16px" data-equalize-height="card-radio-buttons">
+              <fieldset class="box-radio-buttons">
+                <legend>Card radio button *</legend>
+                <input id="card-radiobuttons-required-1" name="card-radiobuttons-required" type="radio" data-required="is_not_empty">
+                <label for="card-radiobuttons-required-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Radiobutton Label 1</div>
+                </label>
+
+                <br><br>
+
+                <input id="card-radiobuttons-required-2" name="card-radiobuttons-required" type="radio">
+                <label for="card-radiobuttons-required-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Radiobutton Label 2</div>
+                </label>
+              </fieldset>
+              <span class="error-message" id="card-radiobuttons-required:is_not_empty">Please select an option</span>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Textarea</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="textarea">
+              <div class="position:relative px:16px">
+                <textarea name="textarea-required" id="textarea-required" class="scrollbar" rows="1" placeholder="" data-required="is_not_empty"></textarea>
+                <label for="textarea-required">
+                  <span class="description">Textarea *</span>
+                </label>
+                <span class="error-message" id="textarea-required:is_not_empty">Please provide a value</span>
+                <ul class="pl:24px helper-description">
+                  <li>Textarea is required</li>
+                  <li>Textarea will expand as you type</li>
+                  <li>Cannot be empty</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Textarea (Disabled)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="textarea-disabled">
+              <div class="position:relative px:16px">
+                <textarea name="textarea-disabled" id="textarea-disabled" class="scrollbar" rows="1" disabled="">This is a disabled textarea</textarea>
+                <label class="active-label disabled" for="textarea-disabled">
+                  <span class="description">Textarea (Disabled)</span>
+                </label>
+                <span class="error-message">Textarea error</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Slider</h3>
+            </div>
+
+            <div class="position:relative w:11 align-self:centered pt:16px pb:32px" id="" data-module="slider" data-equalize-height="slider">
+              <div class="text-align:center">
+                <input type="text" class="br:4px b-grey:1px p:4px text-align:center fw:bold" style="width:60px" id="slider-value-required" value="100" disabled="">
+              </div>
+              <div class="form:theme:b33mOe" data-module="slider.input-container">
+                <input data-module="slider.input" onInput="document.getElementById('slider-value-required').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
+                <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
+              </div>
+              <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>100</li></ul>
+            </div>
+
+          </form>
+
+          <form class="sm=:w:12 md+:w:6" name="optional-form" id="optional-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form_validation.validate_form(event,'optional-form','storm_eagle.form_validation_example.optional_success');">
+
+            <div class="bgc:light-grey bb-slate:1px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
+              <div class="bgc:light-grey pt:12px">
+                <h3 class="fs:28px lh:24 heebo:bold text-align:center">Optional Form Fields</h3>
+              </div>
+              <div class="form:theme:b33mOe py:8px text-align:center" data-equalize-height="buttons">
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_autofill();">Autofill</button>
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_autofill_invalid();">Autofill: Invalid Information</button><br>
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_clear();">Clear</button>
+                <button class="button:primary uppercase mr:4px mb:4px short" onclick="">Submit</button>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (text)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-text">
+              <div class="position:relative px:16px">
+                <input type="text" id="text-optional" name="text-optional" data-optional="is_alphanumeric">
+                <label for="text-optional">
+                  <span class="description">Text Input</span>
+                </label>
+                <span class="error-message" id="text-optional:is_alphanumeric">The value provided has unacceptable characters</span>
+                <span class="helper-description">Input(text) is optional, is alpha_numeric format</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (number)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-number">
+              <div class="position:relative px:16px">
+                <input name="number-optional" id="number-optional" type="number" data-optional="is_number">
+                <label for="number-optional">
+                  <span class="description">Number</span>
+                </label>
+                <span class="error-message" id="number-optional:is_number">The value provided has unacceptable characters</span>
+                <span class="helper-description">Input(number) is optional, is numeric format</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (email)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-email">
+              <div class="position:relative px:16px">
+                <input type="text" id="email-optional" name="email-optional" data-optional="is_email">
+                <label for="email-optional">
+                  <span class="description">Email</span>
+                </label>
+                <span class="error-message" id="email-optional:is_email">The value provided does not match an email format</span>
+                <span class="helper-description">Input(email) is optional and is email format</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (postal code)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-postal-code">
+              <div class="position:relative px:16px">
+                <input type="text" name="postal-code-optional" id="postal-code-optional" data-optional="is_postal-code">
+                <label for="postal-code-optional">
+                  <span class="description">Postal Code</span>
+                </label>
+                <span class="error-message" id="postal-code-optional:is_postal-code">The value provided does not match a postal code format (e.g. A1B2C3)</span>
+                <span class="helper-description">Postal Code is optional, is postal code format</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (zip code)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="input-zip-code">
+              <div class="position:relative px:16px">
+                <input type="text" name="zip-code-optional" id="zip-code-optional" data-optional="is_zipcode">
+                <label for="zip-code-optional">
+                  <span class="description">Zip Code</span>
+                </label>
+                <span class="error-message" id="zip-code-optional:is_zipcode">The value provided does not match a zip code format (e.g. 90210)</span>
+                <span class="helper-description">Zip Code is optional, is zip code format</span>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (password)</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px">
+              <div class="position:relative px:16px pb:16px" data-equalize-height="password">
+                <input type="text" id="password-optional" name="password-optional" aria-describedby="" data-validation-type="inline" data-optional="has_min_8_characters,has_min_1_number,has_min_1_special_character,has_min_1_lowercase_letter,has_min_1_uppercase_letter">
+                <label for="password-optional">
+                  <span class="description">Create a password</span>
+                </label>
+                <span class="error-message" id="password-optional:is_not_empty">Please provide a value</span>
+                <ul class="row pl:24px helper-description helper-description-pass-fail">
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-optional:has_min_8_characters">Minimum 8 characters</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-optional:has_min_1_number">Minimum 1 number</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-optional:has_min_1_special_character">Minimum 1 special character</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-optional:has_min_1_lowercase_letter">Minimum 1 lower case letter</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-optional:has_min_1_uppercase_letter">Minimum 1 upper case letter</li>
+                </ul>
+              </div>
+              <div class="position:relative px:16px" data-equalize-height="password-verify">
+                <input type="text" id="password-verify-optional" name="password-verify-optional" aria-describedby="" data-matching="password-optional" data-validation-type="inline" data-optional="has_min_8_characters,has_min_1_number,has_min_1_special_character,has_min_1_lowercase_letter,has_min_1_uppercase_letter,equals">
+                <label for="password-verify-optional">
+                  <span class="description">Verify your password</span>
+                </label>
+                <span class="error-message" id="password-verify-optional:is_not_empty">Please provide a value</span>
+                <ul class="row pl:24px helper-description helper-description-pass-fail">
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:has_min_8_characters">Minimum 8 characters</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:has_min_1_number">Minimum 1 number</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:has_min_1_special_character">Minimum 1 special character</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:has_min_1_lowercase_letter">Minimum 1 lower case letter</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:has_min_1_uppercase_letter">Minimum 1 upper case letter</li>
+                  <li class="sm+:w:12 lg+:w:6"><span id="password-verify-optional:equals">Matching</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Input (Disabled)</h3>
+            </div>
+
+            <div class="p:16px" data-equalize-height="input-disabled">
+              Optional Input (Disabled) not applicable
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Select / Dropdown</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="select">
+              <div class="position:relative px:16px">
+                <div class="row">
+                  <select id="select-optional" name="select-optional">
+                    <option value="" selected=""></option>
+                    <option value="1">Option One</option>
+                    <option value="2">Option Two</option>
+                    <option value="3">Option Three</option>
+                    <option value="4">Option Four</option>
+                    <option value="5">Option Five</option>
+                    <option value="6">Option Six</option>
+                    <option value="7">Option Seven</option>
+                    <option value="8">Option Eight</option>
+                  </select>
+                  </optgroup>
+                  <label for="select-optional">
+                    <span class="description">Select / Dropdown</span>
+                  </label>
+                  <span class="helper-description">Helper Text</span>
+                </div>
+                <div class="row">
+                  <div class="w:6 pr:16px">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="provinces-en-optional" name="provinces-en-optional">
+                        <optgroup label="Provinces">
+                        <option value="" selected></option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="British Columbia">British Columbia</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="New Brunswick">New Brunswick</option>
+                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                        <option value="Nova Scotia">Nova Scotia</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Prince Edward Island">Prince Edward Island</option>
+                        <option value="Quebec">Quebec</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Northwest Territories">Northwest Territories</option>
+                        <option value="Nunavut">Nunavut</option>
+                        <option value="Yukon">Yukon</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="provinces-en-optional">
+                        <span class="description">Province/Terrority</span>
+                      </label>
+                      <span class="helper-description">Provinces (EN)</span>
+                    </div>
+                  </div>
+                  <div class="w:6">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="provinces-fr-optional" name="provinces-fr-optional">
+                        <optgroup label="Provinces">
+                        <option value="" selected></option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="British Columbia">Colombie-Britannique</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="New Brunswick">Nouveau-Brunswick</option>
+                        <option value="Newfoundland and Labrador">Terre-Neuve-et-Labrador</option>
+                        <option value="Nova Scotia">Nouvelle-Écosse</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Prince Edward Island">Île-du-Prince-Édouard</option>
+                        <option value="Quebec">Québec</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Northwest Territories">Territoires du Nord-Ouest</option>
+                        <option value="Nunavut">Nunavut</option>
+                        <option value="Yukon">Yukon</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="provinces-fr-optional">
+                        <span class="description">Province/Territoire</span>
+                      </label>
+                      <span class="helper-description">Provinces (FR)</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="w:6 pr:16px">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="month-en-optional" name="month-en-optional">
+                        <optgroup label="Month">
+                        <option value="" selected></option>
+                        <option value="01">January</option>
+                        <option value="02">February</option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="month-en-optional">
+                        <span class="description">Month</span>
+                      </label>
+                      <span class="helper-description">Month (EN)</span>
+                    </div>
+                  </div>
+                  <div class="w:6">
+                    <div class="position:relative pt:4px pb:16px">
+                      <select id="month-fr-optional" name="month-fr-optional">
+                        <optgroup label="Provinces">
+                        <option value="" selected></option>
+                        <option value="01">janvier</option>
+                        <option value="02">février</option>
+                        <option value="03">mars</option>
+                        <option value="04">avril</option>
+                        <option value="05">mai</option>
+                        <option value="06">juin</option>
+                        <option value="07">juillet</option>
+                        <option value="08">août</option>
+                        <option value="09">septembre</option>
+                        <option value="10">octobre</option>
+                        <option value="11">november</option>
+                        <option value="12">décembre</option>
+                        </optgroup>
+                      </select>
+                      </optgroup>
+                      <label for="month-fr-optional">
+                        <span class="description">mois</span>
+                      </label>
+                      <span class="helper-description">Month (FR)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-checkboxes">
+              <input type="checkbox" name="traditional-checkbox-optional" value="0" id="traditional-checkbox-optional-1" checked="">
+              <label for="traditional-checkbox-optional-1" class="display:block mb:8px">Checkbox Label</label>
+              <input type="checkbox" name="traditional-checkbox-optional" value="1" id="traditional-checkbox-optional-2">
+              <label for="traditional-checkbox-optional-2" class="display:block mb:8px">Checkbox Label</label>
+              <input type="checkbox" name="traditional-checkbox-optional" value="2" id="traditional-checkbox-optional-3" disabled="" checked="">
+              <label for="traditional-checkbox-optional-3" class="display:block mb:8px">Checkbox (Disabled) Label</label>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Parent-Child Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="parent-child-checkboxes">
+              <div class="parent-checkbox">
+                <input type="checkbox" data-module='parent-checkbox' aria-controls="child-checkbox-optional-1 child-checkbox-optional-2 child-checkbox-optional-3" name="checkbox-parent-optional" id="checkbox-parent-optional" aria-checked="mixed">
+                <label for="checkbox-parent-optional" class="display:block mb:8px">Parent Checkbox Label</label>
+                <ul class="checkboxes unstyle pl:16px">
+                  <li>
+                    <input type="checkbox" name="child-checkbox-optional-1" id="child-checkbox-optional-1" checked="">
+                    <label for="child-checkbox-optional-1" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="child-checkbox-optional-2" id="child-checkbox-optional-2" checked="">
+                    <label for="child-checkbox-optional-2" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" name="child-checkbox-optional-3" id="child-checkbox-optional-3">
+                    <label for="child-checkbox-optional-3" class="display:block mb:8px">Checkbox Label</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
+            </div>
+
+            <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
+              <input type="checkbox" id="card-checkbox-optional-1" name="card-checkbox-optional">
+              <label for="card-checkbox-optional-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <div class="check"></div>
+                <div class="image">
+                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                </div>
+                <div class="description">Card Checkbox Label 1</div>
+              </label>
+
+              <br><br>
+
+              <input type="checkbox" id="card-checkbox-optional-2" name="card-checkbox-optional">
+              <label for="card-checkbox-optional-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <div class="check"></div>
+                <div class="image">
+                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                </div>
+                <div class="description">Card Checkbox Label 2</div>
+              </label>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-radio-buttons">
+              <fieldset>
+                <legend>Traditional&nbsp;radio buttons</legend>
+                <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-1" value="1">
+                <label class="display:block pb:4px" for="traditional-radio-button-optional-1">Radio Button 1</label>
+                <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-2" value="2">
+                <label class="display:block pb:4px" for="traditional-radio-button-optional-2">Radio Button 2</label>
+                <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-3" value="3">
+                <label class="display:block pb:4px" for="traditional-radio-button-optional-3">Radio Button 3</label>
+              </fieldset>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Box Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:b33mOe p:16px" data-equalize-height="box-radio-buttons">
+              <fieldset class="box-radio-buttons">
+                <legend>Box radio button</legend>
+                <input type="radio" name="radio-box-optional" id="radio-box-optional-1" value="radio-box-optional-1">
+                <label for="radio-box-optional-1" class="box-radio-label">Yes</label>
+                <input type="radio" name="radio-box-optional" id="radio-box-optional-2" value="radio-box-optional-2">
+                <label for="radio-box-optional-2" class="box-radio-label">No</label>
+              </fieldset>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Card Radio Buttons</h3>
+            </div>
+
+            <div class="form:theme:card-radiobuttons p:16px" data-equalize-height="card-radio-buttons">
+              <fieldset class="box-radio-buttons">
+                <legend>Card radio button</legend>
+                <input id="card-radiobuttons-optional-1" name="card-radiobuttons-optional" type="radio">
+                <label for="card-radiobuttons-optional-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Radiobutton Label 1</div>
+                </label>
+
+                <br><br>
+
+                <input id="card-radiobuttons-optional-2" name="card-radiobuttons-optional" type="radio">
+                <label for="card-radiobuttons-optional-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Radiobutton Label 2</div>
+                </label>
+              </fieldset>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Textarea</h3>
+            </div>
+
+            <div class="form:theme:b33mOe py:16px" data-equalize-height="textarea">
+              <div class="position:relative px:16px">
+                <textarea name="textarea-optional" id="textarea-optional" class="scrollbar" rows="1" placeholder=""></textarea>
+                <label for="textarea-optional">
+                  <span class="description">Textarea</span>
+                </label>
+                <span class="error-message" id="textarea-optional:is_not_empty">Please provide a value</span>
+                <ul class="pl:24px helper-description">
+                  <li>Textarea is optional</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Textarea (Disabled)</h3>
+            </div>
+
+            <div class="p:16px" data-equalize-height="textarea-disabled">
+              Optional Textarea (Disabled) not applicable
+            </div>
+
+            <div class="bgc:light-grey p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Slider</h3>
+            </div>
+
+            <div class="p:16px" data-equalize-height="slider">
+              Optional slider not applicable
+            </div>
+
+          </form>
         </div>
+      </div>
+      <div class="modal-overlay" data-module="modal" role="dialog" aria-modal="true" id="required-successful" aria-labelledby="required-successful-heading-id">
+        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 modal-container py:24px" style="max-width: 600px;">
+          <div class="bgc:albicant box-shadow:layer-level-2 br:4px position:relative w:100% modal-contents">
+            <button class="unstyle close video-close" onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+            <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px">
 
+              <h2 id="required-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Required Form Submission Successful!</h2>
 
-          </div>
-          <div class="w:3 px:8px">
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+      <div class="modal-overlay" data-module="modal" role="dialog" aria-modal="true" id="optional-successful" aria-labelledby="optional-successful-heading-id">
+        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 modal-container py:24px" style="max-width: 600px;">
+          <div class="bgc:albicant box-shadow:layer-level-2 br:4px position:relative w:100% modal-contents">
+            <button class="unstyle close video-close" onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+            <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px">
+
+              <h2 id="optional-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Optional Form Submission Successful!</h2>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('form_validation_example', () => {
+        "use strict";
+        let self;
+
+        return {
+          initialize: () => {
+            self = storm_eagle["form_validation_example"];
+          },
+          required_autofill: () => {
+            document.getElementById("text-required").value = "Bruce Wayne";
+            document.querySelector("[for=text-required]").classList.add("active-label");
+            document.getElementById("number-required").value = "314159265359";
+            document.querySelector("[for=number-required]").classList.add("active-label");
+            document.getElementById("email-required").value = "bruce.wayne@notbatman.com";
+            document.querySelector("[for=email-required]").classList.add("active-label");
+            document.getElementById("postal-code-required").value = "A1A1A1";
+            document.querySelector("[for=postal-code-required]").classList.add("active-label");
+            document.getElementById("zip-code-required").value = "90210";
+            document.querySelector("[for=zip-code-required]").classList.add("active-label");
+            document.getElementById("password-required").value = "Test";
+            document.querySelector("[for=password-required]").classList.add("active-label");
+            document.getElementById("password-verify-required").value = "Test";
+            document.querySelector("[for=password-verify-required]").classList.add("active-label");
+            document.getElementById("select-required").value = "3";
+            document.querySelector("[for=select-required]").classList.add("active-label");
+            document.getElementById("provinces-en-required").value = "Ontario";
+            document.querySelector("[for=provinces-en-required]").classList.add("active-label");
+            document.getElementById("provinces-fr-required").value = "Ontario";
+            document.querySelector("[for=provinces-fr-required]").classList.add("active-label");
+            document.getElementById("month-en-required").value = "05";
+            document.querySelector("[for=month-en-required]").classList.add("active-label");
+            document.getElementById("month-fr-required").value = "05";
+            document.querySelector("[for=month-fr-required]").classList.add("active-label");
+            document.getElementById("traditional-checkbox-required-1").checked = "checked";
+            document.getElementById("card-checkbox-required-1").checked = "checked";
+            document.getElementById("traditional-radio-button-required-1").checked = "checked";
+            document.getElementById("radio-box-required-1").checked = "checked";
+            document.getElementById("card-radiobuttons-required-1").checked = "checked";
+            document.getElementById("textarea-required").value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in massa facilisis, semper arcu sit amet, ultrices nibh. Sed venenatis eu erat in varius. Quisque hendrerit eleifend nisi pharetra tempus.";
+            document.querySelector("[for=textarea-required]").classList.add("active-label");
+            storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-required"));
+            storm_eagle.equalize_heights.force_resize();
+            return false;
+          },
+          required_clear: () => {
+            document.getElementById("text-required").value = "";
+            document.querySelector("[for=text-required]").classList.remove("active-label");
+            document.getElementById("number-required").value = "";
+            document.querySelector("[for=number-required]").classList.remove("active-label");
+            document.getElementById("email-required").value = "";
+            document.querySelector("[for=email-required]").classList.remove("active-label");
+            document.getElementById("postal-code-required").value = "";
+            document.querySelector("[for=postal-code-required]").classList.remove("active-label");
+            document.getElementById("zip-code-required").value = "";
+            document.querySelector("[for=zip-code-required]").classList.remove("active-label");
+            document.getElementById("password-required").value = "";
+            document.querySelector("[for=password-required]").classList.remove("active-label");
+            document.getElementById("password-verify-required").value = "";
+            document.querySelector("[for=password-verify-required]").classList.remove("active-label");
+            document.getElementById("select-required").value = "";
+            document.querySelector("[for=select-required]").classList.remove("active-label");
+            document.getElementById("provinces-en-required").value = "";
+            document.querySelector("[for=provinces-en-required]").classList.remove("active-label");
+            document.getElementById("provinces-fr-required").value = "";
+            document.querySelector("[for=provinces-fr-required]").classList.remove("active-label");
+            document.getElementById("month-en-required").value = "";
+            document.querySelector("[for=month-en-required]").classList.remove("active-label");
+            document.getElementById("month-fr-required").value = "";
+            document.querySelector("[for=month-fr-required]").classList.remove("active-label");
+            document.getElementById("traditional-checkbox-required-1").checked = false;
+            document.getElementById("traditional-checkbox-required-2").checked = false;
+            document.getElementById("traditional-checkbox-required-3").checked = false;
+            document.getElementById("card-checkbox-required-1").checked = false;
+            document.getElementById("card-checkbox-required-2").checked = false;
+            document.getElementById("traditional-radio-button-required-1").checked = false;
+            document.getElementById("traditional-radio-button-required-2").checked = false;
+            document.getElementById("radio-box-required-1").checked = false;
+            document.getElementById("radio-box-required-2").checked = false;
+            document.getElementById("card-radiobuttons-required-1").checked = false;
+            document.getElementById("card-radiobuttons-required-2").checked = false;
+            document.getElementById("textarea-required").value = "";
+            document.querySelector("[for=textarea-required]").classList.remove("active-label");
+            storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-required"));
+            storm_eagle.equalize_heights.force_resize();
+            document.querySelectorAll(`.has-error`).forEach((el,index) => {
+              el.classList.remove("has-error");
+            });
+            document.querySelectorAll(`.error-field`).forEach((el,index) => {
+              el.classList.remove("error-field");
+            });
+            return false;
+          },
+          required_success: () => {
+            storm_eagle.modal.open(null,'required-successful');
+            return false;
+          },
+          optional_autofill: () => {
+            document.getElementById("text-optional").value = "Clark Kent";
+            document.querySelector("[for=text-optional]").classList.add("active-label");
+            document.getElementById("number-optional").value = "314159265359";
+            document.querySelector("[for=number-optional]").classList.add("active-label");
+            document.getElementById("email-optional").value = "clark.kent@notsuperman.com";
+            document.querySelector("[for=email-optional]").classList.add("active-label");
+            document.getElementById("postal-code-optional").value = "A1A1A1";
+            document.querySelector("[for=postal-code-optional]").classList.add("active-label");
+            document.getElementById("zip-code-optional").value = "90210";
+            document.querySelector("[for=zip-code-optional]").classList.add("active-label");
+            document.getElementById("password-optional").value = "Test";
+            document.querySelector("[for=password-optional]").classList.add("active-label");
+            document.getElementById("password-verify-optional").value = "Test";
+            document.querySelector("[for=password-verify-optional]").classList.add("active-label");
+            document.getElementById("select-optional").value = "3";
+            document.querySelector("[for=select-optional]").classList.add("active-label");
+            document.getElementById("provinces-en-optional").value = "Ontario";
+            document.querySelector("[for=provinces-en-optional]").classList.add("active-label");
+            document.getElementById("provinces-fr-optional").value = "Ontario";
+            document.querySelector("[for=provinces-fr-optional]").classList.add("active-label");
+            document.getElementById("month-en-optional").value = "05";
+            document.querySelector("[for=month-en-optional]").classList.add("active-label");
+            document.getElementById("month-fr-optional").value = "05";
+            document.querySelector("[for=month-fr-optional]").classList.add("active-label");
+            document.getElementById("traditional-checkbox-optional-1").checked = "checked";
+            document.getElementById("card-checkbox-optional-1").checked = "checked";
+            document.getElementById("traditional-radio-button-optional-1").checked = "checked";
+            document.getElementById("radio-box-optional-1").checked = "checked";
+            document.getElementById("card-radiobuttons-optional-1").checked = "checked";
+            document.getElementById("textarea-optional").value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in massa facilisis, semper arcu sit amet, ultrices nibh. Sed venenatis eu erat in varius. Quisque hendrerit eleifend nisi pharetra tempus.";
+            document.querySelector("[for=textarea-optional]").classList.add("active-label");
+            storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.equalize_heights.force_resize();
+            return false;
+          },
+          optional_autofill_invalid: () => {
+            document.getElementById("text-optional").value = "Clark Kent!";
+            document.querySelector("[for=text-optional]").classList.add("active-label");
+            document.getElementById("email-optional").value = "clark.kent@@notsuperman.com";
+            document.querySelector("[for=email-optional]").classList.add("active-label");
+            document.getElementById("postal-code-optional").value = "A1A1A";
+            document.querySelector("[for=postal-code-optional]").classList.add("active-label");
+            document.getElementById("zip-code-optional").value = "Metropolis";
+            document.querySelector("[for=zip-code-optional]").classList.add("active-label");
+            document.getElementById("password-optional").value = "Test";
+            document.querySelector("[for=password-optional]").classList.add("active-label");
+            document.getElementById("password-verify-optional").value = "Test";
+            document.querySelector("[for=password-verify-optional]").classList.add("active-label");
+            storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.equalize_heights.force_resize();
+            return false;
+          },
+          optional_clear: () => {
+            document.getElementById("text-optional").value = "";
+            document.querySelector("[for=text-optional]").classList.remove("active-label");
+            document.getElementById("number-optional").value = "";
+            document.querySelector("[for=number-optional]").classList.remove("active-label");
+            document.getElementById("email-optional").value = "";
+            document.querySelector("[for=email-optional]").classList.remove("active-label");
+            document.getElementById("postal-code-optional").value = "";
+            document.querySelector("[for=postal-code-optional]").classList.remove("active-label");
+            document.getElementById("zip-code-optional").value = "";
+            document.querySelector("[for=zip-code-optional]").classList.remove("active-label");
+            document.getElementById("password-optional").value = "";
+            document.querySelector("[for=password-optional]").classList.remove("active-label");
+            document.getElementById("password-verify-optional").value = "";
+            document.querySelector("[for=password-verify-optional]").classList.remove("active-label");
+            document.getElementById("select-optional").value = "";
+            document.querySelector("[for=select-optional]").classList.remove("active-label");
+            document.getElementById("provinces-en-optional").value = "";
+            document.querySelector("[for=provinces-en-optional]").classList.remove("active-label");
+            document.getElementById("provinces-fr-optional").value = "";
+            document.querySelector("[for=provinces-fr-optional]").classList.remove("active-label");
+            document.getElementById("month-en-optional").value = "";
+            document.querySelector("[for=month-en-optional]").classList.remove("active-label");
+            document.getElementById("month-fr-optional").value = "";
+            document.querySelector("[for=month-fr-optional]").classList.remove("active-label");
+            document.getElementById("traditional-checkbox-optional-1").checked = false;
+            document.getElementById("traditional-checkbox-optional-2").checked = false;
+            document.getElementById("traditional-checkbox-optional-3").checked = false;
+            document.getElementById("card-checkbox-optional-1").checked = false;
+            document.getElementById("card-checkbox-optional-2").checked = false;
+            document.getElementById("traditional-radio-button-optional-1").checked = false;
+            document.getElementById("traditional-radio-button-optional-2").checked = false;
+            document.getElementById("radio-box-optional-1").checked = false;
+            document.getElementById("radio-box-optional-2").checked = false;
+            document.getElementById("card-radiobuttons-optional-1").checked = false;
+            document.getElementById("card-radiobuttons-optional-2").checked = false;
+            document.getElementById("textarea-optional").value = "";
+            document.querySelector("[for=textarea-optional]").classList.remove("active-label");
+            storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.equalize_heights.force_resize();
+            document.querySelectorAll(`.has-error`).forEach((el,index) => {
+              el.classList.remove("has-error");
+            });
+            document.querySelectorAll(`.error-field`).forEach((el,index) => {
+              el.classList.remove("error-field");
+            });
+            return false;
+          },
+          optional_success: () => {
+            storm_eagle.modal.open(null,'optional-successful');
+            return false;
+          },
+        }
+      });
+    </script>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
