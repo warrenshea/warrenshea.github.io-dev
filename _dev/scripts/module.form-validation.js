@@ -69,33 +69,36 @@ storm_eagle.module('form_validation', () => {
          document.querySelectorAll(`[data-module='form'][name=${form_name}] [data-validation-type=inline][data-required],[data-module='form'][name=${form_name}] [data-validation-type=inline][data-optional]`).forEach((el,index) => {
           let form_element_name = el.getAttribute("name");
           el.addEventListener('keyup', () => {
-            for (let i=0;i<form_state[form_name][form_element_name]["validation_criteria"].length;i++) {
-              //console.log(form_state[form_name][form_element_name]["validation_criteria"][i]);
-
-              if (form_state[form_name][form_element_name]["validation_criteria"][i] === "equals") {
-                el = document.querySelector(`[name='${form_element_name}']`);
-                let el_comparison = document.getElementById(el.getAttribute("data-matching"));
-                //console.log(el,el_comparison);
-                if (self.is_value_valid(el.value,"equals",el_comparison.value)) {
-                  document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.add("pass");
-                  document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove("fail");
-                } else {
-                  document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.add("fail");
-                  document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove("pass");
-                }
-              } else {
-                if (self.is_value_valid(el.value,form_state[form_name][form_element_name]["validation_criteria"][i])) {
-                  document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.add("pass");
-                  document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.remove("fail");
-                } else {
-                  document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.add("fail");
-                  document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.remove("pass");
-                }
-              }
-            }
+            self.inline_validation(el,form_name,form_element_name);
           });
         });
       });
+    },
+    inline_validation: (el,form_name,form_element_name) => {
+      for (let i=0;i<form_state[form_name][form_element_name]["validation_criteria"].length;i++) {
+        //console.log(form_state[form_name][form_element_name]["validation_criteria"][i]);
+
+        if (form_state[form_name][form_element_name]["validation_criteria"][i] === "equals") {
+          el = document.querySelector(`[name='${form_element_name}']`);
+          let el_comparison = document.getElementById(el.getAttribute("data-matching"));
+          //console.log(el,el_comparison);
+          if (self.is_value_valid(el.value,"equals",el_comparison.value)) {
+            document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.add("pass");
+            document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove("fail");
+          } else {
+            document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.add("fail");
+            document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove("pass");
+          }
+        } else {
+          if (self.is_value_valid(el.value,form_state[form_name][form_element_name]["validation_criteria"][i])) {
+            document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.add("pass");
+            document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.remove("fail");
+          } else {
+            document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.add("fail");
+            document.getElementById(`${form_element_name}:${form_state[form_name][form_element_name]["validation_criteria"][i]}`).parentNode.closest('li').classList.remove("pass");
+          }
+        }
+      }
     },
     validate_form: (event,form_name,on_success) => {
       error_number = 0;
