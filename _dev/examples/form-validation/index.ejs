@@ -317,11 +317,11 @@
 
             <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-checkboxes">
               <input type="checkbox" name="traditional-checkbox-required" value="0" id="traditional-checkbox-required-1" data-required="is_not_empty">
-              <label for="traditional-checkbox-required-1" class="display:block mb:8px">Checkbox Label</label>
+              <label for="traditional-checkbox-required-1" class="display:block mb:4px py:2px">Checkbox Label</label>
               <input type="checkbox" name="traditional-checkbox-required" value="1" id="traditional-checkbox-required-2">
-              <label for="traditional-checkbox-required-2" class="display:block mb:8px">Checkbox Label</label>
+              <label for="traditional-checkbox-required-2" class="display:block mb:4px py:2px">Checkbox Label</label>
               <input type="checkbox" name="traditional-checkbox-required" value="2" id="traditional-checkbox-required-3" disabled="">
-              <label for="traditional-checkbox-required-3" class="display:block mb:8px">Checkbox (Disabled) Label</label>
+              <label for="traditional-checkbox-required-3" class="display:block mb:4px py:2px">Checkbox (Disabled) Label</label>
               <span class="error-message" id="traditional-checkbox-required:is_not_empty">Please select an option</span>
             </div>
 
@@ -332,19 +332,19 @@
             <div class="form:theme:b33mOe p:16px" data-equalize-height="parent-child-checkboxes">
               <div class="parent-checkbox">
                 <input type="checkbox" data-module='parent-checkbox' aria-controls="child-checkbox-required-1 child-checkbox-required-2 child-checkbox-required-3" name="checkbox-parent-required" id="checkbox-parent-required" aria-checked="mixed">
-                <label for="checkbox-parent-required" class="display:block mb:8px">Parent Checkbox Label</label>
+                <label for="checkbox-parent-required" class="display:block mb:4px py:2px">Parent Checkbox Label</label>
                 <ul class="checkboxes unstyle pl:16px">
                   <li>
                     <input type="checkbox" name="child-checkbox-required-1" id="child-checkbox-required-1" checked="">
-                    <label for="child-checkbox-required-1" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-required-1" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                   <li>
                     <input type="checkbox" name="child-checkbox-required-2" id="child-checkbox-required-2" checked="">
-                    <label for="child-checkbox-required-2" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-required-2" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                   <li>
                     <input type="checkbox" name="child-checkbox-required-3" id="child-checkbox-required-3">
-                    <label for="child-checkbox-required-3" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-required-3" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                 </ul>
               </div>
@@ -354,30 +354,31 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
-            <div class="bgc:albicant">
+            <div class="form:theme:card-radiobuttons p:16px bgc:albicant" data-equalize-height="card-checkboxes">
               <fieldset>
                 <legend>Card checkboxes *</legend>
-                <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
-                  <input type="checkbox" id="card-checkbox-required-1" name="card-checkbox-required">
-                  <label for="card-checkbox-required-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
-                    <div class="check"></div>
-                    <div class="image">
-                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                    </div>
-                    <div class="description">Card Checkbox Label 1</div>
-                  </label>
 
-                  <br><br>
+                <input type="checkbox" id="card-checkbox-required-1" name="card-checkbox-required" data-required="is_not_empty">
+                <label for="card-checkbox-required-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Checkbox Label 1</div>
+                </label>
 
-                  <input type="checkbox" id="card-checkbox-required-2" name="card-checkbox-required">
-                  <label for="card-checkbox-required-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
-                    <div class="check"></div>
-                    <div class="image">
-                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                    </div>
-                    <div class="description">Card Checkbox Label 2</div>
-                  </label>
-                </div>
+                <br><br>
+
+                <input type="checkbox" id="card-checkbox-required-2" name="card-checkbox-required">
+                <label for="card-checkbox-required-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Checkbox Label 2</div>
+                </label>
+
+                <span class="error-message" id="card-checkbox-required:is_not_empty">Please select an option</span>
               </fieldset>
             </div>
 
@@ -389,11 +390,11 @@
               <fieldset>
                 <legend>Traditional&nbsp;radio buttons *</legend>
                 <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-1" value="1" data-required="is_not_empty">
-                <label class="display:block pb:4px" for="traditional-radio-button-required-1">Radio Button 1</label>
+                <label class="display:block py:4px" for="traditional-radio-button-required-1">Radio Button 1</label>
                 <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-2" value="2">
-                <label class="display:block pb:4px" for="traditional-radio-button-required-2">Radio Button 2</label>
+                <label class="display:block py:4px" for="traditional-radio-button-required-2">Radio Button 2</label>
                 <input type="radio" name="traditional-radio-button-required" id="traditional-radio-button-required-3" value="3">
-                <label class="display:block pb:4px" for="traditional-radio-button-required-3">Radio Button 3</label>
+                <label class="display:block py:4px" for="traditional-radio-button-required-3">Radio Button 3</label>
                 <span class="error-message" id="traditional-radio-button-required:is_not_empty">Please select an option</span>
               </fieldset>
             </div>
@@ -439,8 +440,9 @@
                   </div>
                   <div class="description">Card Radiobutton Label 2</div>
                 </label>
+
+                <span class="error-message" id="card-radiobuttons-required:is_not_empty">Please select an option</span>
               </fieldset>
-              <span class="error-message" id="card-radiobuttons-required:is_not_empty">Please select an option</span>
             </div>
 
             <div class="bgc:light-grey p:16px br-white:2px">
@@ -495,7 +497,7 @@
 
           <form class="sm=:w:12 md+:w:6" name="optional-form" id="optional-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form_validation.validate_form(event,'optional-form','storm_eagle.form_validation_example.optional_success');">
 
-            <div class="bgc:light-grey bb-slate:1px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
+            <div class="bgc:light-grey bb-slate:1px bl-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
               <div class="bgc:light-grey pt:12px">
                 <h3 class="fs:28px lh:24 heebo:bold text-align:center">Optional Form Fields</h3>
               </div>
@@ -769,11 +771,11 @@
 
             <div class="form:theme:b33mOe p:16px" data-equalize-height="traditional-checkboxes">
               <input type="checkbox" name="traditional-checkbox-optional" value="0" id="traditional-checkbox-optional-1" checked="">
-              <label for="traditional-checkbox-optional-1" class="display:block mb:8px">Checkbox Label</label>
+              <label for="traditional-checkbox-optional-1" class="display:block mb:4px py:2px">Checkbox Label</label>
               <input type="checkbox" name="traditional-checkbox-optional" value="1" id="traditional-checkbox-optional-2">
-              <label for="traditional-checkbox-optional-2" class="display:block mb:8px">Checkbox Label</label>
+              <label for="traditional-checkbox-optional-2" class="display:block mb:4px py:2px">Checkbox Label</label>
               <input type="checkbox" name="traditional-checkbox-optional" value="2" id="traditional-checkbox-optional-3" disabled="" checked="">
-              <label for="traditional-checkbox-optional-3" class="display:block mb:8px">Checkbox (Disabled) Label</label>
+              <label for="traditional-checkbox-optional-3" class="display:block mb:4px py:2px">Checkbox (Disabled) Label</label>
             </div>
 
             <div class="bgc:light-grey p:16px bl-white:2px">
@@ -783,19 +785,19 @@
             <div class="form:theme:b33mOe p:16px" data-equalize-height="parent-child-checkboxes">
               <div class="parent-checkbox">
                 <input type="checkbox" data-module='parent-checkbox' aria-controls="child-checkbox-optional-1 child-checkbox-optional-2 child-checkbox-optional-3" name="checkbox-parent-optional" id="checkbox-parent-optional" aria-checked="mixed">
-                <label for="checkbox-parent-optional" class="display:block mb:8px">Parent Checkbox Label</label>
+                <label for="checkbox-parent-optional" class="display:block mb:4px py:2px">Parent Checkbox Label</label>
                 <ul class="checkboxes unstyle pl:16px">
                   <li>
                     <input type="checkbox" name="child-checkbox-optional-1" id="child-checkbox-optional-1" checked="">
-                    <label for="child-checkbox-optional-1" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-optional-1" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                   <li>
                     <input type="checkbox" name="child-checkbox-optional-2" id="child-checkbox-optional-2" checked="">
-                    <label for="child-checkbox-optional-2" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-optional-2" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                   <li>
                     <input type="checkbox" name="child-checkbox-optional-3" id="child-checkbox-optional-3">
-                    <label for="child-checkbox-optional-3" class="display:block mb:8px">Checkbox Label</label>
+                    <label for="child-checkbox-optional-3" class="display:block mb:4px py:2px">Checkbox Label</label>
                   </li>
                 </ul>
               </div>
@@ -805,30 +807,28 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
-            <div class="bgc:albicant">
+            <div class="form:theme:card-radiobuttons p:16px bgc:albicant" data-equalize-height="card-checkboxes">
               <fieldset>
                 <legend>Card checkboxes</legend>
-                <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
-                  <input type="checkbox" id="card-checkbox-optional-1" name="card-checkbox-optional">
-                  <label for="card-checkbox-optional-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
-                    <div class="check"></div>
-                    <div class="image">
-                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                    </div>
-                    <div class="description">Card Checkbox Label 1</div>
-                  </label>
+                <input type="checkbox" id="card-checkbox-optional-1" name="card-checkbox-optional">
+                <label for="card-checkbox-optional-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Checkbox Label 1</div>
+                </label>
 
-                  <br><br>
+                <br><br>
 
-                  <input type="checkbox" id="card-checkbox-optional-2" name="card-checkbox-optional">
-                  <label for="card-checkbox-optional-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
-                    <div class="check"></div>
-                    <div class="image">
-                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                    </div>
-                    <div class="description">Card Checkbox Label 2</div>
-                  </label>
-                </div>
+                <input type="checkbox" id="card-checkbox-optional-2" name="card-checkbox-optional">
+                <label for="card-checkbox-optional-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
+                  <div class="check"></div>
+                  <div class="image">
+                    <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  </div>
+                  <div class="description">Card Checkbox Label 2</div>
+                </label>
               </fieldset>
             </div>
 
@@ -840,11 +840,11 @@
               <fieldset>
                 <legend>Traditional&nbsp;radio buttons</legend>
                 <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-1" value="1">
-                <label class="display:block pb:4px" for="traditional-radio-button-optional-1">Radio Button 1</label>
+                <label class="display:block py:4px" for="traditional-radio-button-optional-1">Radio Button 1</label>
                 <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-2" value="2">
-                <label class="display:block pb:4px" for="traditional-radio-button-optional-2">Radio Button 2</label>
+                <label class="display:block py:4px" for="traditional-radio-button-optional-2">Radio Button 2</label>
                 <input type="radio" name="traditional-radio-button-optional" id="traditional-radio-button-optional-3" value="3">
-                <label class="display:block pb:4px" for="traditional-radio-button-optional-3">Radio Button 3</label>
+                <label class="display:block py:4px" for="traditional-radio-button-optional-3">Radio Button 3</label>
               </fieldset>
             </div>
 
