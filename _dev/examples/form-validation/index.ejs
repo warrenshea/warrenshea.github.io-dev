@@ -11,9 +11,9 @@
                 <h3 class="fs:28px lh:24 heebo:bold text-align:center">Required Form Fields</h3>
               </div>
               <div class="form:theme:b33mOe py:8px text-align:center" data-equalize-height="buttons">
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.required_clear();">Clear</button>
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="">Submit</button>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.required_clear();">Clear</button>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="">Submit</button>
                 <div class="pt:8px fs:14px">* indicates the field is required</div>
               </div>
             </div>
@@ -354,26 +354,31 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
-            <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
-              <input type="checkbox" id="card-checkbox-required-1" name="card-checkbox-required">
-              <label for="card-checkbox-required-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
-                <div class="check"></div>
-                <div class="image">
-                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                </div>
-                <div class="description">Card Checkbox Label 1</div>
-              </label>
+            <div class="bgc:albicant">
+              <fieldset>
+                <legend>Card checkboxes *</legend>
+                <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
+                  <input type="checkbox" id="card-checkbox-required-1" name="card-checkbox-required">
+                  <label for="card-checkbox-required-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
+                    <div class="check"></div>
+                    <div class="image">
+                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                    </div>
+                    <div class="description">Card Checkbox Label 1</div>
+                  </label>
 
-              <br><br>
+                  <br><br>
 
-              <input type="checkbox" id="card-checkbox-required-2" name="card-checkbox-required">
-              <label for="card-checkbox-required-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
-                <div class="check"></div>
-                <div class="image">
-                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  <input type="checkbox" id="card-checkbox-required-2" name="card-checkbox-required">
+                  <label for="card-checkbox-required-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
+                    <div class="check"></div>
+                    <div class="image">
+                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                    </div>
+                    <div class="description">Card Checkbox Label 2</div>
+                  </label>
                 </div>
-                <div class="description">Card Checkbox Label 2</div>
-              </label>
+              </fieldset>
             </div>
 
             <div class="bgc:light-grey p:16px br-white:2px">
@@ -412,11 +417,11 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Radio Buttons</h3>
             </div>
 
-            <div class="form:theme:card-radiobuttons p:16px" data-equalize-height="card-radio-buttons">
+            <div class="form:theme:card-radiobuttons p:16px bgc:albicant" data-equalize-height="card-radio-buttons">
               <fieldset class="box-radio-buttons">
                 <legend>Card radio button *</legend>
                 <input id="card-radiobuttons-required-1" name="card-radiobuttons-required" type="radio" data-required="is_not_empty">
-                <label for="card-radiobuttons-required-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <label for="card-radiobuttons-required-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
                   <div class="check"></div>
                   <div class="image">
                     <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
@@ -427,7 +432,7 @@
                 <br><br>
 
                 <input id="card-radiobuttons-required-2" name="card-radiobuttons-required" type="radio">
-                <label for="card-radiobuttons-required-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <label for="card-radiobuttons-required-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
                   <div class="check"></div>
                   <div class="image">
                     <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
@@ -495,10 +500,10 @@
                 <h3 class="fs:28px lh:24 heebo:bold text-align:center">Optional Form Fields</h3>
               </div>
               <div class="form:theme:b33mOe py:8px text-align:center" data-equalize-height="buttons">
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_autofill();">Autofill</button>
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_autofill_invalid();">Autofill: Invalid Information</button><br>
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="return storm_eagle.form_validation_example.optional_clear();">Clear</button>
-                <button class="button:primary uppercase mr:4px mb:4px short" onclick="">Submit</button>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.optional_autofill();">Autofill</button>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.optional_autofill_invalid();">Autofill: Invalid Information</button><br>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.optional_clear();">Clear</button>
+                <button class="button:primary uppercase mr:4px mb:4px small" onclick="">Submit</button>
               </div>
             </div>
 
@@ -800,26 +805,31 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
-            <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
-              <input type="checkbox" id="card-checkbox-optional-1" name="card-checkbox-optional">
-              <label for="card-checkbox-optional-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
-                <div class="check"></div>
-                <div class="image">
-                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
-                </div>
-                <div class="description">Card Checkbox Label 1</div>
-              </label>
+            <div class="bgc:albicant">
+              <fieldset>
+                <legend>Card checkboxes</legend>
+                <div class="form:theme:card-checkboxes p:16px" data-equalize-height="card-checkboxes">
+                  <input type="checkbox" id="card-checkbox-optional-1" name="card-checkbox-optional">
+                  <label for="card-checkbox-optional-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
+                    <div class="check"></div>
+                    <div class="image">
+                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                    </div>
+                    <div class="description">Card Checkbox Label 1</div>
+                  </label>
 
-              <br><br>
+                  <br><br>
 
-              <input type="checkbox" id="card-checkbox-optional-2" name="card-checkbox-optional">
-              <label for="card-checkbox-optional-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
-                <div class="check"></div>
-                <div class="image">
-                  <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                  <input type="checkbox" id="card-checkbox-optional-2" name="card-checkbox-optional">
+                  <label for="card-checkbox-optional-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white bgc:white">
+                    <div class="check"></div>
+                    <div class="image">
+                      <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
+                    </div>
+                    <div class="description">Card Checkbox Label 2</div>
+                  </label>
                 </div>
-                <div class="description">Card Checkbox Label 2</div>
-              </label>
+              </fieldset>
             </div>
 
             <div class="bgc:light-grey p:16px bl-white:2px">
@@ -856,11 +866,11 @@
               <h3 class="fs:20px lh:24 text-align:center">Card Radio Buttons</h3>
             </div>
 
-            <div class="form:theme:card-radiobuttons p:16px" data-equalize-height="card-radio-buttons">
+            <div class="form:theme:card-radiobuttons p:16px bgc:albicant" data-equalize-height="card-radio-buttons">
               <fieldset class="box-radio-buttons">
                 <legend>Card radio button</legend>
                 <input id="card-radiobuttons-optional-1" name="card-radiobuttons-optional" type="radio">
-                <label for="card-radiobuttons-optional-1" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <label for="card-radiobuttons-optional-1" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
                   <div class="check"></div>
                   <div class="image">
                     <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
@@ -871,7 +881,7 @@
                 <br><br>
 
                 <input id="card-radiobuttons-optional-2" name="card-radiobuttons-optional" type="radio">
-                <label for="card-radiobuttons-optional-2" class="box-shadow:custom-2 overflow:hidden br:8px b-light-grey:2px">
+                <label for="card-radiobuttons-optional-2" class="box-shadow:custom-1 overflow:hidden br:8px b-white:2px bgc:white">
                   <div class="check"></div>
                   <div class="image">
                     <div class="icon display:inline-block icon-color:blue icon-size:72px dragon"></div>
