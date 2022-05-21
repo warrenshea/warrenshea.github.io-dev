@@ -254,6 +254,9 @@ fieldset.unstyle { border:0; padding:0 }
     &:checked:focus+label {
       outline: 2px solid #000;
     }
+    &:checked:focus+label {
+      box-shadow: $box-shadow-custom-7;
+    }
     &:focus+label:before {
       box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
     }
@@ -287,7 +290,8 @@ fieldset.unstyle { border:0; padding:0 }
       border: 2px solid $bluea;
     }
     &:focus+label:before {
-      border: 2px solid $cerulean;
+      /*border: 2px solid $bluea;*/
+      box-shadow: $box-shadow-custom-7;
     }
     &:checked:disabled+label:before {
       background-color: $granite;
@@ -329,6 +333,7 @@ fieldset.unstyle { border:0; padding:0 }
     &:checked:focus+label:before {
       background-color: $white;
       border: 6px solid $bluea;
+      box-shadow: $box-shadow-custom-7;
     }
 
     &:checked:disabled+label:before {
