@@ -8,9 +8,6 @@ fieldset.unstyle { border:0; padding:0 }
   $label_active_fontsize: 14;
   $label_active_family: 'heebo-medium';
 
-/*  $label_top_email_password: 23;
-  $label_active_top_email_password: 2;
-*/
   /* label styles */
   input[type="text"]+label,
   input[type="number"]+label,
@@ -376,6 +373,15 @@ fieldset.unstyle { border:0; padding:0 }
 .form\:theme\:card-checkboxes,
 .form\:theme\:card-radiobuttons {
 
+  @keyframes focus-fade {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+    100% {
+      box-shadow: 0 0 0 10px $azure, 0 0 0 10px $ultramarine;
+    }
+  }
+
   /* helper description styles */
   .error-message {
     width: 100%;
@@ -404,7 +410,6 @@ fieldset.unstyle { border:0; padding:0 }
 
   input[type="radio"],
   input[type="checkbox"] {
-
     opacity: 0;
     width: 0;
     height: 0;
@@ -417,9 +422,15 @@ fieldset.unstyle { border:0; padding:0 }
       min-height: 170px;
       display:inline-block;
       transition: all 0.3s ease-out;
+      box-shadow: $box-shadow-custom-1;
       &:hover {
         cursor: pointer;
-        box-shadow: $box-shadow-custom-2;
+        box-shadow: $box-shadow-custom-6;
+      }
+      &:active{
+        opacity:1;
+        animation: focus-fade 0.3s ease-in;
+        outline:0;
       }
       div.check {
         opacity: 0;
@@ -455,13 +466,14 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:focus {
       background: $bluea;
-      border: 3px solid $bluea;
+      border: 2px solid $bluea;
       color: $white;
       box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
     }
+
     &:checked+label,
     &:checked:focus+label {
-      border: 3px solid $bluea;
+      border: 2px solid $bluea;
       div.check {
         opacity: 1;
         visibility: visible;
@@ -472,14 +484,17 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:focus+label,
     &:checked:focus+label {
-      border: 3px solid $cerulean;
+      border: 2px solid $bluea;
       div.check {
-        background-color: $cerulean;
+        background-color: $bluea;
         display: block;
       }
     }
+    &:checked:focus+label {
+      box-shadow: $box-shadow-custom-7;
+    }
     .error-field label {
-      border: 3px solid $negative;
+      border: 2px solid $negative;
     }
   }
 }
