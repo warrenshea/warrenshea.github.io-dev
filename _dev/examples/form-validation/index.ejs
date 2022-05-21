@@ -11,7 +11,7 @@
                 <h3 class="fs:28px lh:24 heebo:bold text-align:center">Required Form Fields</h3>
               </div>
               <div class="form:theme:b33mOe py:8px text-align:center" data-equalize-height="buttons">
-                <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
+                <button class="button:primary uppercase mr:4px mb:4px small" id="autofill-required" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
                 <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.required_clear();">Clear</button>
                 <button class="button:primary uppercase mr:4px mb:4px small" onclick="">Submit</button>
                 <div class="pt:8px fs:14px">* indicates the field is required</div>
@@ -974,9 +974,11 @@
             document.querySelector("[for=postal-code-required]").classList.add("active-label");
             document.getElementById("zip-code-required").value = "90210";
             document.querySelector("[for=zip-code-required]").classList.add("active-label");
-            document.getElementById("password-required").value = "Test";
+            document.getElementById("password-required").value = "PaSsWoRd1!";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
             document.querySelector("[for=password-required]").classList.add("active-label");
-            document.getElementById("password-verify-required").value = "Test";
+            document.getElementById("password-verify-required").value = "PaSsWoRd1!";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
             document.querySelector("[for=password-verify-required]").classList.add("active-label");
             document.getElementById("select-required").value = "3";
             document.querySelector("[for=select-required]").classList.add("active-label");
@@ -1012,8 +1014,10 @@
             document.querySelector("[for=zip-code-required]").classList.remove("active-label");
             document.getElementById("password-required").value = "";
             document.querySelector("[for=password-required]").classList.remove("active-label");
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
             document.getElementById("password-verify-required").value = "";
             document.querySelector("[for=password-verify-required]").classList.remove("active-label");
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
             document.getElementById("select-required").value = "";
             document.querySelector("[for=select-required]").classList.remove("active-label");
             document.getElementById("provinces-en-required").value = "";
@@ -1062,9 +1066,11 @@
             document.querySelector("[for=postal-code-optional]").classList.add("active-label");
             document.getElementById("zip-code-optional").value = "90210";
             document.querySelector("[for=zip-code-optional]").classList.add("active-label");
-            document.getElementById("password-optional").value = "Test";
+            document.getElementById("password-optional").value = "PaSsWoRd1!";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.querySelector("[for=password-optional]").classList.add("active-label");
-            document.getElementById("password-verify-optional").value = "Test";
+            document.getElementById("password-verify-optional").value = "PaSsWoRd1!";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.querySelector("[for=password-verify-optional]").classList.add("active-label");
             document.getElementById("select-optional").value = "3";
             document.querySelector("[for=select-optional]").classList.add("active-label");
@@ -1097,8 +1103,10 @@
             document.getElementById("zip-code-optional").value = "Metropolis";
             document.querySelector("[for=zip-code-optional]").classList.add("active-label");
             document.getElementById("password-optional").value = "Test";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.querySelector("[for=password-optional]").classList.add("active-label");
             document.getElementById("password-verify-optional").value = "Test";
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.querySelector("[for=password-verify-optional]").classList.add("active-label");
             storm_eagle.form_theme_b33mOe.force_textarea_autoexpand(document.getElementById("textarea-optional"));
             storm_eagle.equalize_heights.force_resize();
@@ -1117,8 +1125,10 @@
             document.querySelector("[for=zip-code-optional]").classList.remove("active-label");
             document.getElementById("password-optional").value = "";
             document.querySelector("[for=password-optional]").classList.remove("active-label");
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.getElementById("password-verify-optional").value = "";
             document.querySelector("[for=password-verify-optional]").classList.remove("active-label");
+            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.getElementById("select-optional").value = "";
             document.querySelector("[for=select-optional]").classList.remove("active-label");
             document.getElementById("provinces-en-optional").value = "";
