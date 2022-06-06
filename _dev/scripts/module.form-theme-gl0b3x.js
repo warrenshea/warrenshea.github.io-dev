@@ -1,20 +1,20 @@
-storm_eagle.module('form_theme_b33mOe', () => {
+storm_eagle.module('form_theme_gl0b3x', () => {
   "use strict";
   let self;
 
   return {
     initialize: () => {
-      self = storm_eagle["form_theme_b33mOe"];
+      self = storm_eagle["form_theme_gl0b3x"];
       self.input_listener();
       self.textarea_autoexpand_listener();
     },
     ready: () => {
-      document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
+      document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach( element => {
         if (element.type !== 'radio') {
           self.force_set_active_label(element);
         }
       });
-      document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
+      document.querySelectorAll(".form\\:theme\\:gl0b3x textarea").forEach( element => {
         self.force_textarea_autoexpand(element);
       });
     },
@@ -22,7 +22,7 @@ storm_eagle.module('form_theme_b33mOe', () => {
       element.nextElementSibling.classList[(element.value.length ? 'add' : 'remove')]('active-label');
     },
     input_listener: () => {
-      document.querySelectorAll('.form\\:theme\\:b33mOe input, .form\\:theme\\:b33mOe select, .form\\:theme\\:b33mOe textarea').forEach( element => {
+      document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach( element => {
 
         if (element.type !== 'radio') {
           element.addEventListener('change', () => {
@@ -36,7 +36,7 @@ storm_eagle.module('form_theme_b33mOe', () => {
       element.style.height = element.scrollHeight + 'px';
     },
     textarea_autoexpand_listener: () => {
-      document.querySelectorAll(".form\\:theme\\:b33mOe textarea").forEach( element => {
+      document.querySelectorAll(".form\\:theme\\:gl0b3x textarea").forEach( element => {
         element.addEventListener('input', () => {
           self.force_textarea_autoexpand(element);
         });
