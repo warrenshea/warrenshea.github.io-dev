@@ -100,12 +100,16 @@
           initialize: () => {
             self = storm_eagle["communicating_with_iframe_parent"];
             self.add_message_listener();
+            self.send_height();
           },
           add_message_listener: () => {
             window.addEventListener('message', event => {
-              let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
-              parent.postMessage(height, window.location.origin);
+              self.send_height();
             });
+          },
+          send_height: () => {
+            let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+            parent.postMessage(height, window.location.origin);
           }
         };
       })
