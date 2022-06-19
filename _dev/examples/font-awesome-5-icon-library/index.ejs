@@ -1,6 +1,6 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-<style>
+    <style>
       .assets {
         display:block;
         width:100%;
@@ -28,7 +28,7 @@
       }
       .isotope-size\:48 {width:64px;height:64px;margin:0 8px 8px 0;}
     </style>
-    <div class="row max-width:1280px form:theme:b33mOe">
+    <div class="row max-width:1280px form:theme:gl0b3x">
       <div class="w:2 position:relative">
         <div class="position:fixed" style="left:0;width:16.3%">
           <h2 class="heebo:bold">Filters</h2>
@@ -146,28 +146,25 @@
         let asset_html = "";
         let tags_array = [];
         assets.forEach((asset, index) => {
-          if (index % 4 == 0) {
+          let { name, type, pathname, tags, color } = asset;
 
-            let { name, type, pathname, tags, color } = asset;
+          //create the keyword database based off the tags
+          tags_array = tags.split(",");
+          let all_isotope_keywords = "";
+          tags_array.forEach((el,index) => {
+            all_isotope_keywords += " keyword:" + el.toString().replace(/ /g,"_"); //convert space to underscore;
 
-            //create the keyword database based off the tags
-            tags_array = tags.split(",");
-            let all_isotope_keywords = "";
-            tags_array.forEach((el,index) => {
-              all_isotope_keywords += " keyword:" + el.toString().replace(/ /g,"_"); //convert space to underscore;
+            if(keyword_database.indexOf(el) === -1) {
+              keyword_database.push(el.toString());
+            }
+          });
 
-              if(keyword_database.indexOf(el) === -1) {
-                keyword_database.push(el.toString());
-              }
-            });
-
-            //create each asset's html
-            asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:albicant">`;
-            asset_html += `  <span class="number">${index}</span>`;
-            asset_html += `  <span class="name">${name}</span>`;
-            asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
-            asset_html += `</div>`;
-          }
+          //create each asset's html
+          asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:albicant">`;
+          asset_html += `  <span class="number">${index}</span>`;
+          asset_html += `  <span class="name">${name}</span>`;
+          asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
+          asset_html += `</div>`;
         });
         keyword_database = [...new Set(keyword_database)].sort();
 
@@ -180,9 +177,8 @@
         isotope_obj = new Isotope( isotope_container, {
           itemSelector: ".asset",
           sortBy : "number",
-          layoutMode: "masonry"
+          layoutMode: "masonry",
         });
-
       },
       add_event_listeners: () => {
 
@@ -219,6 +215,7 @@
             // console.log("filters",filters);
             // combine filters
             filter_value = _concat_values(filters);
+            console.log(filter_value);
             isotope_obj.arrange({ filter: filter_value });
           });
         });
@@ -290,6 +287,7 @@
           }
           //console.log("filters[filter_group]",filters[filter_group]);
           filter_value = _concat_values(filters);
+          // console.log(filter_value);
           isotope_obj.arrange({ filter: filter_value });
         }
 
