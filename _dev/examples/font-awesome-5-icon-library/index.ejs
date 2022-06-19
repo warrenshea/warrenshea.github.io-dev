@@ -30,7 +30,7 @@
     </style>
     <div class="row max-width:1280px form:theme:gl0b3x">
       <div class="w:2 position:relative">
-        <div class="position:fixed" style="left:0;width:16.3%">
+        <div class="position:fixed" style="left:0;width:16.667%;">
           <h2 class="heebo:bold">Filters</h2>
 
           <div class="mx:2px mb:8px b-grey:2px br:8px">
@@ -48,7 +48,7 @@
           <fieldset class="option-set-assets br:8px mb:8px" data-filter-group="type">
             <legend class="hide">Type</legend>
             <h3>Type</h3>
-            <input type="radio" name="type" id="all" value="all" data-filter-value=" *" checked>
+            <input type="radio" name="type" id="all" value="all" data-filter-value="" checked>
             <label for="all" class="display:block mb:4px">All</label>
             <input type="radio" name="type" id="icon" value="icon" data-filter-value=".type-icon">
             <label for="icon" class="display:block mb:4px">Icon</label>
@@ -59,29 +59,29 @@
           <fieldset class="option-set-assets br:8px" data-filter-group="color">
             <legend class="hide">Color</legend>
             <h3>Color</h3>
-            <input type="radio" name="color" id="color-all" value="all" data-filter-value=" *" checked>
+            <input type="radio" name="color" id="color-all" value="all" data-filter-value="" checked>
             <label for="color-all" class="display:block mb:4px">All</label>
             <input type="radio" name="color" id="duotone" value="duotone" data-filter-value=".isotope-color:duotone">
-            <label for="duotone" class="display:block mb:4px color:duotone">Duotone</label>
-            <input type="radio" name="color" id="light" value="light" data-filter-value=".isotope-color:light">
-            <label for="light" class="display:block mb:4px color:light">Light</label>
-            <input type="radio" name="color" id="regular" value="regular" data-filter-value=".isotope-color:regular">
-            <label for="regular" class="display:block mb:4px color:regular">Regular</label>
-            <input type="radio" name="color" id="solid" value="solid" data-filter-value=".isotope-color:solid">
-            <label for="solid" class="display:block mb:4px color:solid">Solid</label>
+            <label for="duotone" class="display:block mb:4px">Duotone</label>
             <input type="radio" name="color" id="various" value="various" data-filter-value=".isotope-color:various">
-            <label for="various" class="display:block mb:4px color:various">Various</label>
+            <label for="various" class="display:block mb:4px">Various</label>
+           <input type="radio" name="color" id="light" value="light" data-filter-value=".isotope-color:light" disabled>
+            <label for="light" class="display:block mb:4px">Light (Disabled)</label>
+            <input type="radio" name="color" id="regular" value="regular" data-filter-value=".isotope-color:regular" disabled>
+            <label for="regular" class="display:block mb:4px">Regular (Disabled)</label>
+            <input type="radio" name="color" id="solid" value="solid" data-filter-value=".isotope-color:solid" disabled>
+            <label for="solid" class="display:block mb:4px">Solid (Disabled)</label>
           </fieldset>
         </div>
       </div>
       <div class="w:7">
-        <h2 class="heebo:bold">Assets</h2>
+        <h2 class="heebo:bold">Font Awesome 5 Icon Library</h2>
         <div class="assets hide">
         </div>
       </div>
       <div class="w:3 position:relative">
 
-        <div class="position:fixed" style="right:8px;width:23%;">
+        <div class="position:fixed overflow:hidden" style="right:8px;width:24%;">
           <h2 class="heebo:bold">Preview</h2>
           <div class="display:flex align:center" style="height:100%;flex-direction:column">
             <div>
@@ -90,17 +90,18 @@
                 </div>
               </div>
               <div class="sm+:w:12" style="min-height:500px">
-                <h2 class="sm+:mb:16px sm+:mt:16px heebo:bold">Details</h2>
-                <h3 class="heebo:bold">Name: </h3>
-                <div class="sm+:mb:16px" id="name"></div>
-                <h3 class="heebo:bold">Pathname: </h3>
-                <div class="sm+:mb:16px" id="pathname"></div>
-                <h3 class="heebo:bold">Colour: </h3>
-                <div class="sm+:mb:16px" id="color"></div>
-                <h3 class="heebo:bold">Tags: </h3>
-                <div class="sm+:mb:16px" id="tags"></div>
-                <h3 class="heebo:bold">Notes: </h3>
-                <div class="sm+:mb:16px" id="notes"></div>
+                <h2 class="mt:16px fs:20px heebo:bold">Details</h2>
+<!--                 <h3 class="heebo:bold">Name: </h3>
+                <div class="sm+:mb:16px" id="name"></div> -->
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Pathname: </span><span id="pathname"></span></div>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Colour: </span><span id="color"></span></div>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Tags: </span><span id="tags"></span></div>
+                <!-- <h3 class="heebo:bold">Notes: </h3>
+                <div class="sm+:mb:16px" id="notes"></div> -->
+                <h2 class="mt:16px fs:20px heebo:bold">Alternatives</h2>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Light: </span><span id="pathname-light"></span><br><span id="icon-light"></span></div>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Regular: </span><span id="pathname-regular"></span><br><span id="icon-regular"></span></div>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Solid: </span><span  id="pathname-solid"></span><br><span id="icon-solid"></span></div>
               </div>
             </div>
           </div>
@@ -146,6 +147,7 @@
         let asset_html = "";
         let tags_array = [];
         assets.forEach((asset, index) => {
+          //if (index > 1800 && index < 2000) { for only loading a few icons at a time
           let { name, type, pathname, tags, color } = asset;
 
           //create the keyword database based off the tags
@@ -165,6 +167,7 @@
           asset_html += `  <span class="name">${name}</span>`;
           asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
           asset_html += `</div>`;
+          //} for only loading a few icons at a time
         });
         keyword_database = [...new Set(keyword_database)].sort();
 
@@ -193,11 +196,17 @@
           el.addEventListener('click', () => {
             let asset = _find_object_with_param(assets,"name",el.getAttribute("data-asset"));
             document.getElementById("asset").innerHTML = `<img src="${asset[0]["pathname"]}" class="w:100% h:100% object-fit:contain">`;
-            document.getElementById("name").innerHTML = asset[0]["name"];
+            // document.getElementById("name").innerHTML = asset[0]["name"];
             document.getElementById("pathname").innerHTML = asset[0]["pathname"];
             document.getElementById("color").innerHTML = asset[0]["color"];
-            document.getElementById("tags").innerHTML = asset[0]["tags"].replace(/,/g,"<br>");
-            document.getElementById("notes").innerHTML = asset[0]["notes"];
+            document.getElementById("tags").innerHTML = `<br>` + asset[0]["tags"].replace(/,/g,"<br>");
+            // document.getElementById("notes").innerHTML = asset[0]["notes"];
+            document.getElementById("pathname-light").innerHTML = `${asset[0]["pathname"].replace("duotone","light")}`;
+            document.getElementById("icon-light").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","light")}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("pathname-regular").innerHTML = `${asset[0]["pathname"].replace("duotone","regular")}`;
+            document.getElementById("icon-regular").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","regular")}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("pathname-solid").innerHTML = `${asset[0]["pathname"].replace("duotone","solid")}`;
+            document.getElementById("icon-solid").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","solid")}" class="" style="width:60px;height:60px;">`;
           });
         });
 
@@ -254,7 +263,10 @@
               document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
 
               for (let i = 0; i < data.length; i++) {
-                document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i]));
+                if (i === 0) {
+                  document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result("", i, input_id, autocomplete_id, "", "Reset Keyword"));
+                }
+                document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i], data[i]));
                 document.getElementById(results_id).classList.remove("display:none");
                 document.getElementById(autocomplete_id).classList.add("active");
                 document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
@@ -271,9 +283,9 @@
           }
         }
       },
-      render_autocomplete_result: (query, index, input_id, autocomplete_id, tag) => {
+      render_autocomplete_result: (query, index, input_id, autocomplete_id, tag, tag_string) => {
         //console.log(tag);
-        return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${tag}" onclick="storm_eagle.fa5dam.autocomplete_fill('${input_id}','${tag}');storm_eagle.autocomplete.close('${autocomplete_id}');">${tag}</li>`;
+        return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${tag}" onclick="storm_eagle.fa5dam.autocomplete_fill('${input_id}','${tag}');storm_eagle.autocomplete.close('${autocomplete_id}');">${tag_string}</li>`;
       },
       autocomplete_fill: (input_id, name) => {
         function _load_keyword(keyword) {
@@ -281,7 +293,7 @@
           //console.log("filter_group",filter_group);
           //console.log("filters",filters);
           if (keyword === "") {
-            filters[filter_group] = "*"
+            filters[filter_group] = ""
           } else {
             filters[filter_group] = _add_slashes(".keyword:" + keyword.replace(/ /g,"_"));
           }
