@@ -1,12 +1,51 @@
+.icon {
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+$icons: (
+  calendar
+  chevron-down
+  chevron-circle-down
+  chevron-left
+  chevron-circle-left
+  chevron-right
+  chevron-circle-right
+  chevron-up
+  chevron-circle-up
+  dragon
+  info-circle
+  lock
+  phone-alt
+  times
+);
+
+$types: (
+  light
+  solid
+);
+
+@each $icon in $icons {
+  @each $type in $types {
+    .icon.icon-type\:#{$type}.#{$icon} {
+      -webkit-mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
+      mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
+    }
+  }
+}
+
+
 $colors: (
-  white       : $icon-white,
-  blue        : $icon-blue,
-  bluea       : $icon-bluea,
-  ultramarine : $icon-ultramarine,
-  granite     : $icon-granite,
-  negative    : $icon-negative,
-  positive    : $icon-positive,
-  warning     : $icon-warning
+  white       : $white,
+  blue        : $blue,
+  bluea       : $bluea,
+  ultramarine : $ultramarine,
+  granite     : $granite,
+  negative    : $negative,
+  positive    : $positive,
+  warning     : $warning
 );
 
 @each $mediaquery in $mediaqueries {
@@ -20,7 +59,7 @@ $colors: (
       $color-value: nth($color, 2);
 
       .#{$prefix}icon-color\:#{"" + $color-name} {
-        filter: #{$color-value};
+        background-color: #{$color-value};
       }
     }
   }
@@ -54,22 +93,3 @@ $sizes: (
     }
   }
 }
-
-.icon {
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-
-.icon.chevron-circle-down { background-image: url('../assets/icon/chevron-circle-down.svg'); }
-.icon.chevron-circle-left { background-image: url('../assets/icon/chevron-circle-left.svg'); }
-.icon.chevron-circle-right { background-image: url('../assets/icon/chevron-circle-right.svg'); }
-.icon.chevron-circle-up { background-image: url('../assets/icon/chevron-circle-up.svg'); }
-.icon.chevron-down { background-image: url('../assets/icon/chevron-down.svg'); }
-.icon.chevron-left { background-image: url('../assets/icon/chevron-left.svg'); }
-.icon.chevron-right { background-image: url('../assets/icon/chevron-right.svg'); }
-.icon.chevron-up { background-image: url('../assets/icon/chevron-up.svg'); }
-.icon.info-circle { background-image: url('../assets/icon/info-circle.svg'); }
-.icon.times { background-image: url('../assets/icon/times.svg'); }
-.icon.dragon { background-image: url('../assets/icon/dragon.svg'); }
-
