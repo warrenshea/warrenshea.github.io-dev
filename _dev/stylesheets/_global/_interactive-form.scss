@@ -200,24 +200,12 @@ fieldset.unstyle { border:0; padding:0 }
   /* select styles */
   select {
     cursor: pointer;
-    // background-color: transparent;
-    // background-image: url('../assets/icon/chevron-down.bluea.svg');
-    // background-repeat: no-repeat;
-    // background-position: right 8px top 10px;
-    // background-size: 16px 16px;
+    background-color: transparent;
+    background-image: url('../assets/icon/chevron-down.bluea.svg');
+    background-repeat: no-repeat;
+    background-position: right 8px top 10px;
+    background-size: 16px 16px;
     appearance: none;
-    position:relative;
-    z-index:2;
-  }
-  select + label + span.icon {
-    cursor: pointer;
-    position:absolute;
-    bottom:12px;
-    right:0;
-    z-index:1;
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   /* textarea styles */
