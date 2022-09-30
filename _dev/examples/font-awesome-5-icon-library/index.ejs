@@ -101,7 +101,7 @@
                 <h2 class="mt:16px fs:20px heebo:bold">Alternatives</h2>
                 <div class="mt:16px ws:nowrap"><span class="heebo:bold">Light: </span><span id="pathname-light"></span><br><span id="icon-light"></span></div>
                 <div class="mt:16px ws:nowrap"><span class="heebo:bold">Regular: </span><span id="pathname-regular"></span><br><span id="icon-regular"></span></div>
-                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Solid: </span><span  id="pathname-solid"></span><br><span id="icon-type:solid"></span></div>
+                <div class="mt:16px ws:nowrap"><span class="heebo:bold">Solid: </span><span  id="pathname-solid"></span><br><span id="icon-solid"></span></div>
               </div>
             </div>
           </div>
@@ -206,7 +206,7 @@
             document.getElementById("pathname-regular").innerHTML = `${asset[0]["pathname"].replace("duotone","regular")}`;
             document.getElementById("icon-regular").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","regular")}" class="" style="width:60px;height:60px;">`;
             document.getElementById("pathname-solid").innerHTML = `${asset[0]["pathname"].replace("duotone","solid")}`;
-            document.getElementById("icon-type:solid").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","solid")}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("icon-solid").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","solid")}" class="" style="width:60px;height:60px;">`;
           });
         });
 
