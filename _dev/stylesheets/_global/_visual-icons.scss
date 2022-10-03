@@ -6,20 +6,21 @@
 }
 
 $icons: (
-  calendar
-  chevron-down
-  chevron-circle-down
-  chevron-left
-  chevron-circle-left
-  chevron-right
-  chevron-circle-right
-  chevron-up
-  chevron-circle-up
-  dragon
-  info-circle
-  lock
-  phone-alt
-  times
+  calendar,
+  chevron-down,
+  chevron-circle-down,
+  chevron-left,
+  chevron-circle-left,
+  chevron-right,
+  chevron-circle-right,
+  chevron-up,
+  chevron-circle-up,
+  copy,
+  dragon,
+  info-circle,
+  lock,
+  phone-alt,
+  times,
 );
 
 $types: (
@@ -40,7 +41,6 @@ $types: (
 $colors: (
   white       : $white,
   blue        : $blue,
-  bluea       : $bluea,
   ultramarine : $ultramarine,
   granite     : $granite,
   negative    : $negative,
