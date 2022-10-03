@@ -5,7 +5,6 @@
   @include breakpoint($breakpoint) {
     .#{$prefix}color\:white { color: $white; }
     .#{$prefix}color\:blue { color: $blue; }
-    .#{$prefix}color\:bluea { color: $bluea; }
     .#{$prefix}color\:slate { color: $slate; }
     .#{$prefix}color\:ultramarine { color: $ultramarine; }
   }
@@ -19,7 +18,6 @@
   @include breakpoint($breakpoint) {
     .#{$prefix}color-fill\:white { fill: $white; }
     .#{$prefix}color-fill\:blue { fill: $blue; }
-    .#{$prefix}color-fill\:bluea { fill: $bluea; }
     .#{$prefix}color-fill\:ultramarine { fill: $ultramarine; }
     .#{$prefix}color-fill\:granite { fill: $granite; }
   }
@@ -33,7 +31,6 @@
   @include breakpoint($breakpoint) {
     .#{$prefix}color-stroke\:white { stroke: $white; }
     .#{$prefix}color-stroke\:blue { stroke: $blue; }
-    .#{$prefix}color-stroke\:bluea { stroke: $bluea; }
     .#{$prefix}color-stroke\:ultramarine { stroke: $ultramarine; }
     .#{$prefix}color-stroke\:granite { stroke: $granite; }
   }
