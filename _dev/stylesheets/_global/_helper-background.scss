@@ -6,8 +6,7 @@
     .#{$prefix}bgc\:none { background-color: none; }
     .#{$prefix}bgc\:transparent { background-color: transparent; }
     .#{$prefix}bgc\:blue { background-color: $blue; }
-    .#{$prefix}bgc\:bluea { background-color: $bluea; }
-    .#{$prefix}bgc\:bluea\:80\%{ background-color: rgba($bluea,.8); }
+    .#{$prefix}bgc\:blue\:80\%{ background-color: rgba($blue,.8); }
     .#{$prefix}bgc\:red { background-color: $red; }
     .#{$prefix}bgc\:ultramarine { background-color: $ultramarine; }
     .#{$prefix}bgc\:slate { background-color: $slate; }
