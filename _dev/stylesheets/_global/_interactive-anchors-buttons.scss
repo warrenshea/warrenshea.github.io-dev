@@ -40,9 +40,9 @@ button.unstyle {
 
     a.#{$prefix}anchor\:primary,
     button.#{$prefix}anchor\:primary {
-      color: $bluea;
+      color: $blue;
       > .icon {
-        background-color: $bluea;
+        background-color: $blue;
       }
       &:hover,
       &:hover:enabled,
@@ -69,9 +69,9 @@ button.unstyle {
 
     a.#{$prefix}anchor\:secondary,
     button.#{$prefix}anchor\:secondary {
-      color: $bluea;
+      color: $blue;
       > .icon {
-        background-color: $bluea;
+        background-color: $blue;
       }
       &:hover,
       &:hover:enabled,
@@ -248,8 +248,8 @@ button.unstyle {
 
     a.#{$prefix}button\:primary,
     button.#{$prefix}button\:primary {
-      border: rem-calc(2) solid $bluea;
-      background-color: $bluea;
+      border: rem-calc(2) solid $blue;
+      background-color: $blue;
       color: $white;
       box-shadow: $box-shadow-custom-2;
       &:hover,
@@ -281,12 +281,12 @@ button.unstyle {
 
     a.#{$prefix}button\:secondary,
     button.#{$prefix}button\:secondary {
-      border: rem-calc(2) solid $bluea;
+      border: rem-calc(2) solid $blue;
       background-color: transparent;
-      color: $bluea;
+      color: $blue;
       box-shadow: $box-shadow-custom-2;
       > .icon {
-        background-color: $bluea;
+        background-color: $blue;
       }
       &:hover,
       &:hover:enabled {
@@ -324,9 +324,9 @@ button.unstyle {
     button.#{$prefix}button\:white {
       border: rem-calc(2) solid transparent;
       background-color: $white;
-      color: $bluea;
+      color: $blue;
       > .icon {
-        background-color: $bluea;
+        background-color: $blue;
       }
       &:hover,
       &:hover:enabled,
