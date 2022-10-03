@@ -31,7 +31,7 @@ fieldset.unstyle { border:0; padding:0 }
       height: 2px;
       bottom: 0;
       left: 0;
-      background: $bluea;
+      background: $blue;
       transform: scaleX(0);
       transition: all 0.3s linear;
       position: relative;
@@ -73,7 +73,7 @@ fieldset.unstyle { border:0; padding:0 }
       white-space: nowrap;
       overflow: hidden;
       font-size: rem-calc(16);
-      color: $bluea;
+      color: $blue;
       letter-spacing: 0.25px;
       transition: 0.3s ease-out;
       top: rem-calc($label_top);
@@ -201,7 +201,7 @@ fieldset.unstyle { border:0; padding:0 }
   select {
     cursor: pointer;
     background-color: transparent;
-    background-image: url('../assets/icon/chevron-down.bluea.svg');
+    background-image: url('../assets/icon/chevron-down.blue.svg');
     background-repeat: no-repeat;
     background-position: right 8px top 10px;
     background-size: 16px 16px;
@@ -282,15 +282,15 @@ fieldset.unstyle { border:0; padding:0 }
       }
     }
     &:checked+label:before {
-      background-color: $bluea;
+      background-color: $blue;
       background-image: url('../assets/icon/check.white.svg');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: 15px;
-      border: 2px solid $bluea;
+      border: 2px solid $blue;
     }
     &:focus+label:before {
-      /*border: 2px solid $bluea;*/
+      /*border: 2px solid $blue;*/
       box-shadow: $box-shadow-custom-7;
     }
     &:checked:disabled+label:before {
@@ -302,7 +302,7 @@ fieldset.unstyle { border:0; padding:0 }
 
   .parent-checkbox {
     & > input[type="checkbox"][aria-checked="mixed"] + label:before {
-      background-color: $bluea;
+      background-color: $blue;
       background-image: url('../assets/icon/dash.white.svg');
     }
     & > input[type="checkbox"][aria-checked="false"] + label:before {
@@ -310,7 +310,7 @@ fieldset.unstyle { border:0; padding:0 }
         background-image: none;
     }
     & > input[type="checkbox"][aria-checked="true"] + label:before {
-        background-color: $bluea;
+        background-color: $blue;
         background-image: url('../assets/icon/check.white.svg');
     }
   }
@@ -324,7 +324,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked+label:before {
       background-color: $white;
-      border: 6px solid $bluea;
+      border: 6px solid $blue;
     }
     &:focus+label:before {
       background-color: transparent;
@@ -332,7 +332,7 @@ fieldset.unstyle { border:0; padding:0 }
     }
     &:checked:focus+label:before {
       background-color: $white;
-      border: 6px solid $bluea;
+      border: 6px solid $blue;
       box-shadow: $box-shadow-custom-7;
     }
 
@@ -349,7 +349,7 @@ fieldset.unstyle { border:0; padding:0 }
         padding: 4px 16px;
         font-family: 'heebo-bold';
         font-size: rem-calc(14);
-        color: $bluea;
+        color: $blue;
         background-color: $white;
         width: 100%;
         border: 2px solid $granite;
@@ -364,8 +364,8 @@ fieldset.unstyle { border:0; padding:0 }
       &:hover+label,
       &:checked+label {
         color: $white;
-        background-color: $bluea;
-        border: 2px $bluea solid;
+        background-color: $blue;
+        border: 2px $blue solid;
       }
       &:checked:focus+label {
         border: 2px $cerulean solid;
@@ -448,7 +448,7 @@ fieldset.unstyle { border:0; padding:0 }
         width: 24px;
         height: 24px;
         border-radius: 0 0 0 4px;
-        background-image: url('../assets/icon/chevron-down.bluea.svg');
+        background-image: url('../assets/icon/chevron-down.blue.svg');
         background-repeat: no-repeat;
         background-color: #68bbe8;
         background-size: 16px 16px;
@@ -470,28 +470,28 @@ fieldset.unstyle { border:0; padding:0 }
       }
     }
     &:focus {
-      background: $bluea;
-      border: 2px solid $bluea;
+      background: $blue;
+      border: 2px solid $blue;
       color: $white;
       box-shadow: 0 0 4px 3px rgba($cerulean, 0.65);
     }
 
     &:checked+label,
     &:checked:focus+label {
-      border: 2px solid $bluea;
+      border: 2px solid $blue;
       div.check {
         opacity: 1;
         visibility: visible;
-        background: $bluea url('../assets/icon/check.white.svg') 8px no-repeat;
+        background: $blue url('../assets/icon/check.white.svg') 8px no-repeat;
         background-position: center center;
         background-size: 16px;
       }
     }
     &:focus+label,
     &:checked:focus+label {
-      border: 2px solid $bluea;
+      border: 2px solid $blue;
       div.check {
-        background-color: $bluea;
+        background-color: $blue;
         display: block;
       }
     }
@@ -506,7 +506,7 @@ fieldset.unstyle { border:0; padding:0 }
 
 /*.form\:theme\:gl0b3x {
   input[type="text"].custom-1 {
-    color: $bluea;
+    color: $blue;
     width: 100%;
     height: 36px;
     white-space: nowrap;
@@ -556,7 +556,7 @@ fieldset.unstyle { border:0; padding:0 }
       flex-grow:1;
     }
     .match {
-      color:$bluea;
+      color:$blue;
     }
     &:hover,
     &.selected{
