@@ -118,8 +118,8 @@ storm_eagle.module('popover', () => {
         popover.style.top = "initial";
         popover.style.left = "0px";
       } else if (storm_eagle.client.viewport.is_lg_up()) {
-        popover.style.top = popover_trigger.offsetTop + "px";
-        popover.style.left = popover_trigger.offsetLeft + 40 + "px";
+        popover.style.top = `${popover_trigger.offsetTop}px`;
+        popover.style.left = `${popover_trigger.offsetLeft + 40}px`;
       }
     }
   };
