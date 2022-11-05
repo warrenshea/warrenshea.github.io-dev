@@ -8,7 +8,7 @@
 
             <div class="bgc:light-grey bb-slate:1px br-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
               <div class="bgc:light-grey pt:12px">
-                <h3 class="fs:28px lh:24 heebo:bold text-align:center">Required Form Fields</h3>
+                <h2 class="fs:28px lh:24 heebo:bold text-align:center">Required Form Fields</h2>
               </div>
               <div class="form:theme:gl0b3x py:8px text-align:center" data-equalize-height="buttons">
                 <button class="button:primary uppercase mr:4px mb:4px small" id="autofill-required" onclick="return storm_eagle.form_validation_example.required_autofill();">Autofill</button><br>
@@ -484,10 +484,16 @@
 
             <div class="position:relative w:11 align-self:centered pt:16px pb:32px" id="" data-module="slider" data-equalize-height="slider">
               <div class="text-align:center">
-                <input type="text" class="br:4px b-grey:1px p:4px text-align:center fw:bold" style="width:60px" id="slider-value-required" value="100" disabled="">
+                <label for="slider-inputbox-value-required">
+                  <span class="description">Slider Example: </span>
+                </label>
+                <input type="text" class="br:4px b-grey:1px p:4px text-align:center fw:bold" style="width:60px" id="slider-inputbox-value-required" value="100" disabled="">
               </div>
               <div class="form:theme:gl0b3x" data-module="slider.input-container">
-                <input data-module="slider.input" onInput="document.getElementById('slider-value-required').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
+                <label class="sr-only" for="slide-track-required">
+                  <span class="description">Slider</span>
+                </label>
+                <input id="slide-track-required" data-module="slider.input" onInput="document.getElementById('slider-value-required').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
                 <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
               </div>
               <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>100</li></ul>
@@ -499,7 +505,7 @@
 
             <div class="bgc:light-grey bb-slate:1px bl-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id="">
               <div class="bgc:light-grey pt:12px">
-                <h3 class="fs:28px lh:24 heebo:bold text-align:center">Optional Form Fields</h3>
+                <h2 class="fs:28px lh:24 heebo:bold text-align:center">Optional Form Fields</h2>
               </div>
               <div class="form:theme:gl0b3x py:8px text-align:center" data-equalize-height="buttons">
                 <button class="button:primary uppercase mr:4px mb:4px small" onclick="return storm_eagle.form_validation_example.optional_autofill();">Autofill</button>
