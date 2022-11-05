@@ -7,11 +7,12 @@
                 "title": "warrenshea.github.io Sandbox and Code Examples",
                 "urlEn": "/",
                 "urlCanonical": "/",
-                "metaPageKeywords": "",
-                "metaPageDescription": ""
+                "metaPageKeywords": "Web Developer, HTML, HTML5, CSS, CSS3, JavaScript, React",
+                "metaPageDescription": "A portfolio with code examples and notes made by and for Warren Shea."
             },
             "stylesheets": [
-                "/stylesheets/core.css"
+                "/stylesheets/core.css",
+                "/stylesheets/home.css"
             ],            
             "scripts": []
         }
