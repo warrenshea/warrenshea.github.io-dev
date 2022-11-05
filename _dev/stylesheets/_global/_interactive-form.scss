@@ -178,15 +178,19 @@ fieldset.unstyle { border:0; padding:0 }
     list-style: none;
     padding-left:0;
     color: $granite;
-    font-family: 'heebo';
     font-size: rem-calc(14);
     li {
+      display:flex;
+      align-items:center;
       line-height: 24px;
-      padding: 4px 6px 4px 32px;
+      padding: 2px 6px 2px 32px;
       background-image: url(../assets/icon/times.negative.svg);
       background-repeat: no-repeat;
       background-position: top 2px left 2px;
       background-size: 24px 24px;
+      > span {
+        display:flex;
+      }
       &.pass {
         background-image: url(../assets/icon/check.positive.svg);
       }
