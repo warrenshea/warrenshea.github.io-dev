@@ -1,58 +1,7 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-    <style>
-      .description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); }
-      .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); }
-      .html-css-js { background: linear-gradient(105deg,
-        #e45028 0, #e45028 84%,
-        #0873b9 84.5%, #0873b9 87.5%, #28a9e0 87.5%, #28a9e0 88%,
-        #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
-        #f1662b 92.5%, #f1662b 100%); }
-      .html-css { background: linear-gradient(105deg,
-        #e45028 0, #e45028 88%,
-        #0873b9 88.5%, #0873b9 91.5%, #28a9e0 91.5%, #28a9e0 92%,
-        #f1662b 92.5%, #f1662b 100%); }
-      .html-js { background: linear-gradient(105deg,
-        #e45028 0, #e45028 88%,
-        #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
-        #f1662b 92.5%, #f1662b 100%); }
-      .js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 92%, #e6c61d 92.5%, #e6c61d 100%); }
-      .html { background: linear-gradient(105deg, #e45028 0, #e45028 92%, #f1662b 92.5%, #f1662b 100%); }
-      .css { background: linear-gradient(105deg, #0873b9 0, #0873b9 92%, #28a9e0 92.5%, #28a9e0 100%); }
-      .angular { background: linear-gradient(105deg, #b92933 0, #b92933 92%, #e62a39 92.5%, #e62a39 100%); }
-      .react { background: linear-gradient(105deg, #222 0, #222 92%, #61dafb 92.5%, #61dafb 100%); }
-      .harpjs { background: linear-gradient(105deg, #6b919e 0, #6b919e 92%, #81586c 92.5%, #81586c 100%); }
-      .python { background: linear-gradient(105deg, #306998 0, #306998 92%, #ffd43b 92.5%, #ffd43b 100%); }
-      .sql { background: linear-gradient(105deg, #2687cf 0, #2687cf 92%, #b8d432 92.5%, #b8d432 100%); }
-      .regex { background: linear-gradient(105deg, #2a007c 0, #2a007c 92%, #fd5900 92.5%, #fd5900 100%); }
-      .markdown { background: linear-gradient(105deg, #606870 0, #606870 92%, #ddd 92.5%, #ddd 100%); }
-      .sublime { background: linear-gradient(105deg, #4b4b4b 0, #4b4b4b 92%, #ff9800 92.5%, #ff9800 100%); }
-      .excel { background: linear-gradient(105deg, #217346 0, #217346 92%, #fff 92.5%, #fff 100%); }
-      .es6 { background: linear-gradient(105deg, #f6d854 0, #f6d854 92%, #323230 92.5%, #323230 100%); }
-      .git { background: linear-gradient(105deg, #f54d27 0, #f54d27 92%, #efefe7 92.5%, #efefe7 100%); }
-      .a11y { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .power-of-habit { background: linear-gradient(105deg, #c52641 0, #c52641 92%, #f8e838 92.5%, #f8e838 100%); }
-      .magic-of-tidying-up { background: linear-gradient(105deg, #40b7b6 0, #40b7b6 92%, #a61407 92.5%, #a61407 100%); }
-      .design-of-everyday-things { background: linear-gradient(105deg, #91301f 0, #91301f 92%, #fedf13 92.5%, #fedf13 100%); }
-      .smashing-magazine { background: linear-gradient(105deg, #d33a2c 0, #d33a2c 92%, #ddd 92.5%, #ddd 100%); }
-      .css-mastery { background: linear-gradient(105deg, #006b33 0, #006b33 92%, #f9ea53 92.5%, #f9ea53 100%); }
-      .eric-meyer-on-css { background: linear-gradient(105deg, #045da2 0, #045da2 92%, #a04d6f 92.5%, #a04d6f 100%); }
-      .javascript-design-patterns { background: linear-gradient(105deg, #00a8a8 0, #00a8a8 92%, #fff 92.5%, #fff 100%); }
-      .udacity { background: linear-gradient(105deg, #017a9b 0, #017a9b 92%, #02b3e4 92.5%, #02b3e4 100%); }
-      .ryerson { background: linear-gradient(105deg, #004c9b 0, #004c9b 92%, #ffdc00 92.5%, #ffdc00 100%); }
-      .command-prompt{ background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .personal-brand { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .management { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .image-optimization { background: linear-gradient(105deg, #48b6db 0, #48b6db 92%, #fff 92.5%, #fff 100%); }
-      .seven-habits { background: linear-gradient(105deg, #144f87 0, #144f87 92%, #fff 92.5%, #fff 100%); }
-      .mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 92%, #035ba2 92.5%, #035ba2 100%); }
-      .design-systems-handbook { background: linear-gradient(105deg, #098c58 0, #098c58 92%, #58b38f 92.5%, #58b38f 100%); }
-      .clean-code { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .the-clean-coder { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .clean-architecture { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-      .javascript-the-good-parts { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-    </style>
 
-    <main class="w:100% bgc:light-grey" role="main">
+    <header class="w:100% bgc:light-grey">
+      <a href="#skip-nav" class="skip-nav" aria-label="Skip navigation">Skip navigation</a>
       <div class="bgc:ultramarine pt:16px pb:24px">
         <h1 class="display:flex play:bold fs:40px color:white align:center">Warren Shea</h1>
         <h2 class="display:flex play:bold fs:24px color:white align:center">warrenshea.github.io</h2>
@@ -60,19 +9,21 @@
       <section class="mw:1200px align-self:centered">
         <nav><ul class="display:flex align:center unstyle-pl:0 pt:16px">
           <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('projects-code-examples').scrollIntoView();">Projects and Code Examples</a></li>
-          <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('zero-system').scrollIntoView();">ZERO System</a></li>
           <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('boilerplates').scrollIntoView();">Boilerplates</a></li>
           <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('general-notes').scrollIntoView();">General Notes</a></li>
           <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('book-course-notes').scrollIntoView();">Book + Course Notes</a></li>
         </ul></nav>
       </section>
+      <span id="skip-nav" class="sr-only">Navigation Skipped</a>
+    </header>
+    <main class="w:100% bgc:light-grey" role="main">
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:48px">
         <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="projects-code-examples">Projects and Code Examples</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html-css-js" style="height:70px;">
+              <div class="heading position:relative html-css-js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Glitch</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -84,7 +35,7 @@
           </li>
            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html-css-js" style="height:70px;">
+              <div class="heading position:relative html-css-js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Icon Library</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -96,125 +47,28 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Cross window communication</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>Send messages between a window and its popup, built under the Zero System framework.</p></div>
-                <div><a class="anchor:primary" href="/examples/communicating-windows/" rel="noopener" target="_blank" aria-label="View an example of the communicating code between a window and another window">Example and code</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-windows/index.ejs" rel="noopener" target="_blank">Container HTML & JS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-windows/child/index.ejs" rel="noopener" target="_blank">Child HTML & JS</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>iframe communication</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>Send messages between a window and its embedded iframe, built under the Zero System framework.</p></div>
-                <div><a class="anchor:primary" href="/examples/communicating-iframe/" rel="noopener" target="_blank" aria-label="View an example of the communicating code between a window and its embedded iframe">Example</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-iframe/index.ejs" rel="noopener" target="_blank">Container HTML & JS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-iframe/inner-content/index.ejs" rel="noopener" target="_blank">Inner HTML & JS</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
+              <div class="heading position:relative js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Calendar Event Builder</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
                 <div class="pb:16px"><p>Using a form, helps build a Google Calendar Event, an iCalendar Event, an Outlook Event, and a Yahoo Event</p></div>
                 <div><a class="anchor:primary" href="/examples/calendar-event-builder/" rel="noopener" target="_blank">Example</a></div>
                 <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.calendar-event-builder.js" rel="noopener" target="_blank">JavaScript</a></div>
-                <!-- <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/modal/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/_global/_module.modal.scss" rel="noopener" target="_blank">SASS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.modal.js" rel="noopener" target="_blank">JavaScript</a></div> -->
               </div>
             </div>
           </li>
-<!--           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Navigation</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <p>A simple sticky navigation.</p>
-                <div><p>0 WCAG 2.0 A and AA errors.</p></div>
-                <div><a href="/examples/sticky-navigation-flex-table/" rel="noopener" target="_blank">Example</a></div>
-              </div>
-            </div>
-          </li> -->
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern</em></h3>
+              <div class="heading position:relative js">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern: Revealing Module</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <p>An example of a JavaScript framework structure.</p>
+                <p>An example implementation of a JavaScript Design Pattern: The Revealing Module Pattern.</p>
                 <div class="pb:16px"><p>Allows modules to be namespaced with simple initialize and document.ready() functions.</p></div>
-                <div><a class="anchor:primary" href="https://codepen.io/warrenshea/pen/mExbdd" rel="noopener" target="_blank">See the code on CodePen</a></div>
+                <div><a class="anchor:primary" href="https://codepen.io/warrenshea/pen/mExbdd" rel="noopener" target="_blank">Open CodePen</a></div>
               </div>
             </div>
           </li>
-<!--           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <p>An example of a JavaScript framework structure.</p>
-                <div><p>Allows modules to be namespaced and extended.</p></div>
-              </div>
-            </div>
-          </li> -->
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html-css-js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Aside</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>An example of a container div sticky/fixed to part of the page as the user scrolls. Uses Waypoints.</p></div>
-                <div><a class="anchor:primary" href="/examples/sticky-aside/" rel="noopener" target="_blank">Example</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/responsive-2d-table/index.ejs" rel="noopener" target="_blank">HTML</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Responsive 2D table</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>Built with Flexbox</p></div>
-                <div><a class="anchor:primary" href="/examples/responsive-2d-table/" rel="noopener" target="_blank">Example</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/sticky-aside/index.ejs" rel="noopener" target="_blank">HTML</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html-js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Show more</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>Hide part of a container, only to be displayed with a show more link</p></div>
-                <div><a class="anchor:primary" href="/examples/show-more/" rel="noopener" target="_blank">Example</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/show-more/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.show-more.js" rel="noopener" target="_blank">JavaScript</a></div>
-              </div>
-            </div>
-          </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
-            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html-js" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Autocomplete</em></h3>
-              </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                <div class="pb:16px"><p>An example of an accessible autocomplete form and dropdown</p></div>
-                <div><a class="anchor:primary" href="/examples/autocomplete/" rel="noopener" target="_blank">Example</a></div>
-                <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/autocomplete/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.autocomplete.js" rel="noopener" target="_blank">JavaScript</a></div>
-              </div>
-            </div>
-          </li>
-
         </ul>
       </section>
 
@@ -225,7 +79,7 @@
           <ul class="row unstyle sm+:pl:0 xl+:px:32px">
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-css-js" style="height:70px;">
+                <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>ZERO System</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -240,7 +94,7 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative css" style="height:70px;">
+                <div class="heading position:relative css">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.css</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -252,11 +106,11 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative js" style="height:70px;">
+                <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.js</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                  <div class="pb:16px"><p>This Module JavaScript Design Pattern, namespaced storm_eagle, is a built under the Zero System framework.</p></div>
+                  <div class="pb:16px"><p>This Revealing Module JavaScript Design Pattern, namespaced storm_eagle, is the foundation of the Zero System framework.</p></div>
                   <div><a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (source) code">Code (source)</a></div>
                   <div><a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io/blob/master/scripts/core.js" rel="noopener" target="_blank" aria-label="View the core.js (compiled) code">Code (compiled)</a></div>
                 </div>
@@ -264,31 +118,102 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative js" style="height:70px;">
+                <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Form Validation</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                  <p>A simple form validation.</p>
-                  <div class="pb:16px"><p>0 WCAG 2.0 A and AA errors.</p></div>
+                  <div>Form input examples and validation. 0 WCAG 2.0 A and AA errors.</div>
                   <div><a class="anchor:primary" href="/examples/form-validation/" rel="noopener" target="_blank">Example</a></div>
                   <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.form-validation.js" rel="noopener" target="_blank">JavaScript</a></div>
                 </div>
               </div>
             </li>
-           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative js" style="height:70px;">
+                <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Height Equalizer</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                  <div class="pb:16px"><p>A height equalizer function built under the Zero System framework.</p></div>
+                  <div class="pb:16px"><p>A height equalizer function.</p></div>
                   <div><a class="anchor:primary" href="/examples/height-equalizer/" rel="noopener" target="_blank" aria-label="View an example of the height equalizer code and code in action">Example and code</a></div>
                 </div>
               </div>
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-css-js" style="height:70px;">
+                <div class="heading position:relative js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Cross window communication</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>Send messages between a window and its popup.</p></div>
+                  <div><a class="anchor:primary" href="/examples/communicating-windows/" rel="noopener" target="_blank" aria-label="View an example of the communicating code between a window and another window">Example and code</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-windows/index.ejs" rel="noopener" target="_blank">Container HTML & JS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-windows/child/index.ejs" rel="noopener" target="_blank">Child HTML & JS</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>iframe communication</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>Send messages between a window and its embedded iframe.</p></div>
+                  <div><a class="anchor:primary" href="/examples/communicating-iframe/" rel="noopener" target="_blank" aria-label="View an example of the communicating code between a window and its embedded iframe">Example</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-iframe/index.ejs" rel="noopener" target="_blank">Container HTML & JS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/communicating-iframe/inner-content/index.ejs" rel="noopener" target="_blank">Inner HTML & JS</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative html-css-js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Aside</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>An example of a container div sticky/fixed to part of the page as the user scrolls. Uses Waypoints.</p></div>
+                  <div><a class="anchor:primary" href="/examples/sticky-aside/" rel="noopener" target="_blank">Example</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/sticky-aside/index.ejs" rel="noopener" target="_blank">HTML</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative html">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Responsive 2D table</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>Built with Flexbox.</p></div>
+                  <div><a class="anchor:primary" href="/examples/responsive-2d-table/" rel="noopener" target="_blank">Example</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/responsive-2d-table/index.ejs" rel="noopener" target="_blank">HTML</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative html-js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Show more</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>Hide part of a container, only to be displayed with a show more link.</p></div>
+                  <div><a class="anchor:primary" href="/examples/show-more/" rel="noopener" target="_blank">Example</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/show-more/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.show-more.js" rel="noopener" target="_blank">JavaScript</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative html-js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Autocomplete</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>An example of an accessible autocomplete form and dropdown.</p></div>
+                  <div><a class="anchor:primary" href="/examples/autocomplete/" rel="noopener" target="_blank">Example</a></div>
+                  <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/autocomplete/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.autocomplete.js" rel="noopener" target="_blank">JavaScript</a></div>
+                </div>
+              </div>
+            </li>
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Carousel</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -298,9 +223,9 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+<!--             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-js" style="height:70px;">
+                <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Accordion</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -309,14 +234,14 @@
                   <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/accordion/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.accordion.js" rel="noopener" target="_blank">JavaScript</a></div>
                 </div>
               </div>
-            </li>
+            </li> -->
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-css-js" style="height:70px;">
+                <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Popover</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                  <div class="pb:16px"><p>A custom built dialog/modal component</em></p></div>
+                  <div class="pb:16px"><p>A custom built dialog/modal component.</em></p></div>
                   <div><a class="anchor:primary" href="/examples/popover/" rel="noopener" target="_blank">Example</a></div>
                   <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/popover/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/_global/_module.popover.scss" rel="noopener" target="_blank">SASS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.popover.js" rel="noopener" target="_blank">JavaScript</a></div>
                 </div>
@@ -324,11 +249,11 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-css-js" style="height:70px;">
+                <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Modal</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
-                  <div class="pb:16px"><p>A custom built dialog/modal component</em></p></div>
+                  <div class="pb:16px"><p>A custom built dialog/modal component.</em></p></div>
                   <div><a class="anchor:primary" href="/examples/modal/" rel="noopener" target="_blank">Example</a></div>
                   <div>Code: <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/examples/modal/index.ejs" rel="noopener" target="_blank">HTML</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/stylesheets/_global/_module.modal.scss" rel="noopener" target="_blank">SASS</a> / <a class="anchor:primary" href="https://github.com/warrenshea/warrenshea.github.io-dev/blob/master/_dev/scripts/module.modal.js" rel="noopener" target="_blank">JavaScript</a></div>
                 </div>
@@ -336,7 +261,7 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-css" style="height:70px;">
+                <div class="heading position:relative html-css">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HTML5 &lt;dialog&gt;</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -348,7 +273,7 @@
             </li>
             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-                <div class="position:relative html-js" style="height:70px;">
+                <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Waypoint</em></h3>
                 </div>
                 <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -367,7 +292,7 @@
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative harpjs" style="height:70px;">
+              <div class="heading position:relative harpjs">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HarpJS</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -377,8 +302,8 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative react" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: React</em></h3>
+              <div class="heading position:relative html-css-js">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: 1 app done 4 ways: HTML/CSS/JS</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
 
@@ -387,8 +312,28 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative angular" style="height:70px;">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: Angular</em></h3>
+              <div class="heading position:relative react">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: 1 app done 4 ways: React</em></h3>
+              </div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+
+              </div>
+            </div>
+          </li>
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+              <div class="heading position:relative angular">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: 1 app done 4 ways: Angular</em></h3>
+              </div>
+              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+
+              </div>
+            </div>
+          </li>
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+              <div class="heading position:relative vue">
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>TBD: 1 app done 4 ways: Vue</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
 
@@ -403,7 +348,7 @@
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative html" style="height:70px;">
+              <div class="heading position:relative html">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HTML</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -413,7 +358,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative css" style="height:70px;">
+              <div class="heading position:relative css">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS (and Sass)</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -423,7 +368,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative js" style="height:70px;">
+              <div class="heading position:relative js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -433,7 +378,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative react" style="height:70px;">
+              <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -443,7 +388,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative a11y" style="height:70px;">
+              <div class="heading position:relative a11y">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>a11y</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -453,7 +398,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative a11y" style="height:70px;">
+              <div class="heading position:relative a11y">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Performance</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -463,7 +408,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative python" style="height:70px;">
+              <div class="heading position:relative python">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Python</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -473,7 +418,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative regex" style="height:70px;">
+              <div class="heading position:relative regex">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Regex</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -483,7 +428,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative sql" style="height:70px;">
+              <div class="heading position:relative sql">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>SQL</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -493,7 +438,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative git" style="height:70px;">
+              <div class="heading position:relative git">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>git</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -503,7 +448,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative sublime" style="height:70px;">
+              <div class="heading position:relative sublime">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sublime Text Notes</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="general-description">
@@ -513,7 +458,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative excel" style="height:70px;">
+              <div class="heading position:relative excel">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Excel</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="general-description">
@@ -523,7 +468,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative command-prompt" style="height:70px;">
+              <div class="heading position:relative command-prompt">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Command Prompt / Terminal</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -533,7 +478,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative personal-brand" style="height:70px;">
+              <div class="heading position:relative personal-brand">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Personal Brand + NPS</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -543,7 +488,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative management" style="height:70px;">
+              <div class="heading position:relative management">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Management</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -559,7 +504,7 @@
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative react" style="height:70px;">
+              <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Advanced React</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -571,7 +516,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative react" style="height:70px;">
+              <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React for Beginners</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -583,7 +528,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative design-systems-handbook" style="height:70px;">
+              <div class="heading position:relative design-systems-handbook">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Design Systems Handbook</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -595,7 +540,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative udacity" style="height:70px;">
+              <div class="heading position:relative udacity">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -607,7 +552,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative ryerson" style="height:70px;">
+              <div class="heading position:relative ryerson">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility for Developers</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -620,7 +565,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative react" style="height:70px;">
+              <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Winter 2018 Full Stack Masterclass</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -631,7 +576,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative es6" style="height:70px;">
+              <div class="heading position:relative es6">
                 <h3 class="fs:24px play:normal color:black p:8px pr:16px lh:28 position:absolute bottom:0"><em>ES6 for Everyone</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -643,7 +588,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative markdown" style="height:70px;">
+              <div class="heading position:relative markdown">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Mastering Markdown</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -655,7 +600,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative sublime" style="height:70px;">
+              <div class="heading position:relative sublime">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sublime Text Power User</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -667,7 +612,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative javascript-design-patterns" style="height:70px;">
+              <div class="heading position:relative javascript-design-patterns">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Patterns</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -678,7 +623,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative power-of-habit" style="height:70px;">
+              <div class="heading position:relative power-of-habit">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Power of Habit</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -690,7 +635,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative magic-of-tidying-up" style="height:70px;">
+              <div class="heading position:relative magic-of-tidying-up">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Life-Changing Magic of Tidying Up</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -702,7 +647,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative design-of-everyday-things" style="height:70px;">
+              <div class="heading position:relative design-of-everyday-things">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Design of Everyday Things</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -714,7 +659,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative smashing-magazine" style="height:70px;">
+              <div class="heading position:relative smashing-magazine">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #2</em></h3>
               </div>
               <div><div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -725,7 +670,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative smashing-magazine" style="height:70px;">
+              <div class="heading position:relative smashing-magazine">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #1</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -736,7 +681,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative eric-meyer-on-css" style="height:70px;">
+              <div class="heading position:relative eric-meyer-on-css">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Eric Meyer on CSS</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -747,7 +692,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative css-mastery" style="height:70px;">
+              <div class="heading position:relative css-mastery">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS Mastery</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
@@ -765,7 +710,7 @@
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative image-optimization" style="height:70px;">
+              <div class="heading position:relative image-optimization">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Image Optimization</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -776,7 +721,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative clean-code" style="height:70px;">
+              <div class="heading position:relative clean-code">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Code</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -787,7 +732,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative the-clean-coder" style="height:70px;">
+              <div class="heading position:relative the-clean-coder">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The Clean Coder</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -798,7 +743,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative clean-architecture" style="height:70px;">
+              <div class="heading position:relative clean-architecture">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Architecture</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -809,7 +754,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative javascript-the-good-parts" style="height:70px;">
+              <div class="heading position:relative javascript-the-good-parts">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: JavaScript: The Good Parts</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -820,7 +765,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative seven-habits" style="height:70px;">
+              <div class="heading position:relative seven-habits">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The 7 Habits of Highly Effective People</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
@@ -831,7 +776,7 @@
           </li>
           <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
-              <div class="position:relative mindset" style="height:70px;">
+              <div class="heading position:relative mindset">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Mindset: The New Psychology of Success</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
