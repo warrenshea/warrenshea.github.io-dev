@@ -1,7 +1,7 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
     <header class="w:100% bgc:light-grey">
-      <a href="#skip-nav" class="skip-nav" aria-label="Skip navigation">Skip navigation</a>
+      <a href="#skip-nav" class="show-on-focus color:white" aria-label="Skip navigation">Skip navigation</a>
       <div class="bgc:ultramarine pt:16px pb:24px">
         <h1 class="display:flex play:bold fs:40px color:white align:center">Warren Shea</h1>
         <h2 class="display:flex play:bold fs:24px color:white align:center">warrenshea.github.io</h2>
@@ -13,14 +13,19 @@
           <li class="px:16px"><a class="anchor:primary" href="javascript:document.getElementById('book-course-notes').scrollIntoView();">Book + Course Notes</a></li>
         </ul></nav>
       </section>
-      <span id="skip-nav" class="sr-only">Navigation Skipped</a>
+      <span id="skip-nav" class="show-for-screen-reader-only">Navigation Skipped</a>
     </header>
     <main class="w:100% bgc:light-grey" role="main">
+<!--
+      <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:48px">
+        <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="projects-code-examples">About Me</h2>
+      </section> -->
+
 
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:48px">
         <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="projects-code-examples">Projects and Code Examples</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative html-css-js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Glitch</em></h3>
@@ -32,7 +37,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative html-css-js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Icon Library</em></h3>
@@ -44,7 +49,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Pattern: Revealing Module</em></h3>
@@ -55,17 +60,18 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative harpjs">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HarpJS</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                <div class="pb:16px">My static site generator/set up of choice before the current SPA frameworks.</div>
                 <div><a class="anchor:primary" href="https://github.com/warrenshea/boilerplate-harpjs-gulp-browsersync/" rel="noopener" target="_blank" aria-label="Review HarpJS Boilerplate code, opens in a new tab">HarpJS v0.34.0 / Gulp v4 / Node v12</a></div>
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative js">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Calendar Event Builder</em></h3>
@@ -85,7 +91,7 @@
           <h2 class="xl+:color:white fs:32px play:bold sm+:pl:8px xl+:pl:40px pb:16px" id="zero-system">ZERO System - A Website Builder</h2>
           <p class="xl+:color:white fs:16px lh:24 sm+:px:8px xl+:px:40px pb:32px">This project is a culimination of all the skills I've learned from a Front-end perspective. I've built a number of components as consistently, performant, and accessible as possible, keeping in mind the goal is always to move this to a CMS based system that should allow any non-technical user to build webpages.</p>
           <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>ZERO System</em></h3>
@@ -100,7 +106,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative css">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.css</em></h3>
@@ -112,7 +118,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>core.js</em></h3>
@@ -124,7 +130,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Form Validation</em></h3>
@@ -136,7 +142,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Height Equalizer</em></h3>
@@ -147,7 +153,19 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
+              <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
+                <div class="heading position:relative js">
+                  <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Responsive DOM Manipulator</em></h3>
+                </div>
+                <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="description">
+                  <div class="pb:16px"><p>A way of moving DOM elements around at responsive breakpoints for a11y/tabbing order</p></div>
+                  <div><a class="anchor:primary" href="/examples/responsive-dom-manipulator/" rel="noopener" target="_blank" aria-label="View an example of the responsive dom manipulator">Example and code</a></div>
+                </div>
+              </div>
+            </li>
+
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Cross window communication</em></h3>
@@ -159,7 +177,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>iframe communication</em></h3>
@@ -171,7 +189,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sticky Aside</em></h3>
@@ -183,7 +201,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Responsive 2D table</em></h3>
@@ -195,7 +213,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Show more</em></h3>
@@ -207,7 +225,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Autocomplete</em></h3>
@@ -219,7 +237,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Carousel</em></h3>
@@ -231,7 +249,7 @@
                 </div>
               </div>
             </li>
-<!--             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+<!--             <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Accordion</em></h3>
@@ -243,7 +261,7 @@
                 </div>
               </div>
             </li> -->
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Popover</em></h3>
@@ -255,7 +273,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Modal</em></h3>
@@ -267,7 +285,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-css">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HTML5 &lt;dialog&gt;</em></h3>
@@ -279,7 +297,7 @@
                 </div>
               </div>
             </li>
-            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+            <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
               <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
                 <div class="heading position:relative html-js">
                   <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Waypoint</em></h3>
@@ -298,7 +316,7 @@
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:16px">
         <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="general-notes">General Notes</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative html">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>HTML</em></h3>
@@ -308,7 +326,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative css">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS (and Sass)</em></h3>
@@ -318,17 +336,17 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative js">
-                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript</em></h3>
+                <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript (and TypeScript)</em></h3>
               </div>
               <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a class="anchor:primary" href="/notes/dev.javascript.html" rel="noopener" target="_blank" aria-label="Review Warren's JavaScript Notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React</em></h3>
@@ -338,7 +356,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative a11y">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>a11y</em></h3>
@@ -348,7 +366,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative a11y">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Performance</em></h3>
@@ -358,7 +376,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative python">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Python</em></h3>
@@ -368,7 +386,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative regex">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Regex</em></h3>
@@ -378,7 +396,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative sql">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>SQL</em></h3>
@@ -388,7 +406,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative git">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>git</em></h3>
@@ -398,27 +416,27 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative sublime">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sublime Text Notes</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a class="anchor:primary" href="/notes/general.sublime-text.html" rel="noopener" target="_blank" aria-label="Review Warren's Sublime Text notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative excel">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Excel</em></h3>
               </div>
-              <div class="p:8px pb:16px lh:24 description-line" data-equalize-height="general-description">
+              <div class="p:8px pb:16px lh:24 description-notes-line" data-equalize-height="general-description">
                 <div><a class="anchor:primary" href="/notes/general.excel.html" rel="noopener" target="_blank" aria-label="Review Warren's Excel notes, opens in a new tab">Notes</a></div>
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative command-prompt">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Command Prompt / Terminal</em></h3>
@@ -428,7 +446,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative personal-brand">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Personal Brand + NPS</em></h3>
@@ -438,7 +456,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative management">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Management</em></h3>
@@ -454,7 +472,7 @@
       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:16px">
         <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px" id="book-course-notes">Book + Course Notes</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Advanced React</em></h3>
@@ -466,7 +484,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>React for Beginners</em></h3>
@@ -478,7 +496,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative design-systems-handbook">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Design Systems Handbook</em></h3>
@@ -490,7 +508,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative udacity">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility</em></h3>
@@ -502,7 +520,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative ryerson">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Web Accessibility for Developers</em></h3>
@@ -515,7 +533,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative react">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Winter 2018 Full Stack Masterclass</em></h3>
@@ -526,7 +544,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative es6">
                 <h3 class="fs:24px play:normal color:black p:8px pr:16px lh:28 position:absolute bottom:0"><em>ES6 for Everyone</em></h3>
@@ -538,7 +556,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative markdown">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Mastering Markdown</em></h3>
@@ -550,7 +568,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative sublime">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Sublime Text Power User</em></h3>
@@ -562,7 +580,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative javascript-design-patterns">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>JavaScript Design Patterns</em></h3>
@@ -573,7 +591,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative power-of-habit">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Power of Habit</em></h3>
@@ -585,7 +603,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative magic-of-tidying-up">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Life-Changing Magic of Tidying Up</em></h3>
@@ -597,7 +615,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative design-of-everyday-things">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>The Design of Everyday Things</em></h3>
@@ -609,7 +627,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative smashing-magazine">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #2</em></h3>
@@ -620,7 +638,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative smashing-magazine">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Smashing Magazine Book #1</em></h3>
@@ -631,7 +649,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative eric-meyer-on-css">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>Eric Meyer on CSS</em></h3>
@@ -642,7 +660,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative css-mastery">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>CSS Mastery</em></h3>
@@ -660,7 +678,7 @@
 <!--       <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pb:16px">
         <h2 class="fs:32px play:bold sm+:pl:8px xl+:pl:40px pt:48px pb:16px">Book + Course Notes [In progress or @TODO]</h2>
         <ul class="row unstyle sm+:pl:0 xl+:px:32px">
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative image-optimization">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Image Optimization</em></h3>
@@ -671,7 +689,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative clean-code">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Code</em></h3>
@@ -682,7 +700,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative the-clean-coder">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The Clean Coder</em></h3>
@@ -693,7 +711,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative clean-architecture">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Clean Architecture</em></h3>
@@ -704,7 +722,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative javascript-the-good-parts">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: JavaScript: The Good Parts</em></h3>
@@ -715,7 +733,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative seven-habits">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: The 7 Habits of Highly Effective People</em></h3>
@@ -726,7 +744,7 @@
               </div>
             </div>
           </li>
-          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px">
+          <li class="sm+:w:12 md+:w:6 lg+:w:4 sm+:px:8px pb:16px opacity:0%">
             <div class="bgc:white brbr:8px brbl:8px overflow:hidden box-shadow:custom-4">
               <div class="heading position:relative mindset">
                 <h3 class="fs:24px play:normal color:white p:8px pr:24px lh:28 position:absolute bottom:0"><em>@TODO: Mindset: The New Psychology of Success</em></h3>
