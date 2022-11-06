@@ -35,18 +35,6 @@ a {
   }
 }
 
-.sr-only {
-  @include element-invisible;
-}
-
-.skip-nav {
-  @include element-invisible;
-  &:focus {
-    background: white;
-    @include element-invisible-off;
-  }
-}
-
 h1,
 h2,
 h3,
