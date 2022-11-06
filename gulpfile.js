@@ -74,6 +74,18 @@ const clean_notes = (done) => {
   }
 }
 
+const clean_asset_library= (done) => {
+  if (process.env.NODE_ENV === 'production') {
+    return del([
+      '_dist/examples/font-awesome-5-icon-library/svgs*',
+      '_dist/assets/icon/light*',
+      '_dist/assets/icon/solid*'
+    ]);
+  } else {
+    done();
+  }
+}
+
 const js = (done) => {
   if (process.env.NODE_ENV === 'development') {
     return gulp.src(['./_dev/scripts/**/*.js'])
@@ -138,6 +150,7 @@ const build = (done) => {
     css();
     js();
     clean_notes();
+    clean_asset_library();
     console.log("Build completed!");
   });
   done();
