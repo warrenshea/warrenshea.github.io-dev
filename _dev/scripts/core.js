@@ -809,6 +809,63 @@ storm_eagle.module('equalize_heights', () => {
   };
 });
 
+storm_eagle.module("responsive_dom_manipulator", () => {
+  "use strict";
+
+  let self;
+  let array_of_keys = [];
+
+  return {
+    initialize: () => {
+      self = storm_eagle["responsive_dom_manipulator"];
+      self.resize_listener();
+    },
+    ready: () => {
+      self.force_resize();
+    },
+    /*
+     * Re-evaluate moving the dom when the page loads or is resized
+     */
+    resize_listener: () => {
+      function force_resize() {
+        return self.force_resize();
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
+    },
+    /*
+     * Check for any new items to equalize, and then equalize them
+     * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
+     */
+    force_resize: () => {
+      array_of_keys = [];
+      document.querySelectorAll("[data-move]").forEach((el) => {
+        array_of_keys.push(el.dataset["move"]);
+      })
+      console.log(array_of_keys);
+      if (storm_eagle.client.viewport.is_sm_only()) {
+        document.querySelectorAll("[data-move-container-sm]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_md_only()) {
+        document.querySelectorAll("[data-move-container-md]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_lg_only()) {
+        document.querySelectorAll("[data-move-container-lg]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_xl_up()) {
+        document.querySelectorAll("[data-move-container-xl]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+    },
+  };
+});
+
 /**
  * Disables the telephone number link from calling in medium and up
  */
