@@ -14,7 +14,9 @@
                 "/stylesheets/core.css",
                 "/stylesheets/home.css"
             ],            
-            "scripts": []
+            "scripts": [
+                "/scripts/home.js"
+            ]
         }
     }
 }
