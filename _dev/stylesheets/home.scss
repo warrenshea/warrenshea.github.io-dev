@@ -1,8 +1,7 @@
-.heading {
-  height:70px;
-}
-.description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); }
-.description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); }
+.heading { height:70px; opacity:0; transition: opacity 0.5s ease; }
+.description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); opacity:0; transition: opacity 0.5s ease; }
+.description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); opacity:0; transition: opacity 0.5s ease; }
+.opacity\:100\% { opacity:100% }
 .html-css-js { background: linear-gradient(105deg,
   #e45028 0, #e45028 84%,
   #0873b9 84.5%, #0873b9 87.5%, #28a9e0 87.5%, #28a9e0 88%,
