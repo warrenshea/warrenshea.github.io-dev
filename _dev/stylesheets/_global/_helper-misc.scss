@@ -1,4 +1,5 @@
 /* Visibility Helper Classes */
+.sr-only,
 .show-for-sr,
 .show-for-screen-reader-only, /* preferred class */
 .show-on-focus { @include element-invisible }
