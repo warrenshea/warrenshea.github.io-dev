@@ -1,0 +1,115 @@
+@import '../../../stylesheets/_config/variables-colors.scss';
+@import '../../../stylesheets/_config/variables-sizes.scss';
+@import '../../../stylesheets/_config/unit.scss';
+@import '../../../stylesheets/_config/breakpoint.scss';
+@import '../../../stylesheets/_config/mixins.scss';
+@import '../../../stylesheets/_config/media-queries.scss';
+
+section.responsive-dom-manipulator-example {
+  border: 1px solid $granite;
+
+  a {
+    border:10px solid lightgrey;
+    padding:4px;
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+    height:100%;
+    &:focus {
+      border:10px solid red;
+    }
+  }
+
+  .box-1 {
+    flex-grow: 0;
+  }
+
+  @include breakpoint(large up) {
+    .box-1{
+      justify-content: flex-start;
+      position: relative;
+    }
+    .box-6 {
+      justify-content: flex-start;
+    }
+  }
+  @include breakpoint(xlarge up) {
+    .box-6 {
+      position: initial;
+    }
+  }
+
+  .box-1 a { background:AliceBlue; }
+  .box-2 a { background:lightgreen; }
+  .box-3 a { background:yellow; }
+  .box-4 a { background:lightblue; }
+  .box-5 a { background:orange; }
+  .box-6 a { background:pink; }
+
+  .desktop-row-container {
+    width:100%;
+    display:flex;
+    justify-content: flex-end;
+    max-width:1440px;
+    margin:0 auto;
+  }
+
+  .main-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $granite;
+    position: relative;
+    @include breakpoint(large up) {
+      justify-content: flex-start;
+      border-bottom: 0;
+    }
+    @include breakpoint(xlarge up) {
+      max-width:1440px;
+      margin:0 auto;
+    }
+  }
+
+    .hamburger-icon-container {
+      width: 72px;
+      display: block;
+      cursor: pointer;
+      @include breakpoint(large up) {
+        display:none;
+      }
+      > button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        padding: 0;
+        margin: 0;
+        min-width: 40px;
+        justify-content: center;
+        display:block;
+      }
+
+    }
+
+    .mobile-menu-container-wrapper {
+      position: absolute;
+      display: flex;
+      flex-flow:column;
+      justify-content: flex-end;
+      z-index: 2;
+      right: 0;
+      width:100%;
+    }
+
+    .mobile-menu-container {
+      border-top: 1px solid $granite;
+      width: 100%;
+      background-color: #f5f6f7;
+      flex-flow:column;
+    }
+
+
+}

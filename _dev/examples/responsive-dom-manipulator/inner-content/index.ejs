@@ -1,0 +1,122 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+        <section class="responsive-dom-manipulator-example" data-equalize-height="example">
+          <div class="desktop-row-container">
+            <div class="display:flex lg=:flex-grow:0 xl=:flex-grow:1">
+              <div class="box-5" data-move-container="box-5" data-move-container-lg></div>
+              <div class="box-4 xl=:flex-grow:1" data-move-container="box-4" data-move-container-xl></div>
+              <div class="box-3" data-move-container="box-3" data-move-container-lg></div>
+              <div class="box-2" data-move-container="box-2" data-move-container-xl></div>
+            </div>
+            <div class="box-1 lg=:flex-grow:0" data-move-container="box-1" data-move-container-lg></div>
+            <div class="box-3" data-move-container="box-3" data-move-container-xl></div>
+            <div class="box-2 lg=:flex-grow:1" data-move-container="box-2" data-move-container-lg></div>
+            <div class="box-5" data-move-container="box-5" data-move-container-xl></div>
+            <div class="box-4 lg=:flex-grow:1" data-move-container="box-4" data-move-container-lg></div>
+          </div>
+          <div class="main-row">
+            <div class="px:12px display:flex align:middle heebo:bold">
+              LOGO
+            </div>
+            <div class="box-1" data-move-container="box-1" data-move-container-xl></div>
+            <div class="box-6 lg+:flex-grow:1" data-move-container="box-6" data-move-container-lg data-move-container-xl></div>
+            <div class="display:flex">
+              <div data-move-container="box-1" data-move-container-sm data-move-container-md data-move-container-xl>
+                <div class="box-1" data-move="box-1">
+                  <a class="anchor secondary" tabindex="0">
+                    <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #1</div>
+                    <div class="md=:heebo:bold white-space:nowrap">MD Anchor #1</div>
+                    <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #3</div>
+                    <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #6</div>
+                  </a>
+                </div>
+              </div>
+              <div class="hamburger-icon-container">
+                <button tabindex="-1"></button>
+                <div class="mobile-menu-container-wrapper" data-equalize-height="example2">
+                  <div class="mobile-menu-container">
+                    <div data-move-container="box-6" data-move-container-md></div>
+                    <div data-move-container="box-5" data-move-container-md></div>
+                    <div data-move-container="box-4" data-move-container-md></div>
+                    <div data-move-container="box-3" data-move-container-md></div>
+                    <div data-move-container="box-2" data-move-container-md></div>
+                    <div data-move-container="box-2" data-move-container-sm>
+                      <div class="box-2" data-move="box-2">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #2</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #6</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #4</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #2</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-3" data-move-container-sm>
+                      <div class="box-3" data-move="box-3">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #3</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #5</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #2</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #3</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-4" data-move-container-sm>
+                      <div class="box-4" data-move="box-4">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #4</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #4</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #5</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #1</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-5" data-move-container-sm>
+                      <div class="box-5" data-move="box-5">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #5</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #3</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #1</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #4</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-move-container="box-6" data-move-container-sm>
+                    <div class="box-6" data-move="box-6">
+                      <a class="anchor secondary" tabindex="0">
+                        <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #6</div>
+                        <div class="md=:heebo:bold white-space:nowrap">MD Anchor #2</div>
+                        <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #6</div>
+                        <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #5</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('communicating_with_iframe_parent', () => {
+        'use strict';
+        let self;
+
+        return {
+          initialize: () => {
+            self = storm_eagle["communicating_with_iframe_parent"];
+            self.add_message_listener();
+            self.send_height();
+          },
+          add_message_listener: () => {
+            window.addEventListener('message', event => {
+              self.send_height();
+            });
+          },
+          send_height: () => {
+            let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+            parent.postMessage(height, window.location.origin);
+          }
+        };
+      })
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

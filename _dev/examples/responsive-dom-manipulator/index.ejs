@@ -1,0 +1,208 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <main class="w:100%" role="main">
+      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
+        <h1 class="play:bold fs:40px color:slate pb:16px">Responsive DOM Manipulators</h1>
+
+        <div>
+          <h2 class="fs:32px play:bold pb:16px">About this code</h2>
+          <p class="pb:16px">Usually, HTML code order and screen reader reading and tab order follow the same, expected path: Left to right, top to bottom.</p>
+          <p class="pb:16px">Responsive CSS and Grid can visually move elements around with <span class="heebo:bold">Flex order</span>, <span class="heebo:bold">Position Absolute</span>, or <span class="heebo:bold">Floats</span>. With these visual changes, sometimes it's difficult to ensure the <span class="heebo:bold">HTML/DOM/TAB order</span> is properly reflected (without very specific JavaScript to deal with focus).</p>
+          <p class="pb:32px">The code here changes that by moving DOM elements to different spots in the DOM based on breakpoint</p>
+          <h2 class="fs:32px play:bold pb:16px">Give it a try</h2>
+          <p class="pb:32px">Try tabbing through the area at different breakpoints. You'll see <span class="heebo:bold">the tabbing order remains correct while the DOM changes significantly!</span></p>
+        </div>
+
+        <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
+
+        <div class="position:relative pb:32px xl=:show" id="" data-module="slider">
+          <div data-module="slider.input-container">
+            <input data-module="slider.input" onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
+            <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
+          </div>
+          <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
+        </div>
+
+        <h2 class="fs:32px play:bold pt:32px pb:8px">HTML</h2>
+        <div>Note: classes and empty divs omitted for simplicity</div>
+<textarea data-code-reference="prism-code-html" class="hide">
+        <section class="responsive-dom-manipulator-example" data-equalize-height="example">
+          <div class="desktop-row-container">
+            <div class="display:flex lg=:flex-grow:0 xl=:flex-grow:1">
+              <div class="box-5" data-move-container="box-5" data-move-container-lg></div>
+              <div class="box-4 xl=:flex-grow:1" data-move-container="box-4" data-move-container-xl></div>
+              <div class="box-3" data-move-container="box-3" data-move-container-lg></div>
+              <div class="box-2" data-move-container="box-2" data-move-container-xl></div>
+            </div>
+            <div class="box-1 lg=:flex-grow:0" data-move-container="box-1" data-move-container-lg></div>
+            <div class="box-3" data-move-container="box-3" data-move-container-xl></div>
+            <div class="box-2 lg=:flex-grow:1" data-move-container="box-2" data-move-container-lg></div>
+            <div class="box-5" data-move-container="box-5" data-move-container-xl></div>
+            <div class="box-4 lg=:flex-grow:1" data-move-container="box-4" data-move-container-lg></div>
+          </div>
+          <div class="main-row">
+            <div class="px:12px display:flex align:middle heebo:bold">
+              LOGO
+            </div>
+            <div class="box-1" data-move-container="box-1" data-move-container-xl></div>
+            <div class="box-6 lg+:flex-grow:1" data-move-container="box-6" data-move-container-lg data-move-container-xl></div>
+            <div class="display:flex">
+              <div data-move-container="box-1" data-move-container-sm data-move-container-md data-move-container-xl>
+                <div class="box-1" data-move="box-1">
+                  <a class="anchor secondary" tabindex="0">
+                    <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #1</div>
+                    <div class="md=:heebo:bold white-space:nowrap">MD Anchor #1</div>
+                    <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #3</div>
+                    <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #6</div>
+                  </a>
+                </div>
+              </div>
+              <div class="hamburger-icon-container">
+                <button tabindex="-1"></button>
+                <div class="mobile-menu-container-wrapper" data-equalize-height="example2">
+                  <div class="mobile-menu-container">
+                    <div data-move-container="box-6" data-move-container-md></div>
+                    <div data-move-container="box-5" data-move-container-md></div>
+                    <div data-move-container="box-4" data-move-container-md></div>
+                    <div data-move-container="box-3" data-move-container-md></div>
+                    <div data-move-container="box-2" data-move-container-md></div>
+                    <div data-move-container="box-2" data-move-container-sm>
+                      <div class="box-2" data-move="box-2">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #2</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #6</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #4</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #2</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-3" data-move-container-sm>
+                      <div class="box-3" data-move="box-3">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #3</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #5</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #2</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #3</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-4" data-move-container-sm>
+                      <div class="box-4" data-move="box-4">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #4</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #4</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #5</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #1</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div data-move-container="box-5" data-move-container-sm>
+                      <div class="box-5" data-move="box-5">
+                        <a class="anchor secondary" tabindex="0">
+                          <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #5</div>
+                          <div class="md=:heebo:bold white-space:nowrap">MD Anchor #3</div>
+                          <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #1</div>
+                          <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #4</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-move-container="box-6" data-move-container-sm>
+                    <div class="box-6" data-move="box-6">
+                      <a class="anchor secondary" tabindex="0">
+                        <div class="sm=:heebo:bold white-space:nowrap">SM Anchor #6</div>
+                        <div class="md=:heebo:bold white-space:nowrap">MD Anchor #2</div>
+                        <div class="lg=:heebo:bold white-space:nowrap">LG Anchor #6</div>
+                        <div class="xl=:heebo:bold white-space:nowrap">XL Anchor #5</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+</textarea>
+        <pre><code class="language-html" data-code-snippet="prism-code-html"></code></pre>
+
+        <h2 class="fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
+<textarea data-code-reference="prism-code-javascript" class="hide">
+storm_eagle.module("responsive_dom_manipulator", () => {
+  "use strict";
+
+  let self;
+  let array_of_keys = [];
+
+  return {
+    initialize: () => {
+      self = storm_eagle["responsive_dom_manipulator"];
+      self.resize_listener();
+    },
+    ready: () => {
+      self.force_resize();
+    },
+    /*
+     * Re-evaluate moving the dom when the page loads or is resized
+     */
+    resize_listener: () => {
+      function force_resize() {
+        return self.force_resize();
+      }
+      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
+    },
+    /*
+     * Check for any new items to equalize, and then equalize them
+     * Do not equalize height for small size if the item contains [data-equalize-md-up] data attribute
+     */
+    force_resize: () => {
+      array_of_keys = [];
+      document.querySelectorAll("[data-move]").forEach((el) => {
+        array_of_keys.push(el.dataset["move"]);
+      })
+      console.log(array_of_keys);
+      if (storm_eagle.client.viewport.is_sm_only()) {
+        document.querySelectorAll("[data-move-container-sm]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_md_only()) {
+        document.querySelectorAll("[data-move-container-md]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_lg_only()) {
+        document.querySelectorAll("[data-move-container-lg]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+      if (storm_eagle.client.viewport.is_xl_up()) {
+        document.querySelectorAll("[data-move-container-xl]").forEach((el) => {
+          el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
+        });
+      }
+    },
+  };
+});
+</textarea>
+        <pre><code class="language-javascript" data-code-snippet="prism-code-javascript"></code></pre>
+      </div>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('communicating_with_iframe', () => {
+        'use strict';
+
+        let self;
+        return {
+          initialize: () => {
+            self = storm_eagle["communicating_with_iframe"];
+            self.add_message_listener();
+          },
+          add_message_listener: () => {
+            window.addEventListener('message', event => {
+              document.getElementById("table-container").style.height = event.data + "px";
+            });
+          }
+        };
+      });
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

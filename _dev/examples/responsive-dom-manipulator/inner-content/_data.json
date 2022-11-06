@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Responsive DOM Manipulator",
+                "urlEn": "/examples/responsive-dom-manipulator/inner-content/",
+                "urlCanonical": "/examples/responsive-dom-manipulator/inner-content/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css",
+                "responsive-dom-manipulator.css"
+            ],
+            "scripts": [
+            ]
+        }
+    }
+}
