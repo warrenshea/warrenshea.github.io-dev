@@ -841,7 +841,7 @@ storm_eagle.module("responsive_dom_manipulator", () => {
       document.querySelectorAll("[data-move]").forEach((el) => {
         array_of_keys.push(el.dataset["move"]);
       })
-      console.log(array_of_keys);
+      //console.log(array_of_keys);
       if (storm_eagle.client.viewport.is_sm_only()) {
         document.querySelectorAll("[data-move-container-sm]").forEach((el) => {
           el.appendChild(document.querySelector(`[data-move=${el.dataset["moveContainer"]}]`));
