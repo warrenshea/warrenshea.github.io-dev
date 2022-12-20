@@ -58,7 +58,8 @@ $colors: (
   granite     : $granite,
   negative    : $negative,
   positive    : $positive,
-  warning     : $warning
+  warning     : $warning,
+  black       : $black,
 );
 
 @each $mediaquery in $mediaqueries {
