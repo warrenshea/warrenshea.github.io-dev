@@ -21,11 +21,24 @@ $icons: (
   lock,
   phone-alt,
   times,
+  github,
+  instagram,
+  linkedin,
+  html5,
+  css3-alt,
+  js,
+  sass,
+  react,
+  node,
+  python,
+  vuejs,
+  git-alt
 );
 
 $types: (
-  light
-  solid
+  light,
+  solid,
+  brands
 );
 
 @each $icon in $icons {
