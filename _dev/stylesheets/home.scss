@@ -2,64 +2,65 @@
 .description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); opacity:0; transition: opacity 0.5s ease; }
 .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); opacity:0; transition: opacity 0.5s ease; }
 .opacity\:100\% { opacity:100% }
-.html-css-js { background: linear-gradient(105deg,
+.title-html-css-js { background: linear-gradient(105deg,
   #e45028 0, #e45028 84%,
   #0873b9 84.5%, #0873b9 87.5%, #28a9e0 87.5%, #28a9e0 88%,
   #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
   #f1662b 92.5%, #f1662b 100%); }
-.html-css { background: linear-gradient(105deg,
+.title-html-css { background: linear-gradient(105deg,
   #e45028 0, #e45028 88%,
   #0873b9 88.5%, #0873b9 91.5%, #28a9e0 91.5%, #28a9e0 92%,
   #f1662b 92.5%, #f1662b 100%); }
-.html-js { background: linear-gradient(105deg,
+.title-html-js { background: linear-gradient(105deg,
   #e45028 0, #e45028 88%,
   #e5a32b 88.5%, #e5a32b 91.5%, #e6c61d 91.5%, #e6c61d 92%,
   #f1662b 92.5%, #f1662b 100%); }
-.js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 92%, #e6c61d 92.5%, #e6c61d 100%); }
-.html { background: linear-gradient(105deg, #e45028 0, #e45028 92%, #f1662b 92.5%, #f1662b 100%); }
-.css { background: linear-gradient(105deg, #0873b9 0, #0873b9 92%, #28a9e0 92.5%, #28a9e0 100%); }
-.angular { background: linear-gradient(105deg, #b92933 0, #b92933 92%, #e62a39 92.5%, #e62a39 100%); }
-.react { background: linear-gradient(105deg, #222 0, #222 92%, #61dafb 92.5%, #61dafb 100%); }
-.vue { background: linear-gradient(105deg, #42b883 0, #42b883 92%, #35495e 92.5%, #35495e 100%); }
-.harpjs { background: linear-gradient(105deg, #6b919e 0, #6b919e 92%, #81586c 92.5%, #81586c 100%); }
-.python { background: linear-gradient(105deg, #306998 0, #306998 92%, #ffd43b 92.5%, #ffd43b 100%); }
-.sql { background: linear-gradient(105deg, #2687cf 0, #2687cf 92%, #b8d432 92.5%, #b8d432 100%); }
-.regex { background: linear-gradient(105deg, #2a007c 0, #2a007c 92%, #fd5900 92.5%, #fd5900 100%); }
-.markdown { background: linear-gradient(105deg, #606870 0, #606870 92%, #ddd 92.5%, #ddd 100%); }
-.sublime { background: linear-gradient(105deg, #4b4b4b 0, #4b4b4b 92%, #ff9800 92.5%, #ff9800 100%); }
-.excel { background: linear-gradient(105deg, #217346 0, #217346 92%, #fff 92.5%, #fff 100%); }
-.es6 { background: linear-gradient(105deg, #f6d854 0, #f6d854 92%, #323230 92.5%, #323230 100%); }
-.git { background: linear-gradient(105deg, #f54d27 0, #f54d27 92%, #efefe7 92.5%, #efefe7 100%); }
-.flexbox { background: linear-gradient(105deg, #4174b4 0, #4174b4 92%, #bd6ece 92.5%, #bd6ece 100%); }
-.a11y,
-.performance { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.google-1 { color: #4285F4; }
-.google-2 { color: #EA4335; }
-.google-3 { color: #34A853; }
-.seo { background: linear-gradient(105deg,
+.title-js { background: linear-gradient(105deg, #e5a32b 0, #e5a32b 92%, #e6c61d 92.5%, #e6c61d 100%); }
+.title-html { background: linear-gradient(105deg, #e45028 0, #e45028 92%, #f1662b 92.5%, #f1662b 100%); }
+.title-css { background: linear-gradient(105deg, #0873b9 0, #0873b9 92%, #28a9e0 92.5%, #28a9e0 100%); }
+.title-angular { background: linear-gradient(105deg, #b92933 0, #b92933 92%, #e62a39 92.5%, #e62a39 100%); }
+.title-react { background: linear-gradient(105deg, #222 0, #222 92%, #61dafb 92.5%, #61dafb 100%); }
+.title-vue { background: linear-gradient(105deg, #42b883 0, #42b883 92%, #35495e 92.5%, #35495e 100%); }
+.title-harpjs { background: linear-gradient(105deg, #6b919e 0, #6b919e 92%, #81586c 92.5%, #81586c 100%); }
+.title-python { background: linear-gradient(105deg, #306998 0, #306998 92%, #ffd43b 92.5%, #ffd43b 100%); }
+.title-sql { background: linear-gradient(105deg, #2687cf 0, #2687cf 92%, #b8d432 92.5%, #b8d432 100%); }
+.title-regex { background: linear-gradient(105deg, #2a007c 0, #2a007c 92%, #fd5900 92.5%, #fd5900 100%); }
+.title-markdown { background: linear-gradient(105deg, #606870 0, #606870 92%, #ddd 92.5%, #ddd 100%); }
+.title-sublime { background: linear-gradient(105deg, #4b4b4b 0, #4b4b4b 92%, #ff9800 92.5%, #ff9800 100%); }
+.title-excel { background: linear-gradient(105deg, #217346 0, #217346 92%, #fff 92.5%, #fff 100%); }
+.title-es6 { background: linear-gradient(105deg, #f6d854 0, #f6d854 92%, #323230 92.5%, #323230 100%); }
+.title-git { background: linear-gradient(105deg, #f54d27 0, #f54d27 92%, #efefe7 92.5%, #efefe7 100%); }
+.title-flexbox { background: linear-gradient(105deg, #4174b4 0, #4174b4 92%, #bd6ece 92.5%, #bd6ece 100%); }
+.title-css-grid { background: linear-gradient(105deg, #8383ff 0, #8383ff 92%, #ffc600 92.5%, #ffc600 100%); }
+.title-a11y,
+.title-performance { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-google-1 { color: #4285F4; }
+.title-google-2 { color: #EA4335; }
+.title-google-3 { color: #34A853; }
+.title-seo { background: linear-gradient(105deg,
   #f9f9f9 0, #f9f9f9 76%,
   #ea4335 76.5%, #ea4335 79.5%, #f65314 79.5%, #f65314 80%,
   #4285f4 80.5%, #4285f4 83.5%, #00a1f1 83.5%, #00a1f1 84%,
   #34a853 84.5%, #34a853 87.5%, #7cbb00 87.5%, #7cbb00 88%,
   #fbbc05 88.5%, #fbbc05 91.5%, #ffbb00 91.5%, #ffbb00 92%,
   #fff 92.5%, #fff 100%); }
-.power-of-habit { background: linear-gradient(105deg, #c52641 0, #c52641 92%, #f8e838 92.5%, #f8e838 100%); }
-.magic-of-tidying-up { background: linear-gradient(105deg, #40b7b6 0, #40b7b6 92%, #a61407 92.5%, #a61407 100%); }
-.design-of-everyday-things { background: linear-gradient(105deg, #91301f 0, #91301f 92%, #fedf13 92.5%, #fedf13 100%); }
-.smashing-magazine { background: linear-gradient(105deg, #d33a2c 0, #d33a2c 92%, #ddd 92.5%, #ddd 100%); }
-.css-mastery { background: linear-gradient(105deg, #006b33 0, #006b33 92%, #f9ea53 92.5%, #f9ea53 100%); }
-.eric-meyer-on-css { background: linear-gradient(105deg, #045da2 0, #045da2 92%, #a04d6f 92.5%, #a04d6f 100%); }
-.javascript-design-patterns { background: linear-gradient(105deg, #00a8a8 0, #00a8a8 92%, #fff 92.5%, #fff 100%); }
-.udacity { background: linear-gradient(105deg, #017a9b 0, #017a9b 92%, #02b3e4 92.5%, #02b3e4 100%); }
-.ryerson { background: linear-gradient(105deg, #004c9b 0, #004c9b 92%, #ffdc00 92.5%, #ffdc00 100%); }
-.command-prompt{ background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.personal-brand { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.management { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.image-optimization { background: linear-gradient(105deg, #48b6db 0, #48b6db 92%, #fff 92.5%, #fff 100%); }
-.seven-habits { background: linear-gradient(105deg, #144f87 0, #144f87 92%, #fff 92.5%, #fff 100%); }
-.mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 92%, #035ba2 92.5%, #035ba2 100%); }
-.design-systems-handbook { background: linear-gradient(105deg, #098c58 0, #098c58 92%, #58b38f 92.5%, #58b38f 100%); }
-.clean-code { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.the-clean-coder { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.clean-architecture { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
-.javascript-the-good-parts { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-power-of-habit { background: linear-gradient(105deg, #c52641 0, #c52641 92%, #f8e838 92.5%, #f8e838 100%); }
+.title-magic-of-tidying-up { background: linear-gradient(105deg, #40b7b6 0, #40b7b6 92%, #a61407 92.5%, #a61407 100%); }
+.title-design-of-everyday-things { background: linear-gradient(105deg, #91301f 0, #91301f 92%, #fedf13 92.5%, #fedf13 100%); }
+.title-smashing-magazine { background: linear-gradient(105deg, #d33a2c 0, #d33a2c 92%, #ddd 92.5%, #ddd 100%); }
+.title-css-mastery { background: linear-gradient(105deg, #006b33 0, #006b33 92%, #f9ea53 92.5%, #f9ea53 100%); }
+.title-eric-meyer-on-css { background: linear-gradient(105deg, #045da2 0, #045da2 92%, #a04d6f 92.5%, #a04d6f 100%); }
+.title-javascript-design-patterns { background: linear-gradient(105deg, #00a8a8 0, #00a8a8 92%, #fff 92.5%, #fff 100%); }
+.title-udacity { background: linear-gradient(105deg, #017a9b 0, #017a9b 92%, #02b3e4 92.5%, #02b3e4 100%); }
+.title-ryerson { background: linear-gradient(105deg, #004c9b 0, #004c9b 92%, #ffdc00 92.5%, #ffdc00 100%); }
+.title-command-prompt{ background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-personal-brand { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-management { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-image-optimization { background: linear-gradient(105deg, #48b6db 0, #48b6db 92%, #fff 92.5%, #fff 100%); }
+.title-seven-habits { background: linear-gradient(105deg, #144f87 0, #144f87 92%, #fff 92.5%, #fff 100%); }
+.title-mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 92%, #035ba2 92.5%, #035ba2 100%); }
+.title-design-systems-handbook { background: linear-gradient(105deg, #098c58 0, #098c58 92%, #58b38f 92.5%, #58b38f 100%); }
+.title-clean-code { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-the-clean-coder { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-clean-architecture { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
+.title-javascript-the-good-parts { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
