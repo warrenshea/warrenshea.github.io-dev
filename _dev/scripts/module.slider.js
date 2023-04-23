@@ -25,11 +25,11 @@ storm_eagle.module('slider', () => {
     },
     force_resize: (slider_id) => {
       let slider_thumb_width = 26;
-      let container_width = document.getElementById(slider_id).querySelector("[data-module='slider.input-container']").offsetWidth;
-      let new_label_width = container_width / (slider_state[slider_id]["num_labels"] - 1);
+      let container_width = document.getElementById(slider_id).offsetWidth;
+      let new_label_width = (container_width - slider_thumb_width) / (slider_state[slider_id]["num_labels"] - 1);
       container_width = container_width + new_label_width - slider_thumb_width;
       document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.width = container_width + "px";
-      document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.left = (0 + (slider_thumb_width/2) - (new_label_width / 2)) +  "px";
+      document.getElementById(slider_id).querySelector("[data-module='slider.labels']").style.left = (0 + (slider_thumb_width / 2) - (new_label_width / 2)) +  "px";
     },
     slider_listener: (slider_id) => {
       let el = document.getElementById(slider_id).querySelector("[data-module='slider.input']");
