@@ -23,7 +23,6 @@ storm_eagle.module('slider', () => {
     ready: () => {
       document.querySelectorAll("[data-module='slider.input']").forEach(el => {
         let slider_id = el.getAttribute("id");
-        console.log(slider_id);
         self.force_resize(slider_id);
       });
     },
