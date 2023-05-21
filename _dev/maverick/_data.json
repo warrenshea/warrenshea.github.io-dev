@@ -1,0 +1,25 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Maverick",
+                "urlEn": "/maverick/",
+                "urlCanonical": "/maverick/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css",
+                "/stylesheets/vendor.prism.v.1.23.0.css"
+            ],
+            "scripts": [
+                "https://code.jquery.com/jquery-1.12.4.min.js",
+                "/scripts/module.slider.js",
+                "/maverick/resources/scripts/maverick/style-guide.default.js",
+                "/scripts/vendor.prism.v.1.23.0.js"
+            ]
+        }
+    }
+}

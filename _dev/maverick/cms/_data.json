@@ -1,0 +1,26 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Maverick CMS",
+                "urlEn": "/maverick/cms/",
+                "urlCanonical": "/maverick/cms/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+
+            ],
+            "scripts": [
+                "https://code.jquery.com/jquery-1.12.4.min.js",
+                "/scripts/module.slider.js",
+                "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js",
+                "/maverick/resources/scripts/maverick/style-guide.cms.class-config.js",
+                "/maverick/resources/scripts/maverick/style-guide.cms.js"
+            ]
+        }
+    }
+}

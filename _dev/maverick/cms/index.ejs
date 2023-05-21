@@ -1,0 +1,252 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+  <style>
+    html{overflow-x:hidden;overflow-y:scroll;min-width:600px}
+    .option-set-checklist.section-filter li a{color:#fff}
+    .option-set-checklist.section-filter li a.selected{background-color:#005587;color:#fff}
+    .option-set-checklist.type-filter li a{color:#fff}
+    .option-set-checklist.type-filter li a.selected{background-color:#fff;color:#0079c1}
+    [data-editable]:hover{-webkit-box-shadow:0 0 5px red;box-shadow:0 0 5px red;cursor:pointer}
+    .text-shadow\:slate{text-shadow: 0 0 0.1875rem #001928}
+  </style>
+
+    <main>
+      <section>
+        <form name="maker">
+
+          <section class="row bgc:slate">
+            <ul data-filter-group="section" class="row section-filter option-set-checklist unstyle pl:0">
+              <li><a data-filter=".isotope-filter--item" class="p:8px display:block selected">Item</a></li>
+              <li><a data-filter=".isotope-filter--row" class="p:8px display:block">Row</a></li>
+              <li><a data-filter=".isotope-filter--container" class="p:8px display:block">Container</a></li>
+              <li><a data-filter="*" class="p:8px display:block">All</a></li>
+            </ul>
+          </section>
+          <section class="row bgc:ultramarine pt:16px">
+            <ul data-filter-group="type" class="row type-filter option-set-checklist unstyle pl:0">
+              <li><a data-filter="*" class="p:8px display:block selected">Show All</a></li>
+              <li><a data-filter=".isotope-filter--size" class="p:8px display:block">Size</a></li>
+              <li><a data-filter=".isotope-filter--layout" class="p:8px display:block">Layout</a></li>
+              <li><a data-filter=".isotope-filter--spacing" class="p:8px display:block">Spacing</a></li>
+              <li><a data-filter=".isotope-filter--color" class="p:8px display:block">Color</a></li>
+              <li><a data-filter=".isotope-filter--border" class="p:8px display:block">Border</a></li>
+              <li><a data-filter=".isotope-filter--typography" class="p:8px display:block">Typography</a></li>
+            </ul>
+          </section>
+
+          <div class="isotope-container-cms w:11 align-self:centered">
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--size" data-slider-container-key="sm+:w"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--size" data-slider-container-key="md+:w"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--size" data-slider-container-key="lg+:w"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--size" data-slider-container-key="xl+:w"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--layout" data-slider-container-key="sm+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--layout" data-slider-container-key="md+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--layout" data-slider-container-key="lg+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--layout" data-slider-container-key="xl+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="sm+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="md+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="lg+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--spacing" data-slider-container-key="xl+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="sm+:color"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="md+:color"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="lg+:color"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="xl+:color"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="sm+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="md+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="lg+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="xl+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="sm+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="md+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="lg+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="xl+:bgcgy"></div>
+<!--             <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="sm+:bgcgx"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="md+:bgcgx"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="lg+:bgcgx"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--color" data-slider-container-key="xl+:bgcgx"></div> -->
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:b-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bt-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bb-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bl-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:br-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:b-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bt-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bb-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bl-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:br-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:b-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bt-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bb-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bl-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:br-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:b-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bt-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bb-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bl-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:br-light-grey"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:b-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bt-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bb-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bl-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:br-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:b-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bt-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bb-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bl-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:br-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:b-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bt-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bb-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bl-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:br-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:b-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bt-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bb-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bl-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:br-slate"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:b-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bt-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bb-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:bl-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:br-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:b-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bt-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bb-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:bl-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:br-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:b-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bt-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bb-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:bl-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:br-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:b-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bt-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bb-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:bl-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:br-blue"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:br"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:brtl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:brtr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:brbl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:brbr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:br"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:brtl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:brtr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:brbl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:brbr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:br"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:brtl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:brtr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:brbl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:brbr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:br"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:brtl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:brtr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:brbl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:brbr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="sm+:box-shadow"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="md+:box-shadow"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="lg+:box-shadow"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--border" data-slider-container-key="xl+:box-shadow"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="sm+:text-align"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="md+:text-align"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="lg+:text-align"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="xl+:text-align"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="sm+:fs"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="md+:fs"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="lg+:fs"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="xl+:fs"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="sm+:heebo"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="md+:heebo"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="lg+:heebo"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--item isotope-filter--typography" data-slider-container-key="xl+:heebo"></div>
+
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--size" data-slider-container-key="row--mw"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--sm+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--md+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--lg+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--xl+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--sm+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--md+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--lg+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--color" data-slider-container-key="row--xl+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--layout" data-slider-container-key="row--sm+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--layout" data-slider-container-key="row--md+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--layout" data-slider-container-key="row--lg+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--layout" data-slider-container-key="row--xl+:align-self"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:pt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:pl"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:pr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:pb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--sm+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--md+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--lg+:mb"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:mt"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:ml"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:mr"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--row isotope-filter--spacing" data-slider-container-key="row--xl+:mb"></div>
+
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--sm+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--md+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--lg+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--xl+:bgc"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--sm+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--md+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--lg+:bgcgy"></div>
+            <div class="p:16px w:100% isotope-item isotope-filter--container isotope-filter--color" data-slider-container-key="container--xl+:bgcgy"></div>
+
+          </div>
+        </form>
+      </section>
+    </main>
+
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>

@@ -1,0 +1,265 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+      <style>
+        html{overflow-y:scroll}
+        [data-editable]:hover{-webkit-box-shadow:0 0 5px red;box-shadow:0 0 5px red;cursor:pointer}
+        pre[class*=language-].display\:inline{padding:0 .5rem;background:#444}
+        .bgc\:full-screen {
+          background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg' style='width:100px; height: 40px;'%3E%3Ctext x='0' y='40' style='font-family:Arial;font-size:40px;font-weight:bold;fill:%23f8f8f8;'%3E100%%3C/text%3E%3C/svg%3E");
+          background-size:120px 50px;
+          background-repeat: repeat;
+          z-index:-3;
+          top:0;
+          left:0;
+        }
+        .bgc\:1280px {
+          background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg' style='width:100px; height: 40px;'%3E%3Ctext x='0' y='40' style='font-family:Arial;font-size:24px;font-weight:bold;fill:%23ffdddd;'%3E1280px%3C/text%3E%3C/svg%3E");
+          background-size:120px 50px;
+          background-repeat: repeat;
+          background-color: rgba(255,252,252,.95);
+          z-index:-2;
+          top:0;
+          left:0;
+          right:0;
+        }
+        .bgc\:1200px {
+          background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg' style='width:100px; height: 40px;'%3E%3Ctext x='0' y='40' style='font-family:Arial;font-size:24px;font-weight:bold;fill:%23ddddff;'%3E1200px%3C/text%3E%3C/svg%3E");
+          background-size:120px 50px;
+          background-repeat: repeat;
+          background-color: rgba(252,252,255,.95);
+          z-index:-1;
+          top:0;
+          left:0;
+          right:0;
+        }
+        .bgc\:grid-a-1280px {
+          z-index:0;
+          top:0;
+          left:0;
+          right:0;
+        }
+        .grid-a-column {
+          position:absolute;top:0;width:0;border:1px solid #ff7777;opacity:.5;height:100%;display:inline-block;margin:0;
+        }
+        .bgc\:grid-b-1280px {
+          column-gap: 16px;z-index:0;top:0;left:0;right:0;
+        }
+        .bgc\:grid-b-1280px > div {
+          width:100%;
+        }
+        @media screen and (min-width: 768px) {
+          .bgc\:grid-b-1280px {
+            column-gap: 24px;
+          }
+        }
+        @media screen and (min-width: 1024px) {
+          .bgc\:grid-b-1280px {
+            column-gap: 24px;
+          }
+        }
+        @media screen and (min-width: 1280px) {
+          .bgc\:grid-b-1280px {
+            column-gap: 32px;
+          }
+        }
+        .grid-b-column {
+          height:100%;background-color:#ff7777;opacity:.25;
+        }
+      </style>
+
+      <main class="pb:96px position:relative">
+        <div class="position:fixed w:100% bgc:white bb-slate:2px" style="z-index:100;">
+          <div class="form:theme:gl0b3x p:16px display:flex align:center" data-equalize-height="traditional-checkboxes">
+            <input type="checkbox" name="show-100%" id="show-100%" onChange="javascript: (this.checked) ? document.getElementById('bg-100%').classList.remove('display:none') : document.getElementById('bg-100%').classList.add('display:none');">
+            <label for="show-100%" class="display:block mb:4px py:2px mr:32px">100%</label>
+            <input type="checkbox" name="show-1280px" id="show-1280px" onChange="javascript: (this.checked) ? document.getElementById('bg-1280px').classList.remove('display:none') : document.getElementById('bg-1280px').classList.add('display:none');">
+            <label for="show-1280px" class="display:block mb:4px py:2px mr:32px">1280px</label>
+            <input type="checkbox" name="show-1200px" id="show-1200px" onChange="javascript: (this.checked) ? document.getElementById('bg-1200px').classList.remove('display:none') : document.getElementById('bg-1200px').classList.add('display:none');">
+            <label for="show-1200px" class="display:block mb:4px py:2px mr:80px">1200px</label>
+
+            <input type="checkbox" name="overlay-grid-a-1280px" id="overlay-grid-a-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-a-1280px').classList.remove('display:none') : document.getElementById('grid-a-1280px').classList.add('display:none');">
+            <label for="overlay-grid-a-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid A (12 column)</label>
+            <input type="checkbox" name="overlay-grid-b-1280px" id="overlay-grid-b-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-b-1280px').classList.remove('hide') : document.getElementById('grid-b-1280px').classList.add('hide');">
+            <label for="overlay-grid-b-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid B (sm:4 columns, md+:12 columns) </label>
+          </div>
+        </div>
+        <div id="bg-100%" class="display:none position:absolute w:100% h:100% bgc:full-screen"></div>
+        <div id="bg-1280px" class="display:none position:absolute mw:1280px align-self:centered bl-grey:1px br-grey:1px h:100% bgc:1280px"></div>
+        <div id="bg-1200px" class="display:none position:absolute mw:1200px align-self:centered bl-grey:1px br-grey:1px h:100% bgc:1200px"></div>
+        <div id="grid-a-1280px" class="display:none position:absolute mw:1280px align-self:centered bl-grey:1px br-grey:1px h:100% bgc:grid-a-1280px">
+          <hr class="grid-a-column" style="left:calc(0/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(1/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(2/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(3/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(4/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(5/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(6/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(7/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(8/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(9/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(10/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(11/12 * 100%);">
+          <hr class="grid-a-column" style="left:calc(12/12 * 100%);">
+        </div>
+        <div id="grid-b-1280px" class="display:flex hide position:absolute mw:1280px align-self:centered sm+:px:24px md+:px:32px xl+:px:0 bl-grey:1px br-grey:1px h:100% bgc:grid-b-1280px">
+          <div class="grid-b-column sm+:display:block">sadafd</div>
+          <div class="grid-b-column sm+:display:block">sdfgsdg</div>
+          <div class="grid-b-column sm+:display:block"></div>
+          <div class="grid-b-column sm+:display:block">sdfg</div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+          <div class="grid-b-column sm=:display:none md+:display:block"></div>
+        </div>
+
+        <div class="mw:1280px pt:80px align-self:centered">
+          <h2 class="fs:40px heebo:bold py:16px">Maverick</h2>
+        </div>
+
+        <section data-container>
+          <div data-row class="mw:1280px align-self:centered pt:8px pb:48px">
+            <div class="w:12 align-self:centered">
+              Maverick is an HTML/CSS based Design Language technique best suited for visual design flexibility.<br><br>
+
+              <h3 class="fs:36px heebo:bold my:16px">Fundamental Rules of Maverick</h3>
+
+              <ul>
+                <li>Use "single-purpose" classes to help achieve desired layout/design</li>
+                <li>Mobile first - things defined at a small breakpoint will carry forward to larger breakpoints</li>
+                <li>Prevent overwritting of CSS as much as possible, reducing Technical Debt</li>
+                <li>No CSS rules on any default tags (e.g. &lt;header&gt; or &lt;section&gt;)</li>
+              </ul>
+
+            </div>
+          </div>
+        </section>
+
+        <hr>
+
+<section class="sm+:bgc:ultramarine" data-container data-code-reference="maverick">
+  <div data-row class="row mw:1280px sm+:bgc:albicant sm+:align-self:centered md+:bgc:azure lg+:bgc:blue xl+:bgc:ultramarine">
+    <div data-editable class="sm+:w:12 md+:w:8 lg+:w:6 xl+:w:7 sm+:pt:40px sm+:pl:40px sm+:pr:40px sm+:pb:40px sm+:text-align:center md+:text-align:right">
+      <img data-editable src="images/maverick.jpg" alt="Maverick" class="sm+:b-blue:4px sm+:brtl:32px sm+:brtr:32px sm+:brbl:32px sm+:brbr:32px sm+:box-shadow:custom-5 md+:brtl:50% md+:brtr:50% md+:brbl:50% md+:brbr:50% lg+:b-light-grey:4px lg+:brtr:32px lg+:brbl:32px xl+:brtl:50% xl+:brtr:4px xl+:brbl:4px xl+:box-shadow:custom-6">
+    </div>
+    <div data-editable class="sm+:w:12 md+:w:4 lg+:w:6 xl+:w:5 align-self:middle sm+:text-align:center md+:text-align:left">
+      <div data-editable class="sm+:pb:40px sm+:color:slate sm+:text-align:center sm+:fs:32px sm+:heebo:bold md+:pl:24px md+:pr:24px md+:pb:0 md+:color:blue md+:text-align:left md+:fs:28px md+:heebo:normal lg+:color:slate lg+:fs:32px lg+:heebo:medium xl+:color:white xl+:fs:40px xl+:heebo:bold">I feel the need ...<br>... the need for speed!</div>
+    </div>
+  </div>
+</section>
+
+        <section>
+          <div class="row mw:1280px">
+            <pre class="w:100%"><code class="language-html" data-code-snippet="maverick"></code></pre>
+          </div>
+        </section>
+
+        <div class="mw:1280px align-self:centered">
+          <h2 class="fs:48px heebo:bold mt:16px mb:16px">Layout Examples</h2>
+          <h3 class="fs:36px heebo:bold sm+:mt:48px mb:16px">One Column</h3>
+        </div>
+
+<section data-container data-code-reference="one-column--empty-0">
+  <div class="row" data-row>
+    <div data-editable>
+      EMPTY
+    </div>
+  </div>
+</section>
+
+        <section>
+          <div class="row mw:1280px">
+            <pre class="w:100%"><code class="language-html" data-code-snippet="one-column--empty-0"></code></pre>
+          </div>
+        </section>
+
+        <div class="mw:1280px align-self:centered">
+          <h3 class="fs:36px heebo:bold sm+:mt:48px mb:16px">Two Columns</h3>
+        </div>
+
+<section data-container data-code-reference="two-column--example-0">
+  <div class="row" data-row>
+    <div class="sm+:w:12 lg+:w:6" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 1</h2>
+      <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:6" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 2</h2>
+      <span>Despite its bulky build, Dragonite is capable of flying faster than the speed of sound. It can circle the globe in sixteen hours, traveling roughly 1,556 mph (2,505 km/h), or about three times the speed of an average airplane. A kindhearted Pokémon with human-like intelligence, Dragonite shows signs of altruism: it is said to save humans from drowning and lead lost or foundering ships to safety. As demonstrated in the anime, however, it will go on an uncontrollable, destructive rampage if its environment is threatened.</span>
+    </div>
+  </div>
+</section>
+
+        <section>
+          <div class="row mw:1280px">
+            <pre class="w:100%"><code class="language-html" data-code-snippet="two-column--example-0"></code></pre>
+          </div>
+        </section>
+
+        <div class="mw:1280px align-self:centered">
+          <h3 class="fs:36px heebo:bold sm+:mt:48px mb:16px">Three Columns</h3>
+        </div>
+
+<section data-container data-code-reference="three-column--example-0">
+  <div class="row" data-row>
+    <div class="sm+:w:12 lg+:w:4" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 1</h2>
+      <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:4" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 2</h2>
+      <span>Despite its bulky build, Dragonite is capable of flying faster than the speed of sound. It can circle the globe in sixteen hours, traveling roughly 1,556 mph (2,505 km/h), or about three times the speed of an average airplane. A kindhearted Pokémon with human-like intelligence, Dragonite shows signs of altruism: it is said to save humans from drowning and lead lost or foundering ships to safety. As demonstrated in the anime, however, it will go on an uncontrollable, destructive rampage if its environment is threatened.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:4" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 2</h2>
+      <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
+    </div>
+  </div>
+</section>
+
+        <section>
+          <div class="row mw:1280px">
+            <pre class="w:100%"><code class="language-html" data-code-snippet="three-column--example-0"></code></pre>
+          </div>
+        </section>
+
+        <div class="mw:1280px align-self:centered">
+          <h3 class="fs:36px heebo:bold sm+:mt:48px mb:16px">Four Columns</h3>
+        </div>
+
+<section data-container data-code-reference="four-column--example-0">
+  <div class="row" data-row>
+    <div class="sm+:w:12 lg+:w:3" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 1</h2>
+      <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:3" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 2</h2>
+      <span>Despite its bulky build, Dragonite is capable of flying faster than the speed of sound. It can circle the globe in sixteen hours, traveling roughly 1,556 mph (2,505 km/h), or about three times the speed of an average airplane. A kindhearted Pokémon with human-like intelligence, Dragonite shows signs of altruism: it is said to save humans from drowning and lead lost or foundering ships to safety. As demonstrated in the anime, however, it will go on an uncontrollable, destructive rampage if its environment is threatened.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:3" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 3</h2>
+      <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
+    </div>
+    <div class="sm+:w:12 lg+:w:3" data-editable>
+      <h2 class="heebo:bold" data-editable>Dragonite 4</h2>
+      <span>Despite its bulky build, Dragonite is capable of flying faster than the speed of sound. It can circle the globe in sixteen hours, traveling roughly 1,556 mph (2,505 km/h), or about three times the speed of an average airplane. A kindhearted Pokémon with human-like intelligence, Dragonite shows signs of altruism: it is said to save humans from drowning and lead lost or foundering ships to safety. As demonstrated in the anime, however, it will go on an uncontrollable, destructive rampage if its environment is threatened.</span>
+    </div>
+  </div>
+</section>
+
+        <section>
+          <div class="row mw:1280px">
+            <pre class="w:100%"><code class="language-html" data-code-snippet="four-column--example-0"></code></pre>
+          </div>
+        </section>
+
+
+      </div>
+    </main>
+
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
