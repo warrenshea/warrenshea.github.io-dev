@@ -68,19 +68,22 @@
       </style>
 
       <main class="pb:96px position:relative">
-        <div class="position:fixed w:100% bgc:white bb-slate:2px" style="z-index:100;">
-          <div class="form:theme:gl0b3x p:16px display:flex align:center" data-equalize-height="traditional-checkboxes">
-            <input type="checkbox" name="show-100%" id="show-100%" onChange="javascript: (this.checked) ? document.getElementById('bg-100%').classList.remove('display:none') : document.getElementById('bg-100%').classList.add('display:none');">
-            <label for="show-100%" class="display:block mb:4px py:2px mr:32px">100%</label>
-            <input type="checkbox" name="show-1280px" id="show-1280px" onChange="javascript: (this.checked) ? document.getElementById('bg-1280px').classList.remove('display:none') : document.getElementById('bg-1280px').classList.add('display:none');">
-            <label for="show-1280px" class="display:block mb:4px py:2px mr:32px">1280px</label>
-            <input type="checkbox" name="show-1200px" id="show-1200px" onChange="javascript: (this.checked) ? document.getElementById('bg-1200px').classList.remove('display:none') : document.getElementById('bg-1200px').classList.add('display:none');">
-            <label for="show-1200px" class="display:block mb:4px py:2px mr:80px">1200px</label>
-
-            <input type="checkbox" name="overlay-grid-a-1280px" id="overlay-grid-a-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-a-1280px').classList.remove('display:none') : document.getElementById('grid-a-1280px').classList.add('display:none');">
-            <label for="overlay-grid-a-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid A (12 column)</label>
-            <input type="checkbox" name="overlay-grid-b-1280px" id="overlay-grid-b-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-b-1280px').classList.remove('hide') : document.getElementById('grid-b-1280px').classList.add('hide');">
-            <label for="overlay-grid-b-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid B (sm:4 columns, md+:12 columns) </label>
+        <div class="position:fixed w:100% bgc:white bb-slate:2px" style="z-index:100;" data-equalize-height="sticky">
+          <div class="form:theme:gl0b3x mw:1280px align-self:centered p:16px display:flex align:center" data-equalize-height="traditional-checkboxes">
+            <div class="sm+:w:6 xl+:w:4">
+              <input type="checkbox" name="show-100%" id="show-100%" onChange="javascript: (this.checked) ? document.getElementById('bg-100%').classList.remove('display:none') : document.getElementById('bg-100%').classList.add('display:none');">
+              <label for="show-100%" class="display:block mb:4px py:2px mr:32px">100%</label>
+              <input type="checkbox" name="show-1280px" id="show-1280px" onChange="javascript: (this.checked) ? document.getElementById('bg-1280px').classList.remove('display:none') : document.getElementById('bg-1280px').classList.add('display:none');">
+              <label for="show-1280px" class="display:block mb:4px py:2px mr:32px">1280px</label>
+              <input type="checkbox" name="show-1200px" id="show-1200px" onChange="javascript: (this.checked) ? document.getElementById('bg-1200px').classList.remove('display:none') : document.getElementById('bg-1200px').classList.add('display:none');">
+              <label for="show-1200px" class="display:block mb:4px py:2px mr:80px">1200px</label>
+            </div>
+            <div class="sm+:w:6 xl+:w:8">
+              <input type="checkbox" name="overlay-grid-a-1280px" id="overlay-grid-a-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-a-1280px').classList.remove('display:none') : document.getElementById('grid-a-1280px').classList.add('display:none');">
+              <label for="overlay-grid-a-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid A (12 column)</label>
+              <input type="checkbox" name="overlay-grid-b-1280px" id="overlay-grid-b-1280px" onChange="javascript: (this.checked) ? document.getElementById('grid-b-1280px').classList.remove('hide') : document.getElementById('grid-b-1280px').classList.add('hide');">
+              <label for="overlay-grid-b-1280px" class="display:block mb:4px py:2px mr:32px">1280px 12 column grid B (sm:4 columns, md+:12 columns) </label>
+            </div>
           </div>
         </div>
         <div id="bg-100%" class="display:none position:absolute w:100% h:100% bgc:full-screen"></div>
@@ -102,10 +105,10 @@
           <hr class="grid-a-column" style="left:calc(12/12 * 100%);">
         </div>
         <div id="grid-b-1280px" class="display:flex hide position:absolute mw:1280px align-self:centered sm+:px:24px md+:px:32px xl+:px:0 bl-grey:1px br-grey:1px h:100% bgc:grid-b-1280px">
-          <div class="grid-b-column sm+:display:block">sadafd</div>
-          <div class="grid-b-column sm+:display:block">sdfgsdg</div>
           <div class="grid-b-column sm+:display:block"></div>
-          <div class="grid-b-column sm+:display:block">sdfg</div>
+          <div class="grid-b-column sm+:display:block"></div>
+          <div class="grid-b-column sm+:display:block"></div>
+          <div class="grid-b-column sm+:display:block"></div>
           <div class="grid-b-column sm=:display:none md+:display:block"></div>
           <div class="grid-b-column sm=:display:none md+:display:block"></div>
           <div class="grid-b-column sm=:display:none md+:display:block"></div>
@@ -116,7 +119,8 @@
           <div class="grid-b-column sm=:display:none md+:display:block"></div>
         </div>
 
-        <div class="mw:1280px pt:80px align-self:centered">
+        <div data-equalize-height="sticky"></div>
+        <div class="mw:1280px pt:16px align-self:centered">
           <h2 class="fs:40px heebo:bold py:16px">Maverick</h2>
         </div>
 
@@ -204,7 +208,7 @@
         </div>
 
 <section data-container data-code-reference="three-column--example-0">
-  <div class="row" data-row>
+  <div class="row mw:1280px" data-row>
     <div class="sm+:w:12 lg+:w:4" data-editable>
       <h2 class="heebo:bold" data-editable>Dragonite 1</h2>
       <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
@@ -231,7 +235,7 @@
         </div>
 
 <section data-container data-code-reference="four-column--example-0">
-  <div class="row" data-row>
+  <div class="row mw:1280px" data-row>
     <div class="sm+:w:12 lg+:w:3" data-editable>
       <h2 class="heebo:bold" data-editable>Dragonite 1</h2>
       <span>Dragonite is a draconic, bipedal Pokémon with light orange skin. It has large, grayish-green eyes and a round snout with small nostrils. A pair of long, thin antennae sprout from the top of its head, with a small horn set between them. Its striated underbelly is cream-colored, and extends from its neck to the tip of its long, tapering tail. It has thick arms and legs ending in three claws each. The leg joints are well defined, while its arms have a smooth, rounded appearance.</span>
