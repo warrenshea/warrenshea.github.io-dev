@@ -1,0 +1,175 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <main class="w:100% overflow:hidden" role="main">
+      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
+        <h1 class="play:bold fs:40px color:slate pb:16px">Responsive Emulation</h1>
+        <p class="pb:64px">Simulating responsive breakpoints without adjusting the browser/screensize. Possibly useful for a component library</p>
+
+        <div class="w:100% b:0 emulate" id="table-container">
+
+          <table class="w:100% bb-grey:1px br-grey:1px" id="table" tabindex="0">
+            <caption class="show-for-screen-reader-only">
+              A Pokémon chart indicating Pokémon and their type
+            </caption>
+            <thead>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th class="md-:hide lg+:show lg+:w:3">&nbsp;</th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 text-align:center" style="background:#f66">
+                    Fire Type
+                </th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 text-align:center bgc:cerulean">
+                    Water Type
+                </th>
+                <th scope="col" class="bt-grey:1px bl-grey:1px fw:bold p:32px sm+:w:4 lg+:w:3 text-align:center bgc:sunflower">
+                    Electric Type
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Bulbasaur #1
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Charmander #4
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Squirtle #7
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Pikachu #25
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+              </tr>
+              <tr class="display:flex md-:flex-flow:row-wrap">
+                <th scope="row" class="fw:bold sm+:p:8px lg+:p:32px sm+:w:12 lg+:w:3 bt-grey:1px bl-grey:1px bgc:light-grey sm+:text-align:center lg+:text-align:left">
+                  Volcanion #721
+                </th>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  <span aria-hidden="true">&times;</span><span class="show-for-screen-reader-only">Yes</span>
+                </td>
+                <td class="sm+:w:4 lg+:w:3 bt-grey:1px bl-grey:1px fs:32px md-:text-align:center lg+:display:flex lg+:align:middle lg+:align:center">
+                  &nbsp;<span class="show-for-screen-reader-only">No</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <div class="position:relative pb:32px xl=:show">
+          <div data-module="slider.input-container">
+            <input data-module="slider.input" id="" onInput="document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
+            <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
+            <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('responsive_emulation', () => {
+        'use strict';
+        let self;
+        let emulate_container_width;
+        return {
+          initialize: () => {
+            self = storm_eagle["responsive_emulation"];
+            self.resize_listener();
+            emulate_container_width = document.getElementById('table-container').style.width;
+          },
+          resize_listener: () => {
+            function force_resize() {
+              emulate_container_width = document.getElementById('table-container').style.width;
+              emulate_container_width = emulate_container_width.replace("px","");
+              // console.log(emulate_container_width);
+              self.add_emulate_class();
+            }
+            storm_eagle.resize_observer(document.getElementById('table-container'), force_resize);
+          },
+          add_emulate_class: () => {
+            document.getElementById("table-container").classList.remove("emulate:sm=","emulate:sm+","emulate:md-","emulate:md=","emulate:md+","emulate:lg-","emulate:lg=","emulate:lg+","emulate:xl+");
+            if (self.is_sm_only()) {
+              document.getElementById("table-container").classList.add("emulate:sm=");
+            }
+            if (self.is_sm_up()) {
+              document.getElementById("table-container").classList.add("emulate:sm+");
+            }
+            if (self.is_md_down()) {
+              document.getElementById("table-container").classList.add("emulate:md-");
+            }
+            if (self.is_md_only()) {
+              document.getElementById("table-container").classList.add("emulate:md=");
+            }
+            if (self.is_md_up()) {
+              document.getElementById("table-container").classList.add("emulate:md+");
+            }
+            if (self.is_lg_down()) {
+              document.getElementById("table-container").classList.add("emulate:lg-");
+            }
+            if (self.is_lg_only()) {
+              document.getElementById("table-container").classList.add("emulate:lg=");
+            }
+            if (self.is_lg_up()) {
+              document.getElementById("table-container").classList.add("emulate:lg+");
+            }
+            if (self.is_xl_up()) {
+              document.getElementById("table-container").classList.add("emulate:xl+");
+            }
+          },
+          is_sm_only: () => { return (emulate_container_width >= breakpoints["sm_min"] && emulate_container_width <= breakpoints["sm_max"]) ? true : false; },
+          is_sm_up: () => { return (emulate_container_width >= breakpoints["sm_min"]) ? true : false; },
+          is_md_down: () => { return (emulate_container_width >= breakpoints["sm_min"] && emulate_container_width <= breakpoints["md_max"]) ? true : false; },
+          is_md_only: () => { return (emulate_container_width >= breakpoints["md_min"] && emulate_container_width <= breakpoints["md_max"]) ? true : false; },
+          is_md_up: () => { return (emulate_container_width >= breakpoints["md_min"]) ? true : false; },
+          is_lg_down: () => { return (emulate_container_width >= breakpoints["sm_min"] && emulate_container_width <= breakpoints["lg_max"]) ? true : false; },
+          is_lg_only: () => { return (emulate_container_width >= breakpoints["lg_min"] && emulate_container_width <= breakpoints["lg_max"]) ? true : false; },
+          is_lg_up: () => { return (emulate_container_width >= breakpoints["lg_min"]) ? true : false; },
+          is_xl_up: () => { return (emulate_container_width >= breakpoints["xl_min"]) ? true : false; },
+        };
+      });
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
