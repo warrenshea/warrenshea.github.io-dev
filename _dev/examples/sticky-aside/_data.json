@@ -15,7 +15,7 @@
             ],
             "scripts": [
                 "https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js",
-                "/scripts/module.waypoints.js"
+                "/scripts/module.waypoint.js"
             ]
         }
     }

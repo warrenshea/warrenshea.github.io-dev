@@ -15,8 +15,9 @@
             ],
             "scripts": [
                 "https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js",
-                "/scripts/module.waypoints.js",
+                "/scripts/module.waypoint.js",
                 "/scripts/module.slider.js",
+                "/scripts/module.range-slider.js",
                 "/scripts/module.form-validation.js",
                 "/scripts/module.form-theme-gl0b3x.js",
                 "/scripts/module.modal.js"
