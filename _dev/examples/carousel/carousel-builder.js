@@ -63,6 +63,9 @@ storm_eagle.module("carousel_builder", () => {
         case "left-offset-md":
         case "left-offset-lg":
         case "left-offset-xl":
+          if (document.getElementById(`${property}-${carousel_number}`).value.toString().substring(0,1) === ".") {
+            document.getElementById(`${property}-${carousel_number}`).value = `0` + document.getElementById(`${property}-${carousel_number}`).value.toString();
+          }
           el.setAttribute("data-carousel-offset",`[${document.getElementById(`left-offset-sm-${carousel_number}`).value},${document.getElementById(`left-offset-md-${carousel_number}`).value},${document.getElementById(`left-offset-lg-${carousel_number}`).value},${document.getElementById(`left-offset-xl-${carousel_number}`).value}]`);
           break;
         case "transition-speed-sm":
