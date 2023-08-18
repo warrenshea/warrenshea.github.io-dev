@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Menu and Submenu",
+                "urlEn": "/examples/menu-submenu/",
+                "urlCanonical": "/examples/menu-submenu/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.menu-submenu.js"
+            ]
+        }
+    }
+}
