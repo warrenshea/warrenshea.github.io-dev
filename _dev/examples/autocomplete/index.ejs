@@ -1,7 +1,7 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100% form:theme:gl0b3x" role="main">
       <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:slate pb:64px">Autocomplete</h1>
+        <h1 class="play:bold fs:40px color:raisin-black pb:64px">Autocomplete</h1>
 
         <div class="autocomplete p:16px sm+:w:8 lg+:w:4 align-self:centered" data-module="autocomplete" id="pokemon-autocomplete">
           <div class="position:relative pt:4px">
@@ -9,7 +9,7 @@
             <label for="pokemon" id="autocomplete_label"><span class="description">Find a Pokémon</span></label>
           </div>
           <div data-module="autocomplete.sr-description" id="pokemon-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
-          <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-light-grey:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="pokemon" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+          <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-gainsboro:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="pokemon" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
           <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
         </div>
 
