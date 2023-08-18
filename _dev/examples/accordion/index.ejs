@@ -1,79 +1,218 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-    <main class="w:100% bgc:albicant pb:96px" role="main">
+    <main class="w:100% pb:96px" role="main">
       <section class="mw:1200px align-self:centered pt:32px">
-        <h1 class="play:bold fs:40px color:slate sm+:px:8px xl+:px:0">Accordion</h1>
+        <h1 class="play:bold fs:40px color:raisin-black sm+:px:8px xl+:px:0">Accordion</h1>
       </section>
 
       <section class="mw:1200px align-self:centered pt:32px">
-
-        <ul class="accordion unstyle-pl:0 sm=:pb:32px md+:pb:48px xl+:pb:64px" data-accordion-transition-duration=".25">
-          <li class="bb-grey:1px">
-            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-dog-1');" aria-label="Learn more about ..., expands/collapses a pop-up">
-              <span class="pr:16px print:hide" aria-hidden="true">
+        <h2 class="play:bold fs:32px color:raisin-black pb:32px">Setting: One open at a time <em class="fs:20px">(first panel open on load)</em></h2>
+        <ul class="accordion unstyle-pl:0 sm=:pb:32px md+:pb:48px xl+:pb:64px" id="" data-module="accordion" data-accordion-active="single" data-accordion-initial="[1,0,0,0]">
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="px:24px print:hide" aria-hidden="true">
                 <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
-                <span class="accordion:show-less-button display:none"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
               </span>
               <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
                 Dog 1
               </h3>
             </button>
-            <div class="xl+:pt:8px active" data-module="accordion" id="accordion-dog-1">
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
               <div class="row">
                 <div class="w:6"><img src="https://placedog.net/600/200" alt=""></div><div class="w:6"><img src="https://placedog.net/600/200" alt=""></div>
               </div>
             </div>
           </li>
-          <li class="bb-grey:1px">
-            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-dog-2');" aria-label="Learn more about ..., expands/collapses a pop-up">
-              <span class="pr:16px print:hide" aria-hidden="true">
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="px:24px print:hide" aria-hidden="true">
                 <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
-                <span class="accordion:show-less-button display:none"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
               </span>
               <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
                 Dog 2
               </h3>
             </button>
-            <div class="xl+:pt:8px active" data-module="accordion" id="accordion-dog-2">
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
               <div class="row">
                 <div class="w:6"><img src="https://placedog.net/600/200" alt=""></div><div class="w:6"><img src="https://placedog.net/600/200" alt=""></div>
               </div>
             </div>
           </li>
-          <li class="bb-grey:1px">
-            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-dog-3');" aria-label="Learn more about ..., expands/collapses a pop-up">
-              <span class="pr:16px print:hide" aria-hidden="true">
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="px:24px print:hide" aria-hidden="true">
                 <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
-                <span class="accordion:show-less-button display:none"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
               </span>
               <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
                 Dog 3
               </h3>
             </button>
-            <div class="xl+:pt:8px active" data-module="accordion" id="accordion-dog-3">
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
               <div class="row">
                 <div class="w:6"><img src="https://placedog.net/600/200" alt=""></div><div class="w:6"><img src="https://placedog.net/600/200" alt=""></div>
               </div>
             </div>
           </li>
-          <li class="bb-grey:1px">
-            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white active" data-module="accordion.trigger" onclick="storm_eagle.accordion.toggle(this,'accordion-dog-4');" aria-label="Learn more about ..., expands/collapses a pop-up">
-              <span class="pr:16px print:hide" aria-hidden="true">
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:middle bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <span class="px:24px print:hide" aria-hidden="true">
                 <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
-                <span class="accordion:show-less-button display:none"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
               </span>
               <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px">
                 Dog 4
               </h3>
             </button>
-            <div class="xl+:pt:8px active" data-module="accordion" id="accordion-dog-4">
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
               <div class="row">
                 <div class="w:6"><img src="https://placedog.net/600/200" alt=""></div><div class="w:6"><img src="https://placedog.net/600/200" alt=""></div>
               </div>
             </div>
           </li>
         </ul>
+      </section>
 
+      <section class="mw:1200px align-self:centered pt:32px">
+        <h2 class="play:bold fs:32px color:raisin-black pb:32px">Multiple: One open at a time <em class="fs:20px">(second and third panel open on load)</em></h2>
+        <ul class="accordion unstyle-pl:0 sm=:pb:32px md+:pb:48px xl+:pb:64px" id="" data-module="accordion" data-accordion-active="multiple" data-accordion-initial="[0,1,1,0]">
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:justify bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px pl:24px">
+                Dogs A
+              </h3>
+              <span class="pr:24px align-self:middle print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+              </span>
+            </button>
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div class="row">
+                <div class="w:9"><img src="https://placedog.net/900/200" alt=""></div><div class="w:3"><img src="https://placedog.net/300/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:justify bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px pl:24px">
+                Dogs B
+              </h3>
+              <span class="pr:24px align-self:middle print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+              </span>
+            </button>
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div class="row">
+                <div class="w:5"><img src="https://placedog.net/500/200" alt=""></div><div class="w:7"><img src="https://placedog.net/700/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:justify bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px pl:24px">
+                Dogs A
+              </h3>
+              <span class="pr:24px align-self:middle print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+              </span>
+            </button>
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div class="row">
+                <div class="w:9"><img src="https://placedog.net/900/200" alt=""></div><div class="w:3"><img src="https://placedog.net/300/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li class="bb-taupe-gray:1px bgc:anti-flash-white">
+            <button class="unstyle w:100% display:flex cursor:pointer align:justify bgc:white" data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3 class="sm=:fs:20px md+:fs:24px sm=:lh:24 md+:lh:32 heebo:bold pt:32px pb:24px pl:24px">
+                Dogs B
+              </h3>
+              <span class="pr:24px align-self:middle print:hide" aria-hidden="true">
+                <span class="accordion:show-more-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-down display:block"></div></span>
+                <span class="accordion:show-less-button"><div class="icon icon-type:solid icon-color:blue icon-size:32px chevron-up display:block"></div></span>
+              </span>
+            </button>
+            <div class="xl+:pt:8px" id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div class="row">
+                <div class="w:5"><img src="https://placedog.net/500/200" alt=""></div><div class="w:7"><img src="https://placedog.net/700/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="mw:1200px align-self:centered pt:32px">
+        <h2 class="play:bold fs:32px color:raisin-black pb:32px">Styleless: One open at a time <em class="fs:20px">(no panels open on load)</em></h2>
+        <ul id="" data-module="accordion" data-accordion-active="single" data-accordion-initial="[0,0,0,0]">
+          <li>
+            <button data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3>
+                Dog 1
+              </h3>
+              <span aria-hidden="true">
+                <span><div></div></span>
+                <span><div></div></span>
+              </span>
+            </button>
+            <div id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div>
+                <div><img src="https://placedog.net/600/200" alt=""></div><div><img src="https://placedog.net/600/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3>
+                Dog 2
+              </h3>
+              <span aria-hidden="true">
+                <span><div></div></span>
+                <span><div></div></span>
+              </span>
+            </button>
+            <div id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div>
+                <div><img src="https://placedog.net/600/200" alt=""></div><div><img src="https://placedog.net/600/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3>
+                Dog 3
+              </h3>
+              <span aria-hidden="true">
+                <span><div></div></span>
+                <span><div></div></span>
+              </span>
+            </button>
+            <div id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div>
+                <div><img src="https://placedog.net/600/200" alt=""></div><div><img src="https://placedog.net/600/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button data-module="accordion.trigger" id aria-controls aria-expanded tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+              <h3>
+                Dog 4
+              </h3>
+              <span aria-hidden="true">
+                <span><div></div></span>
+                <span><div></div></span>
+              </span>
+            </button>
+            <div id="" aria-labelledby data-module="accordion.panel" role="region">
+              <div>
+                <div><img src="https://placedog.net/600/200" alt=""></div><div><img src="https://placedog.net/600/200" alt=""></div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </section>
 
     </main>
