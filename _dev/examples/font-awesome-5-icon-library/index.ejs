@@ -33,14 +33,14 @@
         <div class="position:fixed" style="left:0;width:16.667%;">
           <h2 class="heebo:bold">Filters</h2>
 
-          <div class="mx:2px mb:8px b-grey:2px br:8px">
+          <div class="mx:2px mb:8px b-taupe-gray:2px br:8px">
             <div class="autocomplete p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete">
               <div class="position:relative pt:4px">
                 <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('fa5dam-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.fa5dam.get_icon_list" id="fa5dam" name="fa5dam" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
                 <label for="fa5dam" id="autocomplete_label"><span class="description">Keyword Search</span></label>
               </div>
               <div data-module="autocomplete.sr-description" id="fa5dam-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
-              <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-light-grey:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="fa5dam" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              <ul class="autocomplete-results display:none unstyle-pl:0 pt:12px b-gainsboro:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="fa5dam" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
               <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter an icon</span>
             </div>
           </div>
@@ -85,7 +85,7 @@
           <h2 class="heebo:bold">Preview</h2>
           <div class="display:flex align:center" style="height:100%;flex-direction:column">
             <div>
-              <div class="sm+:w:12 sm+:text-align:center display:flex align:center align:middle sm+:b-granite:2px sm+:br:8px" style="border-style:groove;border-color:threedface;height:300px">
+              <div class="sm+:w:12 sm+:text-align:center display:flex align:center align:middle sm+:b-dark-liver:2px sm+:br:8px" style="border-style:groove;border-color:threedface;height:300px">
                 <div id="asset" class="h:100%">
                 </div>
               </div>
@@ -162,7 +162,7 @@
           });
 
           //create each asset's html
-          asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:albicant">`;
+          asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:anti-flash-white">`;
           asset_html += `  <span class="number">${index}</span>`;
           asset_html += `  <span class="name">${name}</span>`;
           asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
