@@ -10,7 +10,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
     },
     ready: () => {
       document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach( element => {
-        if (element.type !== 'radio') {
+        if (element.type !== 'radio' || element.type !== 'range') {
           self.force_set_active_label(element);
         }
       });
@@ -24,7 +24,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
     input_listener: () => {
       document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach( element => {
 
-        if (element.type !== 'radio') {
+        if (element.type !== 'radio' || element.type !== 'range') {
           element.addEventListener('change', () => {
             self.force_set_active_label(element);
           });
@@ -50,46 +50,12 @@ storm_eagle.module('form_parent_checkbox', () => {
   let self;
   let parent_checkbox_state = {};
 
-  function _is_checked(el) {
-    if (typeof el.checked === 'boolean') {
-      return el.checked;
-    }
-    // If ARIA checkbox widget
-    return el.getAttribute('aria-checked') === 'true';
-  }
-
-  function _set_checked(key,value) {
-    let el = document.getElementById(key);
-    if (typeof el.checked === 'boolean') {
-      switch (value.toString()) {
-        case 'true':
-          el.checked = true;
-          break;
-        case 'false':
-          el.checked = false;
-          break;
-        default:
-          break;
-      }
-    }
-    // If ARIA checkbox widget
-    //if (typeof el.getAttribute('aria-checked') === 'string') {
-    switch (value.toString()) {
-      case 'true':
-      case 'false':
-        el.ariaChecked = value;
-        break;
-      default:
-        break;
-    }
-  }
-
   function _update_parent(parent_id) {
     let num_child_checkboxes_checked = 0;
     let num_checkboxes = 0;
     for (const [key,value] of Object.entries(parent_checkbox_state[parent_id])) {
       if (num_checkboxes > 0) {
-        if (_is_checked(document.getElementById(key))) {
+        if (storm_eagle.form.is_checked(document.getElementById(key))) {
           num_child_checkboxes_checked += 1
         }
       }
@@ -111,25 +77,25 @@ storm_eagle.module('form_parent_checkbox', () => {
   function _update_state(parent_id,id_clicked) {
 
     if (parent_id === id_clicked) {
-      if (_is_checked(document.getElementById(parent_id)) === false) {
+      if (storm_eagle.form.is_checked(document.getElementById(parent_id)) === false) {
 
         for (const [key,value] of Object.entries(parent_checkbox_state[parent_id])) {
           parent_checkbox_state[parent_id][key] = false;
-          _set_checked(key,false);
+          storm_eagle.form.set_checked(document.getElementById(key),false);
         }
-      } else if (_is_checked(document.getElementById(parent_id)) === true) {
+      } else if (storm_eagle.form.is_checked(document.getElementById(parent_id)) === true) {
         for (const [key,value] of Object.entries(parent_checkbox_state[parent_id])) {
           parent_checkbox_state[parent_id][key] = true;
-          _set_checked(key,true);
+          storm_eagle.form.set_checked(document.getElementById(key),true);
         }
       }
     } else {
-      if (_is_checked(document.getElementById(id_clicked)) === true) {
+      if (storm_eagle.form.is_checked(document.getElementById(id_clicked)) === true) {
         parent_checkbox_state[parent_id][id_clicked] = false;
-        _set_checked(id_clicked,false);
-      } else if (_is_checked(document.getElementById(id_clicked)) === false) {
+        storm_eagle.form.set_checked(document.getElementById(id_clicked),false);
+      } else if (storm_eagle.form.is_checked(document.getElementById(id_clicked)) === false) {
         parent_checkbox_state[parent_id][id_clicked] = true;
-        _set_checked(id_clicked,true);
+        storm_eagle.form.set_checked(document.getElementById(id_clicked),true);
       }
     }
     _update_parent(parent_id);
@@ -143,12 +109,12 @@ storm_eagle.module('form_parent_checkbox', () => {
         let checkbox_ids = el.getAttribute('aria-controls').split(' ');
 
         parent_checkbox_state[parent_checkbox_id] = {};
-        parent_checkbox_state[parent_checkbox_id][parent_checkbox_id] = _is_checked(document.getElementById(parent_checkbox_id));
+        parent_checkbox_state[parent_checkbox_id][parent_checkbox_id] = storm_eagle.form.is_checked(document.getElementById(parent_checkbox_id));
 
         self.add_parent_event_listeners(parent_checkbox_id);
 
         for (let i=0;i<checkbox_ids.length;i++) {
-          parent_checkbox_state[parent_checkbox_id][checkbox_ids[i]] = _is_checked(document.getElementById(checkbox_ids[i]));
+          parent_checkbox_state[parent_checkbox_id][checkbox_ids[i]] = storm_eagle.form.is_checked(document.getElementById(checkbox_ids[i]));
           self.add_child_event_listeners(parent_checkbox_id,document.getElementById(checkbox_ids[i]));
         }
       });
