@@ -19,8 +19,8 @@ button.unstyle {
     button.#{$prefix}anchor\:white,
     a.#{$prefix}anchor\:attention,
     button.#{$prefix}anchor\:attention,
-    a.#{$prefix}anchor\:ultramarine,
-    button.#{$prefix}anchor\:ultramarine {
+    a.#{$prefix}anchor\:yale-blue,
+    button.#{$prefix}anchor\:yale-blue {
       cursor: pointer;
       display: inline-flex;
       align-items: center;
@@ -50,19 +50,19 @@ button.unstyle {
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $ultramarine;
+        color: $yale-blue;
         text-decoration: underline;
         > .icon {
-          background-color: $ultramarine;
+          background-color: $yale-blue;
         }
       }
       &:disabled,
       &.disabled {
-        color: $granite;
+        color: $onyx;
         cursor: default;
         text-decoration: none;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -79,19 +79,19 @@ button.unstyle {
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $ultramarine;
+        color: $yale-blue;
         text-decoration: underline;
         > .icon {
-          background-color: $ultramarine;
+          background-color: $yale-blue;
         }
       }
       &:disabled,
       &.disabled {
-        color: $granite;
+        color: $onyx;
         cursor: default;
         text-decoration: none;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -145,20 +145,20 @@ button.unstyle {
       }
       &:disabled,
       &.disabled {
-        color: $granite;
+        color: $onyx;
         cursor: default;
         text-decoration: none;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
 
-    a.#{$prefix}anchor\:ultramarine,
-    button.#{$prefix}anchor\:ultramarine {
-      color: $ultramarine;
+    a.#{$prefix}anchor\:yale-blue,
+    button.#{$prefix}anchor\:yale-blue {
+      color: $yale-blue;
       > .icon {
-        background-color: $ultramarine;
+        background-color: $yale-blue;
       }
       &:hover,
       &:hover:enabled,
@@ -166,19 +166,19 @@ button.unstyle {
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $slate;
+        color: $eerie-black;
         text-decoration: underline;
         text-decoration: none;
         > .icon {
-          background-color: $slate;
+          background-color: $eerie-black;
         }
       }
       &:disabled,
       &.disabled {
-        color: $granite;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -198,8 +198,8 @@ button.unstyle {
     button.#{$prefix}button\:white,
     a.#{$prefix}button\:attention,
     button.#{$prefix}button\:attention,
-    a.#{$prefix}button\:ultramarine,
-    button.#{$prefix}button\:ultramarine {
+    a.#{$prefix}button\:yale-blue,
+    button.#{$prefix}button\:yale-blue {
       position:relative;
       cursor: pointer;
       display: inline-flex;
@@ -212,7 +212,8 @@ button.unstyle {
       overflow: hidden;
       height: rem-calc(54);
       transition: none; /* all .2s ease;*/
-      border-radius: rem-calc(28);
+      border-radius: rem-calc(8);
+      // border-radius: rem-calc(28);
       line-height: 2rem;
       box-sizing: border-box;
       white-space: nowrap;
@@ -254,14 +255,14 @@ button.unstyle {
       box-shadow: $box-shadow-custom-2;
       &:hover,
       &:hover:enabled {
-        border: rem-calc(2) solid $ultramarine;
-        background-color: $ultramarine;
+        border: rem-calc(2) solid $yale-blue;
+        background-color: $yale-blue;
       }
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        background-color: $ultramarine;
+        background-color: $yale-blue;
       }
       > .icon {
         background-color: $white;
@@ -269,12 +270,12 @@ button.unstyle {
       &:disabled,
       &.disabled {
         box-shadow: none;
-        border: rem-calc(2) solid $light-grey;
-        background-color: $light-grey;
-        color: $granite;
+        border: rem-calc(2) solid $silver;
+        background-color: $silver;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -290,32 +291,32 @@ button.unstyle {
       }
       &:hover,
       &:hover:enabled {
-        border: rem-calc(2) solid $ultramarine;
-        color: $ultramarine;
+        border: rem-calc(2) solid $yale-blue;
+        color: $yale-blue;
         > .icon {
-          background-color: $ultramarine;
+          background-color: $yale-blue;
         }
       }
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($cerulean, 0.35);
-        border: rem-calc(2) solid $cerulean;
-        color: $ultramarine;
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.35);
+        border: rem-calc(2) solid $vista-blue;
+        color: $yale-blue;
         > .icon {
-          background-color: $ultramarine;
+          background-color: $yale-blue;
         }
       }
       &:disabled,
       &.disabled {
         box-shadow: none;
-        border: rem-calc(2) solid $light-grey;
+        border: rem-calc(2) solid $silver;
         background-color: transparent;
-        color: $granite;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -335,7 +336,7 @@ button.unstyle {
       &:active,
       &:active:enabled {
         border: rem-calc(2) solid transparent;
-        background-color: $ultramarine;
+        background-color: $yale-blue;
         color: $white;
         > .icon {
           background-color: $white;
@@ -343,12 +344,12 @@ button.unstyle {
       }
       &:disabled,
       &.disabled {
-        border: rem-calc(2) solid $light-grey;
-        background-color: $light-grey;
-        color: $granite;
+        border: rem-calc(2) solid $silver;
+        background-color: $silver;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -372,20 +373,20 @@ button.unstyle {
       }
       &:disabled,
       &.disabled {
-        border: rem-calc(2) solid $light-grey;
-        background-color: $light-grey;
-        color: $granite;
+        border: rem-calc(2) solid $silver;
+        background-color: $silver;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
 
-    a.#{$prefix}button\:ultramarine,
-    button.#{$prefix}button\:ultramarine {
+    a.#{$prefix}button\:yale-blue,
+    button.#{$prefix}button\:yale-blue {
       border: rem-calc(2) solid transparent;
-      background-color: $ultramarine;
+      background-color: $yale-blue;
       color: $white;
       &:hover,
       &:hover:enabled,
@@ -394,19 +395,19 @@ button.unstyle {
       &:active,
       &:active:enabled {
         border: rem-calc(2) solid transparent;
-        background-color: $slate;
+        background-color: $eerie-black;
       }
       > .icon {
         background-color: $white;
       }
       &:disabled,
       &.disabled {
-        border: rem-calc(2) solid $light-grey;
-        background-color: $light-grey;
-        color: $granite;
+        border: rem-calc(2) solid $silver;
+        background-color: $silver;
+        color: $onyx;
         cursor: default;
         > .icon {
-          background-color: $granite;
+          background-color: $onyx;
         }
       }
     }
@@ -418,7 +419,7 @@ button.unstyle {
 .button\:secondary::-moz-focus-inner,
 .button\:white::-moz-focus-inner,
 .button\:attention::-moz-focus-inner,
-.button\:ultramarine::-moz-focus-inner {
+.button\:yale-blue::-moz-focus-inner {
   border: 0;
 }
 
@@ -426,7 +427,7 @@ button.unstyle {
 .button\:secondary:after,
 .button\:white:after,
 .button\:attention:after,
-.button\:ultramarine:after {
+.button\:yale-blue:after {
   content: '';
   display: block;
   left: 50%;
@@ -469,8 +470,8 @@ button.unstyle {
     button.#{$prefix}button\:white:not(:active):after,
     a.#{$prefix}button\:attention:not(:active):after,
     button.#{$prefix}button\:attention:not(:active):after,
-    a.#{$prefix}button\:ultramarine:not(:active):after,
-    button.#{$prefix}button\:ultramarine:not(:active):after {
+    a.#{$prefix}button\:yale-blue:not(:active):after,
+    button.#{$prefix}button\:yale-blue:not(:active):after {
       animation: ripple .3s ease-in;
     }
 
@@ -482,8 +483,8 @@ button.unstyle {
     button.#{$prefix}button\:white:after,
     a.#{$prefix}button\:attention:after,
     button.#{$prefix}button\:attention:after,
-    a.#{$prefix}button\:ultramarine:after,
-    button.#{$prefix}button\:ultramarine:after {
+    a.#{$prefix}button\:yale-blue:after,
+    button.#{$prefix}button\:yale-blue:after {
       visibility: hidden;
     }
 
@@ -506,7 +507,7 @@ button.unstyle {
 .button\:secondary:not(:active):after,
 .button\:white:not(:active):after,
 .button\:attention:not(:active):after,
-.button\:ultramarine:not(:active):after {
+.button\:yale-blue:not(:active):after {
     animation: ripple .3s ease-in;
 }
 
@@ -514,7 +515,7 @@ button.unstyle {
 .button\:secondary:after,
 .button\:white:after,
 .button\:attention:after,
-.button\:ultramarine:after {
+.button\:yale-blue:after {
     visibility: hidden;
 }
 
@@ -522,6 +523,6 @@ button.unstyle {
 .button\:secondary:focus:after,
 .button\:white:focus:after,
 .button\:attention:focus:after,
-.button\:ultramarine:focus:after {
+.button\:yale-blue:focus:after {
     visibility: visible;
 }
