@@ -1,11 +1,11 @@
 $sizes: (
   0    : 0,
-  4px  : .25rem,
-  8px  : .5rem,
-  16px : 1rem,
-  24px : 1.5rem,
-  32px : 2rem,
-  48px : 3rem,
+  4px  : rem-calc(4),
+  8px  : rem-calc(8),
+  16px : rem-calc(16),
+  24px : rem-calc(24),
+  32px : rem-calc(32),
+  48px : rem-calc(48),
   50\% : 50%
 );
 
