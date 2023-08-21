@@ -1,8 +1,8 @@
 storm_eagle.module("color_picker", () => {
   "use strict";
   let self;
-  let baseColours = ["#3169b2","#ab1e23","#f4c026","#0f3c78","#004370","#77dcf3","#b9ecf3","#e6f9fe","#000000","#202020","#505050","#888888","#dbdbdb","#f3f3f3","#ffffff","#09681d","#9dcda7","#064112","#a01010","#e9a1a1","#640a0a","#c0791d","#eeeeec"];
-  let baseName = ["blue","red","yellow","dark-cerulean","atenoe-blue","sky-blue-crayola","pale-blue","bubbles","black","raisin-black","dark-liver","taupe-gray","gainsboro","anti-flash-white","white","positive","positive-light","positive-dark","negative","negative-light","negative-dark","warning","disabled"];
+  let baseColours = ["#3169b2","#ab1e23","#f4c026","#1c3b65","#27528c","#789ccc","#9bb6d9","#becfe6","#80171a","#9b1b20","#b63b3f","#c0575a","#d58f91","#b7901d","#fdf0c9","#000","#202020","#404040","#808080","#c0c0c0","#e0e0e0","#fff","#d08888","#a01010","#500808","#84b48e","#09681d","#05340f","#c0791d","#eeeeec"];
+  let baseName = ["blue","red","yellow","yale-blue","yinmn-blue","vista-blue","powder-blue","columbia-blue","falu-red","carmine","auburn","bittersweet-shimmer","old-rose","dark-goldenrod","dutch-white","black","eerie-black","onyx","gray","silver","platinum","white","negative-light","negative","negative-dark","positive-light","positive","positive-dark","warning"];
   /**
    * Function to convert HEX to RGB
    * @param  {string} color to match
