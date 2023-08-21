@@ -14,22 +14,22 @@ $properties: (
 $values: (
   auto : auto,
   0    : 0,
-  1px  : .0625rem,
-  2px  : .125rem,
-  4px  : .25rem,
-  8px  : .5rem,
-  12px : .75rem,
-  16px : 1rem,
-  20px : 1.25rem,
-  24px : 1.5rem,
-  32px : 2rem,
-  40px : 2.5rem,
-  48px : 3rem,
-  56px : 3.5rem,
-  64px : 4rem,
-  72px : 4.5rem,
-  80px : 5rem,
-  96px : 6rem
+  1px  : rem-calc(1),
+  2px  : rem-calc(2),
+  4px  : rem-calc(4),
+  8px  : rem-calc(8),
+  12px : rem-calc(12),
+  16px : rem-calc(16),
+  20px : rem-calc(20),
+  24px : rem-calc(24),
+  32px : rem-calc(32),
+  40px : rem-calc(40),
+  48px : rem-calc(48),
+  56px : rem-calc(56),
+  64px : rem-calc(64),
+  72px : rem-calc(72),
+  80px : rem-calc(80),
+  96px : rem-calc(96)
 );
 
 @each $mediaquery in $mediaqueries {
