@@ -1,0 +1,20 @@
+.accordion {
+    *[data-module="accordion.trigger"] {
+        &[aria-expanded="false"] {
+            .accordion\:show-more-button{
+                display:block;
+            }
+            .accordion\:show-less-button{
+                display:none;
+            }
+        }
+        &[aria-expanded="true"] {
+            .accordion\:show-more-button{
+                display:none;
+            }
+            .accordion\:show-less-button{
+                display:block;
+            }
+        }
+    }
+}
