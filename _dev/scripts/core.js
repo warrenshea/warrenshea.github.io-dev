@@ -42,8 +42,8 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.format.currency()
  * storm_eagle.format.percentage()
  * storm_eagle.reverse_format.get_numeric_value()
- * storm_eagle.form.is_checked()
- * storm_eagle.form.set_checked()
+ * storm_eagle.checkbox.is_checked()
+ * storm_eagle.checkbox.set_checked()
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
  * storm_eagle.client.viewport.get_height()
@@ -331,7 +331,7 @@ var storm_eagle = (function(window, document, undefined) {
       },
     },
 
-    form: {
+    checkbox: {
       is_checked: (element) => {
         if (typeof element.checked === 'boolean') {
           return element.checked;
@@ -362,6 +362,62 @@ var storm_eagle = (function(window, document, undefined) {
           default:
             break;
         }
+      },
+
+      get_values: (selector) => {
+        let checkbox_values = [];
+        let elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (storm_eagle.checkbox.is_checked(el)) {
+            checkbox_values.push(el.value);
+          }
+        });
+        return checkbox_values;
+      }
+    },
+
+    radio: {
+      is_checked: (element) => {
+        if (typeof element.checked === 'boolean') {
+          return element.checked;
+        }
+        // If ARIA checkbox widget
+        return element.getAttribute('aria-checked') === 'true';
+      },
+
+      set_checked: (element,value) => {
+        if (typeof element.checked === 'boolean') {
+          switch (value.toString()) {
+            case 'true':
+              element.checked = true;
+              break;
+            case 'false':
+              element.checked = false;
+              break;
+            default:
+              break;
+          }
+        }
+        // If ARIA checkbox widget
+        switch (value.toString()) {
+          case 'true':
+          case 'false':
+            element.ariaChecked = value;
+            break;
+          default:
+            break;
+        }
+      },
+
+      get_values: (selector) => {
+        let radio_values = [];
+        let elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+          if (storm_eagle.radio.is_checked(el)) {
+            radio_values.push(el.value);
+          }
+        });
+        return radio_values;
       }
     },
 
