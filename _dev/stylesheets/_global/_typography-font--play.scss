@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'play-normal';
+  font-family: 'play';
   font-style: normal;
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/play/v12/6aez4K2oVqwIvtU2Hw.woff2) format('woff2');
@@ -19,7 +19,7 @@
 
   @include breakpoint($breakpoint) {
     .#{$prefix}play\:normal {
-      font-family: "play-normal", Arial, Sans-Serif;
+      font-family: "play", Arial, Sans-Serif;
       font-weight: 400;
     }
     .#{$prefix}play\:bold {
