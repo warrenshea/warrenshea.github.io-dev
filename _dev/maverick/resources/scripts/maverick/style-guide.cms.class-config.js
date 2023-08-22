@@ -6,12 +6,12 @@ var valueSpacing = ["", "auto", "0", "1px", "2px", "4px", "8px", "12px", "16px",
 var labelSpacing = ["N/A", "auto", "0", "1px", "2px", "4px", "8px", "12px", "16px", "20px", "24px", "32px", "40px", "48px", "56px", "64px", "72px", "80px", "96px"];
 var valueAlignSelf = ["", "centered", "top", "bottom", "middle", "stretch"];
 var labelAlignSelf = ["N/A", "centered", "top", "bottom", "middle", "stretch"];
-var valueColor = ["", "white", "blue", "slate"];
-var labelColor = ["N/A", "<span class='color:white text-shadow:slate heebo:bold'>white</span>", "<span class='color:blue heebo:bold'>blue</span>", "<span class='color:slate heebo:bold'>slate</span>"];
-var valueBackgroundColor = ["", "albicant", "white", "azure", "blue", "ultramarine"];
-var labelBackgroundColor = ["<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center'><span>N/A</span></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:albicant'><div class='w:100%'>albicant</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:white'><div class='w:100%'>white</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:azure'><div class='w:100%'>azure</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:blue color:white'><div class='w:100%'>blue</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:ultramarine color:white'><div class='w:100%'>ultramarine</div></div>"];
-var valueBackgroundColorGY = ["", "white|albicant", "albicant|white"];
-var labelBackgroundColorGY = ["<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center'><span>N/A</span></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgcgy:albicant|white'><div class='w:100%'>white (50%)<br>albicant (50%)</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:right bgcgy:white|albicant'><div class='w:100%'>albicant (50%)<br>white (50%)</div></div>"];
+var valueColor = ["", "white", "blue", "eerie-black"];
+var labelColor = ["N/A", "<span class='color:white text-shadow:eerie-black heebo:bold'>white</span>", "<span class='color:blue heebo:bold'>blue</span>", "<span class='color:eerie-black heebo:bold'>eerie-black</span>"];
+var valueBackgroundColor = ["", "platinum", "white", "powder-blue", "blue", "yale-blue"];
+var labelBackgroundColor = ["<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center'><span>N/A</span></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:platinum'><div class='w:100%'>platinum</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:white'><div class='w:100%'>white</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:powder-blue'><div class='w:100%'>powder-blue</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:blue color:white'><div class='w:100%'>blue</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgc:yale-blue color:white'><div class='w:100%'>yale-blue</div></div>"];
+var valueBackgroundColorGY = ["", "platinum|white", "white|platinum"];
+var labelBackgroundColorGY = ["<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center'><span>N/A</span></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:center bgcgy:platinum|white'><div class='w:100%'>platinum (50%)<br>white (50%)</div></div>", "<div data-equalize-height='bgc' class='w:100% display:flex align:middle align:right bgcgy:white|platinum'><div class='w:100%'>white (50%)<br>platinum (50%)</div></div>"];
 var valueBorder = ["", "0px", "1px", "2px", "4px"];
 var labelBorder = ["N/A", "0px", "1px", "2px", "4px"];
 var valueBorderRadius = ["", "0", "4px", "8px", "16px", "32px", "48px", "50%"];
@@ -291,203 +291,203 @@ var classKeyValueConfig = {
     "value": valueBackgroundColorGY,
     "label": labelBackgroundColorGY
   },
-  "sm+:b-light-grey": {
-    "heading": "SM Border Light Grey",
+  "sm+:b-silver": {
+    "heading": "SM Border Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bt-light-grey": {
-    "heading": "SM Border Top Light Grey",
+  "sm+:bt-silver": {
+    "heading": "SM Border Top Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bb-light-grey": {
-    "heading": "SM Border Bottom Light Grey",
+  "sm+:bb-silver": {
+    "heading": "SM Border Bottom Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bl-light-grey": {
-    "heading": "SM Border Left Light Grey",
+  "sm+:bl-silver": {
+    "heading": "SM Border Left Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:br-light-grey": {
-    "heading": "SM Border Right Light Grey",
+  "sm+:br-silver": {
+    "heading": "SM Border Right Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:b-light-grey": {
-    "heading": "MD Border Light Grey",
+  "md+:b-silver": {
+    "heading": "MD Border Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bt-light-grey": {
-    "heading": "MD Border Top Light Grey",
+  "md+:bt-silver": {
+    "heading": "MD Border Top Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bb-light-grey": {
-    "heading": "MD Border Bottom Light Grey",
+  "md+:bb-silver": {
+    "heading": "MD Border Bottom Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bl-light-grey": {
-    "heading": "MD Border Left Light Grey",
+  "md+:bl-silver": {
+    "heading": "MD Border Left Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:br-light-grey": {
-    "heading": "MD Border Right Light Grey",
+  "md+:br-silver": {
+    "heading": "MD Border Right Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:b-light-grey": {
-    "heading": "LG Border Light Grey",
+  "lg+:b-silver": {
+    "heading": "LG Border Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bt-light-grey": {
-    "heading": "LG Border Top Light Grey",
+  "lg+:bt-silver": {
+    "heading": "LG Border Top Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bb-light-grey": {
-    "heading": "LG Border Bottom Light Grey",
+  "lg+:bb-silver": {
+    "heading": "LG Border Bottom Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bl-light-grey": {
-    "heading": "LG Border Left Light Grey",
+  "lg+:bl-silver": {
+    "heading": "LG Border Left Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:br-light-grey": {
-    "heading": "LG Border Right Light Grey",
+  "lg+:br-silver": {
+    "heading": "LG Border Right Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:b-light-grey": {
-    "heading": "XL Border Light Grey",
+  "xl+:b-silver": {
+    "heading": "XL Border Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bt-light-grey": {
-    "heading": "XL Border Top Light Grey",
+  "xl+:bt-silver": {
+    "heading": "XL Border Top Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bb-light-grey": {
-    "heading": "XL Border Bottom Light Grey",
+  "xl+:bb-silver": {
+    "heading": "XL Border Bottom Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bl-light-grey": {
-    "heading": "XL Border Left Light Grey",
+  "xl+:bl-silver": {
+    "heading": "XL Border Left Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:br-light-grey": {
-    "heading": "XL Border Right Light Grey",
+  "xl+:br-silver": {
+    "heading": "XL Border Right Silver",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:b-slate": {
-    "heading": "SM Border Slate",
+  "sm+:b-eerie-black": {
+    "heading": "SM Border Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bt-slate": {
-    "heading": "SM Border Top Slate",
+  "sm+:bt-eerie-black": {
+    "heading": "SM Border Top Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bb-slate": {
-    "heading": "SM Border Bottom Slate",
+  "sm+:bb-eerie-black": {
+    "heading": "SM Border Bottom Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:bl-slate": {
-    "heading": "SM Border Left Slate",
+  "sm+:bl-eerie-black": {
+    "heading": "SM Border Left Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "sm+:br-slate": {
-    "heading": "SM Border Right Slate",
+  "sm+:br-eerie-black": {
+    "heading": "SM Border Right Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:b-slate": {
-    "heading": "MD Border Slate",
+  "md+:b-eerie-black": {
+    "heading": "MD Border Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bt-slate": {
-    "heading": "MD Border Top Slate",
+  "md+:bt-eerie-black": {
+    "heading": "MD Border Top Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bb-slate": {
-    "heading": "MD Border Bottom Slate",
+  "md+:bb-eerie-black": {
+    "heading": "MD Border Bottom Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:bl-slate": {
-    "heading": "MD Border Left Slate",
+  "md+:bl-eerie-black": {
+    "heading": "MD Border Left Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "md+:br-slate": {
-    "heading": "MD Border Right Slate",
+  "md+:br-eerie-black": {
+    "heading": "MD Border Right Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:b-slate": {
-    "heading": "LG Border Slate",
+  "lg+:b-eerie-black": {
+    "heading": "LG Border Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bt-slate": {
-    "heading": "LG Border Top Slate",
+  "lg+:bt-eerie-black": {
+    "heading": "LG Border Top Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bb-slate": {
-    "heading": "LG Border Bottom Slate",
+  "lg+:bb-eerie-black": {
+    "heading": "LG Border Bottom Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:bl-slate": {
-    "heading": "LG Border Left Slate",
+  "lg+:bl-eerie-black": {
+    "heading": "LG Border Left Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "lg+:br-slate": {
-    "heading": "LG Border Right Slate",
+  "lg+:br-eerie-black": {
+    "heading": "LG Border Right Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:b-slate": {
-    "heading": "XL Border Slate",
+  "xl+:b-eerie-black": {
+    "heading": "XL Border Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bt-slate": {
-    "heading": "XL Border Top Slate",
+  "xl+:bt-eerie-black": {
+    "heading": "XL Border Top Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bb-slate": {
-    "heading": "XL Border Bottom Slate",
+  "xl+:bb-eerie-black": {
+    "heading": "XL Border Bottom Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:bl-slate": {
-    "heading": "XL Border Left Slate",
+  "xl+:bl-eerie-black": {
+    "heading": "XL Border Left Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },
-  "xl+:br-slate": {
-    "heading": "XL Border Right Slate",
+  "xl+:br-eerie-black": {
+    "heading": "XL Border Right Eerie Black",
     "value": valueBorder,
     "label": labelBorder
   },

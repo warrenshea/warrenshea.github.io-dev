@@ -96,7 +96,7 @@ storm_eagle.module('editable_popup_sender', function () {
 
       var containerArray = ["bgc", "bgcgy"];
       var rowArray = ["bgc", "bgcgy", "align-self", "pt", "pl", "pr", "pb", "mt", "ml", "mr", "mb"];
-      var itemArray = ["w", "align-self", "pt", "pl", "pr", "pb", "mt", "ml", "mr", "mb", "color", "bgc", "b-light-grey", "bt-light-grey", "bb-light-grey", "bl-light-grey", "br-light-grey", "b-slate", "bt-slate", "bb-slate", "bl-slate", "br-slate", "b-blue", "bt-blue", "bb-blue", "bl-blue", "br-blue", "br", "brtl", "brtr", "brbl", "brbr", "box-shadow", "text-align", "fs", "heebo"];
+      var itemArray = ["w", "align-self", "pt", "pl", "pr", "pb", "mt", "ml", "mr", "mb", "color", "bgc", "b-silver", "bt-silver", "bb-silver", "bl-silver", "br-silver", "b-eerie-black", "bt-eerie-black", "bb-eerie-black", "bl-eerie-black", "br-eerie-black", "b-blue", "bt-blue", "bb-blue", "bl-blue", "br-blue", "br", "brtl", "brtr", "brbl", "brbr", "box-shadow", "text-align", "fs", "heebo"];
 
       function pushToItemsArray(keyArray, $itemArray, itemToBeChanged) {
         $(breakpoints).each(function (index, breakpoint) {
@@ -235,11 +235,11 @@ storm_eagle.module('editable_popup_sender', function () {
     add_message_listener: () => {
       window.addEventListener('message', message => {
         message = message.data;
-        //console.log("Parent to Child: " + message);
+        console.log("Parent to Child: " + message);
         classes = message.split("||")[1];
-        //console.log(classes);
+        console.log(classes);
         classesArray = classes.split(" ");
-        //console.log(classesArray);
+        console.log(classesArray);
 
         storm_eagle.editable_popup_sender.select_range(message.split("||")[0], classesArray);
       });
