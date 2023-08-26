@@ -1,218 +1,290 @@
 [
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Agumon"
+    "digivolution": "Rookie",
+    "name": "Agumon"
   },
   {
-    "Champion": "Greymon"
+    "digivolution": "Champion",
+    "name": "Greymon"
   },
   {
-    "Ultimate": "Metal Greymon"
+    "digivolution": "Ultimate",
+    "name": "Metal Greymon"
   },
   {
-    "Mega": "War Greymon"
+    "digivolution": "Mega",
+    "name": "War Greymon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Gabumon"
+    "digivolution": "Rookie",
+    "name": "Gabumon"
   },
   {
-    "Champion": "Garurumon"
+    "digivolution": "Champion",
+    "name": "Garurumon"
   },
   {
-    "Ultimate": "Were Garurumon"
+    "digivolution": "Ultimate",
+    "name": "Were Garurumon"
   },
   {
-    "Mega": "Metal Garurumon"
+    "digivolution": "Mega",
+    "name": "Metal Garurumon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Tentomon"
+    "digivolution": "Rookie",
+    "name": "Tentomon"
   },
   {
-    "Champion": "Kabuterimon"
+    "digivolution": "Champion",
+    "name": "Kabuterimon"
   },
   {
-    "Ultimate": "MegaKabuterimon"
+    "digivolution": "Ultimate",
+    "name": "MegaKabuterimon"
   },
   {
-    "Mega": "TyrantKabuterimon"
+    "digivolution": "Mega",
+    "name": "TyrantKabuterimon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Palmon"
+    "digivolution": "Rookie",
+    "name": "Palmon"
   },
   {
-    "Champion": "Togemon"
+    "digivolution": "Champion",
+    "name": "Togemon"
   },
   {
-    "Ultimate": "Lillymon"
+    "digivolution": "Ultimate",
+    "name": "Lillymon"
   },
   {
-    "Mega": "Rosemon"
+    "digivolution": "Mega",
+    "name": "Rosemon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Gomamon"
+    "digivolution": "Rookie",
+    "name": "Gomamon"
   },
   {
-    "Champion": "Ikkakumon"
+    "digivolution": "Champion",
+    "name": "Ikkakumon"
   },
   {
-    "Ultimate": "Zudomon"
+    "digivolution": "Ultimate",
+    "name": "Zudomon"
   },
   {
-    "Mega": "Vikemon"
+    "digivolution": "Mega",
+    "name": "Vikemon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Biyomon"
+    "digivolution": "Rookie",
+    "name": "Biyomon"
   },
   {
-    "Champion": "Birdramon"
+    "digivolution": "Champion",
+    "name": "Birdramon"
   },
   {
-    "Ultimate": "Garudamon"
+    "digivolution": "Ultimate",
+    "name": "Garudamon"
   },
   {
-    "Mega": "Phoenixmon"
+    "digivolution": "Mega",
+    "name": "Phoenixmon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Patamon"
+    "digivolution": "Rookie",
+    "name": "Patamon"
   },
   {
-    "Champion": "Angemon"
+    "digivolution": "Champion",
+    "name": "Angemon"
   },
   {
-    "Ultimate": "MagnaAngemon"
+    "digivolution": "Ultimate",
+    "name": "MagnaAngemon"
   },
   {
-    "Mega": "Seraphimon"
+    "digivolution": "Mega",
+    "name": "Seraphimon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Salamon"
+    "digivolution": "Rookie",
+    "name": "Salamon"
   },
   {
-    "Champion": "Gatomon"
+    "digivolution": "Champion",
+    "name": "Gatomon"
   },
   {
-    "Ultimate": "Angewomon"
+    "digivolution": "Ultimate",
+    "name": "Angewomon"
   },
   {
-    "Mega": "Ophanimon"
+    "digivolution": "Mega",
+    "name": "Ophanimon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Veemon"
+    "digivolution": "Rookie",
+    "name": "Veemon"
   },
   {
-    "Champion": "ExVeemon"
+    "digivolution": "Champion",
+    "name": "ExVeemon"
   },
   {
-    "Ultimate": "Paildramon"
+    "digivolution": "Ultimate",
+    "name": "Paildramon"
   },
   {
-    "Mega": "Imperialdramon"
+    "digivolution": "Mega",
+    "name": "Imperialdramon"
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Wommon"
+    "digivolution": "Rookie",
+    "name": "Wommon"
   },
   {
-    "Champion": "Stingmon"
+    "digivolution": "Champion",
+    "name": "Stingmon"
   },
   {
-    "Ultimate": ""
+    "digivolution": "Ultimate",
+    "name": ""
   },
   {
-    "Mega": ""
+    "digivolution": "Mega",
+    "name": ""
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Hawkmon"
+    "digivolution": "Rookie",
+    "name": "Hawkmon"
   },
   {
-    "Champion": "Aquilamon"
+    "digivolution": "Champion",
+    "name": "Aquilamon"
   },
   {
-    "Ultimate": "Silphymon"
+    "digivolution": "Ultimate",
+    "name": "Silphymon"
   },
   {
-    "Mega": ""
+    "digivolution": "Mega",
+    "name": ""
   },
   {
-    "Fresh": ""
+    "digivolution": "Fresh",
+    "name": ""
   },
   {
-    "In-Training": ""
+    "digivolution": "In-Training",
+    "name": ""
   },
   {
-    "Rookie": "Armadillomon"
+    "digivolution": "Rookie",
+    "name": "Armadillomon"
   },
   {
-    "Champion": "Ankylomon"
+    "digivolution": "Champion",
+    "name": "Ankylomon"
   },
   {
-    "Mega": "Shakkoumon"
+    "digivolution": "Mega",
+    "name": "Shakkoumon"
   },
   {
-    "Ultimate": ""
+    "digivolution": "Ultimate",
+    "name": ""
   }
 ]
