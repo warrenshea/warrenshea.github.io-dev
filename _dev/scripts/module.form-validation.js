@@ -238,6 +238,10 @@ storm_eagle.module('form_validation', () => {
           regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
           return regex.test(value);
           break;
+        case "is_css_hexcode": //css hexcode
+          regex = /^#([0-9a-fA-F]{6})$/;
+          return regex.test(value);
+          break;
         case "has_min_8_characters":
           return (value.length > 7);
           break;
