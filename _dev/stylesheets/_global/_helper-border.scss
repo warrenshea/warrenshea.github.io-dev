@@ -44,7 +44,7 @@ $directions: (
       $direction-name: nth($direction, 1);
       $direction-value: nth($direction, 2);
 
-      .#{$prefix}#{$direction-name}-w\:0 {
+      .#{$prefix}#{$direction-name}\:0 {
         border-#{$direction-value}-width: 0;
       }
     }
