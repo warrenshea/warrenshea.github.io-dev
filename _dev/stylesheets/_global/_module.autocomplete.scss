@@ -1,0 +1,22 @@
+.autocomplete-results{
+  li {
+    display: flex;
+    font-size: rem-calc(14);
+    line-height: 1.5;
+    border-bottom: 1px solid $silver;
+    cursor:pointer;
+    width:100%;
+    padding: 12px 12px 10px;
+    span.name {
+      text-align:left;
+      flex-grow:1;
+    }
+    .match {
+      color:$blue;
+    }
+    &:hover,
+    &.selected{
+      background-color: $platinum;
+    }
+  }
+}
