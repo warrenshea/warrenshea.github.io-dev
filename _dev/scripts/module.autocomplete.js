@@ -19,7 +19,9 @@ storm_eagle.module('autocomplete', () => {
           "results_id": el.querySelector("[data-module='autocomplete.results']").getAttribute("id"),
           "num_results": parseInt(el.querySelector("[data-module='autocomplete.results']").getAttribute("data-autocomplete-results")),
           "sr_description_id": el.querySelector("[data-module='autocomplete.sr-description']").getAttribute("id"),
-          "error_message_id": el.querySelector("[data-module='autocomplete.error']").getAttribute("id")
+          "error_message_id": (el.querySelector("[data-module='autocomplete.error']")) ? el.querySelector("[data-module='autocomplete.error']").getAttribute("id") : null,
+          "multiselect_id": (el.querySelector("[data-module='autocomplete.multiselect']")) ? el.querySelector("[data-module='autocomplete.multiselect']").getAttribute("id") : null,
+          "multiselect_tags_id": (el.querySelector("[data-module='autocomplete.multiselect-tags']")) ? el.querySelector("[data-module='autocomplete.multiselect-tags']").getAttribute("id") : null,
         };
         self.add_event_listeners(autocomplete_id);
       });
@@ -32,19 +34,19 @@ storm_eagle.module('autocomplete', () => {
         document.getElementById(sr_description_id).innerHTML = value;
       }
     },
-    close: (autocomplete_id) => {
+    close: (autocomplete_id, reset_results) => {
       const results_id = autocomplete_state[autocomplete_id]["results_id"];
       const input_id = autocomplete_state[autocomplete_id]["input_id"];
-      setTimeout(() => {
-        document.getElementById(results_id).classList.add("display:none");
-        document.getElementById(results_id).innerHTML = "";
-        document.getElementById(autocomplete_id).classList.remove("active");
-        document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
 
-        if (document.activeElement !== document.getElementById(input_id)) {
-          document.getElementById(input_id).focus();
-        }
-      }, 250);
+      document.getElementById(results_id).classList.add("display:none");
+      document.getElementById(autocomplete_id).classList.remove("active");
+      document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+      if (reset_results) {
+        document.getElementById(results_id).innerHTML = "";
+      }
+      // if (document.activeElement !== document.getElementById(input_id)) {
+      //   document.getElementById(input_id).focus();
+      // }
     },
     execute_search: (autocomplete_id) => {
       const results_id = autocomplete_state[autocomplete_id]["results_id"];
@@ -56,7 +58,7 @@ storm_eagle.module('autocomplete', () => {
       if (query.length > 0) {
 
         //note: search_function must be a global function, or accessible through dot notation (not bracket notation)
-        //refactor if possible
+        //@TODO: refactor if possible
         let search_function_parts = search_function.split(".");
         if (search_function_parts.length === 1) {
           window[search_function](query, input_id, results_id, autocomplete_id, num_results);
@@ -73,6 +75,7 @@ storm_eagle.module('autocomplete', () => {
       const input_id = autocomplete_state[autocomplete_id]["input_id"];
       const num_results = autocomplete_state[autocomplete_id]["num_results"];
       const error_message_id = autocomplete_state[autocomplete_id]["error_message_id"];
+      const multiselect_id = autocomplete_state[autocomplete_id]["multiselect_id"];
       document.getElementById(input_id).addEventListener('keydown', event => {
         let selected_dropdown = document.getElementById(results_id).querySelector('.selected');
 
@@ -113,10 +116,8 @@ storm_eagle.module('autocomplete', () => {
 
           case keyboard.keys.esc:
           case keyboard.keys.tab:
-            document.getElementById(results_id).innerHTML = ""; //document.getElementById(results_id).classList.add("display:none"); // empty list and hide suggestion box
-            document.getElementById(results_id).classList.add("display:none");
-            document.getElementById(autocomplete_id).classList.remove("active");
-            document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
+            // empty list and hide suggestion box
+            storm_eagle.autocomplete.close(autocomplete_id,true)
             break;
 
           case keyboard.keys.enter:
@@ -138,14 +139,12 @@ storm_eagle.module('autocomplete', () => {
         document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
         document.getElementById(error_message_id).classList.remove("has-error");
       });
-      document.getElementById(input_id).addEventListener('blur', event => {
-        /* comment out to debug results disappearing results pane */
-        setTimeout(() => {
-          document.getElementById(results_id).classList.add("display:none");
-          document.getElementById(results_id).innerHTML = "";
-          document.getElementById(autocomplete_id).classList.remove("active");
-          document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
-        }, 250);
+      document.addEventListener('click', event => {
+        if (event.target.getAttribute('data-module') !== "autocomplete.results-item" && event.target.getAttribute('data-module') !== "autocomplete.tag.button") {
+          setTimeout(() => {
+            storm_eagle.autocomplete.close(autocomplete_id,true)
+          },250);
+        }
       });
     }
   };
