@@ -1,4 +1,4 @@
-storm_eagle.module('range-slider', () => {
+storm_eagle.module('range_slider', () => {
   "use strict";
 
   let self;
@@ -6,7 +6,7 @@ storm_eagle.module('range-slider', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle["range-slider"];
+      self = storm_eagle["range_slider"];
       document.querySelectorAll("[data-module='range-slider.input-container']").forEach(el => {
         let slider_id = el.querySelector("[data-module='range-slider.input-1']").getAttribute("id");
         slider_state[slider_id] = {
