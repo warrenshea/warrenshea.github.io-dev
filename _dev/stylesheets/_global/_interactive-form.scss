@@ -119,23 +119,27 @@ fieldset.unstyle { border:0; padding:0 }
     transition: all 0.3s ease-out;
   }
   input[type="text"]:focus+label:before,
+  input[type="text"].focus+label:before,
   input[type="number"]:focus+label:before,
   input[type="email"]:focus+label:before,
   input[type="password"]:focus+label:before,
   input[type="search"]:focus+label:before,
   select:focus+label:before,
-  textarea:focus+label:before {
+  textarea:focus+label:before,
+  textarea.focus+label:before {
     visibility: visible;
     transform: scaleX(1);
   }
 
   input[type="text"]:focus+label span.description,
+  input[type="text"].focus+label span.description,
   input[type="number"]:focus+label span.description,
   input[type="email"]:focus+label span.description,
   input[type="password"]:focus+label span.description,
   input[type="search"]:focus+label span.description,
   select:focus+label span.description,
-  textarea:focus+label span.description {
+  textarea:focus+label span.description,
+  textarea.focus+label span.description {
     top: rem-calc($label_active_top);
     font-size: rem-calc($label_active_fontsize);
     font-family: $label_active_family;
@@ -546,25 +550,3 @@ fieldset.unstyle { border:0; padding:0 }
   }
 }
 */
-.autocomplete-results{
-  li {
-    display: flex;
-    font-size: rem-calc(14);
-    line-height: 1.5;
-    border-bottom: 1px solid $silver;
-    cursor:pointer;
-    width:100%;
-    padding: 12px 12px 10px;
-    span.name {
-      text-align:left;
-      flex-grow:1;
-    }
-    .match {
-      color:$blue;
-    }
-    &:hover,
-    &.selected{
-      background-color: $platinum;
-    }
-  }
-}
