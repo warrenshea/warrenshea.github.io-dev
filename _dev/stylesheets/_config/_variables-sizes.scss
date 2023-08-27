@@ -1,11 +1,11 @@
-$min-page-width-320: 20rem; /*320*/
-$max-page-width-1200: 75rem; /*1200*/
-$max-page-width-1280: 80rem; /*1280*/
+$min-page-width-320: rem-calc(320);
+$max-page-width-1200: rem-calc(1200);
+$max-page-width-1280: rem-calc(1280);
 
 $small-min: 0;
-$small-max: 47.999375rem;/*767.99*/
-$medium-min: 48rem;/*768*/
-$medium-max: 63.999375rem;/*1023.99*/
-$large-min: 64rem;/*1024*/
-$large-max: 79.999375rem;/*1279.99*/
-$xlarge-min: 80rem;/*1280*/
+$small-max: rem-calc(767.99);
+$medium-min: rem-calc(768);
+$medium-max: rem-calc(1023.99);
+$large-min: rem-calc(1024);
+$large-max: rem-calc(1279.99);
+$xlarge-min: rem-calc(1280)
