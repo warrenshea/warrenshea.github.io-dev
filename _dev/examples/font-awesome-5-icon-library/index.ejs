@@ -163,7 +163,7 @@
 
           //create each asset's html
           asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:platinum">`;
-          asset_html += `  <span class="number">${index}</span>`;
+          asset_html += `  <span class="number">${parseInt(index)}</span>`;
           asset_html += `  <span class="name">${name}</span>`;
           asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
           asset_html += `</div>`;
