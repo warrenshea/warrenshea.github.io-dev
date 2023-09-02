@@ -235,11 +235,11 @@ storm_eagle.module('editable_popup_sender', function () {
     add_message_listener: () => {
       window.addEventListener('message', message => {
         message = message.data;
-        console.log("Parent to Child: " + message);
+        //console.log("Parent to Child: " + message);
         classes = message.split("||")[1];
-        console.log(classes);
+        //console.log(classes);
         classesArray = classes.split(" ");
-        console.log(classesArray);
+        //console.log(classesArray);
 
         storm_eagle.editable_popup_sender.select_range(message.split("||")[0], classesArray);
       });
