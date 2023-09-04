@@ -3,5 +3,6 @@ package-lock.json
 node_modules
 npm-debug.log
 _dist
+_dev/stylesheets/core.css
 _dev/notes
 *.css
