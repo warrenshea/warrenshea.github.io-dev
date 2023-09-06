@@ -353,7 +353,6 @@ fieldset.unstyle { border:0; padding:0 }
   .box-radio-buttons {
     input[type="radio"] {
       &+label {
-        line-height:2.5 ;
         padding: 4px 16px;
         font-family: 'heebo-bold';
         font-size: rem-calc(14);
