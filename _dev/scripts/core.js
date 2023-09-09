@@ -1,4 +1,4 @@
-/* Define global constants and map */
+/ Define global constants and map */
 const keyboard = {};
 keyboard.keys = {
   'backspace': 8,
@@ -44,6 +44,10 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.reverse_format.get_numeric_value()
  * storm_eagle.checkbox.is_checked()
  * storm_eagle.checkbox.set_checked()
+ * storm_eagle.checkbox.get_values()
+ * storm_eagle.radiobutton.is_checked()
+ * storm_eagle.radiobutton.set_checked()
+ * storm_eagle.radiobutton.get_value()
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
  * storm_eagle.client.viewport.get_height()
@@ -353,15 +357,6 @@ var storm_eagle = (function(window, document, undefined) {
               break;
           }
         }
-        // If ARIA checkbox widget
-        switch (value.toString()) {
-          case 'true':
-          case 'false':
-            element.ariaChecked = value;
-            break;
-          default:
-            break;
-        }
       },
 
       get_values: (selector) => {
@@ -376,48 +371,32 @@ var storm_eagle = (function(window, document, undefined) {
       }
     },
 
-    radio: {
+    radiobutton: {
       is_checked: (element) => {
         if (typeof element.checked === 'boolean') {
           return element.checked;
         }
-        // If ARIA checkbox widget
-        return element.getAttribute('aria-checked') === 'true';
       },
 
-      set_checked: (element,value) => {
-        if (typeof element.checked === 'boolean') {
-          switch (value.toString()) {
-            case 'true':
-              element.checked = true;
-              break;
-            case 'false':
-              element.checked = false;
-              break;
-            default:
-              break;
-          }
-        }
-        // If ARIA checkbox widget
-        switch (value.toString()) {
-          case 'true':
-          case 'false':
-            element.ariaChecked = value;
-            break;
-          default:
-            break;
+      set_checked: (selector_or_element,value) => {
+        if (typeof selector_or_element === "string") {
+          document.querySelector(selector_or_element).checked = value;
+        } else {
+          selector_or_element.checked = value;
         }
       },
 
-      get_values: (selector) => {
-        let radio_values = [];
-        let elements = document.querySelectorAll(selector);
-        elements.forEach(el => {
-          if (storm_eagle.radio.is_checked(el)) {
-            radio_values.push(el.value);
+      set_checked_from_value: (selector,value) => {
+        document.querySelectorAll(selector).forEach((el) => {
+          if (el.value === value) {
+            el.checked = true;
+            return;
           }
         });
-        return radio_values;
+      },
+
+      get_value: (selector) => {
+        return (document.querySelector(`${selector}:checked`)) ? document.querySelector(`${selector}:checked`).value : null;
       }
     },
 
