@@ -1,4 +1,4 @@
-/ Define global constants and map */
+/* Define global constants and map */
 const keyboard = {};
 keyboard.keys = {
   'backspace': 8,
