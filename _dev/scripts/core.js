@@ -667,13 +667,13 @@ var storm_eagle = (function(window, document, undefined) {
 
 const LANG = storm_eagle.page.get_language_code();
 
-storm_eagle.module('_temp_fill_ids', () => {
+storm_eagle.module('autopopulate_empty_ids', () => {
   'use strict';
   let self;
 
   return {
     initialize: () => {
-      self = storm_eagle["_temp_fill_ids"];
+      self = storm_eagle["autopopulate_empty_ids"];
       self.fill_empty_ids();
     },
     fill_empty_ids: () => {
