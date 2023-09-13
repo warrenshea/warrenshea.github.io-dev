@@ -17,7 +17,7 @@
                 "assets.js",
                 "/scripts/module.autocomplete.js",
                 "/scripts/module.form-theme-gl0b3x.js",
-                "https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"
+                "https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"
             ]
         }
     }
