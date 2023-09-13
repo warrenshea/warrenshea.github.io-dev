@@ -48,7 +48,7 @@ $types: (
 
 @each $icon in $icons {
   @each $type in $types {
-    .icon.icon-type\:#{$type}.#{$icon} {
+    .icon.icon-type\:#{$type}.icon-name\:#{$icon} {
       -webkit-mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
       mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
     }
