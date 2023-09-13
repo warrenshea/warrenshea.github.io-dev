@@ -11,14 +11,14 @@ button.unstyle {
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    a.#{$prefix}anchor\:primary,
-    button.#{$prefix}anchor\:primary,
-    a.#{$prefix}anchor\:secondary,
-    button.#{$prefix}anchor\:secondary,
+    a.#{$prefix}anchor\:blue,
+    button.#{$prefix}anchor\:blue,
+    a.#{$prefix}anchor\:transparent,
+    button.#{$prefix}anchor\:transparent,
     a.#{$prefix}anchor\:white,
     button.#{$prefix}anchor\:white,
-    a.#{$prefix}anchor\:attention,
-    button.#{$prefix}anchor\:attention,
+    a.#{$prefix}anchor\:red,
+    button.#{$prefix}anchor\:red,
     a.#{$prefix}anchor\:yale-blue,
     button.#{$prefix}anchor\:yale-blue {
       cursor: pointer;
@@ -38,8 +38,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}anchor\:primary,
-    button.#{$prefix}anchor\:primary {
+    a.#{$prefix}anchor\:blue,
+    button.#{$prefix}anchor\:blue {
       color: $blue;
       > .icon {
         background-color: $blue;
@@ -67,8 +67,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}anchor\:secondary,
-    button.#{$prefix}anchor\:secondary {
+    a.#{$prefix}anchor\:transparent,
+    button.#{$prefix}anchor\:transparent {
       color: $blue;
       > .icon {
         background-color: $blue;
@@ -125,8 +125,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}anchor\:attention,
-    button.#{$prefix}anchor\:attention {
+    a.#{$prefix}anchor\:red,
+    button.#{$prefix}anchor\:red {
       color: $red;
       > .icon {
         background-color: $red;
@@ -190,14 +190,14 @@ button.unstyle {
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    a.#{$prefix}button\:primary,
-    button.#{$prefix}button\:primary,
-    a.#{$prefix}button\:secondary,
-    button.#{$prefix}button\:secondary,
+    a.#{$prefix}button\:blue,
+    button.#{$prefix}button\:blue,
+    a.#{$prefix}button\:transparent,
+    button.#{$prefix}button\:transparent,
     a.#{$prefix}button\:white,
     button.#{$prefix}button\:white,
-    a.#{$prefix}button\:attention,
-    button.#{$prefix}button\:attention,
+    a.#{$prefix}button\:red,
+    button.#{$prefix}button\:red,
     a.#{$prefix}button\:yale-blue,
     button.#{$prefix}button\:yale-blue {
       position:relative;
@@ -246,8 +246,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}button\:primary,
-    button.#{$prefix}button\:primary {
+    a.#{$prefix}button\:blue,
+    button.#{$prefix}button\:blue {
       border: rem-calc(2) solid $blue;
       background-color: $blue;
       color: $white;
@@ -279,8 +279,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}button\:secondary,
-    button.#{$prefix}button\:secondary {
+    a.#{$prefix}button\:transparent,
+    button.#{$prefix}button\:transparent {
       border: rem-calc(2) solid $blue;
       background-color: transparent;
       color: $blue;
@@ -353,8 +353,8 @@ button.unstyle {
       }
     }
 
-    a.#{$prefix}button\:attention,
-    button.#{$prefix}button\:attention {
+    a.#{$prefix}button\:red,
+    button.#{$prefix}button\:red {
       border: rem-calc(2) solid transparent;
       background-color: $red;
       color: $white;
@@ -414,18 +414,18 @@ button.unstyle {
 }
 
 
-.button\:primary::-moz-focus-inner,
-.button\:secondary::-moz-focus-inner,
+.button\:blue::-moz-focus-inner,
+.button\:transparent::-moz-focus-inner,
 .button\:white::-moz-focus-inner,
-.button\:attention::-moz-focus-inner,
+.button\:red::-moz-focus-inner,
 .button\:yale-blue::-moz-focus-inner {
   border: 0;
 }
 
-.button\:primary:after,
-.button\:secondary:after,
+.button\:blue:after,
+.button\:transparent:after,
 .button\:white:after,
-.button\:attention:after,
+.button\:red:after,
 .button\:yale-blue:after {
   content: '';
   display: block;
@@ -461,27 +461,27 @@ button.unstyle {
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    a.#{$prefix}button\:primary:not(:active):after,
-    button.#{$prefix}button\:primary:not(:active):after,
-    a.#{$prefix}button\:secondary:not(:active):after,
-    button.#{$prefix}button\:secondary:not(:active):after,
+    a.#{$prefix}button\:blue:not(:active):after,
+    button.#{$prefix}button\:blue:not(:active):after,
+    a.#{$prefix}button\:transparent:not(:active):after,
+    button.#{$prefix}button\:transparent:not(:active):after,
     a.#{$prefix}button\:white:not(:active):after,
     button.#{$prefix}button\:white:not(:active):after,
-    a.#{$prefix}button\:attention:not(:active):after,
-    button.#{$prefix}button\:attention:not(:active):after,
+    a.#{$prefix}button\:red:not(:active):after,
+    button.#{$prefix}button\:red:not(:active):after,
     a.#{$prefix}button\:yale-blue:not(:active):after,
     button.#{$prefix}button\:yale-blue:not(:active):after {
       animation: ripple .3s ease-in;
     }
 
-    a.#{$prefix}button\:primary:after,
-    button.#{$prefix}button\:primary:after,
-    a.#{$prefix}button\:secondary:after,
-    button.#{$prefix}button\:secondary:after,
+    a.#{$prefix}button\:blue:after,
+    button.#{$prefix}button\:blue:after,
+    a.#{$prefix}button\:transparent:after,
+    button.#{$prefix}button\:transparent:after,
     a.#{$prefix}button\:white:after,
     button.#{$prefix}button\:white:after,
-    a.#{$prefix}button\:attention:after,
-    button.#{$prefix}button\:attention:after,
+    a.#{$prefix}button\:red:after,
+    button.#{$prefix}button\:red:after,
     a.#{$prefix}button\:yale-blue:after,
     button.#{$prefix}button\:yale-blue:after {
       visibility: hidden;
@@ -502,26 +502,26 @@ button.unstyle {
   }
 }
 
-.button\:primary:not(:active):after,
-.button\:secondary:not(:active):after,
+.button\:blue:not(:active):after,
+.button\:transparent:not(:active):after,
 .button\:white:not(:active):after,
-.button\:attention:not(:active):after,
+.button\:red:not(:active):after,
 .button\:yale-blue:not(:active):after {
     animation: ripple .3s ease-in;
 }
 
-.button\:primary:after,
-.button\:secondary:after,
+.button\:blue:after,
+.button\:transparent:after,
 .button\:white:after,
-.button\:attention:after,
+.button\:red:after,
 .button\:yale-blue:after {
     visibility: hidden;
 }
 
-.button\:primary:focus:after,
-.button\:secondary:focus:after,
+.button\:blue:focus:after,
+.button\:transparent:focus:after,
 .button\:white:focus:after,
-.button\:attention:focus:after,
+.button\:red:focus:after,
 .button\:yale-blue:focus:after {
     visibility: visible;
 }
