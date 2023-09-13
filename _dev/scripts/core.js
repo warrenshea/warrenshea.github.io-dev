@@ -79,7 +79,7 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.resize_observer()
  **/
 
-var storm_eagle = (function(window, document, undefined) {
+var storm_eagle = (function() {
   'use strict';
 
   return {
@@ -663,7 +663,7 @@ var storm_eagle = (function(window, document, undefined) {
       (elements instanceof HTMLElement) ? resize_observer.observe(elements) : elements.forEach(el => { resize_observer.observe(el) });
     }
   };
-})(window, document);
+})();
 
 const LANG = storm_eagle.page.get_language_code();
 
