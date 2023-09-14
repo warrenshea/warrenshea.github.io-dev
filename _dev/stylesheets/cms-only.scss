@@ -1,0 +1,6 @@
+@import '_config/variables-colors.scss';
+
+.isotope-card-example-background {
+  background-size: 16px 16px;
+  background-image: radial-gradient(circle, $gray 1px, $white-smoke 1px);
+}
