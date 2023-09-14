@@ -1,6 +1,174 @@
+@charset "UTF-8";
+
+/* page width, common colors */
 @import '_config/variables-colors.scss';
+@import '_config/variables-sizes.scss';
+@import '_config/unit.scss';
+@import '_config/breakpoint.scss';
+@import '_config/media-queries.scss';
+@import '_global/helper-border-box-shadow.scss';
 
 .isotope-card-example-background {
   background-size: 16px 16px;
   background-image: radial-gradient(circle, $gray 1px, $white-smoke 1px);
+}
+
+.isotope-card-tag {
+  margin: rem-calc(4) rem-calc(8);
+  padding: rem-calc(4);
+  border-radius: rem-calc(4);
+  background: $blue;
+  color: $white
+}
+
+.form\:theme\:cms {
+  input[type="radio"] {
+    appearance: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    &+label {
+      cursor: pointer;
+      position: relative;
+      padding-left:36px;
+      letter-spacing: 0.15px;
+      line-height: 24px;
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        border: 2px solid $onyx;
+        &:hover {
+            cursor: pointer;
+        }
+      }
+    }
+    &:checked+label:before {
+      content: '';
+      cursor: pointer;
+    }
+    &:focus+label {
+      outline: 2px solid #000;
+    }
+    &:checked:focus+label {
+      outline: 2px solid #000;
+    }
+    &:checked:focus+label {
+      box-shadow: $box-shadow-custom-7;
+    }
+    &:focus+label:before {
+      box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+    }
+    &:checked:focus+label:before {
+      box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+    }
+    &.has-error+label:before {
+      border: 2px solid $negative;
+    }
+    &:disabled+label {
+      color: $onyx;
+      &:before {
+        background-color: $silver;
+        border: 2px solid $onyx;
+      }
+    }
+  }
+
+  input[type="radio"] {
+    &+label {
+      &:before {
+        border-radius: 50%;
+        transition: background-color ease-in-out 250ms, border ease-in-out 250ms;
+      }
+    }
+    &:checked+label:before {
+      background-color: $white;
+      border: 6px solid $blue;
+    }
+    &:focus+label:before {
+      background-color: transparent;
+      border: 2px solid $gray;
+    }
+    &:checked:focus+label:before {
+      background-color: $white;
+      border: 6px solid $blue;
+      box-shadow: $box-shadow-custom-7;
+    }
+    &:checked:disabled+label:before {
+      background-color: $silver;
+      border: 6px solid $onyx;
+    }
+  }
+
+  .box-radio-buttons {
+    input[type="radio"] {
+      &+label {
+        text-align:center;
+        display:inline-block;
+        padding: 4px 16px;
+        font-family: 'heebo-bold';
+        font-size: rem-calc(14);
+        color: $blue;
+        background-color: $white;
+        width: 100%;
+        border: 2px solid $onyx;
+        //border-radius: rem-calc(4);
+        transition: all .3s ease;
+        box-shadow: 0 0 0 0 rgba($vista-blue, 0.65);
+        white-space:nowrap;
+        cursor: pointer;
+        position: relative;
+        letter-spacing: 0.15px;
+        line-height: 24px;
+        &:before {
+          display:none;
+        }
+      }
+      &:hover+label,
+      &:checked+label {
+        color: $white;
+        background-color: $blue;
+        border: 2px $blue solid;
+      }
+      &:checked:focus+label {
+        border: 2px $vista-blue solid;
+        box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+      }
+      &:disabled+label,
+      &[disabled='true']+label, {
+        background-color: $silver;
+      }
+      &:disabled:hover+label,
+      &[disabled='true']:hover+label, {
+        color: $onyx;
+      }
+    }
+    &:not(:active):after {
+      animation: ripple .3s ease-in;
+    }
+    &:after {
+      visibility: hidden;
+    }
+    &:focus:after {
+      visibility: visible;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
