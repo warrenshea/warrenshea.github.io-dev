@@ -3,37 +3,26 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}bgc\:none { background-color: none; }
-    .#{$prefix}bgc\:transparent { background-color: transparent; }
+    .#{$prefix}bgc\:yale-blue { background-color: $yale-blue; }
+    .#{$prefix}bgc\:yinmn-blue { background-color: $yinmn-blue; }
     .#{$prefix}bgc\:blue { background-color: $blue; }
-    .#{$prefix}bgc\:blue\:80\%{ background-color: rgba($blue,.8); }
+    .#{$prefix}bgc\:vista-blue { background-color: $vista-blue; }
+    .#{$prefix}bgc\:powder-blue { background-color: $powder-blue; }
+    .#{$prefix}bgc\:columbia-blue { background-color: $columbia-blue; }
     .#{$prefix}bgc\:red { background-color: $red; }
     .#{$prefix}bgc\:yellow { background-color: $yellow; }
-    .#{$prefix}bgc\:yale-blue { background-color: $yale-blue; }
+    .#{$prefix}bgc\:black { background-color: black; }
+    .#{$prefix}bgc\:black\:50\% { background-color: rgba($black,.5); }
     .#{$prefix}bgc\:eerie-black { background-color: $eerie-black; }
+    .#{$prefix}bgc\:onyx { background-color: $onyx; }
     .#{$prefix}bgc\:gray { background-color: $gray; }
     .#{$prefix}bgc\:silver { background-color: $silver; }
     .#{$prefix}bgc\:platinum { background-color: $platinum; }
-    .#{$prefix}bgc\:platinum\:75\% { background-color: rgba($platinum,.75); }
-    .#{$prefix}bgc\:onyx { background-color: $onyx; }
-    .#{$prefix}bgc\:onyx\:50\% { background-color: rgba($onyx,.5); }
     .#{$prefix}bgc\:white-smoke { background-color: $white-smoke; }
     .#{$prefix}bgc\:white { background-color: $white; }
-    .#{$prefix}bgc\:white\:40\% { background-color: rgba($white,.4); }
-    .#{$prefix}bgc\:vista-blue { background-color: $vista-blue; }
-    .#{$prefix}bgc\:black { background-color: black; }
-    .#{$prefix}bgc\:black\:40\% { background-color: rgba($black,.4); }
-    .#{$prefix}bgc\:black\:50\% { background-color: rgba($black,.5); }
-    .#{$prefix}bgc\:powder-blue { background-color: $powder-blue; }
-    .#{$prefix}bgc\:columbia-blue { background-color: $columbia-blue; }
-    .#{$prefix}bgc\:yinmn-blue { background-color: $yinmn-blue; }
-    .#{$prefix}bgc\:positive-light { background-color: $positive-light; }
-    .#{$prefix}bgc\:positive { background-color: $positive; }
-    .#{$prefix}bgc\:positive-dark { background-color: $positive-dark; }
-    .#{$prefix}bgc\:negative-light { background-color: $negative-light; }
-    .#{$prefix}bgc\:negative { background-color: $negative; }
-    .#{$prefix}bgc\:negative-dark { background-color: $negative-dark; }
-    .#{$prefix}bgc\:warning { background-color: $warning; }
+    .#{$prefix}bgc\:white\:50\% { background-color: rgba($white,.5); }
+    .#{$prefix}bgc\:none { background-color: none; }
+    .#{$prefix}bgc\:transparent { background-color: transparent; }
     .#{$prefix}bgc\:disabled { background-color: $disabled; }
 
     /* | means it's a hard line distinction */
