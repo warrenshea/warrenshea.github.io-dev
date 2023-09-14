@@ -2,11 +2,24 @@
 .sr-only,
 .show-for-sr,
 .show-for-screen-reader-only, /* preferred class */
-.show-on-focus { @include element-invisible }
+.show-on-focus {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
 /*hide-for-screen-reader-only doesn't exist as a CSS class - use aria-hidden="true" */
 
 .show-on-focus:active,
-.show-on-focus:focus { @include element-invisible-off }
+.show-on-focus:focus {
+  height: auto;
+  width: auto;
+  left:0;
+  overflow: visible;
+  clip: auto;
+}
 
 .visibility\:hidden { visibility: hidden; }
 .visibility\:visible { visibility: visible; }
@@ -31,7 +44,17 @@
 }
 
 /* Float Helper Classes */
-.clearfix { @include clearfix }
+.clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
 
 /* Width Helper Classes */
 .w\:100\% { width: 100%; }
