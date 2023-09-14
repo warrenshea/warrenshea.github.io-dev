@@ -57,7 +57,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         color: $onyx;
         cursor: default;
         text-decoration: none;
@@ -86,7 +87,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         color: $onyx;
         cursor: default;
         text-decoration: none;
@@ -115,7 +117,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         color: $white;
         cursor: default;
         text-decoration: none;
@@ -144,7 +147,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         color: $onyx;
         cursor: default;
         text-decoration: none;
@@ -174,7 +178,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         color: $onyx;
         cursor: default;
         > .icon {
@@ -267,7 +272,8 @@ button.unstyle {
         background-color: $white;
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         box-shadow: none;
         border: rem-calc(2) solid $silver;
         background-color: $silver;
@@ -308,7 +314,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         box-shadow: none;
         border: rem-calc(2) solid $silver;
         background-color: transparent;
@@ -342,7 +349,8 @@ button.unstyle {
         }
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         border: rem-calc(2) solid $silver;
         background-color: $silver;
         color: $onyx;
@@ -371,7 +379,8 @@ button.unstyle {
         background-color: $white;
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         border: rem-calc(2) solid $silver;
         background-color: $silver;
         color: $onyx;
@@ -400,7 +409,8 @@ button.unstyle {
         background-color: $white;
       }
       &:disabled,
-      &.disabled {
+      &.disabled,
+      &[disabled='true'] {
         border: rem-calc(2) solid $silver;
         background-color: $silver;
         color: $onyx;
