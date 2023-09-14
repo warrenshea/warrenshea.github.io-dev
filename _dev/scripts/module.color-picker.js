@@ -55,12 +55,22 @@ storm_eagle.module("color_picker", () => {
         document.getElementById("picked-color").style.backgroundColor = color;
         document.getElementById("picked-hex").innerHTML = `${color}`;
         document.getElementById("suggested-color").style.backgroundColor = theColour;
-        document.getElementById("suggested-hex").innerHTML = theColour + " is already in the codebase";
+        document.getElementById("suggested-hex-error").classList.remove("display:none");
+        document.getElementById("suggested-hex-error").innerHTML = theColour + " is already in the codebase";
+        document.getElementById("suggested-hex-button").classList.add("display:none");
+        document.getElementById("suggested-hex").innerHTML = ``;
+        document.getElementById("suggested-hex-name-button").classList.add("display:none");
+        document.getElementById("suggested-hex-name").innerHTML = ``;
       } else {
         document.getElementById("picked-color").style.backgroundColor = color;
         document.getElementById("picked-hex").innerHTML = `${color}`;
         document.getElementById("suggested-color").style.backgroundColor = baseColours[index];
-        document.getElementById("suggested-hex").innerHTML = `${theColour}<br>${baseName[index]}`;
+        document.getElementById("suggested-hex-error").classList.add("display:none");
+        document.getElementById("suggested-hex-error").innerHTML = ``;
+        document.getElementById("suggested-hex-button").classList.remove("display:none");
+        document.getElementById("suggested-hex").innerHTML = `${theColour}`;
+        document.getElementById("suggested-hex-name-button").classList.remove("display:none");
+        document.getElementById("suggested-hex-name").innerHTML = `${baseName[index]}`;
       }
       return false;
     }
