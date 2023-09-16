@@ -359,6 +359,11 @@ var storm_eagle = (function() {
         }
       },
 
+      /* this is specifically helpful for 'parent' checkboxes where the aria-checked could be 'mixed' */
+      set_aria_checked: (element,value) => {
+        element.setAttribute('aria-checked',value);
+      },
+
       get_values: (selector) => {
         let checkbox_values = [];
         let elements = document.querySelectorAll(selector);
