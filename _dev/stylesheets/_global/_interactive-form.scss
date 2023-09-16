@@ -3,11 +3,6 @@ fieldset.unstyle { border:0; padding:0 }
 
 .form\:theme\:gl0b3x {
 
-  $label_top: 27;
-  $label_active_top: 2;
-  $label_active_fontsize: 14;
-  $label_active_family: 'heebo-medium';
-
   /* label styles */
   input[type="text"]+label,
   input[type="number"]+label,
@@ -76,15 +71,15 @@ fieldset.unstyle { border:0; padding:0 }
       color: $blue;
       letter-spacing: 0.25px;
       transition: 0.3s ease-out;
-      top: rem-calc($label_top);
+      top: rem-calc(27);
       position:absolute;
     }
     &.active-label {
       span.description {
         position:absolute;
-        top: rem-calc($label_active_top);
-        font-size: rem-calc($label_active_fontsize);
-        font-family: $label_active_family;
+        top: rem-calc(2);
+        font-size: rem-calc(14);
+        font-family: 'heebo-medium';
       }
     }
   }
@@ -140,9 +135,9 @@ fieldset.unstyle { border:0; padding:0 }
   select:focus+label span.description,
   textarea:focus+label span.description,
   textarea.focus+label span.description {
-    top: rem-calc($label_active_top);
-    font-size: rem-calc($label_active_fontsize);
-    font-family: $label_active_family;
+    top: rem-calc(2);
+    font-size: rem-calc(14);
+    font-family: 'heebo-medium';
   }
   /* helper description styles */
   .error-message {
