@@ -2,7 +2,7 @@
 
 /* page width, common colors */
 @import '_config/variables-colors.scss';
-@import '_config/variables-sizes.scss';
+@import '_config/variables-dimensions.scss';
 @import '_config/unit.scss';
 @import '_config/breakpoint.scss';
 @import '_config/media-queries.scss';
@@ -11,6 +11,16 @@
 .isotope-card-example-background {
   background-size: 16px 16px;
   background-image: radial-gradient(circle, $gray 1px, $white-smoke 1px);
+}
+.isotope-examples-grid {
+  position: absolute;
+  top: 0;
+  width: 0;
+  border: 1px solid $red;
+  opacity: .2;
+  height: 550px;
+  display: inline-block;
+  margin: 0;
 }
 
 .isotope-card-tag {
@@ -170,5 +180,16 @@
   100% {
     opacity: 0;
     transform: scale(2);
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}text-shadow\:eerie-black {
+      text-shadow: 0 0 rem-calc(3) $eerie-black;
+    }
   }
 }
