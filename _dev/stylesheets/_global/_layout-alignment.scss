@@ -32,18 +32,3 @@
      }
   }
 }
-
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
-    .#{$prefix}flex-grow\:0 {flex-grow: 0;}
-    .#{$prefix}flex-grow\:1 {flex-grow: 1;}
-  }
-}
-
-.shrink {
-  flex: 0 0 auto;
-  max-width: 100%;
-}
