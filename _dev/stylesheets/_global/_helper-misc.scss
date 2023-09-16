@@ -28,34 +28,6 @@
 
 .outline\:0 { outline: 0; }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
-    .#{$prefix}display\:none { display: none; }
-    .#{$prefix}display\:flex { display: flex; }
-    .#{$prefix}display\:inline-flex { display: inline-flex; }
-    .#{$prefix}display\:block { display: block; }
-    .#{$prefix}display\:inline { display: inline; }
-    .#{$prefix}display\:inline-block { display: inline-block; }
-    .#{$prefix}display\:table-cell { display: table-cell; }
-  }
-}
-
-/* Float Helper Classes */
-.clearfix {
-  &::before,
-  &::after {
-    content: ' ';
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-  }
-}
-
 /* Width Helper Classes */
 .w\:100\% { width: 100%; }
 .mw\:100\% { max-width: 100%; }
@@ -77,20 +49,44 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
+    .#{$prefix}display\:none { display: none; }
+    .#{$prefix}display\:flex { display: flex; }
+    .#{$prefix}display\:inline-flex { display: inline-flex; }
+    .#{$prefix}display\:block { display: block; }
+    .#{$prefix}display\:inline { display: inline; }
+    .#{$prefix}display\:inline-block { display: inline-block; }
+    .#{$prefix}display\:table-cell { display: table-cell; }
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
     .#{$prefix}flex-flow\:row-wrap { flex-flow: row wrap; }
     .#{$prefix}flex-flow\:row-nowrap { flex-flow: row nowrap; }
   }
 }
 
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}flex-grow\:0 {flex-grow: 0;}
+    .#{$prefix}flex-grow\:1 {flex-grow: 1;}
+  }
+}
+
+.shrink {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
 .vertical-align\:top { vertical-align: top; }
 .vertical-align\:middle { vertical-align: middle; }
 
-/* Sizing Helper Classes */
-.box-sizing\:border-box { box-sizing: border-box; }
-
-/* Other Helper Classes */
-.cursor\:pointer { cursor: pointer; } /* would like to call this 'cursor' but conflicts with name */
-
+/* Position Helper Classes */
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
@@ -124,5 +120,24 @@
     .#{$prefix}z-index\:0 { z-index:0; }
     .#{$prefix}z-index\:1 { z-index:1; }
     .#{$prefix}z-index\:2 { z-index:2; }
+  }
+}
+
+/* Sizing Helper Classes */
+.box-sizing\:border-box { box-sizing: border-box; }
+
+/* Other Helper Classes */
+.cursor\:pointer { cursor: pointer; } /* would like to call this 'cursor' but conflicts with name */
+
+/* Float Helper Classes */
+.clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
   }
 }
