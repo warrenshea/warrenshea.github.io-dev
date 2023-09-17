@@ -31,10 +31,12 @@ button.unstyle {
       padding: 0;
       background-color: transparent;
       > .icon.icon-size\:24px {
-        margin: rem-calc(-4) rem-calc(4) 0;
+        margin-top: rem-calc(-4);
+        margin-bottom: 0;
       }
       > .icon.icon-size\:16px {
-        margin: rem-calc(-1) rem-calc(2) 0;
+        margin-top: rem-calc(-1);
+        margin-bottom: 0;
       }
     }
 
@@ -235,13 +237,11 @@ button.unstyle {
       }
       > .icon.icon-size\:16px {
         margin-top: rem-calc(-2);
-        margin-right: rem-calc(4);
         width: 1rem;
         height: 1rem;
       }
       > .icon.icon-size\:24px {
         margin-top: rem-calc(-2);
-        margin-right: rem-calc(4);
         width: 1.5rem;
         height: 1.5rem;
       }
