@@ -1,4 +1,4 @@
-.icon {
+.ic {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -48,7 +48,7 @@ $types: (
 
 @each $icon in $icons {
   @each $type in $types {
-    .icon.icon-type\:#{$type}.icon-name\:#{$icon} {
+    .ic.ic-type\:#{$type}.ic-name\:#{$icon} {
       -webkit-mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
       mask-image: url('../assets/icon/#{$type}/#{$icon}.svg');
     }
@@ -77,7 +77,7 @@ $colors: (
       $color-name: nth($color, 1);
       $color-value: nth($color, 2);
 
-      .#{$prefix}icon-color\:#{"" + $color-name} {
+      .#{$prefix}ic-color\:#{"" + $color-name} {
         background-color: #{$color-value};
       }
     }
@@ -104,7 +104,7 @@ $sizes: (
       $size-name: nth($size, 1);
       $size-value: nth($size, 2);
 
-      .#{$prefix}icon-size\:#{$size-name} {
+      .#{$prefix}ic-size\:#{$size-name} {
         width: #{$size-value};
         min-width: #{$size-value};
         height: #{$size-value};
