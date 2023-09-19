@@ -30,11 +30,11 @@ button.unstyle {
       margin: 0;
       padding: 0;
       background-color: transparent;
-      > .icon.icon-size\:24px {
+      > .ic.ic-size\:24px {
         margin-top: rem-calc(-4);
         margin-bottom: 0;
       }
-      > .icon.icon-size\:16px {
+      > .ic.ic-size\:16px {
         margin-top: rem-calc(-1);
         margin-bottom: 0;
       }
@@ -43,7 +43,7 @@ button.unstyle {
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue {
       color: $blue;
-      > .icon {
+      > .ic {
         background-color: $blue;
       }
       &:hover,
@@ -54,7 +54,7 @@ button.unstyle {
       &:active:enabled {
         color: $yale-blue;
         text-decoration: underline;
-        > .icon {
+        > .ic {
           background-color: $yale-blue;
         }
       }
@@ -64,7 +64,7 @@ button.unstyle {
         color: $onyx;
         cursor: default;
         text-decoration: none;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -73,7 +73,7 @@ button.unstyle {
     a.#{$prefix}anchor\:transparent,
     button.#{$prefix}anchor\:transparent {
       color: $blue;
-      > .icon {
+      > .ic {
         background-color: $blue;
       }
       &:hover,
@@ -84,7 +84,7 @@ button.unstyle {
       &:active:enabled {
         color: $yale-blue;
         text-decoration: underline;
-        > .icon {
+        > .ic {
           background-color: $yale-blue;
         }
       }
@@ -94,7 +94,7 @@ button.unstyle {
         color: $onyx;
         cursor: default;
         text-decoration: none;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -103,7 +103,7 @@ button.unstyle {
     a.#{$prefix}anchor\:white,
     button.#{$prefix}anchor\:white {
       color: $white;
-      > .icon {
+      > .ic {
         background-color: $white;
       }
       &:hover,
@@ -114,7 +114,7 @@ button.unstyle {
       &:active:enabled {
         color: $white;
         text-decoration: underline;
-        > .icon {
+        > .ic {
           background-color: $white;
         }
       }
@@ -124,7 +124,7 @@ button.unstyle {
         color: $white;
         cursor: default;
         text-decoration: none;
-        > .icon {
+        > .ic {
           background-color: $white;
         }
       }
@@ -133,7 +133,7 @@ button.unstyle {
     a.#{$prefix}anchor\:red,
     button.#{$prefix}anchor\:red {
       color: $red;
-      > .icon {
+      > .ic {
         background-color: $red;
       }
       &:hover,
@@ -144,7 +144,7 @@ button.unstyle {
       &:active:enabled {
         color: $red;
         text-decoration: underline;
-        > .icon {
+        > .ic {
           background-color: $red;
         }
       }
@@ -154,7 +154,7 @@ button.unstyle {
         color: $onyx;
         cursor: default;
         text-decoration: none;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -163,7 +163,7 @@ button.unstyle {
     a.#{$prefix}anchor\:yale-blue,
     button.#{$prefix}anchor\:yale-blue {
       color: $yale-blue;
-      > .icon {
+      > .ic {
         background-color: $yale-blue;
       }
       &:hover,
@@ -175,7 +175,7 @@ button.unstyle {
         color: $eerie-black;
         text-decoration: underline;
         text-decoration: none;
-        > .icon {
+        > .ic {
           background-color: $eerie-black;
         }
       }
@@ -184,7 +184,7 @@ button.unstyle {
       &[disabled='true'] {
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -235,12 +235,12 @@ button.unstyle {
         height: 2rem;
         line-height: 0;
       }
-      > .icon.icon-size\:16px {
+      > .ic.ic-size\:16px {
         margin-top: rem-calc(-2);
         width: 1rem;
         height: 1rem;
       }
-      > .icon.icon-size\:24px {
+      > .ic.ic-size\:24px {
         margin-top: rem-calc(-2);
         width: 1.5rem;
         height: 1.5rem;
@@ -268,7 +268,7 @@ button.unstyle {
       &:active:enabled {
         background-color: $yale-blue;
       }
-      > .icon {
+      > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -279,7 +279,7 @@ button.unstyle {
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -291,14 +291,14 @@ button.unstyle {
       background-color: transparent;
       color: $blue;
       box-shadow: $box-shadow-custom-2;
-      > .icon {
+      > .ic {
         background-color: $blue;
       }
       &:hover,
       &:hover:enabled {
         border: rem-calc(2) solid $yale-blue;
         color: $yale-blue;
-        > .icon {
+        > .ic {
           background-color: $yale-blue;
         }
       }
@@ -309,7 +309,7 @@ button.unstyle {
         box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.35);
         border: rem-calc(2) solid $vista-blue;
         color: $yale-blue;
-        > .icon {
+        > .ic {
           background-color: $yale-blue;
         }
       }
@@ -321,7 +321,7 @@ button.unstyle {
         background-color: transparent;
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -332,7 +332,7 @@ button.unstyle {
       border: rem-calc(2) solid transparent;
       background-color: $white;
       color: $blue;
-      > .icon {
+      > .ic {
         background-color: $blue;
       }
       &:hover,
@@ -344,7 +344,7 @@ button.unstyle {
         border: rem-calc(2) solid transparent;
         background-color: $yale-blue;
         color: $white;
-        > .icon {
+        > .ic {
           background-color: $white;
         }
       }
@@ -355,7 +355,7 @@ button.unstyle {
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -375,7 +375,7 @@ button.unstyle {
         border: rem-calc(2) solid transparent;
         background-color: $negative;
       }
-      > .icon {
+      > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -385,7 +385,7 @@ button.unstyle {
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
@@ -405,7 +405,7 @@ button.unstyle {
         border: rem-calc(2) solid transparent;
         background-color: $eerie-black;
       }
-      > .icon {
+      > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -415,7 +415,7 @@ button.unstyle {
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .icon {
+        > .ic {
           background-color: $onyx;
         }
       }
