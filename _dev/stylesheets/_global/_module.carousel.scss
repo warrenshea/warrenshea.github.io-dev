@@ -192,17 +192,17 @@
       margin: 0;
       &.prev {
         left: rem-calc(15);
-        .icon {
+        .ic {
           margin-left:rem-calc(3);
         }
       }
       &.next {
         right: rem-calc(15);
-        .icon {
+        .ic {
           margin-right:rem-calc(3);
         }
       }
-      .icon {
+      .ic {
         display: flex;
         justify-content: center;
         align-items: center;
