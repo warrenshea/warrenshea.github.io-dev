@@ -11,8 +11,7 @@
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css",
-                "/stylesheets/module.autocomplete.css"
+                "/stylesheets/core.css"
             ],
             "scripts": [
                 "/scripts/module.autocomplete.js",
