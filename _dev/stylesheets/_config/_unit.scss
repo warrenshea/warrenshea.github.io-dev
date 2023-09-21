@@ -13,15 +13,12 @@
 @function rem-calc($values) {
   $rem-values: ();
   $count: length($values);
-
   @if $count == 1 {
     @return -zf-to-rem($values);
   }
-
   @for $i from 1 through $count {
     $rem-values: append($rem-values, -zf-to-rem(nth($values, $i)));
   }
-
   @return $rem-values;
 }
 
@@ -31,7 +28,6 @@
   @if unit($value) == 'px' or unitless($value) {
     $value: rem-calc($value);
   }
-
   // Then the value is converted to ems
   @return strip-unit($value) * 1rem;
 }
@@ -46,16 +42,13 @@
     @warn inspect($value) + ' was passed to rem-calc(), which is not a number.';
     @return $value;
   }
-
   // Calculate rem if units for $value is not rem
   @if unit($value) != 'rem' {
     $value: math.div(strip-unit($value), 16) * 1rem;
   }
-
   // Turn 0rem into 0
   @if $value == 0rem {
     $value: 0;
   }
-
   @return $value;
 }
