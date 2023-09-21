@@ -42,8 +42,8 @@
     .items-group {
       .item,
       .item .carousel-disabled-active {
+        z-index:0;
         .content-container {
-          z-index:0;
           padding-top: rem-calc(25);
           padding-bottom: rem-calc(25);
           transition-property:padding;
@@ -52,7 +52,6 @@
         }
         &.active {
           .content-container {
-            z-index:1;
             box-shadow: $box-shadow-custom-2;
             padding-top: rem-calc(40);
             padding-bottom: rem-calc(40);
@@ -60,6 +59,9 @@
             transition-duration:.5s;
             transition-timing-function: linear;
           }
+        }
+        &.active {
+          z-index:1;
         }
       }
     }
