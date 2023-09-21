@@ -18,11 +18,8 @@ keyboard.keys = {
 
 const breakpoints = {
   'sm_min': 320,
-  'sm_max': 767,
   'md_min': 768,
-  'md_max': 1023,
   'lg_min': 1024,
-  'lg_max': 1279,
   'xl_min': 1280
 };
 
@@ -482,13 +479,13 @@ var storm_eagle = (function() {
          * @return boolean
          * @scope public
          */
-        is_sm_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["sm_max"]) ? true : false; },
+        is_sm_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() < breakpoints["md_min"]) ? true : false; },
         is_sm_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"]) ? true : false; },
-        is_md_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
-        is_md_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["md_max"]) ? true : false; },
+        is_md_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() < breakpoints["lg_min"]) ? true : false; },
+        is_md_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"] && storm_eagle.client.viewport.get_width() < breakpoints["lg_min"]) ? true : false; },
         is_md_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["md_min"]) ? true : false; },
-        is_lg_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
-        is_lg_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() <= breakpoints["lg_max"]) ? true : false; },
+        is_lg_down: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["sm_min"] && storm_eagle.client.viewport.get_width() < breakpoints["xl_min"]) ? true : false; },
+        is_lg_only: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"] && storm_eagle.client.viewport.get_width() < breakpoints["xl_min"]) ? true : false; },
         is_lg_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["lg_min"]) ? true : false; },
         is_xl_up: () => { return (storm_eagle.client.viewport.get_width() >= breakpoints["xl_min"]) ? true : false; },
       },
