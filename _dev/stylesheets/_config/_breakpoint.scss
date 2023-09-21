@@ -18,7 +18,6 @@ $-zf-zero-breakpoint: small !default;
 }
 
 /// Generates a media query string matching the input value. Refer to the documentation for the `breakpoint()` mixin to see what the possible inputs are.
-///
 /// @param {Keyword|Number} $val [small] - Breakpoint name, or px, rem, or em value to process.
 @function breakpoint($val: $-zf-zero-breakpoint) {
   // Size or keyword
@@ -73,13 +72,11 @@ $-zf-zero-breakpoint: small !default;
         // Only use "min-width" if the floor is greater than 0
         @if $bp > 0rem {
           $str: $str + '(min-width: #{$bp})';
-
           // Only add "and" to the media query if there's a ceiling
           @if $bp-max != null {
             $str: $str + ' and ';
           }
         }
-
         // Only use "max-width" if there's a ceiling
         @if $bp-max != null {
           $str: $str + '(max-width: #{$bp-max})';
@@ -93,7 +90,6 @@ $-zf-zero-breakpoint: small !default;
     // `down` ranges use the format `(max-width: n)`
     @else if $dir == 'down' {
       $max: if($named, $bp-max, $bp);
-
       // Skip media query creation if input value is exactly "0 down",
       // unless the function was called as "small down", in which case it's just "small only"
       @if $named or $bp > 0rem {
@@ -139,23 +135,19 @@ $-zf-zero-breakpoint: small !default;
 
 /// Find the next key in a map.
 /// @access private
-///
 /// @param {Map} $map - Map to traverse.
 /// @param {Mixed} $key - Key to use as a starting point.
-///
 /// @returns {Mixed} The value for the key after `$key`, if `$key` was found. If `$key` was not found, or `$key` was the last value in the map, returns `null`.
 @function -zf-map-next($map, $key) {
 
   // Store the keys of the map as a list
   $values: map-keys($map);
-
   $i: 0;
 
   // If the Key Exists, Get the index of the key within the map and add 1 to it for the next breakpoint in the map
   @if (map-has-key($map, $key)) {
     $i: index($values, $key) + 1;
   }
-
   // If the key doesn't exist, or it's the last key in the map, return null
   @if ($i > length($map) or $i == 0) {
     @return null;
@@ -164,5 +156,4 @@ $-zf-zero-breakpoint: small !default;
   @else {
     @return map-get($map, nth($values, $i));
   }
-
 }
