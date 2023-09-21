@@ -4,7 +4,7 @@
         <h1 class="play:bold fs:40px color:eerie-black pb:64px">Responsive 2D Table using Flexbox</h1>
         <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
 
-        <div class="position:relative pb:32px xl=:show">
+        <div class="position:relative pb:32px xl+:show">
           <div data-module="slider.input-container">
             <input data-module="slider.input" id="" onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
             <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
