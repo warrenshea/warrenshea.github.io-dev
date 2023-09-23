@@ -392,6 +392,13 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
 abbr[title] {
   /* override */
   text-decoration: none;
@@ -32296,14 +32303,6 @@ table {
     order: 6;
   }
 }
-/* Button: Unstyle a button */
-button.unstyle {
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 0;
-}
-
 a.anchor\:blue,
 button.anchor\:blue,
 a.anchor\:transparent,
