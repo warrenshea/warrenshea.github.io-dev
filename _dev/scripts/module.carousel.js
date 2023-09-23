@@ -122,13 +122,13 @@ storm_eagle.module("carousel", () => {
     control_buttons_listener: (carousel_id) => {
       function swipe_left(event) {
         event.preventDefault();
-        // console.log("left");
+        /* console.log("left"); */
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-left"));
       }
 
       function swipe_right(event) {
         event.preventDefault();
-        // console.log("right");
+        /* console.log("right"); */
         document.getElementById(carousel_id).querySelector("[data-module='carousel.item-group']").dispatchEvent(new Event("swiped-right"));
       }
 
