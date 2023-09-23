@@ -35,6 +35,14 @@ a {
   }
 }
 
+button {
+  border: 0;
+  background-color:transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+
 abbr[title] {
   /* override */
   text-decoration: none;
