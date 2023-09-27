@@ -154,7 +154,7 @@
             document.getElementById(results_id).innerHTML = "";
             document.getElementById(input_id).value = "";
             self.get_digimon_list(query, input_id, results_id, autocomplete_id, results_max_results);
-            let tag = `<div class='bgc:platinum py:2px px:8px br:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${digivolution} - ${name} <button data-module='autocomplete.tag.button' class='fw:bold fs:18px' onclick='storm_eagle.digimon_search.remove_selected("${query}", ${index}, "${input_id}", "${results_id}", "${autocomplete_id}", ${results_max_results});document.getElementById("${input_id}").focus();'>&times;</button></div>`;
+            let tag = `<div class='bgc:platinum py:2px px:8px br:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${digivolution} - ${name} <button data-module='autocomplete.tag.button' class='heebo:bold fs:18px' onclick='storm_eagle.digimon_search.remove_selected("${query}", ${index}, "${input_id}", "${results_id}", "${autocomplete_id}", ${results_max_results});document.getElementById("${input_id}").focus();'>&times;</button></div>`;
             document.querySelector(`[data-module="autocomplete.multiselect-tags"]:has(+ #${input_id})`).innerHTML += tag;
           },
           remove_selected: (query, index, input_id, results_id, autocomplete_id, results_max_results) => {
