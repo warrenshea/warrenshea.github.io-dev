@@ -7,7 +7,7 @@
 
       <section class="mw:1200px align-self:centered pt:32px" id="carousel-1">
         <h2 class="fs:24px play:bold sm+:pl:8px xl+:px:0 py:16px">Carousel #1: Even height slides</h2>
-        <div class="pb:4px carousel carousel:center-mode-all-equal" data-module="carousel" id="" data-carousel-number-active="[1,1,2,3]" data-carousel-offset="[32,0.25,0.1666667,0.125]" data-carousel-breakpoint="sm-up" data-carousel-transition-duration="[0.5,1,1,1]">
+        <div class="pb:4px carousel carousel:center-mode-all-equal" data-module="carousel" id data-carousel-number-active="[1,1,2,3]" data-carousel-offset="[32,0.25,0.1666667,0.125]" data-carousel-breakpoint="sm-up" data-carousel-transition-duration="[0.5,1,1,1]">
           <div class="position:relative w:100%">
             <ul data-module="carousel.item-group" class="items-group row unstyle-pl:0 align:stretch position:relative sm+:px:0">
               <li data-module="carousel.item" class="item align-self:middle">
@@ -110,7 +110,7 @@
       <div class="w:100% bgc:gray mt:32px pb:48px">
         <section class="mw:1200px align-self:centered pt:32px" id="carousel-2">
           <h2 class="fs:24px play:bold sm+:pl:8px xl+:px:0 py:16px">Carousel #2: Center focus slide (larger in height)</h2>
-          <div class="pb:4px carousel carousel:center-mode-bigger" data-module="carousel" id="" data-carousel-number-active="[1,1,1,1]" data-carousel-offset="[32,0.25,0.1666667,0.25]" data-carousel-breakpoint="lg-down" data-carousel-transition-duration="[0.5,1,1,1]" data-carousel-item-height-variable="true">
+          <div class="pb:4px carousel carousel:center-mode-bigger" data-module="carousel" id data-carousel-number-active="[1,1,1,1]" data-carousel-offset="[32,0.25,0.1666667,0.25]" data-carousel-breakpoint="lg-down" data-carousel-transition-duration="[0.5,1,1,1]" data-carousel-item-height-variable="true">
             <div class="position:relative w:100%">
               <ul data-module="carousel.item-group" class="items-group row unstyle-pl:0 align:stretch position:relative sm+:px:0">
                 <li data-module="carousel.item" class="item align-self:middle">
@@ -215,7 +215,7 @@
         <h2 class="fs:24px play:bold sm+:pl:8px xl+:px:0 py:16px">Carousel #3: Full width slide</h2>
       </section>
       <section class="w:100% align-self:centered" id="carousel-3">
-        <div class="pb:4px carousel carousel:center-mode-all-equal" data-module="carousel" id="" data-carousel-number-active="[1,1,1,1]" data-carousel-offset="[0,0,0,0]" data-carousel-breakpoint="sm-up" data-carousel-transition-duration="[0.5,1,1,1]">
+        <div class="pb:4px carousel carousel:center-mode-all-equal" data-module="carousel" id data-carousel-number-active="[1,1,1,1]" data-carousel-offset="[0,0,0,0]" data-carousel-breakpoint="sm-up" data-carousel-transition-duration="[0.5,1,1,1]">
           <div class="position:relative w:100%">
             <ul data-module="carousel.item-group" class="items-group row unstyle-pl:0 align:stretch position:relative sm+:px:0">
               <li data-module="carousel.item" class="item align-self:middle">
@@ -329,7 +329,7 @@
               <div class="position:relative overflow:hidden pb:32px">
                 <label for="number_of_slides-1">Number of Slides</label>
                 <div data-module="slider.input-container">
-                  <input data-module="slider.input" id="" onChange="storm_eagle.carousel_builder.update('1','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-1" name="number_of_slides-1" min="1" max="9" steps="1" value="1">
+                  <input data-module="slider.input" id onChange="storm_eagle.carousel_builder.update('1','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-1" name="number_of_slides-1" min="1" max="9" steps="1" value="1">
                   <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
                   <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
                 </div>
@@ -519,7 +519,7 @@
               <div class="position:relative overflow:hidden pb:32px">
                 <label for="number_of_slides-2">Number of Slides</label>
                 <div data-module="slider.input-container">
-                  <input data-module="slider.input" id="" onChange="storm_eagle.carousel_builder.update('2','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-2" name="number_of_slides-2" min="1" max="9" steps="1" value="1">
+                  <input data-module="slider.input" id onChange="storm_eagle.carousel_builder.update('2','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-2" name="number_of_slides-2" min="1" max="9" steps="1" value="1">
                   <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
                   <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
                 </div>
@@ -709,7 +709,7 @@
               <div class="position:relative overflow:hidden pb:32px">
                 <label for="number_of_slides-3">Number of Slides</label>
                 <div data-module="slider.input-container">
-                  <input data-module="slider.input" id="" onChange="storm_eagle.carousel_builder.update('3','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-3" name="number_of_slides-3" min="1" max="9" steps="1" value="1">
+                  <input data-module="slider.input" id onChange="storm_eagle.carousel_builder.update('3','num_slides',this.value);" value="5" class="display:block align-self:centered w:100% slider" type="range" id="number_of_slides-3" name="number_of_slides-3" min="1" max="9" steps="1" value="1">
                   <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
                   <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
                 </div>
