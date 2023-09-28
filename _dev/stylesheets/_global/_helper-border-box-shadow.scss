@@ -11,35 +11,35 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}box-shadow\:0 {
+    .#{$prefix}bxs\:0 {
       box-shadow: none;
     }
 
-    .#{$prefix}box-shadow\:custom-1 {
+    .#{$prefix}bxs\:1 {
       box-shadow: $box-shadow-custom-1;
     }
 
-    .#{$prefix}box-shadow\:custom-2 {
+    .#{$prefix}bxs\:2 {
       box-shadow: $box-shadow-custom-2;
     }
 
-    .#{$prefix}box-shadow\:custom-3 {
+    .#{$prefix}bxs\:3 {
       box-shadow: $box-shadow-custom-3;
     }
 
-    .#{$prefix}box-shadow\:custom-4 {
+    .#{$prefix}bxs\:4 {
       box-shadow: $box-shadow-custom-4;
     }
 
-    .#{$prefix}box-shadow\:custom-5 {
+    .#{$prefix}bxs\:5 {
       box-shadow: $box-shadow-custom-5;
     }
 
-    .#{$prefix}box-shadow\:custom-6 {
+    .#{$prefix}bxs\:6 {
       box-shadow: $box-shadow-custom-6;
     }
 
-    .#{$prefix}box-shadow\:custom-7 {
+    .#{$prefix}bxs\:7 {
       box-shadow: $box-shadow-custom-7;
     }
 
