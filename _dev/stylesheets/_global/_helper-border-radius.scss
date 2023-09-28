@@ -10,10 +10,10 @@ $sizes: (
 );
 
 $directions: (
-  brtl : top-left,
-  brtr : top-right,
-  brbl : bottom-left,
-  brbr : bottom-right
+  brrtl : top-left,
+  brrtr : top-right,
+  brrbl : bottom-left,
+  brrbr : bottom-right
 );
 
 @each $mediaquery in $mediaqueries {
@@ -34,7 +34,7 @@ $directions: (
       $size-name: nth($size, 1);
       $size-value: nth($size, 2);
 
-      .#{$prefix}br\:#{$size-name} {
+      .#{$prefix}brr\:#{$size-name} {
         border-radius: #{$size-value};
       }
 
@@ -45,6 +45,27 @@ $directions: (
         .#{$prefix}#{$direction-name}\:#{$size-name} {
           border-#{$direction-value}-radius: #{$size-value};
         }
+
+        .#{$prefix}brrtx\:#{$size-name} {
+          border-top-left-radius: #{$size-value};
+          border-top-right-radius: #{$size-value};
+        }
+
+        .#{$prefix}brrbx\:#{$size-name} {
+          border-bottom-left-radius: #{$size-value};
+          border-bottom-right-radius: #{$size-value};
+        }
+
+        .#{$prefix}brrly\:#{$size-name} {
+          border-top-left-radius: #{$size-value};
+          border-bottom-left-radius: #{$size-value};
+        }
+
+        .#{$prefix}brrry\:#{$size-name} {
+          border-top-right-radius: #{$size-value};
+          border-bottom-right-radius: #{$size-value};
+        }
+
       }
     }
   }
