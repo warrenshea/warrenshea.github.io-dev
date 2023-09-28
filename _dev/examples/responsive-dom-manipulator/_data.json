@@ -12,7 +12,6 @@
             },
             "stylesheets": [
                 "/stylesheets/core.css",
-                "responsive-dom-manipulator.css",
                 "/stylesheets/vendor.prism.v.1.29.0.css"
             ],
             "scripts": [
