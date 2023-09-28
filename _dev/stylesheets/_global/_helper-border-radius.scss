@@ -46,26 +46,26 @@ $directions: (
           border-#{$direction-value}-radius: #{$size-value};
         }
 
-        .#{$prefix}brrtx\:#{$size-name} {
-          border-top-left-radius: #{$size-value};
-          border-top-right-radius: #{$size-value};
-        }
+      }
 
-        .#{$prefix}brrbx\:#{$size-name} {
-          border-bottom-left-radius: #{$size-value};
-          border-bottom-right-radius: #{$size-value};
-        }
+      .#{$prefix}brrtx\:#{$size-name} {
+        border-top-left-radius: #{$size-value};
+        border-top-right-radius: #{$size-value};
+      }
 
-        .#{$prefix}brrly\:#{$size-name} {
-          border-top-left-radius: #{$size-value};
-          border-bottom-left-radius: #{$size-value};
-        }
+      .#{$prefix}brrbx\:#{$size-name} {
+        border-bottom-left-radius: #{$size-value};
+        border-bottom-right-radius: #{$size-value};
+      }
 
-        .#{$prefix}brrry\:#{$size-name} {
-          border-top-right-radius: #{$size-value};
-          border-bottom-right-radius: #{$size-value};
-        }
+      .#{$prefix}brrly\:#{$size-name} {
+        border-top-left-radius: #{$size-value};
+        border-bottom-left-radius: #{$size-value};
+      }
 
+      .#{$prefix}brrry\:#{$size-name} {
+        border-top-right-radius: #{$size-value};
+        border-bottom-right-radius: #{$size-value};
       }
     }
   }
