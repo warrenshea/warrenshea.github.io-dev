@@ -59,13 +59,13 @@ storm_eagle.module('responsive_emulation', () => {
         responsive_emulation_state[responsive_emulation_id]["container"].classList.add("emulate:xl+");
       }
     },
-    is_sm_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] <= breakpoints["sm_max"]) ? true : false; },
+    is_sm_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] < breakpoints["md_min"]) ? true : false; },
     is_sm_up: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"]) ? true : false; },
-    is_md_down: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] <= breakpoints["md_max"]) ? true : false; },
-    is_md_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["md_min"] && responsive_emulation_state[responsive_emulation_id]["width"] <= breakpoints["md_max"]) ? true : false; },
+    is_md_down: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] < breakpoints["lg_min"]) ? true : false; },
+    is_md_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["md_min"] && responsive_emulation_state[responsive_emulation_id]["width"] < breakpoints["lg_min"]) ? true : false; },
     is_md_up: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["md_min"]) ? true : false; },
-    is_lg_down: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] <= breakpoints["lg_max"]) ? true : false; },
-    is_lg_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["lg_min"] && responsive_emulation_state[responsive_emulation_id]["width"] <= breakpoints["lg_max"]) ? true : false; },
+    is_lg_down: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["sm_min"] && responsive_emulation_state[responsive_emulation_id]["width"] < breakpoints["xl_min"]) ? true : false; },
+    is_lg_only: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["lg_min"] && responsive_emulation_state[responsive_emulation_id]["width"] < breakpoints["xl_min"]) ? true : false; },
     is_lg_up: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["lg_min"]) ? true : false; },
     is_xl_up: (responsive_emulation_id) => { return (responsive_emulation_state[responsive_emulation_id]["width"] >= breakpoints["xl_min"]) ? true : false; },
   };
