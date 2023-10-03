@@ -1,6 +1,7 @@
-/* data-module: poopver         the modal
- data-module: poopver-overlay the full screen part behind the modal
- data-module: poopver-trigger the button that opens the modal */
+/*
+ data-module: popver          the modal
+ data-module: popver-overlay  the full screen part behind the modal
+ data-module: popver-trigger  the button that opens the modal */
 storm_eagle.module('popover', () => {
   'use strict';
 
