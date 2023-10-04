@@ -3,7 +3,7 @@
  * data-module=popover         the popover
  * data-module=popover.overlay the full screen part behind the modal
  * data-module=popover.trigger the button that opens the popover
-*/
+ */
 storm_eagle.module('popover', () => {
   let self;
   let focus_placeholder;
