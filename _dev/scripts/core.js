@@ -731,7 +731,7 @@ storm_eagle.module('autopopulate_empty_ids', () => {
 storm_eagle.module('console_log', () => {
   return {
     initialize: () => {
-      if (window.location.hostname.indexOf('poc') > -1 || window.location.hostname.indexOf('localhost') > -1) {
+      if (window.location.hostname.indexOf('localhost') > -1) {
         console.log('console.log() enabled');
       } else {
         if (storm_eagle.page.get_query_value('consolelog') === 'true') {
