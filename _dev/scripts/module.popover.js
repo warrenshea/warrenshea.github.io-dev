@@ -1,8 +1,8 @@
 'use strict';
-/*
-  data-module: popver         the modal
-  data-module: popver-overlay the full screen part behind the modal
-  data-module: popver-trigger the button that opens the modal
+/**
+ * data-module=popover         the popover
+ * data-module=popover.overlay the full screen part behind the modal
+ * data-module=popover.trigger the button that opens the popover
 */
 storm_eagle.module('popover', () => {
   let self;
