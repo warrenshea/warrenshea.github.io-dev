@@ -2,7 +2,7 @@
 /**
  * data-module=modal         the modal
  * data-module=modal.trigger the button that opens the modal
-*/
+ */
 storm_eagle.module('modal', () => {
   let self;
   let focus_placeholder;
