@@ -2,38 +2,25 @@
   font-family: 'heebo-light';
   font-style: normal;
   font-weight: 300;
-  src: local('Heebo Light'), local('Heebo-Light'),
-    url('https://fonts.gstatic.com/s/heebo/v2/PBgOuZgb7GIoq5WdJf9cYPesZW2xOQ-xsNqO47m55DA.woff2') format('woff2'),
-    url('/fonts/heebo-300.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('../assets/font/heebo/heebo.ttf') format('truetype');
 }
-
 @font-face {
-  font-family: 'heebo';
+  font-family: 'heebo-regular';
   font-style: normal;
   font-weight: 400;
-  src: local('Heebo'), local('Heebo-Regular'),
-    url('https://fonts.gstatic.com/s/heebo/v2/Q66imbW5v9YuQMRLd0RXOA.woff2') format('woff2'),
-    url('/fonts/heebo-400.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('../assets/font/heebo/heebo.ttf') format('truetype');
 }
 @font-face {
   font-family: 'heebo-medium';
   font-style: normal;
   font-weight: 500;
-  src: local('Heebo Medium'), local('Heebo-Medium'),
-    url('https://fonts.gstatic.com/s/heebo/v2/vd_gpifGyUkVAMtANh8LkvesZW2xOQ-xsNqO47m55DA.woff2') format('woff2'),
-    url('/fonts/heebo-500.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('../assets/font/heebo/heebo.ttf') format('truetype');
 }
 @font-face {
   font-family: 'heebo-bold';
   font-style: normal;
   font-weight: 700;
-  src: local('Heebo Bold'), local('Heebo-Bold'),
-    url('https://fonts.gstatic.com/s/heebo/v2/ci1Z5c9lWkHY3RNZSMtWUfesZW2xOQ-xsNqO47m55DA.woff2') format('woff2'),
-    url('/fonts/heebo-700.woff') format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  src: url('../assets/font/heebo/heebo.ttf') format('truetype');
 }
 
 @each $mediaquery in $mediaqueries {
@@ -42,16 +29,20 @@
 
   @include breakpoint($breakpoint) {
     .#{$prefix}heebo\:light {
-      font-family: "heebo-light", Arial, Sans-Serif;
+      font-family: 'heebo-light', Arial, Sans-Serif;
+      font-weight: 300;
     }
-    .#{$prefix}heebo\:normal {
-      font-family: "heebo", Arial, Sans-Serif;
+    .#{$prefix}heebo\:regular {
+      font-family: 'heebo-regular', Arial, Sans-Serif;
+      font-weight: 400;
     }
     .#{$prefix}heebo\:medium {
-      font-family: "heebo-medium", Arial, Sans-Serif;
+      font-family: 'heebo-medium', Arial, Sans-Serif;
+      font-weight: 500;
     }
     .#{$prefix}heebo\:bold {
-      font-family: "heebo-bold", Arial, Sans-Serif;
+      font-family: 'heebo-bold', Arial, Sans-Serif;
+      font-weight: 700;
     }
   }
 }
