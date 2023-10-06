@@ -49,12 +49,10 @@ storm_eagle.module('range_slider', () => {
         let temp = el_1;
         el_1 = el_2;
         el_2 = temp;
-        // console.log(`swap`);
       }
-      // console.log(`el_1:${el_1.value} el_2:${el_2.value}`);
-      let left = Math.round(((el_1.value - el_1.getAttribute('min')) / (el_1.getAttribute('max') - el_1.getAttribute('min'))) * 100);
+      let left = ((el_1.value - el_1.getAttribute('min')) / (el_1.getAttribute('max') - el_1.getAttribute('min'))) * 100;
       slider_state[slider_id]['slider_fill'].style.left = left + '%';
-      let percentage = Math.round(((el_2.value - el_2.getAttribute('min')) / (el_2.getAttribute('max') - el_2.getAttribute('min'))) * 100);
+      let percentage = ((el_2.value - el_2.getAttribute('min')) / (el_2.getAttribute('max') - el_2.getAttribute('min'))) * 100;
       slider_state[slider_id]['slider_fill'].style.width = percentage - left + '%';
     },
     update_all_slider_track: () => {
