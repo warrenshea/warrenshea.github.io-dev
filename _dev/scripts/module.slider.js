@@ -9,6 +9,7 @@ storm_eagle.module('slider', () => {
       document.querySelectorAll('[data-module="slider.input-container"]').forEach((el) => {
         let slider_id = el.querySelector("[data-module='slider.input']").getAttribute('id');
         slider_state[slider_id] = {
+          input_container: el,
           label_container: el.querySelector('[data-module="slider.labels"]'),
           labels: el.querySelectorAll('[data-module="slider.labels"] > * '),
           num_labels: el.querySelectorAll('[data-module="slider.labels"] > * ').length,
@@ -26,12 +27,11 @@ storm_eagle.module('slider', () => {
       });
     },
     force_resize: (slider_id) => {
-      let slider_thumb_width = 26;
-      let container_width = document.getElementById(slider_id).offsetWidth;
-      let new_label_width = (container_width - slider_thumb_width) / (slider_state[slider_id]['num_labels'] - 1);
-      container_width = container_width + new_label_width - slider_thumb_width;
-      slider_state[slider_id]['label_container'].style.width = container_width + 'px';
-      slider_state[slider_id]['label_container'].style.left = 0 + slider_thumb_width / 2 - new_label_width / 2 + 'px';
+      let container_width = slider_state[slider_id]['input_container'].offsetWidth;
+      let full_label_width = (container_width * slider_state[slider_id]['num_labels']) / (slider_state[slider_id]['num_labels'] - 1);
+      slider_state[slider_id]['label_container'].style.width = full_label_width + 'px';
+      let transform_left = (50 / slider_state[slider_id]['num_labels']) * -1;
+      slider_state[slider_id]['label_container'].style.transform = `translateX(${transform_left}%)`;
     },
     slider_listener: (slider_id) => {
       document.getElementById(slider_id).addEventListener('input', (event) => {
