@@ -3,53 +3,133 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}bgc\:yale-blue { background-color: $yale-blue; }
-    .#{$prefix}bgc\:yinmn-blue { background-color: $yinmn-blue; }
-    .#{$prefix}bgc\:blue { background-color: $blue; }
-    .#{$prefix}bgc\:vista-blue { background-color: $vista-blue; }
-    .#{$prefix}bgc\:powder-blue { background-color: $powder-blue; }
-    .#{$prefix}bgc\:columbia-blue { background-color: $columbia-blue; }
-    .#{$prefix}bgc\:red { background-color: $red; }
-    .#{$prefix}bgc\:yellow { background-color: $yellow; }
-    .#{$prefix}bgc\:black { background-color: black; }
-    .#{$prefix}bgc\:black\:50\% { background-color: rgba($black,.5); }
-    .#{$prefix}bgc\:eerie-black { background-color: $eerie-black; }
-    .#{$prefix}bgc\:onyx { background-color: $onyx; }
-    .#{$prefix}bgc\:gray { background-color: $gray; }
-    .#{$prefix}bgc\:silver { background-color: $silver; }
-    .#{$prefix}bgc\:platinum { background-color: $platinum; }
-    .#{$prefix}bgc\:white-smoke { background-color: $white-smoke; }
-    .#{$prefix}bgc\:white { background-color: $white; }
-    .#{$prefix}bgc\:white\:50\% { background-color: rgba($white,.5); }
-    .#{$prefix}bgc\:none { background-color: none; }
-    .#{$prefix}bgc\:transparent { background-color: transparent; }
-    .#{$prefix}bgc\:disabled { background-color: $disabled; }
+    .#{$prefix}bgc\:yale-blue {
+      background-color: $yale-blue;
+    }
+    .#{$prefix}bgc\:yinmn-blue {
+      background-color: $yinmn-blue;
+    }
+    .#{$prefix}bgc\:blue {
+      background-color: $blue;
+    }
+    .#{$prefix}bgc\:vista-blue {
+      background-color: $vista-blue;
+    }
+    .#{$prefix}bgc\:powder-blue {
+      background-color: $powder-blue;
+    }
+    .#{$prefix}bgc\:columbia-blue {
+      background-color: $columbia-blue;
+    }
+    .#{$prefix}bgc\:red {
+      background-color: $red;
+    }
+    .#{$prefix}bgc\:yellow {
+      background-color: $yellow;
+    }
+    .#{$prefix}bgc\:black {
+      background-color: black;
+    }
+    .#{$prefix}bgc\:black\:50\% {
+      background-color: rgba($black, 0.5);
+    }
+    .#{$prefix}bgc\:eerie-black {
+      background-color: $eerie-black;
+    }
+    .#{$prefix}bgc\:onyx {
+      background-color: $onyx;
+    }
+    .#{$prefix}bgc\:gray {
+      background-color: $gray;
+    }
+    .#{$prefix}bgc\:silver {
+      background-color: $silver;
+    }
+    .#{$prefix}bgc\:platinum {
+      background-color: $platinum;
+    }
+    .#{$prefix}bgc\:white-smoke {
+      background-color: $white-smoke;
+    }
+    .#{$prefix}bgc\:white {
+      background-color: $white;
+    }
+    .#{$prefix}bgc\:white\:50\% {
+      background-color: rgba($white, 0.5);
+    }
+    .#{$prefix}bgc\:none {
+      background-color: none;
+    }
+    .#{$prefix}bgc\:transparent {
+      background-color: transparent;
+    }
+    .#{$prefix}bgc\:disabled {
+      background-color: $disabled;
+    }
 
     /* | means it's a hard line distinction */
     /* ~ means it's a transitional gradient */
 
     /* Gradients Y-Axis Top to Bottom */
-    .#{$prefix}bgcgy\:platinum\|white{ background: linear-gradient(0deg, $white 0, $white calc(50%), $platinum calc(50%), $platinum 100%); }
-    .#{$prefix}bgcgy\:platinum\|16px-white{ background: linear-gradient(0deg, $white 0, $white 1rem, $platinum 1rem); }
-    .#{$prefix}bgcgy\:platinum\|32px-white{ background: linear-gradient(0deg, $white 0, $white 2rem, $platinum 2rem); }
-    .#{$prefix}bgcgy\:16px-platinum\|white{ background: linear-gradient(180deg, $platinum 1rem, $white 1rem); }
-    .#{$prefix}bgcgy\:32px-platinum\|white{ background: linear-gradient(180deg, $platinum 2rem, $white 2rem); }
-    .#{$prefix}bgcgy\:64px-platinum\|white{ background: linear-gradient(180deg, $platinum 4rem, $white 4rem); }
-    .#{$prefix}bgcgy\:transparent\|platinum{ background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), transparent calc(50%), transparent 100%); }
-    .#{$prefix}bgcgy\:transparent\|16px-platinum{ background: linear-gradient(0deg, $platinum 0, $platinum 1rem, transparent 1rem); }
-    .#{$prefix}bgcgy\:transparent\|80px-platinum{ background: linear-gradient(0deg, $platinum 0, $platinum 5rem, transparent 5rem); }
-    .#{$prefix}bgcgy\:transparent\|white{ background: linear-gradient(0deg, $white 0, $white calc(50%), transparent calc(50%), transparent 100%); }
-    .#{$prefix}bgcgy\:white\|platinum{ background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), $white calc(50%), $white 100%); }
-    .#{$prefix}bgcgy\:white\|8px-platinum{ background: linear-gradient(0deg, $platinum 0, $platinum .5rem, $white .5rem); }
-    .#{$prefix}bgcgy\:white\|16px-platinum{ background: linear-gradient(0deg, $platinum 0, $platinum 1rem, $white 1rem); }
-    .#{$prefix}bgcgy\:white\|112px-platinum{ background: linear-gradient(0deg, $platinum 0, $platinum 7rem, $white 7rem); }
-    .#{$prefix}bgcgy\:48px-white\|platinum{ background: linear-gradient(180deg, $white 3rem, $platinum 3rem); }
+    .#{$prefix}bgcgy\:platinum\|white {
+      background: linear-gradient(0deg, $white 0, $white calc(50%), $platinum calc(50%), $platinum 100%);
+    }
+    .#{$prefix}bgcgy\:platinum\|16px-white {
+      background: linear-gradient(0deg, $white 0, $white 1rem, $platinum 1rem);
+    }
+    .#{$prefix}bgcgy\:platinum\|32px-white {
+      background: linear-gradient(0deg, $white 0, $white 2rem, $platinum 2rem);
+    }
+    .#{$prefix}bgcgy\:16px-platinum\|white {
+      background: linear-gradient(180deg, $platinum 1rem, $white 1rem);
+    }
+    .#{$prefix}bgcgy\:32px-platinum\|white {
+      background: linear-gradient(180deg, $platinum 2rem, $white 2rem);
+    }
+    .#{$prefix}bgcgy\:64px-platinum\|white {
+      background: linear-gradient(180deg, $platinum 4rem, $white 4rem);
+    }
+    .#{$prefix}bgcgy\:transparent\|platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), transparent calc(50%), transparent 100%);
+    }
+    .#{$prefix}bgcgy\:transparent\|16px-platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum 1rem, transparent 1rem);
+    }
+    .#{$prefix}bgcgy\:transparent\|80px-platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum 5rem, transparent 5rem);
+    }
+    .#{$prefix}bgcgy\:transparent\|white {
+      background: linear-gradient(0deg, $white 0, $white calc(50%), transparent calc(50%), transparent 100%);
+    }
+    .#{$prefix}bgcgy\:white\|platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), $white calc(50%), $white 100%);
+    }
+    .#{$prefix}bgcgy\:white\|8px-platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum 0.5rem, $white 0.5rem);
+    }
+    .#{$prefix}bgcgy\:white\|16px-platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum 1rem, $white 1rem);
+    }
+    .#{$prefix}bgcgy\:white\|112px-platinum {
+      background: linear-gradient(0deg, $platinum 0, $platinum 7rem, $white 7rem);
+    }
+    .#{$prefix}bgcgy\:48px-white\|platinum {
+      background: linear-gradient(180deg, $white 3rem, $platinum 3rem);
+    }
 
     /* Gradients X-Axis Left to Right */
-    .#{$prefix}bgcgx\:transparent\~40\%-black{ background: linear-gradient(90deg, transparent 0%, rgba($black,.4) 100%); }
-    .#{$prefix}bgcgx\:yale-blue\~eerie-black{ background: linear-gradient(90deg, $yale-blue 0%, $eerie-black 100%); }
-    .#{$prefix}bgcgx\:15\%-white\~70\%-red\~15\%-white{ background: linear-gradient(90deg, white 0%, red 15%, red 85%, white 100%); }
-    .#{$prefix}bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver{ background: linear-gradient(90deg, $silver 0%, $platinum 15%, $platinum 85%, $silver 100%); }
+    .#{$prefix}bgcgx\:transparent\~40\%-black {
+      background: linear-gradient(90deg, transparent 0%, rgba($black, 0.4) 100%);
+    }
+    .#{$prefix}bgcgx\:yale-blue\~eerie-black {
+      background: linear-gradient(90deg, $yale-blue 0%, $eerie-black 100%);
+    }
+    .#{$prefix}bgcgx\:15\%-white\~70\%-red\~15\%-white {
+      background: linear-gradient(90deg, white 0%, red 15%, red 85%, white 100%);
+    }
+    .#{$prefix}bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
+      background: linear-gradient(90deg, $silver 0%, $platinum 15%, $platinum 85%, $silver 100%);
+    }
   }
 }
 
@@ -58,35 +138,149 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}bgimg-focus\:left { background-position: center left; }
-    .#{$prefix}bgimg-focus\:center { background-position: center center; }
-    .#{$prefix}bgimg-focus\:right { background-position: center right; }
+    .#{$prefix}bgimg-focus\:left {
+      background-position: center left;
+    }
+    .#{$prefix}bgimg-focus\:center {
+      background-position: center center;
+    }
+    .#{$prefix}bgimg-focus\:right {
+      background-position: center right;
+    }
   }
 }
 
 @include breakpoint(xlarge up) {
-  .xl\+\:bgimg-mw-1280px-l\:1{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 5); }
-  .xl\+\:bgimg-mw-1280px-l\:2{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 4); }
-  .xl\+\:bgimg-mw-1280px-l\:3{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 3); }
-  .xl\+\:bgimg-mw-1280px-l\:4{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 2); }
-  .xl\+\:bgimg-mw-1280px-l\:5{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 1); }
-  .xl\+\:bgimg-mw-1280px-l\:6{ position:absolute; top:0; right:calc(50% + (1280px / 12) * 0); }
-  .xl\+\:bgimg-mw-1280px-l\:7{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 1); }
-  .xl\+\:bgimg-mw-1280px-l\:8{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 2); }
-  .xl\+\:bgimg-mw-1280px-l\:9{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 3); }
-  .xl\+\:bgimg-mw-1280px-l\:10{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 4); }
-  .xl\+\:bgimg-mw-1280px-l\:11{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 5); }
-  .xl\+\:bgimg-mw-1280px-l\:12{ position:absolute; top:0; right:calc(50% - (1280px / 12) * 6); }
-  .xl\+\:bgimg-mw-1280px-r\:1{ position:absolute; top:0; left:calc(50% - (1280px / 12) * 5); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:2{ position:absolute; top:0; left:calc(50% - (1280px / 12) * 4); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:3{ position:absolute; top:0; left:calc(50% - (1280px / 12) * 3); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:4{ position:absolute; top:0; left:calc(50% - (1280px / 12) * 2); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:5{ position:absolute; top:0; left:calc(50% - (1280px / 12) * 1); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:6{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 0); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:7{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 1); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:8{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 2); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:9{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 3); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:10{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 4); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:11{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 5); right:0; }
-  .xl\+\:bgimg-mw-1280px-r\:12{ position:absolute; top:0; left:calc(50% + (1280px / 12) * 6); right:0; }
+  .xl\+\:bgimg-mw-1280px-l\:1 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 5);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:2 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 4);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:3 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 3);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:4 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 2);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:5 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 1);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:6 {
+    position: absolute;
+    top: 0;
+    right: calc(50% + (1280px / 12) * 0);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:7 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 1);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:8 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 2);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:9 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 3);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:10 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 4);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:11 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 5);
+  }
+  .xl\+\:bgimg-mw-1280px-l\:12 {
+    position: absolute;
+    top: 0;
+    right: calc(50% - (1280px / 12) * 6);
+  }
+  .xl\+\:bgimg-mw-1280px-r\:1 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (1280px / 12) * 5);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:2 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (1280px / 12) * 4);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:3 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (1280px / 12) * 3);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:4 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (1280px / 12) * 2);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:5 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (1280px / 12) * 1);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:6 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 0);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:7 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 1);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:8 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 2);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:9 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 3);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:10 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 4);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:11 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 5);
+    right: 0;
+  }
+  .xl\+\:bgimg-mw-1280px-r\:12 {
+    position: absolute;
+    top: 0;
+    left: calc(50% + (1280px / 12) * 6);
+    right: 0;
+  }
 }
