@@ -25,7 +25,7 @@ fieldset.unstyle {
       z-index: 4;
       content: '';
       width: 100%;
-      height: 2px;
+      height: rem-calc(2);
       bottom: 0;
       left: 0;
       background: $blue;
@@ -40,8 +40,8 @@ fieldset.unstyle {
       z-index: 3;
       content: '';
       width: 100%;
-      height: 2px;
-      bottom: 2px;
+      height: rem-calc(2);
+      bottom: rem-calc(2);
       left: 0;
       background: $silver;
       position: relative;
@@ -105,9 +105,8 @@ fieldset.unstyle {
   select,
   textarea {
     width: 100%;
-    height: 36px;
+    height: rem-calc(36);
     margin-top: rem-calc(16);
-    padding: 0;
     white-space: nowrap;
     line-height: 1.5;
     border: none;
@@ -143,19 +142,19 @@ fieldset.unstyle {
   /* helper description styles */
   .error-message {
     width: 100%;
-    min-width: 150px;
-    padding: 0 0 0 19px;
+    min-width: rem-calc(150);
+    padding: 0 0 0 rem-calc(19);
     font-size: rem-calc(14);
     font-family: 'heebo-regular';
     color: $negative;
     background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
-    background-size: 16px 16px;
+    background-size: rem-calc(16) rem-calc(16);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
-    margin-top: 4px;
+    margin-top: rem-calc(4);
     display: none;
-    margin-bottom: 6px;
+    margin-bottom: rem-calc(6);
     &.has-error {
       visibility: visible;
       opacity: 1;
@@ -170,7 +169,7 @@ fieldset.unstyle {
   .helper-description {
     color: $onyx;
     font-size: rem-calc(14);
-    margin-top: 4px;
+    margin-top: rem-calc(4);
     letter-spacing: 0.25px;
   }
 
@@ -182,12 +181,12 @@ fieldset.unstyle {
     li {
       display: flex;
       align-items: center;
-      line-height: 24px;
-      padding: 2px 6px 2px 32px;
+      line-height: rem-calc(24);
+      padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
       background-image: url(../assets/icon/times.negative.svg);
       background-repeat: no-repeat;
-      background-position: top 2px left 2px;
-      background-size: 24px 24px;
+      background-position: top rem-calc(2) left rem-calc(2);
+      background-size: rem-calc(24) rem-calc(24);
       > span {
         display: flex;
       }
@@ -206,17 +205,17 @@ fieldset.unstyle {
     background-color: transparent;
     background-image: url('../assets/icon/chevron-down.blue.svg');
     background-repeat: no-repeat;
-    background-position: right 8px top 10px;
-    background-size: 16px 16px;
+    background-position: right rem-calc(8) top rem-calc(10);
+    background-size: rem-calc(16) rem-calc(16);
     appearance: none;
   }
 
   /* textarea styles */
   textarea {
     transition: all 0.3s ease;
-    padding-top: 6px; /* to remain consistent with input boxes */
-    padding-bottom: 6px; /* to remain consistent with input boxes */
-    margin-bottom: -4px; /* to remain consistent with input boxes */
+    padding-top: rem-calc(6); /* to remain consistent with input boxes */
+    padding-bottom: rem-calc(6); /* to remain consistent with input boxes */
+    margin-bottom: rem-calc(-4); /* to remain consistent with input boxes */
     white-space: pre-wrap;
   }
 
@@ -232,16 +231,16 @@ fieldset.unstyle {
     & + label {
       cursor: pointer;
       position: relative;
-      padding-left: 36px;
+      padding-left: rem-calc(36);
       letter-spacing: 0.15px;
-      line-height: 24px;
+      line-height: rem-calc(24);
       &:before {
         content: '';
         position: absolute;
         left: 0;
-        width: 24px;
-        height: 24px;
-        border: 2px solid $onyx;
+        width: rem-calc(24);
+        height: rem-calc(24);
+        border: rem-calc(2) solid $onyx;
         &:hover {
           cursor: pointer;
         }
@@ -252,28 +251,28 @@ fieldset.unstyle {
       cursor: pointer;
     }
     &:focus + label {
-      outline: 2px solid #000;
+      outline: rem-calc(2) solid #000;
     }
     &:checked:focus + label {
-      outline: 2px solid #000;
+      outline: rem-calc(2) solid #000;
     }
     &:checked:focus + label {
       box-shadow: $box-shadow-custom-7;
     }
     &:focus + label:before {
-      box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
     }
     &:checked:focus + label:before {
-      box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
     }
     &.has-error + label:before {
-      border: 2px solid $negative;
+      border: rem-calc(2) solid $negative;
     }
     &:disabled + label {
       color: $onyx;
       &:before {
         background-color: $silver;
-        border: 2px solid $onyx;
+        border: rem-calc(2) solid $onyx;
       }
     }
   }
@@ -289,17 +288,17 @@ fieldset.unstyle {
       background-image: url('../assets/icon/check.white.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: 15px;
-      border: 2px solid $blue;
+      background-size: rem-calc(15);
+      border: rem-calc(2) solid $blue;
     }
     &:focus + label:before {
-      /*border: 2px solid $blue;*/
+      /*border: rem-calc(2) solid $blue;*/
       box-shadow: $box-shadow-custom-7;
     }
     &:checked:disabled + label:before {
       background-color: $onyx;
       background-image: url('../assets/icon/check.white.svg');
-      border: 2px solid $onyx;
+      border: rem-calc(2) solid $onyx;
     }
   }
 
@@ -329,34 +328,34 @@ fieldset.unstyle {
     }
     &:checked + label:before {
       background-color: $white;
-      border: 6px solid $blue;
+      border: rem-calc(6) solid $blue;
     }
     &:focus + label:before {
       background-color: transparent;
-      border: 2px solid $gray;
+      border: rem-calc(2) solid $gray;
     }
     &:checked:focus + label:before {
       background-color: $white;
-      border: 6px solid $blue;
+      border: rem-calc(6) solid $blue;
       box-shadow: $box-shadow-custom-7;
     }
 
     &:checked:disabled + label:before {
       background-color: $silver;
-      border: 6px solid $onyx;
+      border: rem-calc(6) solid $onyx;
     }
   }
 
   .box-radio-buttons {
     input[type='radio'] {
       & + label {
-        padding: 4px 16px;
+        padding: rem-calc(4) rem-calc(16);
         font-family: 'heebo-bold';
         font-size: rem-calc(14);
         color: $blue;
         background-color: $white;
         width: 100%;
-        border: 2px solid $onyx;
+        border: rem-calc(2) solid $onyx;
         line-height: 2.25rem;
         //border-radius: rem-calc(4);
         transition: all 0.3s ease;
@@ -370,11 +369,11 @@ fieldset.unstyle {
       &:checked + label {
         color: $white;
         background-color: $blue;
-        border: 2px $blue solid;
+        border: rem-calc(2) $blue solid;
       }
       &:checked:focus + label {
-        border: 2px $vista-blue solid;
-        box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+        border: rem-calc(2) $vista-blue solid;
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
       }
     }
   }
@@ -388,27 +387,27 @@ fieldset.unstyle {
     }
     100% {
       box-shadow:
-        0 0 0 10px $powder-blue,
-        0 0 0 10px $yale-blue;
+        0 0 0 rem-calc(10) $powder-blue,
+        0 0 0 rem-calc(10) $yale-blue;
     }
   }
 
   /* helper description styles */
   .error-message {
     width: 100%;
-    min-width: 150px;
-    padding: 0 0 0 19px;
+    min-width: rem-calc(150);
+    padding: 0 0 0 rem-calc(19);
     font-size: rem-calc(14);
     font-family: 'heebo-regular';
     color: $negative;
     background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
-    background-size: 16px 16px;
+    background-size: rem-calc(16) rem-calc(16);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
-    margin-top: 4px;
+    margin-top: rem-calc(4);
     display: none;
-    margin-bottom: 6px;
+    margin-bottom: rem-calc(6);
     &.has-error {
       visibility: visible;
       opacity: 1;
@@ -430,7 +429,7 @@ fieldset.unstyle {
     & + label {
       position: relative;
       width: 100%;
-      min-height: 170px;
+      min-height: rem-calc(170);
       display: inline-block;
       transition: all 0.3s ease-out;
       box-shadow: $box-shadow-custom-1;
@@ -447,29 +446,29 @@ fieldset.unstyle {
         opacity: 0;
         visibility: hidden;
         position: absolute;
-        top: -1px;
+        top: rem-calc(-1);
         /* - Fix for IE11 - keep -1px, not 0px */
-        right: -1px;
+        right: rem-calc(-1);
         /* - Fix for IE11 - keep -1px, not 0px */
-        width: 24px;
-        height: 24px;
-        //border-radius: 0 0 0 4px;
+        width: rem-calc(24);
+        height: rem-calc(24);
+        //border-radius: 0 0 0 rem-calc(4);
         background-image: url('../assets/icon/chevron-down.blue.svg');
         background-repeat: no-repeat;
         background-color: #68bbe8;
-        background-size: 16px 16px;
+        background-size: rem-calc(16) rem-calc(16);
         background-position: center center;
         transition: all 0.3s ease-in;
       }
       div.image {
         text-align: center;
-        width: 96px;
-        height: 72px;
-        margin: 16px auto 0;
+        width: rem-calc(96;
+        height: rem-calc(72);
+        margin: rem-calc(16) auto 0;
       }
       div.description {
         text-align: center;
-        padding: 8px 0 0 0;
+        padding: rem-calc(8) 0 0 0;
         font-family: 'heebo-bold';
         font-size: rem-calc(16);
         color: $eerie-black;
@@ -477,25 +476,25 @@ fieldset.unstyle {
     }
     &:focus {
       background: $blue;
-      border: 2px solid $blue;
+      border: rem-calc(2) solid $blue;
       color: $white;
-      box-shadow: 0 0 4px 3px rgba($vista-blue, 0.65);
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
     }
 
     &:checked + label,
     &:checked:focus + label {
-      border: 2px solid $blue;
+      border: rem-calc(2) solid $blue;
       div.check {
         opacity: 1;
         visibility: visible;
-        background: $blue url('../assets/icon/check.white.svg') 8px no-repeat;
+        background: $blue url('../assets/icon/check.white.svg') rem-calc(8) no-repeat;
         background-position: center center;
-        background-size: 16px;
+        background-size: rem-calc(16);
       }
     }
     &:focus + label,
     &:checked:focus + label {
-      border: 2px solid $blue;
+      border: rem-calc(2) solid $blue;
       div.check {
         background-color: $blue;
         display: block;
@@ -505,7 +504,7 @@ fieldset.unstyle {
       box-shadow: $box-shadow-custom-7;
     }
     .error-field label {
-      border: 2px solid $negative;
+      border: rem-calc(2) solid $negative;
     }
   }
 }
