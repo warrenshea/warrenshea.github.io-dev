@@ -1,0 +1,20 @@
+[data-module='menu'] {
+  [data-module='menu.trigger'] {
+    &[aria-expanded='false'] {
+      [data-module='menu.inactive'] {
+        display: block;
+      }
+      [data-module='menu.active'] {
+        display: none;
+      }
+    }
+    &[aria-expanded='true'] {
+      [data-module='menu.inactive'] {
+        display: none;
+      }
+      [data-module='menu.active'] {
+        display: block;
+      }
+    }
+  }
+}
