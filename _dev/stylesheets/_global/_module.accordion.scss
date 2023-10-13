@@ -1,19 +1,19 @@
-.accordion {
-  *[data-module="accordion.trigger"] {
-    &[aria-expanded="false"] {
-      .accordion\:show-more-button{
-        display:block;
+[data-module='accordion'] {
+  [data-module='accordion.trigger'] {
+    &[aria-expanded='false'] {
+      [data-module='accordion.active'] {
+        display: block;
       }
-      .accordion\:show-less-button{
-        display:none;
+      [data-module='accordion.inactive'] {
+        display: none;
       }
     }
-    &[aria-expanded="true"] {
-      .accordion\:show-more-button{
-        display:none;
+    &[aria-expanded='true'] {
+      [data-module='accordion.active'] {
+        display: none;
       }
-      .accordion\:show-less-button{
-        display:block;
+      [data-module='accordion.inactive'] {
+        display: block;
       }
     }
   }
