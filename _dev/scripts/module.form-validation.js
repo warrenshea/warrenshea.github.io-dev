@@ -2,7 +2,7 @@
 
 storm_eagle.module('form_validation', () => {
   let self;
-  let status = true;
+  let has_validation_passed = true;
   let error_number = 0;
   let form_state = {};
 
@@ -82,7 +82,8 @@ storm_eagle.module('form_validation', () => {
         if (form_state[form_name][form_element_name]['validation_criteria'][i] === 'equals') {
           el = document.querySelector(`[name='${form_element_name}']`);
           let el_comparison = document.getElementById(el.getAttribute('data-matching'));
-          //console.log(el,el_comparison);
+          // console.log(el, el_comparison);
+          // console.log(el.value, el_comparison.value);
           if (self.is_value_valid(el.value, 'equals', el_comparison.value)) {
             document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.add('pass');
             document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove('fail');
@@ -103,35 +104,50 @@ storm_eagle.module('form_validation', () => {
     },
     validate_form: (event, form_name, on_success) => {
       error_number = 0;
-      status = true;
+      has_validation_passed = true;
 
       //console.log(form_state);
       let form_element_names = Object.keys(form_state[form_name]);
       for (let i = 0; i < form_element_names.length; i++) {
+        //Reset all error messages and highlights
+        for (let j = 0; j < form_state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
+          self.display_error_message(form_element_names[i], 'equals', true);
+          self.display_error_message(form_element_names[i], 'is_not_empty', true);
+          self.display_error_message(form_element_names[i], form_state[form_name][form_element_names[i]]['validation_criteria'][j], true);
+          self.hightlight_error(form_element_names[i], form_state[form_name][form_element_names[i]]['type'], true);
+        }
+
         for (let j = 0; j < form_state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
           let type = form_state[form_name][form_element_names[i]]['type'];
           let validation_type = form_state[form_name][form_element_names[i]]['validation_type'];
-          // console.log(form_state[form_name][form_element_names[i]]);
-          // console.log(form_state[form_name][form_element_names[i]]["validation_criteria"][j]);
           if (validation_type === 'required') {
             if (document.querySelector(`[name='${form_element_names[i]}']`).value === '' || type === 'radio' || type === 'checkbox') {
-              status = self.input_type_validataton(form_element_names[i], type, 'is_not_empty');
-              self.display_error(form_element_names[i], type, 'is_not_empty', status);
-              error_number += status ? 0 : 1;
+              has_validation_passed = self.input_type_validataton(form_element_names[i], type, 'is_not_empty');
+              self.display_error_message(form_element_names[i], 'is_not_empty', has_validation_passed);
+              self.hightlight_error(form_element_names[i], type, has_validation_passed);
+              error_number += has_validation_passed ? 0 : 1;
             } else {
-              self.input_type_validataton(form_element_names[i], type, 'is_not_empty'); //reset the status
-              self.display_error(form_element_names[i], type, 'is_not_empty', true);
-
               if (form_state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
+                // console.log('****************');
+                // console.log(form_state[form_name][form_element_names[i]]);
+                // console.log(form_state[form_name][form_element_names[i]]['validation_criteria']);
+                // console.log(form_state[form_name][form_element_names[i]]['validation_criteria'][j]);
                 let el = document.querySelector(`[name='${form_element_names[i]}']`);
                 let el_comparison = document.getElementById(el.getAttribute('data-matching'));
-                status = self.is_value_valid(el.value, 'equals', el_comparison.value);
-                self.display_error(form_element_names[i], type, 'equals', status);
+                has_validation_passed = self.is_value_valid(el.value, 'equals', el_comparison.value);
+                error_number += has_validation_passed ? 0 : 1;
+                self.display_error_message(form_element_names[i], 'equals', has_validation_passed);
+                self.hightlight_error(form_element_names[i], type, has_validation_passed);
               } else {
-                status = self.input_type_validataton(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j]);
-                self.display_error(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j], status);
+                //console.log(form_state[form_name][form_element_names[i]]['validation_criteria']);
+                has_validation_passed = self.input_type_validataton(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j]);
+                error_number += has_validation_passed ? 0 : 1;
+                self.display_error_message(form_element_names[i], form_state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
+                if (has_validation_passed === false) {
+                  self.hightlight_error(form_element_names[i], type, false);
+                  break;
+                }
               }
-              error_number += status ? 0 : 1;
             }
           } else if (validation_type === 'optional') {
             if (document.querySelector(`[name='${form_element_names[i]}']`).value === '' || type === 'radio' || type === 'checkbox') {
@@ -139,13 +155,13 @@ storm_eagle.module('form_validation', () => {
               if (form_state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
                 let el = document.querySelector(`[name='${form_element_names[i]}']`);
                 let el_comparison = document.getElementById(el.getAttribute('data-matching'));
-                status = self.is_value_valid(el.value, 'equals', el_comparison.value);
-                self.display_error(form_element_names[i], type, 'equals', status);
+                has_validation_passed = self.is_value_valid(el.value, 'equals', el_comparison.value);
+                self.display_error_message(form_element_names[i], 'equals', has_validation_passed);
               } else {
-                status = self.input_type_validataton(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j]);
-                self.display_error(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j], status);
+                has_validation_passed = self.input_type_validataton(form_element_names[i], type, form_state[form_name][form_element_names[i]]['validation_criteria'][j]);
+                self.display_error_message(form_element_names[i], form_state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
               }
-              error_number += status ? 0 : 1;
+              error_number += has_validation_passed ? 0 : 1;
             }
           }
         }
@@ -154,32 +170,47 @@ storm_eagle.module('form_validation', () => {
       //console.log("error numbers:",error_number);
       if (error_number === 0) {
         //note: on_success must be a global function, or accessible through dot notation (not bracket notation)
-        //refactor if possible
-        let on_success_parts = on_success.split('.');
-        if (on_success_parts.length === 1) {
-          return window[on_success]();
-        } else if (on_success_parts.length === 2) {
-          return window[on_success_parts[0]][on_success_parts[1]]();
-        } else if (on_success_parts.length === 3) {
-          return window[on_success_parts[0]][on_success_parts[1]][on_success_parts[2]]();
+        let on_success_objects = on_success.split('.');
+        let obj = window;
+        for (let on_success_object of on_success_objects) {
+          if (obj && obj[on_success_object]) {
+            obj = obj[on_success_object];
+          } else {
+            console.error('on_success_object or function not found');
+            return undefined; // on_success_object or function not found
+          }
+        }
+        if (typeof obj === 'function') {
+          return obj();
+        } else {
+          console.error('last on_success_object is not a function');
+          return undefined; // Last on_success_object is not a function
         }
       } else {
         return false;
       }
     },
-    //display_error(): highlights/hides the border of the input that has an issue + adds/hides the error message
-    display_error: (element_name, type, validation_rules, has_validation_passed) => {
+    //display_error_message(): adds/hides the error message
+    display_error_message: (element_name, validation_rules, has_validation_passed) => {
+      if (document.getElementById(`${element_name}:${validation_rules}`)) {
+        if (has_validation_passed) {
+          document.getElementById(`${element_name}:${validation_rules}`).classList.remove('has-error');
+        } else {
+          document.getElementById(`${element_name}:${validation_rules}`).classList.add('has-error');
+        }
+      }
+    },
+    //hightlight_error(): highlights/hides the border of the input that has an issue
+    hightlight_error: (element_name, type, has_validation_passed) => {
       //console.log(element_name,type,validation_rules,has_validation_passed);
       if (has_validation_passed) {
         if (type === 'text' || type === 'number') {
           document.querySelector(`label[for='${element_name}']`).classList.remove('error-field');
         }
-        document.getElementById(`${element_name}:${validation_rules}`).classList.remove('has-error');
       } else {
         if (type === 'text' || type === 'number') {
           document.querySelector(`label[for='${element_name}']`).classList.add('error-field');
         }
-        document.getElementById(`${element_name}:${validation_rules}`).classList.add('has-error');
       }
     },
     //input_type_validataton(): form validation based on input type
@@ -223,6 +254,22 @@ storm_eagle.module('form_validation', () => {
           regex = /^[A-Za-z\u00E0-\u00FC\d ]+$/;
           return regex.test(value);
           break;
+        case 'is_lowercase':
+          regex = /^[a-z]+$/;
+          return regex.test(value);
+          break;
+        case 'is_url_pathname_friendly': //allows both lowercase, uppercase, numbers, - , _ , / but excludes \
+          regex = /^[A-Za-z0-9\-_]+$/;
+          return regex.test(value);
+          break;
+        case 'is_url_folder_friendly_lowercase': //allows lowercase, numbers, - , _  but excludes /,\
+          regex = /^[a-z0-9\-_]+$/;
+          return regex.test(value);
+          break;
+        case 'is_url_pathname_friendly_lowercase': //allows lowercase, numbers, - , _ , / but excludes \
+          regex = /^[a-z0-9\-/_]+$/;
+          return regex.test(value);
+          break;
         case 'is_number': // numbers
           regex = /^-?\d+$/;
           return regex.test(value);
@@ -250,6 +297,10 @@ storm_eagle.module('form_validation', () => {
         case 'has_min_8_characters':
           return value.length > 7;
           break;
+        case 'has_no_slash':
+          regex = /^[^/\\]+$/;
+          return regex.test(value);
+          break;
         case 'has_min_1_number':
           regex = /[0-9]/gi;
           return regex.test(value);
@@ -264,6 +315,10 @@ storm_eagle.module('form_validation', () => {
           break;
         case 'has_min_1_uppercase_letter':
           regex = /[A-Z]/gi;
+          return regex.test(value);
+          break;
+        case 'ends_with_slash':
+          regex = /.+\/$/;
           return regex.test(value);
           break;
         case 'equals':
