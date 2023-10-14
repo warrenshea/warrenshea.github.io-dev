@@ -559,7 +559,7 @@ ul.slider-labels li {
   flex-basis: 100%;
 }
 
-[data-module='range-slider.input-container'].range-slider-container {
+[data-module='range-slider.input-container'] {
   position: relative;
   &.fit {
     width: calc(100% - rem-calc(24));
