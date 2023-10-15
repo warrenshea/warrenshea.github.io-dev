@@ -69,6 +69,8 @@ storm_eagle.module('form_validation', () => {
 
         document.querySelectorAll(`[data-module='form'][name=${form_name}] [data-validation-type=inline][data-required],[data-module='form'][name=${form_name}] [data-validation-type=inline][data-optional]`).forEach((el, index) => {
           let form_element_name = el.getAttribute('name');
+          //run on initialization
+          self.inline_validation(el, form_name, form_element_name);
           el.addEventListener('keyup', () => {
             self.inline_validation(el, form_name, form_element_name);
           });
