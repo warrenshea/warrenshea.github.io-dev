@@ -104,7 +104,7 @@ storm_eagle.module('form_validation', () => {
         }
       }
     },
-    validate_form: (event, form_name, on_success) => {
+    validate_form: (event, form_name, on_success_function) => {
       error_number = 0;
       has_validation_passed = true;
 
@@ -171,22 +171,11 @@ storm_eagle.module('form_validation', () => {
 
       //console.log("error numbers:",error_number);
       if (error_number === 0) {
-        //note: on_success must be a global function, or accessible through dot notation (not bracket notation)
-        let on_success_objects = on_success.split('.');
-        let obj = window;
-        for (let on_success_object of on_success_objects) {
-          if (obj && obj[on_success_object]) {
-            obj = obj[on_success_object];
-          } else {
-            console.error('on_success_object or function not found');
-            return undefined; // on_success_object or function not found
-          }
-        }
-        if (typeof obj === 'function') {
-          return obj();
+        if (typeof on_success_function === 'function') {
+          return on_success_function();
         } else {
-          console.error('last on_success_object is not a function');
-          return undefined; // Last on_success_object is not a function
+          console.error('last on_success_function_object is not a function');
+          return undefined; // Last on_success_function_object is not a function
         }
       } else {
         return false;
