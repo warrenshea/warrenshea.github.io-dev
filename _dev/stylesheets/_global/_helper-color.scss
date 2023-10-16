@@ -3,9 +3,23 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}color\:white { color: $white; }
-    .#{$prefix}color\:blue { color: $blue; }
-    .#{$prefix}color\:eerie-black { color: $eerie-black; }
-    .#{$prefix}color\:yale-blue { color: $yale-blue; }
+    .#{$prefix}color\:white {
+      color: $white;
+    }
+    .#{$prefix}color\:blue {
+      color: $blue;
+    }
+    .#{$prefix}color\:eerie-black {
+      color: $eerie-black;
+    }
+    .#{$prefix}color\:yale-blue {
+      color: $yale-blue;
+    }
+    .#{$prefix}color\:positive {
+      color: $positive;
+    }
+    .#{$prefix}color\:negative {
+      color: $negative;
+    }
   }
 }
