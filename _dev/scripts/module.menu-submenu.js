@@ -1,9 +1,9 @@
+'use strict';
 /*
   @TODO: a11y keyboard functionality
   https://www.w3.org/WAI/ARIA/apg/patterns/menubar/examples/menubar-navigation/
 */
 storm_eagle.module('menu_submenu', () => {
-  'use strict';
   let self;
   let menu_state = {};
   return {
