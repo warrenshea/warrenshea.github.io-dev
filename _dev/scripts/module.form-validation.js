@@ -172,10 +172,35 @@ storm_eagle.module('form_validation', () => {
       //console.log("error numbers:",error_number);
       if (error_number === 0) {
         if (typeof on_success_function === 'function') {
-          return on_success_function();
+          if (on_success_function.constructor.name === 'AsyncFunction') {
+            //console.log('is async function? yes');
+            //synchronous function won't wait for async function to finish, so event.preventDefault(); will prevent default return true
+            event.preventDefault();
+            (async () => {
+              try {
+                let result = await on_success_function();
+                if (typeof result === 'boolean') {
+                  if (result === true) {
+                    document.getElementById(form_name).submit();
+                  } else {
+                    return false;
+                  }
+                } else {
+                  console.error('Result is not boolean');
+                  return result;
+                }
+              } catch {
+                console.error('on_success_function await failed');
+                return false;
+              }
+            })();
+          } else {
+            //console.log('is async function? no');
+            return on_success_function();
+          }
         } else {
           console.error('last on_success_function_object is not a function');
-          return undefined; // Last on_success_function_object is not a function
+          return false;
         }
       } else {
         return false;
@@ -288,8 +313,20 @@ storm_eagle.module('form_validation', () => {
         case 'has_min_8_characters':
           return value.length > 7;
           break;
-        case 'has_no_slash':
+        case 'has_no_forward_slash':
           regex = /^[^/\\]+$/;
+          return regex.test(value);
+          break;
+        case 'has_no_double_forward_slash':
+          regex = /^(?!.*\/\/).+$/;
+          return regex.test(value);
+          break;
+        case 'has_forward_slash_at_end':
+          regex = /.+\/$/;
+          return regex.test(value);
+          break;
+        case 'has_no_forward_slash_at_start':
+          regex = /^[^/].+\/$/;
           return regex.test(value);
           break;
         case 'has_min_1_number':
@@ -306,10 +343,6 @@ storm_eagle.module('form_validation', () => {
           break;
         case 'has_min_1_uppercase_letter':
           regex = /[A-Z]/gi;
-          return regex.test(value);
-          break;
-        case 'ends_with_slash':
-          regex = /.+\/$/;
           return regex.test(value);
           break;
         case 'equals':
