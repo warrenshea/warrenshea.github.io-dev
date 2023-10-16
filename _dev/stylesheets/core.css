@@ -29881,6 +29881,14 @@ table {
   color: #1c3b65;
 }
 
+.color\:positive {
+  color: #09681d;
+}
+
+.color\:negative {
+  color: #a01010;
+}
+
 @media screen and (max-width: 47.99rem) {
   .sm\=\:color\:white {
     color: #fff;
@@ -29896,6 +29904,14 @@ table {
 
   .sm\=\:color\:yale-blue {
     color: #1c3b65;
+  }
+
+  .sm\=\:color\:positive {
+    color: #09681d;
+  }
+
+  .sm\=\:color\:negative {
+    color: #a01010;
   }
 }
 .sm\+\:color\:white {
@@ -29914,6 +29930,14 @@ table {
   color: #1c3b65;
 }
 
+.sm\+\:color\:positive {
+  color: #09681d;
+}
+
+.sm\+\:color\:negative {
+  color: #a01010;
+}
+
 @media screen and (max-width: 63.99rem) {
   .md-\:color\:white {
     color: #fff;
@@ -29929,6 +29953,14 @@ table {
 
   .md-\:color\:yale-blue {
     color: #1c3b65;
+  }
+
+  .md-\:color\:positive {
+    color: #09681d;
+  }
+
+  .md-\:color\:negative {
+    color: #a01010;
   }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
@@ -29947,6 +29979,14 @@ table {
   .md\=\:color\:yale-blue {
     color: #1c3b65;
   }
+
+  .md\=\:color\:positive {
+    color: #09681d;
+  }
+
+  .md\=\:color\:negative {
+    color: #a01010;
+  }
 }
 @media screen and (min-width: 48rem) {
   .md\+\:color\:white {
@@ -29963,6 +30003,14 @@ table {
 
   .md\+\:color\:yale-blue {
     color: #1c3b65;
+  }
+
+  .md\+\:color\:positive {
+    color: #09681d;
+  }
+
+  .md\+\:color\:negative {
+    color: #a01010;
   }
 }
 @media screen and (max-width: 79.99rem) {
@@ -29981,6 +30029,14 @@ table {
   .lg-\:color\:yale-blue {
     color: #1c3b65;
   }
+
+  .lg-\:color\:positive {
+    color: #09681d;
+  }
+
+  .lg-\:color\:negative {
+    color: #a01010;
+  }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
   .lg\=\:color\:white {
@@ -29997,6 +30053,14 @@ table {
 
   .lg\=\:color\:yale-blue {
     color: #1c3b65;
+  }
+
+  .lg\=\:color\:positive {
+    color: #09681d;
+  }
+
+  .lg\=\:color\:negative {
+    color: #a01010;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -30015,6 +30079,14 @@ table {
   .lg\+\:color\:yale-blue {
     color: #1c3b65;
   }
+
+  .lg\+\:color\:positive {
+    color: #09681d;
+  }
+
+  .lg\+\:color\:negative {
+    color: #a01010;
+  }
 }
 @media screen and (min-width: 80rem) {
   .xl\+\:color\:white {
@@ -30031,6 +30103,14 @@ table {
 
   .xl\+\:color\:yale-blue {
     color: #1c3b65;
+  }
+
+  .xl\+\:color\:positive {
+    color: #09681d;
+  }
+
+  .xl\+\:color\:negative {
+    color: #a01010;
   }
 }
 .opacity\:0\% {
