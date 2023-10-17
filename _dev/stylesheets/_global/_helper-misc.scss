@@ -3,12 +3,12 @@
 .show-for-sr,
 .show-for-screen-reader-only, /* preferred class */
 .show-on-focus {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 /*hide-for-screen-reader-only doesn't exist as a CSS class - use aria-hidden="true" */
 
@@ -16,32 +16,58 @@
 .show-on-focus:focus {
   height: auto;
   width: auto;
-  left:0;
+  left: 0;
   overflow: visible;
   clip: auto;
 }
 
-.visibility\:hidden { visibility: hidden; }
-.visibility\:visible { visibility: visible; }
+.visibility\:hidden {
+  visibility: hidden;
+}
+.visibility\:visible {
+  visibility: visible;
+}
 
-.overflow\:hidden { overflow: hidden; }
+.overflow\:hidden {
+  overflow: hidden;
+}
 
-.outline\:0 { outline: 0; }
+.outline\:0 {
+  outline: 0;
+}
 
 /* Width Helper Classes */
-.w\:100\% { width: 100%; }
-.mw\:100\% { max-width: 100%; }
-.mw\:1200px { max-width: $max-page-width-1200; }
-.mw\:1280px { max-width: $max-page-width-1280; }
-.mw\:640px { max-width: 40rem; }
+.w\:100\% {
+  width: 100%;
+}
+.mw\:100\% {
+  max-width: 100%;
+}
+.mw\:1200px {
+  max-width: $max-page-width-1200;
+}
+.mw\:1280px {
+  max-width: $max-page-width-1280;
+}
+.mw\:640px {
+  max-width: 40rem;
+}
 
 /* Height Helper Classes */
-.h\:100\% { height: 100%; }
-.h\:auto { height: auto; }
-.mh\:100\% { max-height: 100%; }
+.h\:100\% {
+  height: 100%;
+}
+.h\:auto {
+  height: auto;
+}
+.mh\:100\% {
+  max-height: 100%;
+}
 
 /* Image Helper Classes */
-.object-fit\:contain { object-fit:contain }
+.object-fit\:contain {
+  object-fit: contain;
+}
 
 /* Layout Classes */
 @each $mediaquery in $mediaqueries {
@@ -49,13 +75,27 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}display\:none { display: none; }
-    .#{$prefix}display\:flex { display: flex; }
-    .#{$prefix}display\:inline-flex { display: inline-flex; }
-    .#{$prefix}display\:block { display: block; }
-    .#{$prefix}display\:inline { display: inline; }
-    .#{$prefix}display\:inline-block { display: inline-block; }
-    .#{$prefix}display\:table-cell { display: table-cell; }
+    .#{$prefix}display\:none {
+      display: none;
+    }
+    .#{$prefix}display\:flex {
+      display: flex;
+    }
+    .#{$prefix}display\:inline-flex {
+      display: inline-flex;
+    }
+    .#{$prefix}display\:block {
+      display: block;
+    }
+    .#{$prefix}display\:inline {
+      display: inline;
+    }
+    .#{$prefix}display\:inline-block {
+      display: inline-block;
+    }
+    .#{$prefix}display\:table-cell {
+      display: table-cell;
+    }
   }
 }
 
@@ -64,8 +104,12 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}flex-flow\:row-wrap { flex-flow: row wrap; }
-    .#{$prefix}flex-flow\:row-nowrap { flex-flow: row nowrap; }
+    .#{$prefix}flex-flow\:row-wrap {
+      flex-flow: row wrap;
+    }
+    .#{$prefix}flex-flow\:row-nowrap {
+      flex-flow: row nowrap;
+    }
   }
 }
 
@@ -74,8 +118,12 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}flex-grow\:0 {flex-grow: 0;}
-    .#{$prefix}flex-grow\:1 {flex-grow: 1;}
+    .#{$prefix}flex-grow\:0 {
+      flex-grow: 0;
+    }
+    .#{$prefix}flex-grow\:1 {
+      flex-grow: 1;
+    }
   }
 }
 
@@ -83,8 +131,12 @@
   flex: 0 0 auto;
   max-width: 100%;
 }
-.vertical-align\:top { vertical-align: top; }
-.vertical-align\:middle { vertical-align: middle; }
+.vertical-align\:top {
+  vertical-align: top;
+}
+.vertical-align\:middle {
+  vertical-align: middle;
+}
 
 /* Position Helper Classes */
 @each $mediaquery in $mediaqueries {
@@ -92,10 +144,18 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}position\:absolute { position:absolute; }
-    .#{$prefix}position\:relative { position:relative; }
-    .#{$prefix}position\:fixed { position:fixed; }
-    .#{$prefix}position\:sticky { position:sticky; }
+    .#{$prefix}position\:absolute {
+      position: absolute;
+    }
+    .#{$prefix}position\:relative {
+      position: relative;
+    }
+    .#{$prefix}position\:fixed {
+      position: fixed;
+    }
+    .#{$prefix}position\:sticky {
+      position: sticky;
+    }
   }
 }
 
@@ -104,10 +164,18 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}top\:0 { top:0; }
-    .#{$prefix}right\:0 { right:0;; }
-    .#{$prefix}bottom\:0 { bottom:0; }
-    .#{$prefix}left\:0 { left:0; }
+    .#{$prefix}top\:0 {
+      top: 0;
+    }
+    .#{$prefix}right\:0 {
+      right: 0;
+    }
+    .#{$prefix}bottom\:0 {
+      bottom: 0;
+    }
+    .#{$prefix}left\:0 {
+      left: 0;
+    }
   }
 }
 
@@ -116,18 +184,33 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}z-index\:-1 { z-index:-1; }
-    .#{$prefix}z-index\:0 { z-index:0; }
-    .#{$prefix}z-index\:1 { z-index:1; }
-    .#{$prefix}z-index\:2 { z-index:2; }
+    .#{$prefix}z-index\:-1 {
+      z-index: -1;
+    }
+    .#{$prefix}z-index\:0 {
+      z-index: 0;
+    }
+    .#{$prefix}z-index\:1 {
+      z-index: 1;
+    }
+    .#{$prefix}z-index\:2 {
+      z-index: 2;
+    }
   }
 }
 
 /* Sizing Helper Classes */
-.box-sizing\:border-box { box-sizing: border-box; }
+.box-sizing\:border-box {
+  box-sizing: border-box;
+}
 
 /* Other Helper Classes */
-.cursor\:pointer { cursor: pointer; } /* would like to call this 'cursor' but conflicts with name */
+.cursor\:pointer {
+  cursor: pointer;
+} /* would like to call this 'cursor' but conflicts with name */
+.cursor\:grab {
+  cursor: grab;
+} /* would like to call this 'cursor' but conflicts with name */
 
 /* Float Helper Classes */
 .clearfix {
