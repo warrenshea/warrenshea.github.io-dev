@@ -11,6 +11,7 @@ $colors: (
   white-smoke : $white-smoke,
   white       : $white,
   red         : $red,
+  yellow      : $yellow,
   negative    : $negative,
   positive    : $positive,
   warning     : $warning,
@@ -18,17 +19,17 @@ $colors: (
 );
 
 $sizes: (
-  0px : rem-calc(0),
-  1px : rem-calc(1),
-  2px : rem-calc(2),
-  4px : rem-calc(4)
+  0px: rem-calc(0),
+  1px: rem-calc(1),
+  2px: rem-calc(2),
+  4px: rem-calc(4)
 );
 
 $directions: (
-  bt : top,
-  bb : bottom,
-  bl : left,
-  br : right
+  bt: top,
+  bb: bottom,
+  bl: left,
+  br: right
 );
 
 @each $mediaquery in $mediaqueries {
@@ -36,8 +37,8 @@ $directions: (
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}b\:0{
-       border: 0;
+    .#{$prefix}b\:0 {
+      border: 0;
     }
 
     @each $direction in $directions {
@@ -57,7 +58,7 @@ $directions: (
         $color-name: nth($color, 1);
         $color-value: nth($color, 2);
 
-        .#{$prefix}b-#{"" + $color-name}\:#{$size-name} {
+        .#{$prefix}b-#{'' + $color-name}\:#{$size-name} {
           border: #{$size-value} #{$color-value} solid;
         }
 
@@ -65,7 +66,7 @@ $directions: (
           $direction-name: nth($direction, 1);
           $direction-value: nth($direction, 2);
 
-          .#{$prefix}#{$direction-name}-#{"" + $color-name}\:#{$size-name} {
+          .#{$prefix}#{$direction-name}-#{'' + $color-name}\:#{$size-name} {
             border-#{$direction-value}: #{$size-value} #{$color-value} solid;
           }
         }
