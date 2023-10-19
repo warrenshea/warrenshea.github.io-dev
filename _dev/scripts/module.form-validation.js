@@ -290,6 +290,10 @@ storm_eagle.module('form_validation', () => {
           regex = /^-?\d+$/;
           return regex.test(value);
           break;
+        case 'is_number_or_comma_separated_numbers': //123 or 234,345 but not 45, or ,56
+          regex = /^\d+(,\d+)*$/;
+          return regex.test(value);
+          break;
         case 'is_phone': //phone
           regex = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
           return regex.test(value);
