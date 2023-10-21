@@ -28896,6 +28896,11 @@ table {
   background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
 }
 
+/* Alternate children */
+.bgc\:white-smoke-alt-children > :nth-child(even) {
+  background-color: #f0f0f0;
+}
+
 @media screen and (max-width: 47.99rem) {
   .sm\=\:bgc\:yale-blue {
     background-color: #1c3b65;
@@ -29059,6 +29064,11 @@ table {
 
   .sm\=\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
+  }
+
+  /* Alternate children */
+  .sm\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
   }
 }
 .sm\+\:bgc\:yale-blue {
@@ -29225,6 +29235,11 @@ table {
   background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
 }
 
+/* Alternate children */
+.sm\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
+  background-color: #f0f0f0;
+}
+
 @media screen and (max-width: 63.99rem) {
   .md-\:bgc\:yale-blue {
     background-color: #1c3b65;
@@ -29388,6 +29403,11 @@ table {
 
   .md-\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
+  }
+
+  /* Alternate children */
+  .md-\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
   }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
@@ -29554,6 +29574,11 @@ table {
   .md\=\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
+
+  /* Alternate children */
+  .md\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
+  }
 }
 @media screen and (min-width: 48rem) {
   .md\+\:bgc\:yale-blue {
@@ -29718,6 +29743,11 @@ table {
 
   .md\+\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
+  }
+
+  /* Alternate children */
+  .md\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
   }
 }
 @media screen and (max-width: 79.99rem) {
@@ -29884,6 +29914,11 @@ table {
   .lg-\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
+
+  /* Alternate children */
+  .lg-\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
+  }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
   .lg\=\:bgc\:yale-blue {
@@ -30048,6 +30083,11 @@ table {
 
   .lg\=\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
+  }
+
+  /* Alternate children */
+  .lg\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -30214,6 +30254,11 @@ table {
   .lg\+\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
+
+  /* Alternate children */
+  .lg\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
+  }
 }
 @media screen and (min-width: 80rem) {
   .xl\+\:bgc\:yale-blue {
@@ -30378,6 +30423,11 @@ table {
 
   .xl\+\:bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
+  }
+
+  /* Alternate children */
+  .xl\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
+    background-color: #f0f0f0;
   }
 }
 .bgimg-focus\:left {
