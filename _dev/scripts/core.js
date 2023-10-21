@@ -891,3 +891,25 @@ storm_eagle.module('responsive_dom_manipulator', () => {
     },
   };
 });
+
+
+chill_penguin.module('mid_cid_highlighter', () => {
+  return {
+    initialize: () => {
+      self = chill_penguin['mid_cid_highlighter'];
+      if (chill_penguin.page.get_query_value('mid')) {
+        chill_penguin.page.get_query_value('mid').split(",").forEach((mid_id) => {
+          document.querySelectorAll(`[data-zs^=mid\\:${mid_id}]`).forEach((element) => {
+            element.classList.add("b-yellow:4px");
+          })
+        });
+      } else if (chill_penguin.page.get_query_value('cid')) {
+        chill_penguin.page.get_query_value('cid').split(",").forEach((cid_id) => {
+          document.querySelectorAll(`[data-zs^=mid\\:${cid_id}]`).forEach((element) => {
+            element.classList.add("b-yellow:4px");
+          })
+        });
+      }
+    },
+  };
+});
