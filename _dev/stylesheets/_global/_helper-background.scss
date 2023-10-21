@@ -130,6 +130,11 @@
     .#{$prefix}bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
       background: linear-gradient(90deg, $silver 0%, $platinum 15%, $platinum 85%, $silver 100%);
     }
+
+    /* Alternate children */
+    .#{$prefix}bgc\:white-smoke-alt-children > :nth-child(even) {
+      background-color: $white-smoke;
+    }
   }
 }
 
