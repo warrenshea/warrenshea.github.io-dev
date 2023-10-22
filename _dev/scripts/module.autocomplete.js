@@ -48,23 +48,14 @@ storm_eagle.module('autocomplete', () => {
       // }
     },
     execute_search: (autocomplete_id) => {
-      const results_id = autocomplete_state[autocomplete_id]['results_id'];
-      const input_id = autocomplete_state[autocomplete_id]['input_id'];
       const search_function = autocomplete_state[autocomplete_id]['search_function'];
-
+      const input_id = autocomplete_state[autocomplete_id]['input_id'];
+      const query = document.getElementById(input_id).value.trim();
+      const results_id = autocomplete_state[autocomplete_id]['results_id'];
       const num_results = autocomplete_state[autocomplete_id]['num_results'];
-      query = document.getElementById(input_id).value.trim();
+
       if (query.length > 0) {
-        //note: search_function must be a global function, or accessible through dot notation (not bracket notation)
-        //@TODO: refactor if possible
-        let search_function_parts = search_function.split('.');
-        if (search_function_parts.length === 1) {
-          window[search_function](query, input_id, results_id, autocomplete_id, num_results);
-        } else if (search_function_parts.length === 2) {
-          window[search_function_parts[0]][search_function_parts[1]](query, input_id, results_id, autocomplete_id, num_results);
-        } else if (search_function_parts.length === 3) {
-          window[search_function_parts[0]][search_function_parts[1]][search_function_parts[2]](query, input_id, results_id, autocomplete_id, num_results);
-        }
+        storm_eagle.util.run_str_func(search_function, { query, input_id, results_id, autocomplete_id, num_results } );
       }
     },
     add_event_listeners: (autocomplete_id) => {
