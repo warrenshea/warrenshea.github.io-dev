@@ -43312,6 +43312,36 @@ ol.unstyle-pl\:0 {
   mask-image: url("../assets/icon/brands/chevron-circle-up.svg");
 }
 
+.ic.ic-type\:light.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/light/check-circle.svg");
+  mask-image: url("../assets/icon/light/check-circle.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/solid/check-circle.svg");
+  mask-image: url("../assets/icon/solid/check-circle.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/brands/check-circle.svg");
+  mask-image: url("../assets/icon/brands/check-circle.svg");
+}
+
+.ic.ic-type\:light.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/light/spinner.svg");
+  mask-image: url("../assets/icon/light/spinner.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/solid/spinner.svg");
+  mask-image: url("../assets/icon/solid/spinner.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/brands/spinner.svg");
+  mask-image: url("../assets/icon/brands/spinner.svg");
+}
+
 .ic.ic-type\:light.ic-name\:copy {
   -webkit-mask-image: url("../assets/icon/light/copy.svg");
   mask-image: url("../assets/icon/light/copy.svg");
@@ -43673,6 +43703,10 @@ ol.unstyle-pl\:0 {
   background-color: #404040;
 }
 
+.ic-color\:red {
+  background-color: #ab1e23;
+}
+
 .ic-color\:negative {
   background-color: #a01010;
 }
@@ -43706,6 +43740,10 @@ ol.unstyle-pl\:0 {
     background-color: #404040;
   }
 
+  .sm\=\:ic-color\:red {
+    background-color: #ab1e23;
+  }
+
   .sm\=\:ic-color\:negative {
     background-color: #a01010;
   }
@@ -43736,6 +43774,10 @@ ol.unstyle-pl\:0 {
 
 .sm\+\:ic-color\:onyx {
   background-color: #404040;
+}
+
+.sm\+\:ic-color\:red {
+  background-color: #ab1e23;
 }
 
 .sm\+\:ic-color\:negative {
@@ -43771,6 +43813,10 @@ ol.unstyle-pl\:0 {
     background-color: #404040;
   }
 
+  .md-\:ic-color\:red {
+    background-color: #ab1e23;
+  }
+
   .md-\:ic-color\:negative {
     background-color: #a01010;
   }
@@ -43802,6 +43848,10 @@ ol.unstyle-pl\:0 {
 
   .md\=\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .md\=\:ic-color\:red {
+    background-color: #ab1e23;
   }
 
   .md\=\:ic-color\:negative {
@@ -43837,6 +43887,10 @@ ol.unstyle-pl\:0 {
     background-color: #404040;
   }
 
+  .md\+\:ic-color\:red {
+    background-color: #ab1e23;
+  }
+
   .md\+\:ic-color\:negative {
     background-color: #a01010;
   }
@@ -43868,6 +43922,10 @@ ol.unstyle-pl\:0 {
 
   .lg-\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .lg-\:ic-color\:red {
+    background-color: #ab1e23;
   }
 
   .lg-\:ic-color\:negative {
@@ -43903,6 +43961,10 @@ ol.unstyle-pl\:0 {
     background-color: #404040;
   }
 
+  .lg\=\:ic-color\:red {
+    background-color: #ab1e23;
+  }
+
   .lg\=\:ic-color\:negative {
     background-color: #a01010;
   }
@@ -43936,6 +43998,10 @@ ol.unstyle-pl\:0 {
     background-color: #404040;
   }
 
+  .lg\+\:ic-color\:red {
+    background-color: #ab1e23;
+  }
+
   .lg\+\:ic-color\:negative {
     background-color: #a01010;
   }
@@ -43967,6 +44033,10 @@ ol.unstyle-pl\:0 {
 
   .xl\+\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .xl\+\:ic-color\:red {
+    background-color: #ab1e23;
   }
 
   .xl\+\:ic-color\:negative {
