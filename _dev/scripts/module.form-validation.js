@@ -274,7 +274,11 @@ storm_eagle.module('form_validation', () => {
           regex = /^[a-z]+$/;
           return regex.test(value);
           break;
-        case 'is_url_pathname_friendly': //allows both lowercase, uppercase, numbers, - , _ , / but excludes \
+        case 'is_lowercase_numbers_dash_underscore_comma': //allows lowercase, numbers, '-', '_'
+          regex = /^[a-z0-9-_,]+$/;
+          return regex.test(value);
+          break;
+        case 'is_url_pathname_friendly': //allows both lowercase, uppercase, numbers, '-', '_', '/' but excludes '\'
           regex = /^[A-Za-z0-9\-_]+$/;
           return regex.test(value);
           break;
@@ -290,8 +294,12 @@ storm_eagle.module('form_validation', () => {
           regex = /^-?\d+$/;
           return regex.test(value);
           break;
-        case 'is_number_or_comma_separated_numbers': //123 or 234,345 but not 45, or ,56
+        case 'is_number_or_comma_separated_numbers': //'123' or '234,345' but not '45,' or ',56'
           regex = /^\d+(,\d+)*$/;
+          return regex.test(value);
+          break;
+        case 'is_words_or_comma_separated_words': //'example1' or 'example2,example3' but not 'example4,' or ',example5'
+          regex = /^[\w\d-]+(,[\w\d-]+)*$/;
           return regex.test(value);
           break;
         case 'is_phone': //phone
