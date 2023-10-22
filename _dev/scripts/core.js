@@ -72,6 +72,7 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.page.get_language_code()
  * storm_eagle.util.replace_all()
  * storm_eagle.util.index_in_parent()
+ * storm_eagle.util.run_str_func()
  * storm_eagle.open_window()
  * storm_eagle.scroll_to()
  * storm_eagle.debounce()
@@ -619,22 +620,77 @@ var storm_eagle = (function () {
         }
         return -1;
       },
+
+      /**
+       * Execute a function specified by its string representation with provided parameters.
+       *
+       * @param {string} func_str - The string representation of the function to execute (e.g., "someNamespace.someFunction").
+       * @param {object} params_obj - An object containing parameters to pass to the function.
+       */
+      run_str_func: (func_str, params_obj) => {
+        // Split the function string into its parts (namespace and function name).
+        const func_parts = func_str.split('.');
+
+        // Initialize a temporary variable to navigate through the object hierarchy.
+        let func_temp = window;
+
+        // Traverse the object hierarchy to find the target function.
+        for (const path of func_parts) {
+          func_temp = func_temp[path];
+
+          // If the current part is not an object, break the loop.
+          if (typeof func_temp !== 'object') {
+            break;
+          }
+        }
+
+        // Check if the function was found. If not, throw an error and exit function
+        if (typeof func_temp !== 'function') {
+          console.error('Function not found');
+          return;
+        }
+
+        // If the function is nested within an object, extract the object path and method name.
+        if (func_parts.length > 1) {
+          const [obj_path, method_name] = func_parts.slice(0, -1).join('.').split('.');
+          const obj = window[obj_path];
+
+          // Check if the object exists and contains the specified method.
+          if (obj && typeof obj[method_name] === 'function') {
+            func_temp = obj[method_name];
+          }
+        }
+
+        // Extract parameter values from the provided object and execute the function.
+        const param_values = Object.values(params_obj);
+        func_temp(...param_values);
+      },
+
     },
 
     /**
-     * Opens a new window
+     * Opens a new browser window with the specified URL and dimensions.
      *
-     * @param string url
-     * @param string name
-     * @param integer width
-     * @param integer height
-     * @return void
+     * @param {string} url - The URL to open in the new window.
+     * @param {string} [name='_blank'] - The name of the new window (optional).
+     * @param {number} [width=800] - The width of the new window in pixels (optional).
+     * @param {number} [height=600] - The height of the new window in pixels (optional).
+     * @returns {void}
      */
     open_window: (url, name, width, height) => {
+      // If 'name' is undefined, use the default name '_blank'.
       name = name === undefined ? '_blank' : name;
-      width = width === undefined ? 800 : parseInt(width) + '';
-      height = height === undefined ? 600 : parseInt(height) + '';
-      window.open(url, '_blank', 'scrollbars=1,resizable=1,width=' + width + ',height=' + height);
+
+      // If 'width' is undefined, use the default width of 800 pixels.
+      // Parse 'width' as a number and convert it to a string.
+      width = width === undefined ? '800' : String(parseInt(width));
+
+      // If 'height' is undefined, use the default height of 600 pixels.
+      // Parse 'height' as a number and convert it to a string.
+      height = height === undefined ? '600' : String(parseInt(height));
+
+      // Open a new window with the specified URL, name, and dimensions.
+      window.open(url, name, 'scrollbars=1,resizable=1,width=' + width + ',height=' + height);
     },
 
     /**
@@ -893,18 +949,18 @@ storm_eagle.module('responsive_dom_manipulator', () => {
 });
 
 
-chill_penguin.module('mid_cid_highlighter', () => {
+storm_eagle.module('mid_cid_highlighter', () => {
   return {
     initialize: () => {
-      self = chill_penguin['mid_cid_highlighter'];
-      if (chill_penguin.page.get_query_value('mid')) {
-        chill_penguin.page.get_query_value('mid').split(",").forEach((mid_id) => {
+      self = storm_eagle['mid_cid_highlighter'];
+      if (storm_eagle.page.get_query_value('mid')) {
+        storm_eagle.page.get_query_value('mid').split(",").forEach((mid_id) => {
           document.querySelectorAll(`[data-zs^=mid\\:${mid_id}]`).forEach((element) => {
             element.classList.add("b-yellow:4px");
           })
         });
-      } else if (chill_penguin.page.get_query_value('cid')) {
-        chill_penguin.page.get_query_value('cid').split(",").forEach((cid_id) => {
+      } else if (storm_eagle.page.get_query_value('cid')) {
+        storm_eagle.page.get_query_value('cid').split(",").forEach((cid_id) => {
           document.querySelectorAll(`[data-zs^=mid\\:${cid_id}]`).forEach((element) => {
             element.classList.add("b-yellow:4px");
           })
