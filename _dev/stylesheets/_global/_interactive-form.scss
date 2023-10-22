@@ -76,6 +76,7 @@ fieldset.unstyle {
       top: rem-calc(27);
       position: absolute;
     }
+    &.force-active-label,
     &.active-label {
       span.description {
         position: absolute;
@@ -180,7 +181,6 @@ fieldset.unstyle {
     font-size: rem-calc(14);
     li {
       display: flex;
-      align-items: center;
       line-height: rem-calc(24);
       padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
       background-image: url(../assets/icon/times.negative.svg);
