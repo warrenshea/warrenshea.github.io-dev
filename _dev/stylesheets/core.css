@@ -43444,6 +43444,21 @@ ol.unstyle-pl\:0 {
   mask-image: url("../assets/icon/brands/times.svg");
 }
 
+.ic.ic-type\:light.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/light/user-circle.svg");
+  mask-image: url("../assets/icon/light/user-circle.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/solid/user-circle.svg");
+  mask-image: url("../assets/icon/solid/user-circle.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/brands/user-circle.svg");
+  mask-image: url("../assets/icon/brands/user-circle.svg");
+}
+
 .ic.ic-type\:light.ic-name\:github {
   -webkit-mask-image: url("../assets/icon/light/github.svg");
   mask-image: url("../assets/icon/light/github.svg");
