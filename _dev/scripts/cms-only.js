@@ -64,6 +64,10 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.form-theme-gl0b3x.js',
       module_name: 'form_theme_gl0b3x',
     },
+    header: {
+      script_src: '/dist/codebase/chill-penguin/scripts/header.js',
+      module_name: 'header',
+    },
   };
 
   const load_javascript = (key) => {
@@ -91,6 +95,12 @@ storm_eagle.module('autoload_scripts', () => {
       let range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
       let show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
       let form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
+      let header = document.querySelectorAll("[data-module='header']").length > 0;
+      if (header) {
+        load_javascript('header').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
       if (accordion) {
         load_javascript('accordion').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
