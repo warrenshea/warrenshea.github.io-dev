@@ -2,7 +2,7 @@
 
 storm_eagle.module('toast', () => {
   return {
-    add: (message,text_color="color:black",background="bgc:white-smoke") => {
+    add: (message,text_color="color:white",background="bgc:onyx") => {
 
       const create_toast_container = () => {
         const toast_container = document.createElement('div');
