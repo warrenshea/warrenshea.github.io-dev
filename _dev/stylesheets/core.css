@@ -28804,6 +28804,14 @@ table {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+.bgc\:positive-light {
+  background-color: #84b48e;
+}
+
+.bgc\:negative-light {
+  background-color: #d08888;
+}
+
 .bgc\:none {
   background-color: none;
 }
@@ -28974,6 +28982,14 @@ table {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
+  .sm\=\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .sm\=\:bgc\:negative-light {
+    background-color: #d08888;
+  }
+
   .sm\=\:bgc\:none {
     background-color: none;
   }
@@ -29141,6 +29157,14 @@ table {
 
 .sm\+\:bgc\:white\:50\% {
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sm\+\:bgc\:positive-light {
+  background-color: #84b48e;
+}
+
+.sm\+\:bgc\:negative-light {
+  background-color: #d08888;
 }
 
 .sm\+\:bgc\:none {
@@ -29313,6 +29337,14 @@ table {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
+  .md-\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .md-\:bgc\:negative-light {
+    background-color: #d08888;
+  }
+
   .md-\:bgc\:none {
     background-color: none;
   }
@@ -29481,6 +29513,14 @@ table {
 
   .md\=\:bgc\:white\:50\% {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .md\=\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .md\=\:bgc\:negative-light {
+    background-color: #d08888;
   }
 
   .md\=\:bgc\:none {
@@ -29653,6 +29693,14 @@ table {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
+  .md\+\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .md\+\:bgc\:negative-light {
+    background-color: #d08888;
+  }
+
   .md\+\:bgc\:none {
     background-color: none;
   }
@@ -29821,6 +29869,14 @@ table {
 
   .lg-\:bgc\:white\:50\% {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .lg-\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .lg-\:bgc\:negative-light {
+    background-color: #d08888;
   }
 
   .lg-\:bgc\:none {
@@ -29993,6 +30049,14 @@ table {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
+  .lg\=\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .lg\=\:bgc\:negative-light {
+    background-color: #d08888;
+  }
+
   .lg\=\:bgc\:none {
     background-color: none;
   }
@@ -30163,6 +30227,14 @@ table {
     background-color: rgba(255, 255, 255, 0.5);
   }
 
+  .lg\+\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .lg\+\:bgc\:negative-light {
+    background-color: #d08888;
+  }
+
   .lg\+\:bgc\:none {
     background-color: none;
   }
@@ -30331,6 +30403,14 @@ table {
 
   .xl\+\:bgc\:white\:50\% {
     background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .xl\+\:bgc\:positive-light {
+    background-color: #84b48e;
+  }
+
+  .xl\+\:bgc\:negative-light {
+    background-color: #d08888;
   }
 
   .xl\+\:bgc\:none {
@@ -48671,6 +48751,23 @@ _:-ms-fullscreen, :root .popover.active {
   display: flex;
   width: 2rem;
   height: 2rem;
+}
+
+[data-module="module.toast"] {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+[data-module="module.toast"] .toast {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  text-align: right;
 }
 
 [data-module="autocomplete.results"] li {
