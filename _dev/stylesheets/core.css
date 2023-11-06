@@ -48758,13 +48758,13 @@ _:-ms-fullscreen, :root .popover.active {
   align-items: flex-end;
   flex-direction: column;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
 }
 [data-module="module.toast"] .toast {
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 4px;
   opacity: 0;
   transition: opacity 0.5s;
   text-align: right;
