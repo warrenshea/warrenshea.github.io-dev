@@ -1,0 +1,16 @@
+[data-module="module.toast"] {
+  display: flex;
+  align-items:flex-end;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  .toast {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: right;
+  }
+}
