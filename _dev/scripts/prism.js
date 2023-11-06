@@ -19,7 +19,7 @@ storm_eagle.module('prism', () => {
     },
     link_code_with_prism_snippet: () => {
       document.querySelectorAll('[data-code-reference]').forEach((el, index) => {
-        let query_selector = chill_penguin.util.escape_string(el.getAttribute('data-code-reference'));
+        let query_selector = storm_eagle.util.escape_string(el.getAttribute('data-code-reference'));
         document.querySelector(`code[data-code-snippet=${query_selector}`).innerHTML = html_encode(el.value);
       });
     },
