@@ -623,7 +623,7 @@ var storm_eagle = (function () {
 
         let new_str = original_str;
         for (const char_to_escape in char_to_escape_map) {
-          new_str = chill_penguin.util.replace_all(new_str, char_to_escape, char_to_escape_map[char_to_escape]);
+          new_str = storm_eagle.util.replace_all(new_str, char_to_escape, char_to_escape_map[char_to_escape]);
         }
 
         return new_str;
