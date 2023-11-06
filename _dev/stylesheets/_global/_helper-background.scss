@@ -57,6 +57,12 @@
     .#{$prefix}bgc\:white\:50\% {
       background-color: rgba($white, 0.5);
     }
+    .#{$prefix}bgc\:positive-light {
+      background-color: $positive-light;
+    }
+    .#{$prefix}bgc\:negative-light {
+      background-color: $negative-light;
+    }
     .#{$prefix}bgc\:none {
       background-color: none;
     }
