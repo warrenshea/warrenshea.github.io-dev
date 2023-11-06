@@ -19,7 +19,8 @@ storm_eagle.module('prism', () => {
     },
     link_code_with_prism_snippet: () => {
       document.querySelectorAll('[data-code-reference]').forEach((el, index) => {
-        document.querySelector(`code[data-code-snippet=${el.getAttribute('data-code-reference')}`).innerHTML = html_encode(el.value);
+        let query_selector = chill_penguin.util.escape_string(el.getAttribute('data-code-reference'));
+        document.querySelector(`code[data-code-snippet=${query_selector}`).innerHTML = html_encode(el.value);
       });
     },
     force_prism_reinit: () => {
