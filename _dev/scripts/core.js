@@ -611,6 +611,24 @@ var storm_eagle = (function () {
         return original_str.replace(new RegExp(find_str.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, '\\$&'), ignore ? 'gi' : 'g'), typeof replace_str == 'string' ? replace_str.replace(/\$/g, '$$$$') : replace_str);
       },
 
+      escape_string: (original_str) => {
+        const char_to_escape_map = {
+          '/': '\\/',
+          ':': '\\:',
+          '+': '\\+',
+          '=': '\\=',
+          '(': '\\(',
+          ')': '\\)',
+        };
+
+        let new_str = original_str;
+        for (const char_to_escape in char_to_escape_map) {
+          new_str = chill_penguin.util.replace_all(new_str, char_to_escape, char_to_escape_map[char_to_escape]);
+        }
+
+        return new_str;
+      },
+
       index_in_parent: (node) => {
         let children = node.parentNode.childNodes;
         let num = 0;
