@@ -633,7 +633,7 @@ var storm_eagle = (function () {
 
       get_random_id: () => {
         return '_' + Math.random().toString(36).substr(2, 9);
-      }
+      },
 
       index_in_parent: (node) => {
         let children = node.parentNode.childNodes;
