@@ -3,12 +3,12 @@
   align-items:flex-end;
   flex-direction: column;
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: rem-calc(24);
+  right: rem-calc(24);
   .toast {
-    padding: 16px;
-    margin-bottom: 24px;
-    border-radius: 4px;
+    padding: rem-calc(16);
+    margin-bottom: rem-calc(24);
+    border-radius: rem-calc(4);
     opacity: 0;
     transition: opacity 0.5s;
     text-align: right;
