@@ -21,6 +21,18 @@
   height: 100%;
   width: 100%;
 }
+
+.add-module {
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg' style='width:100px; height: 25px;'%3E%3Ctext x='0' y='25' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23aaaaaa;'%3Eadd module here%3C/text%3E%3C/svg%3E");
+  background-size: 165px 30px;
+  background-repeat: repeat;
+  background-color: transparent;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  border: 3px dotted $red;
+}
+
 .isotope-card-example-background {
   background-size: 16px 16px;
   background-image: radial-gradient(circle, $silver 1px, #f9f9f9 1px);
