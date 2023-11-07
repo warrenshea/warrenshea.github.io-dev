@@ -71,6 +71,8 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.page.set_hash()
  * storm_eagle.page.get_language_code()
  * storm_eagle.util.replace_all()
+ * storm_eagle.util.escape_string()
+ * storm_eagle.util.get_random_id()
  * storm_eagle.util.index_in_parent()
  * storm_eagle.util.run_str_func()
  * storm_eagle.open_window()
@@ -629,6 +631,10 @@ var storm_eagle = (function () {
         return new_str;
       },
 
+      get_random_id: () => {
+        return '_' + Math.random().toString(36).substr(2, 9);
+      }
+
       index_in_parent: (node) => {
         let children = node.parentNode.childNodes;
         let num = 0;
@@ -785,13 +791,9 @@ storm_eagle.module('autopopulate_empty_ids', () => {
       self.fill_empty_ids();
     },
     fill_empty_ids: () => {
-      function get_random_id() {
-        return '_' + Math.random().toString(36).substr(2, 9);
-      }
-
       document.querySelectorAll('*[id]').forEach((el) => {
         if (el.id === '') {
-          el.id = get_random_id();
+          el.id = storm_eagle.util.get_random_id();
         }
       });
     },
