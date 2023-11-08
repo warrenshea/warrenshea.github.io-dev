@@ -631,6 +631,10 @@ var storm_eagle = (function () {
         return new_str;
       },
 
+      minify_html: (html_string) => {
+        return html_string.replace(/[\n\r\t]/g, '').replace(/ {2,}/g, ' ').replace(/> </g, '><');
+      },
+
       get_random_id: () => {
         return '_' + Math.random().toString(36).substr(2, 9);
       },
