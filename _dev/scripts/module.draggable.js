@@ -11,7 +11,7 @@ storm_eagle.module('draggable', () => {
       self = storm_eagle['draggable'];
       document.querySelectorAll('[data-module="module.draggable"] [data-module="draggable.trigger"]').forEach((el) => {
         let draggable_id = el.getAttribute('id');
-        draggable_state[menu_id] = {
+        draggable_state[draggable_id] = {
           mid: el.getAttribute('data-module-id'),
         };
         self.add_trigger_event_listeners(draggable_id);
