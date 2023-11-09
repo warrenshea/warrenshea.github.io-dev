@@ -1,0 +1,133 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+<main class="w:100%" role="main">
+  <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
+    <h1 class="play:bold fs:40px color:eerie-black pb:16px">Draggable</h1>
+    <p class="pb:32px">Drag and drop the content from the test into the droparea. Each test is a different way of dropping content.</p>
+  </section>
+  <section class="row mw:1280px align-self:centered sm+:px:8px xl+:px:0">
+    <div class="w:6">
+      <div data-module="module.draggable" class="mb:64px">
+        <div class="pb:8px">Drag content to droparea and it will be a <span class="heebo:bold fs:24px">CHILD of the droparea</span></div>
+        <div style="display:grid;gap:32px">
+          <div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:powder-blue" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="child" data-draggable-type="async_function" data-draggable-source="draggable_test.asyncFunction_1" draggable="true">
+            <div class="heebo:bold">Test 1:</div>
+            <div>Async Function Source</div>
+          </div>
+<%
+let draggable_test_2 = `<div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:gray" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="child" data-draggable-type="function" data-draggable-source="draggable_test.regularFunction_2" draggable="true">
+  <div class="heebo:bold">Test 2:</div>
+  <div>Function Source</div>
+</div>`;
+%>
+          <%-draggable_test_2%>
+<%
+let draggable_test_3 = `<div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:negative-light" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="child" data-draggable-type="query_selector" data-draggable-source="#query_selector_3" draggable="true">
+  <div class="heebo:bold">Test 3:</div>
+  <div>Query Selector Source</div>
+</div>`;
+%>
+          <%-draggable_test_3%>
+          <div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgcgx:yale-blue~eerie-black color:white" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="child" data-draggable-type="string" data-draggable-source="<div class='w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgcgx:yale-blue~eerie-black color:white'><div class='heebo:bold'>Test 4:</div><div>Text Source</div></div>" draggable="true">
+            <div class="heebo:bold">Test 4:</div>
+            <div>Text Source</div>
+          </div>
+        </div>
+      </div>
+      <div data-module="module.draggable">
+        <div class="pb:8px">Drag content to <span class="heebo:bold fs:24px">REPLACE the droparea</span> <em>(this can only be done once as it removes the droparea - the page must be refreshed to try again)</em></div>
+        <div style="display:grid;gap:32px">
+          <div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:positive-light" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="replace" data-draggable-type="async_function" data-draggable-source="draggable_test.asyncFunction_5" draggable="true">
+            <div class="heebo:bold">Test 5:</div>
+            <div>Async Function Source</div>
+          </div>
+<%
+let draggable_test_6 = `<div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:vista-blue" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="replace" data-draggable-type="function" data-draggable-source="draggable_test.regularFunction_6" draggable="true">
+  <div class="heebo:bold">Test 6:</div>
+  <div>Function Source</div>
+</div>`;
+%>
+          <%-draggable_test_6%>
+<%
+let draggable_test_7 = `<div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:yellow" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="replace" data-draggable-type="query_selector" data-draggable-source="#query_selector_7" draggable="true">
+  <div class="heebo:bold">Test 7:</div>
+  <div>Query Selector Source</div>
+</div>`;
+%>
+          <%-draggable_test_7%>
+          <div class="w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:columbia-blue" data-equalize-height="trigger" data-module="draggable.trigger" id data-draggable-destination-type="replace" data-draggable-type="string" data-draggable-source="<div class='w:100% b-onyx:1px align:middle cursor:grab fs:24px p:8px brr:8px text-align:center bgc:columbia-blue'><div class='heebo:bold'>Test 8:</div><div>Text Source</div></div>" draggable="true">
+            <div class="heebo:bold">Test 8:</div>
+            <div>Text Source</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hide" id="query_selector_3">
+      <%-draggable_test_3%>
+    </div>
+    <div class="hide" id="query_selector_7">
+      <%-draggable_test_7%>
+    </div>
+    <style>
+      .droparea {
+        background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg' style='width:100px; height: 25px;'%3E%3Ctext x='0' y='25' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23eeeeee;'%3Edroparea%3C/text%3E%3C/svg%3E");
+        background-size: 90px 30px;
+        background-repeat: repeat;
+        background-color: transparent;
+        width: 100%;
+        height:350px;
+      }
+    </style>
+    <div class="w:6 p:32px align:center align:middle display:flex" data-module="module.draggable">
+      <div class="b-onyx:4px align:center align:middle p:80px brr:8px display:flex droparea" data-module="draggable.droparea" id style="border-style:dashed;"></div>
+    </div>
+  </section>
+</main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+
+<script>
+  var draggable_test = {};
+  draggable_test.asyncFunction_1 = async () => {
+    try {
+      const response = await fetch(`async_function_content_1.html`, {
+        method: 'GET', // Use the HTTP method you defined for updating
+        headers: {
+          'Content-Type': 'text/html', // Specify the content type of your request body
+        },
+      });
+      if (!response.ok) {
+        console.error(`Response is not okay`);
+      }
+      const data = await response.text();
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+  draggable_test.regularFunction_2 = () => {
+    return `<%-draggable_test_2%>`;
+  }
+  draggable_test.asyncFunction_5 = async () => {
+    try {
+      const response = await fetch(`async_function_content_5.html`, {
+        method: 'GET', // Use the HTTP method you defined for updating
+        headers: {
+          'Content-Type': 'text/html', // Specify the content type of your request body
+        },
+      });
+      if (!response.ok) {
+        console.error(`Response is not okay`);
+      }
+      const data = await response.text();
+      return data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+  }
+  draggable_test.regularFunction_6 = () => {
+    return `<%-draggable_test_6%>`;
+  }
+</script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
