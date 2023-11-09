@@ -1,0 +1,25 @@
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}flex-flow\:row-wrap {
+      flex-flow: row wrap;
+    }
+    .#{$prefix}flex-flow\:row-nowrap {
+      flex-flow: row nowrap;
+    }
+    .#{$prefix}flex-dir\:row {
+      flex-direction: row;
+    }
+    .#{$prefix}flex-dir\:col {
+      flex-direction: column;
+    }
+    .#{$prefix}flex-grow\:0 {
+      flex-grow: 0;
+    }
+    .#{$prefix}flex-grow\:1 {
+      flex-grow: 1;
+    }
+  }
+}
