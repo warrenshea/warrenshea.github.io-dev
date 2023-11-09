@@ -655,7 +655,7 @@ var storm_eagle = (function () {
        * @param {string} func_str - The string representation of the function to execute (e.g., "someNamespace.someFunction").
        * @param {object} params_obj - An object containing parameters to pass to the function.
        */
-      run_str_func: (func_str, params_obj) => {
+      run_str_func: async (func_str, params_obj) => {
         // Split the function string into its parts (namespace and function name).
         const func_parts = func_str.split('.');
 
@@ -691,7 +691,30 @@ var storm_eagle = (function () {
 
         // Extract parameter values from the provided object and execute the function.
         const param_values = Object.values(params_obj);
-        func_temp(...param_values);
+        // func_temp(...param_values);
+
+        if (typeof func_temp === 'function') {
+          if (func_temp.constructor.name === 'AsyncFunction') {
+            //console.log('is async function? yes');
+            //synchronous function won't wait for async function to finish, so event.preventDefault(); will prevent default return true
+            event.preventDefault();
+            return new Promise(async (resolve, reject) => {
+              try {
+                let result = await func_temp(...param_values);
+                resolve(result);
+              } catch (error) {
+                console.error('func_temp await failed', error);
+                reject(error);
+              }
+            });
+          } else {
+            //console.log('is async function? no');
+            return func_temp(...param_values);
+          }
+        } else {
+          console.error('last func_temp is not a function');
+          return false;
+        }
       },
 
     },
