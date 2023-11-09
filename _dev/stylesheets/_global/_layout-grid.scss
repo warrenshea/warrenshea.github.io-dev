@@ -1,0 +1,24 @@
+$sizes: (
+  0    : 0,
+  4px  : rem-calc(4),
+  8px  : rem-calc(8),
+  16px : rem-calc(16),
+  24px : rem-calc(24),
+  32px : rem-calc(32)
+);
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    @each $size in $sizes {
+      $size-name: nth($size, 1);
+      $size-value: nth($size, 2);
+
+      .#{$prefix}gap\:#{$size-name} {
+        gap: #{$size-value};
+      }
+    }
+  }
+}
