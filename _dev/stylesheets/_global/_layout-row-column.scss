@@ -10,3 +10,8 @@
   flex: 1 1 0;
   min-width: initial;
 }
+
+.shrink {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
