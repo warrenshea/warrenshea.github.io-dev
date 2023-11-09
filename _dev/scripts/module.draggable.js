@@ -77,6 +77,8 @@ storm_eagle.module('draggable', () => {
           el.innerHTML = draggable_storage_temp.code;
         } else if (draggable_storage_temp.destination_type === "replace") {
           el.outerHTML = draggable_storage_temp.code;
+        } else if (draggable_storage_temp.destination_type === "above") {
+          el.insertAdjacentHTML('beforebegin', draggable_storage_temp.code);
         }
       });
     }
