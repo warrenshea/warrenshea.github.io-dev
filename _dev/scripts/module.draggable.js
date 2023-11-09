@@ -1,8 +1,9 @@
 'use strict';
 
-var draggable_storage = {};
-draggable_storage.destination_type = "test1";
-draggable_storage.code = "test2";
+var draggable_storage = {
+  destination_type: "",
+  code: "",
+};
 
 storm_eagle.module('draggable', () => {
   let self;
@@ -56,7 +57,7 @@ storm_eagle.module('draggable', () => {
       });
 
       document.getElementById(draggable_id).addEventListener('dragstart', (event) => {
-        event.dataTransfer.setData('text/plain', draggable_storage.code);
+        event.dataTransfer.setData('text/plain', JSON.stringify(draggable_storage));
       });
     },
     add_destination_event_listeners: (el) => {
@@ -71,11 +72,11 @@ storm_eagle.module('draggable', () => {
 
       el.addEventListener('drop', (event) => {
         event.preventDefault();
-        const text = event.dataTransfer.getData('text/plain');
-        if (draggable_storage.destination_type === "child") {
-          el.innerHTML = text;
-        } else if (draggable_storage.destination_type === "replace") {
-          el.outerHTML = text;
+        const draggable_storage_temp = JSON.parse(event.dataTransfer.getData('text/plain'));
+        if (draggable_storage_temp.destination_type === "child") {
+          el.innerHTML = draggable_storage_temp.code;
+        } else if (draggable_storage_temp.destination_type === "replace") {
+          el.outerHTML = draggable_storage_temp.code;
         }
       });
     }
