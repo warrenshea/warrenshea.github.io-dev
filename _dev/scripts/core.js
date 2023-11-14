@@ -72,6 +72,7 @@ const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label,
  * storm_eagle.page.get_language_code()
  * storm_eagle.util.replace_all()
  * storm_eagle.util.escape_string()
+ * storm_eagle.util.minify_html()
  * storm_eagle.util.get_random_id()
  * storm_eagle.util.index_in_parent()
  * storm_eagle.util.run_str_func()
