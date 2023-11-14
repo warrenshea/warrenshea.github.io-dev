@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Tabs • warrenshea",
+                "urlEn": "/examples/tabs/",
+                "urlCanonical": "/examples/tabs/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.tabs.js"
+            ]
+        }
+    }
+}
