@@ -12,8 +12,8 @@ storm_eagle.module('accordion', () => {
       document.querySelectorAll('[data-module="accordion"]').forEach((el) => {
         let accordion_id = el.getAttribute('id');
         accordion_state[accordion_id] = {
-          all_triggers: el.querySelectorAll(':scope > li > [data-module="accordion.trigger"],:scope > [data-module="accordion.trigger"]'),
-          all_panels: el.querySelectorAll(':scope > li > [data-module="accordion.panel"],:scope > [data-module="accordion.panel"]'),
+          all_triggers: el.querySelectorAll(':scope > div > [data-module="accordion.trigger"],:scope > [data-module="accordion.trigger"]'),
+          all_panels: el.querySelectorAll(':scope > div > [data-module="accordion.panel"],:scope > [data-module="accordion.panel"]'),
           active_setting: el.getAttribute('data-accordion-active'),
           initial_active: JSON.parse(el.getAttribute('data-accordion-initial')),
         };
