@@ -12,8 +12,6 @@ $properties: (
 );
 
 $values: (
-  auto : auto,
-  0    : 0,
   1px  : rem-calc(1),
   2px  : rem-calc(2),
   4px  : rem-calc(4),
@@ -29,7 +27,9 @@ $values: (
   64px : rem-calc(64),
   72px : rem-calc(72),
   80px : rem-calc(80),
-  96px : rem-calc(96)
+  96px : rem-calc(96),
+  0    : 0,
+  auto : auto
 );
 
 @each $mediaquery in $mediaqueries {
