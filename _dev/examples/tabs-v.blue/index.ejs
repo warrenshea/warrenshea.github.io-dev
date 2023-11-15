@@ -1,0 +1,92 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+    <main class="w:100% pb:96px" role="main">
+      <section class="mw:1200px align-self:centered pt:32px">
+        <h1 class="play:bold fs:40px color:eerie-black sm+:px:8px xl+:px:0">Tabs - Version <span class="color:blue">Blue</span></h1>
+        <p>HTML structure:<br>
+          button<br>
+          panel<br>
+          button<br>
+          panel<br>
+          button<br>
+          panel<br>
+          button<br>
+          panel<br>
+          button<br>
+          panel<br>
+        </p>
+      </section>
+
+      <section class="mw:1200px align-self:centered pt:32px sm+:px:8px xl+:px:0">
+        <div role="tablist" id class="row mb:32px" data-module="tabs-v.blue" data-tabs-initial="[0,1,0,0]" data-tab-trigger-inactive-classes="bgc:white-smoke" data-tab-trigger-active-classes="bgc:white,bb-white:1px">
+          <button class="brrtl:8px brrtr:8px b-onyx:1px bgc:white px:16px py:8px lg-:w:2" data-module="tabs.trigger" id aria-controls aria-selected tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+            Tab 1: Two dogs
+          </button>
+          <div class="b-onyx:1px bgc:white brr:8px brrtl:0 overflow:hidden" id aria-labelledby data-module="tabs.panel" role="tabpanel">
+            <div class="row">
+              <div class="w:6"><img src="https://placedog.net/600/200?r" alt=""></div><div class="w:6"><img src="https://placedog.net/600/200?r" alt=""></div>
+            </div>
+          </div>
+          <button class="brrtl:8px brrtr:8px b-onyx:1px bgc:white px:16px py:8px lg-:w:2" data-module="tabs.trigger" id aria-controls aria-selected tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+            Tab 2: Lorem Ipsum Copy
+          </button>
+          <div class="b-onyx:1px bgc:white brr:8px brrtl:0 p:32px" id aria-labelledby data-module="tabs.panel" role="tabpanel">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <button class="brrtl:8px brrtr:8px b-onyx:1px bgc:white px:16px py:8px lg-:w:2" data-module="tabs.trigger" id aria-controls aria-selected tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+            Tab 3: Four dogs
+          </button>
+          <div class="b-onyx:1px bgc:white brr:8px brrtl:0 overflow:hidden" id aria-labelledby data-module="tabs.panel" role="tabpanel">
+            <div class="row">
+              <div class="w:3"><img src="https://placedog.net/300/200?r" alt=""></div>
+              <div class="w:3"><img src="https://placedog.net/300/200?r" alt=""></div>
+              <div class="w:3"><img src="https://placedog.net/300/200?r" alt=""></div>
+              <div class="w:3"><img src="https://placedog.net/300/200?r" alt=""></div>
+            </div>
+          </div>
+          <button class="brrtl:8px brrtr:8px b-onyx:1px bgc:white px:16px py:8px lg-:w:2" data-module="tabs.trigger" id aria-controls aria-selected tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+            Tab 4: Lorem Ipsum More Copy
+          </button>
+          <div class="b-onyx:1px bgc:white brr:8px brrtl:0 p:32px" id aria-labelledby data-module="tabs.panel" role="tabpanel">
+            <p class="pb:16px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </div>
+          <button class="brrtl:8px brrtr:8px b-onyx:1px bgc:white px:16px py:8px lg-:w:2" data-module="tabs.trigger" id aria-controls aria-selected tabindex aria-label="Learn more about ..., expands/collapses a pop-up">
+            Tab 5: Heading + Dogs
+          </button>
+          <div class="b-onyx:1px bgc:white brr:8px brrtl:0 overflow:hidden" id aria-labelledby data-module="tabs.panel" role="tabpanel">
+            <h3 class="p:32px">Heading</h3>
+            <div class="row">
+              <div class="w:3"><img src="https://placedog.net/300/200?r" alt=""></div><div class="w:9"><img src="https://placedog.net/900/200?r" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!--         <p class="pb:16px">When CSS and JS is disabled, this will render with button/trigger followed by panel content, e.g. for Tab 2</p>
+        <div class="w:100% overflow:hidden" id="show-more-2" data-module='show-more' data-show-more-transition-duration="1" data-show-more-offset="0">
+          <div class="w:100%" data-module='show-more.container'>
+            <div data-show-more-top data-show-more-bottom>
+              <p><span class="heebo:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div>
+              <p><span class="heebo:bold">Lorem Ipsum</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="w:100%">
+          <div>
+            <button data-module="show-more.more" class="display:inline color:blue" aria-hidden="true">
+              Show tabs component with CSS/JS Disabled
+            </button>
+            <button data-module="show-more.less" class="display:none color:blue" aria-hidden="true">
+              Hide tab component with CSS/JS Disabled
+            </button>
+          </div>
+        </div> -->
+
+
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
