@@ -38,8 +38,12 @@ storm_eagle.module('tabs-v.red', () => {
     },
     init_ui: (tabs_id) => {
       tabs_state[tabs_id]['all_triggers'].forEach((el, index) => {
+        el.removeAttribute("hidden");
         el.setAttribute('aria-selected', 'false');
         el.setAttribute('aria-controls', tabs_state[tabs_id]['all_panels'][index].getAttribute('id'));
+        console.log(tabs_state[tabs_id]['all_panels'][index]);
+        console.log(tabs_state[tabs_id]['all_panels'][index].querySelector(':scope > div.display\\:none'));
+        tabs_state[tabs_id]['all_panels'][index].querySelector(':scope > div.display\\:none').innerHTML = el.innerHTML;
         tabs_state[tabs_id]['all_panels'][index].setAttribute('aria-labelledby', el.getAttribute('id'));
         if (index === 0) {
           el.addEventListener('focusin', () => {
