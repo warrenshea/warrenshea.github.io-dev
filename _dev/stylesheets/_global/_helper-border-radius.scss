@@ -21,15 +21,6 @@ $directions: (
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    @each $direction in $directions {
-      $direction-name: nth($direction, 1);
-      $direction-value: nth($direction, 2);
-
-      .#{$prefix}#{$direction-name}\:0 {
-        border-#{$direction-value}-radius: 0;
-      }
-    }
-
     @each $size in $sizes {
       $size-name: nth($size, 1);
       $size-value: nth($size, 2);
@@ -45,7 +36,6 @@ $directions: (
         .#{$prefix}#{$direction-name}\:#{$size-name} {
           border-#{$direction-value}-radius: #{$size-value};
         }
-
       }
 
       .#{$prefix}brrtx\:#{$size-name} {
@@ -66,6 +56,14 @@ $directions: (
       .#{$prefix}brrry\:#{$size-name} {
         border-top-right-radius: #{$size-value};
         border-bottom-right-radius: #{$size-value};
+      }
+    }
+    @each $direction in $directions {
+      $direction-name: nth($direction, 1);
+      $direction-value: nth($direction, 2);
+
+      .#{$prefix}#{$direction-name}\:0 {
+        border-#{$direction-value}-radius: 0;
       }
     }
   }
