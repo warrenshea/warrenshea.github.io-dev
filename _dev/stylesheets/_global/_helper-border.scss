@@ -37,19 +37,6 @@ $directions: (
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}b\:0 {
-      border: 0;
-    }
-
-    @each $direction in $directions {
-      $direction-name: nth($direction, 1);
-      $direction-value: nth($direction, 2);
-
-      .#{$prefix}#{$direction-name}\:0 {
-        border-#{$direction-value}-width: 0;
-      }
-    }
-
     @each $size in $sizes {
       $size-name: nth($size, 1);
       $size-value: nth($size, 2);
@@ -70,6 +57,20 @@ $directions: (
             border-#{$direction-value}: #{$size-value} #{$color-value} solid;
           }
         }
+      }
+    }
+
+    /* placed after the above to "overrride" it if necessary */
+    .#{$prefix}b\:0 {
+      border: 0;
+    }
+
+    @each $direction in $directions {
+      $direction-name: nth($direction, 1);
+      $direction-value: nth($direction, 2);
+
+      .#{$prefix}#{$direction-name}\:0 {
+        border-#{$direction-value}-width: 0;
       }
     }
   }
