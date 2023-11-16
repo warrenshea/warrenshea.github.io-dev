@@ -439,12 +439,12 @@ var storm_eagle = (function () {
          * @scope public
          */
         get_breakpoint: () => {
-          const viewportWidth = storm_eagle.client.viewport.get_width();
+          const viewport_width = storm_eagle.client.viewport.get_width();
 
-          if (viewportWidth >= breakpoints['xl_min']) return 'xl';
-          else if (viewportWidth >= breakpoints['lg_min']) return 'lg';
-          else if (viewportWidth >= breakpoints['md_min']) return 'md';
-          else if (viewportWidth >= breakpoints['sm_min']) return 'sm';
+          if (viewport_width >= breakpoints['xl_min']) return 'xl';
+          else if (viewport_width >= breakpoints['lg_min']) return 'lg';
+          else if (viewport_width >= breakpoints['md_min']) return 'md';
+          else if (viewport_width >= breakpoints['sm_min']) return 'sm';
           else {
             storm_eagle.throw_exception('smaller than sm');
             return;
@@ -489,32 +489,32 @@ var storm_eagle = (function () {
          * @return boolean
          * @scope public
          */
-        is_sm_only: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['sm_min'] && storm_eagle.client.viewport.get_width() < breakpoints['md_min'] ? true : false;
+        is_sm_only: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['sm_min'] && el < breakpoints['md_min'];
         },
-        is_sm_up: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['sm_min'] ? true : false;
+        is_sm_up: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['sm_min'];
         },
-        is_md_down: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['sm_min'] && storm_eagle.client.viewport.get_width() < breakpoints['lg_min'] ? true : false;
+        is_md_down: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['sm_min'] && el < breakpoints['lg_min'];
         },
-        is_md_only: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['md_min'] && storm_eagle.client.viewport.get_width() < breakpoints['lg_min'] ? true : false;
+        is_md_only: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['md_min'] && el < breakpoints['lg_min'];
         },
-        is_md_up: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['md_min'] ? true : false;
+        is_md_up: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['md_min'];
         },
-        is_lg_down: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['sm_min'] && storm_eagle.client.viewport.get_width() < breakpoints['xl_min'] ? true : false;
+        is_lg_down: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['sm_min'] && el < breakpoints['xl_min'];
         },
-        is_lg_only: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['lg_min'] && storm_eagle.client.viewport.get_width() < breakpoints['xl_min'] ? true : false;
+        is_lg_only: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['lg_min'] && el < breakpoints['xl_min'];
         },
-        is_lg_up: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['lg_min'] ? true : false;
+        is_lg_up: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['lg_min'];
         },
-        is_xl_up: () => {
-          return storm_eagle.client.viewport.get_width() >= breakpoints['xl_min'] ? true : false;
+        is_xl_up: (el = storm_eagle.client.viewport.get_width()) => {
+          return el >= breakpoints['xl_min'];
         },
       },
 
@@ -534,19 +534,19 @@ var storm_eagle = (function () {
        * @scope public
        **/
       is_android: () => {
-        return storm_eagle.client.get_user_agent().match(/Android/i) ? true : false;
+        return storm_eagle.client.get_user_agent().match(/Android/i);
       },
       is_blackberry: () => {
-        return storm_eagle.client.get_user_agent().match(/BlackBerry|BB10/i) ? true : false;
+        return storm_eagle.client.get_user_agent().match(/BlackBerry|BB10/i);
       },
       is_ios: () => {
-        return storm_eagle.client.get_user_agent().match(/iPhone|iPad|iPod/i) ? true : false;
+        return storm_eagle.client.get_user_agent().match(/iPhone|iPad|iPod/i);
       },
       is_opera: () => {
-        return storm_eagle.client.get_user_agent().match(/Opera Mini/i) ? true : false;
+        return storm_eagle.client.get_user_agent().match(/Opera Mini/i);
       },
       is_windows: () => {
-        return storm_eagle.client.get_user_agent().match(/IEMobile/i) ? true : false;
+        return storm_eagle.client.get_user_agent().match(/IEMobile/i);
       },
       is_any: () => {
         return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) ||
@@ -794,9 +794,10 @@ var storm_eagle = (function () {
      * @param  { array } elements     elements we want to observe
      * @param  { function } func      callback function
      */
-    resize_observer: (elements, func) => {
+    resize_observer: (elements, func, params_obj) => {
+      let param_values = (params_obj) ? Object.values(params_obj) : [];
       let resize_observer = new ResizeObserver((el) => {
-        func();
+        func(...param_values);
       });
       //@TODO: write cleaner way to iterate through one DOM Element OR NodeList
       elements instanceof HTMLElement
