@@ -144,7 +144,7 @@ storm_eagle.module("responsive_dom_manipulator", () => {
      * Re-evaluate moving the dom when the page loads or is resized
      */
     resize_listener: () => {
-      function force_resize() {
+      const force_resize = () => {
         return self.force_resize();
       }
       storm_eagle.resize_observer(document.querySelector("body"), force_resize);
