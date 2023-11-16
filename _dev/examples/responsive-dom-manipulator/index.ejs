@@ -12,8 +12,6 @@
           <p class="pb:32px">Try tabbing through the area at different breakpoints. You'll see <span class="heebo:bold">the tabbing order remains correct while the DOM changes significantly!</span></p>
         </div>
 
-        <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
-
         <div class="position:relative pb:32px xl+:show">
           <div data-module="slider.input-container">
             <input data-module="slider.input" id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = this.value + 'px';" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
@@ -21,6 +19,8 @@
             <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
           </div>
         </div>
+
+        <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
 
         <h2 class="fs:32px play:bold pt:32px pb:8px">HTML</h2>
         <div>Note: classes and empty divs omitted for simplicity</div>
