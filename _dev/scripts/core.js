@@ -796,15 +796,25 @@ var storm_eagle = (function () {
      */
     resize_observer: (elements, func, params_obj) => {
       let param_values = (params_obj) ? Object.values(params_obj) : [];
+      const has_resize_observer = (element) => {
+        return element.__resize_observer__ instanceof ResizeObserver;
+      };
+
       let resize_observer = new ResizeObserver((el) => {
         func(...param_values);
       });
-      //@TODO: write cleaner way to iterate through one DOM Element OR NodeList
-      elements instanceof HTMLElement
-        ? resize_observer.observe(elements)
-        : elements.forEach((el) => {
-            resize_observer.observe(el);
-          });
+
+      // Utility function to observe an element if not already observed
+      const observe_element = (el) => {
+        !has_resize_observer(el) && resize_observer.observe(el);
+      };
+
+      // Use the utility function for iteration
+      if (elements instanceof HTMLElement) {
+        observe_element(elements);
+      } else if (elements instanceof NodeList || Array.isArray(elements)) {
+        elements.forEach(observe_element);
+      }
     },
   };
 })();
