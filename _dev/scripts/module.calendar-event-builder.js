@@ -70,7 +70,7 @@ END:VCALENDAR`;
       document.querySelector('#icalendar').innerHTML = icalendar_url;
     },
     submit_listener: () => {
-      function populate_json() {
+      const populate_json = () => {
         invite_details.start_date = document.querySelector('input[name=start_date]').value;
         invite_details.start_time = document.querySelector('input[name=start_time]').value;
         invite_details.end_date = document.querySelector('input[name=end_date]').value;
