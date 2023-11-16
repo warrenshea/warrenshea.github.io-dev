@@ -124,12 +124,12 @@
     const isotope_container = document.querySelector(".assets");
     let isotope_obj;
 
-    function _add_slashes(string) {
+    const _add_slashes = (string) => {
       //no need to do (str+'') anymore because 'this' can only be a string
       return string.replace(/[:]+/g, '\\\:').replace(/[&]/g, '\\\&').replace(/[$]/g, '\\\$').replace(/[?]/g, '\\\?').replace(/[!]/g, '\\\!');
     }
 
-    function _concat_values(obj) {
+    const _concat_values = (obj) => {
       let value = '';
       for (let prop in obj) {
         value += obj[prop];
@@ -185,7 +185,7 @@
       },
       add_event_listeners: () => {
 
-        function _find_object_with_param(object_array,param,val) {
+        _find_object_with_param = (object_array,param,val) => {
           let result = object_array.filter(obj => {
             return obj[param] === val;
           })
@@ -230,7 +230,7 @@
         });
       },
       get_icon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
-        function _helper_tags_database (database_temp) {
+        _helper_tags_database = (database_temp) => {
           let new_database = [];
           let database_temp_keyword;
           let isQueryIn_database_temp_keyword;
@@ -287,7 +287,7 @@
         return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${tag}" onclick="storm_eagle.fa5dam.autocomplete_fill('${input_id}','${tag}');storm_eagle.autocomplete.close('${autocomplete_id}');">${tag_string}</li>`;
       },
       autocomplete_fill: (input_id, name) => {
-        function _load_keyword(keyword) {
+        _load_keyword = (keyword) => {
           filter_group = "keyword";
           //console.log("filter_group",filter_group);
           //console.log("filters",filters);
