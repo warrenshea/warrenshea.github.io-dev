@@ -56,7 +56,7 @@ storm_eagle.module('show_more', () => {
       });
     },
     resize_listener: (show_more_id) => {
-      function force_resize() {
+      const force_resize = () => {
         return self.force_resize(show_more_id);
       }
       storm_eagle.resize_observer(document.querySelector('body'), force_resize);
