@@ -62,7 +62,7 @@ storm_eagle.module('range_slider', () => {
       });
     },
     resize_listener: (slider_id) => {
-      function force_resize() {
+      const force_resize = () => {
         return self.force_resize(slider_id);
       }
       storm_eagle.resize_observer(document.getElementById(slider_id), force_resize);
