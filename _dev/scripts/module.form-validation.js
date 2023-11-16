@@ -6,7 +6,7 @@ storm_eagle.module('form_validation', () => {
   let error_number = 0;
   let form_state = {};
 
-  function _get_type(el) {
+  const _get_type = (el) => {
     if (el.tagName.toLowerCase() === 'input' && el.hasAttribute('type')) {
       //input
       return el.getAttribute('type').toLowerCase();
@@ -17,7 +17,7 @@ storm_eagle.module('form_validation', () => {
     }
   }
 
-  function _get_validation_type(el) {
+  const _get_validation_type = (el) => {
     if (el.hasAttribute('data-required')) {
       return 'required';
     } else if (el.hasAttribute('data-optional')) {
@@ -27,7 +27,7 @@ storm_eagle.module('form_validation', () => {
     }
   }
 
-  function _get_validation_type2(el) {
+  const _get_validation_type2 = (el) => {
     if (el.hasAttribute('data-validation-type')) {
       if (el.getAttribute('data-validation-type') === 'inline') {
         return 'inline';
