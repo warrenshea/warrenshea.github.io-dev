@@ -11,7 +11,7 @@ storm_eagle.module('popover', () => {
   let popover_last_tab_stop;
   let popover_state = {};
 
-  function keyboard_popover_focus_trap(event) {
+  const keyboard_popover_focus_trap = (event) => {
     if (event.keyCode === keyboard.keys.tab) {
       if (event.shiftKey) {
         if (document.activeElement === popover_first_tab_stop) {
@@ -104,7 +104,7 @@ storm_eagle.module('popover', () => {
       }
     },
     resize_listener: () => {
-      function force_resize() {
+      const force_resize = () => {
         if (document.querySelector("[data-module='popover'].active")) {
           self.set_popover_location(document.querySelector("[data-module='popover'].active").getAttribute('id'));
         }
