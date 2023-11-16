@@ -55,7 +55,7 @@ storm_eagle.module('carousel', () => {
         });
     },
     update_carousel: (carousel_id) => {
-      function set_active_items(carousel_id) {
+      const set_active_items = (carousel_id) => {
         /* resets the active classes on the carousel items and adds the proper active classes */
         document
           .getElementById(carousel_id)
@@ -78,7 +78,7 @@ storm_eagle.module('carousel', () => {
         document.getElementById(carousel_id).querySelectorAll('[data-module="carousel.indicators-group"] .control')[carousel_state[carousel_id]['current_active_carousel_item']].classList.add('active-item');
       }
 
-      function update_controls(carousel_id) {
+      const update_controls = (carousel_id) => {
         /* show both chevrons */
         if (carousel_state[carousel_id]['total_children'] !== 1) {
           document.getElementById(carousel_id).querySelector('[data-module="carousel.controls-prev"]').classList.remove('display:none');
@@ -144,13 +144,13 @@ storm_eagle.module('carousel', () => {
         });
     },
     control_buttons_listener: (carousel_id) => {
-      function swipe_left(event) {
+      const swipe_left = (event) => {
         event.preventDefault();
         /* console.log("left"); */
         document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').dispatchEvent(new Event('swiped-left'));
       }
 
-      function swipe_right(event) {
+      const swipe_right = (event) => {
         event.preventDefault();
         /* console.log("right"); */
         document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').dispatchEvent(new Event('swiped-right'));
@@ -205,7 +205,7 @@ storm_eagle.module('carousel', () => {
     //   });
     // },
     resize_listener: (carousel_id) => {
-      function force_resize() {
+      const force_resize = () => {
         return self.force_resize(carousel_id);
       }
       storm_eagle.resize_observer(document.querySelector('body'), force_resize);
@@ -269,7 +269,7 @@ storm_eagle.module('carousel', () => {
     update_carousel_state: (carousel_id) => {
       /* if the value is > 1, then use a pixel value for the offset */
       /* if the value is > 0 and < 1, use the value as a percentage (e.g. 1/4 = .25) */
-      function calculate_pixel_value(carousel_id, offsetValue) {
+      const calculate_pixel_value = (carousel_id, offsetValue) => {
         if (offsetValue > 1) {
           return offsetValue;
         } else if (offsetValue > 0 && offsetValue < 1) {
