@@ -48,7 +48,7 @@ storm_eagle.module('form_parent_checkbox', () => {
   let self;
   let parent_checkbox_state = {};
 
-  function _update_parent(parent_id) {
+  const _update_parent = (parent_id) => {
     let num_child_checkboxes_checked = 0;
     let num_checkboxes = 0;
     for (const [key, value] of Object.entries(parent_checkbox_state[parent_id])) {
@@ -72,7 +72,7 @@ storm_eagle.module('form_parent_checkbox', () => {
       }
     }
   }
-  function _update_state(parent_id, id_clicked) {
+  const _update_state = (parent_id, id_clicked) => {
     if (parent_id === id_clicked) {
       if (storm_eagle.checkbox.is_checked(document.getElementById(parent_id)) === false) {
         for (const [key, value] of Object.entries(parent_checkbox_state[parent_id])) {
@@ -116,21 +116,21 @@ storm_eagle.module('form_parent_checkbox', () => {
       });
     },
     add_parent_event_listeners: (parent_checkbox_id) => {
-      document.getElementById(parent_checkbox_id).addEventListener('keydown', function (event) {
+      document.getElementById(parent_checkbox_id).addEventListener('keydown', (event) => {
         _update_state(parent_checkbox_id, parent_checkbox_id);
       });
-      document.getElementById(parent_checkbox_id).addEventListener('click', function (event) {
+      document.getElementById(parent_checkbox_id).addEventListener('click', (event) => {
         _update_state(parent_checkbox_id, parent_checkbox_id);
       });
     },
     add_child_event_listeners: (parent_checkbox_id, el) => {
-      el.addEventListener('change', function (event) {
+      el.addEventListener('change', (event) => {
         _update_state(parent_checkbox_id, el.getAttribute('id'));
       });
-      el.addEventListener('keydown', function (event) {
+      el.addEventListener('keydown', (event) => {
         _update_state(parent_checkbox_id, el.getAttribute('id'));
       });
-      el.addEventListener('click', function (event) {
+      el.addEventListener('click', (event) => {
         _update_state(parent_checkbox_id, el.getAttribute('id'));
       });
     },
