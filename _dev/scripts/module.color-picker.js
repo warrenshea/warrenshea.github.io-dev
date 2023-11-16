@@ -6,7 +6,7 @@ storm_eagle.module('color_picker', () => {
    * Function to convert HEX to RGB
    * @param  {string} color to match
    **/
-  function hex2rgb(colour) {
+  const hex2rgb = (colour) => {
     let cr, cg, cb;
     if (colour.charAt(0) === '#') {
       colour = colour.substr(1);
@@ -30,7 +30,7 @@ storm_eagle.module('color_picker', () => {
       // Create an emtyp array for the difference betwwen the colors
       let differenceArray = [];
       // Function to find the smallest value in an array
-      let smallestValue = function (array) {
+      const smallestValue = (array) => {
         return Math.min.apply(Math, array);
       };
       // Convert the HEX color in the array to RGB colors, split them up to R-G-B, then find out the difference between the "color" and the colors in the array
