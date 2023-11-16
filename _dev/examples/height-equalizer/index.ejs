@@ -216,7 +216,7 @@ storm_eagle.module('equalize_heights', () => {
     * Re-evaluate the equalizing of the height when the page loads or is resized
     */
     resize_listener: () => {
-      function force_resize() {
+      const force_resize = () => {
         return self.force_resize();
       }
       storm_eagle.resize_observer(document.querySelector("body"), force_resize);
