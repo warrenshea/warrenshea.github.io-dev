@@ -42,7 +42,7 @@
           get_pokemon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
             let url = "pokedex.json";
 
-            function _helper_reduce_database (database_temp) {
+            const _helper_reduce_database = (database_temp) => {
               let new_database = [];
               let database_temp_keyword;
 
