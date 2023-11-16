@@ -25,8 +25,8 @@
 }
 
 .placeholder {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='27' style='font-family:Arial;font-size:40px;font-weight:bold;fill:%2300000008;'%3Eplaceholder%3C/text%3E%3C/svg%3E");
-  background-size: 245px 35px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='27' style='font-family:Arial;font-size:32px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
+  background-size: 225px 25px;
   background-repeat: repeat;
   background-color: transparent;
   height: 100%;
@@ -34,25 +34,65 @@
 }
 
 .module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%239dcda725;'%3Eadd module here%3C/text%3E%3C/svg%3E");
-  background-size: 155px 20px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 20px;
   background-repeat: repeat;
-  background-color: #{$positive-light}10;
+  background-color: #84b48e50;
   height: 100%;
   width: 100%;
-  border: 2px dashed $positive-light;
+  border: 2px dashed #84b48e;
+}
+
+[data-module="accordion"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
+  background-size: 165px 20px;
+}
+
+[data-module="accordion.trigger"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.trigger -- %3C/text%3E%3C/svg%3E");
+  background-size: 230px 20px;
+}
+
+[data-module="accordion.panel"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
+  background-size: 220px 20px;
 }
 
 .module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='25' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23e9a1a108;'%3Eremove module here%3C/text%3E%3C/svg%3E");
-  background-size: 165px 30px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 155px 20px;
   background-repeat: repeat;
-  background-color: #{$negative-light}10;
+  background-color: #d0888825;
   height: 100%;
   width: 100%;
-  border: 2px dashed $negative-light;
+  border: 2px dashed #d08888;
+  position:relative;
+  &::before {
+    content:"REMOVE";
+    position:absolute;
+    top:10px;
+    left:10px;
+    height: 25px;
+    width: 100px;
+    border: 2px dashed #d08888;
+    background: white;
+  }
 }
 
+[data-module="accordion"] .module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 225px 20px;
+}
+
+[data-module="accordion.trigger"] .module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 290px 20px;
+}
+
+[data-module="accordion.panel"] .module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 280px 20px;
+}
 
 .isotope-card-example-background {
   background-size: 16px 16px;
