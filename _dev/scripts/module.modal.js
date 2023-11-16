@@ -10,14 +10,14 @@ storm_eagle.module('modal', () => {
   let modal_last_tab_stop;
   let modal_state = {};
 
-  function modal_close(event) {
+  const modal_close = (event) => {
     //console.log(event.target.classList);
     if (event.target.classList.contains('modal-container') || event.target.classList.contains('modal-overlay')) {
       storm_eagle.modal.close();
     }
   }
 
-  function keyboard_modal_focus_trap(event) {
+  const keyboard_modal_focus_trap = (event) => {
     if (event.keyCode === keyboard.keys.tab) {
       if (event.shiftKey) {
         if (document.activeElement === modal_first_tab_stop) {
