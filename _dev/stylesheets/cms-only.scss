@@ -24,6 +24,10 @@
   border: rem-calc(2) dashed $blue;
 }
 
+.b-dark-goldenrod-dashed\:2px {
+  border: rem-calc(2) dashed $dark-goldenrod;
+}
+
 .placeholder {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='27' style='font-family:Arial;font-size:32px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
   background-size: 225px 25px;
@@ -37,15 +41,15 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
   background-size: 125px 20px;
   background-repeat: repeat;
-  background-color: #84b48e50;
+  background-color: #{$positive-light}50;
   height: 100%;
   width: 100%;
-  border: 2px dashed #84b48e;
+  border: 2px dashed $positive-light;
 }
 
 [data-module="accordion"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
-  background-size: 165px 20px;
+  background-size: 170px 20px;
 }
 
 [data-module="accordion.trigger"] .module-add {
@@ -62,10 +66,10 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
   background-size: 155px 20px;
   background-repeat: repeat;
-  background-color: #d0888825;
+  background-color: #{$negative-light}25;
   height: 100%;
   width: 100%;
-  border: 2px dashed #d08888;
+  border: 2px dashed $negative-light;
   position:relative;
   &::before {
     content:"REMOVE";
@@ -74,7 +78,7 @@
     left:10px;
     height: 25px;
     width: 100px;
-    border: 2px dashed #d08888;
+    border: 2px dashed $negative-light;
     background: white;
   }
 }
@@ -90,6 +94,42 @@
 }
 
 [data-module="accordion.panel"] .module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 280px 20px;
+}
+
+.module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 155px 20px;
+  background-repeat: repeat;
+  background-color: #{$dark-goldenrod}25;
+  height: 100%;
+  width: 100%;
+  border: 2px dashed $dark-goldenrod;
+  position:relative;
+  &::before {
+    content:"REMOVE";
+    position:absolute;
+    top:10px;
+    left:10px;
+    height: 25px;
+    width: 100px;
+    border: 2px dashed $dark-goldenrod;
+    background: white;
+  }
+}
+
+[data-module="accordion"] .module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 225px 20px;
+}
+
+[data-module="accordion.trigger"] .module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 290px 20px;
+}
+
+[data-module="accordion.panel"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
   background-size: 280px 20px;
 }
@@ -111,14 +151,14 @@
   margin: 0;
 }
 
-.left-xl { color:#c0c0c0;width:50%;height:20px;top:-2px;z-index:-2;right:50%;text-align:right;padding-right:670px; }
-.left-lg { color:#c0c0c0;width:127px;height:20px;top:-2px;z-index:-1;left:calc(50% - 639px); }
-.left-md { color:#c0c0c0;width:126px;height:20px;top:-2px;z-index:-1;left:calc(50% - 511px); }
-.left-sm { color:#c0c0c0;width:198px;height:20px;top:-2px;z-index:-1;left:calc(50% - 385px); }
-.right-sm { color:#c0c0c0;width:198px;height:20px;top:-2px;z-index:-1;right:calc(50% - 385px); }
-.right-md { color:#c0c0c0;width:126px;height:20px;top:-2px;z-index:-1;right:calc(50% - 511px); }
-.right-lg { color:#c0c0c0;width:127px;height:20px;top:-2px;z-index:-1;right:calc(50% - 639px); }
-.right-xl { color:#c0c0c0;width:50%;height:20px;top:-2px;z-index:-2;left:50%;text-align:left;padding-left:670px; }
+.left-xl { color:$silver;width:50%;height:20px;top:-2px;z-index:-2;right:50%;text-align:right;padding-right:670px; }
+.left-lg { color:$silver;width:127px;height:20px;top:-2px;z-index:-1;left:calc(50% - 639px); }
+.left-md { color:$silver;width:126px;height:20px;top:-2px;z-index:-1;left:calc(50% - 511px); }
+.left-sm { color:$silver;width:198px;height:20px;top:-2px;z-index:-1;left:calc(50% - 385px); }
+.right-sm { color:$silver;width:198px;height:20px;top:-2px;z-index:-1;right:calc(50% - 385px); }
+.right-md { color:$silver;width:126px;height:20px;top:-2px;z-index:-1;right:calc(50% - 511px); }
+.right-lg { color:$silver;width:127px;height:20px;top:-2px;z-index:-1;right:calc(50% - 639px); }
+.right-xl { color:$silver;width:50%;height:20px;top:-2px;z-index:-2;left:50%;text-align:left;padding-left:670px; }
 
 .isotope-card-tag {
   margin: rem-calc(4) rem-calc(8);
@@ -160,10 +200,10 @@
       cursor: pointer;
     }
     &:focus+label {
-      outline: 2px solid #000;
+      outline: 2px solid $black;
     }
     &:checked:focus+label {
-      outline: 2px solid #000;
+      outline: 2px solid $black;
     }
     &:checked:focus+label {
       box-shadow: $box-shadow-custom-7;
