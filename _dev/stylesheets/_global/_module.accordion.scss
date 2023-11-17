@@ -1,19 +1,23 @@
 [data-module='accordion'] {
-  [data-module='accordion.trigger'] {
+  [data-module='accordion.header'] {
     &[aria-expanded='false'] {
-      [data-module='accordion.active'] {
-        display: block;
-      }
-      [data-module='accordion.inactive'] {
-        display: none;
+      > span {
+        > [data-module='accordion.active'] {
+          display: block;
+        }
+        > [data-module='accordion.inactive'] {
+          display: none;
+        }
       }
     }
     &[aria-expanded='true'] {
-      [data-module='accordion.active'] {
-        display: none;
-      }
-      [data-module='accordion.inactive'] {
-        display: block;
+      > span {
+        > [data-module='accordion.active'] {
+          display: none;
+        }
+        > [data-module='accordion.inactive'] {
+          display: block;
+        }
       }
     }
   }
