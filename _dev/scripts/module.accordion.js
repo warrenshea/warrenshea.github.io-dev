@@ -12,7 +12,7 @@ storm_eagle.module('accordion', () => {
       document.querySelectorAll('[data-module="accordion"]').forEach((el) => {
         let accordion_id = el.getAttribute('id');
         accordion_state[accordion_id] = {
-          all_triggers: el.querySelectorAll(':scope > div > [data-module="accordion.trigger"],:scope > [data-module="accordion.trigger"]'),
+          all_headers: el.querySelectorAll(':scope > div > * > [data-module="accordion.header"],:scope > [data-module="accordion.header"]'),
           all_panels: el.querySelectorAll(':scope > div > [data-module="accordion.panel"],:scope > [data-module="accordion.panel"]'),
           active_setting: el.getAttribute('data-accordion-active'),
           initial_active: JSON.parse(el.getAttribute('data-accordion-initial')),
@@ -22,10 +22,10 @@ storm_eagle.module('accordion', () => {
       });
     },
     add_event_listeners: (accordion_id) => {
-      accordion_state[accordion_id]['all_triggers'].forEach((el) => {
+      accordion_state[accordion_id]['all_headers'].forEach((el) => {
         el.addEventListener('click', () => {
           if (accordion_state[accordion_id]['active_setting'] === 'single') {
-            accordion_state[accordion_id]['all_triggers'].forEach((el) => {
+            accordion_state[accordion_id]['all_headers'].forEach((el) => {
               el.setAttribute('aria-expanded', 'false');
             });
             el.setAttribute('aria-expanded', 'true');
@@ -42,11 +42,11 @@ storm_eagle.module('accordion', () => {
       });
     },
     init_ui: (accordion_id) => {
-      accordion_state[accordion_id]['all_triggers'].forEach((el, index) => {
+      accordion_state[accordion_id]['all_headers'].forEach((el, index) => {
         el.setAttribute('tabindex', '-1');
         el.setAttribute('aria-expanded', 'false');
-        el.setAttribute('aria-controls', el.nextElementSibling.getAttribute('id'));
-        el.nextElementSibling.setAttribute('aria-labelledby', el.getAttribute('id'));
+        el.setAttribute('aria-controls', el.parentNode.nextElementSibling.getAttribute('id'));
+        el.parentNode.nextElementSibling.setAttribute('aria-labelledby', el.getAttribute('id'));
         if (index === 0) {
           el.setAttribute('tabindex', '0');
           el.addEventListener('focusin', () => {
@@ -60,7 +60,7 @@ storm_eagle.module('accordion', () => {
       accordion_state[accordion_id]['all_panels'].forEach((el) => {
         el.classList.add('display:none');
       });
-      accordion_state[accordion_id]['all_triggers'].forEach((el, index) => {
+      accordion_state[accordion_id]['all_headers'].forEach((el, index) => {
         if (accordion_state[accordion_id]['initial_active'][index] === 1) {
           el.click();
         }
