@@ -48809,16 +48809,16 @@ ol.unstyle-pl\:0 {
   }
 }
 
-[data-module=accordion] [data-module="accordion.trigger"][aria-expanded=false] [data-module="accordion.active"] {
+[data-module=accordion] [data-module="accordion.header"][aria-expanded=false] > span > [data-module="accordion.active"] {
   display: block;
 }
-[data-module=accordion] [data-module="accordion.trigger"][aria-expanded=false] [data-module="accordion.inactive"] {
+[data-module=accordion] [data-module="accordion.header"][aria-expanded=false] > span > [data-module="accordion.inactive"] {
   display: none;
 }
-[data-module=accordion] [data-module="accordion.trigger"][aria-expanded=true] [data-module="accordion.active"] {
+[data-module=accordion] [data-module="accordion.header"][aria-expanded=true] > span > [data-module="accordion.active"] {
   display: none;
 }
-[data-module=accordion] [data-module="accordion.trigger"][aria-expanded=true] [data-module="accordion.inactive"] {
+[data-module=accordion] [data-module="accordion.header"][aria-expanded=true] > span > [data-module="accordion.inactive"] {
   display: block;
 }
 
