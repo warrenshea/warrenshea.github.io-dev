@@ -49,36 +49,36 @@
 
 [data-module="accordion"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
-  background-size: 170px 20px;
+  background-size: rem-calc(170) rem-calc(20);
 }
 
-[data-module="accordion.trigger"] .module-add {
+[data-module="accordion.header"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.trigger -- %3C/text%3E%3C/svg%3E");
-  background-size: 230px 20px;
+  background-size: rem-calc(230) rem-calc(20);
 }
 
 [data-module="accordion.panel"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
-  background-size: 220px 20px;
+  background-size: rem-calc(220) rem-calc(20);
 }
 
 .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: 155px 20px;
+  background-size: rem-calc(155) rem-calc(20);
   background-repeat: repeat;
   background-color: #{$negative-light}25;
   height: 100%;
   width: 100%;
-  border: 2px dashed $negative-light;
+  border: rem-calc(2) dashed $negative-light;
   position:relative;
   &::before {
     content:"REMOVE";
     position:absolute;
-    top:10px;
-    left:10px;
-    height: 25px;
-    width: 100px;
-    border: 2px dashed $negative-light;
+    top:rem-calc(10);
+    left:rem-calc(10);
+    height: rem-calc(25);
+    width: rem-calc(100);
+    border: rem-calc(2) dashed $negative-light;
     background: white;
   }
 }
@@ -88,7 +88,7 @@
   background-size: 225px 20px;
 }
 
-[data-module="accordion.trigger"] .module-remove {
+[data-module="accordion.header"] .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
   background-size: 290px 20px;
 }
