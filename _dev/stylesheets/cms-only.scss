@@ -110,33 +110,33 @@
   &::before {
     content:"REMOVE";
     position:absolute;
-    top:10px;
-    left:10px;
-    height: 25px;
-    width: 100px;
-    border: 2px dashed $dark-goldenrod;
+    top:rem-calc(10);
+    left:rem-calc(10);
+    height: rem-calc(25);
+    width: rem-calc(100);
+    border: rem-calc(2) dashed $dark-goldenrod;
     background: white;
   }
 }
 
 [data-module="accordion"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: 225px 20px;
+  background-size: rem-calc(225) rem-calc(20);
 }
 
 [data-module="accordion.trigger"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: 290px 20px;
+  background-size: rem-calc(290) rem-calc(20);
 }
 
 [data-module="accordion.panel"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: 280px 20px;
+  background-size: rem-calc(280) rem-calc(20);
 }
 
 .isotope-card-example-background {
-  background-size: 16px 16px;
-  background-image: radial-gradient(circle, $silver 1px, #f9f9f9 1px);
+  background-size: rem-calc(16) rem-calc(16);
+  background-image: radial-gradient(circle, $silver rem-calc(1), #f9f9f9 rem-calc(1));
   background-position-x: center;
 }
 
