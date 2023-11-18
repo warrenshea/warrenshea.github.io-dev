@@ -6,7 +6,7 @@
 @import '_config/unit.scss';
 @import '_config/breakpoint.scss';
 @import '_config/media-queries.scss';
-// @import '_global/helper-border-box-shadow.scss';
+$box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-blue;
 
 .classes {
   z-index:0;
