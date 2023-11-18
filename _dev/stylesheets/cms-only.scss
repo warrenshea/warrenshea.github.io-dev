@@ -53,7 +53,7 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 [data-module="accordion.header"] .module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.trigger -- %3C/text%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.header -- %3C/text%3E%3C/svg%3E");
   background-size: rem-calc(230) rem-calc(20);
 }
 
@@ -89,7 +89,7 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 [data-module="accordion.header"] .module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(290) rem-calc(20);
 }
 
@@ -124,8 +124,8 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
   background-size: rem-calc(225) rem-calc(20);
 }
 
-[data-module="accordion.trigger"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.trigger -- %3C/text%3E%3C/svg%3E") !important;
+[data-module="accordion.header"] .module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(290) rem-calc(20);
 }
 
