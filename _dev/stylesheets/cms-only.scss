@@ -30,7 +30,7 @@
 
 .placeholder {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='27' style='font-family:Arial;font-size:32px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
-  background-size: 225px 25px;
+  background-size: rem-calc(225) rem-calc(25);
   background-repeat: repeat;
   background-color: transparent;
   height: 100%;
@@ -39,12 +39,12 @@
 
 .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
-  background-size: 125px 20px;
+  background-size: rem-calc(125) rem-calc(20);
   background-repeat: repeat;
   background-color: #{$positive-light}50;
   height: 100%;
   width: 100%;
-  border: 2px dashed $positive-light;
+  border: rem-calc(2) dashed $positive-light;
 }
 
 [data-module="accordion"] .module-add {
