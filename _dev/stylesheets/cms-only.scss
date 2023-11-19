@@ -99,7 +99,7 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eedit module -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(155) rem-calc(20);
   background-repeat: repeat;
   background-color: #{$dark-goldenrod}25;
