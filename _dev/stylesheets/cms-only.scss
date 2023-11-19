@@ -108,10 +108,10 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
   border: rem-calc(2) dashed $dark-goldenrod;
   position:relative;
   &::before {
-    content:"REMOVE";
+    content:"EDIT";
     position:absolute;
-    top:rem-calc(10);
-    left:rem-calc(10);
+    top: rem-calc(10);
+    left: rem-calc(10);
     height: rem-calc(25);
     width: rem-calc(100);
     border: rem-calc(2) dashed $dark-goldenrod;
@@ -120,17 +120,17 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 [data-module="accordion"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%edit accordion -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(225) rem-calc(20);
 }
 
 [data-module="accordion.header"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eedit accordion.header -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(290) rem-calc(20);
 }
 
 [data-module="accordion.panel"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eedit accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
   background-size: rem-calc(280) rem-calc(20);
 }
 
