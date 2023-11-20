@@ -151,14 +151,14 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
   margin: 0;
 }
 
-.left-xl { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;right:50%;text-align:right;padding-right:670px; }
-.left-lg { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 639px); }
-.left-md { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 511px); }
-.left-sm { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 385px); }
-.right-sm { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 385px); }
-.right-md { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 511px); }
-.right-lg { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 639px); }
-.right-xl { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;left:50%;text-align:left;padding-left:670px; }
+[data-module="slider.labels"] .sm-left { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 385px); }
+[data-module="slider.labels"] .sm-right { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 385px); }
+[data-module="slider.labels"] .md-left { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 511px); }
+[data-module="slider.labels"] .md-right { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 511px); }
+[data-module="slider.labels"] .lg-left { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 639px); }
+[data-module="slider.labels"] .lg-right { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 639px); }
+[data-module="slider.labels"] .xl-left { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;right:50%;text-align:right;padding-right:670px; }
+[data-module="slider.labels"] .xl-right { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;left:50%;text-align:left;padding-left:670px; }
 
 .isotope-card-tag {
   margin: rem-calc(4) rem-calc(8);
@@ -169,6 +169,211 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 .form\:theme\:cms {
+  /* label styles */
+  input[type='text'] + label,
+  input[type='number'] + label,
+  input[type='email'] + label,
+  input[type='password'] + label,
+  input[type='search'] + label,
+  select + label,
+  textarea + label {
+    z-index: 2;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    cursor: pointer;
+    &:before {
+      /* blue label line, hidden */
+      z-index: 4;
+      content: '';
+      width: 100%;
+      height: rem-calc(2);
+      bottom: 0;
+      left: 0;
+      background: $blue;
+      transform: scaleX(0);
+      transition: all 0.3s linear;
+      position: relative;
+      top: unset;
+      display: block;
+    }
+    &:after {
+      /* default gray label line */
+      z-index: 3;
+      content: '';
+      width: 100%;
+      height: rem-calc(2);
+      bottom: rem-calc(2);
+      left: 0;
+      background: $silver;
+      position: relative;
+      top: unset;
+      display: block;
+    }
+    &.error-field:before {
+      background: $negative;
+    }
+    &.error-field:after {
+      background: $negative;
+    }
+    &.valid:before {
+      background: #0b8224;
+    }
+    &.disabled {
+      color: $onyx;
+      span.description {
+        color: $onyx;
+      }
+    }
+    span.description {
+      /* label description */
+      display: block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: $blue;
+      letter-spacing: 0.25px;
+      transition: 0.3s ease-out;
+      position: absolute;
+      top: rem-calc(2);
+      font-size: rem-calc(14);
+      font-family: 'heebo-medium';
+    }
+    &.force-active-label,
+    &.active-label {
+      span.description {
+        position: absolute;
+        top: rem-calc(2);
+        font-size: rem-calc(14);
+        font-family: 'heebo-medium';
+      }
+    }
+  }
+
+  /* input (text, email, password, search), select, and textarea styles */
+  input,
+  select,
+  textarea {
+    color: $eerie-black;
+    transition: all 0.3s ease-out;
+    :disabled {
+      color: $onyx;
+    }
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  select,
+  textarea {
+    width: 100%;
+    height: rem-calc(36);
+    margin-top: rem-calc(16);
+    white-space: nowrap;
+    line-height: 1.5;
+    border: none;
+    background-color: $white-smoke;
+    transition: all 0.3s ease-out;
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+  input[type='text']:focus + label:before,
+  input[type='text'].focus + label:before,
+  input[type='number']:focus + label:before,
+  input[type='email']:focus + label:before,
+  input[type='password']:focus + label:before,
+  input[type='search']:focus + label:before,
+  select:focus + label:before,
+  textarea:focus + label:before,
+  textarea.focus + label:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  /* helper description styles */
+  .error-message {
+    width: 100%;
+    min-width: rem-calc(150);
+    padding: 0 0 0 rem-calc(19);
+    font-size: rem-calc(14);
+    font-family: 'heebo-regular';
+    color: $negative;
+    background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
+    background-size: rem-calc(16) rem-calc(16);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    margin-top: rem-calc(4);
+    display: none;
+    margin-bottom: rem-calc(6);
+    &.has-error {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      &.display\:inline {
+        display: inline;
+      }
+    }
+  }
+
+  /* helper description styles */
+  .helper-description {
+    color: $onyx;
+    font-size: rem-calc(14);
+    margin-top: rem-calc(4);
+    letter-spacing: 0.25px;
+  }
+
+  .helper-description-pass-fail {
+    list-style: none;
+    padding-left: 0;
+    color: $onyx;
+    font-size: rem-calc(14);
+    li {
+      display: flex;
+      line-height: rem-calc(24);
+      padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
+      background-image: url(../assets/icon/times.negative.svg);
+      background-repeat: no-repeat;
+      background-position: top rem-calc(2) left rem-calc(2);
+      background-size: rem-calc(24) rem-calc(24);
+      > span {
+        display: flex;
+      }
+      &.pass {
+        background-image: url(../assets/icon/check.positive.svg);
+      }
+      &.fail {
+        background-image: url(../assets/icon/times.negative.svg);
+      }
+    }
+  }
+
+  /* select styles */
+  select {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('../assets/icon/chevron-down.blue.svg');
+    background-repeat: no-repeat;
+    background-position: right rem-calc(8) top rem-calc(10);
+    background-size: rem-calc(16) rem-calc(16);
+    appearance: none;
+  }
+
+  /* textarea styles */
+  textarea {
+    transition: all 0.3s ease;
+    padding-top: rem-calc(6); /* to remain consistent with input boxes */
+    padding-bottom: rem-calc(6); /* to remain consistent with input boxes */
+    margin-bottom: rem-calc(-4); /* to remain consistent with input boxes */
+    white-space: pre-wrap;
+  }
+
   input[type="radio"] {
     appearance: none;
     opacity: 0;
