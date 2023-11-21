@@ -236,9 +236,10 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
       color: $blue;
       transition: 0.3s ease-out;
       position: absolute;
-      top: rem-calc(2);
+      top: rem-calc(-2);
       font-size: rem-calc(14);
       font-family: 'heebo-medium';
+      height: rem-calc(20);
     }
     &.force-active-label,
     &.active-label {
