@@ -30,7 +30,7 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 
 .placeholder {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='27' style='font-family:Arial;font-size:32px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
-  background-size: rem-calc(225) rem-calc(25);
+  background-size: 225px 25px;
   background-repeat: repeat;
   background-color: transparent;
   height: 100%;
@@ -49,22 +49,22 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 
 [data-module="accordion"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
-  background-size: rem-calc(170) rem-calc(20);
+  background-size: 170px 20px;
 }
 
 [data-module="accordion.header"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.header -- %3C/text%3E%3C/svg%3E");
-  background-size: rem-calc(230) rem-calc(20);
+  background-size: 230px 20px;
 }
 
 [data-module="accordion.panel"] .module-add {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
-  background-size: rem-calc(220) rem-calc(20);
+  background-size: 220px 20px;
 }
 
 .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(155) rem-calc(20);
+  background-size: 155px 20px;
   background-repeat: repeat;
   background-color: #{$negative-light}25;
   height: 100%;
@@ -85,22 +85,22 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 
 [data-module="accordion"] .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(225) rem-calc(20);
+  background-size: 225px 20px;
 }
 
 [data-module="accordion.header"] .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(290) rem-calc(20);
+  background-size: 290px 20px;
 }
 
 [data-module="accordion.panel"] .module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(280) rem-calc(20);
+  background-size: 280px 20px;
 }
 
 .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eedit module -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(155) rem-calc(20);
+  background-size: 155px 20px;
   background-repeat: repeat;
   background-color: #{$dark-goldenrod}25;
   height: 100%;
@@ -121,17 +121,17 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 
 [data-module="accordion"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%edit accordion -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(225) rem-calc(20);
+  background-size: 225px 20px;
 }
 
 [data-module="accordion.header"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eedit accordion.header -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(290) rem-calc(20);
+  background-size: 290px 20px;
 }
 
 [data-module="accordion.panel"] .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000010;'%3Eedit accordion.panel -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: rem-calc(280) rem-calc(20);
+  background-size: 280px 20px;
 }
 
 .isotope-card-example-background {
