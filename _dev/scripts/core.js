@@ -379,6 +379,7 @@ var storm_eagle = (() => {
         element.setAttribute('aria-checked', value);
       },
 
+      //gets the value of the checkboxes as an array
       get_values: (selector) => {
         let checkbox_values = [];
         let elements = document.querySelectorAll(selector);
@@ -398,6 +399,7 @@ var storm_eagle = (() => {
         }
       },
 
+      //sets a selector or element as checked based on a true or false value
       set_checked: (selector_or_element, value) => {
         if (typeof selector_or_element === 'string') {
           document.querySelector(selector_or_element).checked = value;
@@ -406,6 +408,7 @@ var storm_eagle = (() => {
         }
       },
 
+      //sets a selector or element as checked based the value passed (if it matches, checked is set to true)
       set_checked_from_value: (selector, value) => {
         document.querySelectorAll(selector).forEach((el) => {
           if (el.value === value) {
@@ -415,6 +418,7 @@ var storm_eagle = (() => {
         });
       },
 
+      //gets the value of a radio button
       get_value: (selector) => {
         return document.querySelector(`${selector}:checked`) ? document.querySelector(`${selector}:checked`).value : null;
       },
