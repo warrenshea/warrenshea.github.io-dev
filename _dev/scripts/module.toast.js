@@ -17,7 +17,7 @@ storm_eagle.module('toast', () => {
 
       const toast = document.createElement('span');
       toast.className = `toast bxs:5 heebo:bold ${text_color} ${background}`;
-      toast.textContent = message; // Use textContent to set the content of the div
+      toast.innerHTML = message; // Use textContent to set the content of the div
       toast_container.appendChild(toast);
 
       setTimeout(() => {
