@@ -63,21 +63,27 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 .module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888850;'%3Eremove module -- %3C/text%3E%3C/svg%3E") !important;
   background-size: 155px 20px;
   background-repeat: repeat;
-  background-color: #{$negative-light}25;
+  background-color: #f3f3f3;
   height: 100%;
   width: 100%;
   border: rem-calc(2) dashed $negative-light;
-  position:relative;
+  position: relative;
+  padding: 34px 10px 6px;
+  cursor: pointer;
   &::before {
     content:"REMOVE";
-    position:absolute;
-    top: rem-calc(10);
-    left: rem-calc(10);
-    height: rem-calc(25);
-    width: rem-calc(100);
+    padding-top: 3px;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-family: 'heebo-bold';
+    top: 4px;
+    left: 10px;
+    height: 24px;
+    width: 100px;
     border: rem-calc(2) dashed $negative-light;
     background: white;
   }
@@ -99,21 +105,27 @@ $box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-bl
 }
 
 .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888825;'%3Eedit module -- %3C/text%3E%3C/svg%3E") !important;
-  background-size: 155px 20px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23d0888850;'%3Eedit module -- %3C/text%3E%3C/svg%3E") !important;
+  background-size: 125px 20px;
   background-repeat: repeat;
-  background-color: #{$dark-goldenrod}25;
+  background-color: #f3f3f3;
   height: 100%;
   width: 100%;
   border: rem-calc(2) dashed $dark-goldenrod;
-  position:relative;
+  position: relative;
+  padding: 34px 10px 6px;
+  cursor: pointer;
   &::before {
     content:"EDIT";
-    position:absolute;
-    top: rem-calc(10);
-    left: rem-calc(10);
-    height: rem-calc(25);
-    width: rem-calc(100);
+    padding-top: 3px;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-family: 'heebo-bold';
+    top: 4px;
+    left: 10px;
+    height: 24px;
+    width: 100px;
     border: rem-calc(2) dashed $dark-goldenrod;
     background: white;
   }
