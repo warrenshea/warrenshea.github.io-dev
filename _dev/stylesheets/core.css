@@ -49176,6 +49176,7 @@ _:-ms-fullscreen, :root .popover.active {
   opacity: 0;
   transition: opacity 0.5s;
   text-align: right;
+  max-width: 400px;
 }
 
 [data-module="autocomplete.results"] li {
