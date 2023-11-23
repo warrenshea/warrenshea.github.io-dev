@@ -926,9 +926,9 @@ storm_eagle.module('equalize_heights', () => {
      */
     get_data_equal_height_items: () => {
       document.querySelectorAll('[data-equalize-height]').forEach((el) => {
-        let newItem = el.dataset['equalizeHeight'];
-        if (_data_equal_height_array.indexOf(newItem) < 0) {
-          _data_equal_height_array.push(newItem);
+        let new_item = el.getAttribute("data-equalize-height");
+        if (_data_equal_height_array.indexOf(new_item) < 0) {
+          _data_equal_height_array.push(new_item);
         }
       });
     },
@@ -990,27 +990,27 @@ storm_eagle.module('responsive_dom_manipulator', () => {
     force_resize: () => {
       array_of_keys = [];
       document.querySelectorAll('[data-move]').forEach((el) => {
-        array_of_keys.push(el.dataset['move']);
+        array_of_keys.push(el.getAttribute('data-move'));
       });
       //console.log(array_of_keys);
       if (storm_eagle.client.viewport.is_sm_only()) {
         document.querySelectorAll('[data-move-container-sm]').forEach((el) => {
-          el.appendChild(document.querySelector(`[data-move=${el.dataset['moveContainer']}]`));
+          el.appendChild(document.querySelector(`[data-move=${el.getAttribute('data-move-container')}]`));
         });
       }
       if (storm_eagle.client.viewport.is_md_only()) {
         document.querySelectorAll('[data-move-container-md]').forEach((el) => {
-          el.appendChild(document.querySelector(`[data-move=${el.dataset['moveContainer']}]`));
+          el.appendChild(document.querySelector(`[data-move=${el.getAttribute('data-move-container')}]`));
         });
       }
       if (storm_eagle.client.viewport.is_lg_only()) {
         document.querySelectorAll('[data-move-container-lg]').forEach((el) => {
-          el.appendChild(document.querySelector(`[data-move=${el.dataset['moveContainer']}]`));
+          el.appendChild(document.querySelector(`[data-move=${el.getAttribute('data-move-container')}]`));
         });
       }
       if (storm_eagle.client.viewport.is_xl_up()) {
         document.querySelectorAll('[data-move-container-xl]').forEach((el) => {
-          el.appendChild(document.querySelector(`[data-move=${el.dataset['moveContainer']}]`));
+          el.appendChild(document.querySelector(`[data-move=${el.getAttribute('data-move-container')}]`));
         });
       }
     },
