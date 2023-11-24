@@ -43849,6 +43849,51 @@ ol.unstyle-pl\:0 {
   mask-image: url("../assets/icon/brands/dragon.svg");
 }
 
+.ic.ic-type\:light.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/light/eye.svg");
+  mask-image: url("../assets/icon/light/eye.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/solid/eye.svg");
+  mask-image: url("../assets/icon/solid/eye.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/brands/eye.svg");
+  mask-image: url("../assets/icon/brands/eye.svg");
+}
+
+.ic.ic-type\:light.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/light/low-vision.svg");
+  mask-image: url("../assets/icon/light/low-vision.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/solid/low-vision.svg");
+  mask-image: url("../assets/icon/solid/low-vision.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/brands/low-vision.svg");
+  mask-image: url("../assets/icon/brands/low-vision.svg");
+}
+
+.ic.ic-type\:light.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/light/redo-alt.svg");
+  mask-image: url("../assets/icon/light/redo-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/solid/redo-alt.svg");
+  mask-image: url("../assets/icon/solid/redo-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/brands/redo-alt.svg");
+  mask-image: url("../assets/icon/brands/redo-alt.svg");
+}
+
 .ic.ic-type\:light.ic-name\:info-circle {
   -webkit-mask-image: url("../assets/icon/light/info-circle.svg");
   mask-image: url("../assets/icon/light/info-circle.svg");
