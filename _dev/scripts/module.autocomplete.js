@@ -64,6 +64,7 @@ storm_eagle.module('autocomplete', () => {
       const num_results = autocomplete_state[autocomplete_id]['num_results'];
       const error_message_id = autocomplete_state[autocomplete_id]['error_message_id'];
       const multiselect_id = autocomplete_state[autocomplete_id]['multiselect_id'];
+      const keys_to_ignore = [keyboard.keys.tab, keyboard.keys.esc, keyboard.keys.down, keyboard.keys.up, keyboard.keys.enter, keyboard.keys.shift];
       document.getElementById(input_id).addEventListener('keydown', (event) => {
         let selected_dropdown = document.getElementById(results_id).querySelector('.selected');
 
@@ -120,7 +121,7 @@ storm_eagle.module('autocomplete', () => {
       document.getElementById(input_id).addEventListener(
         'keydown',
         storm_eagle.debounce((event) => {
-          if (event.keyCode != keyboard.keys.tab && event.keyCode != keyboard.keys.esc && event.keyCode != keyboard.keys.down && event.keyCode != keyboard.keys.up && event.keyCode != keyboard.keys.enter && event.keyCode != 16) {
+          if (!keys_to_ignore.includes(event.keyCode)) {
             self.execute_search(autocomplete_id);
           }
         }, 250),
