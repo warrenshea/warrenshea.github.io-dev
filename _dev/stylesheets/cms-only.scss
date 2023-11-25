@@ -265,26 +265,17 @@ $negative-light-no-hash: d08888;
     }
     span.description {
       /* label description */
-      display: block;
+      display: flex;
+      align-items: center;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       color: $blue;
       transition: 0.3s ease-out;
       position: absolute;
-      top: rem-calc(-2);
-      font-size: rem-calc(14);
-      font-family: 'heebo-medium';
-      height: rem-calc(20);
-    }
-    &.force-active-label,
-    &.active-label {
-      span.description {
-        position: absolute;
-        top: rem-calc(2);
-        font-size: rem-calc(14);
-        font-family: 'heebo-medium';
-      }
+      top: 0;
+      font-size: rem-calc(16);
+      font-family: 'heebo-bold';
     }
   }
 
@@ -308,7 +299,7 @@ $negative-light-no-hash: d08888;
   textarea {
     width: 100%;
     height: rem-calc(36);
-    margin-top: rem-calc(16);
+    margin-top: rem-calc(24);
     white-space: nowrap;
     line-height: 1.5;
     border: none;
