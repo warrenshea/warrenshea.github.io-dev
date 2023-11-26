@@ -816,6 +816,8 @@ var storm_eagle = (() => {
 
       // Utility function to observe an element if not already observed
       const observe_element = (el) => {
+        // const resize_observers = []; //place in global scope to track resize observers
+        // resize_observers.push(el);
         !has_resize_observer(el) && resize_observer.observe(el);
       };
 
