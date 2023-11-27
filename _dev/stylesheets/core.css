@@ -10025,8 +10025,16 @@ fieldset.unstyle {
   white-space: nowrap;
   line-height: 1.5;
   border: none;
-  background-color: transparent;
   transition: all 0.3s ease-out;
+}
+.form\:theme\:gl0b3x input[type=text]:not(:disabled),
+.form\:theme\:gl0b3x input[type=number]:not(:disabled),
+.form\:theme\:gl0b3x input[type=email]:not(:disabled),
+.form\:theme\:gl0b3x input[type=password]:not(:disabled),
+.form\:theme\:gl0b3x input[type=search]:not(:disabled),
+.form\:theme\:gl0b3x select:not(:disabled),
+.form\:theme\:gl0b3x textarea:not(:disabled) {
+  background-color: transparent;
 }
 .form\:theme\:gl0b3x input[type=text]:focus + label:before,
 .form\:theme\:gl0b3x input[type=text].focus + label:before,
@@ -10277,6 +10285,99 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x [data-module="autocomplete.multiselect"] input[type=text][data-module="autocomplete.input"] + label.sr-only {
   position: absolute;
 }
+.form\:theme\:gl0b3x [data-module="slider.input-container"] [data-module="slider.background"],
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] [data-module="slider.background"] {
+  position: relative;
+  background-color: #c0c0c0;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  display: block;
+  margin: -0.75rem auto 0.75rem;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"] [data-module="slider.background"] [data-module="slider.fill"],
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] [data-module="slider.background"] [data-module="slider.fill"] {
+  z-index: 1;
+  background-color: #3169b2;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  position: absolute;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"] [data-module="slider.labels"] li,
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] [data-module="slider.labels"] li {
+  flex-basis: 100%;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"].fit {
+  width: calc(100% - 1.5rem);
+  margin-left: 0.75rem;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider {
+  position: relative;
+  height: 1.5rem;
+  appearance: none;
+  background: none;
+  z-index: 2;
+  cursor: grab;
+  width: calc(100% + 1.5rem);
+  margin-left: -0.75rem;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider:active {
+  cursor: grabbing;
+}
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider::-webkit-slider-thumb {
+  z-index: 2;
+  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.5), 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  appearance: none;
+  margin-top: 0.125rem;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] {
+  position: relative;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"].fit {
+  width: calc(100% - 1.5rem);
+  margin-left: 0.75rem;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider {
+  position: relative;
+  -webkit-appearance: none;
+  height: 1.5rem;
+  appearance: none;
+  background: none;
+  cursor: grab;
+  z-index: 2;
+  width: calc(100% + 1.5rem);
+  margin-left: -0.75rem;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:not(:only-of-type) {
+  pointer-events: none;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:active {
+  cursor: grabbing;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider::-webkit-slider-thumb {
+  z-index: 2;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.5), 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
+  border: none;
+  pointer-events: auto;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  margin-top: 0.125rem;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:nth-of-type(1) {
+  position: absolute;
+}
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider.range-slider + input[type=range].range-slider + [data-module="slider.background"] {
+  margin-top: -1rem;
+}
 
 .form\:theme\:card-checkboxes,
 .form\:theme\:card-radiobuttons {
@@ -10454,104 +10555,6 @@ fieldset.unstyle {
 .form\:theme\:card-radiobuttons input[type=radio] .error-field label,
 .form\:theme\:card-radiobuttons input[type=checkbox] .error-field label {
   border: 0.125rem solid #a01010;
-}
-
-[data-module="slider.input-container"].fit {
-  width: calc(100% - 1.5rem);
-  margin-left: 0.75rem;
-}
-
-input[type=range].slider {
-  position: relative;
-  height: 1.5rem;
-  appearance: none;
-  background: none;
-  z-index: 2;
-  cursor: grab;
-  width: calc(100% + 1.5rem);
-  margin-left: -0.75rem;
-}
-input[type=range].slider:active {
-  cursor: grabbing;
-}
-input[type=range].slider::-webkit-slider-thumb {
-  z-index: 2;
-  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.5), 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
-  background: #fff;
-  appearance: none;
-  margin-top: 0.125rem;
-}
-
-.slider-background {
-  position: relative;
-  background-color: #c0c0c0;
-  height: 0.25rem;
-  border-radius: 0.25rem;
-  display: block;
-  margin: -0.75rem auto 0.75rem;
-}
-.slider-background .slider-fill {
-  z-index: 1;
-  background-color: #3169b2;
-  height: 0.25rem;
-  border-radius: 0.25rem;
-  position: absolute;
-}
-
-ul.slider-labels li {
-  flex-basis: 100%;
-}
-
-[data-module="range-slider.input-container"] {
-  position: relative;
-}
-[data-module="range-slider.input-container"].fit {
-  width: calc(100% - 1.5rem);
-  margin-left: 0.75rem;
-}
-
-input[type=range].range-slider {
-  position: relative;
-  -webkit-appearance: none;
-  height: 1.5rem;
-  appearance: none;
-  background: none;
-  cursor: grab;
-  z-index: 2;
-  width: calc(100% + 1.5rem);
-  margin-left: -0.75rem;
-}
-input[type=range].range-slider:not(:only-of-type) {
-  pointer-events: none;
-}
-input[type=range].range-slider:active {
-  cursor: grabbing;
-}
-input[type=range].range-slider::-webkit-slider-thumb {
-  z-index: 2;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.5), 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
-  border: none;
-  pointer-events: auto;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  margin-top: 0.125rem;
-}
-
-input[type=range].range-slider:nth-of-type(1) {
-  position: absolute;
-}
-
-input[type=range].range-slider + input[type=range].range-slider + .slider-background {
-  margin-top: -1rem;
 }
 
 @font-face {
