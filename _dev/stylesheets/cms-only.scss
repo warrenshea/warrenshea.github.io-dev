@@ -6,7 +6,7 @@
 @import '_config/unit.scss';
 @import '_config/breakpoint.scss';
 @import '_config/media-queries.scss';
-$box-shadow-custom-7: 0 0 0 rem-calc(2) $powder-blue, 0 0 0 rem-calc(3) $yale-blue;
+@import '_config/variables-box-shadow.scss';
 $dark-goldenrod-no-hash: b7901d;
 $positive-light-no-hash: 84b48e;
 $negative-light-no-hash: d08888;
@@ -81,8 +81,8 @@ $negative-light-no-hash: d08888;
   background-size: 220px 20px;
 }
 
-.module-remove,
-.module-edit {
+.module-remove:not(*),
+.module-edit:not(*) {
   background-repeat: repeat;
   background-color: #f8f8f8;
   height: 100%;
@@ -116,25 +116,25 @@ $negative-light-no-hash: d08888;
   }
 }
 
-[data-module="accordion"] .module-remove {
+[data-module="accordion"].module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E");
   background-size: 225px 20px;
 }
 
-[data-module="accordion.item"] .module-remove {
+[data-module="accordion.item"].module-remove {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.item -- %3C/text%3E%3C/svg%3E");
   background-size: 264px 20px;
 }
 
-[data-module="accordion.header"] .module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E");
-  background-size: 290px 20px;
-}
+// [data-module="accordion.header"].module-remove {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E");
+//   background-size: 290px 20px;
+// }
 
-[data-module="accordion.panel"] .module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E");
-  background-size: 280px 20px;
-}
+// [data-module="accordion.panel"].module-remove {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 280px 20px;
+// }
 
 .module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit module -- %3C/text%3E%3C/svg%3E");
@@ -146,29 +146,25 @@ $negative-light-no-hash: d08888;
   }
 }
 
-[data-module="accordion"].module-edit,
-[data-module="accordion"] .module-edit {
+[data-module="accordion"].module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion -- %3C/text%3E%3C/svg%3E");
   background-size: 148px 20px;
 }
 
-[data-module="accordion.item"].module-edit,
-[data-module="accordion.item"] .module-edit {
+[data-module="accordion.item"].module-edit {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.item -- %3C/text%3E%3C/svg%3E");
   background-size: 188px 20px;
 }
 
-[data-module="accordion.header"].module-edit,
-[data-module="accordion.header"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.header -- %3C/text%3E%3C/svg%3E");
-  background-size: 210px 20px;
-}
+// [data-module="accordion.header"].module-edit {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.header -- %3C/text%3E%3C/svg%3E");
+//   background-size: 210px 20px;
+// }
 
-[data-module="accordion.panel"].module-edit,
-[data-module="accordion.panel"] .module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.panel -- %3C/text%3E%3C/svg%3E");
-  background-size: 200px 20px;
-}
+// [data-module="accordion.panel"].module-edit {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 200px 20px;
+// }
 
 .grid-background {
   background-size: rem-calc(16) rem-calc(16);
