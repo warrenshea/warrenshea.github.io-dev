@@ -90,8 +90,8 @@ storm_eagle.module('autoload_scripts', () => {
       let range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
       let show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
       let form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
-      let form_parent_checkbox = document.querySelectorAll('[data-module="form_parent_checkbox"]').length > 0;
-      let form_switch_button = document.querySelectorAll('[data-module="form_switch_button"]').length > 0;
+      let form_parent_checkbox = document.querySelectorAll('[data-module="parent-checkbox"]').length > 0;
+      let form_switch_button = document.querySelectorAll('[data-module="switch.button"]').length > 0;
       let header = document.querySelectorAll("[data-module='header']").length > 0;
       if (header) {
         load_javascript('header').catch((error) => {
