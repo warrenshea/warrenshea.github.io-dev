@@ -51,6 +51,14 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.form-theme-gl0b3x.js',
       module_name: 'form_theme_gl0b3x',
     },
+    form_parent_checkbox: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.parent-checkbox.js',
+      module_name: 'form_parent_checkbox',
+    },
+    form_switch_button: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.switch.button.js',
+      module_name: 'form_switch_button',
+    },
     header: {
       script_src: '/dist/codebase/chill-penguin/scripts/header.js',
       module_name: 'header',
@@ -82,6 +90,8 @@ storm_eagle.module('autoload_scripts', () => {
       let range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
       let show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
       let form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
+      let form_parent_checkbox = document.querySelectorAll('[data-module="form_parent_checkbox"]').length > 0;
+      let form_switch_button = document.querySelectorAll('[data-module="form_switch_button"]').length > 0;
       let header = document.querySelectorAll("[data-module='header']").length > 0;
       if (header) {
         load_javascript('header').catch((error) => {
@@ -145,6 +155,16 @@ storm_eagle.module('autoload_scripts', () => {
       }
       if (form_theme_gl0b3x) {
         load_javascript('form_theme_gl0b3x').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
+      if (form_parent_checkbox) {
+        load_javascript('form_parent_checkbox').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
+      if (form_switch_button) {
+        load_javascript('form_switch_button').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
