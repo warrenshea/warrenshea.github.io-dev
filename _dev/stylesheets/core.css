@@ -10378,6 +10378,48 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider.range-slider + input[type=range].range-slider + [data-module="slider.background"] {
   margin-top: -1rem;
 }
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] {
+  position: relative;
+  display: inline-block;
+  height: 2.125rem;
+  cursor: pointer;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] [data-module="switch.slider"] {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: 2.125rem;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] [data-module="switch.slider"] [data-module="switch.thumb"] {
+  position: absolute;
+  content: "";
+  height: 1.625rem;
+  width: 1.625rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] [data-module="switch.slider"][data-switch=active] [data-module="switch.thumb"] {
+  left: calc(100% - 1.875rem);
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"][data-theme=small] {
+  height: 1.5rem;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"][data-theme=small] [data-module="switch.slider"] {
+  border-radius: 1.5rem;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"][data-theme=small] [data-module="switch.slider"] [data-module="switch.thumb"] {
+  height: 1rem;
+  width: 1rem;
+}
+.form\:theme\:gl0b3x button[role=switch][data-module="switch.button"][data-theme=small] [data-module="switch.slider"][data-switch=active] [data-module="switch.thumb"] {
+  left: calc(100% - 1.25rem);
+}
 
 .form\:theme\:card-checkboxes,
 .form\:theme\:card-radiobuttons {

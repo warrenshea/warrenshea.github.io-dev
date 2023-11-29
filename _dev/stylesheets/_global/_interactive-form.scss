@@ -491,6 +491,55 @@ fieldset.unstyle {
       }
     }
   }
+
+  $switch: 26;
+  button[role='switch'][data-module='switch.button']{
+    position: relative;
+    display: inline-block;
+    height: rem-calc($switch+8);
+    cursor: pointer;
+    [data-module='switch.slider'] {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.4s;
+      border-radius: rem-calc($switch+8);
+      [data-module='switch.thumb'] {
+        position: absolute;
+        content: "";
+        height: rem-calc($switch);
+        width: rem-calc($switch);
+        left: rem-calc(4);
+        bottom: rem-calc(4);
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+      &[data-switch='active'] {
+        [data-module='switch.thumb']{
+          left: calc(100% - rem-calc($switch + 4));
+        }
+      }
+    }
+    &[data-theme='small']{
+      $switch: 16;
+      height: rem-calc($switch+8);
+      [data-module='switch.slider'] {
+        border-radius: rem-calc($switch+8);
+        [data-module='switch.thumb'] {
+          height: rem-calc($switch);
+          width: rem-calc($switch);
+        }
+        &[data-switch='active'] {
+          [data-module='switch.thumb']{
+            left: calc(100% - rem-calc($switch + 4));
+          }
+        }
+      }
+    }
+  }
 }
 
 .form\:theme\:card-checkboxes,
