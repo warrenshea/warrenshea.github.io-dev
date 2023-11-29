@@ -482,7 +482,7 @@
               <h3 class="fs:20px lh:24 text-align:center">Slider</h3>
             </div>
 
-            <div class="form:theme:gl0b3x overflow:hidden">
+            <div class="overflow:hidden">
               <div class="position:relative w:11 align-self:centered pt:16px pb:32px" id data-module="slider" data-equalize-height="slider1">
                 <div class="text-align:center">
                   <label for="slider-inputbox-value-required">
@@ -490,13 +490,15 @@
                   </label>
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="slider-inputbox-value-required" value="100" disabled="">
                 </div>
-                <div data-module="slider.input-container">
-                  <label class="sr-only" for="slide-track-required">
-                    <span class="description">Slider</span>
-                  </label>
-                  <input id="slide-track-required" data-module="slider.input" onInput="document.getElementById('slider-inputbox-value-required').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
-                  <span data-module="slider.background"><span data-module="slider.fill"></span></span>
-                  <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>25</li><li>50</li><li>75</li><li>100</li></ul>
+                <div class="form:theme:gl0b3x">
+                  <div data-module="slider.input-container">
+                    <label class="sr-only" for="slide-track-required">
+                      <span class="description">Slider</span>
+                    </label>
+                    <input id="slide-track-required" data-module="slider.input" onInput="document.getElementById('slider-inputbox-value-required').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
+                    <span data-module="slider.background"><span data-module="slider.fill"></span></span>
+                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>25</li><li>50</li><li>75</li><li>100</li></ul>
+                  </div>
                 </div>
               </div>
 
@@ -507,13 +509,15 @@
                   </label>
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="slider-inputbox-value-required1" value="100" disabled="">
                 </div>
-                <div class="fit" data-module="slider.input-container">
-                  <label class="sr-only" for="slide-track-required1">
-                    <span class="description">Slider</span>
-                  </label>
-                  <input id="slide-track-required1" data-module="slider.input" onInput="document.getElementById('slider-inputbox-value-required1').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
-                  <span data-module="slider.background"><span data-module="slider.fill"></span></span>
-                  <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>25</li><li>50</li><li>75</li><li>100</li></ul>
+                <div class="form:theme:gl0b3x">
+                  <div class="fit" data-module="slider.input-container">
+                    <label class="sr-only" for="slide-track-required1">
+                      <span class="description">Slider</span>
+                    </label>
+                    <input id="slide-track-required1" data-module="slider.input" onInput="document.getElementById('slider-inputbox-value-required1').value = this.value;" value="100" class="display:block align-self:centered w:100% slider" type="range" min="0" max="100" steps="1" value="73">
+                    <span data-module="slider.background"><span data-module="slider.fill"></span></span>
+                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>25</li><li>50</li><li>75</li><li>100</li></ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -522,7 +526,7 @@
               <h3 class="fs:20px lh:24 text-align:center">Range Slider</h3>
             </div>
 
-            <div class="form:theme:gl0b3x overflow:hidden">
+            <div class="overflow:hidden">
               <div class="position:relative w:11 align-self:centered pt:16px pb:32px" id data-module="range-slider" data-equalize-height="range-slider1">
                 <div class="text-align:center">
                   <label for="range-slider-inputbox-value-required">
@@ -531,14 +535,16 @@
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="range-slider-inputbox-value-required-1" value="-55" disabled="">
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="range-slider-inputbox-value-required-2" value="75" disabled="">
                 </div>
-                <div data-module="range-slider.input-container" data-equalize-height="range-slider-input">
-                  <label class="sr-only" for="range-slide-track-required-1">
-                    <span class="description">Slider</span>
-                  </label>
-                  <input id="range-slide-track-required-1" data-module="range-slider.input-1" onInput="document.getElementById('range-slider-inputbox-value-required-1').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="-55" data-equalize-height="range-slider-input">
-                  <input id="range-slide-track-required-2" data-module="range-slider.input-2" onInput="document.getElementById('range-slider-inputbox-value-required-2').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="75">
-                  <span data-module="slider.background"><span data-module="slider.fill"></span></span>
-                  <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>-100</li><li>0</li><li>100</li></ul>
+                <div class="form:theme:gl0b3x">
+                  <div data-module="range-slider.input-container" data-equalize-height="range-slider-input">
+                    <label class="sr-only" for="range-slide-track-required-1">
+                      <span class="description">Slider</span>
+                    </label>
+                    <input id="range-slide-track-required-1" data-module="range-slider.input-1" onInput="document.getElementById('range-slider-inputbox-value-required-1').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="-55" data-equalize-height="range-slider-input">
+                    <input id="range-slide-track-required-2" data-module="range-slider.input-2" onInput="document.getElementById('range-slider-inputbox-value-required-2').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="75">
+                    <span data-module="slider.background"><span data-module="slider.fill"></span></span>
+                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>-100</li><li>0</li><li>100</li></ul>
+                  </div>
                 </div>
               </div>
 
@@ -550,14 +556,16 @@
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="range-slider-inputbox-value-required-3" value="-55" disabled="">
                   <input type="text" class="brr:4px p:4px text-align:center heebo:bold" style="width:60px;height:24px;border:1px #808080 solid;" id="range-slider-inputbox-value-required-4" value="75" disabled="">
                 </div>
-                <div class="fit" data-module="range-slider.input-container" data-equalize-height="range-slider-input">
-                  <label class="sr-only" for="range-slide-track-required-1">
-                    <span class="description">Slider</span>
-                  </label>
-                  <input id="range-slide-track-required-3" data-module="range-slider.input-1" onInput="document.getElementById('range-slider-inputbox-value-required-3').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="-55" data-equalize-height="range-slider-input">
-                  <input id="range-slide-track-required-4" data-module="range-slider.input-2" onInput="document.getElementById('range-slider-inputbox-value-required-4').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="75">
-                  <span data-module="slider.background"><span data-module="slider.fill"></span></span>
-                  <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>-100</li><li>0</li><li>100</li></ul>
+                <div class="form:theme:gl0b3x">
+                  <div class="fit" data-module="range-slider.input-container" data-equalize-height="range-slider-input">
+                    <label class="sr-only" for="range-slide-track-required-1">
+                      <span class="description">Slider</span>
+                    </label>
+                    <input id="range-slide-track-required-3" data-module="range-slider.input-1" onInput="document.getElementById('range-slider-inputbox-value-required-3').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="-55" data-equalize-height="range-slider-input">
+                    <input id="range-slide-track-required-4" data-module="range-slider.input-2" onInput="document.getElementById('range-slider-inputbox-value-required-4').value = this.value;" class="align-self:centered w:100% range-slider" type="range" min="-100" max="100" steps="1" value="75">
+                    <span data-module="slider.background"><span data-module="slider.fill"></span></span>
+                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>-100</li><li>0</li><li>100</li></ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -998,10 +1006,11 @@
               <h3 class="fs:20px lh:24 text-align:center">Range Slider</h3>
             </div>
 
-            <div class="p:16px" data-equalize-height="range-slider3">
+            <div class="p:16px" data-equalize-height="range-slider1">
               Optional two point slider not applicable
             </div>
-            <div class="p:16px" data-equalize-height="range-slider4"></div>
+            <div class="p:16px" data-equalize-height="range-slider2"></div>
+
 
           </form>
         </div>
