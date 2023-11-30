@@ -187,7 +187,7 @@ storm_eagle.module('equalize_heights', () => {
       _heights = _heights.sort(sort_number).reverse();
       _highest = _heights[0];
       document.querySelectorAll(`[data-equalize-height=${index}]`).forEach(el => {
-        el.style.height = _highest + 'px';
+        el.style.height = `${_highest}px`;
       });
     });
   };
