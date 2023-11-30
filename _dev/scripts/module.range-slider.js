@@ -30,7 +30,7 @@ storm_eagle.module('range_slider', () => {
     force_resize: (slider_id) => {
       let container_width = slider_state[slider_id]['input_container'].offsetWidth;
       let full_label_width = (container_width * slider_state[slider_id]['num_labels']) / (slider_state[slider_id]['num_labels'] - 1);
-      slider_state[slider_id]['label_container'].style.width = full_label_width + 'px';
+      slider_state[slider_id]['label_container'].style.width = `${full_label_width}px`;
       let transform_left = (50 / slider_state[slider_id]['num_labels']) * -1;
       slider_state[slider_id]['label_container'].style.transform = `translateX(${transform_left}%)`;
     },
@@ -51,9 +51,9 @@ storm_eagle.module('range_slider', () => {
         el_2 = temp;
       }
       let left = ((el_1.value - el_1.getAttribute('min')) / (el_1.getAttribute('max') - el_1.getAttribute('min'))) * 100;
-      slider_state[slider_id]['slider_fill'].style.left = left + '%';
+      slider_state[slider_id]['slider_fill'].style.left = `${left}%`;
       let percentage = ((el_2.value - el_2.getAttribute('min')) / (el_2.getAttribute('max') - el_2.getAttribute('min'))) * 100;
-      slider_state[slider_id]['slider_fill'].style.width = percentage - left + '%';
+      slider_state[slider_id]['slider_fill'].style.width = `${percentage - left}%`;
     },
     update_all_slider_track: () => {
       document.querySelectorAll('[data-module="range-slider.input-container"]').forEach((el) => {
