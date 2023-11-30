@@ -17,7 +17,7 @@ storm_eagle.module('color_picker', () => {
     cr = parseInt(cr, 16);
     cg = parseInt(cg, 16);
     cb = parseInt(cb, 16);
-    return cr + ',' + cg + ',' + cb;
+    return `${cr},${cg},${cb}`;
   }
 
   return {
@@ -52,7 +52,7 @@ storm_eagle.module('color_picker', () => {
         document.getElementById('picked-hex').innerHTML = `${color}`;
         document.getElementById('suggested-color').style.backgroundColor = theColour;
         document.getElementById('suggested-hex-error').classList.remove('display:none');
-        document.getElementById('suggested-hex-error').innerHTML = theColour + ' is already in the codebase';
+        document.getElementById('suggested-hex-error').innerHTML = `${theColour} is already in the codebase`;
         document.getElementById('suggested-hex-button').classList.add('display:none');
         document.getElementById('suggested-hex').innerHTML = ``;
         document.getElementById('suggested-hex-name-button').classList.add('display:none');
