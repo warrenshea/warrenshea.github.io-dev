@@ -30,12 +30,12 @@ storm_eagle.module('show_more', () => {
         document.getElementById(show_more_id).style.transitionDuration = '0s';
       }, show_more_state[show_more_id]['transition_duration'] * 1000);
 
-      document.getElementById(show_more_id).style.height = show_more_state[show_more_id]['container_height'] - show_more_state[show_more_id]['offset'] + 'px';
+      document.getElementById(show_more_id).style.height = `${show_more_state[show_more_id]['container_height'] - show_more_state[show_more_id]['offset']}px`;
     },
     add_button_listener: (show_more_id) => {
       show_more_state[show_more_id]['more_button'].addEventListener('click', (event) => {
         event.preventDefault();
-        document.getElementById(show_more_id).style.transitionDuration = show_more_state[show_more_id]['transition_duration'] + 's';
+        document.getElementById(show_more_id).style.transitionDuration = `${show_more_state[show_more_id]['transition_duration']}s`;
         show_more_state[show_more_id]['more_button'].classList.remove('display:inline');
         show_more_state[show_more_id]['more_button'].classList.add('display:none');
         show_more_state[show_more_id]['less_button'].classList.remove('display:none');
@@ -46,7 +46,7 @@ storm_eagle.module('show_more', () => {
 
       show_more_state[show_more_id]['less_button'].addEventListener('click', (event) => {
         event.preventDefault();
-        document.getElementById(show_more_id).style.transitionDuration = show_more_state[show_more_id]['transition_duration'] + 's';
+        document.getElementById(show_more_id).style.transitionDuration = `${show_more_state[show_more_id]['transition_duration']}s`;
         show_more_state[show_more_id]['more_button'].classList.remove('display:none');
         show_more_state[show_more_id]['more_button'].classList.add('display:inline');
         show_more_state[show_more_id]['less_button'].classList.remove('display:inline');
