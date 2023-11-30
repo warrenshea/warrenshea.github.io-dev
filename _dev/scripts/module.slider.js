@@ -29,7 +29,7 @@ storm_eagle.module('slider', () => {
     force_resize: (slider_id) => {
       let container_width = slider_state[slider_id]['input_container'].offsetWidth;
       let full_label_width = (container_width * slider_state[slider_id]['num_labels']) / (slider_state[slider_id]['num_labels'] - 1);
-      slider_state[slider_id]['label_container'].style.width = full_label_width + 'px';
+      slider_state[slider_id]['label_container'].style.width = `${full_label_width}px`;
       let transform_left = (50 / slider_state[slider_id]['num_labels']) * -1;
       slider_state[slider_id]['label_container'].style.transform = `translateX(${transform_left}%)`;
     },
@@ -41,7 +41,7 @@ storm_eagle.module('slider', () => {
     update_slider_track: (slider_id) => {
       let el = document.getElementById(slider_id);
       let percentage = Math.round(((el.value - el.getAttribute('min')) / (el.getAttribute('max') - el.getAttribute('min'))) * 100);
-      slider_state[slider_id]['slider_fill'].style.width = percentage + '%';
+      slider_state[slider_id]['slider_fill'].style.width = `${percentage}%`;
     },
     update_all_slider_track: () => {
       document.querySelectorAll('[data-module="slider.input-container"]').forEach((el) => {
