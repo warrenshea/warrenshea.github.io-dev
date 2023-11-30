@@ -14,7 +14,7 @@ storm_eagle.module('responsive_emulation', () => {
       });
     },
     update_container_width: (responsive_emulation_id, value) => {
-      responsive_emulation_state[responsive_emulation_id]['container'].style.width = value + 'px';
+      responsive_emulation_state[responsive_emulation_id]['container'].style.width = `${value}px`;
       responsive_emulation_state[responsive_emulation_id]['width'] = parseInt(value);
       self.add_emulate_class(responsive_emulation_id);
     },
