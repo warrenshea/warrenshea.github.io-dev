@@ -150,7 +150,7 @@ var storm_eagle = (() => {
        * @scope public
        */
       get: (name) => {
-        let start = document.cookie.indexOf(name + '=');
+        let start = document.cookie.indexOf(`${name}=`);
         if (start == -1) {
           return null;
         } else {
@@ -175,9 +175,8 @@ var storm_eagle = (() => {
       set: (name, value, expires) => {
         let milliseconds = expires === undefined ? 0 : parseInt(expires) * 1000 * 60 * 60 * 24;
         let greenwichMeanTime = new Date(new Date().getTime() + milliseconds).toGMTString();
-        document.cookie = name + '=' + escape(value) + (expires > 0 ? ';expires=' + greenwichMeanTime : '') + '; path=/';
+        document.cookie = `${name}=${escape(value)}${expires > 0 ? `;expires=${greenwichMeanTime}` : ''}; path=/`;
       },
-
       /**
        * Unsets a cookie
        *
@@ -296,9 +295,9 @@ var storm_eagle = (() => {
         number = storm_eagle.format.number(number, factor);
         switch (LANG) {
           case 'fr':
-            return number + ' $';
+            return `${number} $`;
           default:
-            return '$' + number;
+            return `$${number}`;
         }
       },
 
@@ -315,9 +314,9 @@ var storm_eagle = (() => {
         number = storm_eagle.format.number(number, factor);
         switch (LANG) {
           case 'fr':
-            return number + ' %';
+            return `${number} %`;
           default:
-            return number + '%';
+            return `${number}%`;
         }
       },
     },
@@ -604,7 +603,7 @@ var storm_eagle = (() => {
        */
       set_hash: (hash) => {
         if (hash.length > 1) {
-          window.location.replace(('' + window.location).split('#')[0] + '#' + hash);
+          window.location.replace(`${(window.location + '').split('#')[0]}#${hash}`);
         }
       },
 
@@ -909,7 +908,7 @@ storm_eagle.module('equalize_heights', () => {
       _heights = _heights.sort(sort_number).reverse();
       _highest = _heights[0];
       document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
-        el.style.height = _highest + 'px';
+        el.style.height = `${_highest}px`;
       });
     });
   };
