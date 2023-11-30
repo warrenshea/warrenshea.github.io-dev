@@ -32,7 +32,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
     },
     force_textarea_autoexpand: (element) => {
       element.style.height = 'inherit';
-      element.style.height = element.scrollHeight + 'px';
+      element.style.height = `${element.scrollHeight}px`;
     },
     textarea_autoexpand_listener: () => {
       document.querySelectorAll('.form\\:theme\\:gl0b3x textarea').forEach((element) => {
