@@ -114,7 +114,7 @@ storm_eagle.module('carousel', () => {
         });
 
       /* changes the left offset */
-      document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.left = carousel_state[carousel_id]['offset_left'] - carousel_state[carousel_id]['current_active_carousel_item'] * carousel_state[carousel_id]['carousel_item_width'] + 'px';
+      document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.left = `${carousel_state[carousel_id]['offset_left'] - carousel_state[carousel_id]['current_active_carousel_item'] * carousel_state[carousel_id]['carousel_item_width']}px`;
 
       /* ensures there's no transition duration except when we want the transition to occcur */
       setTimeout(() => {
@@ -137,7 +137,7 @@ storm_eagle.module('carousel', () => {
         .forEach((el) => {
           el.addEventListener('click', (event) => {
             event.preventDefault();
-            document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = carousel_state[carousel_id]['transition_duration'] + 's';
+            document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = `${carousel_state[carousel_id]['transition_duration']}s`;
             carousel_state[carousel_id]['current_active_carousel_item'] = storm_eagle.util.index_in_parent(this);
             self.update_carousel(carousel_id);
           });
@@ -171,7 +171,7 @@ storm_eagle.module('carousel', () => {
         .querySelector('[data-module="carousel.item-group"]')
         .addEventListener('swiped-left', (event) => {
           //go -> in the carousel
-          document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = carousel_state[carousel_id]['transition_duration'] + 's';
+          document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = `${carousel_state[carousel_id]['transition_duration']}s`;
           if (carousel_state[carousel_id]['current_active_carousel_item'] !== carousel_state[carousel_id]['total_children'] - carousel_state[carousel_id]['number_of_active']) {
             carousel_state[carousel_id]['current_active_carousel_item']++;
             self.update_carousel(carousel_id);
@@ -184,7 +184,7 @@ storm_eagle.module('carousel', () => {
         .querySelector('[data-module="carousel.item-group"]')
         .addEventListener('swiped-right', (event) => {
           //go <- in the carousel
-          document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = carousel_state[carousel_id]['transition_duration'] + 's';
+          document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = `${carousel_state[carousel_id]['transition_duration']}s`;
           if (carousel_state[carousel_id]['current_active_carousel_item'] !== 0) {
             carousel_state[carousel_id]['current_active_carousel_item']--;
             self.update_carousel(carousel_id);
@@ -197,7 +197,7 @@ storm_eagle.module('carousel', () => {
     //   document.getElementById(carousel_id).querySelectorAll('[data-tabable]").forEach(el => {
     //     el.addEventListener("focus", e => {
     //       if (document.getElementById(carousel_id).classList.contains("carousel-is-active")) {
-    //         document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = carousel_state[carousel_id]["transition_duration"] + "s";
+    //         document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.transitionDuration = `${carousel_state[carousel_id]["transition_duration"]}s`;
     //         carousel_state[carousel_id]["current_active_carousel_item"] = el;
     //         self.update_carousel(carousel_id);
     //       }
@@ -220,7 +220,7 @@ storm_eagle.module('carousel', () => {
       // });
       document.getElementById(carousel_id).querySelector('[data-module="carousel.indicators-group"]').innerHTML = '';
       for (let i = 0; i <= carousel_state[carousel_id]['total_children'] - carousel_state[carousel_id]['number_of_active']; i++) {
-        document.getElementById(carousel_id).querySelector('[data-module="carousel.indicators-group"]').innerHTML += '<button name="carousel-control-button" class="control cursor:pointer"><span class="show-for-sr">Go to slide #' + (i + 1) + '</button>';
+        document.getElementById(carousel_id).querySelector('[data-module="carousel.indicators-group"]').innerHTML += `<button name="carousel-control-button" class="control cursor:pointer"><span class="show-for-sr">Go to slide #${i + 1}</button>`;
       }
       self.indicators_listener(carousel_id);
 
@@ -235,13 +235,13 @@ storm_eagle.module('carousel', () => {
         .getElementById(carousel_id)
         .querySelectorAll('[data-module="carousel.item"]')
         .forEach((el) => {
-          el.style.width = carousel_state[carousel_id]['carousel_item_width'] + 'px';
+          el.style.width = `${carousel_state[carousel_id]['carousel_item_width']}px`;
         });
-      document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.width = carousel_state[carousel_id]['offset_left'] + carousel_state[carousel_id]['carousel_item_width'] * carousel_state[carousel_id]['total_children'] + 'px';
+      document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.width = `${carousel_state[carousel_id]['offset_left'] + carousel_state[carousel_id]['carousel_item_width'] * carousel_state[carousel_id]['total_children']}px`;
 
       /* if the carousel item height changes, a height needs to be set for the container */
       if (carousel_state[carousel_id]['item_height_variable'] === 'true') {
-        document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.height = document.getElementById(carousel_id).querySelector('.items-group .item.active-item').offsetHeight + parseInt(document.getElementById(carousel_id).style.paddingBottom || 0) + 'px';
+        document.getElementById(carousel_id).querySelector('[data-module="carousel.item-group"]').style.height = `${document.getElementById(carousel_id).querySelector('.items-group .item.active-item').offsetHeight + parseInt(document.getElementById(carousel_id).style.paddingBottom || 0)}px`;
       }
       self.update_carousel(carousel_id);
     },
