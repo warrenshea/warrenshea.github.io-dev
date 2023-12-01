@@ -517,11 +517,6 @@ fieldset.unstyle {
         transition: 0.4s;
         border-radius: 50%;
       }
-      &[data-switch='active'] {
-        [data-module='switch.thumb']{
-          left: calc(100% - rem-calc($switch + 4));
-        }
-      }
     }
     &[data-theme='small']{
       $switch: 16;
@@ -532,11 +527,16 @@ fieldset.unstyle {
           height: rem-calc($switch);
           width: rem-calc($switch);
         }
-        &[data-switch='active'] {
-          [data-module='switch.thumb']{
-            left: calc(100% - rem-calc($switch + 4));
-          }
-        }
+      }
+    }
+    &[aria-checked='true'] {
+      [data-module='switch.thumb']{
+        left: calc(100% - rem-calc($switch + 12));
+      }
+    }
+    &[aria-checked='true'][data-theme='small'] {
+      [data-module='switch.thumb']{
+        left: calc(100% - rem-calc($switch + 4));
       }
     }
   }
