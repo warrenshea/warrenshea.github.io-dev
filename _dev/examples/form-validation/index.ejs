@@ -577,291 +577,875 @@
             <div class="form:theme:gl0b3x row p:16px align:middle bgc:white-smoke-alt-children" data-equalize-height="switch-button">
               <div class="w:100% row py:16px bb-onyx:1px">
                 <div class="w:4 heebo:bold text-align:center">
-                  Example
+                  Example w/ Label
                 </div>
                 <div class="w:3 heebo:bold text-align:center">
-                  Background
+                  Example w/o Label
                 </div>
                 <div class="w:3 heebo:bold text-align:center">
-                  Thumb
-                </div>
-                <div class="w:2 heebo:bold text-align:center">
                   Type
                 </div>
+                <div class="w:2 heebo:bold text-align:center">
+                  Size
+                </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:blue"
-                    data-switch-bg-inactive-classes="bgc:silver"
-                    data-switch-text-active-classes=""
-                    data-switch-text-inactive-classes=""
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver -> Blue
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Regular
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Regular
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:blue"
-                    data-switch-bg-inactive-classes="bgc:silver"
-                    data-switch-text-active-classes="color:white,heebo:bold"
-                    data-switch-text-inactive-classes=""
-                    style="width:100px;">
-                    <div data-module="switch.slider" data-switch class="display:flex align:middle align:center">
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text">Attr</div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="color:white,heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attr</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="color:white,heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attr</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver -> Blue
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="color:white,heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attr</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="color:white,heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attr</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Inner label
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Regular
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:blue"
-                    data-switch-bg-inactive-classes="bgc:silver"
-                    data-switch-text-active-classes="heebo:bold"
-                    data-switch-text-inactive-classes=""
-                    data-theme="small"
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver -> Blue
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="heebo:bold"
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Regular
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Small
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:blue"
-                    data-switch-bg-inactive-classes="bgc:silver"
-                    data-switch-text-active-classes="fs:14px,color:white,heebo:bold"
-                    data-switch-text-inactive-classes="fs:14px"
-                    data-theme="small"
-                    style="width:100px;">
-                    <div data-module="switch.slider" data-switch class="display:flex align:middle align:center">
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text">Attribute</div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="fs:14px,color:white,heebo:bold"
+                      data-switch-text-inactive-classes="fs:14px"
+                      data-theme="small"
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attribute</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="fs:14px,color:white,heebo:bold"
+                      data-switch-text-inactive-classes="fs:14px"
+                      data-theme="small"
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attribute</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver -> Blue
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="fs:14px,color:white,heebo:bold"
+                      data-switch-text-inactive-classes="fs:14px"
+                      data-theme="small"
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attribute</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:blue"
+                      data-switch-bg-inactive-classes="bgc:silver"
+                      data-switch-text-active-classes="fs:14px,color:white,heebo:bold"
+                      data-switch-text-inactive-classes="fs:14px"
+                      data-theme="small"
+                      style="width:100px;">
+                      <div data-module="switch.slider" class="display:flex align:middle align:center">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text">Attribute</div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Inner label
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Small
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:positive-light"
-                    data-switch-bg-inactive-classes="bgc:negative-light"
-                    data-switch-text-active-classes=""
-                    data-switch-text-inactive-classes=""
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Negative -> Positive
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Background change
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Regular
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:positive-light"
-                    data-switch-thumb-inactive-class="bgc:negative-light"
-                    data-switch-bg-active-classes="bgc:platinum"
-                    data-switch-bg-inactive-classes="bgc:platinum"
-                    data-switch-text-active-classes=""
-                    data-switch-text-inactive-classes=""
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Negative -> Positive
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Thumb change
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Regular
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:white"
-                    data-switch-thumb-inactive-class="bgc:white"
-                    data-switch-bg-active-classes="bgc:positive-light"
-                    data-switch-bg-inactive-classes="bgc:negative-light"
-                    data-switch-text-active-classes=""
-                    data-switch-text-inactive-classes=""
-                    data-theme="small"
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Negative -> Positive
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:white"
+                      data-switch-bg-active-classes="bgc:positive-light"
+                      data-switch-bg-inactive-classes="bgc:negative-light"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  White
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Background change
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Small
                 </div>
               </div>
-              <div class="w:100% row py:16px">
-                <div class="w:4 display:flex align:center align:middle">
-                  <button
-                    type="button"
-                    role="switch"
-                    aria-checked="false"
-                    id=""
-                    data-module="switch.button"
-                    data-switch-thumb-active-class="bgc:positive-light"
-                    data-switch-thumb-inactive-class="bgc:negative-light"
-                    data-switch-bg-active-classes="bgc:platinum"
-                    data-switch-bg-inactive-classes="bgc:platinum"
-                    data-switch-text-active-classes=""
-                    data-switch-text-inactive-classes=""
-                    data-theme="small"
-                    style="width:60px;">
-                    <div data-module="switch.slider" data-switch>
-                      <div data-module="switch.thumb"></div>
-                      <div data-module="switch.text"></div>
-                    </div>
-                    <span aria-hidden="true">off</span>
-                    <span aria-hidden="true">on</span>
-                  </button>
-                  <label class="ml:8px" for="">Label</label>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Silver
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:positive-light"
+                      data-switch-thumb-inactive-class="bgc:negative-light"
+                      data-switch-bg-active-classes="bgc:platinum"
+                      data-switch-bg-inactive-classes="bgc:platinum"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
                 </div>
-                <div class="w:3 display:flex align:middle align:center">
-                  Negative -> Positive
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Thumb change
                 </div>
-                <div class="w:2 display:flex align:middle align:center">
+                <div class="w:2 display:flex align:middle align:center text-align:center">
+                  Small
+                </div>
+              </div>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                </div>
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                </div>
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Background and thumb change
+                </div>
+                <div class="w:2 display:flex align:middle align:center text-align:center">
+                  Regular
+                </div>
+              </div>
+              <div class="w:100% row py:4px">
+                <div class="w:4 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for>Label</label>
+                  </div>
+                </div>
+                <div class="w:3 display:flex flex-dir:col">
+                  <div class="display:flex align:middle align:center pb:4px">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="false"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                  <div class="display:flex align:middle align:center">
+                    <button type="button" role="switch" id data-module="switch.button" aria-checked="true"
+                      data-switch-thumb-active-class="bgc:white"
+                      data-switch-thumb-inactive-class="bgc:silver"
+                      data-switch-bg-active-classes="bgc:vista-blue"
+                      data-switch-bg-inactive-classes="bgc:yale-blue"
+                      data-switch-text-active-classes=""
+                      data-switch-text-inactive-classes=""
+                      data-theme="small"
+                      style="width:60px;">
+                      <div data-module="switch.slider">
+                        <div data-module="switch.thumb"></div>
+                        <div data-module="switch.text"></div>
+                      </div>
+                      <span aria-hidden="true" class="sr-only">off</span>
+                      <span aria-hidden="true" class="sr-only">on</span>
+                    </button>
+                    <label class="ml:8px" for></label>
+                  </div>
+                </div>
+                <div class="w:3 display:flex align:middle align:center text-align:center">
+                  Background and thumb change
+                </div>
+                <div class="w:2 display:flex align:middle align:center text-align:center">
                   Small
                 </div>
               </div>
