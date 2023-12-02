@@ -505,7 +505,7 @@ fieldset.unstyle {
       left: 0;
       right: 0;
       bottom: 0;
-      transition: 0.4s;
+      transition: background-color 0.4s;
       border-radius: rem-calc($switch+8);
       [data-module='switch.thumb'] {
         position: absolute;
@@ -514,7 +514,7 @@ fieldset.unstyle {
         width: rem-calc($switch);
         left: rem-calc(4);
         bottom: rem-calc(4);
-        transition: 0.4s;
+        transition: left 0.4s, background-color 0.4s;
         border-radius: 50%;
       }
     }
