@@ -81,8 +81,8 @@ $negative-light-no-hash: d08888;
   background-size: 220px 20px;
 }
 
-.module-remove:not(*),
-.module-edit:not(*) {
+.module-remove,
+.module-edit {
   background-repeat: repeat;
   background-color: #f8f8f8;
   height: 100%;
@@ -90,9 +90,7 @@ $negative-light-no-hash: d08888;
   position: relative;
   padding: 34px 10px 6px;
   cursor: pointer;
-  line-height: rem-calc(14);
   &::before {
-    content:"REMOVE";
     padding-top: 3px;
     font-size: 14px;
     position: absolute;
@@ -103,6 +101,7 @@ $negative-light-no-hash: d08888;
     height: 24px;
     width: 100px;
     background: white;
+    line-height: rem-calc(14);
   }
 }
 
