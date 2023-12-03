@@ -1,59 +1,57 @@
 'use strict';
 storm_eagle.module('slider', () => {
   let self;
-  let slider_state = {};
+  let module_state = {};
+
+  const update_slider_track = (event) => {
+    self.update_slider_track(module_state[event.currentTarget.getAttribute('id')]);
+  }
 
   return {
     initialize: () => {
-      self = storm_eagle['slider'];
-      document.querySelectorAll('[data-module="slider.input-container"]').forEach((el) => {
-        let slider_id = el.querySelector("[data-module='slider.input']").getAttribute('id');
-        slider_state[slider_id] = {
-          input_container: el,
-          label_container: el.querySelector('[data-module="slider.labels"]'),
-          labels: el.querySelectorAll('[data-module="slider.labels"] > * '),
-          num_labels: el.querySelectorAll('[data-module="slider.labels"] > * ').length,
-          slider_fill: el.querySelector('[data-module="slider.fill"]'),
+      self = storm_eagle.slider;
+      module_state = {};
+      document.querySelectorAll('[data-module="slider.input-container"]').forEach((container) => {
+        let id = container.querySelector("[data-module='slider.input']").getAttribute('id');
+        module_state[id] = {
+          id,
+          slider_container: container,
+          slider_input: container.querySelector("[data-module='slider.input']"),
+          label_container: container.querySelector('[data-module="slider.labels"]'),
+          labels: container.querySelectorAll('[data-module="slider.labels"] > * '),
+          slider_fill: container.querySelector('[data-module="slider.fill"]'),
         };
-        self.slider_listener(slider_id);
-        self.resize_listener(slider_id);
-        self.update_slider_track(slider_id);
+        self.slider_listener(module_state[id]);
+        self.resize_listener(module_state[id]);
+        self.update_slider_track(module_state[id]);
       });
     },
-    ready: () => {
-      document.querySelectorAll("[data-module='slider.input']").forEach((el) => {
-        let slider_id = el.getAttribute('id');
-        self.force_resize(slider_id);
-      });
+    slider_listener: (state) => {
+      const { slider_input } = state;
+      slider_input.removeEventListener('input', update_slider_track);
+      slider_input.addEventListener('input', update_slider_track);
     },
-    force_resize: (slider_id) => {
-      let container_width = slider_state[slider_id]['input_container'].offsetWidth;
-      let full_label_width = (container_width * slider_state[slider_id]['num_labels']) / (slider_state[slider_id]['num_labels'] - 1);
-      slider_state[slider_id]['label_container'].style.width = `${full_label_width}px`;
-      let transform_left = (50 / slider_state[slider_id]['num_labels']) * -1;
-      slider_state[slider_id]['label_container'].style.transform = `translateX(${transform_left}%)`;
-    },
-    slider_listener: (slider_id) => {
-      document.getElementById(slider_id).addEventListener('input', (event) => {
-        self.update_slider_track(slider_id);
-      });
-    },
-    update_slider_track: (slider_id) => {
-      let el = document.getElementById(slider_id);
-      let percentage = Math.round(((el.value - el.getAttribute('min')) / (el.getAttribute('max') - el.getAttribute('min'))) * 100);
-      slider_state[slider_id]['slider_fill'].style.width = `${percentage}%`;
+    update_slider_track: (state) => {
+      const { id, slider_input, slider_fill } = state;
+      let percentage = Math.round(((slider_input.value - slider_input.getAttribute('min')) / (slider_input.getAttribute('max') - slider_input.getAttribute('min'))) * 100);
+      slider_fill.style.width = `${percentage}%`;
     },
     update_all_slider_track: () => {
-      document.querySelectorAll('[data-module="slider.input-container"]').forEach((el) => {
-        let slider_id = el.querySelector('[data-module="slider.input"]').getAttribute('id');
-        self.update_slider_track(slider_id);
+      document.querySelectorAll('[data-module="slider.input-container"] [data-module="slider.input"]').forEach((el) => {
+        self.update_slider_track(module_state[el.getAttribute('id')]);
       });
     },
-    resize_listener: (slider_id) => {
+    resize_listener: (state) => {
+      const { id, slider_container, labels, label_container } = state;
+      let num_labels = labels.length;
       const force_resize = () => {
-        return self.force_resize(slider_id);
+        let container_width = slider_container.offsetWidth;
+        let full_label_width = (container_width * num_labels) / (num_labels - 1);
+        label_container.style.width = `${full_label_width}px`;
+        let transform_left = (50 / num_labels) * -1;
+        label_container.style.transform = `translateX(${transform_left}%)`;
       }
-      storm_eagle.resize_observer(document.getElementById(slider_id), force_resize);
+      storm_eagle.resize_observer(id, force_resize);
     },
   };
 });
