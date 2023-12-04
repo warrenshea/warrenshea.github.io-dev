@@ -5,11 +5,11 @@ storm_eagle.module('range_slider', () => {
 
   const handle_slider_change_1 = (event) => {
     self.update_slider_track(event.currentTarget.getAttribute('id'));
-  }
+  };
 
   const handle_slider_change_2 = (event) => {
     self.update_slider_track(event.currentTarget.previousElementSibling.getAttribute('id'));
-  }
+  };
 
   return {
     initialize: () => {
@@ -74,7 +74,7 @@ storm_eagle.module('range_slider', () => {
       const { el1 } = module_state[id1];
       const label_resize = () => {
         self.label_resize(id1);
-      }
+      };
       storm_eagle.resize_observer(el1, label_resize);
     },
   };
