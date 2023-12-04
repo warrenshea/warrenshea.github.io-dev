@@ -5,7 +5,7 @@ storm_eagle.module('slider', () => {
 
   const handle_slider_change = (event) => {
     self.update_slider_track(event.currentTarget.getAttribute('id'));
-  }
+  };
 
   return {
     initialize: () => {
@@ -55,7 +55,7 @@ storm_eagle.module('slider', () => {
       const { el } = module_state[id];
       const label_resize = () => {
         self.label_resize(id);
-      }
+      };
       storm_eagle.resize_observer(el, label_resize);
     },
   };
