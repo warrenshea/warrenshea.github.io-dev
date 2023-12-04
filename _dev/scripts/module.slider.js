@@ -29,7 +29,7 @@ storm_eagle.module('slider', () => {
     },
     update_slider_track: (id) => {
       const { el, slider_fill } = module_state[id];
-      let percentage = Math.round(((el.value - el.getAttribute('min')) / (el.getAttribute('max') - el.getAttribute('min'))) * 100);
+      const percentage = Math.round(((el.value - el.getAttribute('min')) / (el.getAttribute('max') - el.getAttribute('min'))) * 100);
       slider_fill.style.width = `${percentage}%`;
     },
     manage_slider_input_listener: (id) => {
