@@ -4,7 +4,7 @@ storm_eagle.module('form_switch_button', () => {
   let module_state = {};
 
   const handle_click_listener = (event) => {
-    self.handle_click(event.currentTarget.getAttribute("id"));
+    self.handle_click(event.currentTarget.getAttribute('id'));
   };
 
   return {
