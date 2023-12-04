@@ -10,7 +10,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
     },
     ready: () => {
       document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach((element) => {
-        if (element.type !== 'radio' || element.type !== 'range') {
+        if (element.type !== 'radio' && element.type !== 'range') {
           self.force_set_active_label(element);
         }
       });
@@ -23,7 +23,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
     },
     input_listener: () => {
       document.querySelectorAll('.form\\:theme\\:gl0b3x input, .form\\:theme\\:gl0b3x select, .form\\:theme\\:gl0b3x textarea').forEach((element) => {
-        if (element.type !== 'radio' || element.type !== 'range') {
+        if (element.type !== 'radio' && element.type !== 'range') {
           element.addEventListener('change', () => {
             self.force_set_active_label(element);
           });
