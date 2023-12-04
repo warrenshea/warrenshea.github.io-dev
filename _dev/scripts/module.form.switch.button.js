@@ -5,7 +5,7 @@ storm_eagle.module('form_switch_button', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['form_switch_button'];
+      self = storm_eagle.form_switch_button;
       module_state = {};
       document.querySelectorAll('[data-module="switch.button"]').forEach((el) => {
         let id = el.getAttribute('id');
@@ -23,12 +23,12 @@ storm_eagle.module('form_switch_button', () => {
           thumb_active_class: el.getAttribute('data-switch-thumb-active-class') ? el.getAttribute('data-switch-thumb-active-class').split(',') : '',
           thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? el.getAttribute('data-switch-thumb-inactive-class').split(',') : '',
         };
-        self.init_ui(module_state[id]);
+        self.init_ui(id);
         self.add_event_listeners(id);
       });
     },
-    init_ui: (state) => {
-      const { el, id, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = state;
+    init_ui: (id) => {
+      const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
 
       label.setAttribute('for', id);
       if (el.getAttribute('aria-checked') === 'true') {
@@ -42,8 +42,11 @@ storm_eagle.module('form_switch_button', () => {
       }
     },
     add_event_listeners: (id) => {
+      const { el } = module_state[id];
+
       const handle_click = (event) => {
-        const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[event.currentTarget.getAttribute('id')];
+        const el = event.currentTarget;
+        const { slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[el.getAttribute('id')];
 
         let switch_active_module_state = el.getAttribute('aria-checked') === 'true';
         if (switch_active_module_state) {
@@ -61,11 +64,11 @@ storm_eagle.module('form_switch_button', () => {
           text.classList.remove(...text_inactive_classes);
           text.classList.add(...text_active_classes);
         }
-        event.currentTarget.setAttribute('aria-checked', (!switch_active_module_state).toString());
+        el.setAttribute('aria-checked', (!switch_active_module_state).toString());
       };
 
-      document.querySelector(`#${id}`).removeEventListener('click', handle_click);
-      document.querySelector(`#${id}`).addEventListener('click', handle_click);
+      el.removeEventListener('click', handle_click);
+      el.addEventListener('click', handle_click);
     },
   };
 });
