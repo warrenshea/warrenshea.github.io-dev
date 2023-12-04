@@ -28,7 +28,7 @@ storm_eagle.module('form_switch_button', () => {
           thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? el.getAttribute('data-switch-thumb-inactive-class').split(',') : '',
         };
         self.init_ui(id);
-        self.manage_event_listeners(id);
+        self.manage_switch_click_listeners(id);
       });
     },
     init_ui: (id) => {
@@ -46,7 +46,6 @@ storm_eagle.module('form_switch_button', () => {
       }
     },
     handle_click: (id) => {
-      console.log("test");
       const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
 
       let switch_active_module_state = el.getAttribute('aria-checked') === 'true';
@@ -67,7 +66,7 @@ storm_eagle.module('form_switch_button', () => {
       }
       el.setAttribute('aria-checked', (!switch_active_module_state).toString());
     },
-    manage_event_listeners: (id) => {
+    manage_switch_click_listeners: (id) => {
       const { el } = module_state[id];
 
       el.removeEventListener('click', handle_click_listener);
