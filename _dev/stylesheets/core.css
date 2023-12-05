@@ -17235,6 +17235,17 @@ ol.unstyle-pl\:0 {
 [data-module=accordion] [data-module="accordion.header"][aria-expanded=true] > span > [data-module="accordion.inactive"] {
   display: block;
 }
+[data-module=accordion] [data-module="accordion.panel"] {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: 0.25s grid-template-rows ease;
+}
+[data-module=accordion] [data-module="accordion.panel"] > * {
+  overflow: hidden;
+}
+[data-module=accordion] [data-module="accordion.panel"][data-accordion-panel=hide] {
+  grid-template-rows: 0fr;
+}
 
 [data-module="tabs-v.blue"] {
   display: flex;

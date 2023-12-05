@@ -659,6 +659,17 @@ var storm_eagle = (() => {
         return -1;
       },
 
+      closest_parent: (element, selector) => {
+        let current_element = element.parentElement;
+        while (current_element) {
+          if (current_element.matches(selector)) {
+            return current_element;
+          }
+          current_element = current_element.parentElement;
+        }
+        return null; // If no matching parent is found
+      },
+
       /**
        * Execute a function specified by its string representation with provided parameters.
        *

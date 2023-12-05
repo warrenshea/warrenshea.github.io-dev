@@ -21,4 +21,15 @@
       }
     }
   }
+  [data-module='accordion.panel'] {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: .25s grid-template-rows ease;
+    > * {
+      overflow:hidden;
+    }
+    &[data-accordion-panel='hide'] {
+      grid-template-rows: 0fr;
+    }
+  }
 }
