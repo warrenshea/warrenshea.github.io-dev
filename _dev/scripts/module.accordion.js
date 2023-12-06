@@ -37,7 +37,7 @@ storm_eagle.module('accordion', () => {
       });
     },
     update_accordion_item: (header_id) => {
-      const el = document.querySelector(`#${header_id}`);
+      const el = document.getElementById(header_id);
       const module_id = storm_eagle.util.closest_parent(el,`[data-module='accordion']`).getAttribute("id");
       const { all_headers, active_setting } = module_state[module_id];
       if (active_setting === 'single') {
@@ -45,22 +45,22 @@ storm_eagle.module('accordion', () => {
           header.setAttribute('aria-expanded', 'false');
         });
         el.setAttribute('aria-expanded', 'true');
-        self.open(header_id, el.getAttribute('aria-controls'),module_id);
+        self.open(el.getAttribute('aria-controls'),module_id);
       } else if (active_setting === 'multiple') {
         el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
-        self.open(header_id, el.getAttribute('aria-controls'),module_id);
+        self.open(el.getAttribute('aria-controls'),module_id);
       }
     },
-    open: (header_id, panel_id, module_id) => {
+    open: (panel_id, module_id) => {
       const { active_setting, all_panels } = module_state[module_id];
       if (active_setting === 'single') {
         all_panels.forEach((panel) => {
           panel.setAttribute("data-accordion-panel","hide");
         });
-        document.querySelector(`#${panel_id}`).setAttribute("data-accordion-panel","");
+        document.getElementById(panel_id).setAttribute("data-accordion-panel","");
         storm_eagle.equalize_heights.force_resize();
       } else if (active_setting === 'multiple') {
-        const panel = document.querySelector(`#${panel_id}`);
+        const panel = document.getElementById(panel_id);
         const current_state = panel.getAttribute("data-accordion-panel");
         panel.setAttribute("data-accordion-panel", current_state === "hide" ? "" : "hide");
         storm_eagle.equalize_heights.force_resize();
