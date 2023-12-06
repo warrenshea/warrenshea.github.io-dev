@@ -334,12 +334,10 @@ storm_eagle.module('form_validation', () => {
           return regex.test(value);
           break;
         case 'has_forward_slash_at_end':
-          regex = /.+\/$/;
-          return regex.test(value);
+          return value[value.length-1] === '/';
           break;
         case 'has_no_forward_slash_at_start':
-          regex = /^[^/].+\/$/;
-          return regex.test(value);
+          return value[0] !== '/';
           break;
         case 'has_min_1_number':
           regex = /[0-9]/gi;
