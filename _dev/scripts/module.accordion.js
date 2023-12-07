@@ -7,10 +7,6 @@ storm_eagle.module('accordion', () => {
   let self;
   let module_state = {};
 
-  const handle_header_click = (event) => {
-    self.update_accordion_item(event.currentTarget.getAttribute('id'));
-  };
-
   return {
     initialize: () => {
       self = storm_eagle.accordion;
@@ -25,46 +21,33 @@ storm_eagle.module('accordion', () => {
           active_setting: el.getAttribute('data-accordion-active'),
           initial_active: JSON.parse(el.getAttribute('data-accordion-initial')),
         };
-        self.manage_event_listeners(id);
+        self.event_listeners.initialize(id);
         self.init_ui(id);
       });
     },
-    manage_event_listeners: (id) => {
-      const { all_headers } = module_state[id];
-      all_headers.forEach((header) => {
-        header.removeEventListener('click', handle_header_click);
-        header.addEventListener('click', handle_header_click);
-      });
-    },
-    update_accordion_item: (header_id) => {
-      const el = document.getElementById(header_id);
-      const module_id = storm_eagle.util.closest_parent(el,`[data-module='accordion']`).getAttribute("id");
-      const { all_headers, active_setting } = module_state[module_id];
-      if (active_setting === 'single') {
+    event_listeners: {
+      initialize: (id) => {
+        const { all_headers } = module_state[id];
         all_headers.forEach((header) => {
-          header.setAttribute('aria-expanded', 'false');
+          header.removeEventListener('click', self.event_listeners.update_accordion_item);
+          header.addEventListener('click', self.event_listeners.update_accordion_item);
         });
-        el.setAttribute('aria-expanded', 'true');
-        self.open(el.getAttribute('aria-controls'),module_id);
-      } else if (active_setting === 'multiple') {
-        el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
-        self.open(el.getAttribute('aria-controls'),module_id);
-      }
-    },
-    open: (panel_id, module_id) => {
-      const { active_setting, all_panels } = module_state[module_id];
-      if (active_setting === 'single') {
-        all_panels.forEach((panel) => {
-          panel.setAttribute("data-accordion-panel","hide");
-        });
-        document.getElementById(panel_id).setAttribute("data-accordion-panel","");
-        storm_eagle.equalize_heights.force_resize();
-      } else if (active_setting === 'multiple') {
-        const panel = document.getElementById(panel_id);
-        const current_state = panel.getAttribute("data-accordion-panel");
-        panel.setAttribute("data-accordion-panel", current_state === "hide" ? "" : "hide");
-        storm_eagle.equalize_heights.force_resize();
-      }
+      },
+      update_accordion_item: (event) => {
+        const el = event.currentTarget;
+        const module_id = storm_eagle.util.closest_parent(el,`[data-module='accordion']`).getAttribute("id");
+        const { all_headers, active_setting } = module_state[module_id];
+        if (active_setting === 'single') {
+          all_headers.forEach((header) => {
+            header.setAttribute('aria-expanded', 'false');
+          });
+          el.setAttribute('aria-expanded', 'true');
+          self.open(el.getAttribute('aria-controls'),module_id);
+        } else if (active_setting === 'multiple') {
+          el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+          self.open(el.getAttribute('aria-controls'),module_id);
+        }
+      },
     },
     init_ui: (id) => {
       const { el, all_headers, all_panels, initial_active } = module_state[id];
@@ -92,6 +75,21 @@ storm_eagle.module('accordion', () => {
           header.click();
         }
       });
+    },
+    open: (panel_id, module_id) => {
+      const { active_setting, all_panels } = module_state[module_id];
+      if (active_setting === 'single') {
+        all_panels.forEach((panel) => {
+          panel.setAttribute("data-accordion-panel","hide");
+        });
+        document.getElementById(panel_id).setAttribute("data-accordion-panel","");
+        storm_eagle.equalize_heights.force_resize();
+      } else if (active_setting === 'multiple') {
+        const panel = document.getElementById(panel_id);
+        const current_state = panel.getAttribute("data-accordion-panel");
+        panel.setAttribute("data-accordion-panel", current_state === "hide" ? "" : "hide");
+        storm_eagle.equalize_heights.force_resize();
+      }
     },
   };
 });
