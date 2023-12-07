@@ -1030,10 +1030,9 @@ storm_eagle.module('responsive_dom_manipulator', () => {
 });
 
 
-storm_eagle.module('mid_cid_highlighter', () => {
+storm_eagle.module('zs_highlighter', () => {
   return {
     initialize: () => {
-      self = storm_eagle['mid_cid_highlighter'];
       if (storm_eagle.page.get_query_value('mid')) {
         storm_eagle.page.get_query_value('mid').split(",").forEach((mid_id) => {
           document.querySelectorAll(`[data-zs^=mid\\:${mid_id}]`).forEach((element) => {
@@ -1046,6 +1045,10 @@ storm_eagle.module('mid_cid_highlighter', () => {
             element.classList.add("b-yellow:4px");
           })
         });
+      } else if (storm_eagle.page.get_query_value('branch')) {
+        document.querySelectorAll(`[data-zs-branch=${storm_eagle.page.get_query_value('branch')}]`).forEach((element) => {
+          element.classList.add("b-yellow:4px");
+        })
       }
     },
   };
