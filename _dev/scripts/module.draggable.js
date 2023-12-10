@@ -10,7 +10,7 @@ storm_eagle.module('draggable', () => {
   let draggable_state = {};
   return {
     initialize: () => {
-      self = storm_eagle['draggable'];
+      self = storm_eagle.draggable;
       document.querySelectorAll('[data-module="module.draggable"] [data-module="draggable.trigger"]').forEach((el) => {
         let draggable_id = el.getAttribute('id');
         draggable_state[draggable_id] = {
