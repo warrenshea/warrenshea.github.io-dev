@@ -41,7 +41,7 @@ storm_eagle.module('form_validation', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['form_validation'];
+      self = storm_eagle.form_validation;
       self.create_form_validation_rules();
       self.init_inline_field_validatation();
     },
