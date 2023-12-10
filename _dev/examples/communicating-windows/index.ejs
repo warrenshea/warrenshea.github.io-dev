@@ -58,7 +58,7 @@
 
     return {
       initialize: () => {
-        self = storm_eagle["communicating_with_child_window"];
+        self = storm_eagle.communicating_with_child_window;
         self.add_open_window_listener();
         self.add_form_submit_listener();
         self.add_message_listener();
@@ -118,7 +118,7 @@
 
     return {
       initialize: () => {
-        self = storm_eagle["communicating_with_parent_window"];
+        self = storm_eagle.communicating_with_parent_window;
         self.add_form_submit_listener();
         self.add_message_listener();
       },
@@ -150,7 +150,7 @@
 
         return {
           initialize: () => {
-            self = storm_eagle["communicating_with_child_window"];
+            self = storm_eagle.communicating_with_child_window;
             self.add_open_window_listener();
             self.add_form_submit_listener();
             self.add_message_listener();
