@@ -20,8 +20,8 @@ storm_eagle.module('clipboard', () => {
           var successful = document.execCommand('copy');
           var msg = successful ? 'successful' : 'unsuccessful';
           //console.log('Fallback: Copying text command was ' + msg);
-        } catch (err) {
-          //console.error('Fallback: Oops, unable to copy', err);
+        } catch (error) {
+          console.error(`Fallback: Unable to copy: ${error}`);
         }
 
         document.body.removeChild(text_area);
@@ -39,8 +39,8 @@ storm_eagle.module('clipboard', () => {
           }
           //console.log('Async: Copying to clipboard was successful!');
         })
-        .catch((err) => {
-          //console.error('Async: Could not copy text: ', err);
+        .catch((error) => {
+          console.error(`Async: Unable to copy: ${error}`);
         });
     },
   };
