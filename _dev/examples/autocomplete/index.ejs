@@ -37,7 +37,7 @@
 
         return {
           initialize: () => {
-            self = storm_eagle["pokemon_search"];
+            self = storm_eagle.pokemon_search;
           },
           get_pokemon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
             let url = "pokedex.json";
@@ -105,7 +105,7 @@
 
         return {
           initialize: () => {
-            self = storm_eagle["digimon_search"];
+            self = storm_eagle.digimon_search;
             self.get_database();
           },
           get_database: () => {
