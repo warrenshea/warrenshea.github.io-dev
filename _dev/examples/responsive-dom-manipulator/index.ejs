@@ -134,7 +134,7 @@ storm_eagle.module("responsive_dom_manipulator", () => {
 
   return {
     initialize: () => {
-      self = storm_eagle["responsive_dom_manipulator"];
+      self = storm_eagle.responsive_dom_manipulator;
       self.resize_listener();
     },
     ready: () => {
@@ -194,7 +194,7 @@ storm_eagle.module("responsive_dom_manipulator", () => {
         let self;
         return {
           initialize: () => {
-            self = storm_eagle["communicating_with_iframe"];
+            self = storm_eagle.communicating_with_iframe;
             self.add_message_listener();
           },
           add_message_listener: () => {
