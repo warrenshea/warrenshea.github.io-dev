@@ -5,7 +5,7 @@ storm_eagle.module('show_more', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['show_more'];
+      self = storm_eagle.show_more;
       document.querySelectorAll("[data-module='show-more']").forEach((el) => {
         let show_more_id = el.getAttribute('id');
         show_more_state[show_more_id] = {
