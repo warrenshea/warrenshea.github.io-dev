@@ -8,7 +8,7 @@ storm_eagle.module('menu_submenu', () => {
   let menu_state = {};
   return {
     initialize: () => {
-      self = storm_eagle['menu_submenu'];
+      self = storm_eagle.menu_submenu;
       document.querySelectorAll('[data-module="menu"]').forEach((el) => {
         let menu_id = el.getAttribute('id');
         menu_state[menu_id] = {
