@@ -1,11 +1,7 @@
 'use strict';
 storm_eagle.module('carousel_builder', () => {
-  let self;
 
   return {
-    initialize: () => {
-      self = storm_eagle['carousel_builder'];
-    },
     update: (carousel_number, property, value) => {
       //console.log(carousel_number,property,value);
       let el = document.getElementById(`carousel-${carousel_number}`).querySelector("[data-module='carousel']");
