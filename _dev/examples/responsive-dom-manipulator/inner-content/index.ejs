@@ -103,7 +103,7 @@
 
         return {
           initialize: () => {
-            self = storm_eagle["communicating_with_iframe_parent"];
+            self = storm_eagle.communicating_with_iframe_parent;
             self.add_message_listener();
             self.send_height();
           },
