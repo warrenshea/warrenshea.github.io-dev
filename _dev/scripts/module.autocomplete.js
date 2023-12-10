@@ -9,7 +9,7 @@ storm_eagle.module('autocomplete', () => {
   };
   return {
     initialize: () => {
-      self = storm_eagle['autocomplete'];
+      self = storm_eagle.autocomplete;
       document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
         let autocomplete_id = el.getAttribute('id');
         autocomplete_state[autocomplete_id] = {
