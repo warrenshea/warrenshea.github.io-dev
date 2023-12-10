@@ -4,7 +4,7 @@ storm_eagle.module('form_theme_gl0b3x', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['form_theme_gl0b3x'];
+      self = storm_eagle.form_theme_gl0b3x;
       self.input_listener();
       self.textarea_autoexpand_listener();
     },
