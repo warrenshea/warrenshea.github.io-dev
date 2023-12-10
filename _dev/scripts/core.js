@@ -1029,7 +1029,6 @@ storm_eagle.module('responsive_dom_manipulator', () => {
   };
 });
 
-
 storm_eagle.module('zs_highlighter', () => {
   return {
     initialize: () => {
