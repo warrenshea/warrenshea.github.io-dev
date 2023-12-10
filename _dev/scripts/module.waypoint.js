@@ -5,7 +5,7 @@ storm_eagle.module('waypoint', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['waypoint'];
+      self = storm_eagle.waypoint;
       document.querySelectorAll("[data-module='waypoint']").forEach((el) => {
         let waypoint_id = el.getAttribute('id');
         waypoint_state[waypoint_id] = {
