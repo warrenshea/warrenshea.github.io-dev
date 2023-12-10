@@ -32,7 +32,7 @@ storm_eagle.module('popover', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['popover'];
+      self = storm_eagle.popover;
       document.querySelectorAll("[data-module='popover']").forEach((el, index) => {
         let popover_id = el.getAttribute('id');
         popover_state[popover_id] = {
