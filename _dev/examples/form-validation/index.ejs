@@ -1932,12 +1932,7 @@
     <script>
       storm_eagle.module('form_validation_example', () => {
         "use strict";
-        let self;
-
         return {
-          initialize: () => {
-            self = storm_eagle["form_validation_example"];
-          },
           required_autofill: () => {
             document.getElementById("text-required").value = "Bruce Wayne";
             document.querySelector("[for=text-required]").classList.add("active-label");
