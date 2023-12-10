@@ -18,7 +18,7 @@ storm_eagle.module('calendar_event_builder', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['calendar_event_builder'];
+      self = storm_eagle.calendar_event_builder;
       self.populate_form();
       self.populate_data_calendar_link();
       self.submit_listener();
