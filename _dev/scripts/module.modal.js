@@ -94,9 +94,7 @@ storm_eagle.module('modal', () => {
       /* updates modal visuals */
       document.querySelector("[data-module='modal'].active").setAttribute('tabIndex', '-1');
       document.querySelector("[data-module='modal'].active").setAttribute('aria-expanded', false);
-      if (document.querySelector("[data-module='modal.trigger'].active")) {
-        document.querySelector("[data-module='modal.trigger'].active").classList.remove('active');
-      }
+      document.querySelector("[data-module='modal.trigger'].active")?.classList.toggle('active');
       document.querySelector("[data-module='modal'].active").querySelector('.modal-container').classList.remove('active');
       document.querySelector("[data-module='modal'].active").classList.remove('active');
       document.querySelectorAll("[data-module='modal']").forEach((modal, index) => {
