@@ -4,7 +4,7 @@ storm_eagle.module('responsive_emulation', () => {
   let responsive_emulation_state = {};
   return {
     initialize: () => {
-      self = storm_eagle['responsive_emulation'];
+      self = storm_eagle.responsive_emulation;
       document.querySelectorAll("[data-module='responsive-emulation']").forEach((el) => {
         let responsive_emulation_id = el.getAttribute('id');
         responsive_emulation_state[responsive_emulation_id] = {
