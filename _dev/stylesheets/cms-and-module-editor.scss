@@ -1,0 +1,555 @@
+@charset "UTF-8";
+
+/* page width, common colors */
+@import '_config/variables-colors.scss';
+@import '_config/variables-dimensions.scss';
+@import '_config/unit.scss';
+@import '_config/breakpoint.scss';
+@import '_config/media-queries.scss';
+@import '_config/variables-box-shadow.scss';
+$dark-goldenrod-no-hash: b7901d;
+$positive-light-no-hash: 84b48e;
+$negative-light-no-hash: d08888;
+
+.b-positive-light-dashed\:2px {
+  border: rem-calc(2) dashed $positive-light;
+}
+
+.b-negative-light-dashed\:2px {
+  border: rem-calc(2) dashed $negative-light;
+}
+
+.b-blue-dashed\:2px {
+  border: rem-calc(2) dashed $blue;
+}
+
+.b-dark-goldenrod-dashed\:2px {
+  border: rem-calc(2) dashed $dark-goldenrod;
+}
+
+[data-module="placeholder"] {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 25px;
+  background-repeat: repeat;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+}
+
+.module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 20px;
+  background-repeat: repeat;
+  background-color: #f8f8f8;
+  height: 100%;
+  width: 100%;
+  border: rem-calc(2) dashed $positive-light;
+  padding: 6px 10px;
+}
+
+[data-module="accordion"]:has(.module-add) {
+  padding: 6px 10px;
+  border: rem-calc(2) dashed $positive-light;
+}
+
+[data-module="accordion.header"]:has(.module-add) {
+  padding: 6px 10px;
+  border: rem-calc(2) dashed $positive-light;
+}
+
+[data-module="accordion.panel"]:has(.module-add) {
+  padding: 6px 10px;
+  border: rem-calc(2) dashed $positive-light;
+}
+
+[data-module="accordion"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
+  background-size: 170px 20px;
+}
+
+[data-module="accordion.header"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.header -- %3C/text%3E%3C/svg%3E");
+  background-size: 230px 20px;
+}
+
+[data-module="accordion.panel"] .module-add {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
+  background-size: 220px 20px;
+}
+
+.module-remove,
+.module-edit {
+  background-repeat: repeat;
+  background-color: #f8f8f8;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 34px 10px 6px;
+  cursor: pointer;
+  &::before {
+    padding-top: 3px;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-family: 'heebo-bold';
+    top: 4px;
+    left: 10px;
+    height: 24px;
+    width: 100px;
+    background: white;
+    line-height: rem-calc(14);
+  }
+}
+
+.module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
+  background-size: 155px 20px;
+  border: rem-calc(2) dashed $negative-light;
+  &::before {
+    content:"REMOVE";
+    border: rem-calc(2) dashed $negative-light;
+  }
+}
+
+[data-module="accordion"].module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion -- %3C/text%3E%3C/svg%3E");
+  background-size: 225px 20px;
+}
+
+[data-module="accordion.item"].module-remove {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.item -- %3C/text%3E%3C/svg%3E");
+  background-size: 264px 20px;
+}
+
+// [data-module="accordion.header"].module-remove {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.header -- %3C/text%3E%3C/svg%3E");
+//   background-size: 290px 20px;
+// }
+
+// [data-module="accordion.panel"].module-remove {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove from accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 280px 20px;
+// }
+
+.module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit module -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 20px;
+  border: rem-calc(2) dashed $dark-goldenrod;
+  &::before {
+    content:"EDIT";
+    border: rem-calc(2) dashed $dark-goldenrod;
+  }
+}
+
+[data-module="accordion"].module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion -- %3C/text%3E%3C/svg%3E");
+  background-size: 148px 20px;
+}
+
+[data-module="accordion.item"].module-edit {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.item -- %3C/text%3E%3C/svg%3E");
+  background-size: 188px 20px;
+}
+
+// [data-module="accordion.header"].module-edit {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.header -- %3C/text%3E%3C/svg%3E");
+//   background-size: 210px 20px;
+// }
+
+// [data-module="accordion.panel"].module-edit {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 200px 20px;
+// }
+
+.grid-background {
+  background-size: rem-calc(16) rem-calc(16);
+  background-image: radial-gradient(circle, $platinum rem-calc(2), #f9f9f9 0);
+  background-position-x: center;
+}
+
+.overlay-grid-lines {
+  position: absolute;
+  top: 0;
+  width: 0;
+  border: rem-calc(1) solid $red;
+  opacity: .4;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+}
+
+[data-module="slider.labels"] .sm-left { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 385px); }
+[data-module="slider.labels"] .sm-right { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 385px); }
+[data-module="slider.labels"] .md-left { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 511px); }
+[data-module="slider.labels"] .md-right { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 511px); }
+[data-module="slider.labels"] .lg-left { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 639px); }
+[data-module="slider.labels"] .lg-right { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 639px); }
+[data-module="slider.labels"] .xl-left { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;right:50%;text-align:right;padding-right:670px; }
+[data-module="slider.labels"] .xl-right { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;left:50%;text-align:left;padding-left:670px; }
+
+.isotope-card-tag {
+  margin: rem-calc(4) rem-calc(8);
+  padding: rem-calc(4);
+  border-radius: rem-calc(4);
+  background: $blue;
+  color: $white
+}
+
+.form\:theme\:cms {
+  /* label styles */
+  input[type='text'] + label,
+  input[type='number'] + label,
+  input[type='email'] + label,
+  input[type='password'] + label,
+  input[type='search'] + label,
+  select + label,
+  textarea + label {
+    z-index: 2;
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    cursor: pointer;
+    &:before {
+      /* blue label line, hidden */
+      z-index: 4;
+      content: '';
+      width: 100%;
+      height: rem-calc(2);
+      bottom: 0;
+      left: 0;
+      background: $blue;
+      transform: scaleX(0);
+      transition: all 0.3s linear;
+      position: relative;
+      top: unset;
+      display: block;
+    }
+    &:after {
+      /* default gray label line */
+      z-index: 3;
+      content: '';
+      width: 100%;
+      height: rem-calc(2);
+      bottom: rem-calc(2);
+      left: 0;
+      background: $silver;
+      position: relative;
+      top: unset;
+      display: block;
+    }
+    &.error-field:before {
+      background: $negative;
+    }
+    &.error-field:after {
+      background: $negative;
+    }
+    &.valid:before {
+      background: #0b8224;
+    }
+    &.disabled {
+      color: $onyx;
+      span.description {
+        color: $onyx;
+      }
+    }
+    span.description {
+      /* label description */
+      display: flex;
+      align-items: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      color: $blue;
+      transition: 0.3s ease-out;
+      position: absolute;
+      top: 0;
+      font-size: rem-calc(16);
+      font-family: 'heebo-bold';
+    }
+  }
+
+  /* input (text, email, password, search), select, and textarea styles */
+  input,
+  select,
+  textarea {
+    color: $eerie-black;
+    transition: all 0.3s ease-out;
+    :disabled {
+      color: $onyx;
+    }
+  }
+
+  input[type='text'],
+  input[type='number'],
+  input[type='email'],
+  input[type='password'],
+  input[type='search'],
+  select,
+  textarea {
+    width: 100%;
+    height: rem-calc(36);
+    margin-top: rem-calc(24);
+    white-space: nowrap;
+    line-height: 1.5;
+    border: none;
+    background-color: $white-smoke;
+    transition: all 0.3s ease-out;
+    &:focus-visible {
+      outline: 0;
+    }
+  }
+  input[type='text']:focus + label:before,
+  input[type='text'].focus + label:before,
+  input[type='number']:focus + label:before,
+  input[type='email']:focus + label:before,
+  input[type='password']:focus + label:before,
+  input[type='search']:focus + label:before,
+  select:focus + label:before,
+  textarea:focus + label:before,
+  textarea.focus + label:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  /* helper description styles */
+  .error-message {
+    width: 100%;
+    min-width: rem-calc(150);
+    padding: 0 0 0 rem-calc(19);
+    font-size: rem-calc(14);
+    font-family: 'heebo-regular';
+    color: $negative;
+    background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
+    background-size: rem-calc(16) rem-calc(16);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    margin-top: rem-calc(4);
+    display: none;
+    margin-bottom: rem-calc(6);
+    &.has-error {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+      &.display\:inline {
+        display: inline;
+      }
+    }
+  }
+
+  /* helper description styles */
+  .helper-description {
+    color: $onyx;
+    font-size: rem-calc(14);
+    margin-top: rem-calc(4);
+    letter-spacing: 0.25px;
+  }
+
+  .helper-description-pass-fail {
+    list-style: none;
+    padding-left: 0;
+    color: $onyx;
+    font-size: rem-calc(14);
+    li {
+      display: flex;
+      line-height: rem-calc(24);
+      padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
+      background-image: url(../assets/icon/times.negative.svg);
+      background-repeat: no-repeat;
+      background-position: top rem-calc(2) left rem-calc(2);
+      background-size: rem-calc(24) rem-calc(24);
+      > span {
+        display: flex;
+      }
+      &.pass {
+        background-image: url(../assets/icon/check.positive.svg);
+      }
+      &.fail {
+        background-image: url(../assets/icon/times.negative.svg);
+      }
+    }
+  }
+
+  /* select styles */
+  select {
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('../assets/icon/chevron-down.blue.svg');
+    background-repeat: no-repeat;
+    background-position: right rem-calc(8) top rem-calc(10);
+    background-size: rem-calc(16) rem-calc(16);
+    appearance: none;
+  }
+
+  /* textarea styles */
+  textarea {
+    transition: all 0.3s ease;
+    padding-top: rem-calc(6); /* to remain consistent with input boxes */
+    padding-bottom: rem-calc(6); /* to remain consistent with input boxes */
+    margin-bottom: rem-calc(-4); /* to remain consistent with input boxes */
+    white-space: pre-wrap;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    &+label {
+      cursor: pointer;
+      position: relative;
+      padding-left: rem-calc(36);
+      letter-spacing: 0.15px;
+      line-height: rem-calc(24);
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: rem-calc(24);
+        height: rem-calc(24);
+        border: rem-calc(2) solid $onyx;
+        &:hover {
+            cursor: pointer;
+        }
+      }
+    }
+    &:checked+label:before {
+      content: '';
+      cursor: pointer;
+    }
+    &:focus+label {
+      outline: rem-calc(2) solid $black;
+    }
+    &:checked:focus+label {
+      outline: rem-calc(2) solid $black;
+    }
+    &:checked:focus+label {
+      box-shadow: $box-shadow-custom-7;
+    }
+    &:focus+label:before {
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+    }
+    &:checked:focus+label:before {
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+    }
+    &.has-error+label:before {
+      border: rem-calc(2) solid $negative;
+    }
+    &:disabled+label {
+      color: $onyx;
+      &:before {
+        background-color: $silver;
+        border: rem-calc(2) solid $onyx;
+      }
+    }
+  }
+
+  input[type="radio"] {
+    &+label {
+      &:before {
+        border-radius: 50%;
+        transition: background-color ease-in-out 250ms, border ease-in-out 250ms;
+      }
+    }
+    &:checked+label:before {
+      background-color: $white;
+      border: rem-calc(6) solid $blue;
+    }
+    &:focus+label:before {
+      background-color: transparent;
+      border: rem-calc(2) solid $gray;
+    }
+    &:checked:focus+label:before {
+      background-color: $white;
+      border: rem-calc(6) solid $blue;
+      box-shadow: $box-shadow-custom-7;
+    }
+    &:checked:disabled+label:before {
+      background-color: $silver;
+      border: rem-calc(6) solid $onyx;
+    }
+  }
+
+  .box-radio-buttons {
+    input[type="radio"] {
+      &+label {
+        text-align:center;
+        display:inline-block;
+        padding: rem-calc(4) rem-calc(16);
+        font-family: 'heebo-bold';
+        font-size: rem-calc(14);
+        color: $blue;
+        background-color: $white;
+        width: 100%;
+        border: rem-calc(2) solid $onyx;
+        //border-radius: rem-calc(4);
+        transition: all .3s ease;
+        box-shadow: 0 0 0 0 rgba($vista-blue, 0.65);
+        white-space:nowrap;
+        cursor: pointer;
+        position: relative;
+        letter-spacing: 0.15px;
+        line-height: rem-calc(24);
+        &:before {
+          display:none;
+        }
+      }
+      &:hover+label,
+      &:checked+label {
+        color: $white;
+        background-color: $blue;
+        border: rem-calc(2) $blue solid;
+      }
+      &:checked:focus+label {
+        border: rem-calc(2) $vista-blue solid;
+        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+      }
+      &:disabled+label,
+      &[disabled='true']+label, {
+        background-color: $silver;
+      }
+      &:disabled:hover+label,
+      &[disabled='true']:hover+label, {
+        color: $onyx;
+      }
+    }
+    &:not(:active):after {
+      animation: ripple .3s ease-in;
+    }
+    &:after {
+      visibility: hidden;
+    }
+    &:focus:after {
+      visibility: visible;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    .#{$prefix}text-shadow\:eerie-black {
+      text-shadow: 0 0 rem-calc(3) $eerie-black;
+    }
+  }
+}
