@@ -12,7 +12,7 @@ storm_eagle.module('prism', () => {
 
   return {
     initialize: () => {
-      self = storm_eagle['prism'];
+      self = storm_eagle.prism;
       if (document.querySelectorAll('[data-code-reference]').length > 0) {
         self.link_code_with_prism_snippet();
       }
