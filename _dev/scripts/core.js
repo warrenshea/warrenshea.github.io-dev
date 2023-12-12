@@ -676,7 +676,7 @@ var storm_eagle = (() => {
        * @param {string} func_str - The string representation of the function to execute (e.g., "someNamespace.someFunction").
        * @param {object} params_obj - An object containing parameters to pass to the function.
        */
-      run_str_func: async (func_str, params_obj) => {
+      run_str_func: async (func_str, params_obj = {}) => {
         // Split the function string into its parts (namespace and function name).
         const func_parts = func_str.split('.');
 
