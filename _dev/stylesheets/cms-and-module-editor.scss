@@ -78,6 +78,7 @@ $negative-light-no-hash: d08888;
 }
 
 .module-remove,
+.module-confirm-removal,
 .module-edit {
   background-repeat: repeat;
   background-color: #f8f8f8;
@@ -107,6 +108,17 @@ $negative-light-no-hash: d08888;
   border: rem-calc(2) dashed $negative-light;
   &::before {
     content:"REMOVE";
+    border: rem-calc(2) dashed $negative-light;
+  }
+}
+
+.module-confirm-removal {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
+  background-size: 155px 20px;
+  border: rem-calc(2) dashed $negative-light;
+  &::before {
+    content:"CONFIRM REMOVAL";
+    width: 160px;
     border: rem-calc(2) dashed $negative-light;
   }
 }
