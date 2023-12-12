@@ -3,6 +3,7 @@
 var draggable_storage = {
   destination_type: "",
   code: "",
+  callback: ""
 };
 
 storm_eagle.module('draggable', () => {
@@ -17,6 +18,7 @@ storm_eagle.module('draggable', () => {
           source: el.getAttribute('data-draggable-source'),
           type: el.getAttribute('data-draggable-type'),
           destination_type: el.getAttribute('data-draggable-destination-type'),
+          callback: el.getAttribute('data-draggable-callback') || "",
         };
         self.add_trigger_event_listeners(draggable_id);
       });
@@ -28,15 +30,16 @@ storm_eagle.module('draggable', () => {
 
       document.getElementById(draggable_id).addEventListener('mouseover', async (event) => {
         draggable_storage.destination_type = draggable_state[draggable_id]["destination_type"];
+        draggable_storage.callback = draggable_state[draggable_id]["callback"];
 
         switch (draggable_state[draggable_id]["type"]) {
           case "async_function":
             //console.log("source type: async function");
-            draggable_storage.code = await storm_eagle.util.run_str_func(draggable_state[draggable_id]["source"], {});
+            draggable_storage.code = await storm_eagle.util.run_str_func(draggable_state[draggable_id]["source"]);
             break;
           case "function":
             //console.log("source type: function");
-            storm_eagle.util.run_str_func(draggable_state[draggable_id]["source"], {})
+            storm_eagle.util.run_str_func(draggable_state[draggable_id]["source"])
               .then((result) => {
                 draggable_storage.code = result;
               })
