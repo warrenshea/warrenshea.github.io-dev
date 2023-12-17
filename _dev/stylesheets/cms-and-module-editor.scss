@@ -170,6 +170,11 @@ $cocoa-brown-no-hash: d06f25;
   }
 }
 
+[data-zs-module-force-show][data-module='accordion.panel'] {
+  opacity: 1 !important;
+  height: auto !important;
+}
+
 .grid-background {
   background-size: rem-calc(16) rem-calc(16);
   background-image: radial-gradient(circle, $platinum rem-calc(2), #f9f9f9 0);
