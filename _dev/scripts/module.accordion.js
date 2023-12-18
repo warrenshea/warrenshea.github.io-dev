@@ -12,7 +12,7 @@ storm_eagle.module('accordion', () => {
       self = storm_eagle.accordion;
       module_state = {};
       document.querySelectorAll('[data-module="accordion"]').forEach((el) => {
-        let id = el.getAttribute('id');
+        const id = el.getAttribute('id');
         module_state[id] = {
           id,
           el,
@@ -52,7 +52,7 @@ storm_eagle.module('accordion', () => {
     init_ui: (id) => {
       const { el, all_headers, all_panels, initial_active } = module_state[id];
       all_headers.forEach((header, index) => {
-        let panel = header.parentNode.nextElementSibling;
+        const panel = header.parentNode.nextElementSibling;
         header.setAttribute('tabindex', '-1');
         header.setAttribute('aria-expanded', 'false');
         header.setAttribute('aria-controls', panel.getAttribute('id'));
