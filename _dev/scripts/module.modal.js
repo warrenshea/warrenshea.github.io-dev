@@ -14,7 +14,7 @@ storm_eagle.module('modal', () => {
     initialize: () => {
       self = storm_eagle.modal;
       document.querySelectorAll("[data-module='modal']").forEach((el) => {
-        let id = el.getAttribute('id');
+        const id = el.getAttribute('id');
         modal_state[id] = {
           focusable_elements: [],
           remove_focusable_elements: [],
@@ -98,7 +98,7 @@ storm_eagle.module('modal', () => {
       document.querySelector("[data-module='modal'].active").querySelector('.modal-container').classList.remove('active');
       document.querySelector("[data-module='modal'].active").classList.remove('active');
       document.querySelectorAll("[data-module='modal']").forEach((modal, index) => {
-        let id = modal.getAttribute('id');
+        const id = modal.getAttribute('id');
 
         /* remove focus from modal elements */
         modal_state[id]['focusable_elements'].forEach((el) => {
