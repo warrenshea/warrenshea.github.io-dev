@@ -3,10 +3,6 @@ storm_eagle.module('slider', () => {
   let self;
   let module_state = {};
 
-  const handle_slider_change = (event) => {
-    self.update_slider_track(event.currentTarget.getAttribute('id'));
-  };
-
   return {
     initialize: () => {
       self = storm_eagle.slider;
@@ -22,9 +18,8 @@ storm_eagle.module('slider', () => {
           labels: container.querySelectorAll(':scope > [data-module="slider.labels"] > * '),
           slider_fill: container.querySelector(':scope > [data-module="slider.background"] > [data-module="slider.fill"]'),
         };
-        self.manage_slider_input_listener(id);
+        self.event_listeners.initialize(id);
         self.update_slider_track(id);
-        self.resize_listener(id);
       });
     },
     ready: () => {
@@ -32,10 +27,23 @@ storm_eagle.module('slider', () => {
         self.label_resize(el.getAttribute('id'));
       });
     },
-    manage_slider_input_listener: (id) => {
-      const { el } = module_state[id];
-      el.removeEventListener('input', handle_slider_change);
-      el.addEventListener('input', handle_slider_change);
+    event_listeners: {
+      initialize: (id) => {
+        const { el } = module_state[id];
+        el.removeEventListener('input', self.event_listeners.handle_slider_change);
+        el.addEventListener('input', self.event_listeners.handle_slider_change);
+        self.event_listeners.resize_listener(id);
+      },
+      handle_slider_change: (event) => {
+        self.update_slider_track(event.currentTarget.getAttribute('id'));
+      },
+      resize_listener: (id) => {
+        const { el } = module_state[id];
+        const label_resize = () => {
+          self.label_resize(id);
+        };
+        storm_eagle.resize_observer(el, label_resize);
+      },
     },
     update_slider_track: (id) => {
       const { el, slider_fill } = module_state[id];
@@ -50,13 +58,6 @@ storm_eagle.module('slider', () => {
       label_container.style.width = `${full_label_width}px`;
       const transform_left = (50 / num_labels) * -1;
       label_container.style.transform = `translateX(${transform_left}%)`;
-    },
-    resize_listener: (id) => {
-      const { el } = module_state[id];
-      const label_resize = () => {
-        self.label_resize(id);
-      };
-      storm_eagle.resize_observer(el, label_resize);
     },
   };
 });
