@@ -23,9 +23,23 @@ storm_eagle.module('form_switch_button', () => {
           thumb_active_class: el.getAttribute('data-switch-thumb-active-class') ? el.getAttribute('data-switch-thumb-active-class').split(',') : '',
           thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? el.getAttribute('data-switch-thumb-inactive-class').split(',') : '',
         };
-        self.event_listeners.initialize(id);
         self.init_ui(id);
+        self.event_listeners.initialize(id);
       });
+    },
+    init_ui: (id) => {
+      const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
+
+      label.setAttribute('for', id);
+      if (el.getAttribute('aria-checked') === 'true') {
+        slider.classList.add(...bg_active_classes);
+        thumb.classList.add(...thumb_active_class);
+        text.classList.add(...text_active_classes);
+      } else {
+        slider.classList.add(...bg_inactive_classes);
+        thumb.classList.add(...thumb_inactive_class);
+        text.classList.add(...text_inactive_classes);
+      }
     },
     event_listeners: {
       initialize: (id) => {
@@ -34,7 +48,6 @@ storm_eagle.module('form_switch_button', () => {
         el.addEventListener('click', self.event_listeners.handle_click);
       },
       handle_click: (event) => {
-        console.log("test");
         const id = event.currentTarget.getAttribute('id');
         const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
         let switch_active_module_state = el.getAttribute('aria-checked') === 'true';
@@ -55,20 +68,6 @@ storm_eagle.module('form_switch_button', () => {
         }
         el.setAttribute('aria-checked', (!switch_active_module_state).toString());
       },
-    },
-    init_ui: (id) => {
-      const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
-
-      label.setAttribute('for', id);
-      if (el.getAttribute('aria-checked') === 'true') {
-        slider.classList.add(...bg_active_classes);
-        thumb.classList.add(...thumb_active_class);
-        text.classList.add(...text_active_classes);
-      } else {
-        slider.classList.add(...bg_inactive_classes);
-        thumb.classList.add(...thumb_inactive_class);
-        text.classList.add(...text_inactive_classes);
-      }
     },
   };
 });
