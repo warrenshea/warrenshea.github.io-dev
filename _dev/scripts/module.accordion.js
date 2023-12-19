@@ -23,7 +23,6 @@ storm_eagle.module('accordion', () => {
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
-
       });
     },
     ui: {
