@@ -415,7 +415,7 @@ fieldset.unstyle {
       width: calc(100% - rem-calc(24));
       margin-left: rem-calc(12);
     }
-    input[type='range'].slider {
+    input[type='range'][data-slider] {
       position: relative;
       height: rem-calc(24);
       appearance: none;
@@ -448,7 +448,7 @@ fieldset.unstyle {
       width: calc(100% - rem-calc(24));
       margin-left: rem-calc(12);
     }
-    input[type='range'].range-slider {
+    input[type='range'][data-range-slider] {
       position: relative;
       -webkit-appearance: none;
       height: rem-calc(24);
@@ -486,7 +486,7 @@ fieldset.unstyle {
       &:nth-of-type(1) {
         position: absolute;
       }
-      &.range-slider + input[type='range'].range-slider + [data-module='slider.background'] {
+      &[data-range-slider] + input[type='range'][data-range-slider] + [data-module='slider.background'] {
         margin-top: rem-calc(-16);
       }
     }
