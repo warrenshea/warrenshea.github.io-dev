@@ -5,11 +5,11 @@
 
       <button class="button:blue" aria-label="Open a modal, opens in a new pop up" data-module="modal.trigger" onclick="storm_eagle.modal.open(this,'modal-test');">Click to open modal</button>
 
-      <div class="modal-overlay" data-module="modal" role="dialog" aria-modal="true" id="modal-test" aria-labelledby="modal-loading-heading-id">
-        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 modal-container py:24px" style="max-width: 600px;">
+      <div data-module="modal" role="dialog" aria-modal="true" id="modal-test" aria-labelledby="modal-loading-heading-id">
+        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 py:24px" data-module="modal.container" style="max-width: 600px;">
           <div class="bgc:platinum box-shadow:layer-level-2 brr:4px position:relative w:100% modal-contents">
-            <button class="close video-close" onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
-            <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px">
+            <button class="close video-close" onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><div class="ic ic-type:solid ic-color:onyx ic-size:24px ic-name:times"></div></button>
+            <div class="p:24px">
 
               <h2 id="modal-loading-heading-id" class="xl+:lh:40 heebo:bold pb:24px">Modal Title Test</h2>
 
