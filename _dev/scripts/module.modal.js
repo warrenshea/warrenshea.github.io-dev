@@ -23,7 +23,7 @@ storm_eagle.module('modal', () => {
           focusable_elements: [],
           remove_focusable_elements: [],
         };
-        self.get_modal_focusable_elements(id);
+        self.a11y.get_modal_focusable_elements(id);
       });
     },
     event_listeners: {
@@ -123,10 +123,12 @@ storm_eagle.module('modal', () => {
       /* set focus to focus_placeholder */
       focus_placeholder.focus();
     },
-    get_modal_focusable_elements: (id) => {
-      const { el } = module_state[id];
-      module_state[id]['focusable_elements'] = el.querySelectorAll(focus_trap_selector);
-      module_state[id]['remove_focusable_elements'] = el.querySelectorAll(remove_focus_selector);
+    a11y: {
+      get_modal_focusable_elements: (id) => {
+        const { el } = module_state[id];
+        module_state[id]['focusable_elements'] = el.querySelectorAll(focus_trap_selector);
+        module_state[id]['remove_focusable_elements'] = el.querySelectorAll(remove_focus_selector);
+      },
     },
   };
 });
