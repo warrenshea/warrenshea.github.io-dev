@@ -5,7 +5,7 @@
  */
 storm_eagle.module('modal', () => {
   let self;
-  let modal_state = {};
+  let module_state = {};
   let focus_placeholder;
   let modal_first_tab_stop;
   let modal_last_tab_stop;
@@ -13,9 +13,13 @@ storm_eagle.module('modal', () => {
   return {
     initialize: () => {
       self = storm_eagle.modal;
+      module_state = {};
       document.querySelectorAll("[data-module='modal']").forEach((el) => {
         const id = el.getAttribute('id');
-        modal_state[id] = {
+        module_state[id] = {
+          el,
+          id,
+          container: el.querySelector(':scope > [data-module="modal.container"]'),
           focusable_elements: [],
           remove_focusable_elements: [],
         };
@@ -25,7 +29,7 @@ storm_eagle.module('modal', () => {
     event_listeners: {
       modal_mousedown_close: (event) => {
         //console.log(event.target.classList);
-        if (event.target.classList.contains('modal-container') || event.target.classList.contains('modal-overlay')) {
+        if (event.target.querySelector("[data-module='modal-container']") || event.target.getAttribute('data-module') === 'modal') {
           storm_eagle.modal.close();
         }
       },
@@ -43,39 +47,41 @@ storm_eagle.module('modal', () => {
             }
           }
         }
-        if (event.keyCode === keyboard.keys.esc || (event.keyCode === keyboard.keys.enter && document.activeElement.hasAttribute("[data-trigger='modal-close']"))) {
+        if (event.keyCode === keyboard.keys.esc || (event.keyCode === keyboard.keys.enter && document.activeElement.setAttribute("data-modal-trigger",""))) {
           storm_eagle.modal.close();
         }
       }
     },
     open: (modal_trigger, id) => {
+      const { el, container, focusable_elements, remove_focusable_elements } = module_state[id];
+      document.removeEventListener('mousedown', self.event_listeners.modal_mousedown_close);
       document.addEventListener('mousedown', self.event_listeners.modal_mousedown_close);
 
       /* updates modal visuals */
       document.querySelector('body').classList.add('overflow:hidden');
       if (modal_trigger) {
-        modal_trigger.classList.add('active');
+        modal_trigger.setAttribute("data-modal-trigger","active");
       }
-      document.getElementById(id).classList.add('active');
-      document.getElementById(id).querySelector('.modal-container').classList.add('active');
+      el.setAttribute("data-modal","active");
+      container.setAttribute("data-modal-container","active");
 
       /* removes focus from elements except in modal */
-      modal_state[id]['focusable_elements'].forEach((el) => {
-        el.setAttribute('tabindex', '0');
+      focusable_elements.forEach((focusable_element) => {
+        focusable_element.setAttribute('tabindex', '0');
       });
-      modal_state[id]['remove_focusable_elements'].forEach((el) => {
-        el.setAttribute('tabindex', '-1');
+      remove_focusable_elements.forEach((remove_focusable_element) => {
+        remove_focusable_element.setAttribute('tabindex', '-1');
       });
 
       /* remove focusable elements from nodelist, e.g. popover inside modal */
-      modal_state[id]['focusable_elements'] = [...modal_state[id]['focusable_elements']].filter((el) => {
-        return ![...modal_state[id]['remove_focusable_elements']].includes(el);
+      module_state[id]['focusable_elements'] = [...focusable_elements].filter((el2) => {
+        return ![...remove_focusable_elements].includes(el2);
       });
 
       /* saves item that opened modal for later */
       focus_placeholder = document.activeElement;
-      modal_first_tab_stop = modal_state[id]['focusable_elements'][0];
-      modal_last_tab_stop = modal_state[id]['focusable_elements'][modal_state[id]['focusable_elements'].length - 1];
+      modal_first_tab_stop = focusable_elements[0];
+      modal_last_tab_stop = focusable_elements[focusable_elements.length - 1];
 
       /* set focus to modal (but not the modal_first_tab_stop */
       setTimeout(() => {
@@ -85,28 +91,30 @@ storm_eagle.module('modal', () => {
       }, 100);
 
       /* add keyboard event listener */
-      document.getElementById(id).addEventListener('keydown', self.event_listeners.keyboard_modal_focus_trap);
+      el.removeEventListener('keydown', self.event_listeners.keyboard_modal_focus_trap);
+      el.addEventListener('keydown', self.event_listeners.keyboard_modal_focus_trap);
     },
     close: () => {
       document.removeEventListener('mousedown', self.event_listeners.modal_mousedown_close);
       document.querySelector('body').classList.remove('overflow:hidden');
 
       /* updates modal visuals */
-      document.querySelector("[data-module='modal'].active").setAttribute('tabIndex', '-1');
-      document.querySelector("[data-module='modal'].active").setAttribute('aria-expanded', false);
-      document.querySelector("[data-module='modal.trigger'].active")?.classList.toggle('active');
-      document.querySelector("[data-module='modal'].active").querySelector('.modal-container').classList.remove('active');
-      document.querySelector("[data-module='modal'].active").classList.remove('active');
-      document.querySelectorAll("[data-module='modal']").forEach((modal, index) => {
-        const id = modal.getAttribute('id');
+      document.querySelector("[data-module='modal'][data-modal='active']").setAttribute('tabIndex', '-1');
+      document.querySelector("[data-module='modal'][data-modal='active']").setAttribute('aria-expanded', false);
+      document.querySelector("[data-module='modal.trigger'][data-modal-trigger='active']")?.setAttribute("data-modal-trigger","");
+      document.querySelector("[data-module='modal'][data-modal='active'] > [data-module='modal.container']").setAttribute("data-modal-container","");
+      document.querySelector("[data-module='modal'][data-modal='active']").setAttribute("data-modal","");
+      document.querySelectorAll("[data-module='modal']").forEach((el, index) => {
+        const id = el.getAttribute('id');
+        const { focusable_elements } = module_state[id];
 
         /* remove focus from modal elements */
-        modal_state[id]['focusable_elements'].forEach((el) => {
-          el.setAttribute('tabindex', '-1');
+        focusable_elements.forEach((focusable_element) => {
+          focusable_element.setAttribute('tabindex', '-1');
         });
 
         /* remove keyboard event listener */
-        document.getElementById(id).removeEventListener('keydown', self.event_listeners.keyboard_modal_focus_trap);
+        el.removeEventListener('keydown', self.event_listeners.keyboard_modal_focus_trap);
       });
       document.querySelectorAll("[data-module='modal.trigger']").forEach((modal_trigger) => {
         modal_trigger.setAttribute('aria-expanded', false);
@@ -116,10 +124,9 @@ storm_eagle.module('modal', () => {
       focus_placeholder.focus();
     },
     get_modal_focusable_elements: (id) => {
-      modal_state[id]['focusable_elements'] = document.getElementById(id).querySelectorAll(focus_trap_selector);
-      //console.log(modal_state[id]["focusable_elements"]);
-      modal_state[id]['remove_focusable_elements'] = document.getElementById(id).querySelectorAll(remove_focus_selector);
-      //console.log(modal_state[id]["remove_focusable_elements"]);
+      const { el } = module_state[id];
+      module_state[id]['focusable_elements'] = el.querySelectorAll(focus_trap_selector);
+      module_state[id]['remove_focusable_elements'] = el.querySelectorAll(remove_focus_selector);
     },
   };
 });
