@@ -21,9 +21,42 @@ storm_eagle.module('accordion', () => {
           active_setting: el.getAttribute('data-accordion-active'),
           initial_active: JSON.parse(el.getAttribute('data-accordion-initial')),
         };
+        self.ui.initialize(id);
         self.event_listeners.initialize(id);
-        self.init_ui(id);
+
       });
+    },
+    ui: {
+      initialize: (id) => {
+        const { el, all_headers, all_panels } = module_state[id];
+        all_headers.forEach((header, index) => {
+          const panel = header.parentNode.nextElementSibling;
+          header.setAttribute('tabindex', '-1');
+          header.setAttribute('aria-expanded', 'false');
+          header.setAttribute('aria-controls', panel.getAttribute('id'));
+          panel.setAttribute('aria-labelledby', header.getAttribute('id'));
+          if (index === 0) {
+            header.setAttribute('tabindex', '0');
+            header.addEventListener('focusin', () => {
+              el.classList.add('focus');
+            });
+            header.addEventListener('focusout', () => {
+              el.classList.remove('focus');
+            });
+          }
+        });
+        all_panels.forEach((panel) => {
+          panel.setAttribute("data-accordion-panel","hide");
+        });
+      },
+      initialize_initial_active: (id) => {
+        const { all_headers, initial_active } = module_state[id];
+        all_headers.forEach((header,index) => {
+          if (initial_active[index] === 1) {
+            header.click();
+          }
+        });
+      },
     },
     event_listeners: {
       initialize: (id) => {
@@ -32,6 +65,7 @@ storm_eagle.module('accordion', () => {
           header.removeEventListener('click', self.event_listeners.update_accordion_item);
           header.addEventListener('click', self.event_listeners.update_accordion_item);
         });
+        self.ui.initialize_initial_active(id);
       },
       update_accordion_item: (event) => {
         const el = event.currentTarget;
@@ -48,33 +82,6 @@ storm_eagle.module('accordion', () => {
           self.open(el.getAttribute('aria-controls'),module_id);
         }
       },
-    },
-    init_ui: (id) => {
-      const { el, all_headers, all_panels, initial_active } = module_state[id];
-      all_headers.forEach((header, index) => {
-        const panel = header.parentNode.nextElementSibling;
-        header.setAttribute('tabindex', '-1');
-        header.setAttribute('aria-expanded', 'false');
-        header.setAttribute('aria-controls', panel.getAttribute('id'));
-        panel.setAttribute('aria-labelledby', header.getAttribute('id'));
-        if (index === 0) {
-          header.setAttribute('tabindex', '0');
-          header.addEventListener('focusin', () => {
-            el.classList.add('focus');
-          });
-          header.addEventListener('focusout', () => {
-            el.classList.remove('focus');
-          });
-        }
-      });
-      all_panels.forEach((panel) => {
-        panel.setAttribute("data-accordion-panel","hide");
-      });
-      all_headers.forEach((header, index) => {
-        if (initial_active[index] === 1) {
-          header.click();
-        }
-      });
     },
     open: (panel_id, module_id) => {
       const { active_setting, all_panels } = module_state[module_id];
