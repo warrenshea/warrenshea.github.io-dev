@@ -23,22 +23,24 @@ storm_eagle.module('form_switch_button', () => {
           thumb_active_class: el.getAttribute('data-switch-thumb-active-class') ? el.getAttribute('data-switch-thumb-active-class').split(',') : '',
           thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? el.getAttribute('data-switch-thumb-inactive-class').split(',') : '',
         };
-        self.init_ui(id);
+        self.ui.initialize(id);
         self.event_listeners.initialize(id);
       });
     },
-    init_ui: (id) => {
-      const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
+    ui: {
+      initialize: (id) => {
+        const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
 
-      label.setAttribute('for', id);
-      if (el.getAttribute('aria-checked') === 'true') {
-        slider.classList.add(...bg_active_classes);
-        thumb.classList.add(...thumb_active_class);
-        text.classList.add(...text_active_classes);
-      } else {
-        slider.classList.add(...bg_inactive_classes);
-        thumb.classList.add(...thumb_inactive_class);
-        text.classList.add(...text_inactive_classes);
+        label.setAttribute('for', id);
+        if (el.getAttribute('aria-checked') === 'true') {
+          slider.classList.add(...bg_active_classes);
+          thumb.classList.add(...thumb_active_class);
+          text.classList.add(...text_active_classes);
+        } else {
+          slider.classList.add(...bg_inactive_classes);
+          thumb.classList.add(...thumb_inactive_class);
+          text.classList.add(...text_inactive_classes);
+        }
       }
     },
     event_listeners: {
