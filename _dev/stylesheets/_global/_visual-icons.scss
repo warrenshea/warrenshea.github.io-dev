@@ -66,15 +66,17 @@ $types: (
 
 
 $colors: (
-  white     : $white,
   blue      : $blue,
   yale-blue : $yale-blue,
+  white     : $white,
+  disabled  : $disabled,
+  silver    : $silver,
   onyx      : $onyx,
+  black     : $black,
   red       : $red,
   negative  : $negative,
   positive  : $positive,
   warning   : $warning,
-  black     : $black,
 );
 
 @each $mediaquery in $mediaqueries {
