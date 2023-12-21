@@ -14,7 +14,7 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.modal.js"
+                "/scripts/module.modal-and-dialog.js"
             ]
         }
     }
