@@ -47,8 +47,3 @@
     display: none !important;
   }
 }
-@include breakpoint(large down) {
-  .xl\=\:show {
-    display: none !important;
-  }
-}
