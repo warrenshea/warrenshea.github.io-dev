@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Modal and Dialog • warrenshea",
+                "urlEn": "/examples/modal-and-dialog/",
+                "urlCanonical": "/examples/modal-and-dialog/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.modal.js"
+            ]
+        }
+    }
+}
