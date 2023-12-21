@@ -5,6 +5,7 @@
 /* YELLOW COLOURS */
 /* GRAYSCALE COLOURS */
 /* FEEDBACK COLOURS */
+/* SECONDARY COLLOURS */
 /*rem-calc(320);*/
 /*rem-calc(1200);*/
 /*rem-calc(1280);*/
@@ -2171,11 +2172,6 @@ table {
     display: none !important;
   }
 }
-@media screen and (max-width: 79.99rem) {
-  .xl\=\:show {
-    display: none !important;
-  }
-}
 .show-for-landscape,
 .hide-for-portrait {
   display: block !important;
@@ -3715,11 +3711,11 @@ button.anchor\:transparent[disabled=true] > .ic {
 
 a.anchor\:white,
 button.anchor\:white {
-  color: #fff;
+  color: #ffffff;
 }
 a.anchor\:white > .ic,
 button.anchor\:white > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.anchor\:white:hover, a.anchor\:white:hover:enabled, a.anchor\:white:focus, a.anchor\:white:focus:enabled, a.anchor\:white:active, a.anchor\:white:active:enabled,
 button.anchor\:white:hover,
@@ -3728,7 +3724,7 @@ button.anchor\:white:focus,
 button.anchor\:white:focus:enabled,
 button.anchor\:white:active,
 button.anchor\:white:active:enabled {
-  color: #fff;
+  color: #ffffff;
   text-decoration: underline;
 }
 a.anchor\:white:hover > .ic, a.anchor\:white:hover:enabled > .ic, a.anchor\:white:focus > .ic, a.anchor\:white:focus:enabled > .ic, a.anchor\:white:active > .ic, a.anchor\:white:active:enabled > .ic,
@@ -3738,13 +3734,13 @@ button.anchor\:white:focus > .ic,
 button.anchor\:white:focus:enabled > .ic,
 button.anchor\:white:active > .ic,
 button.anchor\:white:active:enabled > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.anchor\:white:disabled, a.anchor\:white.disabled, a.anchor\:white[disabled=true],
 button.anchor\:white:disabled,
 button.anchor\:white.disabled,
 button.anchor\:white[disabled=true] {
-  color: #fff;
+  color: #ffffff;
   cursor: default;
   text-decoration: none;
 }
@@ -3752,7 +3748,7 @@ a.anchor\:white:disabled > .ic, a.anchor\:white.disabled > .ic, a.anchor\:white[
 button.anchor\:white:disabled > .ic,
 button.anchor\:white.disabled > .ic,
 button.anchor\:white[disabled=true] > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 a.anchor\:red,
@@ -3973,11 +3969,11 @@ button.sm\=\:anchor\:transparent[disabled=true] > .ic {
 
   a.sm\=\:anchor\:white,
 button.sm\=\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.sm\=\:anchor\:white > .ic,
 button.sm\=\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:anchor\:white:hover, a.sm\=\:anchor\:white:hover:enabled, a.sm\=\:anchor\:white:focus, a.sm\=\:anchor\:white:focus:enabled, a.sm\=\:anchor\:white:active, a.sm\=\:anchor\:white:active:enabled,
 button.sm\=\:anchor\:white:hover,
@@ -3986,7 +3982,7 @@ button.sm\=\:anchor\:white:focus,
 button.sm\=\:anchor\:white:focus:enabled,
 button.sm\=\:anchor\:white:active,
 button.sm\=\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.sm\=\:anchor\:white:hover > .ic, a.sm\=\:anchor\:white:hover:enabled > .ic, a.sm\=\:anchor\:white:focus > .ic, a.sm\=\:anchor\:white:focus:enabled > .ic, a.sm\=\:anchor\:white:active > .ic, a.sm\=\:anchor\:white:active:enabled > .ic,
@@ -3996,13 +3992,13 @@ button.sm\=\:anchor\:white:focus > .ic,
 button.sm\=\:anchor\:white:focus:enabled > .ic,
 button.sm\=\:anchor\:white:active > .ic,
 button.sm\=\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:anchor\:white:disabled, a.sm\=\:anchor\:white.disabled, a.sm\=\:anchor\:white[disabled=true],
 button.sm\=\:anchor\:white:disabled,
 button.sm\=\:anchor\:white.disabled,
 button.sm\=\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -4010,7 +4006,7 @@ button.sm\=\:anchor\:white[disabled=true] {
 button.sm\=\:anchor\:white:disabled > .ic,
 button.sm\=\:anchor\:white.disabled > .ic,
 button.sm\=\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.sm\=\:anchor\:red,
@@ -4230,11 +4226,11 @@ button.sm\+\:anchor\:transparent[disabled=true] > .ic {
 
 a.sm\+\:anchor\:white,
 button.sm\+\:anchor\:white {
-  color: #fff;
+  color: #ffffff;
 }
 a.sm\+\:anchor\:white > .ic,
 button.sm\+\:anchor\:white > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:anchor\:white:hover, a.sm\+\:anchor\:white:hover:enabled, a.sm\+\:anchor\:white:focus, a.sm\+\:anchor\:white:focus:enabled, a.sm\+\:anchor\:white:active, a.sm\+\:anchor\:white:active:enabled,
 button.sm\+\:anchor\:white:hover,
@@ -4243,7 +4239,7 @@ button.sm\+\:anchor\:white:focus,
 button.sm\+\:anchor\:white:focus:enabled,
 button.sm\+\:anchor\:white:active,
 button.sm\+\:anchor\:white:active:enabled {
-  color: #fff;
+  color: #ffffff;
   text-decoration: underline;
 }
 a.sm\+\:anchor\:white:hover > .ic, a.sm\+\:anchor\:white:hover:enabled > .ic, a.sm\+\:anchor\:white:focus > .ic, a.sm\+\:anchor\:white:focus:enabled > .ic, a.sm\+\:anchor\:white:active > .ic, a.sm\+\:anchor\:white:active:enabled > .ic,
@@ -4253,13 +4249,13 @@ button.sm\+\:anchor\:white:focus > .ic,
 button.sm\+\:anchor\:white:focus:enabled > .ic,
 button.sm\+\:anchor\:white:active > .ic,
 button.sm\+\:anchor\:white:active:enabled > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:anchor\:white:disabled, a.sm\+\:anchor\:white.disabled, a.sm\+\:anchor\:white[disabled=true],
 button.sm\+\:anchor\:white:disabled,
 button.sm\+\:anchor\:white.disabled,
 button.sm\+\:anchor\:white[disabled=true] {
-  color: #fff;
+  color: #ffffff;
   cursor: default;
   text-decoration: none;
 }
@@ -4267,7 +4263,7 @@ a.sm\+\:anchor\:white:disabled > .ic, a.sm\+\:anchor\:white.disabled > .ic, a.sm
 button.sm\+\:anchor\:white:disabled > .ic,
 button.sm\+\:anchor\:white.disabled > .ic,
 button.sm\+\:anchor\:white[disabled=true] > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 a.sm\+\:anchor\:red,
@@ -4488,11 +4484,11 @@ button.md-\:anchor\:transparent[disabled=true] > .ic {
 
   a.md-\:anchor\:white,
 button.md-\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.md-\:anchor\:white > .ic,
 button.md-\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:anchor\:white:hover, a.md-\:anchor\:white:hover:enabled, a.md-\:anchor\:white:focus, a.md-\:anchor\:white:focus:enabled, a.md-\:anchor\:white:active, a.md-\:anchor\:white:active:enabled,
 button.md-\:anchor\:white:hover,
@@ -4501,7 +4497,7 @@ button.md-\:anchor\:white:focus,
 button.md-\:anchor\:white:focus:enabled,
 button.md-\:anchor\:white:active,
 button.md-\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.md-\:anchor\:white:hover > .ic, a.md-\:anchor\:white:hover:enabled > .ic, a.md-\:anchor\:white:focus > .ic, a.md-\:anchor\:white:focus:enabled > .ic, a.md-\:anchor\:white:active > .ic, a.md-\:anchor\:white:active:enabled > .ic,
@@ -4511,13 +4507,13 @@ button.md-\:anchor\:white:focus > .ic,
 button.md-\:anchor\:white:focus:enabled > .ic,
 button.md-\:anchor\:white:active > .ic,
 button.md-\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:anchor\:white:disabled, a.md-\:anchor\:white.disabled, a.md-\:anchor\:white[disabled=true],
 button.md-\:anchor\:white:disabled,
 button.md-\:anchor\:white.disabled,
 button.md-\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -4525,7 +4521,7 @@ button.md-\:anchor\:white[disabled=true] {
 button.md-\:anchor\:white:disabled > .ic,
 button.md-\:anchor\:white.disabled > .ic,
 button.md-\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.md-\:anchor\:red,
@@ -4746,11 +4742,11 @@ button.md\=\:anchor\:transparent[disabled=true] > .ic {
 
   a.md\=\:anchor\:white,
 button.md\=\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.md\=\:anchor\:white > .ic,
 button.md\=\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:anchor\:white:hover, a.md\=\:anchor\:white:hover:enabled, a.md\=\:anchor\:white:focus, a.md\=\:anchor\:white:focus:enabled, a.md\=\:anchor\:white:active, a.md\=\:anchor\:white:active:enabled,
 button.md\=\:anchor\:white:hover,
@@ -4759,7 +4755,7 @@ button.md\=\:anchor\:white:focus,
 button.md\=\:anchor\:white:focus:enabled,
 button.md\=\:anchor\:white:active,
 button.md\=\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.md\=\:anchor\:white:hover > .ic, a.md\=\:anchor\:white:hover:enabled > .ic, a.md\=\:anchor\:white:focus > .ic, a.md\=\:anchor\:white:focus:enabled > .ic, a.md\=\:anchor\:white:active > .ic, a.md\=\:anchor\:white:active:enabled > .ic,
@@ -4769,13 +4765,13 @@ button.md\=\:anchor\:white:focus > .ic,
 button.md\=\:anchor\:white:focus:enabled > .ic,
 button.md\=\:anchor\:white:active > .ic,
 button.md\=\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:anchor\:white:disabled, a.md\=\:anchor\:white.disabled, a.md\=\:anchor\:white[disabled=true],
 button.md\=\:anchor\:white:disabled,
 button.md\=\:anchor\:white.disabled,
 button.md\=\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -4783,7 +4779,7 @@ button.md\=\:anchor\:white[disabled=true] {
 button.md\=\:anchor\:white:disabled > .ic,
 button.md\=\:anchor\:white.disabled > .ic,
 button.md\=\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.md\=\:anchor\:red,
@@ -5004,11 +5000,11 @@ button.md\+\:anchor\:transparent[disabled=true] > .ic {
 
   a.md\+\:anchor\:white,
 button.md\+\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.md\+\:anchor\:white > .ic,
 button.md\+\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:anchor\:white:hover, a.md\+\:anchor\:white:hover:enabled, a.md\+\:anchor\:white:focus, a.md\+\:anchor\:white:focus:enabled, a.md\+\:anchor\:white:active, a.md\+\:anchor\:white:active:enabled,
 button.md\+\:anchor\:white:hover,
@@ -5017,7 +5013,7 @@ button.md\+\:anchor\:white:focus,
 button.md\+\:anchor\:white:focus:enabled,
 button.md\+\:anchor\:white:active,
 button.md\+\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.md\+\:anchor\:white:hover > .ic, a.md\+\:anchor\:white:hover:enabled > .ic, a.md\+\:anchor\:white:focus > .ic, a.md\+\:anchor\:white:focus:enabled > .ic, a.md\+\:anchor\:white:active > .ic, a.md\+\:anchor\:white:active:enabled > .ic,
@@ -5027,13 +5023,13 @@ button.md\+\:anchor\:white:focus > .ic,
 button.md\+\:anchor\:white:focus:enabled > .ic,
 button.md\+\:anchor\:white:active > .ic,
 button.md\+\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:anchor\:white:disabled, a.md\+\:anchor\:white.disabled, a.md\+\:anchor\:white[disabled=true],
 button.md\+\:anchor\:white:disabled,
 button.md\+\:anchor\:white.disabled,
 button.md\+\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -5041,7 +5037,7 @@ button.md\+\:anchor\:white[disabled=true] {
 button.md\+\:anchor\:white:disabled > .ic,
 button.md\+\:anchor\:white.disabled > .ic,
 button.md\+\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.md\+\:anchor\:red,
@@ -5262,11 +5258,11 @@ button.lg-\:anchor\:transparent[disabled=true] > .ic {
 
   a.lg-\:anchor\:white,
 button.lg-\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.lg-\:anchor\:white > .ic,
 button.lg-\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:anchor\:white:hover, a.lg-\:anchor\:white:hover:enabled, a.lg-\:anchor\:white:focus, a.lg-\:anchor\:white:focus:enabled, a.lg-\:anchor\:white:active, a.lg-\:anchor\:white:active:enabled,
 button.lg-\:anchor\:white:hover,
@@ -5275,7 +5271,7 @@ button.lg-\:anchor\:white:focus,
 button.lg-\:anchor\:white:focus:enabled,
 button.lg-\:anchor\:white:active,
 button.lg-\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.lg-\:anchor\:white:hover > .ic, a.lg-\:anchor\:white:hover:enabled > .ic, a.lg-\:anchor\:white:focus > .ic, a.lg-\:anchor\:white:focus:enabled > .ic, a.lg-\:anchor\:white:active > .ic, a.lg-\:anchor\:white:active:enabled > .ic,
@@ -5285,13 +5281,13 @@ button.lg-\:anchor\:white:focus > .ic,
 button.lg-\:anchor\:white:focus:enabled > .ic,
 button.lg-\:anchor\:white:active > .ic,
 button.lg-\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:anchor\:white:disabled, a.lg-\:anchor\:white.disabled, a.lg-\:anchor\:white[disabled=true],
 button.lg-\:anchor\:white:disabled,
 button.lg-\:anchor\:white.disabled,
 button.lg-\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -5299,7 +5295,7 @@ button.lg-\:anchor\:white[disabled=true] {
 button.lg-\:anchor\:white:disabled > .ic,
 button.lg-\:anchor\:white.disabled > .ic,
 button.lg-\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.lg-\:anchor\:red,
@@ -5520,11 +5516,11 @@ button.lg\=\:anchor\:transparent[disabled=true] > .ic {
 
   a.lg\=\:anchor\:white,
 button.lg\=\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\=\:anchor\:white > .ic,
 button.lg\=\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:anchor\:white:hover, a.lg\=\:anchor\:white:hover:enabled, a.lg\=\:anchor\:white:focus, a.lg\=\:anchor\:white:focus:enabled, a.lg\=\:anchor\:white:active, a.lg\=\:anchor\:white:active:enabled,
 button.lg\=\:anchor\:white:hover,
@@ -5533,7 +5529,7 @@ button.lg\=\:anchor\:white:focus,
 button.lg\=\:anchor\:white:focus:enabled,
 button.lg\=\:anchor\:white:active,
 button.lg\=\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.lg\=\:anchor\:white:hover > .ic, a.lg\=\:anchor\:white:hover:enabled > .ic, a.lg\=\:anchor\:white:focus > .ic, a.lg\=\:anchor\:white:focus:enabled > .ic, a.lg\=\:anchor\:white:active > .ic, a.lg\=\:anchor\:white:active:enabled > .ic,
@@ -5543,13 +5539,13 @@ button.lg\=\:anchor\:white:focus > .ic,
 button.lg\=\:anchor\:white:focus:enabled > .ic,
 button.lg\=\:anchor\:white:active > .ic,
 button.lg\=\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:anchor\:white:disabled, a.lg\=\:anchor\:white.disabled, a.lg\=\:anchor\:white[disabled=true],
 button.lg\=\:anchor\:white:disabled,
 button.lg\=\:anchor\:white.disabled,
 button.lg\=\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -5557,7 +5553,7 @@ button.lg\=\:anchor\:white[disabled=true] {
 button.lg\=\:anchor\:white:disabled > .ic,
 button.lg\=\:anchor\:white.disabled > .ic,
 button.lg\=\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.lg\=\:anchor\:red,
@@ -5778,11 +5774,11 @@ button.lg\+\:anchor\:transparent[disabled=true] > .ic {
 
   a.lg\+\:anchor\:white,
 button.lg\+\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\+\:anchor\:white > .ic,
 button.lg\+\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:anchor\:white:hover, a.lg\+\:anchor\:white:hover:enabled, a.lg\+\:anchor\:white:focus, a.lg\+\:anchor\:white:focus:enabled, a.lg\+\:anchor\:white:active, a.lg\+\:anchor\:white:active:enabled,
 button.lg\+\:anchor\:white:hover,
@@ -5791,7 +5787,7 @@ button.lg\+\:anchor\:white:focus,
 button.lg\+\:anchor\:white:focus:enabled,
 button.lg\+\:anchor\:white:active,
 button.lg\+\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.lg\+\:anchor\:white:hover > .ic, a.lg\+\:anchor\:white:hover:enabled > .ic, a.lg\+\:anchor\:white:focus > .ic, a.lg\+\:anchor\:white:focus:enabled > .ic, a.lg\+\:anchor\:white:active > .ic, a.lg\+\:anchor\:white:active:enabled > .ic,
@@ -5801,13 +5797,13 @@ button.lg\+\:anchor\:white:focus > .ic,
 button.lg\+\:anchor\:white:focus:enabled > .ic,
 button.lg\+\:anchor\:white:active > .ic,
 button.lg\+\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:anchor\:white:disabled, a.lg\+\:anchor\:white.disabled, a.lg\+\:anchor\:white[disabled=true],
 button.lg\+\:anchor\:white:disabled,
 button.lg\+\:anchor\:white.disabled,
 button.lg\+\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -5815,7 +5811,7 @@ button.lg\+\:anchor\:white[disabled=true] {
 button.lg\+\:anchor\:white:disabled > .ic,
 button.lg\+\:anchor\:white.disabled > .ic,
 button.lg\+\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.lg\+\:anchor\:red,
@@ -6036,11 +6032,11 @@ button.xl\+\:anchor\:transparent[disabled=true] > .ic {
 
   a.xl\+\:anchor\:white,
 button.xl\+\:anchor\:white {
-    color: #fff;
+    color: #ffffff;
   }
   a.xl\+\:anchor\:white > .ic,
 button.xl\+\:anchor\:white > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:anchor\:white:hover, a.xl\+\:anchor\:white:hover:enabled, a.xl\+\:anchor\:white:focus, a.xl\+\:anchor\:white:focus:enabled, a.xl\+\:anchor\:white:active, a.xl\+\:anchor\:white:active:enabled,
 button.xl\+\:anchor\:white:hover,
@@ -6049,7 +6045,7 @@ button.xl\+\:anchor\:white:focus,
 button.xl\+\:anchor\:white:focus:enabled,
 button.xl\+\:anchor\:white:active,
 button.xl\+\:anchor\:white:active:enabled {
-    color: #fff;
+    color: #ffffff;
     text-decoration: underline;
   }
   a.xl\+\:anchor\:white:hover > .ic, a.xl\+\:anchor\:white:hover:enabled > .ic, a.xl\+\:anchor\:white:focus > .ic, a.xl\+\:anchor\:white:focus:enabled > .ic, a.xl\+\:anchor\:white:active > .ic, a.xl\+\:anchor\:white:active:enabled > .ic,
@@ -6059,13 +6055,13 @@ button.xl\+\:anchor\:white:focus > .ic,
 button.xl\+\:anchor\:white:focus:enabled > .ic,
 button.xl\+\:anchor\:white:active > .ic,
 button.xl\+\:anchor\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:anchor\:white:disabled, a.xl\+\:anchor\:white.disabled, a.xl\+\:anchor\:white[disabled=true],
 button.xl\+\:anchor\:white:disabled,
 button.xl\+\:anchor\:white.disabled,
 button.xl\+\:anchor\:white[disabled=true] {
-    color: #fff;
+    color: #ffffff;
     cursor: default;
     text-decoration: none;
   }
@@ -6073,7 +6069,7 @@ button.xl\+\:anchor\:white[disabled=true] {
 button.xl\+\:anchor\:white:disabled > .ic,
 button.xl\+\:anchor\:white.disabled > .ic,
 button.xl\+\:anchor\:white[disabled=true] > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   a.xl\+\:anchor\:red,
@@ -6272,7 +6268,7 @@ a.button\:blue,
 button.button\:blue {
   border: 0.125rem solid #3169b2;
   background-color: #3169b2;
-  color: #fff;
+  color: #ffffff;
   box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
 }
 a.button\:blue:hover, a.button\:blue:hover:enabled,
@@ -6290,7 +6286,7 @@ button.button\:blue:active:enabled {
 }
 a.button\:blue > .ic,
 button.button\:blue > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.button\:blue:disabled, a.button\:blue.disabled, a.button\:blue[disabled=true],
 button.button\:blue:disabled,
@@ -6367,7 +6363,7 @@ button.button\:transparent[disabled=true] > .ic {
 a.button\:white,
 button.button\:white {
   border: 0.125rem solid transparent;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #3169b2;
 }
 a.button\:white > .ic,
@@ -6383,7 +6379,7 @@ button.button\:white:active,
 button.button\:white:active:enabled {
   border: 0.125rem solid transparent;
   background-color: #1c3b65;
-  color: #fff;
+  color: #ffffff;
 }
 a.button\:white:hover > .ic, a.button\:white:hover:enabled > .ic, a.button\:white:focus > .ic, a.button\:white:focus:enabled > .ic, a.button\:white:active > .ic, a.button\:white:active:enabled > .ic,
 button.button\:white:hover > .ic,
@@ -6392,7 +6388,7 @@ button.button\:white:focus > .ic,
 button.button\:white:focus:enabled > .ic,
 button.button\:white:active > .ic,
 button.button\:white:active:enabled > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.button\:white:disabled, a.button\:white.disabled, a.button\:white[disabled=true],
 button.button\:white:disabled,
@@ -6414,7 +6410,7 @@ a.button\:red,
 button.button\:red {
   border: 0.125rem solid transparent;
   background-color: #ab1e23;
-  color: #fff;
+  color: #ffffff;
 }
 a.button\:red:hover, a.button\:red:hover:enabled, a.button\:red:focus, a.button\:red:focus:enabled, a.button\:red:active, a.button\:red:active:enabled,
 button.button\:red:hover,
@@ -6428,7 +6424,7 @@ button.button\:red:active:enabled {
 }
 a.button\:red > .ic,
 button.button\:red > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.button\:red:disabled, a.button\:red.disabled, a.button\:red[disabled=true],
 button.button\:red:disabled,
@@ -6450,7 +6446,7 @@ a.button\:yale-blue,
 button.button\:yale-blue {
   border: 0.125rem solid transparent;
   background-color: #1c3b65;
-  color: #fff;
+  color: #ffffff;
 }
 a.button\:yale-blue:hover, a.button\:yale-blue:hover:enabled, a.button\:yale-blue:focus, a.button\:yale-blue:focus:enabled, a.button\:yale-blue:active, a.button\:yale-blue:active:enabled,
 button.button\:yale-blue:hover,
@@ -6464,7 +6460,7 @@ button.button\:yale-blue:active:enabled {
 }
 a.button\:yale-blue > .ic,
 button.button\:yale-blue > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.button\:yale-blue:disabled, a.button\:yale-blue.disabled, a.button\:yale-blue[disabled=true],
 button.button\:yale-blue:disabled,
@@ -6595,7 +6591,7 @@ button.sm\=\:button\:yale-blue:focus {
 button.sm\=\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.sm\=\:button\:blue:hover, a.sm\=\:button\:blue:hover:enabled,
@@ -6613,7 +6609,7 @@ button.sm\=\:button\:blue:active:enabled {
   }
   a.sm\=\:button\:blue > .ic,
 button.sm\=\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:button\:blue:disabled, a.sm\=\:button\:blue.disabled, a.sm\=\:button\:blue[disabled=true],
 button.sm\=\:button\:blue:disabled,
@@ -6690,7 +6686,7 @@ button.sm\=\:button\:transparent[disabled=true] > .ic {
   a.sm\=\:button\:white,
 button.sm\=\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.sm\=\:button\:white > .ic,
@@ -6706,7 +6702,7 @@ button.sm\=\:button\:white:active,
 button.sm\=\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.sm\=\:button\:white:hover > .ic, a.sm\=\:button\:white:hover:enabled > .ic, a.sm\=\:button\:white:focus > .ic, a.sm\=\:button\:white:focus:enabled > .ic, a.sm\=\:button\:white:active > .ic, a.sm\=\:button\:white:active:enabled > .ic,
 button.sm\=\:button\:white:hover > .ic,
@@ -6715,7 +6711,7 @@ button.sm\=\:button\:white:focus > .ic,
 button.sm\=\:button\:white:focus:enabled > .ic,
 button.sm\=\:button\:white:active > .ic,
 button.sm\=\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:button\:white:disabled, a.sm\=\:button\:white.disabled, a.sm\=\:button\:white[disabled=true],
 button.sm\=\:button\:white:disabled,
@@ -6737,7 +6733,7 @@ button.sm\=\:button\:white[disabled=true] > .ic {
 button.sm\=\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.sm\=\:button\:red:hover, a.sm\=\:button\:red:hover:enabled, a.sm\=\:button\:red:focus, a.sm\=\:button\:red:focus:enabled, a.sm\=\:button\:red:active, a.sm\=\:button\:red:active:enabled,
 button.sm\=\:button\:red:hover,
@@ -6751,7 +6747,7 @@ button.sm\=\:button\:red:active:enabled {
   }
   a.sm\=\:button\:red > .ic,
 button.sm\=\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:button\:red:disabled, a.sm\=\:button\:red.disabled, a.sm\=\:button\:red[disabled=true],
 button.sm\=\:button\:red:disabled,
@@ -6773,7 +6769,7 @@ button.sm\=\:button\:red[disabled=true] > .ic {
 button.sm\=\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.sm\=\:button\:yale-blue:hover, a.sm\=\:button\:yale-blue:hover:enabled, a.sm\=\:button\:yale-blue:focus, a.sm\=\:button\:yale-blue:focus:enabled, a.sm\=\:button\:yale-blue:active, a.sm\=\:button\:yale-blue:active:enabled,
 button.sm\=\:button\:yale-blue:hover,
@@ -6787,7 +6783,7 @@ button.sm\=\:button\:yale-blue:active:enabled {
   }
   a.sm\=\:button\:yale-blue > .ic,
 button.sm\=\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.sm\=\:button\:yale-blue:disabled, a.sm\=\:button\:yale-blue.disabled, a.sm\=\:button\:yale-blue[disabled=true],
 button.sm\=\:button\:yale-blue:disabled,
@@ -6917,7 +6913,7 @@ a.sm\+\:button\:blue,
 button.sm\+\:button\:blue {
   border: 0.125rem solid #3169b2;
   background-color: #3169b2;
-  color: #fff;
+  color: #ffffff;
   box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
 }
 a.sm\+\:button\:blue:hover, a.sm\+\:button\:blue:hover:enabled,
@@ -6935,7 +6931,7 @@ button.sm\+\:button\:blue:active:enabled {
 }
 a.sm\+\:button\:blue > .ic,
 button.sm\+\:button\:blue > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:button\:blue:disabled, a.sm\+\:button\:blue.disabled, a.sm\+\:button\:blue[disabled=true],
 button.sm\+\:button\:blue:disabled,
@@ -7012,7 +7008,7 @@ button.sm\+\:button\:transparent[disabled=true] > .ic {
 a.sm\+\:button\:white,
 button.sm\+\:button\:white {
   border: 0.125rem solid transparent;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #3169b2;
 }
 a.sm\+\:button\:white > .ic,
@@ -7028,7 +7024,7 @@ button.sm\+\:button\:white:active,
 button.sm\+\:button\:white:active:enabled {
   border: 0.125rem solid transparent;
   background-color: #1c3b65;
-  color: #fff;
+  color: #ffffff;
 }
 a.sm\+\:button\:white:hover > .ic, a.sm\+\:button\:white:hover:enabled > .ic, a.sm\+\:button\:white:focus > .ic, a.sm\+\:button\:white:focus:enabled > .ic, a.sm\+\:button\:white:active > .ic, a.sm\+\:button\:white:active:enabled > .ic,
 button.sm\+\:button\:white:hover > .ic,
@@ -7037,7 +7033,7 @@ button.sm\+\:button\:white:focus > .ic,
 button.sm\+\:button\:white:focus:enabled > .ic,
 button.sm\+\:button\:white:active > .ic,
 button.sm\+\:button\:white:active:enabled > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:button\:white:disabled, a.sm\+\:button\:white.disabled, a.sm\+\:button\:white[disabled=true],
 button.sm\+\:button\:white:disabled,
@@ -7059,7 +7055,7 @@ a.sm\+\:button\:red,
 button.sm\+\:button\:red {
   border: 0.125rem solid transparent;
   background-color: #ab1e23;
-  color: #fff;
+  color: #ffffff;
 }
 a.sm\+\:button\:red:hover, a.sm\+\:button\:red:hover:enabled, a.sm\+\:button\:red:focus, a.sm\+\:button\:red:focus:enabled, a.sm\+\:button\:red:active, a.sm\+\:button\:red:active:enabled,
 button.sm\+\:button\:red:hover,
@@ -7073,7 +7069,7 @@ button.sm\+\:button\:red:active:enabled {
 }
 a.sm\+\:button\:red > .ic,
 button.sm\+\:button\:red > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:button\:red:disabled, a.sm\+\:button\:red.disabled, a.sm\+\:button\:red[disabled=true],
 button.sm\+\:button\:red:disabled,
@@ -7095,7 +7091,7 @@ a.sm\+\:button\:yale-blue,
 button.sm\+\:button\:yale-blue {
   border: 0.125rem solid transparent;
   background-color: #1c3b65;
-  color: #fff;
+  color: #ffffff;
 }
 a.sm\+\:button\:yale-blue:hover, a.sm\+\:button\:yale-blue:hover:enabled, a.sm\+\:button\:yale-blue:focus, a.sm\+\:button\:yale-blue:focus:enabled, a.sm\+\:button\:yale-blue:active, a.sm\+\:button\:yale-blue:active:enabled,
 button.sm\+\:button\:yale-blue:hover,
@@ -7109,7 +7105,7 @@ button.sm\+\:button\:yale-blue:active:enabled {
 }
 a.sm\+\:button\:yale-blue > .ic,
 button.sm\+\:button\:yale-blue > .ic {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 a.sm\+\:button\:yale-blue:disabled, a.sm\+\:button\:yale-blue.disabled, a.sm\+\:button\:yale-blue[disabled=true],
 button.sm\+\:button\:yale-blue:disabled,
@@ -7240,7 +7236,7 @@ button.md-\:button\:yale-blue:focus {
 button.md-\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.md-\:button\:blue:hover, a.md-\:button\:blue:hover:enabled,
@@ -7258,7 +7254,7 @@ button.md-\:button\:blue:active:enabled {
   }
   a.md-\:button\:blue > .ic,
 button.md-\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:button\:blue:disabled, a.md-\:button\:blue.disabled, a.md-\:button\:blue[disabled=true],
 button.md-\:button\:blue:disabled,
@@ -7335,7 +7331,7 @@ button.md-\:button\:transparent[disabled=true] > .ic {
   a.md-\:button\:white,
 button.md-\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.md-\:button\:white > .ic,
@@ -7351,7 +7347,7 @@ button.md-\:button\:white:active,
 button.md-\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md-\:button\:white:hover > .ic, a.md-\:button\:white:hover:enabled > .ic, a.md-\:button\:white:focus > .ic, a.md-\:button\:white:focus:enabled > .ic, a.md-\:button\:white:active > .ic, a.md-\:button\:white:active:enabled > .ic,
 button.md-\:button\:white:hover > .ic,
@@ -7360,7 +7356,7 @@ button.md-\:button\:white:focus > .ic,
 button.md-\:button\:white:focus:enabled > .ic,
 button.md-\:button\:white:active > .ic,
 button.md-\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:button\:white:disabled, a.md-\:button\:white.disabled, a.md-\:button\:white[disabled=true],
 button.md-\:button\:white:disabled,
@@ -7382,7 +7378,7 @@ button.md-\:button\:white[disabled=true] > .ic {
 button.md-\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.md-\:button\:red:hover, a.md-\:button\:red:hover:enabled, a.md-\:button\:red:focus, a.md-\:button\:red:focus:enabled, a.md-\:button\:red:active, a.md-\:button\:red:active:enabled,
 button.md-\:button\:red:hover,
@@ -7396,7 +7392,7 @@ button.md-\:button\:red:active:enabled {
   }
   a.md-\:button\:red > .ic,
 button.md-\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:button\:red:disabled, a.md-\:button\:red.disabled, a.md-\:button\:red[disabled=true],
 button.md-\:button\:red:disabled,
@@ -7418,7 +7414,7 @@ button.md-\:button\:red[disabled=true] > .ic {
 button.md-\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md-\:button\:yale-blue:hover, a.md-\:button\:yale-blue:hover:enabled, a.md-\:button\:yale-blue:focus, a.md-\:button\:yale-blue:focus:enabled, a.md-\:button\:yale-blue:active, a.md-\:button\:yale-blue:active:enabled,
 button.md-\:button\:yale-blue:hover,
@@ -7432,7 +7428,7 @@ button.md-\:button\:yale-blue:active:enabled {
   }
   a.md-\:button\:yale-blue > .ic,
 button.md-\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md-\:button\:yale-blue:disabled, a.md-\:button\:yale-blue.disabled, a.md-\:button\:yale-blue[disabled=true],
 button.md-\:button\:yale-blue:disabled,
@@ -7563,7 +7559,7 @@ button.md\=\:button\:yale-blue:focus {
 button.md\=\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.md\=\:button\:blue:hover, a.md\=\:button\:blue:hover:enabled,
@@ -7581,7 +7577,7 @@ button.md\=\:button\:blue:active:enabled {
   }
   a.md\=\:button\:blue > .ic,
 button.md\=\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:button\:blue:disabled, a.md\=\:button\:blue.disabled, a.md\=\:button\:blue[disabled=true],
 button.md\=\:button\:blue:disabled,
@@ -7658,7 +7654,7 @@ button.md\=\:button\:transparent[disabled=true] > .ic {
   a.md\=\:button\:white,
 button.md\=\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.md\=\:button\:white > .ic,
@@ -7674,7 +7670,7 @@ button.md\=\:button\:white:active,
 button.md\=\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\=\:button\:white:hover > .ic, a.md\=\:button\:white:hover:enabled > .ic, a.md\=\:button\:white:focus > .ic, a.md\=\:button\:white:focus:enabled > .ic, a.md\=\:button\:white:active > .ic, a.md\=\:button\:white:active:enabled > .ic,
 button.md\=\:button\:white:hover > .ic,
@@ -7683,7 +7679,7 @@ button.md\=\:button\:white:focus > .ic,
 button.md\=\:button\:white:focus:enabled > .ic,
 button.md\=\:button\:white:active > .ic,
 button.md\=\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:button\:white:disabled, a.md\=\:button\:white.disabled, a.md\=\:button\:white[disabled=true],
 button.md\=\:button\:white:disabled,
@@ -7705,7 +7701,7 @@ button.md\=\:button\:white[disabled=true] > .ic {
 button.md\=\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\=\:button\:red:hover, a.md\=\:button\:red:hover:enabled, a.md\=\:button\:red:focus, a.md\=\:button\:red:focus:enabled, a.md\=\:button\:red:active, a.md\=\:button\:red:active:enabled,
 button.md\=\:button\:red:hover,
@@ -7719,7 +7715,7 @@ button.md\=\:button\:red:active:enabled {
   }
   a.md\=\:button\:red > .ic,
 button.md\=\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:button\:red:disabled, a.md\=\:button\:red.disabled, a.md\=\:button\:red[disabled=true],
 button.md\=\:button\:red:disabled,
@@ -7741,7 +7737,7 @@ button.md\=\:button\:red[disabled=true] > .ic {
 button.md\=\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\=\:button\:yale-blue:hover, a.md\=\:button\:yale-blue:hover:enabled, a.md\=\:button\:yale-blue:focus, a.md\=\:button\:yale-blue:focus:enabled, a.md\=\:button\:yale-blue:active, a.md\=\:button\:yale-blue:active:enabled,
 button.md\=\:button\:yale-blue:hover,
@@ -7755,7 +7751,7 @@ button.md\=\:button\:yale-blue:active:enabled {
   }
   a.md\=\:button\:yale-blue > .ic,
 button.md\=\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\=\:button\:yale-blue:disabled, a.md\=\:button\:yale-blue.disabled, a.md\=\:button\:yale-blue[disabled=true],
 button.md\=\:button\:yale-blue:disabled,
@@ -7886,7 +7882,7 @@ button.md\+\:button\:yale-blue:focus {
 button.md\+\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.md\+\:button\:blue:hover, a.md\+\:button\:blue:hover:enabled,
@@ -7904,7 +7900,7 @@ button.md\+\:button\:blue:active:enabled {
   }
   a.md\+\:button\:blue > .ic,
 button.md\+\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:button\:blue:disabled, a.md\+\:button\:blue.disabled, a.md\+\:button\:blue[disabled=true],
 button.md\+\:button\:blue:disabled,
@@ -7981,7 +7977,7 @@ button.md\+\:button\:transparent[disabled=true] > .ic {
   a.md\+\:button\:white,
 button.md\+\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.md\+\:button\:white > .ic,
@@ -7997,7 +7993,7 @@ button.md\+\:button\:white:active,
 button.md\+\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\+\:button\:white:hover > .ic, a.md\+\:button\:white:hover:enabled > .ic, a.md\+\:button\:white:focus > .ic, a.md\+\:button\:white:focus:enabled > .ic, a.md\+\:button\:white:active > .ic, a.md\+\:button\:white:active:enabled > .ic,
 button.md\+\:button\:white:hover > .ic,
@@ -8006,7 +8002,7 @@ button.md\+\:button\:white:focus > .ic,
 button.md\+\:button\:white:focus:enabled > .ic,
 button.md\+\:button\:white:active > .ic,
 button.md\+\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:button\:white:disabled, a.md\+\:button\:white.disabled, a.md\+\:button\:white[disabled=true],
 button.md\+\:button\:white:disabled,
@@ -8028,7 +8024,7 @@ button.md\+\:button\:white[disabled=true] > .ic {
 button.md\+\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\+\:button\:red:hover, a.md\+\:button\:red:hover:enabled, a.md\+\:button\:red:focus, a.md\+\:button\:red:focus:enabled, a.md\+\:button\:red:active, a.md\+\:button\:red:active:enabled,
 button.md\+\:button\:red:hover,
@@ -8042,7 +8038,7 @@ button.md\+\:button\:red:active:enabled {
   }
   a.md\+\:button\:red > .ic,
 button.md\+\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:button\:red:disabled, a.md\+\:button\:red.disabled, a.md\+\:button\:red[disabled=true],
 button.md\+\:button\:red:disabled,
@@ -8064,7 +8060,7 @@ button.md\+\:button\:red[disabled=true] > .ic {
 button.md\+\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.md\+\:button\:yale-blue:hover, a.md\+\:button\:yale-blue:hover:enabled, a.md\+\:button\:yale-blue:focus, a.md\+\:button\:yale-blue:focus:enabled, a.md\+\:button\:yale-blue:active, a.md\+\:button\:yale-blue:active:enabled,
 button.md\+\:button\:yale-blue:hover,
@@ -8078,7 +8074,7 @@ button.md\+\:button\:yale-blue:active:enabled {
   }
   a.md\+\:button\:yale-blue > .ic,
 button.md\+\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.md\+\:button\:yale-blue:disabled, a.md\+\:button\:yale-blue.disabled, a.md\+\:button\:yale-blue[disabled=true],
 button.md\+\:button\:yale-blue:disabled,
@@ -8209,7 +8205,7 @@ button.lg-\:button\:yale-blue:focus {
 button.lg-\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.lg-\:button\:blue:hover, a.lg-\:button\:blue:hover:enabled,
@@ -8227,7 +8223,7 @@ button.lg-\:button\:blue:active:enabled {
   }
   a.lg-\:button\:blue > .ic,
 button.lg-\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:button\:blue:disabled, a.lg-\:button\:blue.disabled, a.lg-\:button\:blue[disabled=true],
 button.lg-\:button\:blue:disabled,
@@ -8304,7 +8300,7 @@ button.lg-\:button\:transparent[disabled=true] > .ic {
   a.lg-\:button\:white,
 button.lg-\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.lg-\:button\:white > .ic,
@@ -8320,7 +8316,7 @@ button.lg-\:button\:white:active,
 button.lg-\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg-\:button\:white:hover > .ic, a.lg-\:button\:white:hover:enabled > .ic, a.lg-\:button\:white:focus > .ic, a.lg-\:button\:white:focus:enabled > .ic, a.lg-\:button\:white:active > .ic, a.lg-\:button\:white:active:enabled > .ic,
 button.lg-\:button\:white:hover > .ic,
@@ -8329,7 +8325,7 @@ button.lg-\:button\:white:focus > .ic,
 button.lg-\:button\:white:focus:enabled > .ic,
 button.lg-\:button\:white:active > .ic,
 button.lg-\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:button\:white:disabled, a.lg-\:button\:white.disabled, a.lg-\:button\:white[disabled=true],
 button.lg-\:button\:white:disabled,
@@ -8351,7 +8347,7 @@ button.lg-\:button\:white[disabled=true] > .ic {
 button.lg-\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg-\:button\:red:hover, a.lg-\:button\:red:hover:enabled, a.lg-\:button\:red:focus, a.lg-\:button\:red:focus:enabled, a.lg-\:button\:red:active, a.lg-\:button\:red:active:enabled,
 button.lg-\:button\:red:hover,
@@ -8365,7 +8361,7 @@ button.lg-\:button\:red:active:enabled {
   }
   a.lg-\:button\:red > .ic,
 button.lg-\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:button\:red:disabled, a.lg-\:button\:red.disabled, a.lg-\:button\:red[disabled=true],
 button.lg-\:button\:red:disabled,
@@ -8387,7 +8383,7 @@ button.lg-\:button\:red[disabled=true] > .ic {
 button.lg-\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg-\:button\:yale-blue:hover, a.lg-\:button\:yale-blue:hover:enabled, a.lg-\:button\:yale-blue:focus, a.lg-\:button\:yale-blue:focus:enabled, a.lg-\:button\:yale-blue:active, a.lg-\:button\:yale-blue:active:enabled,
 button.lg-\:button\:yale-blue:hover,
@@ -8401,7 +8397,7 @@ button.lg-\:button\:yale-blue:active:enabled {
   }
   a.lg-\:button\:yale-blue > .ic,
 button.lg-\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg-\:button\:yale-blue:disabled, a.lg-\:button\:yale-blue.disabled, a.lg-\:button\:yale-blue[disabled=true],
 button.lg-\:button\:yale-blue:disabled,
@@ -8532,7 +8528,7 @@ button.lg\=\:button\:yale-blue:focus {
 button.lg\=\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.lg\=\:button\:blue:hover, a.lg\=\:button\:blue:hover:enabled,
@@ -8550,7 +8546,7 @@ button.lg\=\:button\:blue:active:enabled {
   }
   a.lg\=\:button\:blue > .ic,
 button.lg\=\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:button\:blue:disabled, a.lg\=\:button\:blue.disabled, a.lg\=\:button\:blue[disabled=true],
 button.lg\=\:button\:blue:disabled,
@@ -8627,7 +8623,7 @@ button.lg\=\:button\:transparent[disabled=true] > .ic {
   a.lg\=\:button\:white,
 button.lg\=\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.lg\=\:button\:white > .ic,
@@ -8643,7 +8639,7 @@ button.lg\=\:button\:white:active,
 button.lg\=\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\=\:button\:white:hover > .ic, a.lg\=\:button\:white:hover:enabled > .ic, a.lg\=\:button\:white:focus > .ic, a.lg\=\:button\:white:focus:enabled > .ic, a.lg\=\:button\:white:active > .ic, a.lg\=\:button\:white:active:enabled > .ic,
 button.lg\=\:button\:white:hover > .ic,
@@ -8652,7 +8648,7 @@ button.lg\=\:button\:white:focus > .ic,
 button.lg\=\:button\:white:focus:enabled > .ic,
 button.lg\=\:button\:white:active > .ic,
 button.lg\=\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:button\:white:disabled, a.lg\=\:button\:white.disabled, a.lg\=\:button\:white[disabled=true],
 button.lg\=\:button\:white:disabled,
@@ -8674,7 +8670,7 @@ button.lg\=\:button\:white[disabled=true] > .ic {
 button.lg\=\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\=\:button\:red:hover, a.lg\=\:button\:red:hover:enabled, a.lg\=\:button\:red:focus, a.lg\=\:button\:red:focus:enabled, a.lg\=\:button\:red:active, a.lg\=\:button\:red:active:enabled,
 button.lg\=\:button\:red:hover,
@@ -8688,7 +8684,7 @@ button.lg\=\:button\:red:active:enabled {
   }
   a.lg\=\:button\:red > .ic,
 button.lg\=\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:button\:red:disabled, a.lg\=\:button\:red.disabled, a.lg\=\:button\:red[disabled=true],
 button.lg\=\:button\:red:disabled,
@@ -8710,7 +8706,7 @@ button.lg\=\:button\:red[disabled=true] > .ic {
 button.lg\=\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\=\:button\:yale-blue:hover, a.lg\=\:button\:yale-blue:hover:enabled, a.lg\=\:button\:yale-blue:focus, a.lg\=\:button\:yale-blue:focus:enabled, a.lg\=\:button\:yale-blue:active, a.lg\=\:button\:yale-blue:active:enabled,
 button.lg\=\:button\:yale-blue:hover,
@@ -8724,7 +8720,7 @@ button.lg\=\:button\:yale-blue:active:enabled {
   }
   a.lg\=\:button\:yale-blue > .ic,
 button.lg\=\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\=\:button\:yale-blue:disabled, a.lg\=\:button\:yale-blue.disabled, a.lg\=\:button\:yale-blue[disabled=true],
 button.lg\=\:button\:yale-blue:disabled,
@@ -8855,7 +8851,7 @@ button.lg\+\:button\:yale-blue:focus {
 button.lg\+\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.lg\+\:button\:blue:hover, a.lg\+\:button\:blue:hover:enabled,
@@ -8873,7 +8869,7 @@ button.lg\+\:button\:blue:active:enabled {
   }
   a.lg\+\:button\:blue > .ic,
 button.lg\+\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:button\:blue:disabled, a.lg\+\:button\:blue.disabled, a.lg\+\:button\:blue[disabled=true],
 button.lg\+\:button\:blue:disabled,
@@ -8950,7 +8946,7 @@ button.lg\+\:button\:transparent[disabled=true] > .ic {
   a.lg\+\:button\:white,
 button.lg\+\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.lg\+\:button\:white > .ic,
@@ -8966,7 +8962,7 @@ button.lg\+\:button\:white:active,
 button.lg\+\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\+\:button\:white:hover > .ic, a.lg\+\:button\:white:hover:enabled > .ic, a.lg\+\:button\:white:focus > .ic, a.lg\+\:button\:white:focus:enabled > .ic, a.lg\+\:button\:white:active > .ic, a.lg\+\:button\:white:active:enabled > .ic,
 button.lg\+\:button\:white:hover > .ic,
@@ -8975,7 +8971,7 @@ button.lg\+\:button\:white:focus > .ic,
 button.lg\+\:button\:white:focus:enabled > .ic,
 button.lg\+\:button\:white:active > .ic,
 button.lg\+\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:button\:white:disabled, a.lg\+\:button\:white.disabled, a.lg\+\:button\:white[disabled=true],
 button.lg\+\:button\:white:disabled,
@@ -8997,7 +8993,7 @@ button.lg\+\:button\:white[disabled=true] > .ic {
 button.lg\+\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\+\:button\:red:hover, a.lg\+\:button\:red:hover:enabled, a.lg\+\:button\:red:focus, a.lg\+\:button\:red:focus:enabled, a.lg\+\:button\:red:active, a.lg\+\:button\:red:active:enabled,
 button.lg\+\:button\:red:hover,
@@ -9011,7 +9007,7 @@ button.lg\+\:button\:red:active:enabled {
   }
   a.lg\+\:button\:red > .ic,
 button.lg\+\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:button\:red:disabled, a.lg\+\:button\:red.disabled, a.lg\+\:button\:red[disabled=true],
 button.lg\+\:button\:red:disabled,
@@ -9033,7 +9029,7 @@ button.lg\+\:button\:red[disabled=true] > .ic {
 button.lg\+\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.lg\+\:button\:yale-blue:hover, a.lg\+\:button\:yale-blue:hover:enabled, a.lg\+\:button\:yale-blue:focus, a.lg\+\:button\:yale-blue:focus:enabled, a.lg\+\:button\:yale-blue:active, a.lg\+\:button\:yale-blue:active:enabled,
 button.lg\+\:button\:yale-blue:hover,
@@ -9047,7 +9043,7 @@ button.lg\+\:button\:yale-blue:active:enabled {
   }
   a.lg\+\:button\:yale-blue > .ic,
 button.lg\+\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.lg\+\:button\:yale-blue:disabled, a.lg\+\:button\:yale-blue.disabled, a.lg\+\:button\:yale-blue[disabled=true],
 button.lg\+\:button\:yale-blue:disabled,
@@ -9178,7 +9174,7 @@ button.xl\+\:button\:yale-blue:focus {
 button.xl\+\:button\:blue {
     border: 0.125rem solid #3169b2;
     background-color: #3169b2;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
   }
   a.xl\+\:button\:blue:hover, a.xl\+\:button\:blue:hover:enabled,
@@ -9196,7 +9192,7 @@ button.xl\+\:button\:blue:active:enabled {
   }
   a.xl\+\:button\:blue > .ic,
 button.xl\+\:button\:blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:button\:blue:disabled, a.xl\+\:button\:blue.disabled, a.xl\+\:button\:blue[disabled=true],
 button.xl\+\:button\:blue:disabled,
@@ -9273,7 +9269,7 @@ button.xl\+\:button\:transparent[disabled=true] > .ic {
   a.xl\+\:button\:white,
 button.xl\+\:button\:white {
     border: 0.125rem solid transparent;
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3169b2;
   }
   a.xl\+\:button\:white > .ic,
@@ -9289,7 +9285,7 @@ button.xl\+\:button\:white:active,
 button.xl\+\:button\:white:active:enabled {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.xl\+\:button\:white:hover > .ic, a.xl\+\:button\:white:hover:enabled > .ic, a.xl\+\:button\:white:focus > .ic, a.xl\+\:button\:white:focus:enabled > .ic, a.xl\+\:button\:white:active > .ic, a.xl\+\:button\:white:active:enabled > .ic,
 button.xl\+\:button\:white:hover > .ic,
@@ -9298,7 +9294,7 @@ button.xl\+\:button\:white:focus > .ic,
 button.xl\+\:button\:white:focus:enabled > .ic,
 button.xl\+\:button\:white:active > .ic,
 button.xl\+\:button\:white:active:enabled > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:button\:white:disabled, a.xl\+\:button\:white.disabled, a.xl\+\:button\:white[disabled=true],
 button.xl\+\:button\:white:disabled,
@@ -9320,7 +9316,7 @@ button.xl\+\:button\:white[disabled=true] > .ic {
 button.xl\+\:button\:red {
     border: 0.125rem solid transparent;
     background-color: #ab1e23;
-    color: #fff;
+    color: #ffffff;
   }
   a.xl\+\:button\:red:hover, a.xl\+\:button\:red:hover:enabled, a.xl\+\:button\:red:focus, a.xl\+\:button\:red:focus:enabled, a.xl\+\:button\:red:active, a.xl\+\:button\:red:active:enabled,
 button.xl\+\:button\:red:hover,
@@ -9334,7 +9330,7 @@ button.xl\+\:button\:red:active:enabled {
   }
   a.xl\+\:button\:red > .ic,
 button.xl\+\:button\:red > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:button\:red:disabled, a.xl\+\:button\:red.disabled, a.xl\+\:button\:red[disabled=true],
 button.xl\+\:button\:red:disabled,
@@ -9356,7 +9352,7 @@ button.xl\+\:button\:red[disabled=true] > .ic {
 button.xl\+\:button\:yale-blue {
     border: 0.125rem solid transparent;
     background-color: #1c3b65;
-    color: #fff;
+    color: #ffffff;
   }
   a.xl\+\:button\:yale-blue:hover, a.xl\+\:button\:yale-blue:hover:enabled, a.xl\+\:button\:yale-blue:focus, a.xl\+\:button\:yale-blue:focus:enabled, a.xl\+\:button\:yale-blue:active, a.xl\+\:button\:yale-blue:active:enabled,
 button.xl\+\:button\:yale-blue:hover,
@@ -9370,7 +9366,7 @@ button.xl\+\:button\:yale-blue:active:enabled {
   }
   a.xl\+\:button\:yale-blue > .ic,
 button.xl\+\:button\:yale-blue > .ic {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   a.xl\+\:button\:yale-blue:disabled, a.xl\+\:button\:yale-blue.disabled, a.xl\+\:button\:yale-blue[disabled=true],
 button.xl\+\:button\:yale-blue:disabled,
@@ -10237,7 +10233,7 @@ fieldset.unstyle {
   transition: background-color ease-in-out 250ms, border ease-in-out 250ms;
 }
 .form\:theme\:gl0b3x input[type=radio]:checked + label:before {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 0.375rem solid #3169b2;
 }
 .form\:theme\:gl0b3x input[type=radio]:focus + label:before {
@@ -10245,7 +10241,7 @@ fieldset.unstyle {
   border: 0.125rem solid #808080;
 }
 .form\:theme\:gl0b3x input[type=radio]:checked:focus + label:before {
-  background-color: #fff;
+  background-color: #ffffff;
   border: 0.375rem solid #3169b2;
   box-shadow: 0 0 0 0.125rem #9bb6d9, 0 0 0 0.1875rem #1c3b65;
 }
@@ -10258,7 +10254,7 @@ fieldset.unstyle {
   font-family: "heebo-bold";
   font-size: 0.875rem;
   color: #3169b2;
-  background-color: #fff;
+  background-color: #ffffff;
   width: 100%;
   border: 0.125rem solid #404040;
   line-height: 2.25rem;
@@ -10270,7 +10266,7 @@ fieldset.unstyle {
   display: none;
 }
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:hover + label, .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked + label {
-  color: #fff;
+  color: #ffffff;
   background-color: #3169b2;
   border: 0.125rem #3169b2 solid;
 }
@@ -10310,7 +10306,7 @@ fieldset.unstyle {
   width: calc(100% - 1.5rem);
   margin-left: 0.75rem;
 }
-.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider {
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range][data-slider] {
   position: relative;
   height: 1.5rem;
   appearance: none;
@@ -10320,10 +10316,10 @@ fieldset.unstyle {
   width: calc(100% + 1.5rem);
   margin-left: -0.75rem;
 }
-.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider:active {
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range][data-slider]:active {
   cursor: grabbing;
 }
-.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range].slider::-webkit-slider-thumb {
+.form\:theme\:gl0b3x [data-module="slider.input-container"] input[type=range][data-slider]::-webkit-slider-thumb {
   z-index: 2;
   box-shadow: 0 0 0.125rem 0 rgba(0, 0, 0, 0.5), 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.25);
   height: 1.5rem;
@@ -10340,7 +10336,7 @@ fieldset.unstyle {
   width: calc(100% - 1.5rem);
   margin-left: 0.75rem;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider] {
   position: relative;
   -webkit-appearance: none;
   height: 1.5rem;
@@ -10351,13 +10347,13 @@ fieldset.unstyle {
   width: calc(100% + 1.5rem);
   margin-left: -0.75rem;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:not(:only-of-type) {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider]:not(:only-of-type) {
   pointer-events: none;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:active {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider]:active {
   cursor: grabbing;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider::-webkit-slider-thumb {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider]::-webkit-slider-thumb {
   z-index: 2;
   -webkit-appearance: none;
   appearance: none;
@@ -10372,10 +10368,10 @@ fieldset.unstyle {
   transition: 0.1s;
   margin-top: 0.125rem;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider:nth-of-type(1) {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider]:nth-of-type(1) {
   position: absolute;
 }
-.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range].range-slider.range-slider + input[type=range].range-slider + [data-module="slider.background"] {
+.form\:theme\:gl0b3x [data-module="range-slider.input-container"] input[type=range][data-range-slider][data-range-slider] + input[type=range][data-range-slider] + [data-module="slider.background"] {
   margin-top: -1rem;
 }
 .form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] {
@@ -10542,7 +10538,7 @@ fieldset.unstyle {
 .form\:theme\:card-radiobuttons input[type=checkbox]:focus {
   background: #3169b2;
   border: 0.125rem solid #3169b2;
-  color: #fff;
+  color: #ffffff;
   box-shadow: 0 0 0.25rem 0.1875rem rgba(120, 156, 204, 0.65);
 }
 .form\:theme\:card-checkboxes input[type=radio]:checked + label, .form\:theme\:card-checkboxes input[type=radio]:checked:focus + label,
@@ -12593,10 +12589,6 @@ ol.unstyle-pl\:0 {
   mask-image: url("../assets/icon/brands/php.svg");
 }
 
-.ic-color\:white {
-  background-color: #fff;
-}
-
 .ic-color\:blue {
   background-color: #3169b2;
 }
@@ -12605,8 +12597,24 @@ ol.unstyle-pl\:0 {
   background-color: #1c3b65;
 }
 
+.ic-color\:white {
+  background-color: #ffffff;
+}
+
+.ic-color\:disabled {
+  background-color: #eeeeec;
+}
+
+.ic-color\:silver {
+  background-color: #c0c0c0;
+}
+
 .ic-color\:onyx {
   background-color: #404040;
+}
+
+.ic-color\:black {
+  background-color: #000000;
 }
 
 .ic-color\:red {
@@ -12625,15 +12633,7 @@ ol.unstyle-pl\:0 {
   background-color: #c0791d;
 }
 
-.ic-color\:black {
-  background-color: #000;
-}
-
 @media screen and (max-width: 47.99rem) {
-  .sm\=\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .sm\=\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12642,8 +12642,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .sm\=\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .sm\=\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .sm\=\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .sm\=\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .sm\=\:ic-color\:black {
+    background-color: #000000;
   }
 
   .sm\=\:ic-color\:red {
@@ -12661,15 +12677,7 @@ ol.unstyle-pl\:0 {
   .sm\=\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .sm\=\:ic-color\:black {
-    background-color: #000;
-  }
 }
-.sm\+\:ic-color\:white {
-  background-color: #fff;
-}
-
 .sm\+\:ic-color\:blue {
   background-color: #3169b2;
 }
@@ -12678,8 +12686,24 @@ ol.unstyle-pl\:0 {
   background-color: #1c3b65;
 }
 
+.sm\+\:ic-color\:white {
+  background-color: #ffffff;
+}
+
+.sm\+\:ic-color\:disabled {
+  background-color: #eeeeec;
+}
+
+.sm\+\:ic-color\:silver {
+  background-color: #c0c0c0;
+}
+
 .sm\+\:ic-color\:onyx {
   background-color: #404040;
+}
+
+.sm\+\:ic-color\:black {
+  background-color: #000000;
 }
 
 .sm\+\:ic-color\:red {
@@ -12698,15 +12722,7 @@ ol.unstyle-pl\:0 {
   background-color: #c0791d;
 }
 
-.sm\+\:ic-color\:black {
-  background-color: #000;
-}
-
 @media screen and (max-width: 63.99rem) {
-  .md-\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .md-\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12715,8 +12731,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .md-\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .md-\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .md-\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .md-\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .md-\:ic-color\:black {
+    background-color: #000000;
   }
 
   .md-\:ic-color\:red {
@@ -12734,16 +12766,8 @@ ol.unstyle-pl\:0 {
   .md-\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .md-\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
-  .md\=\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .md\=\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12752,8 +12776,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .md\=\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .md\=\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .md\=\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .md\=\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .md\=\:ic-color\:black {
+    background-color: #000000;
   }
 
   .md\=\:ic-color\:red {
@@ -12771,16 +12811,8 @@ ol.unstyle-pl\:0 {
   .md\=\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .md\=\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (min-width: 48rem) {
-  .md\+\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .md\+\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12789,8 +12821,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .md\+\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .md\+\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .md\+\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .md\+\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .md\+\:ic-color\:black {
+    background-color: #000000;
   }
 
   .md\+\:ic-color\:red {
@@ -12808,16 +12856,8 @@ ol.unstyle-pl\:0 {
   .md\+\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .md\+\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (max-width: 79.99rem) {
-  .lg-\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .lg-\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12826,8 +12866,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .lg-\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .lg-\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .lg-\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .lg-\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .lg-\:ic-color\:black {
+    background-color: #000000;
   }
 
   .lg-\:ic-color\:red {
@@ -12845,16 +12901,8 @@ ol.unstyle-pl\:0 {
   .lg-\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .lg-\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
-  .lg\=\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .lg\=\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12863,8 +12911,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .lg\=\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .lg\=\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .lg\=\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .lg\=\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .lg\=\:ic-color\:black {
+    background-color: #000000;
   }
 
   .lg\=\:ic-color\:red {
@@ -12882,16 +12946,8 @@ ol.unstyle-pl\:0 {
   .lg\=\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .lg\=\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (min-width: 64rem) {
-  .lg\+\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .lg\+\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12900,8 +12956,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .lg\+\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .lg\+\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .lg\+\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .lg\+\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .lg\+\:ic-color\:black {
+    background-color: #000000;
   }
 
   .lg\+\:ic-color\:red {
@@ -12919,16 +12991,8 @@ ol.unstyle-pl\:0 {
   .lg\+\:ic-color\:warning {
     background-color: #c0791d;
   }
-
-  .lg\+\:ic-color\:black {
-    background-color: #000;
-  }
 }
 @media screen and (min-width: 80rem) {
-  .xl\+\:ic-color\:white {
-    background-color: #fff;
-  }
-
   .xl\+\:ic-color\:blue {
     background-color: #3169b2;
   }
@@ -12937,8 +13001,24 @@ ol.unstyle-pl\:0 {
     background-color: #1c3b65;
   }
 
+  .xl\+\:ic-color\:white {
+    background-color: #ffffff;
+  }
+
+  .xl\+\:ic-color\:disabled {
+    background-color: #eeeeec;
+  }
+
+  .xl\+\:ic-color\:silver {
+    background-color: #c0c0c0;
+  }
+
   .xl\+\:ic-color\:onyx {
     background-color: #404040;
+  }
+
+  .xl\+\:ic-color\:black {
+    background-color: #000000;
   }
 
   .xl\+\:ic-color\:red {
@@ -12955,10 +13035,6 @@ ol.unstyle-pl\:0 {
 
   .xl\+\:ic-color\:warning {
     background-color: #c0791d;
-  }
-
-  .xl\+\:ic-color\:black {
-    background-color: #000;
   }
 }
 .ic-size\:16px {
@@ -17283,7 +17359,7 @@ ol.unstyle-pl\:0 {
   display: block;
 }
 
-.modal-overlay {
+[data-module=modal] {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -17293,34 +17369,37 @@ ol.unstyle-pl\:0 {
   transition: all 1.3s ease;
   display: none;
 }
-.modal-overlay.active {
+[data-module=modal][data-modal=active] {
   opacity: 1;
   transition: all 1.3s ease;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: #00000075;
   z-index: 10000;
   display: flex;
   overflow-x: hidden;
   overflow-y: auto;
 }
-.modal-overlay .modal-container {
+[data-module=modal] [data-module="modal.container"] {
   transition: all 0.3s ease;
   opacity: 0;
   visibility: hidden;
   width: 100%;
   margin: auto;
 }
-.modal-overlay .modal-container button.close {
+[data-module=modal] [data-module="modal.container"] button[data-modal-close] {
   position: absolute;
   top: 20px;
   right: 20px;
 }
-.modal-overlay .modal-container.active {
+[data-module=modal] [data-module="modal.container"][data-modal-container=active] {
   opacity: 1;
   z-index: 10001;
   visibility: visible;
 }
 
-.dialog-overlay button.close {
+[data-module=dialog]::backdrop {
+  background-color: #00000075;
+}
+[data-module=dialog] button[data-dialog-close] {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -17414,176 +17493,109 @@ _:-ms-fullscreen, :root .popover.active {
   display: block;
 }
 
-.carousel {
+[data-module=carousel] {
   overflow: hidden;
 }
-.carousel .items-group {
+[data-module=carousel] [data-module="carousel.item-group"] {
   left: 0;
   transition-property: left;
   transition-timing-function: ease;
 }
-.carousel .indicators-group .control {
-  border-radius: 50%;
-  transition: background-color 1s, border-color 1s, transform 1s;
-}
-.carousel .controls-group .control {
-  position: absolute;
-  transform: translateY(-50%);
-}
-
-/* carousel-disabled-active is used when a carousel item, when it's not in carousel mode, has an always active item */
-.carousel.carousel\:center-mode-bigger .items-group .item .content-container {
-  z-index: 0;
+[data-module=carousel] [data-module="carousel.item-group"] [data-module="carousel.item"] .content-container {
   box-shadow: 0 0 0.125rem 0 rgba(32, 32, 32, 0.12), 0 0.125rem 0.125rem 0 rgba(32, 32, 32, 0.07);
 }
-.carousel.carousel\:center-mode-bigger .items-group .item.carousel-disabled-active .content-container {
-  z-index: 1;
-  box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
-  padding-bottom: 3.125rem;
-}
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item,
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item .carousel-disabled-active {
-  z-index: 0;
-}
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item .content-container,
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item .carousel-disabled-active .content-container {
-  padding-top: 1.5625rem;
-  padding-bottom: 1.5625rem;
-  transition-property: padding;
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
-}
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item.active .content-container,
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item .carousel-disabled-active.active .content-container {
-  box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  transition-property: padding;
-  transition-duration: 0.5s;
-  transition-timing-function: linear;
-}
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item.active,
-.carousel.carousel\:center-mode-bigger.carousel-is-active .items-group .item .carousel-disabled-active.active {
-  z-index: 1;
-}
-.carousel.carousel\:center-mode-bigger .indicators-group .control {
-  height: 0.5rem;
-  width: 0.5rem;
-  padding: 0;
-  border: 0.125rem solid #808080;
-  background-color: #fff;
-  margin: 0 0.25rem;
-}
-.carousel.carousel\:center-mode-bigger .indicators-group .control.active-item {
-  background-color: #3169b2;
-  border-color: #3169b2;
-  margin: 0 0.1875rem;
-  height: 0.625rem;
-  width: 0.625rem;
-}
-.carousel.carousel\:center-mode-bigger .controls-group .control {
-  z-index: 2;
-  top: 50%;
-}
-.carousel.carousel\:center-mode-bigger .controls-group .control.prev {
-  left: 0;
-}
-.carousel.carousel\:center-mode-bigger .controls-group .control.next {
-  right: 0;
-}
-
-.carousel.carousel\:center-mode-all-equal .items-group .item .content-container {
-  box-shadow: 0 0 0.125rem 0 rgba(32, 32, 32, 0.12), 0 0.125rem 0.125rem 0 rgba(32, 32, 32, 0.07);
-}
-.carousel.carousel\:center-mode-all-equal.carousel-is-active .items-group .item .content-container {
+[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"] .content-container {
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.25s;
   transition-timing-function: ease;
 }
-.carousel.carousel\:center-mode-all-equal.carousel-is-active .items-group .item.active .content-container {
+[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-active=true] .content-container, [data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-secondary-active=true] .content-container {
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.25s;
   transition-timing-function: ease;
 }
-.carousel.carousel\:center-mode-all-equal .indicators-group .control {
-  height: 0.5rem;
-  width: 0.5rem;
+[data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control] {
+  border-radius: 50%;
+  transition: background-color 1s, border-color 1s, transform 1s;
+  height: 0.875rem;
+  width: 0.875rem;
   padding: 0;
   border: 0.125rem solid #808080;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 0 0.25rem;
 }
-.carousel.carousel\:center-mode-all-equal .indicators-group .control.active-item {
+[data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control][data-carousel-indicator-active=true] {
   background-color: #3169b2;
   border-color: #3169b2;
   margin: 0 0.1875rem;
-  height: 0.625rem;
-  width: 0.625rem;
-}
-.carousel.carousel\:center-mode-all-equal .controls-group .control {
-  top: 50%;
-}
-.carousel.carousel\:center-mode-all-equal .controls-group .control.prev {
-  left: 0;
-}
-.carousel.carousel\:center-mode-all-equal .controls-group .control.next {
-  right: 0;
+  height: 1rem;
+  width: 1rem;
 }
 
-.carousel.banner--v2 .items-group .item .content-container {
-  z-index: 0;
+@media screen and (min-width: 48rem) {
+  [data-module=carousel][data-carousel-breakpoint="sm="] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="sm="] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="sm="] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .items-group .item.active .content-container {
-  z-index: 1;
+
+@media screen and (min-width: 64rem) {
+  [data-module=carousel][data-carousel-breakpoint=md-] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint=md-] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint=md-] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .indicators-group {
-  position: absolute;
-  bottom: 1.25rem;
+
+@media screen and (min-width: 64rem), screen and (max-width: 47.99rem) {
+  [data-module=carousel][data-carousel-breakpoint="md="] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="md="] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="md="] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .indicators-group .control {
-  height: 0.75rem;
-  width: 0.75rem;
-  padding: 0;
-  border: 0.0625rem solid #fff;
-  background-color: transparent;
-  margin: 0 0.5rem;
+
+@media screen and (max-width: 47.99rem) {
+  [data-module=carousel][data-carousel-breakpoint="md+"] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="md+"] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="md+"] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .indicators-group .control.active-item {
-  background-color: #fff;
+
+@media screen and (min-width: 80rem) {
+  [data-module=carousel][data-carousel-breakpoint=lg-] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint=lg-] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint=lg-] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .controls-group .control {
-  z-index: 2;
-  background-color: transparent;
-  top: 50%;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
-  margin: 0;
+
+@media screen and (min-width: 80rem), screen and (max-width: 63.99rem) {
+  [data-module=carousel][data-carousel-breakpoint="lg="] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="lg="] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="lg="] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .controls-group .control.prev {
-  left: 0.9375rem;
+
+@media screen and (max-width: 63.99rem) {
+  [data-module=carousel][data-carousel-breakpoint="lg+"] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="lg+"] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="lg+"] [data-carousel-control-next] {
+    display: none;
+  }
 }
-.carousel.banner--v2 .controls-group .control.prev .ic {
-  margin-left: 0.1875rem;
-}
-.carousel.banner--v2 .controls-group .control.next {
-  right: 0.9375rem;
-}
-.carousel.banner--v2 .controls-group .control.next .ic {
-  margin-right: 0.1875rem;
-}
-.carousel.banner--v2 .controls-group .control .ic {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scaleY(0.8);
-}
-.carousel.banner--v2 .controls-group .control .ic svg {
-  display: flex;
-  width: 2rem;
-  height: 2rem;
+
+@media screen and (max-width: 79.99rem) {
+  [data-module=carousel][data-carousel-breakpoint="xl+"] [data-module="carousel.indicators-group"],
+[data-module=carousel][data-carousel-breakpoint="xl+"] [data-carousel-control-prev],
+[data-module=carousel][data-carousel-breakpoint="xl+"] [data-carousel-control-next] {
+    display: none;
+  }
 }
 
 [data-module="module.toast"] {
@@ -28633,23 +28645,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .b-white\:0px {
-  border: 0 #fff solid;
+  border: 0 #ffffff solid;
 }
 
 .bt-white\:0px {
-  border-top: 0 #fff solid;
+  border-top: 0 #ffffff solid;
 }
 
 .bb-white\:0px {
-  border-bottom: 0 #fff solid;
+  border-bottom: 0 #ffffff solid;
 }
 
 .bl-white\:0px {
-  border-left: 0 #fff solid;
+  border-left: 0 #ffffff solid;
 }
 
 .br-white\:0px {
-  border-right: 0 #fff solid;
+  border-right: 0 #ffffff solid;
 }
 
 .b-red\:0px {
@@ -28973,23 +28985,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .b-white\:1px {
-  border: 0.0625rem #fff solid;
+  border: 0.0625rem #ffffff solid;
 }
 
 .bt-white\:1px {
-  border-top: 0.0625rem #fff solid;
+  border-top: 0.0625rem #ffffff solid;
 }
 
 .bb-white\:1px {
-  border-bottom: 0.0625rem #fff solid;
+  border-bottom: 0.0625rem #ffffff solid;
 }
 
 .bl-white\:1px {
-  border-left: 0.0625rem #fff solid;
+  border-left: 0.0625rem #ffffff solid;
 }
 
 .br-white\:1px {
-  border-right: 0.0625rem #fff solid;
+  border-right: 0.0625rem #ffffff solid;
 }
 
 .b-red\:1px {
@@ -29313,23 +29325,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .b-white\:2px {
-  border: 0.125rem #fff solid;
+  border: 0.125rem #ffffff solid;
 }
 
 .bt-white\:2px {
-  border-top: 0.125rem #fff solid;
+  border-top: 0.125rem #ffffff solid;
 }
 
 .bb-white\:2px {
-  border-bottom: 0.125rem #fff solid;
+  border-bottom: 0.125rem #ffffff solid;
 }
 
 .bl-white\:2px {
-  border-left: 0.125rem #fff solid;
+  border-left: 0.125rem #ffffff solid;
 }
 
 .br-white\:2px {
-  border-right: 0.125rem #fff solid;
+  border-right: 0.125rem #ffffff solid;
 }
 
 .b-red\:2px {
@@ -29653,23 +29665,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .b-white\:4px {
-  border: 0.25rem #fff solid;
+  border: 0.25rem #ffffff solid;
 }
 
 .bt-white\:4px {
-  border-top: 0.25rem #fff solid;
+  border-top: 0.25rem #ffffff solid;
 }
 
 .bb-white\:4px {
-  border-bottom: 0.25rem #fff solid;
+  border-bottom: 0.25rem #ffffff solid;
 }
 
 .bl-white\:4px {
-  border-left: 0.25rem #fff solid;
+  border-left: 0.25rem #ffffff solid;
 }
 
 .br-white\:4px {
-  border-right: 0.25rem #fff solid;
+  border-right: 0.25rem #ffffff solid;
 }
 
 .b-red\:4px {
@@ -30015,23 +30027,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .sm\=\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .sm\=\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .sm\=\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .sm\=\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .sm\=\:b-red\:0px {
@@ -30355,23 +30367,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .sm\=\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .sm\=\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .sm\=\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .sm\=\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .sm\=\:b-red\:1px {
@@ -30695,23 +30707,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .sm\=\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .sm\=\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .sm\=\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .sm\=\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .sm\=\:b-red\:2px {
@@ -31035,23 +31047,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .sm\=\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .sm\=\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .sm\=\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .sm\=\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .sm\=\:b-red\:4px {
@@ -31396,23 +31408,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:b-white\:0px {
-  border: 0 #fff solid;
+  border: 0 #ffffff solid;
 }
 
 .sm\+\:bt-white\:0px {
-  border-top: 0 #fff solid;
+  border-top: 0 #ffffff solid;
 }
 
 .sm\+\:bb-white\:0px {
-  border-bottom: 0 #fff solid;
+  border-bottom: 0 #ffffff solid;
 }
 
 .sm\+\:bl-white\:0px {
-  border-left: 0 #fff solid;
+  border-left: 0 #ffffff solid;
 }
 
 .sm\+\:br-white\:0px {
-  border-right: 0 #fff solid;
+  border-right: 0 #ffffff solid;
 }
 
 .sm\+\:b-red\:0px {
@@ -31736,23 +31748,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:b-white\:1px {
-  border: 0.0625rem #fff solid;
+  border: 0.0625rem #ffffff solid;
 }
 
 .sm\+\:bt-white\:1px {
-  border-top: 0.0625rem #fff solid;
+  border-top: 0.0625rem #ffffff solid;
 }
 
 .sm\+\:bb-white\:1px {
-  border-bottom: 0.0625rem #fff solid;
+  border-bottom: 0.0625rem #ffffff solid;
 }
 
 .sm\+\:bl-white\:1px {
-  border-left: 0.0625rem #fff solid;
+  border-left: 0.0625rem #ffffff solid;
 }
 
 .sm\+\:br-white\:1px {
-  border-right: 0.0625rem #fff solid;
+  border-right: 0.0625rem #ffffff solid;
 }
 
 .sm\+\:b-red\:1px {
@@ -32076,23 +32088,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:b-white\:2px {
-  border: 0.125rem #fff solid;
+  border: 0.125rem #ffffff solid;
 }
 
 .sm\+\:bt-white\:2px {
-  border-top: 0.125rem #fff solid;
+  border-top: 0.125rem #ffffff solid;
 }
 
 .sm\+\:bb-white\:2px {
-  border-bottom: 0.125rem #fff solid;
+  border-bottom: 0.125rem #ffffff solid;
 }
 
 .sm\+\:bl-white\:2px {
-  border-left: 0.125rem #fff solid;
+  border-left: 0.125rem #ffffff solid;
 }
 
 .sm\+\:br-white\:2px {
-  border-right: 0.125rem #fff solid;
+  border-right: 0.125rem #ffffff solid;
 }
 
 .sm\+\:b-red\:2px {
@@ -32416,23 +32428,23 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:b-white\:4px {
-  border: 0.25rem #fff solid;
+  border: 0.25rem #ffffff solid;
 }
 
 .sm\+\:bt-white\:4px {
-  border-top: 0.25rem #fff solid;
+  border-top: 0.25rem #ffffff solid;
 }
 
 .sm\+\:bb-white\:4px {
-  border-bottom: 0.25rem #fff solid;
+  border-bottom: 0.25rem #ffffff solid;
 }
 
 .sm\+\:bl-white\:4px {
-  border-left: 0.25rem #fff solid;
+  border-left: 0.25rem #ffffff solid;
 }
 
 .sm\+\:br-white\:4px {
-  border-right: 0.25rem #fff solid;
+  border-right: 0.25rem #ffffff solid;
 }
 
 .sm\+\:b-red\:4px {
@@ -32778,23 +32790,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .md-\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .md-\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .md-\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .md-\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .md-\:b-red\:0px {
@@ -33118,23 +33130,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .md-\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .md-\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .md-\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .md-\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .md-\:b-red\:1px {
@@ -33458,23 +33470,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .md-\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .md-\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .md-\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .md-\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .md-\:b-red\:2px {
@@ -33798,23 +33810,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .md-\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .md-\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .md-\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .md-\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .md-\:b-red\:4px {
@@ -34160,23 +34172,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .md\=\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .md\=\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .md\=\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .md\=\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .md\=\:b-red\:0px {
@@ -34500,23 +34512,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .md\=\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .md\=\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .md\=\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .md\=\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .md\=\:b-red\:1px {
@@ -34840,23 +34852,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .md\=\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .md\=\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .md\=\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .md\=\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .md\=\:b-red\:2px {
@@ -35180,23 +35192,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .md\=\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .md\=\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .md\=\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .md\=\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .md\=\:b-red\:4px {
@@ -35542,23 +35554,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .md\+\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .md\+\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .md\+\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .md\+\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .md\+\:b-red\:0px {
@@ -35882,23 +35894,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .md\+\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .md\+\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .md\+\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .md\+\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .md\+\:b-red\:1px {
@@ -36222,23 +36234,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .md\+\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .md\+\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .md\+\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .md\+\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .md\+\:b-red\:2px {
@@ -36562,23 +36574,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .md\+\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .md\+\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .md\+\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .md\+\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .md\+\:b-red\:4px {
@@ -36924,23 +36936,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .lg-\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .lg-\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .lg-\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .lg-\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .lg-\:b-red\:0px {
@@ -37264,23 +37276,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .lg-\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .lg-\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .lg-\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .lg-\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .lg-\:b-red\:1px {
@@ -37604,23 +37616,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .lg-\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .lg-\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .lg-\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .lg-\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .lg-\:b-red\:2px {
@@ -37944,23 +37956,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .lg-\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .lg-\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .lg-\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .lg-\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .lg-\:b-red\:4px {
@@ -38306,23 +38318,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .lg\=\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .lg\=\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .lg\=\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .lg\=\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .lg\=\:b-red\:0px {
@@ -38646,23 +38658,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .lg\=\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .lg\=\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .lg\=\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .lg\=\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .lg\=\:b-red\:1px {
@@ -38986,23 +38998,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .lg\=\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .lg\=\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .lg\=\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .lg\=\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .lg\=\:b-red\:2px {
@@ -39326,23 +39338,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .lg\=\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .lg\=\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .lg\=\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .lg\=\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .lg\=\:b-red\:4px {
@@ -39688,23 +39700,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .lg\+\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .lg\+\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .lg\+\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .lg\+\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .lg\+\:b-red\:0px {
@@ -40028,23 +40040,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .lg\+\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .lg\+\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .lg\+\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .lg\+\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .lg\+\:b-red\:1px {
@@ -40368,23 +40380,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .lg\+\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .lg\+\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .lg\+\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .lg\+\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .lg\+\:b-red\:2px {
@@ -40708,23 +40720,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .lg\+\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .lg\+\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .lg\+\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .lg\+\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .lg\+\:b-red\:4px {
@@ -41070,23 +41082,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:b-white\:0px {
-    border: 0 #fff solid;
+    border: 0 #ffffff solid;
   }
 
   .xl\+\:bt-white\:0px {
-    border-top: 0 #fff solid;
+    border-top: 0 #ffffff solid;
   }
 
   .xl\+\:bb-white\:0px {
-    border-bottom: 0 #fff solid;
+    border-bottom: 0 #ffffff solid;
   }
 
   .xl\+\:bl-white\:0px {
-    border-left: 0 #fff solid;
+    border-left: 0 #ffffff solid;
   }
 
   .xl\+\:br-white\:0px {
-    border-right: 0 #fff solid;
+    border-right: 0 #ffffff solid;
   }
 
   .xl\+\:b-red\:0px {
@@ -41410,23 +41422,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:b-white\:1px {
-    border: 0.0625rem #fff solid;
+    border: 0.0625rem #ffffff solid;
   }
 
   .xl\+\:bt-white\:1px {
-    border-top: 0.0625rem #fff solid;
+    border-top: 0.0625rem #ffffff solid;
   }
 
   .xl\+\:bb-white\:1px {
-    border-bottom: 0.0625rem #fff solid;
+    border-bottom: 0.0625rem #ffffff solid;
   }
 
   .xl\+\:bl-white\:1px {
-    border-left: 0.0625rem #fff solid;
+    border-left: 0.0625rem #ffffff solid;
   }
 
   .xl\+\:br-white\:1px {
-    border-right: 0.0625rem #fff solid;
+    border-right: 0.0625rem #ffffff solid;
   }
 
   .xl\+\:b-red\:1px {
@@ -41750,23 +41762,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:b-white\:2px {
-    border: 0.125rem #fff solid;
+    border: 0.125rem #ffffff solid;
   }
 
   .xl\+\:bt-white\:2px {
-    border-top: 0.125rem #fff solid;
+    border-top: 0.125rem #ffffff solid;
   }
 
   .xl\+\:bb-white\:2px {
-    border-bottom: 0.125rem #fff solid;
+    border-bottom: 0.125rem #ffffff solid;
   }
 
   .xl\+\:bl-white\:2px {
-    border-left: 0.125rem #fff solid;
+    border-left: 0.125rem #ffffff solid;
   }
 
   .xl\+\:br-white\:2px {
-    border-right: 0.125rem #fff solid;
+    border-right: 0.125rem #ffffff solid;
   }
 
   .xl\+\:b-red\:2px {
@@ -42090,23 +42102,23 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:b-white\:4px {
-    border: 0.25rem #fff solid;
+    border: 0.25rem #ffffff solid;
   }
 
   .xl\+\:bt-white\:4px {
-    border-top: 0.25rem #fff solid;
+    border-top: 0.25rem #ffffff solid;
   }
 
   .xl\+\:bb-white\:4px {
-    border-bottom: 0.25rem #fff solid;
+    border-bottom: 0.25rem #ffffff solid;
   }
 
   .xl\+\:bl-white\:4px {
-    border-left: 0.25rem #fff solid;
+    border-left: 0.25rem #ffffff solid;
   }
 
   .xl\+\:br-white\:4px {
-    border-right: 0.25rem #fff solid;
+    border-right: 0.25rem #ffffff solid;
   }
 
   .xl\+\:b-red\:4px {
@@ -46011,7 +46023,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .bgc\:white {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .bgc\:white\:50\% {
@@ -46042,27 +46054,27 @@ _:-ms-fullscreen, :root .popover.active {
 /* ~ means it's a transitional gradient */
 /* Gradients Y-Axis Top to Bottom */
 .bgcgy\:platinum\|white {
-  background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
 }
 
 .bgcgy\:platinum\|16px-white {
-  background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
 }
 
 .bgcgy\:platinum\|32px-white {
-  background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
 }
 
 .bgcgy\:16px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+  background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
 }
 
 .bgcgy\:32px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+  background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
 }
 
 .bgcgy\:64px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+  background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
 }
 
 .bgcgy\:transparent\|platinum {
@@ -46078,27 +46090,27 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .bgcgy\:transparent\|white {
-  background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
 }
 
 .bgcgy\:white\|platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
 }
 
 .bgcgy\:white\|8px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
 }
 
 .bgcgy\:white\|16px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
 }
 
 .bgcgy\:white\|112px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
 }
 
 .bgcgy\:48px-white\|platinum {
-  background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+  background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
 }
 
 /* Gradients X-Axis Left to Right */
@@ -46189,7 +46201,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .sm\=\:bgc\:white\:50\% {
@@ -46220,27 +46232,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .sm\=\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .sm\=\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .sm\=\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .sm\=\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .sm\=\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .sm\=\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .sm\=\:bgcgy\:transparent\|platinum {
@@ -46256,27 +46268,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .sm\=\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .sm\=\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .sm\=\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .sm\=\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .sm\=\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .sm\=\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -46366,7 +46378,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:bgc\:white {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .sm\+\:bgc\:white\:50\% {
@@ -46397,27 +46409,27 @@ _:-ms-fullscreen, :root .popover.active {
 /* ~ means it's a transitional gradient */
 /* Gradients Y-Axis Top to Bottom */
 .sm\+\:bgcgy\:platinum\|white {
-  background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
 }
 
 .sm\+\:bgcgy\:platinum\|16px-white {
-  background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
 }
 
 .sm\+\:bgcgy\:platinum\|32px-white {
-  background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
 }
 
 .sm\+\:bgcgy\:16px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+  background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
 }
 
 .sm\+\:bgcgy\:32px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+  background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
 }
 
 .sm\+\:bgcgy\:64px-platinum\|white {
-  background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+  background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
 }
 
 .sm\+\:bgcgy\:transparent\|platinum {
@@ -46433,27 +46445,27 @@ _:-ms-fullscreen, :root .popover.active {
 }
 
 .sm\+\:bgcgy\:transparent\|white {
-  background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+  background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
 }
 
 .sm\+\:bgcgy\:white\|platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
 }
 
 .sm\+\:bgcgy\:white\|8px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
 }
 
 .sm\+\:bgcgy\:white\|16px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
 }
 
 .sm\+\:bgcgy\:white\|112px-platinum {
-  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+  background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
 }
 
 .sm\+\:bgcgy\:48px-white\|platinum {
-  background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+  background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
 }
 
 /* Gradients X-Axis Left to Right */
@@ -46544,7 +46556,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .md-\:bgc\:white\:50\% {
@@ -46575,27 +46587,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .md-\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .md-\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .md-\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .md-\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md-\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .md-\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .md-\:bgcgy\:transparent\|platinum {
@@ -46611,27 +46623,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md-\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .md-\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .md-\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .md-\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md-\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .md-\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -46722,7 +46734,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .md\=\:bgc\:white\:50\% {
@@ -46753,27 +46765,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .md\=\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .md\=\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .md\=\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .md\=\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md\=\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .md\=\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .md\=\:bgcgy\:transparent\|platinum {
@@ -46789,27 +46801,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\=\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .md\=\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .md\=\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .md\=\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md\=\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .md\=\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -46900,7 +46912,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .md\+\:bgc\:white\:50\% {
@@ -46931,27 +46943,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .md\+\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .md\+\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .md\+\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .md\+\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md\+\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .md\+\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .md\+\:bgcgy\:transparent\|platinum {
@@ -46967,27 +46979,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .md\+\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .md\+\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .md\+\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .md\+\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .md\+\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .md\+\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -47078,7 +47090,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .lg-\:bgc\:white\:50\% {
@@ -47109,27 +47121,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .lg-\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .lg-\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .lg-\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .lg-\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg-\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .lg-\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .lg-\:bgcgy\:transparent\|platinum {
@@ -47145,27 +47157,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg-\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .lg-\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .lg-\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .lg-\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg-\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .lg-\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -47256,7 +47268,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .lg\=\:bgc\:white\:50\% {
@@ -47287,27 +47299,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .lg\=\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .lg\=\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .lg\=\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .lg\=\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg\=\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .lg\=\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .lg\=\:bgcgy\:transparent\|platinum {
@@ -47323,27 +47335,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\=\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .lg\=\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .lg\=\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .lg\=\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg\=\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .lg\=\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -47434,7 +47446,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .lg\+\:bgc\:white\:50\% {
@@ -47465,27 +47477,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .lg\+\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .lg\+\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .lg\+\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .lg\+\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg\+\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .lg\+\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .lg\+\:bgcgy\:transparent\|platinum {
@@ -47501,27 +47513,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .lg\+\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .lg\+\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .lg\+\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .lg\+\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .lg\+\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .lg\+\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -47612,7 +47624,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:bgc\:white {
-    background-color: #fff;
+    background-color: #ffffff;
   }
 
   .xl\+\:bgc\:white\:50\% {
@@ -47643,27 +47655,27 @@ _:-ms-fullscreen, :root .popover.active {
   /* ~ means it's a transitional gradient */
   /* Gradients Y-Axis Top to Bottom */
   .xl\+\:bgcgy\:platinum\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, #e0e0e0 50%, #e0e0e0 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
 
   .xl\+\:bgcgy\:platinum\|16px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 1rem, #e0e0e0 1rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 1rem, #e0e0e0 1rem);
   }
 
   .xl\+\:bgcgy\:platinum\|32px-white {
-    background: linear-gradient(0deg, #fff 0, #fff 2rem, #e0e0e0 2rem);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 2rem, #e0e0e0 2rem);
   }
 
   .xl\+\:bgcgy\:16px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(180deg, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .xl\+\:bgcgy\:32px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 2rem, #fff 2rem);
+    background: linear-gradient(180deg, #e0e0e0 2rem, #ffffff 2rem);
   }
 
   .xl\+\:bgcgy\:64px-platinum\|white {
-    background: linear-gradient(180deg, #e0e0e0 4rem, #fff 4rem);
+    background: linear-gradient(180deg, #e0e0e0 4rem, #ffffff 4rem);
   }
 
   .xl\+\:bgcgy\:transparent\|platinum {
@@ -47679,27 +47691,27 @@ _:-ms-fullscreen, :root .popover.active {
   }
 
   .xl\+\:bgcgy\:transparent\|white {
-    background: linear-gradient(0deg, #fff 0, #fff 50%, transparent 50%, transparent 100%);
+    background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, transparent 50%, transparent 100%);
   }
 
   .xl\+\:bgcgy\:white\|platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #fff 50%, #fff 100%);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 50%, #ffffff 50%, #ffffff 100%);
   }
 
   .xl\+\:bgcgy\:white\|8px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #fff 0.5rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 0.5rem, #ffffff 0.5rem);
   }
 
   .xl\+\:bgcgy\:white\|16px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #fff 1rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1rem, #ffffff 1rem);
   }
 
   .xl\+\:bgcgy\:white\|112px-platinum {
-    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #fff 7rem);
+    background: linear-gradient(0deg, #e0e0e0 0, #e0e0e0 7rem, #ffffff 7rem);
   }
 
   .xl\+\:bgcgy\:48px-white\|platinum {
-    background: linear-gradient(180deg, #fff 3rem, #e0e0e0 3rem);
+    background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
   /* Gradients X-Axis Left to Right */
@@ -48010,7 +48022,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 }
 .color\:white {
-  color: #fff;
+  color: #ffffff;
 }
 
 .color\:blue {
@@ -48035,7 +48047,7 @@ _:-ms-fullscreen, :root .popover.active {
 
 @media screen and (max-width: 47.99rem) {
   .sm\=\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .sm\=\:color\:blue {
@@ -48059,7 +48071,7 @@ _:-ms-fullscreen, :root .popover.active {
   }
 }
 .sm\+\:color\:white {
-  color: #fff;
+  color: #ffffff;
 }
 
 .sm\+\:color\:blue {
@@ -48084,7 +48096,7 @@ _:-ms-fullscreen, :root .popover.active {
 
 @media screen and (max-width: 63.99rem) {
   .md-\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .md-\:color\:blue {
@@ -48109,7 +48121,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
   .md\=\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .md\=\:color\:blue {
@@ -48134,7 +48146,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (min-width: 48rem) {
   .md\+\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .md\+\:color\:blue {
@@ -48159,7 +48171,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (max-width: 79.99rem) {
   .lg-\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .lg-\:color\:blue {
@@ -48184,7 +48196,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
   .lg\=\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .lg\=\:color\:blue {
@@ -48209,7 +48221,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (min-width: 64rem) {
   .lg\+\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .lg\+\:color\:blue {
@@ -48234,7 +48246,7 @@ _:-ms-fullscreen, :root .popover.active {
 }
 @media screen and (min-width: 80rem) {
   .xl\+\:color\:white {
-    color: #fff;
+    color: #ffffff;
   }
 
   .xl\+\:color\:blue {
