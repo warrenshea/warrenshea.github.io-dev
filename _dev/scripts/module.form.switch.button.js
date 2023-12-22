@@ -10,7 +10,6 @@ storm_eagle.module('form_switch_button', () => {
       document.querySelectorAll('[data-module="switch.button"]').forEach((el) => {
         const id = el.getAttribute('id');
         module_state[id] = {
-          id,
           el,
           slider: el.querySelector(':scope > [data-module="switch.slider"]'),
           thumb: el.querySelector(':scope > [data-module="switch.slider"] > [data-module="switch.thumb"]'),
