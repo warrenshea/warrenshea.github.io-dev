@@ -25,8 +25,27 @@ const breakpoints = {
   xl_min: 1280,
 };
 
-const focus_trap_selector = `a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled]), li[role="tab"]:not([disabled]), div[role="tabpanel"]:not([disabled]), label`;
-const remove_focus_selector = `.form\\:theme\\:gl0b3x input[type="radio"]+label, .form\\:theme\\:gl0b3x input[type="text"]+label, .form\\:theme\\:gl0b3x input[type="email"]+label, [data-module="popover"] button, [data-module="popover"] a`;
+//turns everything to tabindex=0
+const focus_trap_selector = [
+  `a[href]:not([disabled])`,
+  `button:not([disabled])`,
+  `textarea:not([disabled])`,
+  `input[type="text"]:not([disabled])`,
+  `input[type="radio"]:not([disabled])`,
+  `input[type="checkbox"]:not([disabled])`,
+  `select:not([disabled])`,
+  `li[role="tab"]:not([disabled])`,
+  `div[role="tabpanel"]:not([disabled])`,
+  `label`,
+]
+//except these
+const remove_focus_selector = [
+  `.form\\:theme\\:gl0b3x input[type="radio"]+label`,
+  `.form\\:theme\\:gl0b3x input[type="text"]+label`,
+  `.form\\:theme\\:gl0b3x input[type="email"]+label`,
+  `[data-module="popover"] button`,
+  `[data-module="popover"] a`
+]
 
 /**
  * storm_eagle Object
@@ -820,7 +839,7 @@ var storm_eagle = (() => {
         return element.__resize_observer__ instanceof ResizeObserver;
       };
 
-      let resize_observer = new ResizeObserver((el) => {
+      const resize_observer = new ResizeObserver((el) => {
         func(...param_values);
       });
 
