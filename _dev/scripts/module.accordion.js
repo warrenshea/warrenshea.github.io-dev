@@ -14,7 +14,6 @@ storm_eagle.module('accordion', () => {
       document.querySelectorAll('[data-module="accordion"]').forEach((el) => {
         const id = el.getAttribute('id');
         module_state[id] = {
-          id,
           el,
           all_headers: el.querySelectorAll(':scope > div > * > [data-module="accordion.header"],:scope > [data-module="accordion.header"]'),
           all_panels: el.querySelectorAll(':scope > div > [data-module="accordion.panel"],:scope > [data-module="accordion.panel"]'),
@@ -51,9 +50,7 @@ storm_eagle.module('accordion', () => {
       initialize_initial_active: (id) => {
         const { all_headers, initial_active } = module_state[id];
         all_headers.forEach((header,index) => {
-          if (initial_active[index] === 1) {
-            header.click();
-          }
+          (initial_active[index] === 1) && header.click();
         });
       },
     },
