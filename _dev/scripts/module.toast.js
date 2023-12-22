@@ -13,7 +13,7 @@ storm_eagle.module('toast', () => {
       }
 
       let toast_container = document.querySelector('[data-module="module.toast"]');
-      toast_container = toast_container || create_toast_container();
+      toast_container ||= create_toast_container();
 
       const toast = document.createElement('span');
       toast.className = `toast bxs:5 heebo:bold ${text_color} ${background}`;
@@ -30,9 +30,7 @@ storm_eagle.module('toast', () => {
           toast_container.removeChild(toast);
 
           // Remove the toast container if there are no messages
-          if (toast_container.childElementCount === 0) {
-            document.body.removeChild(toast_container);
-          }
+          (toast_container.childElementCount === 0) && document.body.removeChild(toast_container);
         }, 500);
       }, 2500);
     },
