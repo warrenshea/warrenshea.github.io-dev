@@ -18,9 +18,8 @@
                 "/scripts/module.carousel.js",
                 "/examples/carousel/carousel-builder.js",
                 "/scripts/module.popover.js",
-                "/scripts/module.slider.js",
-                "/scripts/vendor.prism.v.1.29.0.js",
-                "/scripts/prism.js"
+                "/scripts/module.modal-and-dialog.js",
+                "/scripts/module.slider.js"
             ]
         }
     }
