@@ -31,7 +31,7 @@
                   <div class="ic ic-type:solid ic-size:16px ic-name:chevron-right"></div>
                 </button>
               </div>
-              <div class="position:relative w:100%">
+              <div class="w:100%">
                 <ul data-module="carousel.item-group" class="row unstyle-pl:0 align:stretch position:relative sm+:px:0">
                   <li data-module="carousel.item" class="align-self:middle">
                     <div class="sm+:px:4px md+:px:16px">
@@ -39,15 +39,16 @@
                         <div class="text-align:center">
                           <div class="fs:28px heebo:bold"><a href="#">Slide 0</a>
                           </div>
-                          <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item');" aria-label="Popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
-                          <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item" aria-labelledby="focused-item-id">
-                            <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                              <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                              <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                                <p id="focused-item-id">A <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Popover" target="_blank" class="heebo:bold">popover</a> is a light roll made from an egg batter similar to that of Yorkshire pudding, typically baked in muffin tins or dedicated popover pans, which have straight-walled sides rather than angled.</p>
+                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open(this,'dialog-test');"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+                          <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test" aria-labelledby="dialog-loading-heading-id">
+                            <div data-module="dialog.container">
+                              <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+                              <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px brr:8px">
+                                <h2 id="dialog-loading-heading-id" class="xl+:lh:40 heebo:bold pb:24px">&lt;dialog&gt; Title Test</h2>
+                                <p><a href="https://www.lipsum.com/" class="anchor:blue" target="_blank">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                               </div>
                             </div>
-                          </div>
+                          </dialog>
                         </div>
                       </div>
                     </div>
@@ -67,17 +68,16 @@
                         <div class="text-align:center">
                           <div class="fs:28px heebo:bold"><a href="#">Slide 2</a>
                           </div>
-                          <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item2');" aria-label="Popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
-                          <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item2" aria-labelledby="focused-item-2-id">
-                            <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                              <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                              <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                                <br><br>
-                                <p id="focused-item-2-id">A <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Popover" target="_blank" class="heebo:bold">popover</a> is a light roll made from an egg batter similar to that of Yorkshire pudding, typically baked in muffin tins or dedicated popover pans, which have straight-walled sides rather than angled.</p>
-                                <br><br>
+                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open(this,'dialog-test2');"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+                          <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test2" aria-labelledby="dialog-loading-heading-id">
+                            <div data-module="dialog.container">
+                              <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+                              <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px brr:8px">
+                                <h2 id="dialog-loading-heading-id" class="xl+:lh:40 heebo:bold pb:24px">&lt;dialog&gt; Title Test</h2>
+                                <p><a href="https://www.lipsum.com/" class="anchor:blue" target="_blank">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                               </div>
                             </div>
-                          </div>
+                          </dialog>
                         </div>
                       </div>
                     </div>
@@ -174,48 +174,17 @@
             </div>
             <div class="w:6 py:16px">
               <div class="form:theme:gl0b3x">
-                <table class="w:100%" border="1" style="border-collapse: collapse;">
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
-                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-1');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-1" aria-labelledby="focused-item-1-id">
-                          <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                            <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                            <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                              <p id="focused-item-1-id">The slide that is focused on load</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <td colspan="4">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-active-1" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('1','focused-item',this.value);">
-                          <option value="1">1</option>
-                          <option value="2" selected>2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6" disabled>6</option>
-                          <option value="7" disabled>7</option>
-                          <option value="8" disabled>8</option>
-                          <option value="9" disabled>9</option>
-                        </select>
-                        <label for="carousel-active-1" class="active-label"><span class="description"></span></label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
+                <table class="w:100%">
+                  <tr class="bb-onyx:1px">
                     <th class="p:8px text-align:left" style=""></th>
-                    <th class="p:8px text-align:center" style="width:45px"2>sm</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>md</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>lg</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>xl</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>sm</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>md</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>lg</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>xl</th>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'number-active-elements-1');" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-1" aria-labelledby="number-active-elements-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -227,9 +196,9 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-sm-1" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-sm',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-sm-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-sm',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -243,9 +212,9 @@
                         <label for="carousel-num-active-sm-1" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-md-1" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-md',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-md-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-md',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -259,9 +228,9 @@
                         <label for="carousel-num-active-md-1" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-lg-1" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-lg',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-lg-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-lg',this.value);">
                           <option value="1">1</option>
                           <option value="2" selected>2</option>
                           <option value="3">3</option>
@@ -275,9 +244,9 @@
                         <label for="carousel-num-active-lg-1" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-xl-1" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-xl',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-xl-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-xl',this.value);">
                           <option value="1">1</option>
                           <option value="2">2</option>
                           <option value="3" selected>3</option>
@@ -292,9 +261,9 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'left-offset-1');" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-1" aria-labelledby="left-offset-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -306,14 +275,14 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="32" onChange="storm_eagle.carousel_builder.update('1','left-offset-sm',this.value);" id="left-offset-sm-1"><label for="left-offset-sm-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.25" onChange="storm_eagle.carousel_builder.update('1','left-offset-md',this.value);" id="left-offset-md-1"><label for="left-offset-md-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.16667" onChange="storm_eagle.carousel_builder.update('1','left-offset-lg',this.value);" id="left-offset-lg-1"><label for="left-offset-lg-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.125" onChange="storm_eagle.carousel_builder.update('1','left-offset-xl',this.value);" id="left-offset-xl-1"><label for="left-offset-xl-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="32" onChange="storm_eagle.carousel_builder.update('1','left-offset-sm',this.value);" id="left-offset-sm-1"><label for="left-offset-sm-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.25" onChange="storm_eagle.carousel_builder.update('1','left-offset-md',this.value);" id="left-offset-md-1"><label for="left-offset-md-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.16667" onChange="storm_eagle.carousel_builder.update('1','left-offset-lg',this.value);" id="left-offset-lg-1"><label for="left-offset-lg-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.125" onChange="storm_eagle.carousel_builder.update('1','left-offset-xl',this.value);" id="left-offset-xl-1"><label for="left-offset-xl-1"><span class="description"></span></label></td>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'transition-speed-2');" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-2" aria-labelledby="transition-speed-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -325,10 +294,41 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.5" onChange="storm_eagle.carousel_builder.update('1','transition-speed-sm',this.value);" id="transition-speed-sm-1"><label for="transition-speed-sm-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-md',this.value);" id="transition-speed-md-1"><label for="transition-speed-md-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-lg',this.value);" id="transition-speed-lg-1"><label for="transition-speed-lg-1"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-xl',this.value);" id="transition-speed-xl-1"><label for="transition-speed-xl-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.5" onChange="storm_eagle.carousel_builder.update('1','transition-speed-sm',this.value);" id="transition-speed-sm-1"><label for="transition-speed-sm-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-md',this.value);" id="transition-speed-md-1"><label for="transition-speed-md-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-lg',this.value);" id="transition-speed-lg-1"><label for="transition-speed-lg-1"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-xl',this.value);" id="transition-speed-xl-1"><label for="transition-speed-xl-1"><span class="description"></span></label></td>
+                  </tr>
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
+                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-1');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-1" aria-labelledby="focused-item-1-id">
+                          <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                            <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                            <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                              <p id="focused-item-1-id">The slide that is focused on load</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td colspan="4">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-active-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','focused-item',this.value);">
+                          <option value="1">1</option>
+                          <option value="2" selected>2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6" disabled>6</option>
+                          <option value="7" disabled>7</option>
+                          <option value="8" disabled>8</option>
+                          <option value="9" disabled>9</option>
+                        </select>
+                        <label for="carousel-active-1" class="active-label"><span class="description"></span></label>
+                      </div>
+                    </td>
                   </tr>
                 </table>
               </div>
@@ -361,7 +361,7 @@
                   <div class="ic ic-type:solid ic-color:blue ic-size:16px ic-name:chevron-right"></div>
                 </button>
               </div>
-              <div class="position:relative w:100% py:40px">
+              <div class="w:100% py:40px">
                 <ul data-module="carousel.item-group" class="row unstyle-pl:0 align:stretch position:relative sm+:px:0">
                   <li data-module="carousel.item" class="align-self:middle">
                     <div class="px:0">
@@ -482,48 +482,17 @@
             </div>
             <div class="w:6 py:16px">
               <div class="form:theme:gl0b3x">
-                <table class="w:100%" border="1" style="border-collapse: collapse;">
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
-                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-2');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-2" aria-labelledby="focused-item-2-id">
-                          <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                            <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                            <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                              <p id="focused-item-2-id">The slide that is focused on load</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <td colspan="4">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-active-2" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('2','focused-item',this.value);">
-                          <option value="1">1</option>
-                          <option value="2" selected>2</option>
-                          <option value="3">3</option>
-                          <option value="4" disabled>4</option>
-                          <option value="5" disabled>5</option>
-                          <option value="6" disabled>6</option>
-                          <option value="7" disabled>7</option>
-                          <option value="8" disabled>8</option>
-                          <option value="9" disabled>9</option>
-                        </select>
-                        <label for="carousel-active-2" class="active-label"><span class="description"></span></label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
+                <table class="w:100%">
+                  <tr class="bb-onyx:1px">
                     <th class="p:8px text-align:left" style=""></th>
-                    <th class="p:8px text-align:center" style="width:45px"2>sm</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>md</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>lg</th>
-                    <th class="p:8px text-align:center" style="width:45px"2>xl</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>sm</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>md</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>lg</th>
+                    <th class="p:8px text-align:center" style="width:60px"2>xl</th>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'number-active-elements-2');" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-2" aria-labelledby="number-active-elements-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -535,9 +504,9 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-sm-2" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-sm',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-sm-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-sm',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -551,9 +520,9 @@
                         <label for="carousel-num-active-sm-2" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-md-2" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-md',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-md-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-md',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -567,9 +536,9 @@
                         <label for="carousel-num-active-md-2" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-lg-2" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-lg',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-lg-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-lg',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -583,9 +552,9 @@
                         <label for="carousel-num-active-lg-2" class="active-label"><span class="description"></span></label>
                       </div>
                     </td>
-                    <td class="position:relative">
-                      <div class="align-self:centered position:relative" style="width:40px">
-                        <select id="carousel-num-active-xl-2" class="ic-color:blue" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-xl',this.value);">
+                    <td class="position:relative br-onyx:1px">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-num-active-xl-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-xl',this.value);">
                           <option value="1" selected>1</option>
                           <option value="2">2</option>
                           <option value="3">3</option>
@@ -600,9 +569,9 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'left-offset-2');" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-2" aria-labelledby="left-offset-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -614,14 +583,14 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="32" onChange="storm_eagle.carousel_builder.update('2','left-offset-sm',this.value);" id="left-offset-sm-2"><label for="left-offset-sm-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-md',this.value);" id="left-offset-md-2"><label for="left-offset-md-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.16667" onChange="storm_eagle.carousel_builder.update('2','left-offset-lg',this.value);" id="left-offset-lg-2"><label for="left-offset-lg-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-xl',this.value);" id="left-offset-xl-2"><label for="left-offset-xl-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="32" onChange="storm_eagle.carousel_builder.update('2','left-offset-sm',this.value);" id="left-offset-sm-2"><label for="left-offset-sm-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-md',this.value);" id="left-offset-md-2"><label for="left-offset-md-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.16667" onChange="storm_eagle.carousel_builder.update('2','left-offset-lg',this.value);" id="left-offset-lg-2"><label for="left-offset-lg-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-xl',this.value);" id="left-offset-xl-2"><label for="left-offset-xl-2"><span class="description"></span></label></td>
                   </tr>
-                  <tr>
-                    <th class="p:8px text-align:left">
-                      <div class="fs:16px position:relative display:flex align:middle">
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
                         Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'transition-speed-3');" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-3" aria-labelledby="transition-speed-3-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
@@ -633,10 +602,41 @@
                         </div>
                       </div>
                     </th>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="0.5" onChange="storm_eagle.carousel_builder.update('2','transition-speed-sm',this.value);" id="transition-speed-sm-2"><label for="transition-speed-sm-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-md',this.value);" id="transition-speed-md-2"><label for="transition-speed-md-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-lg',this.value);" id="transition-speed-lg-2"><label for="transition-speed-lg-2"><span class="description"></span></label></td>
-                    <td class="position:relative"><input type="text" class="text-align:center color:blue" style="width:45px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-xl',this.value);" id="transition-speed-xl-2"><label for="transition-speed-xl-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.5" onChange="storm_eagle.carousel_builder.update('2','transition-speed-sm',this.value);" id="transition-speed-sm-2"><label for="transition-speed-sm-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-md',this.value);" id="transition-speed-md-2"><label for="transition-speed-md-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-lg',this.value);" id="transition-speed-lg-2"><label for="transition-speed-lg-2"><span class="description"></span></label></td>
+                    <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-xl',this.value);" id="transition-speed-xl-2"><label for="transition-speed-xl-2"><span class="description"></span></label></td>
+                  </tr>
+                  <tr class="bb-onyx:1px">
+                    <th class="p:8px br-onyx:1px">
+                      <div class="fs:16px position:relative display:flex align:middle align:right">
+                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-2');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-2" aria-labelledby="focused-item-2-id">
+                          <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                            <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                            <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                              <p id="focused-item-2-id">The slide that is focused on load</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td colspan="4">
+                      <div class="align-self:centered position:relative" style="width:60px">
+                        <select id="carousel-active-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','focused-item',this.value);">
+                          <option value="1">1</option>
+                          <option value="2" selected>2</option>
+                          <option value="3">3</option>
+                          <option value="4" disabled>4</option>
+                          <option value="5" disabled>5</option>
+                          <option value="6" disabled>6</option>
+                          <option value="7" disabled>7</option>
+                          <option value="8" disabled>8</option>
+                          <option value="9" disabled>9</option>
+                        </select>
+                        <label for="carousel-active-2" class="active-label"><span class="description"></span></label>
+                      </div>
+                    </td>
                   </tr>
                 </table>
               </div>
@@ -644,15 +644,6 @@
           </div>
         </div>
       </div>
-
-<!--       <section class="mw:1280px align-self:centered pt:32px">
-        <h2 class="fs:32px play:bold sm+:pl:8px xl+:px:0 pt:16px">To Do</h2>
-        <ul>
-          <li>Infinite scroll</li>
-          <li>slide more than 1 item</li>
-          <li>touch event</li>
-        </ul>
-      </section> -->
 
       <div data-module="popover.overlay" class="popover-overlay"></div>
     </main>
