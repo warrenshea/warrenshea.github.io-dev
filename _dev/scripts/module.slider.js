@@ -11,7 +11,6 @@ storm_eagle.module('slider', () => {
         const el = container.querySelector(":scope > [data-module='slider.input']");
         const id = el.getAttribute('id');
         module_state[id] = {
-          id,
           el,
           slider_container: container,
           label_container: container.querySelector(':scope > [data-module="slider.labels"]'),
@@ -32,8 +31,8 @@ storm_eagle.module('slider', () => {
         const num_labels = labels.length;
         const container_width = slider_container.offsetWidth;
         const full_label_width = (container_width * num_labels) / (num_labels - 1);
-        label_container.style.width = `${full_label_width}px`;
         const transform_left = (50 / num_labels) * -1;
+        label_container.style.width = `${full_label_width}px`;
         label_container.style.transform = `translateX(${transform_left}%)`;
       },
       update_slider_track: (id) => {
