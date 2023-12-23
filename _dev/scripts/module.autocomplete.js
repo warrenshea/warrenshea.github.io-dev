@@ -38,7 +38,9 @@ storm_eagle.module('autocomplete', () => {
       document.getElementById(results_id).classList.add('display:none');
       document.getElementById(autocomplete_id).classList.remove('active');
       document.getElementById(autocomplete_id).setAttribute('aria-expanded', 'false');
-      (reset_results) && document.getElementById(results_id).innerHTML = '';
+      if (reset_results) {
+        document.getElementById(results_id).innerHTML = '';
+      }
     },
     execute_search: (autocomplete_id) => {
       const search_function = autocomplete_state[autocomplete_id]['search_function'];
@@ -47,7 +49,9 @@ storm_eagle.module('autocomplete', () => {
       const results_id = autocomplete_state[autocomplete_id]['results_id'];
       const num_results = autocomplete_state[autocomplete_id]['num_results'];
 
-      (query.length > 0) && storm_eagle.util.run_str_func(search_function, { query, input_id, results_id, autocomplete_id, num_results } );
+      if (query.length > 0) {
+        storm_eagle.util.run_str_func(search_function, { query, input_id, results_id, autocomplete_id, num_results } );
+      }
     },
     add_event_listeners: (autocomplete_id) => {
       const results_id = autocomplete_state[autocomplete_id]['results_id'];
@@ -112,7 +116,9 @@ storm_eagle.module('autocomplete', () => {
       document.getElementById(input_id).addEventListener(
         'keydown',
         storm_eagle.debounce((event) => {
-          (!keys_to_ignore.includes(event.keyCode)) && self.execute_search(autocomplete_id);
+          if (!keys_to_ignore.includes(event.keyCode)) {
+            self.execute_search(autocomplete_id);
+          }
         }, 250),
       );
       document.getElementById(input_id).addEventListener('focus', (event) => {
