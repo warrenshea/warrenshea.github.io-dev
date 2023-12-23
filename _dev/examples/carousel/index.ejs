@@ -8,7 +8,7 @@
       <div class="row">
         <div class="w:12">
           <section class="mw:1280px align-self:centered" id="carousel-1">
-            <h3 class="fs:24px play:bold xl+:px:0 py:16px">Carousel #1</h3>
+            <h2 class="fs:24px play:bold xl+:px:0 py:16px">Carousel #1</h3>
             <div id
               class="pt:32px b-silver:1px position:relative pb:64px bgc:white-smoke"
               data-module="carousel"
@@ -21,12 +21,12 @@
               data-carousel-control-inactive-classes="ic-color:silver"
               data-carousel-control-class-selector=":scope > .ic">
               <div data-module="carousel.controls-group" class="position:absolute bottom:0 w:100% display:flex align:center">
-                <button data-module="carousel.controls" data-carousel-control-prev class="sm+:py:24px sm+:pr:8px md+:px:12px display:flex">
+                <button data-module="carousel.controls" data-carousel-control-prev class="sm+:p:24px display:flex">
                   <span class="show-for-sr">Previous</span>
                   <div class="ic ic-type:solid ic-size:16px ic-name:chevron-left"></div>
                 </button>
                 <div data-module="carousel.indicators-group" class="display:flex align:center align:middle py:24px"></div>
-                <button data-module="carousel.controls" data-carousel-control-next class="sm+:py:24px sm+:pr:8px md+:px:12px display:flex">
+                <button data-module="carousel.controls" data-carousel-control-next class="sm+:p:24px display:flex">
                   <span class="show-for-sr">Next</span>
                   <div class="ic ic-type:solid ic-size:16px ic-name:chevron-right"></div>
                 </button>
@@ -69,11 +69,11 @@
                           <div class="fs:28px heebo:bold"><a href="#">Slide 2</a>
                           </div>
                           <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open(this,'dialog-test2');"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
-                          <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test2" aria-labelledby="dialog-loading-heading-id">
+                          <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test2" aria-labelledby="dialog-loading-heading-id2">
                             <div data-module="dialog.container">
                               <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
                               <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px brr:8px">
-                                <h2 id="dialog-loading-heading-id" class="xl+:lh:40 heebo:bold pb:24px">&lt;dialog&gt; Title Test</h2>
+                                <h2 id="dialog-loading-heading-id2" class="xl+:lh:40 heebo:bold pb:24px">&lt;dialog&gt; Title Test</h2>
                                 <p><a href="https://www.lipsum.com/" class="anchor:blue" target="_blank">Lorem Ipsum</a> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                               </div>
                             </div>
@@ -155,7 +155,7 @@
                   <div data-module="slider.input-container">
                     <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('1','num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-1" name="number_of_slides-1" min="1" max="9" steps="1" value="1">
                     <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
-                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+                    <ul data-module="slider.labels" class="position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
                   </div>
                 </div>
               </div>
@@ -338,7 +338,7 @@
       </div>
       <div class="row bt-gray:4px">
         <section class="w:100% align-self:centered" id="carousel-2">
-          <h3 class="mw:1280px align-self:centered fs:24px play:bold xl+:px:0 py:16px">Carousel #2</h3>
+          <h2 class="mw:1280px align-self:centered fs:24px play:bold xl+:px:0 py:16px">Carousel #2</h3>
           <div class="b-silver:1px pt:32px pb:16px bgc:white-smoke">
             <div id
               class="position:relative"
@@ -463,7 +463,7 @@
                   <div data-module="slider.input-container">
                     <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('2','num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-2" name="number_of_slides-2" min="1" max="9" steps="1" value="1">
                     <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
-                    <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
+                    <ul data-module="slider.labels" class="position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
                   </div>
                 </div>
               </div>
