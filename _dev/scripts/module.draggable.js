@@ -1,8 +1,7 @@
 'use strict';
-
 storm_eagle.module('draggable', () => {
   let self;
-  let module_state = {};
+  let state = {};
   return {
     data: {
       destination_type: "",
@@ -11,10 +10,10 @@ storm_eagle.module('draggable', () => {
     },
     initialize: () => {
       self = storm_eagle.draggable;
-      module_state = {};
+      state = {};
       document.querySelectorAll('[data-module="module.draggable"] [data-module="draggable.trigger"]').forEach((el) => {
         const id = el.getAttribute('id');
-        module_state[id] = {
+        state[id] = {
           el,
           source: el.getAttribute('data-draggable-source'),
           type: el.getAttribute('data-draggable-type'),
@@ -30,7 +29,7 @@ storm_eagle.module('draggable', () => {
     event_listeners: {
       trigger: {
         initialize: (id) => {
-          const { el } = module_state[id];
+          const { el } = state[id];
           el.removeEventListener('mouseover', self.event_listeners.trigger.handle_mouseover);
           el.addEventListener('mouseover', self.event_listeners.trigger.handle_mouseover);
           el.removeEventListener('dragstart', self.event_listeners.trigger.handle_dragstart);
@@ -38,7 +37,7 @@ storm_eagle.module('draggable', () => {
         },
         handle_mouseover: async (event) => {
           const id = event.currentTarget.getAttribute('id');
-          const { source, type, destination_type, callback } = module_state[id];
+          const { source, type, destination_type, callback } = state[id];
           self.data.destination_type = destination_type;
           self.data.callback = callback;
 
