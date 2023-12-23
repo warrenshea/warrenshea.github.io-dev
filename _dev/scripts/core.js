@@ -43,8 +43,6 @@ const remove_focus_selector = [
   `.form\\:theme\\:gl0b3x input[type="radio"]+label`,
   `.form\\:theme\\:gl0b3x input[type="text"]+label`,
   `.form\\:theme\\:gl0b3x input[type="email"]+label`,
-  `[data-module="popover"] button`,
-  `[data-module="popover"] a`
 ]
 
 /**
