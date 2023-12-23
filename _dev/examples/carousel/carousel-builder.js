@@ -63,11 +63,11 @@ storm_eagle.module('carousel_builder', () => {
         default:
       }
       document.querySelectorAll("[data-module='carousel']").forEach((el) => {
-        let id = el.getAttribute('id');
+        const id = el.getAttribute('id');
         storm_eagle.carousel.ui.disable(id);
       });
       document.querySelectorAll("[data-module='carousel']").forEach((el) => {
-        let id = el.getAttribute('id');
+        const id = el.getAttribute('id');
         storm_eagle.carousel.ui.update(id);
       });
     },
