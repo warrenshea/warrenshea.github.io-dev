@@ -1,10 +1,9 @@
 'use strict';
-
 storm_eagle.module('form_validation', () => {
   let self;
   let has_validation_passed = true;
   let error_number = 0;
-  let module_state = {};
+  let state = {};
 
   const _get_type = (el) => {
     if (el.tagName.toLowerCase() === 'input' && el.hasAttribute('type')) {
@@ -48,10 +47,10 @@ storm_eagle.module('form_validation', () => {
     create_form_validation_rules: () => {
       document.querySelectorAll(`[data-module='form']`).forEach((el, index) => {
         let form_name = el.getAttribute('name');
-        module_state[form_name] = {};
+        state[form_name] = {};
         document.querySelectorAll(`[data-module='form'][name=${form_name}] [data-required], [data-module='form'][name=${form_name}] [data-optional]`).forEach((el, index) => {
           let form_element_name = el.getAttribute('name');
-          module_state[form_name][form_element_name] = {
+          state[form_name][form_element_name] = {
             type: _get_type(el),
             validation_type: _get_validation_type(el),
             validation_type2: _get_validation_type2(el),
@@ -75,10 +74,10 @@ storm_eagle.module('form_validation', () => {
       });
     },
     inline_validation: (el, form_name, form_element_name) => {
-      for (let i = 0; i < module_state[form_name][form_element_name]['validation_criteria'].length; i++) {
-        //console.log(module_state[form_name][form_element_name]["validation_criteria"][i]);
+      for (let i = 0; i < state[form_name][form_element_name]['validation_criteria'].length; i++) {
+        //console.log(state[form_name][form_element_name]["validation_criteria"][i]);
 
-        if (module_state[form_name][form_element_name]['validation_criteria'][i] === 'equals') {
+        if (state[form_name][form_element_name]['validation_criteria'][i] === 'equals') {
           el = document.querySelector(`[name='${form_element_name}']`);
           let el_comparison = document.getElementById(el.getAttribute('data-matching'));
           // console.log(el, el_comparison);
@@ -91,12 +90,12 @@ storm_eagle.module('form_validation', () => {
             document.getElementById(`${el.name}:equals`).parentNode.closest('li').classList.remove('pass');
           }
         } else {
-          if (self.is_value_valid(el.value, module_state[form_name][form_element_name]['validation_criteria'][i])) {
-            document.getElementById(`${form_element_name}:${module_state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.add('pass');
-            document.getElementById(`${form_element_name}:${module_state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.remove('fail');
+          if (self.is_value_valid(el.value, state[form_name][form_element_name]['validation_criteria'][i])) {
+            document.getElementById(`${form_element_name}:${state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.add('pass');
+            document.getElementById(`${form_element_name}:${state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.remove('fail');
           } else {
-            document.getElementById(`${form_element_name}:${module_state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.add('fail');
-            document.getElementById(`${form_element_name}:${module_state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.remove('pass');
+            document.getElementById(`${form_element_name}:${state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.add('fail');
+            document.getElementById(`${form_element_name}:${state[form_name][form_element_name]['validation_criteria'][i]}`).parentNode.closest('li').classList.remove('pass');
           }
         }
       }
@@ -105,20 +104,20 @@ storm_eagle.module('form_validation', () => {
       error_number = 0;
       has_validation_passed = true;
 
-      //console.log(module_state);
-      let form_element_names = Object.keys(module_state[form_name]);
+      //console.log(state);
+      let form_element_names = Object.keys(state[form_name]);
       for (let i = 0; i < form_element_names.length; i++) {
         //Reset all error messages and highlights
-        for (let j = 0; j < module_state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
+        for (let j = 0; j < state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
           self.display_error_message(form_element_names[i], 'equals', true);
           self.display_error_message(form_element_names[i], 'is_not_empty', true);
-          self.display_error_message(form_element_names[i], module_state[form_name][form_element_names[i]]['validation_criteria'][j], true);
-          self.hightlight_error(form_element_names[i], module_state[form_name][form_element_names[i]]['type'], true);
+          self.display_error_message(form_element_names[i], state[form_name][form_element_names[i]]['validation_criteria'][j], true);
+          self.hightlight_error(form_element_names[i], state[form_name][form_element_names[i]]['type'], true);
         }
 
-        for (let j = 0; j < module_state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
-          let type = module_state[form_name][form_element_names[i]]['type'];
-          let validation_type = module_state[form_name][form_element_names[i]]['validation_type'];
+        for (let j = 0; j < state[form_name][form_element_names[i]]['validation_criteria'].length; j++) {
+          let type = state[form_name][form_element_names[i]]['type'];
+          let validation_type = state[form_name][form_element_names[i]]['validation_type'];
           if (validation_type === 'required') {
             if (document.querySelector(`[name='${form_element_names[i]}']`).value === '' || type === 'radio' || type === 'checkbox') {
               has_validation_passed = self.input_type_validataton(form_element_names[i], type, 'is_not_empty');
@@ -126,11 +125,11 @@ storm_eagle.module('form_validation', () => {
               self.hightlight_error(form_element_names[i], type, has_validation_passed);
               error_number += has_validation_passed ? 0 : 1;
             } else {
-              if (module_state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
+              if (state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
                 // console.log('****************');
-                // console.log(module_state[form_name][form_element_names[i]]);
-                // console.log(module_state[form_name][form_element_names[i]]['validation_criteria']);
-                // console.log(module_state[form_name][form_element_names[i]]['validation_criteria'][j]);
+                // console.log(state[form_name][form_element_names[i]]);
+                // console.log(state[form_name][form_element_names[i]]['validation_criteria']);
+                // console.log(state[form_name][form_element_names[i]]['validation_criteria'][j]);
                 let el = document.querySelector(`[name='${form_element_names[i]}']`);
                 let el_comparison = document.getElementById(el.getAttribute('data-matching'));
                 has_validation_passed = self.is_value_valid(el.value, 'equals', el_comparison.value);
@@ -138,10 +137,10 @@ storm_eagle.module('form_validation', () => {
                 self.display_error_message(form_element_names[i], 'equals', has_validation_passed);
                 self.hightlight_error(form_element_names[i], type, has_validation_passed);
               } else {
-                //console.log(module_state[form_name][form_element_names[i]]['validation_criteria']);
-                has_validation_passed = self.input_type_validataton(form_element_names[i], type, module_state[form_name][form_element_names[i]]['validation_criteria'][j]);
+                //console.log(state[form_name][form_element_names[i]]['validation_criteria']);
+                has_validation_passed = self.input_type_validataton(form_element_names[i], type, state[form_name][form_element_names[i]]['validation_criteria'][j]);
                 error_number += has_validation_passed ? 0 : 1;
-                self.display_error_message(form_element_names[i], module_state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
+                self.display_error_message(form_element_names[i], state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
                 if (has_validation_passed === false) {
                   self.hightlight_error(form_element_names[i], type, false);
                   break;
@@ -151,14 +150,14 @@ storm_eagle.module('form_validation', () => {
           } else if (validation_type === 'optional') {
             if (document.querySelector(`[name='${form_element_names[i]}']`).value === '' || type === 'radio' || type === 'checkbox') {
             } else {
-              if (module_state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
+              if (state[form_name][form_element_names[i]]['validation_criteria'][j] === 'equals') {
                 let el = document.querySelector(`[name='${form_element_names[i]}']`);
                 let el_comparison = document.getElementById(el.getAttribute('data-matching'));
                 has_validation_passed = self.is_value_valid(el.value, 'equals', el_comparison.value);
                 self.display_error_message(form_element_names[i], 'equals', has_validation_passed);
               } else {
-                has_validation_passed = self.input_type_validataton(form_element_names[i], type, module_state[form_name][form_element_names[i]]['validation_criteria'][j]);
-                self.display_error_message(form_element_names[i], module_state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
+                has_validation_passed = self.input_type_validataton(form_element_names[i], type, state[form_name][form_element_names[i]]['validation_criteria'][j]);
+                self.display_error_message(form_element_names[i], state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
               }
               error_number += has_validation_passed ? 0 : 1;
             }
