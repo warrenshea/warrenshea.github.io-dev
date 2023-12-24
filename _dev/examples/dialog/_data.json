@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Dialog • warrenshea",
+                "urlEn": "/examples/dialog/",
+                "urlCanonical": "/examples/dialog/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.dialog.js"
+            ]
+        }
+    }
+}
