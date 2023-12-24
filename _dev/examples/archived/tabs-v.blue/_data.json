@@ -1,0 +1,22 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Tabs v.Blue • warrenshea",
+                "urlEn": "/examples/tabs-v.blue/",
+                "urlCanonical": "/examples/tabs-v.blue/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.tabs-v.blue.js",
+                "/scripts/module.show-more.js"
+            ]
+        }
+    }
+}
