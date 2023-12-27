@@ -40,41 +40,45 @@ storm_eagle.module('dialog', () => {
         if (event.keyCode === keyboard.keys.esc) {
           self.close();
         }
-      }
+      },
     },
-    open: (trigger, id) => {
-      const { el, container, focusable_elements, remove_focusable_elements } = state[id];
-      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-      document.addEventListener('mousedown', self.event_listeners.mousedown_close);
+    open: (id, trigger) => {
+      if (state[id]) {
+        const { el, container, focusable_elements, remove_focusable_elements } = state[id];
+        document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+        document.addEventListener('mousedown', self.event_listeners.mousedown_close);
 
-      /* removes focus from elements except in dialog */
-      focusable_elements.forEach((focusable_element) => {
-        focusable_element.setAttribute('tabindex', '0');
-      });
-      remove_focusable_elements.forEach((remove_focusable_element) => {
-        remove_focusable_element.setAttribute('tabindex', '-1');
-      });
+        /* removes focus from elements except in dialog */
+        focusable_elements.forEach((focusable_element) => {
+          focusable_element.setAttribute('tabindex', '0');
+        });
+        remove_focusable_elements.forEach((remove_focusable_element) => {
+          remove_focusable_element.setAttribute('tabindex', '-1');
+        });
 
-      /* remove focusable elements from nodelist, e.g. popover inside dialog */
-      state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
-        return ![...remove_focusable_elements].includes(focusable_element);
-      });
+        /* remove focusable elements from nodelist, e.g. popover inside dialog */
+        state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
+          return ![...remove_focusable_elements].includes(focusable_element);
+        });
 
-      /* saves item that opened dialog for later */
-      self.a11y.focus_placeholder = document.activeElement;
-      self.a11y.first_tab_stop = focusable_elements[0];
-      self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
+        /* saves item that opened dialog for later */
+        self.a11y.focus_placeholder = document.activeElement;
+        self.a11y.first_tab_stop = focusable_elements[0];
+        self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
 
-      el.showModal();
+        el.showModal();
 
-      /* set focus to dialog (but not the first_tab_stop */
-      setTimeout(() => {
-        (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
-      }, 100);
+        /* set focus to dialog (but not the first_tab_stop */
+        setTimeout(() => {
+          (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
+        }, 100);
 
-      /* add keyboard event listener */
-      el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        /* add keyboard event listener */
+        el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+      } else {
+        console.error(`Dialog (id="${id}") does not exist`);
+      }
     },
     close: () => {
       document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
@@ -111,6 +115,28 @@ storm_eagle.module('dialog', () => {
         const { el } = state[id];
         state[id]['focusable_elements'] = el.querySelectorAll(focus_trap_selector);
         state[id]['remove_focusable_elements'] = el.querySelectorAll(remove_focus_selector);
+      },
+    },
+  };
+});
+
+storm_eagle.module('dialog_trigger', () => {
+  let self;
+  return {
+    initialize: () => {
+      self = storm_eagle.dialog_trigger;
+      document.querySelectorAll("[data-module='dialog.trigger']").forEach((el) => {
+        self.event_listeners.initialize(el);
+      });
+    },
+    event_listeners: {
+      initialize: (el) => {
+        el.removeEventListener('click', self.event_listeners.trigger_open);
+        el.addEventListener('click', self.event_listeners.trigger_open);
+      },
+      trigger_open: (event) => {
+        const el = event.currentTarget;
+        storm_eagle.dialog.open(el.getAttribute("data-dialog-bind-id"),el);
       },
     },
   };
