@@ -1,0 +1,17 @@
+[data-module='dialog'] {
+  &[data-dialog-overlay='false']{
+    &::backdrop {
+      background-color: transparent;
+    }
+  }
+  &[data-dialog-overlay='true']{
+    &::backdrop {
+      background-color: #{$black}75;
+    }
+  }
+  button[data-dialog-close] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
