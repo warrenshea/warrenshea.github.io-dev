@@ -1,15 +1,14 @@
 'use strict';
 storm_eagle.module('waypoint', () => {
   let self;
-  let module_state = {};
-
+  let state = {};
   return {
     initialize: () => {
       self = storm_eagle.waypoint;
-      module_state = {};
+      state = {};
       document.querySelectorAll("[data-module='waypoint']").forEach((el) => {
         const id = el.getAttribute('id');
-        module_state[id] = {
+        state[id] = {
           el,
           element: el.getAttribute('data-waypoint-element'),
           add_class: el.getAttribute('data-waypoint-add-classes') ? el.getAttribute('data-waypoint-add-classes').split(',') : '',
@@ -24,8 +23,8 @@ storm_eagle.module('waypoint', () => {
     },
     event_listeners: {
       initialize: (id) => {
-        const { element, add_class, remove_class, toggle_class, delay=0, activate } = module_state[id];
-        module_state[id]['new_waypoint_obj'] = new Waypoint({
+        const { element, add_class, remove_class, toggle_class, delay=0, activate } = state[id];
+        state[id]['new_waypoint_obj'] = new Waypoint({
           element: 'this' ? document.getElementById(id) : document.querySelector(element),
           handler: () => {
             setTimeout(() => {
