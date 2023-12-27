@@ -1,5 +1,4 @@
 'use strict';
-
 storm_eagle.module('toast', () => {
   return {
     add: (message,text_color="color:white",background="bgc:onyx") => {
@@ -30,7 +29,9 @@ storm_eagle.module('toast', () => {
           toast_container.removeChild(toast);
 
           // Remove the toast container if there are no messages
-          (toast_container.childElementCount === 0) && document.body.removeChild(toast_container);
+          if (toast_container.childElementCount === 0) {
+            document.body.removeChild(toast_container);
+          }
         }, 500);
       }, 2500);
     },
