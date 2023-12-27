@@ -1,14 +1,14 @@
 'use strict';
 storm_eagle.module('show_more', () => {
   let self;
-  let show_more_state = {};
-
+  let state = {};
   return {
     initialize: () => {
       self = storm_eagle.show_more;
       document.querySelectorAll("[data-module='show-more']").forEach((el) => {
-        let show_more_id = el.getAttribute('id');
-        show_more_state[show_more_id] = {
+        const id = el.getAttribute('id');
+        state[id] = {
+          el,
           transition_duration: el.getAttribute('data-show-more-transition-duration'),
           offset: el.getAttribute('data-show-more-offset'),
           container: el.querySelector("[data-module='show-more.container']"),
@@ -16,58 +16,65 @@ storm_eagle.module('show_more', () => {
           more_button: el.nextElementSibling.querySelector("[data-module='show-more.more']"),
           less_button: el.nextElementSibling.querySelector("[data-module='show-more.less']"),
         };
-        self.init_ui(show_more_id);
-        self.resize_listener(show_more_id);
-        self.add_button_listener(show_more_id);
+        self.ui.initialize(id);
+        self.event_listeners.initialize(id);
       });
     },
-    init_ui: (show_more_id) => {
-      document.getElementById(show_more_id).style.transitionProperty = 'height';
-      document.getElementById(show_more_id).style.transitionTimingFunction = 'ease';
-    },
-    update_container_height: (show_more_id) => {
-      setTimeout(() => {
-        document.getElementById(show_more_id).style.transitionDuration = '0s';
-      }, show_more_state[show_more_id]['transition_duration'] * 1000);
+    ui: {
+      initialize: (id) => {
+        const { el } = state[id];
+        el.style.transitionProperty = 'height';
+        el.style.transitionTimingFunction = 'ease';
+      },
+      update_container_height: (id) => {
+        const { el, transition_duration, offset, container_height } = state[id];
+        setTimeout(() => {
+          el.style.transitionDuration = '0s';
+        }, transition_duration * 1000);
 
-      document.getElementById(show_more_id).style.height = `${show_more_state[show_more_id]['container_height'] - show_more_state[show_more_id]['offset']}px`;
+        el.style.height = `${container_height - offset}px`;
+      },
+      force_resize: (id) => {
+        const { el, container } = state[id];
+        state[id]['container_height'] = (el.classList.contains('active')) ? container.getBoundingClientRect().height : container.querySelector('[data-show-more-bottom]').offsetTop - container.querySelector('[data-show-more-top]').offsetTop;
+        self.ui.update_container_height(id);
+      },
     },
-    add_button_listener: (show_more_id) => {
-      show_more_state[show_more_id]['more_button'].addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById(show_more_id).style.transitionDuration = `${show_more_state[show_more_id]['transition_duration']}s`;
-        show_more_state[show_more_id]['more_button'].classList.remove('display:inline');
-        show_more_state[show_more_id]['more_button'].classList.add('display:none');
-        show_more_state[show_more_id]['less_button'].classList.remove('display:none');
-        show_more_state[show_more_id]['less_button'].classList.add('display:inline');
-        document.getElementById(show_more_id).classList.add('active');
-        self.force_resize(show_more_id);
-      });
+    event_listeners: {
+      initialize: (id) => {
+        self.event_listeners.resize(id);
+        self.event_listeners.button_toggle(id);
+      },
+      resize: (id) => {
+        const force_resize = () => {
+          return self.ui.force_resize(id);
+        }
+        storm_eagle.resize_observer(document.querySelector('body'), force_resize);
+      },
+      button_toggle: (id) => {
+        const { el, transition_duration, more_button, less_button } = state[id];
+        more_button.addEventListener('click', (event) => {
+          event.preventDefault();
+          el.style.transitionDuration = `${transition_duration}s`;
+          more_button.classList.remove('display:inline');
+          more_button.classList.add('display:none');
+          less_button.classList.remove('display:none');
+          less_button.classList.add('display:inline');
+          el.classList.add('active');
+          self.ui.force_resize(id);
+        });
 
-      show_more_state[show_more_id]['less_button'].addEventListener('click', (event) => {
-        event.preventDefault();
-        document.getElementById(show_more_id).style.transitionDuration = `${show_more_state[show_more_id]['transition_duration']}s`;
-        show_more_state[show_more_id]['more_button'].classList.remove('display:none');
-        show_more_state[show_more_id]['more_button'].classList.add('display:inline');
-        show_more_state[show_more_id]['less_button'].classList.remove('display:inline');
-        show_more_state[show_more_id]['less_button'].classList.add('display:none');
-        document.getElementById(show_more_id).classList.remove('active');
-        self.force_resize(show_more_id);
-      });
-    },
-    resize_listener: (show_more_id) => {
-      const force_resize = () => {
-        return self.force_resize(show_more_id);
-      }
-      storm_eagle.resize_observer(document.querySelector('body'), force_resize);
-    },
-    force_resize: (show_more_id) => {
-      if (document.getElementById(show_more_id).classList.contains('active')) {
-        show_more_state[show_more_id]['container_height'] = show_more_state[show_more_id]['container'].getBoundingClientRect().height;
-      } else {
-        show_more_state[show_more_id]['container_height'] = show_more_state[show_more_id]['container'].querySelector('[data-show-more-bottom]').offsetTop - show_more_state[show_more_id]['container'].querySelector('[data-show-more-top]').offsetTop;
-      }
-      self.update_container_height(show_more_id);
+        less_button.addEventListener('click', (event) => {
+          event.preventDefault();
+          el.style.transitionDuration = `${transition_duration}s`;
+          more_button.classList.remove('display:none');
+          more_button.classList.add('display:inline');
+          less_button.classList.remove('display:inline');
+          less_button.classList.add('display:none');
+          el.classList.remove('active');
+          self.ui.force_resize(id);
+        });
+      },
     },
   };
 });
