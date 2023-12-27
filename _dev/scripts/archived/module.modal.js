@@ -40,7 +40,7 @@ storm_eagle.module('modal', () => {
         (event.keyCode === keyboard.keys.esc) && self.close();
       }
     },
-    open: (trigger, id) => {
+    open: (id, trigger) => {
       const { el, container, focusable_elements, remove_focusable_elements } = state[id];
       document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
       document.addEventListener('mousedown', self.event_listeners.mousedown_close);
