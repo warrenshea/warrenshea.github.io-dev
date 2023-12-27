@@ -1,15 +1,14 @@
 'use strict';
 storm_eagle.module('form_switch_button', () => {
   let self;
-  let module_state = {};
-
+  let state = {};
   return {
     initialize: () => {
       self = storm_eagle.form_switch_button;
-      module_state = {};
+      state = {};
       document.querySelectorAll('[data-module="switch.button"]').forEach((el) => {
         const id = el.getAttribute('id');
-        module_state[id] = {
+        state[id] = {
           el,
           slider: el.querySelector(':scope > [data-module="switch.slider"]'),
           thumb: el.querySelector(':scope > [data-module="switch.slider"] > [data-module="switch.thumb"]'),
@@ -28,7 +27,7 @@ storm_eagle.module('form_switch_button', () => {
     },
     ui: {
       initialize: (id) => {
-        const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
+        const { el, label, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = state[id];
 
         label.setAttribute('for', id);
         if (el.getAttribute('aria-checked') === 'true') {
@@ -44,15 +43,15 @@ storm_eagle.module('form_switch_button', () => {
     },
     event_listeners: {
       initialize: (id) => {
-        const { el } = module_state[id];
+        const { el } = state[id];
         el.removeEventListener('click', self.event_listeners.handle_click);
         el.addEventListener('click', self.event_listeners.handle_click);
       },
       handle_click: (event) => {
         const id = event.currentTarget.getAttribute('id');
-        const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = module_state[id];
-        let switch_active_module_state = el.getAttribute('aria-checked') === 'true';
-        if (switch_active_module_state) {
+        const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = state[id];
+        let switch_active_state = el.getAttribute('aria-checked') === 'true';
+        if (switch_active_state) {
           slider.classList.remove(...bg_active_classes);
           slider.classList.add(...bg_inactive_classes);
           thumb.classList.remove(...thumb_active_class);
@@ -67,7 +66,7 @@ storm_eagle.module('form_switch_button', () => {
           text.classList.remove(...text_inactive_classes);
           text.classList.add(...text_active_classes);
         }
-        el.setAttribute('aria-checked', (!switch_active_module_state).toString());
+        el.setAttribute('aria-checked', (!switch_active_state).toString());
       },
     },
   };
