@@ -1112,7 +1112,7 @@ storm_eagle.module('zs_highlighter', () => {
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-branch')) {
-        document.querySelectorAll(`[data-zs*=branch\\:${storm_eagle.page.get_query_value('zs-highlight-branch')}]`).forEach((element) => {
+        document.querySelectorAll(`[data-zs-branch=${storm_eagle.page.get_query_value('zs-highlight-branch')}]`).forEach((element) => {
           element.classList.add("b-blue:4px","p:4px");
         })
       }
