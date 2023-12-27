@@ -1,18 +1,17 @@
 'use strict';
 storm_eagle.module('range_slider', () => {
   let self;
-  let module_state = {};
-
+  let state = {};
   return {
     initialize: () => {
       self = storm_eagle.range_slider;
-      module_state = {};
+      state = {};
       document.querySelectorAll('[data-module="range-slider.input-container"]').forEach((container) => {
         const el1 = container.querySelector('[data-module="range-slider.input-1"]');
         const id1 = el1.getAttribute('id');
         const el2 = container.querySelector('[data-module="range-slider.input-2"]');
         const id2 = el2.getAttribute('id');
-        module_state[id1] = {
+        state[id1] = {
           id1,
           el1,
           id2,
@@ -32,7 +31,7 @@ storm_eagle.module('range_slider', () => {
         self.ui.update_slider_track(id1);
       },
       label_resize: (id1) => {
-        const { slider_container, labels, label_container } = module_state[id1];
+        const { slider_container, labels, label_container } = state[id1];
         const num_labels = labels.length;
         const container_width = slider_container.offsetWidth;
         const full_label_width = (container_width * num_labels) / (num_labels - 1);
@@ -41,8 +40,8 @@ storm_eagle.module('range_slider', () => {
         label_container.style.transform = `translateX(${transform_left}%)`;
       },
       update_slider_track: (id1) => {
-        const { slider_fill } = module_state[id1];
-        let { el1, el2 } = module_state[id1];
+        const { slider_fill } = state[id1];
+        let { el1, el2 } = state[id1];
         if (parseInt(el1.value) > parseInt(el2.value)) {
           const temp = el1;
           el1 = el2;
@@ -56,7 +55,7 @@ storm_eagle.module('range_slider', () => {
     },
     event_listeners: {
       initialize: (id1) => {
-        const { el1, el2 } = module_state[id1];
+        const { el1, el2 } = state[id1];
         el1.removeEventListener('input', self.event_listeners.handle_slider_change_1);
         el1.addEventListener('input', self.event_listeners.handle_slider_change_1);
         el2.removeEventListener('input', self.event_listeners.handle_slider_change_2);
@@ -70,7 +69,7 @@ storm_eagle.module('range_slider', () => {
         self.ui.update_slider_track(event.currentTarget.previousElementSibling.getAttribute('id'));
       },
       resize_listener: (id1) => {
-        const { el1 } = module_state[id1];
+        const { el1 } = state[id1];
         const label_resize = () => {
           self.ui.label_resize(id1);
         };
