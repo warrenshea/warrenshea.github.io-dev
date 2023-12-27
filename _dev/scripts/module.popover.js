@@ -6,122 +6,145 @@
  */
 storm_eagle.module('popover', () => {
   let self;
-  let focus_placeholder;
-  let popover_first_tab_stop;
-  let popover_last_tab_stop;
-  let popover_state = {};
-
-  const keyboard_popover_focus_trap = (event) => {
-    if (event.keyCode === keyboard.keys.tab) {
-      if (event.shiftKey) {
-        if (document.activeElement === popover_first_tab_stop) {
-          event.preventDefault();
-          popover_last_tab_stop.focus();
-        }
-      } else {
-        if (document.activeElement === popover_last_tab_stop) {
-          event.preventDefault();
-          popover_first_tab_stop.focus();
-        }
-      }
-    }
-    if (event.keyCode === keyboard.keys.esc || (event.keyCode === keyboard.keys.enter && document.activeElement.hasAttribute("[data-module='popover.close']"))) {
-      storm_eagle.popover.close();
-    }
-  }
+  let state = {};
+  const overlay = document.querySelector("[data-module='popover.overlay']");
 
   return {
     initialize: () => {
       self = storm_eagle.popover;
       document.querySelectorAll("[data-module='popover']").forEach((el, index) => {
-        let popover_id = el.getAttribute('id');
-        popover_state[popover_id] = {
+        const id = el.getAttribute('id');
+        state[id] = {
+          el,
           focusable_elements: [],
+          remove_focusable_elements: [],
         };
+        self.a11y.get_focusable_elements(id);
       });
-      self.resize_listener();
-      self.overlay_close_listener();
+      self.event_listeners.initialize();
     },
-    open: (popover_trigger, popover_id) => {
-      self.get_popover_focusable_elements(popover_id);
+    ui: {
+      set_location: (id) => {
+        const { el  } = state[id];
+        let trigger = document.querySelector("[data-module='popover.trigger'][data-popover='active']");
 
-      /* updates popover visuals */
-      document.querySelector("[data-module='popover.overlay']").classList.add('active');
-      popover_trigger.classList.add('active');
-      document.getElementById(popover_id).classList.add('active');
-      self.set_popover_location(popover_id);
+        if (storm_eagle.client.viewport.is_md_down()) {
+          el.style.top = 'initial';
+          el.style.left = '0px';
+        } else if (storm_eagle.client.viewport.is_lg_up()) {
+          el.style.top = `${trigger.offsetTop}px`;
+          el.style.left = `${trigger.offsetLeft + 40}px`;
+        }
+      },
+    },
+    event_listeners: {
+      initialize: (event) => {
+        self.event_listeners.resize();
+      },
+      resize: () => {
+        const force_resize = () => {
+          if (document.querySelector("[data-module='popover'][data-popover='active']")) {
+            self.ui.set_location(document.querySelector("[data-module='popover'][data-popover='active']").getAttribute('id'));
+          }
+        }
+        storm_eagle.resize_observer(document.querySelector('body'), force_resize);
+      },
+      mousedown_close: (event) => {
+        if (overlay && event.target.getAttribute("data-module") === 'popover.overlay') {
+          self.close();
+        }
+      },
+      keyboard_focus_trap: (event) => {
+        if (event.keyCode === keyboard.keys.tab) {
+          if (event.shiftKey) {
+            if (document.activeElement === self.a11y.first_tab_stop) {
+              event.preventDefault();
+              self.a11y.last_tab_stop.focus();
+            }
+          } else {
+            if (document.activeElement === self.a11y.last_tab_stop) {
+              event.preventDefault();
+              self.a11y.first_tab_stop.focus();
+            }
+          }
+        }
+        if (event.keyCode === keyboard.keys.esc) {
+          self.close();
+        }
+      },
+    },
+    open: (id, trigger) => {
+      const { el, focusable_elements, remove_focusable_elements } = state[id];
+      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+      document.addEventListener('mousedown', self.event_listeners.mousedown_close);
 
-      /* removes focus from elements except in popover */
-      popover_state[popover_id]['focusable_elements'].forEach((el) => {
-        el.setAttribute('tabindex', '0');
+      focusable_elements.forEach((focusable_element) => {
+        focusable_element.setAttribute('tabindex', '0');
+      });
+      remove_focusable_elements.forEach((remove_focusable_element) => {
+        remove_focusable_element.setAttribute('tabindex', '-1');
+      });
+      /* remove focusable elements from nodelist, e.g. popover inside dialog */
+      state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
+        return ![...remove_focusable_elements].includes(focusable_element);
       });
 
       /* saves item that opened popover for later */
-      focus_placeholder = document.activeElement;
-      popover_first_tab_stop = popover_state[popover_id]['focusable_elements'][0];
-      popover_last_tab_stop = popover_state[popover_id]['focusable_elements'][popover_state[popover_id]['focusable_elements'].length - 1];
+      self.a11y.focus_placeholder = document.activeElement;
+      self.a11y.first_tab_stop = state[id]['focusable_elements'][0];
+      self.a11y.last_tab_stop = state[id]['focusable_elements'][state[id]['focusable_elements'].length - 1];
 
-      /* set focus to popover (but not the popover_first_tab_stop */
-      popover_first_tab_stop.focus();
+      /* updates popover visuals */
+      el.setAttribute("data-popover","active");
+      overlay.setAttribute("data-popover","active");
+      trigger.setAttribute("data-popover","active");
+      self.ui.set_location(id);
+
+      /* set focus to popover (but not the self.a11y.first_tab_stop */
+      setTimeout(() => {
+        (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
+      }, 100);
 
       /* add keyboard event listener */
-      document.getElementById(popover_id).addEventListener('keydown', keyboard_popover_focus_trap);
+      el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+      el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
     },
     close: () => {
       /* updates popover visuals */
-      document.querySelector("[data-module='popover.overlay'].active").classList.remove('active');
-      document.querySelector("[data-module='popover'].active").setAttribute('tabIndex', '-1');
-      document.querySelector("[data-module='popover'].active").setAttribute('aria-expanded', false);
-      document.querySelector("[data-module='popover'].active").classList.remove('active');
-      document.querySelector("[data-module='popover.trigger'].active").classList.remove('active');
+      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+      document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('tabIndex', '-1');
+      document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('aria-expanded', false);
+      document.querySelectorAll("[data-popover='active']").forEach((el) => {
+        el.setAttribute("data-popover","");
+      });
       document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
-        let popover_id = popover.getAttribute('id');
+        const id = popover.getAttribute('id');
+        const { focusable_elements } = state[id];
 
         /* remove focus from popover elements */
-        popover_state[popover_id]['focusable_elements'].forEach((el) => {
-          el.setAttribute('tabindex', '-1');
+        focusable_elements.forEach((focusable_element) => {
+          focusable_element.setAttribute('tabindex', '-1');
         });
 
         /* remove keyboard event listener */
-        document.getElementById(popover_id).removeEventListener('keydown', keyboard_popover_focus_trap);
+        popover.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
       });
-      document.querySelectorAll("[data-module='popover.trigger']").forEach((popover_trigger) => {
-        popover_trigger.setAttribute('aria-expanded', false);
+      document.querySelectorAll("[data-module='popover.trigger']").forEach((trigger) => {
+        trigger.setAttribute('aria-expanded', false);
       });
 
-      /* set focus to focus_placeholder */
-      focus_placeholder.focus();
+      /* set focus to self.a11y.focus_placeholder */
+      self.a11y.focus_placeholder.focus();
     },
-    get_popover_focusable_elements: (popover_id) => {
-      popover_state[popover_id]['focusable_elements'] = document.getElementById(popover_id).querySelectorAll(focus_trap_selector);
-      //console.log(popover_state[popover_id]["focusable_elements"]);
-    },
-    overlay_close_listener: () => {
-      if (document.querySelector("[data-module='popover.overlay']")) {
-        document.querySelector("[data-module='popover.overlay']").addEventListener('click', () => {
-          self.close();
-        });
-      }
-    },
-    resize_listener: () => {
-      const force_resize = () => {
-        if (document.querySelector("[data-module='popover'].active")) {
-          self.set_popover_location(document.querySelector("[data-module='popover'].active").getAttribute('id'));
-        }
-      }
-      storm_eagle.resize_observer(document.querySelector('body'), force_resize);
-    },
-    set_popover_location: (popover_id) => {
-      let popover_trigger = document.querySelector("[data-module='popover.trigger'].active");
-      let popover = document.getElementById(popover_id);
-
-      if (storm_eagle.client.viewport.is_md_down()) {
-        popover.style.top = 'initial';
-        popover.style.left = '0px';
-      } else if (storm_eagle.client.viewport.is_lg_up()) {
-        popover.style.top = `${popover_trigger.offsetTop}px`;
-        popover.style.left = `${popover_trigger.offsetLeft + 40}px`;
-      }
+    a11y: {
+      focus_placeholder: null,
+      first_tab_stop: null,
+      last_tab_stop: null,
+      get_focusable_elements: (id) => {
+        const { el } = state[id];
+        state[id]['focusable_elements'] = el.querySelectorAll(focus_trap_selector);
+        state[id]['remove_focusable_elements'] = el.querySelectorAll(remove_focus_selector);
+      },
     },
   };
 });
