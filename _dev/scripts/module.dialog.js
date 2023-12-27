@@ -134,6 +134,16 @@ storm_eagle.module('dialog_trigger', () => {
         el.removeEventListener('click', self.event_listeners.trigger_open);
         el.addEventListener('click', self.event_listeners.trigger_open);
       },
+      remove: {
+        all: () => {
+          document.querySelectorAll("[data-module='dialog.trigger']").forEach((el) => {
+            el.removeEventListener('click', self.event_listeners.trigger_open);
+          });
+        },
+        one: (el) => {
+          el.removeEventListener('click', self.event_listeners.trigger_open);
+        },
+      },
       trigger_open: (event) => {
         const el = event.currentTarget;
         storm_eagle.dialog.open(el.getAttribute("data-dialog-bind-id"),el);
