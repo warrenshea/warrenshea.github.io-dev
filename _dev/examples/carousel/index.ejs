@@ -39,7 +39,7 @@
                         <div class="text-align:center">
                           <div class="fs:28px heebo:bold"><a href="#">Slide 0</a>
                           </div>
-                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open(this,'dialog-test');"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open('dialog-test',this);"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
                           <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test" aria-labelledby="dialog-loading-heading-id">
                             <div data-module="dialog.container">
                               <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
@@ -68,7 +68,7 @@
                         <div class="text-align:center">
                           <div class="fs:28px heebo:bold"><a href="#">Slide 2</a>
                           </div>
-                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open(this,'dialog-test2');"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+                          <button aria-label="Open a dialog, opens in a new pop up" data-module="dialog.trigger" onclick="storm_eagle.dialog.open('dialog-test2',this);"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
                           <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="dialog-test2" aria-labelledby="dialog-loading-heading-id2">
                             <div data-module="dialog.container">
                               <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
@@ -185,7 +185,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'number-active-elements-1');" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-1',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-1" aria-labelledby="number-active-elements-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -264,7 +264,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'left-offset-1');" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-1',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-1" aria-labelledby="left-offset-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -283,12 +283,12 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'transition-speed-2');" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-2" aria-labelledby="transition-speed-2-id">
+                        Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-1',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-1" aria-labelledby="transition-speed-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
                             <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                              <p id="transition-speed-2-id">The speed at which the slide will transition</p>
+                              <p id="transition-speed-1-id">The speed at which the slide will transition</p>
                             </div>
                           </div>
                         </div>
@@ -302,7 +302,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-1');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-1',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-1" aria-labelledby="focused-item-1-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -493,7 +493,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'number-active-elements-2');" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-2',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-2" aria-labelledby="number-active-elements-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -572,7 +572,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'left-offset-2');" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-2',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-2" aria-labelledby="left-offset-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -591,12 +591,12 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'transition-speed-3');" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-3" aria-labelledby="transition-speed-3-id">
+                        Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-2',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-2" aria-labelledby="transition-speed-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
                             <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                              <p id="transition-speed-3-id">The speed at which the slide will transition</p>
+                              <p id="transition-speed-2-id">The speed at which the slide will transition</p>
                             </div>
                           </div>
                         </div>
@@ -610,7 +610,7 @@
                   <tr class="bb-onyx:1px">
                     <th class="p:8px br-onyx:1px">
                       <div class="fs:16px position:relative display:flex align:middle align:right">
-                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item-2');" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
+                        Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-2',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
                         <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-2" aria-labelledby="focused-item-2-id">
                           <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
                             <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
