@@ -4,7 +4,7 @@
     <h1 class="play:bold fs:40px color:eerie-black pb:48px">Popover</h1>
 
     <div class="position:relative pb:48px">
-      <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item');" aria-label="Popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+      <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item',this);" aria-label="Popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
       <div class="right" data-module="popover" role="dialog" aria-modal="true" id="focused-item" aria-labelledby="focused-item-id">
         <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
           <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="position:relative pb:48px">
-      <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open(this,'focused-item2');" aria-label="More popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
+      <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item2',this);" aria-label="More popover information, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span></button>
       <div class="right" data-module="popover" role="dialog" aria-modal="true" id="focused-item2" aria-labelledby="focused-item-id2">
         <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
           <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
