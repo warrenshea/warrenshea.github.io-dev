@@ -7,46 +7,21 @@
 @import '_config/breakpoint.scss';
 @import '_config/media-queries.scss';
 @import '_config/variables-box-shadow.scss';
-$dark-goldenrod-no-hash: b7901d;
-$positive-light-no-hash: 84b48e;
-$negative-light-no-hash: d08888;
-$english-violet-no-hash: 6e446b;
-$cocoa-brown-no-hash: d06f25;
 
-.b-positive-light-dashed\:2px {
-  border: rem-calc(2) dashed $positive-light;
-}
-.b-positive-light-dashed\:4px {
-  border: rem-calc(4) dashed $positive-light;
-}
+.b-positive-light-dashed\:2px { border: rem-calc(2) dashed $positive-light; }
+.b-positive-light-dashed\:4px { border: rem-calc(4) dashed $positive-light; }
 
-.b-negative-light-dashed\:2px {
-  border: rem-calc(2) dashed $negative-light;
-}
-.b-negative-light-dashed\:4px {
-  border: rem-calc(4) dashed $negative-light;
-}
+.b-negative-light-dashed\:2px { border: rem-calc(2) dashed $negative-light; }
+.b-negative-light-dashed\:4px { border: rem-calc(4) dashed $negative-light; }
 
-.b-blue-dashed\:2px {
-  border: rem-calc(2) dashed $blue;
-}
-.b-blue-dashed\:4px {
-  border: rem-calc(4) dashed $blue;
-}
+.b-blue-dashed\:2px { border: rem-calc(2) dashed $blue; }
+.b-blue-dashed\:4px { border: rem-calc(4) dashed $blue; }
 
-.b-dark-goldenrod-dashed\:2px {
-  border: rem-calc(2) dashed $dark-goldenrod;
-}
-.b-dark-goldenrod-dashed\:4px {
-  border: rem-calc(4) dashed $dark-goldenrod;
-}
+.b-dark-goldenrod-dashed\:2px { border: rem-calc(2) dashed $dark-goldenrod; }
+.b-dark-goldenrod-dashed\:4px { border: rem-calc(4) dashed $dark-goldenrod; }
 
-.b-english-violet-dashed\:2px {
-  border: rem-calc(2) dashed $english-violet;
-}
-.b-english-violet-dashed\:4px {
-  border: rem-calc(4) dashed $english-violet;
-}
+.b-english-violet-dashed\:2px { border: rem-calc(2) dashed $english-violet; }
+.b-english-violet-dashed\:4px { border: rem-calc(4) dashed $english-violet; }
 
 [data-module="placeholder"] {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
@@ -96,8 +71,8 @@ $cocoa-brown-no-hash: d06f25;
 }
 
 .zs-module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd module droparea -- %3C/text%3E%3C/svg%3E");
-  background-size: 125px 20px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#84b48e30;'%3Eadd module droparea -- %3C/text%3E%3C/svg%3E");
+  background-size: 205px 20px;
   border: rem-calc(2) dashed $positive-light;
   padding: 12px 10px 6px;
   &::before {
