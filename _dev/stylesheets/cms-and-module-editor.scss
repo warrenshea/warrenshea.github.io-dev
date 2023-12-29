@@ -16,21 +16,36 @@ $cocoa-brown-no-hash: d06f25;
 .b-positive-light-dashed\:2px {
   border: rem-calc(2) dashed $positive-light;
 }
+.b-positive-light-dashed\:4px {
+  border: rem-calc(4) dashed $positive-light;
+}
 
 .b-negative-light-dashed\:2px {
   border: rem-calc(2) dashed $negative-light;
+}
+.b-negative-light-dashed\:4px {
+  border: rem-calc(4) dashed $negative-light;
 }
 
 .b-blue-dashed\:2px {
   border: rem-calc(2) dashed $blue;
 }
+.b-blue-dashed\:4px {
+  border: rem-calc(4) dashed $blue;
+}
 
 .b-dark-goldenrod-dashed\:2px {
   border: rem-calc(2) dashed $dark-goldenrod;
 }
+.b-dark-goldenrod-dashed\:4px {
+  border: rem-calc(4) dashed $dark-goldenrod;
+}
 
 .b-english-violet-dashed\:2px {
   border: rem-calc(2) dashed $english-violet;
+}
+.b-english-violet-dashed\:4px {
+  border: rem-calc(4) dashed $english-violet;
 }
 
 [data-module="placeholder"] {
@@ -42,43 +57,45 @@ $cocoa-brown-no-hash: d06f25;
   width: 100%;
 }
 
-[data-module="accordion"]:has(.zs-module-add) {
+[data-module="accordion"]:has(.zs-module-add),
+[data-module="accordion.header"]:has(.zs-module-add),
+[data-module="accordion.panel"]:has(.zs-module-add),
+[data-module="dialog"]:has(.zs-module-add) {
   padding: 6px 10px;
   border: rem-calc(2) dashed $positive-light;
 }
 
-[data-module="accordion.header"]:has(.zs-module-add) {
-  padding: 6px 10px;
-  border: rem-calc(2) dashed $positive-light;
-}
+// [data-module="accordion"] .zs-module-add {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
+//   background-size: 170px 20px;
+// }
 
-[data-module="accordion.panel"]:has(.zs-module-add) {
-  padding: 6px 10px;
-  border: rem-calc(2) dashed $positive-light;
-}
+// [data-module="accordion.header"] .zs-module-add {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.header -- %3C/text%3E%3C/svg%3E");
+//   background-size: 230px 20px;
+// }
 
-[data-module="accordion"] .zs-module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion -- %3C/text%3E%3C/svg%3E");
-  background-size: 170px 20px;
-}
+// [data-module="accordion.panel"] .zs-module-add {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 220px 20px;
+// }
 
-[data-module="accordion.header"] .zs-module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.header -- %3C/text%3E%3C/svg%3E");
-  background-size: 230px 20px;
-}
+// [data-module="dialog"] .zs-module-add {
+//   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
+//   background-size: 220px 20px;
+// }
 
-[data-module="accordion.panel"] .zs-module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='15' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd to accordion.panel -- %3C/text%3E%3C/svg%3E");
-  background-size: 220px 20px;
-}
 
 .zs-module-add,
+.zs-module-add-label,
 .zs-module-remove,
 .zs-module-confirm-removal,
 .zs-module-edit,
-.zs-module-publish, {
+.zs-module-publish,
+.zs-module-confirm-publish,
+.zs-module-publish-page, {
   background-repeat: repeat;
-  background-color: #f8f8f8;
+  //background-color: #f8f8f8;
   height: 100%;
   width: 100%;
   position: relative;
@@ -94,12 +111,13 @@ $cocoa-brown-no-hash: d06f25;
     left: 10px;
     height: 24px;
     background: white;
+    color: black;
     line-height: rem-calc(14);
   }
 }
 
 .zs-module-add {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
   background-size: 125px 20px;
   border: rem-calc(2) dashed $positive-light;
   padding: 12px 10px 6px;
@@ -109,8 +127,19 @@ $cocoa-brown-no-hash: d06f25;
   }
 }
 
+.zs-module-add-label {
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$positive-light-no-hash}30;'%3Eadd module -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 20px;
+  border: rem-calc(2) dashed $positive-light;
+  padding: 12px 10px 6px;
+  &::before {
+    content: attr(data-zs-module-name);
+    border: rem-calc(2) dashed $positive-light;
+  }
+}
+
 .zs-module-remove {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
   background-size: 155px 20px;
   border: rem-calc(2) dashed $negative-light;
   &::before {
@@ -120,7 +149,7 @@ $cocoa-brown-no-hash: d06f25;
 }
 
 .zs-module-confirm-removal {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
   background-size: 155px 20px;
   border: rem-calc(2) dashed $negative-light;
   &::before {
@@ -140,7 +169,7 @@ $cocoa-brown-no-hash: d06f25;
 // }
 
 .zs-module-edit {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit module -- %3C/text%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$dark-goldenrod-no-hash}30;'%3Eedit module -- %3C/text%3E%3C/svg%3E");
   background-size: 125px 20px;
   border: rem-calc(2) dashed $dark-goldenrod;
   &::before {
@@ -161,7 +190,7 @@ $cocoa-brown-no-hash: d06f25;
 
 
 .zs-module-publish {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$cocoa-brown-no-hash}30;'%3Epublish module -- %3C/text%3E%3C/svg%3E");
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$cocoa-brown-no-hash}30;'%3Epublish module -- %3C/text%3E%3C/svg%3E");
   background-size: 125px 20px;
   border: rem-calc(2) dashed $english-violet;
   &::before {
@@ -170,9 +199,36 @@ $cocoa-brown-no-hash: d06f25;
   }
 }
 
+.zs-module-confirm-publish {
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$negative-light-no-hash}30;'%3Eremove module -- %3C/text%3E%3C/svg%3E");
+  background-size: 155px 20px;
+  border: rem-calc(2) dashed $english-violet;
+  &::before {
+    content:"CONFIRM PUBLISH: " attr(data-zs-module-name);
+    border: rem-calc(2) dashed$english-violet;
+  }
+}
+
+.zs-module-publish-page {
+  //background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%23#{$cocoa-brown-no-hash}30;'%3Epublish module -- %3C/text%3E%3C/svg%3E");
+  background-size: 125px 20px;
+  border: rem-calc(2) dashed $english-violet;
+  cursor: none;
+  &::before {
+    content: "TO BE PUBLISHED: " attr(data-zs-module-name);
+    border: rem-calc(2) dashed $english-violet;
+  }
+}
+
 [data-zs-module-force-show][data-module='accordion.panel'] {
   opacity: 1 !important;
   height: auto !important;
+}
+
+[data-zs-module-force-show][data-module='dialog'] {
+  display:block !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .grid-background {
