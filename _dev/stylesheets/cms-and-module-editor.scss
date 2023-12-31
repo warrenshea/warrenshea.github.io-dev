@@ -14,6 +14,8 @@
 .b-dark-goldenrod-dashed\:2px { border: rem-calc(2) dashed $dark-goldenrod; }
 .b-english-violet-dashed\:2px { border: rem-calc(2) dashed $english-violet; }
 
+.color\:onyx { color: $onyx; }
+
 .ic-color\:dark-goldenrod { background-color: #{$dark-goldenrod} };
 .ic-color\:english-violet { background-color: #{$english-violet} };
 .bgc\:positive { background-color: $positive; }
@@ -151,6 +153,18 @@
     display:block !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+}
+
+#module-form-editor {
+  dl {
+    dt {
+      font-family: "heebo-bold", Arial, Sans-Serif;
+      font-weight: 700;
+    }
+    dd {
+      margin-left:0;
+    }
   }
 }
 
