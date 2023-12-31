@@ -9,6 +9,9 @@
       background-color: #{$black}75;
     }
   }
+  &[open] {
+    position: fixed;
+  }
   button[data-dialog-close] {
     position: absolute;
     top: 20px;
