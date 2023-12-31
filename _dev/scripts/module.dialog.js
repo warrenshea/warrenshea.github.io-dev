@@ -68,6 +68,8 @@ storm_eagle.module('dialog', () => {
 
         el.showModal();
 
+        document.querySelector("body").classList.add("overflow:hidden");
+
         /* set focus to dialog (but not the first_tab_stop */
         setTimeout(() => {
           (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
@@ -86,6 +88,8 @@ storm_eagle.module('dialog', () => {
       document.querySelectorAll("dialog").forEach((dialog) => {
         dialog.close();
       });
+
+      document.querySelector("body").classList.remove("overflow:hidden");
 
       /* updates dialog visuals */
       document.querySelectorAll("[data-module='dialog']").forEach((el, index) => {
