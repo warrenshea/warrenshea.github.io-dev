@@ -12124,6 +12124,21 @@ ol.unstyle-pl\:0 {
   mask-image: url("../assets/icon/brands/check-circle.svg");
 }
 
+.ic.ic-type\:light.ic-name\:check {
+  -webkit-mask-image: url("../assets/icon/light/check.svg");
+  mask-image: url("../assets/icon/light/check.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:check {
+  -webkit-mask-image: url("../assets/icon/solid/check.svg");
+  mask-image: url("../assets/icon/solid/check.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:check {
+  -webkit-mask-image: url("../assets/icon/brands/check.svg");
+  mask-image: url("../assets/icon/brands/check.svg");
+}
+
 .ic.ic-type\:light.ic-name\:spinner {
   -webkit-mask-image: url("../assets/icon/light/spinner.svg");
   mask-image: url("../assets/icon/light/spinner.svg");
@@ -12197,6 +12212,66 @@ ol.unstyle-pl\:0 {
 .ic.ic-type\:brands.ic-name\:eye {
   -webkit-mask-image: url("../assets/icon/brands/eye.svg");
   mask-image: url("../assets/icon/brands/eye.svg");
+}
+
+.ic.ic-type\:light.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/light/edit.svg");
+  mask-image: url("../assets/icon/light/edit.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/solid/edit.svg");
+  mask-image: url("../assets/icon/solid/edit.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/brands/edit.svg");
+  mask-image: url("../assets/icon/brands/edit.svg");
+}
+
+.ic.ic-type\:light.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/light/plus.svg");
+  mask-image: url("../assets/icon/light/plus.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/solid/plus.svg");
+  mask-image: url("../assets/icon/solid/plus.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/brands/plus.svg");
+  mask-image: url("../assets/icon/brands/plus.svg");
+}
+
+.ic.ic-type\:light.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/light/minus.svg");
+  mask-image: url("../assets/icon/light/minus.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/solid/minus.svg");
+  mask-image: url("../assets/icon/solid/minus.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/brands/minus.svg");
+  mask-image: url("../assets/icon/brands/minus.svg");
+}
+
+.ic.ic-type\:light.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/light/sort-alt.svg");
+  mask-image: url("../assets/icon/light/sort-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/solid/sort-alt.svg");
+  mask-image: url("../assets/icon/solid/sort-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/brands/sort-alt.svg");
+  mask-image: url("../assets/icon/brands/sort-alt.svg");
 }
 
 .ic.ic-type\:light.ic-name\:low-vision {
@@ -13037,6 +13112,12 @@ ol.unstyle-pl\:0 {
     background-color: #c0791d;
   }
 }
+.ic-size\:12px {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  height: 0.75rem;
+}
+
 .ic-size\:16px {
   width: 1rem;
   min-width: 1rem;
@@ -13080,6 +13161,12 @@ ol.unstyle-pl\:0 {
 }
 
 @media screen and (max-width: 47.99rem) {
+  .sm\=\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .sm\=\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13122,6 +13209,12 @@ ol.unstyle-pl\:0 {
     height: 6rem;
   }
 }
+.sm\+\:ic-size\:12px {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  height: 0.75rem;
+}
+
 .sm\+\:ic-size\:16px {
   width: 1rem;
   min-width: 1rem;
@@ -13165,6 +13258,12 @@ ol.unstyle-pl\:0 {
 }
 
 @media screen and (max-width: 63.99rem) {
+  .md-\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .md-\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13208,6 +13307,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
+  .md\=\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .md\=\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13251,6 +13356,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (min-width: 48rem) {
+  .md\+\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .md\+\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13294,6 +13405,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (max-width: 79.99rem) {
+  .lg-\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .lg-\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13337,6 +13454,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
+  .lg\=\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .lg\=\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13380,6 +13503,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (min-width: 64rem) {
+  .lg\+\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .lg\+\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -13423,6 +13552,12 @@ ol.unstyle-pl\:0 {
   }
 }
 @media screen and (min-width: 80rem) {
+  .xl\+\:ic-size\:12px {
+    width: 0.75rem;
+    min-width: 0.75rem;
+    height: 0.75rem;
+  }
+
   .xl\+\:ic-size\:16px {
     width: 1rem;
     min-width: 1rem;
@@ -17346,6 +17481,9 @@ ol.unstyle-pl\:0 {
 }
 [data-module=dialog][data-dialog-overlay=true]::backdrop {
   background-color: #00000075;
+}
+[data-module=dialog][open] {
+  position: fixed;
 }
 [data-module=dialog] button[data-dialog-close] {
   position: absolute;
