@@ -9,19 +9,21 @@
 @import '_config/variables-box-shadow.scss';
 
 .b-positive-light-dashed\:2px { border: rem-calc(2) dashed $positive-light; }
-.b-positive-light-dashed\:4px { border: rem-calc(4) dashed $positive-light; }
-
 .b-negative-light-dashed\:2px { border: rem-calc(2) dashed $negative-light; }
-.b-negative-light-dashed\:4px { border: rem-calc(4) dashed $negative-light; }
-
 .b-blue-dashed\:2px { border: rem-calc(2) dashed $blue; }
-.b-blue-dashed\:4px { border: rem-calc(4) dashed $blue; }
-
 .b-dark-goldenrod-dashed\:2px { border: rem-calc(2) dashed $dark-goldenrod; }
-.b-dark-goldenrod-dashed\:4px { border: rem-calc(4) dashed $dark-goldenrod; }
-
 .b-english-violet-dashed\:2px { border: rem-calc(2) dashed $english-violet; }
-.b-english-violet-dashed\:4px { border: rem-calc(4) dashed $english-violet; }
+
+.ic-color\:dark-goldenrod { background-color: #{$dark-goldenrod} };
+.ic-color\:english-violet { background-color: #{$english-violet} };
+.bgc\:positive { background-color: $positive; }
+.bgc\:negative { background-color: $negative; }
+.bgc\:dark-goldenrod { background-color: $dark-goldenrod; }
+.bgc\:english-violet { background-color: $english-violet; }
+.color\:positive { color: $positive; }
+.color\:negative { color: $negative; }
+.color\:dark-goldenrod { color: $dark-goldenrod; }
+.color\:english-violet { color: $english-violet; }
 
 [data-module="placeholder"] {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
@@ -60,8 +62,8 @@
     position: absolute;
     text-align: center;
     font-family: 'heebo-bold';
-    top: 4px;
-    left: 10px;
+    top: -2px;
+    left: -2px;
     height: 24px;
     background: white;
     color: black;
@@ -78,8 +80,6 @@
   &::before {
     content: "ADD to: " attr(data-zs-module-name);
     border: rem-calc(2) solid $positive-light;
-    top: -2px;
-    left: -2px;
   }
 }
 
@@ -90,8 +90,6 @@
     content: attr(data-zs-module-name);
     border: rem-calc(2) solid $positive-light;
     opacity: .75;
-    top: -2px;
-    left: -2px;
   }
 }
 
