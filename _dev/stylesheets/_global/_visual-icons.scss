@@ -16,11 +16,16 @@ $icons: (
   chevron-up,
   chevron-circle-up,
   check-circle,
+  check,
   spinner,
   copy,
   hand-rock,
   dragon,
   eye,
+  edit,
+  plus,
+  minus,
+  sort-alt,
   low-vision,
   redo-alt,
   external-link-alt,
@@ -97,6 +102,7 @@ $colors: (
 }
 
 $sizes: (
+  12px : rem-calc(12),
   16px : rem-calc(16),
   20px : rem-calc(20),
   24px : rem-calc(24),
