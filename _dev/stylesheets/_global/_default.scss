@@ -42,7 +42,6 @@ button {
   padding: 0;
 }
 
-
 abbr[title] {
   /* override */
   text-decoration: none;
@@ -63,4 +62,8 @@ p {
 
 table {
   border-collapse: collapse;
+}
+
+strong {
+  font-family:"heebo-bold", Arial, Sans-Serif;
 }
