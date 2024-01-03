@@ -422,6 +422,10 @@ table {
   border-collapse: collapse;
 }
 
+strong {
+  font-family: "heebo-bold", Arial, Sans-Serif;
+}
+
 .row {
   margin-left: auto;
   margin-right: auto;
