@@ -36,26 +36,3 @@ $whitespaces: (
     .#{$prefix}capitalize { text-transform: capitalize; }
   }
 }
-
-.h1 {
-  @include breakpoint(small up) {
-    font-size: rem-calc(28);
-    line-height: 2rem;
-  }
-  @include breakpoint(medium up) {
-    font-size: rem-calc(36);
-    line-height: 2.5rem;
-  }
-  font-weight:700;
-}
-
-.h2 {
-  @include breakpoint(small up) {
-    font-size: rem-calc(22);
-    line-height: 2rem;
-  }
-  @include breakpoint(medium up) {
-    font-size: rem-calc(28);
-  }
-  font-weight:700;
-}
