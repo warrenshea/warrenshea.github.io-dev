@@ -10720,6 +10720,34 @@ fieldset.unstyle {
     font-weight: 700;
   }
 }
+h1.play {
+  font-weight: 700;
+  font-family: "play-bold", Arial, Sans-Serif;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+h2.play {
+  font-weight: 700;
+  font-family: "play-bold", Arial, Sans-Serif;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+h3.play {
+  font-weight: 700;
+  font-family: "play-bold", Arial, Sans-Serif;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+}
+
+h4.play {
+  font-weight: 700;
+  font-family: "play-bold", Arial, Sans-Serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
 @font-face {
   font-family: "heebo-light";
   font-style: normal;
@@ -10952,6 +10980,34 @@ fieldset.unstyle {
     font-weight: 700;
   }
 }
+h1.heebo {
+  font-weight: 700;
+  font-family: "heebo-bold", Arial, Sans-Serif;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+h2.heebo {
+  font-weight: 700;
+  font-family: "heebo-bold", Arial, Sans-Serif;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+h3.heebo {
+  font-weight: 700;
+  font-family: "heebo-bold", Arial, Sans-Serif;
+  font-size: 1.75rem;
+  line-height: 1.75rem;
+}
+
+h4.heebo {
+  font-weight: 700;
+  font-family: "heebo-bold", Arial, Sans-Serif;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
 /* use this to remove phantom space */
 .fs\:0 {
   font-size: 0;
@@ -11341,19 +11397,19 @@ fieldset.unstyle {
 
 /* used for phantom space below an image */
 .lh\:24 {
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
 
 .lh\:32 {
-  line-height: 2rem;
+  line-height: 2;
 }
 
 .lh\:40 {
-  line-height: 2.5rem;
+  line-height: 2.5;
 }
 
 .lh\:48 {
-  line-height: 3rem;
+  line-height: 3;
 }
 
 @media screen and (max-width: 47.99rem) {
@@ -11363,19 +11419,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .sm\=\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .sm\=\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .sm\=\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .sm\=\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 .sm\+\:lh\:0 {
@@ -11384,19 +11440,19 @@ fieldset.unstyle {
 
 /* used for phantom space below an image */
 .sm\+\:lh\:24 {
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
 
 .sm\+\:lh\:32 {
-  line-height: 2rem;
+  line-height: 2;
 }
 
 .sm\+\:lh\:40 {
-  line-height: 2.5rem;
+  line-height: 2.5;
 }
 
 .sm\+\:lh\:48 {
-  line-height: 3rem;
+  line-height: 3;
 }
 
 @media screen and (max-width: 63.99rem) {
@@ -11406,19 +11462,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .md-\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .md-\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .md-\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .md-\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
@@ -11428,19 +11484,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .md\=\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .md\=\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .md\=\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .md\=\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (min-width: 48rem) {
@@ -11450,19 +11506,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .md\+\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .md\+\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .md\+\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .md\+\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (max-width: 79.99rem) {
@@ -11472,19 +11528,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .lg-\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .lg-\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .lg-\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .lg-\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
@@ -11494,19 +11550,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .lg\=\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .lg\=\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .lg\=\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .lg\=\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (min-width: 64rem) {
@@ -11516,19 +11572,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .lg\+\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .lg\+\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .lg\+\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .lg\+\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 @media screen and (min-width: 80rem) {
@@ -11538,19 +11594,19 @@ fieldset.unstyle {
 
   /* used for phantom space below an image */
   .xl\+\:lh\:24 {
-    line-height: 1.5rem;
+    line-height: 1.5;
   }
 
   .xl\+\:lh\:32 {
-    line-height: 2rem;
+    line-height: 2;
   }
 
   .xl\+\:lh\:40 {
-    line-height: 2.5rem;
+    line-height: 2.5;
   }
 
   .xl\+\:lh\:48 {
-    line-height: 3rem;
+    line-height: 3;
   }
 }
 .text-align\:left {
@@ -11949,29 +12005,6 @@ ol.unstyle-pl\:0 {
     text-transform: capitalize;
   }
 }
-.h1 {
-  font-size: 1.75rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 48rem) {
-  .h1 {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-}
-
-.h2 {
-  font-size: 1.375rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 48rem) {
-  .h2 {
-    font-size: 1.75rem;
-  }
-}
-
 .ic {
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
