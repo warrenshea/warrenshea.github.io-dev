@@ -4,9 +4,9 @@
 
   @include breakpoint($breakpoint) {
     .#{$prefix}lh\:0 { line-height: 0; } /* used for phantom space below an image */
-    .#{$prefix}lh\:24 { line-height: 1.5rem; }
-    .#{$prefix}lh\:32 { line-height: 2rem; }
-    .#{$prefix}lh\:40 { line-height: 2.5rem; }
-    .#{$prefix}lh\:48 { line-height: 3rem; }
+    .#{$prefix}lh\:24 { line-height: 1.5; }
+    .#{$prefix}lh\:32 { line-height: 2; }
+    .#{$prefix}lh\:40 { line-height: 2.5; }
+    .#{$prefix}lh\:48 { line-height: 3; }
   }
 }
