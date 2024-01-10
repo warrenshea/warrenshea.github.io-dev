@@ -91,6 +91,7 @@ const remove_focus_selector = [
  * storm_eagle.util.escape_string()
  * storm_eagle.util.minify_html()
  * storm_eagle.util.encode_html_entities()
+ * storm_eagle.util.decode_html_entities()
  * storm_eagle.util.get_random_id()
  * storm_eagle.util.index_in_parent()
  * storm_eagle.util.run_str_func()
