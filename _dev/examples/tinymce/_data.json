@@ -12,6 +12,9 @@
             },
             "stylesheets": [
                 "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.tinymce.js"
             ]
         }
     }
