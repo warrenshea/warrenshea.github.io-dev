@@ -1,0 +1,18 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "TinyMCE RTE (Rich Text Editor) • warrenshea",
+                "urlEn": "/examples/tinymce/",
+                "urlCanonical": "/examples/tinymce/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ]
+        }
+    }
+}
