@@ -90,6 +90,7 @@ const remove_focus_selector = [
  * storm_eagle.util.replace_all()
  * storm_eagle.util.escape_string()
  * storm_eagle.util.minify_html()
+ * storm_eagle.util.encode_html_entities()
  * storm_eagle.util.get_random_id()
  * storm_eagle.util.index_in_parent()
  * storm_eagle.util.run_str_func()
@@ -654,6 +655,59 @@ var storm_eagle = (() => {
 
       minify_html: (html_string) => {
         return html_string.replace(/[\n\r\t]/g, '').replace(/ {2,}/g, ' ').replace(/> </g, '><');
+      },
+
+      encode_html_entities: (html_string) => {
+        const entityMap = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          'À': '&Agrave;',
+          'à': '&agrave;',
+          'Â': '&Acirc;',
+          'â': '&acirc;',
+          'Ä': '&Auml;',
+          'ä': '&auml;',
+          'É': '&Eacute;',
+          'é': '&eacute;',
+          'È': '&Egrave;',
+          'è': '&egrave;',
+          'Ê': '&Ecirc;',
+          'ê': '&ecirc;',
+          'Ë': '&Euml;',
+          'ë': '&euml;',
+          'Î': '&Icirc;',
+          'î': '&icirc;',
+          'Ï': '&Iuml;',
+          'ï': '&iuml;',
+          'Ô': '&Ocirc;',
+          'ô': '&ocirc;',
+          'Ù': '&Ugrave;',
+          'ù': '&ugrave;',
+          'Û': '&Ucirc;',
+          'û': '&ucirc;',
+          'Ü': '&Uuml;',
+          'ü': '&uuml;',
+          '«': '&laquo;',
+          '»': '&raquo;',
+          'Ç': '&Ccedil;',
+          'ç': '&ccedil;',
+          'Œ': '&OElig;',
+          'œ': '&oelig;',
+          '©': '&copy;',
+          '®': '&reg;',
+          '™': '&trade;',
+          '†': '&dagger;',
+          '‡': '&Dagger;',
+          '§': '&sect;',
+          'Δ': '&Delta;'
+          // Add more mappings as needed
+        };
+        return html_string.replace(/[&<>"']/g, char => entityMap[char] || `&#${char.charCodeAt(0)};`);
+      },
+
+      decode_html_entities: (html_string) => {
+        return (new DOMParser().parseFromString(html_string, 'text/html').body.textContent || '').trim();
       },
 
       get_random_id: () => {
