@@ -209,13 +209,14 @@ storm_eagle.module('tinymce', () => {
           type: el.getAttribute('data-tinymce-type'),
           preview_id: el.getAttribute('data-tinymce-preview') || false,
           onload_id: el.getAttribute('data-tinymce-onload-element') || false,
+          onupdate: el.getAttribute('data-tinymce-onupdate-func') || false,
         };
         self.tinymce.initialize(id);
       });
     },
     tinymce: {
       initialize: (id) => {
-        const { type, preview_id, onload_id } = state[id];
+        const { type, preview_id, onload_id, onupdate } = state[id];
         let config = {
           selector: `#${id}`,
           setup: (editor) => {
@@ -368,10 +369,13 @@ storm_eagle.module('tinymce', () => {
               }
             });
             editor.on('input ExecCommand', (event) => {
-              if (preview_id) {
-                if (event.type === 'execcommand' || event.type === 'input') {
-                  storm_eagle.tinymce.force_update_preview(editor, preview_id);
-                  storm_eagle.equalize_heights.force_resize();
+              if (event.type === 'execcommand' || event.type === 'input') {
+                if (onupdate) {
+                  if (preview_id) {
+                    storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
+                  } else {
+                    storm_eagle.util.run_str_func( onupdate, { editor, id } );
+                  }
                 }
               }
             });
