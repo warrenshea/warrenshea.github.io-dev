@@ -13,9 +13,13 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.carousel.js',
       module_name: 'carousel',
     },
-    modal: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.modal.js',
-      module_name: 'modal',
+    dialog: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.dialog.js',
+      module_name: 'dialog',
+    },
+    tabs: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.tabs.js',
+      module_name: 'tabs',
     },
     popover: {
       script_src: '/dist/codebase/chill-penguin/scripts/module.popover.js',
@@ -78,7 +82,8 @@ storm_eagle.module('autoload_scripts', () => {
       let accordion = document.querySelectorAll('[data-module="accordion"]').length > 0;
       let autocomplete = document.querySelectorAll("[data-module='autocomplete']").length > 0;
       let carousel = document.querySelectorAll("[data-module='carousel']").length > 0;
-      let modal = document.querySelectorAll("[data-module='modal']").length > 0;
+      let dialog = document.querySelectorAll("[data-module='dialog']").length > 0;
+      let tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
       let popover = document.querySelectorAll("[data-module='popover']").length > 0;
       let slider = document.querySelectorAll("[data-module='slider.input-container']").length > 0;
       let waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
@@ -110,8 +115,13 @@ storm_eagle.module('autoload_scripts', () => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (modal) {
-        load_javascript('modal').catch((error) => {
+      if (dialog) {
+        load_javascript('dialog').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
+      if (tabs) {
+        load_javascript('tabs').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
