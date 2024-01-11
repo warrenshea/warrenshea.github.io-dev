@@ -499,14 +499,12 @@ fieldset.unstyle {
     height: rem-calc($switch+8);
     cursor: pointer;
     [data-module='switch.slider'] {
-      position: absolute;
       cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      display:flex;
+      align-items: center;
       transition: background-color 0.4s;
       border-radius: rem-calc($switch+8);
+      height: rem-calc($switch+8);
       [data-module='switch.thumb'] {
         position: absolute;
         content: "";
@@ -517,15 +515,33 @@ fieldset.unstyle {
         transition: left 0.4s, background-color 0.4s;
         border-radius: 50%;
       }
+      [data-module='switch.text'] {
+        transition: color 0.4s;
+        padding:0 rem-calc(25);
+      }
+      &:has([data-module='switch.thumb']) {
+        [data-module='switch.text'] {
+          padding:0 rem-calc(35);
+        }
+      }
     }
-    &[data-theme='small']{
+    &[data-theme-size='small']{
       $switch: 16;
       height: rem-calc($switch+8);
       [data-module='switch.slider'] {
+        height: rem-calc($switch+8);
         border-radius: rem-calc($switch+8);
         [data-module='switch.thumb'] {
           height: rem-calc($switch);
           width: rem-calc($switch);
+        }
+        [data-module='switch.text'] {
+          padding:0 rem-calc(15);
+        }
+        &:has([data-module='switch.thumb']) {
+          [data-module='switch.text'] {
+            padding:0 rem-calc(25);
+          }
         }
       }
     }
@@ -534,13 +550,55 @@ fieldset.unstyle {
         left: calc(100% - rem-calc($switch + 12));
       }
     }
-    &[aria-checked='true'][data-theme='small'] {
+    &[aria-checked='true'][data-theme-size='small'] {
       [data-module='switch.thumb']{
         left: calc(100% - rem-calc($switch + 4));
       }
     }
+    & + label {
+      cursor:pointer;
+    }
+    &[data-theme-color='blue'] {
+      [data-module='switch.slider'] {
+        background: $platinum;
+        [data-module='switch.thumb'] {
+          background: $white;
+        }
+        [data-module='switch.text'] {
+          color: $gray;
+        }
+      }
+      &[aria-checked='true'] {
+        [data-module='switch.slider'] {
+          background: $blue;
+          [data-module='switch.text'] {
+            color: $white;
+          }
+        }
+      }
+    }
+    &[data-theme-color='red'] {
+      [data-module='switch.slider'] {
+        background: $platinum;
+        [data-module='switch.thumb'] {
+          background: $white;
+        }
+        [data-module='switch.text'] {
+          color: $gray;
+        }
+      }
+      &[aria-checked='true'] {
+        [data-module='switch.slider'] {
+          background: $red;
+          [data-module='switch.text'] {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 }
+
 
 .form\:theme\:card-checkboxes,
 .form\:theme\:card-radiobuttons {
