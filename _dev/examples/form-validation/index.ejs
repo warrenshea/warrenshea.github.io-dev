@@ -1923,30 +1923,22 @@
           </form>
         </div>
       </div>
-      <div data-module="modal" role="dialog" aria-modal="true" id="required-successful" aria-labelledby="required-successful-heading-id">
-        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 py:24px" data-module="modal.container" style="max-width: 600px;">
-          <div class="bgc:platinum box-shadow:layer-level-2 brr:4px position:relative w:100% modal-contents">
-            <button data-modal-close onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><div class="ic ic-type:solid ic-color:onyx ic-size:24px ic-name:times"></div></button>
-            <div class="p:24px">
-
-              <h2 id="required-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Required Form Submission Successful!</h2>
-
-            </div>
+      <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="required-successful" aria-labelledby="required-successful-heading-id">
+        <div data-module="dialog.container">
+          <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+          <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px brr:8px">
+            <h2 id="required-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Required Form Submission Successful!</h2>
           </div>
         </div>
-      </div>
-      <div data-module="modal" role="dialog" aria-modal="true" id="optional-successful" aria-labelledby="optional-successful-heading-id">
-        <div class="sm=:w:12 md+:w:10 xl+:w:8 sm=:px:8px md+:px:0 py:24px" data-module="modal.container" style="max-width: 600px;">
-          <div class="bgc:platinum box-shadow:layer-level-2 brr:4px position:relative w:100% modal-contents">
-            <button data-modal-close onclick="storm_eagle.modal.close();" aria-label="Close pop-up window"><div class="ic ic-type:solid ic-color:onyx ic-size:24px ic-name:times"></div></button>
-            <div class="p:24px">
-
-              <h2 id="optional-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Optional Form Submission Successful!</h2>
-
-            </div>
+      </dialog>
+      <dialog class="sm=:w:10 md+:w:10 lg+:w:8 xl+:w:6 sm=:px:8px md+:px:0 py:24px position:relative brr:8px b:0" data-module="dialog" role="dialog" aria-dialog="true" id="optional-successful" aria-labelledby="optional-successful-heading-id">
+        <div data-module="dialog.container">
+          <button data-dialog-close onclick="storm_eagle.dialog.close();" aria-label="Close pop-up window"><span class="fs:32px lh:0">&times;</span></button>
+          <div class="sm=:pt:24px md+:pt:24px md+:pb:24px sm=:px:24px md+:px:24px xl+:px:24px brr:8px">
+            <h2 id="optional-successful-heading-id" class="py:48px xl+:lh:40 heebo:bold text-align:center">Optional Form Submission Successful!</h2>
           </div>
         </div>
-      </div>
+      </dialog>
     </main>
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
@@ -2043,7 +2035,7 @@
             return false;
           },
           required_success: () => {
-            storm_eagle.modal.open(null,'required-successful');
+            storm_eagle.dialog.open('required-successful');
             return false;
           },
           optional_autofill: () => {
@@ -2154,7 +2146,7 @@
             return false;
           },
           optional_success: () => {
-            storm_eagle.modal.open(null,'optional-successful');
+            storm_eagle.dialog.open('optional-successful');
             return false;
           },
         }
