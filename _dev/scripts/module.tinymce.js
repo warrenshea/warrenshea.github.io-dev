@@ -364,9 +364,7 @@ storm_eagle.module('tinymce', () => {
               },
             });
             editor.on('init', (event) => {
-              if (onload_id) {
-                tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
-              }
+              onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
             });
             editor.on('input ExecCommand', (event) => {
               if (event.type === 'execcommand' || event.type === 'input') {
