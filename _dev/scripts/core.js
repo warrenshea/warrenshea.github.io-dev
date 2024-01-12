@@ -94,6 +94,7 @@ const remove_focus_selector = [
  * storm_eagle.util.decode_html_entities()
  * storm_eagle.util.get_random_id()
  * storm_eagle.util.index_in_parent()
+ * storm_eagle.util.closest_parent()
  * storm_eagle.util.run_str_func()
  * storm_eagle.open_window()
  * storm_eagle.scroll_to()
@@ -365,6 +366,12 @@ var storm_eagle = (() => {
           number = 0;
         }
         return number;
+      },
+    },
+
+    button: {
+      is_checked: (element) => {
+        return element.getAttribute('aria-checked') === 'true';
       },
     },
 
