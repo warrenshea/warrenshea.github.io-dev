@@ -1,0 +1,9 @@
+[data-module='badge']{
+  display:inline-block;
+  border-radius: rem-calc(4);
+  color: $white;
+  font-weight:700;
+  padding: rem-calc(2) rem-calc(6);
+  margin: 0 rem-calc(4) 0 0;
+  font-size: rem-calc(14);
+}
