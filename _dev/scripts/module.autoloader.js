@@ -79,22 +79,22 @@ storm_eagle.module('autoload_scripts', () => {
 
   return {
     initialize: () => {
-      let accordion = document.querySelectorAll('[data-module="accordion"]').length > 0;
-      let autocomplete = document.querySelectorAll("[data-module='autocomplete']").length > 0;
-      let carousel = document.querySelectorAll("[data-module='carousel']").length > 0;
-      let dialog = document.querySelectorAll("[data-module='dialog']").length > 0;
-      let tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
-      let popover = document.querySelectorAll("[data-module='popover']").length > 0;
-      let slider = document.querySelectorAll("[data-module='slider.input-container']").length > 0;
-      let waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
-      let form_validation = document.querySelectorAll(`[data-module='form']`).length > 0;
-      let menu_submenu = document.querySelectorAll('[data-module="menu"]').length > 0;
-      let range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
-      let show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
-      let form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
-      let form_parent_checkbox = document.querySelectorAll('[data-module="parent-checkbox"]').length > 0;
-      let form_switch_button = document.querySelectorAll('[data-module="switch.button"]').length > 0;
-      let header = document.querySelectorAll("[data-module='header']").length > 0;
+      const accordion = document.querySelectorAll('[data-module="accordion"]').length > 0;
+      const autocomplete = document.querySelectorAll("[data-module='autocomplete']").length > 0;
+      const carousel = document.querySelectorAll("[data-module='carousel']").length > 0;
+      const dialog = document.querySelectorAll("[data-module='dialog']").length > 0;
+      const tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
+      const popover = document.querySelectorAll("[data-module='popover']").length > 0;
+      const slider = document.querySelectorAll("[data-module='slider.input-container']").length > 0;
+      const waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
+      const form_validation = document.querySelectorAll(`[data-module='form']`).length > 0;
+      const menu_submenu = document.querySelectorAll('[data-module="menu"]').length > 0;
+      const range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
+      const show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
+      const form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
+      const form_parent_checkbox = document.querySelectorAll('[data-module="parent-checkbox"]').length > 0;
+      const form_switch_button = document.querySelectorAll('[data-module="switch.button"]').length > 0;
+      const header = document.querySelectorAll("[data-module='header']").length > 0;
       if (header) {
         load_javascript('header').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
