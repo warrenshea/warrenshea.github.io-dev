@@ -58,6 +58,7 @@ const remove_focus_selector = [
  * storm_eagle.format.currency()
  * storm_eagle.format.percentage()
  * storm_eagle.reverse_format.get_numeric_value()
+ * storm_eagle.button.is_checked()
  * storm_eagle.checkbox.is_checked()
  * storm_eagle.checkbox.set_checked()
  * storm_eagle.checkbox.get_values()
@@ -100,6 +101,7 @@ const remove_focus_selector = [
  * storm_eagle.scroll_to()
  * storm_eagle.debounce()
  * storm_eagle.resize_observer()
+ * storm_eagle.breakpoint_observer()
  **/
 
 var storm_eagle = (() => {
