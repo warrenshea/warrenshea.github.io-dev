@@ -139,6 +139,7 @@
   border: rem-calc(2) dashed $english-violet;
   cursor: default;
   &::before {
+    color: $gray;
     content: "TO BE PUBLISHED: " attr(data-zs-module-name);
     border: rem-calc(2) dashed $english-violet;
   }
