@@ -163,7 +163,6 @@ storm_eagle.module('tinymce', () => {
       { text: 'CSS', value: 'css' },
     ],
     charmap_append: [
-      [149, '•'],
       [192, 'À'],
       [224, 'à'],
       [194, 'Â'],
