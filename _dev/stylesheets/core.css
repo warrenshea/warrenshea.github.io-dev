@@ -10404,6 +10404,7 @@ fieldset.unstyle {
   border-radius: 50%;
 }
 .form\:theme\:gl0b3x button[role=switch][data-module="switch.button"] [data-module="switch.slider"] [data-module="switch.text"] {
+  width: 100%;
   transition: color 0.4s;
   padding: 0 1.5625rem;
 }
