@@ -516,6 +516,7 @@ fieldset.unstyle {
         border-radius: 50%;
       }
       [data-module='switch.text'] {
+        width: 100%;
         transition: color 0.4s;
         padding:0 rem-calc(25);
       }
