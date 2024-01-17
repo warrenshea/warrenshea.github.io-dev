@@ -12077,21 +12077,6 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/calendar.svg");
 }
 
-.ic.ic-type\:light.ic-name\:chevron-down {
-  -webkit-mask-image: url("../assets/icon/light/chevron-down.svg");
-  mask-image: url("../assets/icon/light/chevron-down.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:chevron-down {
-  -webkit-mask-image: url("../assets/icon/solid/chevron-down.svg");
-  mask-image: url("../assets/icon/solid/chevron-down.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:chevron-down {
-  -webkit-mask-image: url("../assets/icon/brands/chevron-down.svg");
-  mask-image: url("../assets/icon/brands/chevron-down.svg");
-}
-
 .ic.ic-type\:light.ic-name\:chevron-circle-down {
   -webkit-mask-image: url("../assets/icon/light/chevron-circle-down.svg");
   mask-image: url("../assets/icon/light/chevron-circle-down.svg");
@@ -12105,21 +12090,6 @@ dl.unstyle > dd {
 .ic.ic-type\:brands.ic-name\:chevron-circle-down {
   -webkit-mask-image: url("../assets/icon/brands/chevron-circle-down.svg");
   mask-image: url("../assets/icon/brands/chevron-circle-down.svg");
-}
-
-.ic.ic-type\:light.ic-name\:chevron-left {
-  -webkit-mask-image: url("../assets/icon/light/chevron-left.svg");
-  mask-image: url("../assets/icon/light/chevron-left.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:chevron-left {
-  -webkit-mask-image: url("../assets/icon/solid/chevron-left.svg");
-  mask-image: url("../assets/icon/solid/chevron-left.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:chevron-left {
-  -webkit-mask-image: url("../assets/icon/brands/chevron-left.svg");
-  mask-image: url("../assets/icon/brands/chevron-left.svg");
 }
 
 .ic.ic-type\:light.ic-name\:chevron-circle-left {
@@ -12137,21 +12107,6 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/chevron-circle-left.svg");
 }
 
-.ic.ic-type\:light.ic-name\:chevron-right {
-  -webkit-mask-image: url("../assets/icon/light/chevron-right.svg");
-  mask-image: url("../assets/icon/light/chevron-right.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:chevron-right {
-  -webkit-mask-image: url("../assets/icon/solid/chevron-right.svg");
-  mask-image: url("../assets/icon/solid/chevron-right.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:chevron-right {
-  -webkit-mask-image: url("../assets/icon/brands/chevron-right.svg");
-  mask-image: url("../assets/icon/brands/chevron-right.svg");
-}
-
 .ic.ic-type\:light.ic-name\:chevron-circle-right {
   -webkit-mask-image: url("../assets/icon/light/chevron-circle-right.svg");
   mask-image: url("../assets/icon/light/chevron-circle-right.svg");
@@ -12165,21 +12120,6 @@ dl.unstyle > dd {
 .ic.ic-type\:brands.ic-name\:chevron-circle-right {
   -webkit-mask-image: url("../assets/icon/brands/chevron-circle-right.svg");
   mask-image: url("../assets/icon/brands/chevron-circle-right.svg");
-}
-
-.ic.ic-type\:light.ic-name\:chevron-up {
-  -webkit-mask-image: url("../assets/icon/light/chevron-up.svg");
-  mask-image: url("../assets/icon/light/chevron-up.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:chevron-up {
-  -webkit-mask-image: url("../assets/icon/solid/chevron-up.svg");
-  mask-image: url("../assets/icon/solid/chevron-up.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:chevron-up {
-  -webkit-mask-image: url("../assets/icon/brands/chevron-up.svg");
-  mask-image: url("../assets/icon/brands/chevron-up.svg");
 }
 
 .ic.ic-type\:light.ic-name\:chevron-circle-up {
@@ -12197,19 +12137,64 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/chevron-circle-up.svg");
 }
 
-.ic.ic-type\:light.ic-name\:check-circle {
-  -webkit-mask-image: url("../assets/icon/light/check-circle.svg");
-  mask-image: url("../assets/icon/light/check-circle.svg");
+.ic.ic-type\:light.ic-name\:chevron-down {
+  -webkit-mask-image: url("../assets/icon/light/chevron-down.svg");
+  mask-image: url("../assets/icon/light/chevron-down.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:check-circle {
-  -webkit-mask-image: url("../assets/icon/solid/check-circle.svg");
-  mask-image: url("../assets/icon/solid/check-circle.svg");
+.ic.ic-type\:solid.ic-name\:chevron-down {
+  -webkit-mask-image: url("../assets/icon/solid/chevron-down.svg");
+  mask-image: url("../assets/icon/solid/chevron-down.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:check-circle {
-  -webkit-mask-image: url("../assets/icon/brands/check-circle.svg");
-  mask-image: url("../assets/icon/brands/check-circle.svg");
+.ic.ic-type\:brands.ic-name\:chevron-down {
+  -webkit-mask-image: url("../assets/icon/brands/chevron-down.svg");
+  mask-image: url("../assets/icon/brands/chevron-down.svg");
+}
+
+.ic.ic-type\:light.ic-name\:chevron-left {
+  -webkit-mask-image: url("../assets/icon/light/chevron-left.svg");
+  mask-image: url("../assets/icon/light/chevron-left.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:chevron-left {
+  -webkit-mask-image: url("../assets/icon/solid/chevron-left.svg");
+  mask-image: url("../assets/icon/solid/chevron-left.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:chevron-left {
+  -webkit-mask-image: url("../assets/icon/brands/chevron-left.svg");
+  mask-image: url("../assets/icon/brands/chevron-left.svg");
+}
+
+.ic.ic-type\:light.ic-name\:chevron-right {
+  -webkit-mask-image: url("../assets/icon/light/chevron-right.svg");
+  mask-image: url("../assets/icon/light/chevron-right.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:chevron-right {
+  -webkit-mask-image: url("../assets/icon/solid/chevron-right.svg");
+  mask-image: url("../assets/icon/solid/chevron-right.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:chevron-right {
+  -webkit-mask-image: url("../assets/icon/brands/chevron-right.svg");
+  mask-image: url("../assets/icon/brands/chevron-right.svg");
+}
+
+.ic.ic-type\:light.ic-name\:chevron-up {
+  -webkit-mask-image: url("../assets/icon/light/chevron-up.svg");
+  mask-image: url("../assets/icon/light/chevron-up.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:chevron-up {
+  -webkit-mask-image: url("../assets/icon/solid/chevron-up.svg");
+  mask-image: url("../assets/icon/solid/chevron-up.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:chevron-up {
+  -webkit-mask-image: url("../assets/icon/brands/chevron-up.svg");
+  mask-image: url("../assets/icon/brands/chevron-up.svg");
 }
 
 .ic.ic-type\:light.ic-name\:check {
@@ -12227,184 +12212,19 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/check.svg");
 }
 
-.ic.ic-type\:light.ic-name\:spinner {
-  -webkit-mask-image: url("../assets/icon/light/spinner.svg");
-  mask-image: url("../assets/icon/light/spinner.svg");
+.ic.ic-type\:light.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/light/check-circle.svg");
+  mask-image: url("../assets/icon/light/check-circle.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:spinner {
-  -webkit-mask-image: url("../assets/icon/solid/spinner.svg");
-  mask-image: url("../assets/icon/solid/spinner.svg");
+.ic.ic-type\:solid.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/solid/check-circle.svg");
+  mask-image: url("../assets/icon/solid/check-circle.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:spinner {
-  -webkit-mask-image: url("../assets/icon/brands/spinner.svg");
-  mask-image: url("../assets/icon/brands/spinner.svg");
-}
-
-.ic.ic-type\:light.ic-name\:copy {
-  -webkit-mask-image: url("../assets/icon/light/copy.svg");
-  mask-image: url("../assets/icon/light/copy.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:copy {
-  -webkit-mask-image: url("../assets/icon/solid/copy.svg");
-  mask-image: url("../assets/icon/solid/copy.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:copy {
-  -webkit-mask-image: url("../assets/icon/brands/copy.svg");
-  mask-image: url("../assets/icon/brands/copy.svg");
-}
-
-.ic.ic-type\:light.ic-name\:hand-rock {
-  -webkit-mask-image: url("../assets/icon/light/hand-rock.svg");
-  mask-image: url("../assets/icon/light/hand-rock.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:hand-rock {
-  -webkit-mask-image: url("../assets/icon/solid/hand-rock.svg");
-  mask-image: url("../assets/icon/solid/hand-rock.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:hand-rock {
-  -webkit-mask-image: url("../assets/icon/brands/hand-rock.svg");
-  mask-image: url("../assets/icon/brands/hand-rock.svg");
-}
-
-.ic.ic-type\:light.ic-name\:dragon {
-  -webkit-mask-image: url("../assets/icon/light/dragon.svg");
-  mask-image: url("../assets/icon/light/dragon.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:dragon {
-  -webkit-mask-image: url("../assets/icon/solid/dragon.svg");
-  mask-image: url("../assets/icon/solid/dragon.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:dragon {
-  -webkit-mask-image: url("../assets/icon/brands/dragon.svg");
-  mask-image: url("../assets/icon/brands/dragon.svg");
-}
-
-.ic.ic-type\:light.ic-name\:eye {
-  -webkit-mask-image: url("../assets/icon/light/eye.svg");
-  mask-image: url("../assets/icon/light/eye.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:eye {
-  -webkit-mask-image: url("../assets/icon/solid/eye.svg");
-  mask-image: url("../assets/icon/solid/eye.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:eye {
-  -webkit-mask-image: url("../assets/icon/brands/eye.svg");
-  mask-image: url("../assets/icon/brands/eye.svg");
-}
-
-.ic.ic-type\:light.ic-name\:edit {
-  -webkit-mask-image: url("../assets/icon/light/edit.svg");
-  mask-image: url("../assets/icon/light/edit.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:edit {
-  -webkit-mask-image: url("../assets/icon/solid/edit.svg");
-  mask-image: url("../assets/icon/solid/edit.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:edit {
-  -webkit-mask-image: url("../assets/icon/brands/edit.svg");
-  mask-image: url("../assets/icon/brands/edit.svg");
-}
-
-.ic.ic-type\:light.ic-name\:plus {
-  -webkit-mask-image: url("../assets/icon/light/plus.svg");
-  mask-image: url("../assets/icon/light/plus.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:plus {
-  -webkit-mask-image: url("../assets/icon/solid/plus.svg");
-  mask-image: url("../assets/icon/solid/plus.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:plus {
-  -webkit-mask-image: url("../assets/icon/brands/plus.svg");
-  mask-image: url("../assets/icon/brands/plus.svg");
-}
-
-.ic.ic-type\:light.ic-name\:minus {
-  -webkit-mask-image: url("../assets/icon/light/minus.svg");
-  mask-image: url("../assets/icon/light/minus.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:minus {
-  -webkit-mask-image: url("../assets/icon/solid/minus.svg");
-  mask-image: url("../assets/icon/solid/minus.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:minus {
-  -webkit-mask-image: url("../assets/icon/brands/minus.svg");
-  mask-image: url("../assets/icon/brands/minus.svg");
-}
-
-.ic.ic-type\:light.ic-name\:sort-alt {
-  -webkit-mask-image: url("../assets/icon/light/sort-alt.svg");
-  mask-image: url("../assets/icon/light/sort-alt.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:sort-alt {
-  -webkit-mask-image: url("../assets/icon/solid/sort-alt.svg");
-  mask-image: url("../assets/icon/solid/sort-alt.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:sort-alt {
-  -webkit-mask-image: url("../assets/icon/brands/sort-alt.svg");
-  mask-image: url("../assets/icon/brands/sort-alt.svg");
-}
-
-.ic.ic-type\:light.ic-name\:low-vision {
-  -webkit-mask-image: url("../assets/icon/light/low-vision.svg");
-  mask-image: url("../assets/icon/light/low-vision.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:low-vision {
-  -webkit-mask-image: url("../assets/icon/solid/low-vision.svg");
-  mask-image: url("../assets/icon/solid/low-vision.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:low-vision {
-  -webkit-mask-image: url("../assets/icon/brands/low-vision.svg");
-  mask-image: url("../assets/icon/brands/low-vision.svg");
-}
-
-.ic.ic-type\:light.ic-name\:redo-alt {
-  -webkit-mask-image: url("../assets/icon/light/redo-alt.svg");
-  mask-image: url("../assets/icon/light/redo-alt.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:redo-alt {
-  -webkit-mask-image: url("../assets/icon/solid/redo-alt.svg");
-  mask-image: url("../assets/icon/solid/redo-alt.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:redo-alt {
-  -webkit-mask-image: url("../assets/icon/brands/redo-alt.svg");
-  mask-image: url("../assets/icon/brands/redo-alt.svg");
-}
-
-.ic.ic-type\:light.ic-name\:external-link-alt {
-  -webkit-mask-image: url("../assets/icon/light/external-link-alt.svg");
-  mask-image: url("../assets/icon/light/external-link-alt.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:external-link-alt {
-  -webkit-mask-image: url("../assets/icon/solid/external-link-alt.svg");
-  mask-image: url("../assets/icon/solid/external-link-alt.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:external-link-alt {
-  -webkit-mask-image: url("../assets/icon/brands/external-link-alt.svg");
-  mask-image: url("../assets/icon/brands/external-link-alt.svg");
+.ic.ic-type\:brands.ic-name\:check-circle {
+  -webkit-mask-image: url("../assets/icon/brands/check-circle.svg");
+  mask-image: url("../assets/icon/brands/check-circle.svg");
 }
 
 .ic.ic-type\:light.ic-name\:clone {
@@ -12422,139 +12242,19 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/clone.svg");
 }
 
-.ic.ic-type\:light.ic-name\:info-circle {
-  -webkit-mask-image: url("../assets/icon/light/info-circle.svg");
-  mask-image: url("../assets/icon/light/info-circle.svg");
+.ic.ic-type\:light.ic-name\:copy {
+  -webkit-mask-image: url("../assets/icon/light/copy.svg");
+  mask-image: url("../assets/icon/light/copy.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:info-circle {
-  -webkit-mask-image: url("../assets/icon/solid/info-circle.svg");
-  mask-image: url("../assets/icon/solid/info-circle.svg");
+.ic.ic-type\:solid.ic-name\:copy {
+  -webkit-mask-image: url("../assets/icon/solid/copy.svg");
+  mask-image: url("../assets/icon/solid/copy.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:info-circle {
-  -webkit-mask-image: url("../assets/icon/brands/info-circle.svg");
-  mask-image: url("../assets/icon/brands/info-circle.svg");
-}
-
-.ic.ic-type\:light.ic-name\:lock {
-  -webkit-mask-image: url("../assets/icon/light/lock.svg");
-  mask-image: url("../assets/icon/light/lock.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:lock {
-  -webkit-mask-image: url("../assets/icon/solid/lock.svg");
-  mask-image: url("../assets/icon/solid/lock.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:lock {
-  -webkit-mask-image: url("../assets/icon/brands/lock.svg");
-  mask-image: url("../assets/icon/brands/lock.svg");
-}
-
-.ic.ic-type\:light.ic-name\:phone-alt {
-  -webkit-mask-image: url("../assets/icon/light/phone-alt.svg");
-  mask-image: url("../assets/icon/light/phone-alt.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:phone-alt {
-  -webkit-mask-image: url("../assets/icon/solid/phone-alt.svg");
-  mask-image: url("../assets/icon/solid/phone-alt.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:phone-alt {
-  -webkit-mask-image: url("../assets/icon/brands/phone-alt.svg");
-  mask-image: url("../assets/icon/brands/phone-alt.svg");
-}
-
-.ic.ic-type\:light.ic-name\:times {
-  -webkit-mask-image: url("../assets/icon/light/times.svg");
-  mask-image: url("../assets/icon/light/times.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:times {
-  -webkit-mask-image: url("../assets/icon/solid/times.svg");
-  mask-image: url("../assets/icon/solid/times.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:times {
-  -webkit-mask-image: url("../assets/icon/brands/times.svg");
-  mask-image: url("../assets/icon/brands/times.svg");
-}
-
-.ic.ic-type\:light.ic-name\:user-circle {
-  -webkit-mask-image: url("../assets/icon/light/user-circle.svg");
-  mask-image: url("../assets/icon/light/user-circle.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:user-circle {
-  -webkit-mask-image: url("../assets/icon/solid/user-circle.svg");
-  mask-image: url("../assets/icon/solid/user-circle.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:user-circle {
-  -webkit-mask-image: url("../assets/icon/brands/user-circle.svg");
-  mask-image: url("../assets/icon/brands/user-circle.svg");
-}
-
-.ic.ic-type\:light.ic-name\:github {
-  -webkit-mask-image: url("../assets/icon/light/github.svg");
-  mask-image: url("../assets/icon/light/github.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:github {
-  -webkit-mask-image: url("../assets/icon/solid/github.svg");
-  mask-image: url("../assets/icon/solid/github.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:github {
-  -webkit-mask-image: url("../assets/icon/brands/github.svg");
-  mask-image: url("../assets/icon/brands/github.svg");
-}
-
-.ic.ic-type\:light.ic-name\:instagram {
-  -webkit-mask-image: url("../assets/icon/light/instagram.svg");
-  mask-image: url("../assets/icon/light/instagram.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:instagram {
-  -webkit-mask-image: url("../assets/icon/solid/instagram.svg");
-  mask-image: url("../assets/icon/solid/instagram.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:instagram {
-  -webkit-mask-image: url("../assets/icon/brands/instagram.svg");
-  mask-image: url("../assets/icon/brands/instagram.svg");
-}
-
-.ic.ic-type\:light.ic-name\:linkedin {
-  -webkit-mask-image: url("../assets/icon/light/linkedin.svg");
-  mask-image: url("../assets/icon/light/linkedin.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:linkedin {
-  -webkit-mask-image: url("../assets/icon/solid/linkedin.svg");
-  mask-image: url("../assets/icon/solid/linkedin.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:linkedin {
-  -webkit-mask-image: url("../assets/icon/brands/linkedin.svg");
-  mask-image: url("../assets/icon/brands/linkedin.svg");
-}
-
-.ic.ic-type\:light.ic-name\:html5 {
-  -webkit-mask-image: url("../assets/icon/light/html5.svg");
-  mask-image: url("../assets/icon/light/html5.svg");
-}
-
-.ic.ic-type\:solid.ic-name\:html5 {
-  -webkit-mask-image: url("../assets/icon/solid/html5.svg");
-  mask-image: url("../assets/icon/solid/html5.svg");
-}
-
-.ic.ic-type\:brands.ic-name\:html5 {
-  -webkit-mask-image: url("../assets/icon/brands/html5.svg");
-  mask-image: url("../assets/icon/brands/html5.svg");
+.ic.ic-type\:brands.ic-name\:copy {
+  -webkit-mask-image: url("../assets/icon/brands/copy.svg");
+  mask-image: url("../assets/icon/brands/copy.svg");
 }
 
 .ic.ic-type\:light.ic-name\:css3-alt {
@@ -12572,6 +12272,171 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/css3-alt.svg");
 }
 
+.ic.ic-type\:light.ic-name\:database {
+  -webkit-mask-image: url("../assets/icon/light/database.svg");
+  mask-image: url("../assets/icon/light/database.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:database {
+  -webkit-mask-image: url("../assets/icon/solid/database.svg");
+  mask-image: url("../assets/icon/solid/database.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:database {
+  -webkit-mask-image: url("../assets/icon/brands/database.svg");
+  mask-image: url("../assets/icon/brands/database.svg");
+}
+
+.ic.ic-type\:light.ic-name\:dragon {
+  -webkit-mask-image: url("../assets/icon/light/dragon.svg");
+  mask-image: url("../assets/icon/light/dragon.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:dragon {
+  -webkit-mask-image: url("../assets/icon/solid/dragon.svg");
+  mask-image: url("../assets/icon/solid/dragon.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:dragon {
+  -webkit-mask-image: url("../assets/icon/brands/dragon.svg");
+  mask-image: url("../assets/icon/brands/dragon.svg");
+}
+
+.ic.ic-type\:light.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/light/edit.svg");
+  mask-image: url("../assets/icon/light/edit.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/solid/edit.svg");
+  mask-image: url("../assets/icon/solid/edit.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:edit {
+  -webkit-mask-image: url("../assets/icon/brands/edit.svg");
+  mask-image: url("../assets/icon/brands/edit.svg");
+}
+
+.ic.ic-type\:light.ic-name\:external-link-alt {
+  -webkit-mask-image: url("../assets/icon/light/external-link-alt.svg");
+  mask-image: url("../assets/icon/light/external-link-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:external-link-alt {
+  -webkit-mask-image: url("../assets/icon/solid/external-link-alt.svg");
+  mask-image: url("../assets/icon/solid/external-link-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:external-link-alt {
+  -webkit-mask-image: url("../assets/icon/brands/external-link-alt.svg");
+  mask-image: url("../assets/icon/brands/external-link-alt.svg");
+}
+
+.ic.ic-type\:light.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/light/eye.svg");
+  mask-image: url("../assets/icon/light/eye.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/solid/eye.svg");
+  mask-image: url("../assets/icon/solid/eye.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:eye {
+  -webkit-mask-image: url("../assets/icon/brands/eye.svg");
+  mask-image: url("../assets/icon/brands/eye.svg");
+}
+
+.ic.ic-type\:light.ic-name\:git-alt {
+  -webkit-mask-image: url("../assets/icon/light/git-alt.svg");
+  mask-image: url("../assets/icon/light/git-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:git-alt {
+  -webkit-mask-image: url("../assets/icon/solid/git-alt.svg");
+  mask-image: url("../assets/icon/solid/git-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:git-alt {
+  -webkit-mask-image: url("../assets/icon/brands/git-alt.svg");
+  mask-image: url("../assets/icon/brands/git-alt.svg");
+}
+
+.ic.ic-type\:light.ic-name\:github {
+  -webkit-mask-image: url("../assets/icon/light/github.svg");
+  mask-image: url("../assets/icon/light/github.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:github {
+  -webkit-mask-image: url("../assets/icon/solid/github.svg");
+  mask-image: url("../assets/icon/solid/github.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:github {
+  -webkit-mask-image: url("../assets/icon/brands/github.svg");
+  mask-image: url("../assets/icon/brands/github.svg");
+}
+
+.ic.ic-type\:light.ic-name\:hand-paper {
+  -webkit-mask-image: url("../assets/icon/light/hand-paper.svg");
+  mask-image: url("../assets/icon/light/hand-paper.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:hand-paper {
+  -webkit-mask-image: url("../assets/icon/solid/hand-paper.svg");
+  mask-image: url("../assets/icon/solid/hand-paper.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:hand-paper {
+  -webkit-mask-image: url("../assets/icon/brands/hand-paper.svg");
+  mask-image: url("../assets/icon/brands/hand-paper.svg");
+}
+
+.ic.ic-type\:light.ic-name\:hand-rock {
+  -webkit-mask-image: url("../assets/icon/light/hand-rock.svg");
+  mask-image: url("../assets/icon/light/hand-rock.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:hand-rock {
+  -webkit-mask-image: url("../assets/icon/solid/hand-rock.svg");
+  mask-image: url("../assets/icon/solid/hand-rock.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:hand-rock {
+  -webkit-mask-image: url("../assets/icon/brands/hand-rock.svg");
+  mask-image: url("../assets/icon/brands/hand-rock.svg");
+}
+
+.ic.ic-type\:light.ic-name\:html5 {
+  -webkit-mask-image: url("../assets/icon/light/html5.svg");
+  mask-image: url("../assets/icon/light/html5.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:html5 {
+  -webkit-mask-image: url("../assets/icon/solid/html5.svg");
+  mask-image: url("../assets/icon/solid/html5.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:html5 {
+  -webkit-mask-image: url("../assets/icon/brands/html5.svg");
+  mask-image: url("../assets/icon/brands/html5.svg");
+}
+
+.ic.ic-type\:light.ic-name\:instagram {
+  -webkit-mask-image: url("../assets/icon/light/instagram.svg");
+  mask-image: url("../assets/icon/light/instagram.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:instagram {
+  -webkit-mask-image: url("../assets/icon/solid/instagram.svg");
+  mask-image: url("../assets/icon/solid/instagram.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:instagram {
+  -webkit-mask-image: url("../assets/icon/brands/instagram.svg");
+  mask-image: url("../assets/icon/brands/instagram.svg");
+}
+
 .ic.ic-type\:light.ic-name\:js {
   -webkit-mask-image: url("../assets/icon/light/js.svg");
   mask-image: url("../assets/icon/light/js.svg");
@@ -12587,34 +12452,49 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/js.svg");
 }
 
-.ic.ic-type\:light.ic-name\:sass {
-  -webkit-mask-image: url("../assets/icon/light/sass.svg");
-  mask-image: url("../assets/icon/light/sass.svg");
+.ic.ic-type\:light.ic-name\:linkedin {
+  -webkit-mask-image: url("../assets/icon/light/linkedin.svg");
+  mask-image: url("../assets/icon/light/linkedin.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:sass {
-  -webkit-mask-image: url("../assets/icon/solid/sass.svg");
-  mask-image: url("../assets/icon/solid/sass.svg");
+.ic.ic-type\:solid.ic-name\:linkedin {
+  -webkit-mask-image: url("../assets/icon/solid/linkedin.svg");
+  mask-image: url("../assets/icon/solid/linkedin.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:sass {
-  -webkit-mask-image: url("../assets/icon/brands/sass.svg");
-  mask-image: url("../assets/icon/brands/sass.svg");
+.ic.ic-type\:brands.ic-name\:linkedin {
+  -webkit-mask-image: url("../assets/icon/brands/linkedin.svg");
+  mask-image: url("../assets/icon/brands/linkedin.svg");
 }
 
-.ic.ic-type\:light.ic-name\:react {
-  -webkit-mask-image: url("../assets/icon/light/react.svg");
-  mask-image: url("../assets/icon/light/react.svg");
+.ic.ic-type\:light.ic-name\:lock {
+  -webkit-mask-image: url("../assets/icon/light/lock.svg");
+  mask-image: url("../assets/icon/light/lock.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:react {
-  -webkit-mask-image: url("../assets/icon/solid/react.svg");
-  mask-image: url("../assets/icon/solid/react.svg");
+.ic.ic-type\:solid.ic-name\:lock {
+  -webkit-mask-image: url("../assets/icon/solid/lock.svg");
+  mask-image: url("../assets/icon/solid/lock.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:react {
-  -webkit-mask-image: url("../assets/icon/brands/react.svg");
-  mask-image: url("../assets/icon/brands/react.svg");
+.ic.ic-type\:brands.ic-name\:lock {
+  -webkit-mask-image: url("../assets/icon/brands/lock.svg");
+  mask-image: url("../assets/icon/brands/lock.svg");
+}
+
+.ic.ic-type\:light.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/light/low-vision.svg");
+  mask-image: url("../assets/icon/light/low-vision.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/solid/low-vision.svg");
+  mask-image: url("../assets/icon/solid/low-vision.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:low-vision {
+  -webkit-mask-image: url("../assets/icon/brands/low-vision.svg");
+  mask-image: url("../assets/icon/brands/low-vision.svg");
 }
 
 .ic.ic-type\:light.ic-name\:node {
@@ -12647,64 +12527,124 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/node-js.svg");
 }
 
-.ic.ic-type\:light.ic-name\:python {
-  -webkit-mask-image: url("../assets/icon/light/python.svg");
-  mask-image: url("../assets/icon/light/python.svg");
+.ic.ic-type\:light.ic-name\:php {
+  -webkit-mask-image: url("../assets/icon/light/php.svg");
+  mask-image: url("../assets/icon/light/php.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:python {
-  -webkit-mask-image: url("../assets/icon/solid/python.svg");
-  mask-image: url("../assets/icon/solid/python.svg");
+.ic.ic-type\:solid.ic-name\:php {
+  -webkit-mask-image: url("../assets/icon/solid/php.svg");
+  mask-image: url("../assets/icon/solid/php.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:python {
-  -webkit-mask-image: url("../assets/icon/brands/python.svg");
-  mask-image: url("../assets/icon/brands/python.svg");
+.ic.ic-type\:brands.ic-name\:php {
+  -webkit-mask-image: url("../assets/icon/brands/php.svg");
+  mask-image: url("../assets/icon/brands/php.svg");
 }
 
-.ic.ic-type\:light.ic-name\:vuejs {
-  -webkit-mask-image: url("../assets/icon/light/vuejs.svg");
-  mask-image: url("../assets/icon/light/vuejs.svg");
+.ic.ic-type\:light.ic-name\:phone-alt {
+  -webkit-mask-image: url("../assets/icon/light/phone-alt.svg");
+  mask-image: url("../assets/icon/light/phone-alt.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:vuejs {
-  -webkit-mask-image: url("../assets/icon/solid/vuejs.svg");
-  mask-image: url("../assets/icon/solid/vuejs.svg");
+.ic.ic-type\:solid.ic-name\:phone-alt {
+  -webkit-mask-image: url("../assets/icon/solid/phone-alt.svg");
+  mask-image: url("../assets/icon/solid/phone-alt.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:vuejs {
-  -webkit-mask-image: url("../assets/icon/brands/vuejs.svg");
-  mask-image: url("../assets/icon/brands/vuejs.svg");
+.ic.ic-type\:brands.ic-name\:phone-alt {
+  -webkit-mask-image: url("../assets/icon/brands/phone-alt.svg");
+  mask-image: url("../assets/icon/brands/phone-alt.svg");
 }
 
-.ic.ic-type\:light.ic-name\:git-alt {
-  -webkit-mask-image: url("../assets/icon/light/git-alt.svg");
-  mask-image: url("../assets/icon/light/git-alt.svg");
+.ic.ic-type\:light.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/light/plus.svg");
+  mask-image: url("../assets/icon/light/plus.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:git-alt {
-  -webkit-mask-image: url("../assets/icon/solid/git-alt.svg");
-  mask-image: url("../assets/icon/solid/git-alt.svg");
+.ic.ic-type\:solid.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/solid/plus.svg");
+  mask-image: url("../assets/icon/solid/plus.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:git-alt {
-  -webkit-mask-image: url("../assets/icon/brands/git-alt.svg");
-  mask-image: url("../assets/icon/brands/git-alt.svg");
+.ic.ic-type\:brands.ic-name\:plus {
+  -webkit-mask-image: url("../assets/icon/brands/plus.svg");
+  mask-image: url("../assets/icon/brands/plus.svg");
 }
 
-.ic.ic-type\:light.ic-name\:database {
-  -webkit-mask-image: url("../assets/icon/light/database.svg");
-  mask-image: url("../assets/icon/light/database.svg");
+.ic.ic-type\:light.ic-name\:react {
+  -webkit-mask-image: url("../assets/icon/light/react.svg");
+  mask-image: url("../assets/icon/light/react.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:database {
-  -webkit-mask-image: url("../assets/icon/solid/database.svg");
-  mask-image: url("../assets/icon/solid/database.svg");
+.ic.ic-type\:solid.ic-name\:react {
+  -webkit-mask-image: url("../assets/icon/solid/react.svg");
+  mask-image: url("../assets/icon/solid/react.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:database {
-  -webkit-mask-image: url("../assets/icon/brands/database.svg");
-  mask-image: url("../assets/icon/brands/database.svg");
+.ic.ic-type\:brands.ic-name\:react {
+  -webkit-mask-image: url("../assets/icon/brands/react.svg");
+  mask-image: url("../assets/icon/brands/react.svg");
+}
+
+.ic.ic-type\:light.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/light/redo-alt.svg");
+  mask-image: url("../assets/icon/light/redo-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/solid/redo-alt.svg");
+  mask-image: url("../assets/icon/solid/redo-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:redo-alt {
+  -webkit-mask-image: url("../assets/icon/brands/redo-alt.svg");
+  mask-image: url("../assets/icon/brands/redo-alt.svg");
+}
+
+.ic.ic-type\:light.ic-name\:sass {
+  -webkit-mask-image: url("../assets/icon/light/sass.svg");
+  mask-image: url("../assets/icon/light/sass.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:sass {
+  -webkit-mask-image: url("../assets/icon/solid/sass.svg");
+  mask-image: url("../assets/icon/solid/sass.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:sass {
+  -webkit-mask-image: url("../assets/icon/brands/sass.svg");
+  mask-image: url("../assets/icon/brands/sass.svg");
+}
+
+.ic.ic-type\:light.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/light/sort-alt.svg");
+  mask-image: url("../assets/icon/light/sort-alt.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/solid/sort-alt.svg");
+  mask-image: url("../assets/icon/solid/sort-alt.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:sort-alt {
+  -webkit-mask-image: url("../assets/icon/brands/sort-alt.svg");
+  mask-image: url("../assets/icon/brands/sort-alt.svg");
+}
+
+.ic.ic-type\:light.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/light/spinner.svg");
+  mask-image: url("../assets/icon/light/spinner.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/solid/spinner.svg");
+  mask-image: url("../assets/icon/solid/spinner.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:spinner {
+  -webkit-mask-image: url("../assets/icon/brands/spinner.svg");
+  mask-image: url("../assets/icon/brands/spinner.svg");
 }
 
 .ic.ic-type\:light.ic-name\:terminal {
@@ -12722,6 +12662,21 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/terminal.svg");
 }
 
+.ic.ic-type\:light.ic-name\:times {
+  -webkit-mask-image: url("../assets/icon/light/times.svg");
+  mask-image: url("../assets/icon/light/times.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:times {
+  -webkit-mask-image: url("../assets/icon/solid/times.svg");
+  mask-image: url("../assets/icon/solid/times.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:times {
+  -webkit-mask-image: url("../assets/icon/brands/times.svg");
+  mask-image: url("../assets/icon/brands/times.svg");
+}
+
 .ic.ic-type\:light.ic-name\:universal-access {
   -webkit-mask-image: url("../assets/icon/light/universal-access.svg");
   mask-image: url("../assets/icon/light/universal-access.svg");
@@ -12737,19 +12692,34 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/universal-access.svg");
 }
 
-.ic.ic-type\:light.ic-name\:php {
-  -webkit-mask-image: url("../assets/icon/light/php.svg");
-  mask-image: url("../assets/icon/light/php.svg");
+.ic.ic-type\:light.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/light/user-circle.svg");
+  mask-image: url("../assets/icon/light/user-circle.svg");
 }
 
-.ic.ic-type\:solid.ic-name\:php {
-  -webkit-mask-image: url("../assets/icon/solid/php.svg");
-  mask-image: url("../assets/icon/solid/php.svg");
+.ic.ic-type\:solid.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/solid/user-circle.svg");
+  mask-image: url("../assets/icon/solid/user-circle.svg");
 }
 
-.ic.ic-type\:brands.ic-name\:php {
-  -webkit-mask-image: url("../assets/icon/brands/php.svg");
-  mask-image: url("../assets/icon/brands/php.svg");
+.ic.ic-type\:brands.ic-name\:user-circle {
+  -webkit-mask-image: url("../assets/icon/brands/user-circle.svg");
+  mask-image: url("../assets/icon/brands/user-circle.svg");
+}
+
+.ic.ic-type\:light.ic-name\:vuejs {
+  -webkit-mask-image: url("../assets/icon/light/vuejs.svg");
+  mask-image: url("../assets/icon/light/vuejs.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:vuejs {
+  -webkit-mask-image: url("../assets/icon/solid/vuejs.svg");
+  mask-image: url("../assets/icon/solid/vuejs.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:vuejs {
+  -webkit-mask-image: url("../assets/icon/brands/vuejs.svg");
+  mask-image: url("../assets/icon/brands/vuejs.svg");
 }
 
 .ic-color\:blue {
