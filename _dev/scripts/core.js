@@ -375,6 +375,10 @@ var storm_eagle = (() => {
       is_checked: (element) => {
         return element.getAttribute('aria-checked') === 'true';
       },
+
+      set_checked: (element, value) => {
+        element.setAttribute('aria-checked',value.toString());
+      },
     },
 
     checkbox: {
