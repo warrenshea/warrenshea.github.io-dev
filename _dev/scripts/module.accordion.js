@@ -74,7 +74,7 @@ storm_eagle.module('accordion', () => {
         } else if (active_setting === 'multiple') {
           el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
         }
-        self.open(id,el.getAttribute('aria-controls'));
+        self.action.open(id,el.getAttribute('aria-controls'));
       },
       header_focus: {
         add: (event) => {
@@ -85,23 +85,25 @@ storm_eagle.module('accordion', () => {
         },
       }
     },
-    open: (id, panel_id) => {
-      if (state[id]) {
-        const { active_setting, all_panels } = state[id];
-        if (active_setting === 'single') {
-          all_panels.forEach((panel) => {
-            panel.setAttribute("data-accordion-panel","hide");
-          });
-          document.getElementById(panel_id).setAttribute("data-accordion-panel","");
-          storm_eagle.equalize_heights.force_resize();
-        } else if (active_setting === 'multiple') {
-          const panel = document.getElementById(panel_id);
-          panel.setAttribute("data-accordion-panel", panel.getAttribute("data-accordion-panel") === "hide" ? "" : "hide");
-          storm_eagle.equalize_heights.force_resize();
+    action: {
+      open: (id, panel_id) => {
+        if (state[id]) {
+          const { active_setting, all_panels } = state[id];
+          if (active_setting === 'single') {
+            all_panels.forEach((panel) => {
+              panel.setAttribute("data-accordion-panel","hide");
+            });
+            document.getElementById(panel_id).setAttribute("data-accordion-panel","");
+            storm_eagle.equalize_heights.force_resize();
+          } else if (active_setting === 'multiple') {
+            const panel = document.getElementById(panel_id);
+            panel.setAttribute("data-accordion-panel", panel.getAttribute("data-accordion-panel") === "hide" ? "" : "hide");
+            storm_eagle.equalize_heights.force_resize();
+          }
+        } else {
+          console.error(`Accordion (id="${id}") does not exist`);
         }
-      } else {
-        console.error(`Accordion (id="${id}") does not exist`);
-      }
-    },
+      },
+    }
   };
 });
