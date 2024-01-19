@@ -88,7 +88,6 @@ const remove_focus_selector = [
  * storm_eagle.page.get_hash()
  * storm_eagle.page.set_hash()
  * storm_eagle.page.get_language_code()
- * storm_eagle.util.replace_all()
  * storm_eagle.util.escape_string()
  * storm_eagle.util.minify_html()
  * storm_eagle.util.encode_html_entities()
@@ -645,10 +644,6 @@ var storm_eagle = (() => {
     },
 
     util: {
-      replace_all: (original_str, find_str, replace_str, ignore) => {
-        return original_str.replace(new RegExp(find_str.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, '\\$&'), ignore ? 'gi' : 'g'), typeof replace_str == 'string' ? replace_str.replace(/\$/g, '$$$$') : replace_str);
-      },
-
       escape_string: (original_str) => {
         const char_to_escape_map = {
           '/': '\\/',
@@ -661,7 +656,7 @@ var storm_eagle = (() => {
 
         let new_str = original_str;
         for (const char_to_escape in char_to_escape_map) {
-          new_str = storm_eagle.util.replace_all(new_str, char_to_escape, char_to_escape_map[char_to_escape]);
+          new_str = new_str.replaceAll(char_to_escape, char_to_escape_map[char_to_escape]);
         }
 
         return new_str;
