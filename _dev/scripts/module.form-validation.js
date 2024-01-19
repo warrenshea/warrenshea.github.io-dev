@@ -42,7 +42,7 @@ storm_eagle.module('form_validation', () => {
     initialize: () => {
       self = storm_eagle.form_validation;
       self.create_form_validation_rules();
-      self.init_inline_field_validatation();
+      self.init_inline_field_validation();
     },
     create_form_validation_rules: () => {
       document.querySelectorAll(`[data-module='form']`).forEach((el, index) => {
@@ -59,7 +59,7 @@ storm_eagle.module('form_validation', () => {
         });
       });
     },
-    init_inline_field_validatation: () => {
+    init_inline_field_validation: () => {
       document.querySelectorAll(`[data-module='form']`).forEach((el, index) => {
         let form_name = el.getAttribute('name');
 
