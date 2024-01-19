@@ -12422,6 +12422,21 @@ dl.unstyle > dd {
   mask-image: url("../assets/icon/brands/html5.svg");
 }
 
+.ic.ic-type\:light.ic-name\:info-circle {
+  -webkit-mask-image: url("../assets/icon/light/info-circle.svg");
+  mask-image: url("../assets/icon/light/info-circle.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:info-circle {
+  -webkit-mask-image: url("../assets/icon/solid/info-circle.svg");
+  mask-image: url("../assets/icon/solid/info-circle.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:info-circle {
+  -webkit-mask-image: url("../assets/icon/brands/info-circle.svg");
+  mask-image: url("../assets/icon/brands/info-circle.svg");
+}
+
 .ic.ic-type\:light.ic-name\:instagram {
   -webkit-mask-image: url("../assets/icon/light/instagram.svg");
   mask-image: url("../assets/icon/light/instagram.svg");
@@ -12495,6 +12510,21 @@ dl.unstyle > dd {
 .ic.ic-type\:brands.ic-name\:low-vision {
   -webkit-mask-image: url("../assets/icon/brands/low-vision.svg");
   mask-image: url("../assets/icon/brands/low-vision.svg");
+}
+
+.ic.ic-type\:light.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/light/minus.svg");
+  mask-image: url("../assets/icon/light/minus.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/solid/minus.svg");
+  mask-image: url("../assets/icon/solid/minus.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:minus {
+  -webkit-mask-image: url("../assets/icon/brands/minus.svg");
+  mask-image: url("../assets/icon/brands/minus.svg");
 }
 
 .ic.ic-type\:light.ic-name\:node {
