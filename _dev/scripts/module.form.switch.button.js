@@ -48,26 +48,29 @@ storm_eagle.module('form_switch_button', () => {
         el.addEventListener('click', self.event_listeners.handle_click);
       },
       handle_click: (event) => {
-        const id = event.currentTarget.getAttribute('id');
-        const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = state[id];
-        let switch_active_state = el.getAttribute('aria-checked') === 'true';
-        if (switch_active_state) {
-          slider.classList.remove(...bg_active_classes);
-          slider.classList.add(...bg_inactive_classes);
-          thumb?.classList.remove(...thumb_active_class);
-          thumb?.classList.add(...thumb_inactive_class);
-          text.classList.remove(...text_active_classes);
-          text.classList.add(...text_inactive_classes);
-        } else {
-          slider.classList.remove(...bg_inactive_classes);
-          slider.classList.add(...bg_active_classes);
-          thumb?.classList.remove(...thumb_inactive_class);
-          thumb?.classList.add(...thumb_active_class);
-          text.classList.remove(...text_inactive_classes);
-          text.classList.add(...text_active_classes);
-        }
-        el.setAttribute('aria-checked', (!switch_active_state).toString());
+        self.action.toggle(event.currentTarget.getAttribute('id'));
       },
     },
+    action: {
+      toggle: (id) => {
+        self.action.set_state(id, state[id].el.getAttribute('aria-checked') !== 'true');
+      },
+      set_state: (id, is_active) => {
+        const { el, slider, thumb, text, text_active_classes, text_inactive_classes, bg_active_classes, bg_inactive_classes, thumb_active_class, thumb_inactive_class } = state[id];
+
+        // Remove classes for the current state
+        slider.classList.remove(...is_active ? bg_inactive_classes : bg_active_classes);
+        thumb?.classList.remove(...is_active ? thumb_inactive_class : thumb_active_class);
+        text.classList.remove(...is_active ? text_inactive_classes : text_active_classes);
+
+        // Add classes for the new state
+        slider.classList.add(...is_active ? bg_active_classes : bg_inactive_classes);
+        thumb?.classList.add(...is_active ? thumb_active_class : thumb_inactive_class);
+        text.classList.add(...is_active ? text_active_classes : text_inactive_classes);
+
+        // Update the aria-checked attribute
+        el.setAttribute('aria-checked', is_active.toString());
+      }
+    }
   };
 });
