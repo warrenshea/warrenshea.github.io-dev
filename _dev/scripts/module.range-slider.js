@@ -20,6 +20,8 @@ storm_eagle.module('range_slider', () => {
           label_container: container.querySelector(':scope > [data-module="slider.labels"]'),
           labels: container.querySelectorAll(':scope > [data-module="slider.labels"] > * '),
           slider_fill: container.querySelector(':scope > [data-module="slider.background"] > [data-module="slider.fill"]'),
+          input_bind1: el1.getAttribute("data-slider-bind-input"),
+          input_bind2: el2.getAttribute("data-slider-bind-input"),
         };
         self.ui.initialize(id1);
         self.event_listeners.initialize(id1);
@@ -55,11 +57,19 @@ storm_eagle.module('range_slider', () => {
     },
     event_listeners: {
       initialize: (id1) => {
-        const { el1, el2 } = state[id1];
+        const { el1, el2, input_bind1, input_bind2 } = state[id1];
         el1.removeEventListener('input', self.event_listeners.handle_slider_change_1);
         el1.addEventListener('input', self.event_listeners.handle_slider_change_1);
         el2.removeEventListener('input', self.event_listeners.handle_slider_change_2);
         el2.addEventListener('input', self.event_listeners.handle_slider_change_2);
+        if (input_bind1) {
+          el1.removeEventListener('input', self.event_listeners.handle_input_bind);
+          el1.addEventListener('input', self.event_listeners.handle_input_bind);
+        }
+        if (input_bind2) {
+          el2.removeEventListener('input', self.event_listeners.handle_input_bind);
+          el2.addEventListener('input', self.event_listeners.handle_input_bind);
+        }
         self.event_listeners.resize_listener(id1);
       },
       handle_slider_change_1: (event) => {
@@ -67,6 +77,9 @@ storm_eagle.module('range_slider', () => {
       },
       handle_slider_change_2: (event) => {
         self.ui.update_slider_track(event.currentTarget.previousElementSibling.getAttribute('id'));
+      },
+      handle_input_bind: (event) => {
+        self.action.set_input_bind_value(event.currentTarget.getAttribute('id'),event.currentTarget.getAttribute('data-slider-bind-input'),event.currentTarget.value);
       },
       resize_listener: (id1) => {
         const { el1 } = state[id1];
@@ -76,6 +89,23 @@ storm_eagle.module('range_slider', () => {
         storm_eagle.resize_observer(el1, label_resize);
       },
     },
-
+    action: {
+      set_value: (id, new_value) => {
+        const el = document.getElementById(id);
+        const id1 = (el.getAttribute('data-module') === "range-slider.input-1") ? el.getAttribute('id') : el.previousElementSibling.getAttribute('id');
+        const input_bind = el.getAttribute("data-slider-bind-input");
+        el.value = new_value;
+        self.ui.update_slider_track(id1);
+        if (input_bind) {
+          self.action.set_input_bind_value(id, input_bind, new_value);
+        }
+      },
+      set_input_bind_value: (id, input_bind, new_value) => {
+        const el = document.getElementById(id);
+        const min = parseInt(el.getAttribute('min'), 10);
+        const max = parseInt(el.getAttribute('max'), 10);
+        document.getElementById(input_bind).value = Math.min(Math.max(new_value, min), max);
+      },
+    }
   };
 });
