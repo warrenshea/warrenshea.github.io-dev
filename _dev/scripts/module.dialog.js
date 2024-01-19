@@ -20,7 +20,7 @@ storm_eagle.module('dialog', () => {
     event_listeners: {
       mousedown_close: (event) => {
         if (event.target.querySelector("[data-module='dialog'], [data-module='dialog'] > *")) {
-          self.close();
+          self.action.close();
         }
       },
       keyboard_focus_trap: (event) => {
@@ -38,78 +38,76 @@ storm_eagle.module('dialog', () => {
           }
         }
         if (event.keyCode === keyboard.keys.esc) {
-          self.close();
+          self.action.close();
         }
       },
     },
-    open: (id, trigger) => {
-      if (state[id]) {
-        const { el, container, focusable_elements, remove_focusable_elements } = state[id];
+    action: {
+      open: (id, trigger) => {
+        if (state[id]) {
+          const { el, container, focusable_elements, remove_focusable_elements } = state[id];
+          document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+          document.addEventListener('mousedown', self.event_listeners.mousedown_close);
+
+          /* removes focus from elements except in dialog */
+          focusable_elements.forEach((focusable_element) => {
+            focusable_element.setAttribute('tabindex', '0');
+          });
+          remove_focusable_elements.forEach((remove_focusable_element) => {
+            remove_focusable_element.setAttribute('tabindex', '-1');
+          });
+
+          /* remove focusable elements from nodelist, e.g. popover inside dialog */
+          state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
+            return ![...remove_focusable_elements].includes(focusable_element);
+          });
+
+          /* saves item that opened dialog for later */
+          self.a11y.focus_placeholder = document.activeElement;
+          self.a11y.first_tab_stop = focusable_elements[0];
+          self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
+
+          el.showModal();
+
+          /* set focus to dialog (but not the first_tab_stop */
+          setTimeout(() => {
+            (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
+          }, 100);
+
+          /* add keyboard event listener */
+          el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+          el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        } else {
+          console.error(`Dialog (id="${id}") does not exist`);
+        }
+      },
+      close: () => {
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-        document.addEventListener('mousedown', self.event_listeners.mousedown_close);
 
-        /* removes focus from elements except in dialog */
-        focusable_elements.forEach((focusable_element) => {
-          focusable_element.setAttribute('tabindex', '0');
-        });
-        remove_focusable_elements.forEach((remove_focusable_element) => {
-          remove_focusable_element.setAttribute('tabindex', '-1');
+        document.querySelectorAll("dialog").forEach((dialog) => {
+          dialog.close();
         });
 
-        /* remove focusable elements from nodelist, e.g. popover inside dialog */
-        state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
-          return ![...remove_focusable_elements].includes(focusable_element);
+        /* updates dialog visuals */
+        document.querySelectorAll("[data-module='dialog']").forEach((el, index) => {
+          const id = el.getAttribute('id');
+          const { focusable_elements } = state[id];
+
+          /* remove focus from dialog elements */
+          focusable_elements.forEach((focusable_element) => {
+            focusable_element.setAttribute('tabindex', '-1');
+          });
+
+          /* remove keyboard event listener */
+          el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        });
+        document.querySelectorAll("[data-module='dialog.trigger']").forEach((trigger) => {
+          trigger.setAttribute('aria-expanded', false);
         });
 
-        /* saves item that opened dialog for later */
-        self.a11y.focus_placeholder = document.activeElement;
-        self.a11y.first_tab_stop = focusable_elements[0];
-        self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
-
-        el.showModal();
-
-        document.querySelector("body").classList.add("overflow:hidden");
-
-        /* set focus to dialog (but not the first_tab_stop */
-        setTimeout(() => {
-          (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
-        }, 100);
-
-        /* add keyboard event listener */
-        el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-        el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      } else {
-        console.error(`Dialog (id="${id}") does not exist`);
-      }
-    },
-    close: () => {
-      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-
-      document.querySelectorAll("dialog").forEach((dialog) => {
-        dialog.close();
-      });
-
-      document.querySelector("body").classList.remove("overflow:hidden");
-
-      /* updates dialog visuals */
-      document.querySelectorAll("[data-module='dialog']").forEach((el, index) => {
-        const id = el.getAttribute('id');
-        const { focusable_elements } = state[id];
-
-        /* remove focus from dialog elements */
-        focusable_elements.forEach((focusable_element) => {
-          focusable_element.setAttribute('tabindex', '-1');
-        });
-
-        /* remove keyboard event listener */
-        el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      });
-      document.querySelectorAll("[data-module='dialog.trigger']").forEach((trigger) => {
-        trigger.setAttribute('aria-expanded', false);
-      });
-
-      /* set focus to self.a11y.focus_placeholder */
-      self.a11y.focus_placeholder.focus();
+        /* set focus to self.a11y.focus_placeholder */
+        self.a11y.focus_placeholder.focus();
+      },
     },
     a11y: {
       focus_placeholder: null,
@@ -150,7 +148,7 @@ storm_eagle.module('dialog_trigger', () => {
       },
       trigger_open: (event) => {
         const el = event.currentTarget;
-        storm_eagle.dialog.open(el.getAttribute("data-dialog-bind-id"),el);
+        storm_eagle.dialog.action.open(el.getAttribute("data-dialog-bind-id"),el);
       },
     },
   };
