@@ -204,24 +204,24 @@ storm_eagle.module('form_validation', () => {
     },
     //display_error_message(): adds/hides the error message
     display_error_message: (element_name, validation_rules, has_validation_passed) => {
-      if (document.getElementById(`${element_name}:${validation_rules}`)) {
+      const element = document.getElementById(`${element_name}:${validation_rules}`);
+      if (element) {
         if (has_validation_passed) {
-          document.getElementById(`${element_name}:${validation_rules}`).classList.remove('has-error');
+          element.classList.remove('has-error');
         } else {
-          document.getElementById(`${element_name}:${validation_rules}`).classList.add('has-error');
+          element.classList.add('has-error');
         }
       }
     },
     //hightlight_error(): highlights/hides the border of the input that has an issue
     hightlight_error: (element_name, type, has_validation_passed) => {
       //console.log(element_name,type,validation_rules,has_validation_passed);
-      if (has_validation_passed) {
-        if (type === 'text' || type === 'number') {
-          document.querySelector(`label[for='${element_name}']`).classList.remove('error-field');
-        }
-      } else {
-        if (type === 'text' || type === 'number') {
-          document.querySelector(`label[for='${element_name}']`).classList.add('error-field');
+      if (type === 'text' || type === 'number') {
+        const label = document.querySelector(`label[for='${element_name}']`);
+        if (has_validation_passed) {
+          label.classList.remove('error-field');
+        } else {
+          label.classList.add('error-field');
         }
       }
     },
@@ -258,104 +258,78 @@ storm_eagle.module('form_validation', () => {
       switch (validation_rules) {
         case 'is_not_empty':
           return value !== '';
-          break;
         case 'is_not_string_master':
           return value !== 'master';
-          break;
         case 'is_alphanumeric': // alphanumeric + french characters
           regex = /^[A-Za-z\u00E0-\u00FC\d ]+$/;
           return regex.test(value);
-          break;
         case 'is_lowercase':
           regex = /^[a-z]+$/;
           return regex.test(value);
-          break;
         case 'is_lowercase_numbers_dash_underscore_comma': //allows lowercase, numbers, '-', '_'
           regex = /^[a-z0-9-_,]+$/;
           return regex.test(value);
-          break;
         case 'is_url_pathname_friendly': //allows both lowercase, uppercase, numbers, '-', '_', '/' but excludes '\'
-          regex = /^[A-Za-z0-9\-_]+$/;
+          regex = /^[A-Za-z0-9\/\-_]+$/;
           return regex.test(value);
-          break;
         case 'is_url_folder_friendly_lowercase': //allows lowercase, numbers, - , _  but excludes /,\
           regex = /^[a-z0-9\-_]+$/;
           return regex.test(value);
-          break;
         case 'is_url_pathname_friendly_lowercase': //allows lowercase, numbers, - , _ , / but excludes \
           regex = /^[a-z0-9\-/_]+$/;
           return regex.test(value);
-          break;
         case 'is_number': // numbers
           regex = /^-?\d+$/;
           return regex.test(value);
-          break;
         case 'is_number_or_comma_separated_numbers': //'123' or '234,345' but not '45,' or ',56'
           regex = /^\d+(,\d+)*$/;
           return regex.test(value);
-          break;
         case 'is_words_or_comma_separated_words': //'example1' or 'example2,example3' but not 'example4,' or ',example5'
           regex = /^[\w\d-]+(,[\w\d-]+)*$/;
           return regex.test(value);
-          break;
         case 'is_phone': //phone
           regex = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/;
           return regex.test(value);
-          break;
         case 'is_email': //email
           regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           return regex.test(value);
-          break;
         case 'is_postal-code': //postal code
           regex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
           return regex.test(value);
-          break;
         case 'is_zipcode': //zip code
           regex = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
           return regex.test(value);
-          break;
         case 'is_css_hexcode': //css hexcode
           regex = /^#([0-9a-fA-F]{6})$/;
           return regex.test(value);
-          break;
         case 'has_min_8_characters':
           return value.length > 7;
-          break;
         case 'has_no_forward_slash':
           regex = /^[^/\\]+$/;
           return regex.test(value);
-          break;
         case 'has_no_double_forward_slash':
           regex = /^(?!.*\/\/).+$/;
           return regex.test(value);
-          break;
         case 'has_forward_slash_at_end':
           return value[value.length-1] === '/';
-          break;
         case 'has_no_forward_slash_at_start':
           return value[0] !== '/';
-          break;
         case 'has_min_1_number':
           regex = /[0-9]/gi;
           return regex.test(value);
-          break;
         case 'has_min_1_special_character':
-          regex = /(.*\W)/g;
+          regex = /\W/g;
           return regex.test(value);
-          break;
         case 'has_min_1_lowercase_letter':
-          regex = /[a-z]/gi;
+          regex = /[a-z]/g;
           return regex.test(value);
-          break;
         case 'has_min_1_uppercase_letter':
-          regex = /[A-Z]/gi;
+          regex = /[A-Z]/g;
           return regex.test(value);
-          break;
         case 'equals':
           return value === comparison_value;
         default:
           return false;
-          break;
       }
     },
   };
