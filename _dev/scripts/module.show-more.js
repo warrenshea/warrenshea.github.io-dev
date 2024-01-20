@@ -52,28 +52,33 @@ storm_eagle.module('show_more', () => {
         storm_eagle.resize_observer(document.querySelector('body'), force_resize);
       },
       button_toggle: (id) => {
-        const { el, transition_duration, more_button, less_button } = state[id];
+        const { more_button, less_button } = state[id];
         more_button.addEventListener('click', (event) => {
           event.preventDefault();
-          el.style.transitionDuration = `${transition_duration}s`;
-          more_button.classList.remove('display:inline');
-          more_button.classList.add('display:none');
-          less_button.classList.remove('display:none');
-          less_button.classList.add('display:inline');
-          el.classList.add('active');
-          self.ui.force_resize(id);
+          self.action.toggle(id, true);
         });
 
         less_button.addEventListener('click', (event) => {
           event.preventDefault();
-          el.style.transitionDuration = `${transition_duration}s`;
-          more_button.classList.remove('display:none');
-          more_button.classList.add('display:inline');
-          less_button.classList.remove('display:inline');
-          less_button.classList.add('display:none');
-          el.classList.remove('active');
-          self.ui.force_resize(id);
+          self.action.toggle(id, false);
         });
+      },
+    },
+    action: {
+      toggle: (id, is_active) => {
+        const { el, transition_duration, more_button, less_button } = state[id];
+        el.style.transitionDuration = `${transition_duration}s`;
+
+        if (is_active) {
+          more_button.classList.replace('display:inline', 'display:none');
+          less_button.classList.replace('display:none', 'display:inline');
+          el.classList.add('active');
+        } else {
+          more_button.classList.replace('display:none', 'display:inline');
+          less_button.classList.replace('display:inline', 'display:none');
+          el.classList.remove('active');
+        }
+        self.ui.force_resize(id);
       },
     },
   };
