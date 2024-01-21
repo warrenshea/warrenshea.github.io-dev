@@ -82,19 +82,19 @@ storm_eagle.module('accordion', () => {
     action: {
       toggle_accordion_item: (id, header) => {
         const { all_headers, all_panels, active_setting } = state[id];
-        const isExpanded = header.getAttribute('aria-expanded') === 'true';
+        const is_expanded = header.getAttribute('aria-expanded') === 'true';
 
         if (active_setting === 'single') {
           all_headers.forEach(h => h.setAttribute('aria-expanded', 'false'));
           all_panels.forEach(panel => panel.setAttribute("data-accordion-panel", "hide"));
-          header.setAttribute('aria-expanded', !isExpanded);
+          header.setAttribute('aria-expanded', !is_expanded);
         } else if (active_setting === 'multiple') {
-          header.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+          header.setAttribute('aria-expanded', !is_expanded ? 'true' : 'false');
         }
 
         const panelId = header.getAttribute('aria-controls');
         const panel = document.getElementById(panelId);
-        panel.setAttribute("data-accordion-panel", isExpanded ? "hide" : "");
+        panel.setAttribute("data-accordion-panel", is_expanded ? "hide" : "");
 
         storm_eagle.equalize_heights.force_resize();
       },
