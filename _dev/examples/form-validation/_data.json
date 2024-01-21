@@ -18,8 +18,8 @@
                 "/scripts/module.waypoint.js",
                 "/scripts/module.slider.js",
                 "/scripts/module.range-slider.js",
-                "/scripts/module.form-validation.js",
-                "/scripts/module.form-theme-gl0b3x.js",
+                "/scripts/module.form.validation.js",
+                "/scripts/module.form.theme.gl0b3x.js",
                 "/scripts/module.form.parent-checkbox.js",
                 "/scripts/module.form.switch.button.js",
                 "/scripts/module.dialog.js"
