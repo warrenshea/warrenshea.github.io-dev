@@ -1,7 +1,7 @@
 'use strict';
 storm_eagle.module('autocomplete', () => {
   let self;
-  let autocomplete_state = {};
+  let state = {};
   let query;
   return {
     i18n: {
@@ -12,9 +12,13 @@ storm_eagle.module('autocomplete', () => {
     },
     initialize: () => {
       self = storm_eagle.autocomplete;
+      state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
         let autocomplete_id = el.getAttribute('id');
-        autocomplete_state[autocomplete_id] = {
+        state[autocomplete_id] = {
           input_id: el.querySelector("[data-module='autocomplete.input']").getAttribute('id'),
           search_function: el.querySelector("[data-module='autocomplete.input']").getAttribute('data-autocomplete-search'),
           results_id: el.querySelector("[data-module='autocomplete.results']").getAttribute('id'),
@@ -28,12 +32,12 @@ storm_eagle.module('autocomplete', () => {
       });
     },
     update_sr_description: (autocomplete_id, value) => {
-      let sr_description_id = autocomplete_state[autocomplete_id]['sr_description_id'];
+      let sr_description_id = state[autocomplete_id]['sr_description_id'];
       document.getElementById(sr_description_id).innerHTML = (value === '') ? self.i18n.notify[LANG] : value;
     },
     close: (autocomplete_id, reset_results) => {
-      const results_id = autocomplete_state[autocomplete_id]['results_id'];
-      const input_id = autocomplete_state[autocomplete_id]['input_id'];
+      const results_id = state[autocomplete_id]['results_id'];
+      const input_id = state[autocomplete_id]['input_id'];
 
       document.getElementById(results_id).classList.add('display:none');
       document.getElementById(autocomplete_id).classList.remove('active');
@@ -43,22 +47,22 @@ storm_eagle.module('autocomplete', () => {
       }
     },
     execute_search: (autocomplete_id) => {
-      const search_function = autocomplete_state[autocomplete_id]['search_function'];
-      const input_id = autocomplete_state[autocomplete_id]['input_id'];
+      const search_function = state[autocomplete_id]['search_function'];
+      const input_id = state[autocomplete_id]['input_id'];
       const query = document.getElementById(input_id).value.trim();
-      const results_id = autocomplete_state[autocomplete_id]['results_id'];
-      const num_results = autocomplete_state[autocomplete_id]['num_results'];
+      const results_id = state[autocomplete_id]['results_id'];
+      const num_results = state[autocomplete_id]['num_results'];
 
       if (query.length > 0) {
         storm_eagle.util.run_str_func(search_function, { query, input_id, results_id, autocomplete_id, num_results } );
       }
     },
     add_event_listeners: (autocomplete_id) => {
-      const results_id = autocomplete_state[autocomplete_id]['results_id'];
-      const input_id = autocomplete_state[autocomplete_id]['input_id'];
-      const num_results = autocomplete_state[autocomplete_id]['num_results'];
-      const error_message_id = autocomplete_state[autocomplete_id]['error_message_id'];
-      const multiselect_id = autocomplete_state[autocomplete_id]['multiselect_id'];
+      const results_id = state[autocomplete_id]['results_id'];
+      const input_id = state[autocomplete_id]['input_id'];
+      const num_results = state[autocomplete_id]['num_results'];
+      const error_message_id = state[autocomplete_id]['error_message_id'];
+      const multiselect_id = state[autocomplete_id]['multiselect_id'];
       const keys_to_ignore = [keyboard.keys.tab, keyboard.keys.esc, keyboard.keys.down, keyboard.keys.up, keyboard.keys.enter, keyboard.keys.shift];
       document.getElementById(input_id).addEventListener('keydown', (event) => {
         let selected_dropdown = document.getElementById(results_id).querySelector('.selected');
