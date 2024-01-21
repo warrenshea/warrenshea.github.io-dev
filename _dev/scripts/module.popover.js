@@ -12,6 +12,11 @@ storm_eagle.module('popover', () => {
   return {
     initialize: () => {
       self = storm_eagle.popover;
+      state = {};
+      self.setup();
+      self.event_listeners.initialize();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='popover']").forEach((el, index) => {
         const id = el.getAttribute('id');
         state[id] = {
@@ -21,7 +26,6 @@ storm_eagle.module('popover', () => {
         };
         self.a11y.get_focusable_elements(id);
       });
-      self.event_listeners.initialize();
     },
     ui: {
       set_location: (id) => {
