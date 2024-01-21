@@ -6,6 +6,9 @@ storm_eagle.module('form_parent_checkbox', () => {
     initialize: () => {
       self = storm_eagle.form_parent_checkbox;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='parent-checkbox']").forEach((el) => {
         const id = el.getAttribute('id');
         const checkbox_ids = el.getAttribute('aria-controls').split(' ');
