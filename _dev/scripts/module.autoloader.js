@@ -34,7 +34,7 @@ storm_eagle.module('autoload_scripts', () => {
       module_name: 'waypoint',
     },
     form_validation: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form-validation.js',
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.validation.js',
       module_name: 'form_validation',
     },
     menu_submenu: {
@@ -50,7 +50,7 @@ storm_eagle.module('autoload_scripts', () => {
       module_name: 'show_more',
     },
     form_theme_gl0b3x: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form-theme-gl0b3x.js',
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.theme.gl0b3x.js',
       module_name: 'form_theme_gl0b3x',
     },
     form_parent_checkbox: {
