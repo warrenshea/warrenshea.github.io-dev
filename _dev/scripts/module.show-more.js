@@ -5,6 +5,10 @@ storm_eagle.module('show_more', () => {
   return {
     initialize: () => {
       self = storm_eagle.show_more;
+      state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='show-more']").forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
