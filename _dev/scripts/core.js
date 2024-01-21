@@ -114,18 +114,22 @@ var storm_eagle = (() => {
      * @scope public
      */
     module: (name_space, module_object) => {
-      if (storm_eagle[name_space] === undefined) {
-        storm_eagle[name_space] = module_object();
-        if (storm_eagle[name_space] !== undefined) {
-          if (typeof storm_eagle[name_space].initialize === 'function') {
-            storm_eagle[name_space].initialize();
-          }
-          if (typeof storm_eagle[name_space].ready === 'function') {
-            storm_eagle.document_ready(() => {
-              storm_eagle[name_space].ready();
-            });
-          }
-          return storm_eagle[name_space];
+      const parts = name_space.split('.');
+      const module_name = parts.pop(); // Remove and store the last part
+
+      const parent = parts.reduce((acc, part) => {
+        return acc[part] = acc[part] || {}; // Create nested namespaces
+      }, storm_eagle);
+
+      if (!parent[module_name]) {
+        parent[module_name] = module_object(); // Assign the module
+        const target_module = parent[module_name];
+
+        if (typeof target_module.initialize === 'function') {
+          target_module.initialize();
+        }
+        if (typeof target_module.ready === 'function') {
+          storm_eagle.document_ready(() => target_module.ready());
         }
       } else {
         console.warn(`Cannot create module. The module: '${name_space}' already exists`);
