@@ -23,10 +23,11 @@ storm_eagle.module('form_parent_checkbox', () => {
     event_listeners: {
       parent: {
         initialize: (id) => {
-          document.getElementById(id).removeEventListener('keydown', self.event_listeners.parent.update);
-          document.getElementById(id).addEventListener('keydown', self.event_listeners.parent.update);
-          document.getElementById(id).removeEventListener('click', self.event_listeners.parent.update);
-          document.getElementById(id).addEventListener('click', self.event_listeners.parent.update);
+          const parent_checkbox = document.getElementById(id);
+          parent_checkbox.removeEventListener('keydown', self.event_listeners.parent.update);
+          parent_checkbox.addEventListener('keydown', self.event_listeners.parent.update);
+          parent_checkbox.removeEventListener('click', self.event_listeners.parent.update);
+          parent_checkbox.addEventListener('click', self.event_listeners.parent.update);
         },
         update: (event) => {
           const id = event.currentTarget.getAttribute("id");
@@ -52,30 +53,33 @@ storm_eagle.module('form_parent_checkbox', () => {
     },
     state: {
       update: (id, id_clicked) => {
+        const parent_checkbox = document.getElementById(id);
+        const checkbox_clicked = document.getElementById(id_clicked);
         if (id === id_clicked) {
-          if (storm_eagle.checkbox.is_checked(document.getElementById(id)) === false) {
+          if (storm_eagle.checkbox.is_checked(parent_checkbox) === false) {
             for (const [key, value] of Object.entries(state[id])) {
               state[id][key] = false;
               storm_eagle.checkbox.set_checked(document.getElementById(key), false);
             }
-          } else if (storm_eagle.checkbox.is_checked(document.getElementById(id)) === true) {
+          } else if (storm_eagle.checkbox.is_checked(parent_checkbox) === true) {
             for (const [key, value] of Object.entries(state[id])) {
               state[id][key] = true;
               storm_eagle.checkbox.set_checked(document.getElementById(key), true);
             }
           }
         } else {
-          if (storm_eagle.checkbox.is_checked(document.getElementById(id_clicked)) === true) {
+          if (storm_eagle.checkbox.is_checked(checkbox_clicked) === true) {
             state[id][id_clicked] = false;
-            storm_eagle.checkbox.set_checked(document.getElementById(id_clicked), false);
-          } else if (storm_eagle.checkbox.is_checked(document.getElementById(id_clicked)) === false) {
+            storm_eagle.checkbox.set_checked(checkbox_clicked, false);
+          } else if (storm_eagle.checkbox.is_checked(checkbox_clicked) === false) {
             state[id][id_clicked] = true;
-            storm_eagle.checkbox.set_checked(document.getElementById(id_clicked), true);
+            storm_eagle.checkbox.set_checked(checkbox_clicked, true);
           }
         }
         self.state.parent(id);
       },
       parent: (id) => {
+        const parent_checkbox = document.getElementById(id);
         let num_child_checkboxes_checked = 0;
         let num_checkboxes = 0;
         for (const [key, value] of Object.entries(state[id])) {
@@ -87,15 +91,15 @@ storm_eagle.module('form_parent_checkbox', () => {
           num_checkboxes += 1;
         }
         if (num_child_checkboxes_checked === 0) {
-          document.getElementById(id).setAttribute('aria-checked', 'false');
-          document.getElementById(id).checked = false;
+          parent_checkbox.setAttribute('aria-checked', 'false');
+          parent_checkbox.checked = false;
         } else {
           if (num_child_checkboxes_checked === num_checkboxes - 1) {
-            document.getElementById(id).setAttribute('aria-checked', 'true');
-            document.getElementById(id).checked = true;
+            parent_checkbox.setAttribute('aria-checked', 'true');
+            parent_checkbox.checked = true;
           } else {
-            document.getElementById(id).setAttribute('aria-checked', 'mixed');
-            document.getElementById(id).checked = true;
+            parent_checkbox.setAttribute('aria-checked', 'mixed');
+            parent_checkbox.checked = true;
           }
         }
       }
