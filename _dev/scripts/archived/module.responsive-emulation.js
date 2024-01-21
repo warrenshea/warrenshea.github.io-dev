@@ -5,6 +5,9 @@ storm_eagle.module('responsive_emulation', () => {
   return {
     initialize: () => {
       self = storm_eagle.responsive_emulation;
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='responsive-emulation']").forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
