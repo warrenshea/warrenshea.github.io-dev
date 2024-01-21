@@ -5,12 +5,16 @@ storm_eagle.module('tabs', () => {
   return {
     initialize: () => {
       self = storm_eagle.tabs;
+      state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="tabs"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
           all_triggers: el.querySelectorAll('[data-module="tabs.trigger"]'),
-          all_panels: document.querySelectorAll('[data-module="tabs"] ~ [data-module="tabs.panel"]'),
+          all_panels: el.parentNode.querySelectorAll('[data-module="tabs.panel"]'),
           active_trigger_classes: el.getAttribute('data-tab-trigger-active-classes') ? el.getAttribute('data-tab-trigger-active-classes').split(',') : '',
           inactive_trigger_classes: el.getAttribute('data-tab-trigger-inactive-classes') ? el.getAttribute('data-tab-trigger-inactive-classes').split(',') : '',
           active_panel_classes: el.getAttribute('data-tab-panel-active-classes') ? el.getAttribute('data-tab-panel-active-classes').split(',') : '',
@@ -19,7 +23,6 @@ storm_eagle.module('tabs', () => {
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
-        self.ui.initialize_initial_active(id);
       });
     },
     ui: {
@@ -41,12 +44,13 @@ storm_eagle.module('tabs', () => {
         all_panels.forEach((panel) => {
           panel.classList.add(...inactive_panel_classes);
         });
+        self.ui.initialize_initial_active(id);
       },
       initialize_initial_active: (id) => {
         const { all_triggers, initial_active } = state[id];
         all_triggers.forEach((trigger, index) => {
           if (initial_active[index] === 1) {
-            trigger.click();
+            self.action.set_active_tab(id, trigger.getAttribute('id'), trigger.getAttribute('aria-controls'));
           }
         });
       },
@@ -54,15 +58,9 @@ storm_eagle.module('tabs', () => {
     event_listeners: {
       initialize: (id) => {
         const { all_triggers, active_trigger_classes, inactive_trigger_classes } = state[id];
-        all_triggers.forEach((el) => {
-          el.addEventListener('click', () => {
-            all_triggers.forEach((el) => {
-              el.classList.add(...inactive_trigger_classes);
-              el.classList.remove(...active_trigger_classes);
-            });
-            el.classList.add(...active_trigger_classes);
-            el.classList.remove(...inactive_trigger_classes);
-            self.open(id, el.getAttribute('aria-controls'));
+        all_triggers.forEach((trigger) => {
+          trigger.addEventListener('click', () => {
+            self.action.set_active_tab(id, trigger.getAttribute('id'), trigger.getAttribute('aria-controls'));
           });
         });
       },
@@ -75,14 +73,24 @@ storm_eagle.module('tabs', () => {
         },
       }
     },
-    open: (id, panel_id) => {
-      const { all_panels, active_panel_classes, inactive_panel_classes } = state[id];
-      all_panels.forEach((el) => {
-        el.classList.add(...inactive_panel_classes);
-        el.classList.remove(...active_panel_classes);
-      });
-      document.getElementById(panel_id).classList.add(...active_panel_classes);
-      document.getElementById(panel_id).classList.remove(...inactive_panel_classes);
+    action: {
+      set_active_tab: (id, trigger_id, panel_id) => {
+        const { all_triggers, all_panels, active_trigger_classes, inactive_trigger_classes, active_panel_classes, inactive_panel_classes } = state[id];
+
+        all_triggers.forEach((trigger) => {
+          trigger.classList.add(...inactive_trigger_classes);
+          trigger.classList.remove(...active_trigger_classes);
+        });
+        document.getElementById(trigger_id).classList.add(...active_trigger_classes);
+        document.getElementById(trigger_id).classList.remove(...inactive_trigger_classes);
+
+        all_panels.forEach((panel) => {
+          panel.classList.add(...inactive_panel_classes);
+          panel.classList.remove(...active_panel_classes);
+        });
+        document.getElementById(panel_id).classList.add(...active_panel_classes);
+        document.getElementById(panel_id).classList.remove(...inactive_panel_classes);
+      },
     },
   };
 });
