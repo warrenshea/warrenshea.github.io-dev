@@ -62,6 +62,7 @@ storm_eagle.module('tinymce', () => {
     ],
     block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3; Header 4=h4;',
   };
+
   const tinymce_common = {
     placeholder: "Placeholder copy...",
     entity_encoding : "named",
@@ -209,6 +210,9 @@ storm_eagle.module('tinymce', () => {
     initialize: () => {
       self = storm_eagle.tinymce;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="tinymce"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
