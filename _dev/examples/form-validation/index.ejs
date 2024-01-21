@@ -5,7 +5,7 @@
         <h1 class="play:bold fs:40px color:eerie-black px:16px py:32px">Form and Form Validation</h1>
 
         <div class="row">
-          <form class="sm=:w:12 md+:w:6" name="required-form" id="required-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form_validation.validate_form(event,'required-form',storm_eagle.form_validation_example.required_success);">
+          <form class="sm=:w:12 md+:w:6" name="required-form" id="required-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form.validation.type.form(event,'required-form',storm_eagle.form_validation_example.required_success);">
 
             <div class="bgc:platinum bb-eerie-black:1px br-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id>
               <div class="bgc:platinum pt:12px">
@@ -1623,7 +1623,7 @@
 
           </form>
 
-          <form class="sm=:w:12 md+:w:6" name="optional-form" id="optional-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form_validation.validate_form(event,'optional-form',storm_eagle.form_validation_example.optional_success);">
+          <form class="sm=:w:12 md+:w:6" name="optional-form" id="optional-form" action="#" method="get" data-module="form" onsubmit="setTimeout(function() { storm_eagle.equalize_heights.force_resize(); }, 0);return storm_eagle.form.validation.type.form(event,'optional-form',storm_eagle.form_validation_example.optional_success);">
 
             <div class="bgc:platinum bb-eerie-black:1px bl-white:2px" style="top:0px;z-index:4" data-module="waypoint" data-waypoint-element="main" data-waypoint-toggle="position:sticky" data-waypoint-delay="0" data-waypoint-activate="4000px" id>
               <div class="bgc:platinum pt:12px">
@@ -2107,10 +2107,10 @@
             document.getElementById("zip-code-required").value = "90210";
             document.querySelector("[for=zip-code-required]").classList.add("active-label");
             document.getElementById("password-required").value = "PaSsWoRd1!";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
             document.querySelector("[for=password-required]").classList.add("active-label");
             document.getElementById("password-verify-required").value = "PaSsWoRd1!";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
             document.querySelector("[for=password-verify-required]").classList.add("active-label");
             document.getElementById("select-required").value = "3";
             document.querySelector("[for=select-required]").classList.add("active-label");
@@ -2129,7 +2129,7 @@
             document.getElementById("card-radiobuttons-required-1").checked = "checked";
             document.getElementById("textarea-required").value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in massa facilisis, semper arcu sit amet, ultrices nibh. Sed venenatis eu erat in varius. Quisque hendrerit eleifend nisi pharetra tempus.";
             document.querySelector("[for=textarea-required]").classList.add("active-label");
-            storm_eagle.form_theme_gl0b3x.force_textarea_autoexpand(document.getElementById("textarea-required"));
+            storm_eagle.form.theme.gl0b3x.ui.force_textarea_autoexpand(document.getElementById("textarea-required"));
             storm_eagle.equalize_heights.force_resize();
             return false;
           },
@@ -2146,10 +2146,10 @@
             document.querySelector("[for=zip-code-required]").classList.remove("active-label");
             document.getElementById("password-required").value = "";
             document.querySelector("[for=password-required]").classList.remove("active-label");
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-required"),"required-form",document.getElementById("password-required").getAttribute("name"));
             document.getElementById("password-verify-required").value = "";
             document.querySelector("[for=password-verify-required]").classList.remove("active-label");
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-verify-required"),"required-form",document.getElementById("password-verify-required").getAttribute("name"));
             document.getElementById("select-required").value = "";
             document.querySelector("[for=select-required]").classList.remove("active-label");
             document.getElementById("provinces-en-required").value = "";
@@ -2173,7 +2173,7 @@
             document.getElementById("card-radiobuttons-required-2").checked = false;
             document.getElementById("textarea-required").value = "";
             document.querySelector("[for=textarea-required]").classList.remove("active-label");
-            storm_eagle.form_theme_gl0b3x.force_textarea_autoexpand(document.getElementById("textarea-required"));
+            storm_eagle.form.theme.gl0b3x.ui.force_textarea_autoexpand(document.getElementById("textarea-required"));
             storm_eagle.equalize_heights.force_resize();
             document.querySelectorAll(`.has-error`).forEach((el,index) => {
               el.classList.remove("has-error");
@@ -2199,10 +2199,10 @@
             document.getElementById("zip-code-optional").value = "90210";
             document.querySelector("[for=zip-code-optional]").classList.add("active-label");
             document.getElementById("password-optional").value = "PaSsWoRd1!";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.querySelector("[for=password-optional]").classList.add("active-label");
             document.getElementById("password-verify-optional").value = "PaSsWoRd1!";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.querySelector("[for=password-verify-optional]").classList.add("active-label");
             document.getElementById("select-optional").value = "3";
             document.querySelector("[for=select-optional]").classList.add("active-label");
@@ -2221,7 +2221,7 @@
             document.getElementById("card-radiobuttons-optional-1").checked = "checked";
             document.getElementById("textarea-optional").value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in massa facilisis, semper arcu sit amet, ultrices nibh. Sed venenatis eu erat in varius. Quisque hendrerit eleifend nisi pharetra tempus.";
             document.querySelector("[for=textarea-optional]").classList.add("active-label");
-            storm_eagle.form_theme_gl0b3x.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.form.theme.gl0b3x.ui.force_textarea_autoexpand(document.getElementById("textarea-optional"));
             storm_eagle.equalize_heights.force_resize();
             return false;
           },
@@ -2235,12 +2235,12 @@
             document.getElementById("zip-code-optional").value = "Metropolis";
             document.querySelector("[for=zip-code-optional]").classList.add("active-label");
             document.getElementById("password-optional").value = "Test";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.querySelector("[for=password-optional]").classList.add("active-label");
             document.getElementById("password-verify-optional").value = "Test";
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.querySelector("[for=password-verify-optional]").classList.add("active-label");
-            storm_eagle.form_theme_gl0b3x.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.form.theme.gl0b3x.ui.force_textarea_autoexpand(document.getElementById("textarea-optional"));
             storm_eagle.equalize_heights.force_resize();
             return false;
           },
@@ -2257,10 +2257,10 @@
             document.querySelector("[for=zip-code-optional]").classList.remove("active-label");
             document.getElementById("password-optional").value = "";
             document.querySelector("[for=password-optional]").classList.remove("active-label");
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-optional"),"optional-form",document.getElementById("password-optional").getAttribute("name"));
             document.getElementById("password-verify-optional").value = "";
             document.querySelector("[for=password-verify-optional]").classList.remove("active-label");
-            storm_eagle.form_validation.inline_validation(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
+            storm_eagle.form.validation.type.inline(document.getElementById("password-verify-optional"),"optional-form",document.getElementById("password-verify-optional").getAttribute("name"));
             document.getElementById("select-optional").value = "";
             document.querySelector("[for=select-optional]").classList.remove("active-label");
             document.getElementById("provinces-en-optional").value = "";
@@ -2284,7 +2284,7 @@
             document.getElementById("card-radiobuttons-optional-2").checked = false;
             document.getElementById("textarea-optional").value = "";
             document.querySelector("[for=textarea-optional]").classList.remove("active-label");
-            storm_eagle.form_theme_gl0b3x.force_textarea_autoexpand(document.getElementById("textarea-optional"));
+            storm_eagle.form.theme.gl0b3x.ui.force_textarea_autoexpand(document.getElementById("textarea-optional"));
             storm_eagle.equalize_heights.force_resize();
             document.querySelectorAll(`.has-error`).forEach((el,index) => {
               el.classList.remove("has-error");
