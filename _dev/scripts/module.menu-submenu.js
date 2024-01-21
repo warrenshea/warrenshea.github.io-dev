@@ -9,6 +9,10 @@ storm_eagle.module('menu_submenu', () => {
   return {
     initialize: () => {
       self = storm_eagle.menu_submenu;
+      state = {};
+      self.setup();
+    },
+    setup: {
       document.querySelectorAll('[data-module="menu"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
