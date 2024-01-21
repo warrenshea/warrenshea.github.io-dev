@@ -12,7 +12,7 @@ storm_eagle.module('menu_submenu', () => {
       state = {};
       self.setup();
     },
-    setup: {
+    setup: () => {
       document.querySelectorAll('[data-module="menu"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
