@@ -22,7 +22,6 @@ storm_eagle.module('menu_submenu', () => {
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
-        self.ui.initialize_initial_active(id);
       });
     },
     ui: {
@@ -44,11 +43,12 @@ storm_eagle.module('menu_submenu', () => {
         all_submenus.forEach((el) => {
           el.classList.add('display:none');
         });
+        self.ui.initialize_initial_active(id);
       },
       initialize_initial_active: (id) => {
-        const { el, open_on_load } = state[id];
+        const { open_on_load } = state[id];
         open_on_load.forEach((el) => {
-          el.click();
+          self.action.toggle_trigger(id, el);
         });
       },
     },
@@ -70,7 +70,12 @@ storm_eagle.module('menu_submenu', () => {
       },
       trigger_click: (event) => {
         const el = event.currentTarget;
-        const id = storm_eagle.util.closest_parent(el,`[data-module='menu']`).getAttribute("id");
+        const id = storm_eagle.util.closest_parent(el, `[data-module='menu']`).getAttribute("id");
+        self.action.toggle_trigger(id, el);
+      }
+    },
+    action: {
+      toggle_trigger: (id, el) => {
         const { all_triggers, active_setting, active_classes, inactive_classes } = state[id];
         if (active_setting === 'single') {
           all_triggers.forEach((el) => {
@@ -92,21 +97,24 @@ storm_eagle.module('menu_submenu', () => {
             el.classList.add(...inactive_classes);
           }
         }
-        self.open(id, el.getAttribute('aria-controls'));
-      }
+        self.action.open(id, el.getAttribute('aria-controls'));
+      },
+      open: (id, menu_panel_id) => {
+        const { el, all_submenus, active_setting } = state[id];
+        if (active_setting === 'single') {
+          all_submenus.forEach((el) => {
+            el.classList.add('display:none');
+          });
+          document.getElementById(menu_panel_id).classList.remove('display:none');
+          storm_eagle.equalize_heights.force_resize();
+        } else if (active_setting === 'multiple') {
+          document.getElementById(menu_panel_id).classList.toggle('display:none');
+          storm_eagle.equalize_heights.force_resize();
+        }
+      },
     },
-    open: (id, menu_panel_id) => {
-      const { el, all_submenus, active_setting } = state[id];
-      if (active_setting === 'single') {
-        all_submenus.forEach((el) => {
-          el.classList.add('display:none');
-        });
-        document.getElementById(menu_panel_id).classList.remove('display:none');
-        storm_eagle.equalize_heights.force_resize();
-      } else if (active_setting === 'multiple') {
-        document.getElementById(menu_panel_id).classList.toggle('display:none');
-        storm_eagle.equalize_heights.force_resize();
-      }
+    a11y: {
+
     },
   };
 });
