@@ -6,6 +6,9 @@ storm_eagle.module('range_slider', () => {
     initialize: () => {
       self = storm_eagle.range_slider;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="range-slider.input-container"]').forEach((container) => {
         const el1 = container.querySelector('[data-module="range-slider.input-1"]');
         const id1 = el1.getAttribute('id');
