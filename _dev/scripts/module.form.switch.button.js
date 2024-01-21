@@ -6,6 +6,9 @@ storm_eagle.module('form_switch_button', () => {
     initialize: () => {
       self = storm_eagle.form_switch_button;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="switch.button"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
