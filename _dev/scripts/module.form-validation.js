@@ -315,16 +315,16 @@ storm_eagle.module('form_validation', () => {
         case 'has_no_forward_slash_at_start':
           return value[0] !== '/';
         case 'has_min_1_number':
-          regex = /[0-9]/gi;
+          regex = /[0-9]/i;
           return regex.test(value);
         case 'has_min_1_special_character':
-          regex = /\W/g;
+          regex = /\W/;
           return regex.test(value);
         case 'has_min_1_lowercase_letter':
-          regex = /[a-z]/g;
+          regex = /[a-z]/;
           return regex.test(value);
         case 'has_min_1_uppercase_letter':
-          regex = /[A-Z]/g;
+          regex = /[A-Z]/;
           return regex.test(value);
         case 'equals':
           return value === comparison_value;
