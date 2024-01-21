@@ -6,6 +6,9 @@ storm_eagle.module('modal', () => {
     initialize: () => {
       self = storm_eagle.modal;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='modal']").forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
