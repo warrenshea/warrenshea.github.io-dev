@@ -6,6 +6,9 @@ storm_eagle.module('slider', () => {
     initialize: () => {
       self = storm_eagle.slider;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="slider.input-container"]').forEach((container) => {
         const el = container.querySelector(":scope > [data-module='slider.input']");
         const id = el.getAttribute('id');
