@@ -6,6 +6,9 @@ storm_eagle.module('carousel', () => {
     initialize: () => {
       self = storm_eagle.carousel;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="carousel"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
