@@ -6,6 +6,9 @@ storm_eagle.module('dialog', () => {
     initialize: () => {
       self = storm_eagle.dialog;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll("[data-module='dialog']").forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
