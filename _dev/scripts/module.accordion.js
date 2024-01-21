@@ -10,6 +10,9 @@ storm_eagle.module('accordion', () => {
     initialize: () => {
       self = storm_eagle.accordion;
       state = {};
+      self.setup();
+    },
+    setup: () => {
       document.querySelectorAll('[data-module="accordion"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
