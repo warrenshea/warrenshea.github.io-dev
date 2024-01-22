@@ -37,10 +37,10 @@ storm_eagle.module('accordion', () => {
           panel.setAttribute('aria-labelledby', header.getAttribute('id'));
           if (index === 0) {
             header.setAttribute('tabindex', '0');
-            header.removeEventListener('focusin', self.event_listeners.header_focus.add);
-            header.addEventListener('focusin', self.event_listeners.header_focus.add);
-            header.removeEventListener('focusout', self.event_listeners.header_focus.remove);
-            header.addEventListener('focusout', self.event_listeners.header_focus.remove);
+            header.removeEventListener('focusin', self.event_listeners.header.focus.focus_class.add);
+            header.addEventListener('focusin', self.event_listeners.header.focus.focus_class.add);
+            header.removeEventListener('focusout', self.event_listeners.header.focus.focus_class.remove);
+            header.addEventListener('focusout', self.event_listeners.header.focus.focus_class.remove);
           }
         });
         all_panels.forEach((panel) => {
@@ -61,23 +61,27 @@ storm_eagle.module('accordion', () => {
       initialize: (id) => {
         const { all_headers } = state[id];
         all_headers.forEach((header) => {
-          header.removeEventListener('click', self.event_listeners.update_accordion_item);
-          header.addEventListener('click', self.event_listeners.update_accordion_item);
+          header.removeEventListener('click', self.event_listeners.header.click_update_accordion_item);
+          header.addEventListener('click', self.event_listeners.header.click_update_accordion_item);
         });
       },
-      update_accordion_item: (event) => {
-        const header = event.currentTarget;
-        const id = storm_eagle.util.closest_parent(header,`[data-module='accordion']`).getAttribute("id");
-        self.action.toggle_accordion_item(id, header);
+      header: {
+        click_update_accordion_item: (event) => {
+          const header = event.currentTarget;
+          const id = storm_eagle.util.closest_parent(header,`[data-module='accordion']`).getAttribute("id");
+          self.action.toggle_accordion_item(id, header);
+        },
+        focus: {
+          focus_class: {
+            add: (event) => {
+              event.currentTarget.classList.add('focus');
+            },
+            remove: (event) => {
+              event.currentTarget.classList.remove('focus');
+            },
+          }
+        }
       },
-      header_focus: {
-        add: (event) => {
-          event.currentTarget.classList.add('focus');
-        },
-        remove: (event) => {
-          event.currentTarget.classList.remove('focus');
-        },
-      }
     },
     action: {
       toggle_accordion_item: (id, header) => {
