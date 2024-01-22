@@ -35,10 +35,10 @@ storm_eagle.module('tabs', () => {
           all_panels[index].setAttribute('aria-labelledby', trigger.getAttribute('id'));
           if (index === 0) {
             trigger.setAttribute('tabindex', '0');
-            trigger.removeEventListener('focusin', self.event_listeners.trigger_focus.add);
-            trigger.addEventListener('focusin', self.event_listeners.trigger_focus.add);
-            trigger.removeEventListener('focusout', self.event_listeners.trigger_focus.remove);
-            trigger.addEventListener('focusout', self.event_listeners.trigger_focus.remove);
+            trigger.removeEventListener('focusin', self.event_listeners.trigger.focus.focus_class.add);
+            trigger.addEventListener('focusin', self.event_listeners.trigger.focus.focus_class.add);
+            trigger.removeEventListener('focusout', self.event_listeners.trigger.focus.focus_class.remove);
+            trigger.addEventListener('focusout', self.event_listeners.trigger.focus.focus_class.remove);
           }
         });
         all_panels.forEach((panel) => {
@@ -59,18 +59,25 @@ storm_eagle.module('tabs', () => {
       initialize: (id) => {
         const { all_triggers, active_trigger_classes, inactive_trigger_classes } = state[id];
         all_triggers.forEach((trigger) => {
-          trigger.addEventListener('click', () => {
-            self.action.set_active_tab(id, trigger.getAttribute('id'), trigger.getAttribute('aria-controls'));
-          });
+          trigger.removeEventListener('click', self.event_listeners.trigger.click_set_active_tab);
+          trigger.addEventListener('click', self.event_listeners.trigger.click_set_active_tab);
         });
       },
-      trigger_focus: {
-        add: (event) => {
-          event.currentTarget.classList.add('focus');
+      trigger: {
+        click_set_active_tab: () => {
+          const id = storm_eagle.util.closest_parent(event.target, '[data-module="tabs"]').getAttribute('id');
+          self.action.set_active_tab(id, event.currentTarget.getAttribute('id'), event.currentTarget.getAttribute('aria-controls'));
         },
-        remove: (event) => {
-          event.currentTarget.classList.remove('focus');
-        },
+        focus: {
+          focus_class: {
+            add: (event) => {
+              event.currentTarget.classList.add('focus');
+            },
+            remove: (event) => {
+              event.currentTarget.classList.remove('focus');
+            },
+          }
+        }
       }
     },
     action: {
