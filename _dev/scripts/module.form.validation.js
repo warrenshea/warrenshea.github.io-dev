@@ -61,16 +61,27 @@ storm_eagle.module('form.validation', () => {
       },
       inline_field_validation: () => {
         document.querySelectorAll(`[data-module='form']`).forEach((el, index) => {
-          let form_name = el.getAttribute('name');
+          const form_name = el.getAttribute('name');
 
           document.querySelectorAll(`[data-module='form'][name=${form_name}] [data-validation-type=inline][data-required],[data-module='form'][name=${form_name}] [data-validation-type=inline][data-optional]`).forEach((el, index) => {
-            let form_element_name = el.getAttribute('name');
+            const form_element_name = el.getAttribute('name');
             self.type.inline(el, form_name, form_element_name);
-            el.addEventListener('keyup', () => {
-              self.type.inline(el, form_name, form_element_name);
-            });
+            el.removeEventListener('keyup', self.event_listeners.inline.input.keyup);
+            el.addEventListener('keyup', self.event_listeners.inline.input.keyup);
           });
         });
+      },
+    },
+    event_listeners: {
+      inline: {
+        input: {
+          keyup: (event) => {
+            const el = event.currentTarget;
+            const form_name = storm_eagle.util.closest_parent(event.target, `[data-module='form']`).getAttribute('name');
+            const form_element_name = el.getAttribute('name');
+            self.type.inline(el, form_name, form_element_name);
+          },
+        },
       },
     },
     type: {
