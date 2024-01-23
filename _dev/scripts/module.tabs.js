@@ -59,14 +59,16 @@ storm_eagle.module('tabs', () => {
       initialize: (id) => {
         const { all_triggers, active_trigger_classes, inactive_trigger_classes } = state[id];
         all_triggers.forEach((trigger) => {
-          trigger.removeEventListener('click', self.event_listeners.trigger.click_set_active_tab);
-          trigger.addEventListener('click', self.event_listeners.trigger.click_set_active_tab);
+          trigger.removeEventListener('click', self.event_listeners.trigger.click.set_active_tab);
+          trigger.addEventListener('click', self.event_listeners.trigger.click.set_active_tab);
         });
       },
       trigger: {
-        click_set_active_tab: () => {
-          const id = storm_eagle.util.closest_parent(event.target, '[data-module="tabs"]').getAttribute('id');
-          self.action.set_active_tab(id, event.currentTarget.getAttribute('id'), event.currentTarget.getAttribute('aria-controls'));
+        click: {
+          set_active_tab: () => {
+            const id = storm_eagle.util.closest_parent(event.target, '[data-module="tabs"]').getAttribute('id');
+            self.action.set_active_tab(id, event.currentTarget.getAttribute('id'), event.currentTarget.getAttribute('aria-controls'));
+          }
         },
         focus: {
           focus_class: {
