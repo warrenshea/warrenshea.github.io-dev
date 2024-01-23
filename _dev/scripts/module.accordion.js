@@ -61,15 +61,17 @@ storm_eagle.module('accordion', () => {
       initialize: (id) => {
         const { all_headers } = state[id];
         all_headers.forEach((header) => {
-          header.removeEventListener('click', self.event_listeners.header.click_update_accordion_item);
-          header.addEventListener('click', self.event_listeners.header.click_update_accordion_item);
+          header.removeEventListener('click', self.event_listeners.header.click.update_accordion_item);
+          header.addEventListener('click', self.event_listeners.header.click.update_accordion_item);
         });
       },
       header: {
-        click_update_accordion_item: (event) => {
-          const header = event.currentTarget;
-          const id = storm_eagle.util.closest_parent(header,`[data-module='accordion']`).getAttribute("id");
-          self.action.toggle_accordion_item(id, header);
+        click: {
+          update_accordion_item: (event) => {
+            const header = event.currentTarget;
+            const id = storm_eagle.util.closest_parent(header,`[data-module='accordion']`).getAttribute("id");
+            self.action.toggle_accordion_item(id, header);
+          }
         },
         focus: {
           focus_class: {
