@@ -15,20 +15,20 @@ storm_eagle.module('tinymce', () => {
   const tinymce_string = {
     height: 125,
     forced_root_block: 'faketag', //prevents a wrapping <p> tag as these should have no wrapper
-    plugins: 'anchor casechange charmap checklist code codesample editimage emoticons export formatpainter fullscreen help image insertdatetime link lists media mergetags nonbreaking pagebreak pageembed permanentpen preview save searchreplace table tableofcontents typography visualblocks visualchars wordcount',
+    plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
     toolbar: "undo redo | charmap",
   };
 
   const tinymce_basic = {
     height: 125,
     forced_root_block: 'faketag', //prevents a wrapping <p> tag as these should have no wrapper
-    plugins: 'anchor casechange charmap checklist code codesample editimage emoticons export formatpainter fullscreen help image insertdatetime link lists media mergetags nonbreaking pagebreak pageembed permanentpen preview save searchreplace table tableofcontents typography visualblocks visualchars wordcount',
+    plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
     toolbar: "undo redo | italic superscript | link openlink unlink | charmap | visualblocks | advanced",
   };
 
   const tinymce_advanced = {
     height: 350,
-    plugins: 'anchor casechange charmap checklist code codesample editimage emoticons export formatpainter fullscreen help image insertdatetime link lists media mergetags nonbreaking pagebreak pageembed permanentpen preview save searchreplace table tableofcontents typography visualblocks visualchars wordcount',
+    plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
     toolbar: "undo redo | blocks styles | bold italic superscript | bullist numlist | link openlink unlink | aligncenter alignjustify alignleft alignnone alignright | charmap | visualblocks | advanced",
     style_formats: [
       { title: 'Heading Font' },
