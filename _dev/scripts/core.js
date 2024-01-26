@@ -19,7 +19,7 @@ keyboard.keys = {
 };
 
 const breakpoints = {
-  sm_min: 320,
+  sm_min: 375,
   md_min: 768,
   lg_min: 1024,
   xl_min: 1280,
