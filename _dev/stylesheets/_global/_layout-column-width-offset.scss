@@ -1,19 +1,16 @@
+@use 'sass:math';
+
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}offset\:0 { margin-left: 0%; }
-    .#{$prefix}offset\:1 { margin-left: 8.33333%; }
-    .#{$prefix}offset\:2 { margin-left: 16.66667%; }
-    .#{$prefix}offset\:3 { margin-left: 25%; }
-    .#{$prefix}offset\:4 { margin-left: 33.33333%; }
-    .#{$prefix}offset\:5 { margin-left: 41.66667%; }
-    .#{$prefix}offset\:6 { margin-left: 50%; }
-    .#{$prefix}offset\:7 { margin-left: 58.33333%; }
-    .#{$prefix}offset\:8 { margin-left: 66.66667%; }
-    .#{$prefix}offset\:9 { margin-left: 75%; }
-    .#{$prefix}offset\:10 { margin-left: 83.33333%; }
-    .#{$prefix}offset\:11 { margin-left: 91.66667%; }
+    @for $i from 0 through 11 {
+      $percentage-num: math.div(100, 12);
+      $percentage: $i * $percentage-num * 1%;
+      .#{$prefix}offset\:#{$i} {
+        margin-left: calc(#{$percentage} + var(--column-gap) * #{math.div($i * $percentage-num, 100)});
+      }
+    }
   }
 }
