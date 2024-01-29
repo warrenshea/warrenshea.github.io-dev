@@ -1,0 +1,12 @@
+:root {
+  --column-gap: 1rem;
+  @include breakpoint(medium only) {
+    --column-gap: 1.5rem;
+  }
+  @include breakpoint(large only) {
+    --column-gap: 1.5rem;
+  }
+  @include breakpoint(xlarge up) {
+    --column-gap: 2rem;
+  }
+}
