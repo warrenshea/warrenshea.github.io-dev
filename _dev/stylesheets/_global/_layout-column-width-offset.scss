@@ -11,6 +11,10 @@
       .#{$prefix}offset\:#{$i} {
         margin-left: calc(#{$percentage} + var(--column-gap) * #{math.div($i * $percentage-num, 100)});
       }
+
+      .#{$prefix}offset0\:#{$i} {
+        margin-left: $i * $percentage-num * 1%;
+      }
     }
   }
 }
