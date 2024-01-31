@@ -39,13 +39,13 @@ storm_eagle.module('calendar_event_builder', () => {
     populate_data_calendar_link: () => {
       let start_date, start_time, end_date, end_time;
       let outlookOnlineURL, googleURL, yahooURL, icalendar_url;
-      start_date = storm_eagle.util.replace_all(invite_details.start_date, '-', '');
-      end_date = storm_eagle.util.replace_all(invite_details.end_date, '-', '');
+      start_date = invite_details.start_date.replaceAll('-', '');
+      end_date = invite_details.end_date.replaceAll('-', '');
       outlookOnlineURL = `https://outlook.live.com/owa?rru=addevent&startdt=${start_date}T${invite_details.start_time}Z&enddt=${end_date}T${invite_details.end_time}Z&subject=${encodeURIComponent(invite_details.title)}&location=${encodeURIComponent(invite_details.location)}&body=${encodeURIComponent(invite_details.description)}&allday=false&path=/calendar/view/Month`;
       document.getElementById('outlook').setAttribute('href', outlookOnlineURL);
 
-      start_time = storm_eagle.util.replace_all(invite_details.start_time, ': ', '');
-      end_time = storm_eagle.util.replace_all(invite_details.end_time, ': ', '');
+      start_time = invite_details.start_time.replaceAll(': ', '');
+      end_time = invite_details.end_time.replaceAll(': ', '');
       document.getElementById('google').setAttribute('href', `https://calendar.google.com/calendar/render?action=TEMPLATE&dates=${start_date}T${start_time}Z/${end_date}T${end_time}Z&location=${encodeURIComponent(invite_details.location)}&text=${encodeURIComponent(invite_details.title)}&invite_details=${encodeURIComponent(invite_details.description)}`);
       document.getElementById('yahoo').setAttribute('href', `http://calendar.yahoo.com/?st=${start_date}T${start_time}Z&dur=${invite_details.duration}&view=d&v=60&type=20&title=${encodeURIComponent(invite_details.title)}&in_loc=${encodeURIComponent(invite_details.location)}&desc=${encodeURIComponent(invite_details.description)}`);
 
