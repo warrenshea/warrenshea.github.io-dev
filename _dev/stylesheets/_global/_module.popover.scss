@@ -34,7 +34,7 @@
     &:after{
       border-width:10px;
       left: -10px;
-      margin-top: -10px;
+      transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
     }
@@ -61,7 +61,7 @@
       right:auto;
       width:300px;
       max-width:300px;
-      transform: translateY(calc(-50% + 12px));
+      transform: translateY(calc(-50%));
     }
   }
 }
