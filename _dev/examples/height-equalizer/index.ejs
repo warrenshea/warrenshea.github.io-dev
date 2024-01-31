@@ -1,93 +1,96 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100%" role="main">
-      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:16px">Height Equalizer</h1>
 
-        <section class="row sm+:w:12 sm+:mt:48px">
-          <div class="sm+:w:12 md+:w:6 lg+:w:3">
-            <div class="sm+:w:10 md+:w:11 align-self:centered bxs:1 mb:48px py:16px">
-              <div class="sm+:w:10 align-self:centered">
-                <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">HTML</h2>
-                <hr>
-                <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
-                  <p class="lh:24">Hypertext Markup Language</p>
-                </div>
-                <hr>
-                <div data-equalize-height="container-details" data-equalize-md-up>
-                  <p class="lh:24">Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
-                </div>
-                <hr>
-                <p class="text-align:center py:4px">Related article:</p>
-                <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
-                  <a class="anchor:blue" href="https://en.wikipedia.org/wiki/HTML">HTML on Wikipedia</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sm+:w:12 md+:w:6 lg+:w:3">
-            <div class="sm+:w:10 md+:w:11 align-self:centered bxs:1 mb:48px py:16px">
-              <div class="sm+:w:10 align-self:centered">
-                <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">CSS</h2>
-                <hr>
-                <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
-                  <p class="lh:24">Cascading Style Sheets</p>
-                </div>
-                <hr>
-                <div data-equalize-height="container-details" data-equalize-md-up>
-                  <p class="lh:24">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
-                </div>
-                <hr>
-                <p class="text-align:center py:4px">Related article:</p>
-                <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
-                  <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS on Wikipedia</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sm+:w:12 md+:w:6 lg+:w:3">
-            <div class="sm+:w:10 md+:w:11 align-self:centered bxs:1 mb:48px py:16px">
-              <div class="sm+:w:10 align-self:centered">
-                <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">JavaScript</h2>
-                <hr>
-                <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
-                  <p class="lh:24"></p>
-                </div>
-                <hr>
-                <div data-equalize-height="container-details" data-equalize-md-up>
-                  <p class="lh:24">JavaScript often abbreviated as JS, is a high-level, interpreted programming language.</p>
-                </div>
-                <hr>
-                <p class="text-align:center py:4px">Related article:</p>
-                <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
-                  <a class="anchor:blue" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript on Wikipedia</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sm+:w:12 md+:w:6 lg+:w:3">
-            <div class="sm+:w:10 md+:w:11 align-self:centered bxs:1 mb:48px py:16px">
-              <div class="sm+:w:10 align-self:centered">
-                <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">WCAG</h2>
-                <hr>
-                <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
-                  <p class="lh:24">Web Content Accessibility Guidelines</p>
-                </div>
-                <hr>
-                <div data-equalize-height="container-details" data-equalize-md-up>
-                  <p class="lh:24">The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.</p>
-                </div>
-                <hr>
-                <p class="text-align:center py:4px">Related article:</p>
-                <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
-                  <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines">WCAG on Wikipedia</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Height Equalizer</h1>
+      </section>
 
-        <h2 class="fs:32px play:bold pt:32px pb:8px">HTML</h2>
-        <div>Note: classes and empty divs omitted for simplicity</div>
+      <section class="row pt:32px">
+        <div class="sm+:w:12 md+:w:6 lg+:w:3">
+          <div class="sm+:w:10 md+:w:12 align-self:centered bxs:1 mb:48px py:16px">
+            <div class="sm+:w:10 align-self:centered">
+              <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">HTML</h2>
+              <hr>
+              <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
+                <p class="lh:24">Hypertext Markup Language</p>
+              </div>
+              <hr>
+              <div data-equalize-height="container-details" data-equalize-md-up>
+                <p class="lh:24">Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+              </div>
+              <hr>
+              <p class="text-align:center py:4px">Related article:</p>
+              <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
+                <a class="anchor:blue" href="https://en.wikipedia.org/wiki/HTML">HTML on Wikipedia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sm+:w:12 md+:w:6 lg+:w:3">
+          <div class="sm+:w:10 md+:w:12 align-self:centered bxs:1 mb:48px py:16px">
+            <div class="sm+:w:10 align-self:centered">
+              <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">CSS</h2>
+              <hr>
+              <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
+                <p class="lh:24">Cascading Style Sheets</p>
+              </div>
+              <hr>
+              <div data-equalize-height="container-details" data-equalize-md-up>
+                <p class="lh:24">Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</p>
+              </div>
+              <hr>
+              <p class="text-align:center py:4px">Related article:</p>
+              <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
+                <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets">CSS on Wikipedia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sm+:w:12 md+:w:6 lg+:w:3">
+          <div class="sm+:w:10 md+:w:12 align-self:centered bxs:1 mb:48px py:16px">
+            <div class="sm+:w:10 align-self:centered">
+              <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">JavaScript</h2>
+              <hr>
+              <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
+                <p class="lh:24"></p>
+              </div>
+              <hr>
+              <div data-equalize-height="container-details" data-equalize-md-up>
+                <p class="lh:24">JavaScript often abbreviated as JS, is a high-level, interpreted programming language.</p>
+              </div>
+              <hr>
+              <p class="text-align:center py:4px">Related article:</p>
+              <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
+                <a class="anchor:blue" href="https://en.wikipedia.org/wiki/JavaScript">JavaScript on Wikipedia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sm+:w:12 md+:w:6 lg+:w:3">
+          <div class="sm+:w:10 md+:w:12 align-self:centered bxs:1 mb:48px py:16px">
+            <div class="sm+:w:10 align-self:centered">
+              <h2 class="text-align:center py:4px" data-equalize-height="container-title-acronymn">WCAG</h2>
+              <hr>
+              <div class="text-align:center py:4px" data-equalize-height="container-title" data-equalize-md-up>
+                <p class="lh:24">Web Content Accessibility Guidelines</p>
+              </div>
+              <hr>
+              <div data-equalize-height="container-details" data-equalize-md-up>
+                <p class="lh:24">The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.</p>
+              </div>
+              <hr>
+              <p class="text-align:center py:4px">Related article:</p>
+              <div class="text-align:center py:4px" data-equalize-height="container-links" data-equalize-md-up>
+                <a class="anchor:blue" href="https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines">WCAG on Wikipedia</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="row py:32px">
+        <h2 class="w:12 play:bold fs:32px color:eerie-black pb:16px">HTML</h2>
+        <div class="w:12">Note: classes and empty divs omitted for simplicity</div>
 <textarea data-code-reference="prism-code-html" class="hide">
     <section>
         <div>
@@ -146,7 +149,7 @@
 </textarea>
         <pre><code class="language-html" data-code-snippet="prism-code-html"></code></pre>
 
-        <h2 class="fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
+        <h2 class="w:12 fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
 <textarea data-code-reference="prism-code-javascript" class="hide">
 /**
  * Allows the height of various block level HTML elements to be the same by taking the largest height and applying it to all items.
