@@ -36,7 +36,7 @@ storm_eagle.module('popover', () => {
           el.style.top = 'initial';
           el.style.left = '0px';
         } else if (storm_eagle.client.viewport.is_lg_up()) {
-          el.style.top = `${trigger.offsetTop}px`;
+          el.style.top = `${trigger.getBoundingClientRect().height/2}px`;
           el.style.left = `${trigger.offsetLeft + 40}px`;
         }
       },
