@@ -1,112 +1,76 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-<style>
-  .button {
-    box-shadow: 0 0.125rem 0.5rem 0 rgba(32, 32, 32, 0.04), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.1);
-    position: relative;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.875rem;
-    text-align: center;
-    font-family: "heebo-bold";
-    font-weight: 700;
-    padding: 0 2rem;
-    overflow: hidden;
-    height: 3.375rem;
-    transition: none;
-    line-height: 2rem;
-    box-sizing: border-box;
-    white-space: nowrap;
-  }
+    <style>
+      button.button\:blue.bgc\:onyx,
+      button.button\:blue.bgc\:onyx:hover,
+      button.button\:blue.bgc\:onyx:active,
+      button.button\:blue.bgc\:onyx:focus {
+        background-color: #404040;
+        border-color: #404040;
+      }
+      button.button\:blue.bgc\:positive-light,
+      button.button\:blue.bgc\:positive-light:hover,
+      button.button\:blue.bgc\:positive-light:active,
+      button.button\:blue.bgc\:positive-light:focus {
+        background-color: #84b48e;
+        border-color: #84b48e;
+      }
+      button.button\:blue.bgc\:negative-light,
+      button.button\:blue.bgc\:negative-light:hover,
+      button.button\:blue.bgc\:negative-light:active,
+      button.button\:blue.bgc\:negative-light:focus {
+        background-color: #d08888;
+        border-color: #d08888;
+      }
+    </style>
 
-  @keyframes ripple {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(2);
-    }
-  }
+    <main class="w:100%" role="main">
 
-  .button:after {
-    content: '';
-    display: block;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    width: 120px;
-    height: 120px;
-    margin-left: -60px;
-    margin-top: -60px;
-    background: rgba(1, 1, 1, 1.03);
-    border-radius: 100%;
-    opacity: .3;
-    transform: scale(0);
-  }
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Toast</h1>
+        <div class="w:12 pt:16px">Click a button below to display a toast message</div>
+      </section>
 
-  .button:not(:active):after {
-    animation: ripple .3s ease-in;
-  }
-
-  .button:after {
-    visibility: hidden;
-  }
-
-  .button:focus:after {
-    visibility: visible;
-  }
-</style>
-
-<main class="w:100%" role="main">
-  <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-    <h1 class="play:bold fs:40px color:eerie-black pb:48px">Toast</h1>
-    <p>Click a button below to display a toast message</p>
-  </section>
-  <section class="mw:1280px display:flex align:middle align:center align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-    <div style="flex:0;">
-      <div class="display:flex align:center mb:16px">
-        <div class="bxs:5">
-          <button class="button color:white bgc:onyx" onclick="storm_eagle.toast.add('Toast Message 1 (Default)');">
-            <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 1 (Default)
-          </button>
+      <section class="row align:center pt:32px">
+        <div style="flex:0;">
+          <div class="display:flex align:center mb:16px">
+            <div class="bxs:5">
+              <button class="button:blue bgc:onyx" onclick="storm_eagle.toast.add('Toast Message 1 (Default)');">
+                <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 1 (Default)
+              </button>
+            </div>
+          </div>
+          <div class="display:flex align:center mb:16px">
+            <div class="bxs:5">
+              <button class="button:blue bgc:positive-light" onclick="storm_eagle.toast.add('Toast Message 2 (positive-light)','color:white','bgc:positive-light');">
+                <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 2 (positive-light)
+              </button>
+            </div>
+          </div>
+          <div class="display:flex align:center mb:16px">
+            <div class="bxs:5">
+              <button class="button:blue bgc:negative-light" onclick="storm_eagle.toast.add('Toast Message 3 (negative-light)','color:white','bgc:negative-light');">
+                <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 3 (negative-light)
+              </button>
+            </div>
+          </div>
+          <div class="display:flex align:center mb:16px">
+            <div class="bxs:5">
+              <button class="button:blue" onclick="storm_eagle.toast.add('Toast Message 4 (blue)','color:white','bgc:blue');">
+                <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 4 (blue)
+              </button>
+            </div>
+          </div>
+          <div class="display:flex align:center mb:16px">
+            <div class="bxs:5">
+              <button class="button:yale-blue" onclick="storm_eagle.toast.add('Toast Message 5 (yale-blue)','color:white','bgc:yale-blue');">
+                <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 5 (yale-blue)
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="display:flex align:center mb:16px">
-        <div class="bxs:5">
-          <button class="button color:white bgc:positive-light" onclick="storm_eagle.toast.add('Toast Message 2 (positive-light)','color:white','bgc:positive-light');">
-            <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 2 (positive-light)
-          </button>
-        </div>
-      </div>
-      <div class="display:flex align:center mb:16px">
-        <div class="bxs:5">
-          <button class="button color:white bgc:negative-light" onclick="storm_eagle.toast.add('Toast Message 3 (negative-light)','color:white','bgc:negative-light');">
-            <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 3 (negative-light)
-          </button>
-        </div>
-      </div>
-      <div class="display:flex align:center mb:16px">
-        <div class="bxs:5">
-          <button class="button color:white bgc:blue" onclick="storm_eagle.toast.add('Toast Message 4 (blue)','color:white','bgc:blue');">
-            <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 4 (blue)
-          </button>
-        </div>
-      </div>
-      <div class="display:flex align:center mb:16px">
-        <div class="bxs:5">
-          <button class="button color:white bgc:yale-blue" onclick="storm_eagle.toast.add('Toast Message 5 (yale-blue)','color:white','bgc:yale-blue');">
-            <span class="ic ic-color:white ic-type:solid ic-size:16px ic-name:copy mr:8px"></span> Toast Message 5 (yale-blue)
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
+      </section>
+    </main>
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
