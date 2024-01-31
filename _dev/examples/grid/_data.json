@@ -1,0 +1,24 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Grid • warrenshea",
+                "urlEn": "/examples/grid/",
+                "urlCanonical": "/examples/grid/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.grid-overlay.js",
+                "/scripts/module.slider.js",
+                "/scripts/module.form.switch.button.js",
+                "/scripts/module.range-slider.js"
+            ]
+        }
+    }
+}
