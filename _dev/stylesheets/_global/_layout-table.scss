@@ -1,0 +1,25 @@
+.td-p\:4px {
+  > thead > tr > td,
+  > tbody > tr > td {
+    padding: rem-calc(4);
+  }
+}
+.td-p\:8px {
+  > thead > tr > td,
+  > tbody > tr > td {
+    padding: rem-calc(8);
+  }
+}
+
+.th-p\:4px {
+  > thead > tr > th,
+  > tbody > tr > th {
+    padding: rem-calc(4);
+  }
+}
+.th-p\:8px {
+  > thead > tr > th,
+  > tbody > tr > th {
+    padding: rem-calc(8);
+  }
+}
