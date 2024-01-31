@@ -1,183 +1,190 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-<main class="pb:96px" role="main">
-  <h1 class="w:100% mw:1280px align-self:centered play:bold fs:40px color:eerie-black pt:32px pb:32px sm+:px:8px xl+:px:0">TinyMCE Examples</h1>
+    <main class="pb:96px" role="main">
 
-  <section class="mw:1280px align-self:centered">
-    <div class="pb:16px">
-      <h2 class="display:inline play">Simple</h2>
-    </div>
-    <div class="row">
-      <div class="w:6 pr:8px">
-        <textarea id data-module="tinymce" data-tinymce-type="basic" data-tinymce-onupdate-func="storm_eagle.tinymce.force_update_preview" data-tinymce-onload-element="editor-heading-1" data-tinymce-preview="editor-heading-1,editor-heading-2,editor-heading-3,editor-heading-4,editor-anchor,editor-button"></textarea>
-      </div>
-      <div class="w:6 pl:8px">
-        <div class="pb:16px">
-          Headings Example:
-          <div class="b-silver:1px p:8px brr:8px text-align:center display:flex flex-dir:col align:center align:middle">
-            <h1 class="display:inline heebo">H1: <span id="editor-heading-1">Placeholder...</span></h1>
-            <h2 class="display:inline heebo">H2: <span id="editor-heading-2"></span></h2>
-            <h3 class="display:inline heebo">H3: <span id="editor-heading-3"></span></h3>
-            <h4 class="display:inline heebo">H4: <span id="editor-heading-4"></span></h4>
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">TinyMCE Examples</h1>
+      </section>
+
+      <section class="row">
+        <div class="w:12 pb:16px">
+          <h2 class="display:inline play">Simple</h2>
+        </div>
+        <div class="w:6">
+          <textarea id data-module="tinymce" data-tinymce-type="basic" data-tinymce-onupdate-func="storm_eagle.tinymce.force_update_preview" data-tinymce-onload-element="editor-heading-1" data-tinymce-preview="editor-heading-1,editor-heading-2,editor-heading-3,editor-heading-4,editor-anchor,editor-button"></textarea>
+        </div>
+        <div class="w:6">
+          <div class="pb:16px">
+            Headings Example:
+            <div class="b-silver:1px p:8px brr:8px text-align:center display:flex flex-dir:col align:center align:middle">
+              <h1 class="display:inline heebo">H1: <span id="editor-heading-1">Placeholder...</span></h1>
+              <h2 class="display:inline heebo">H2: <span id="editor-heading-2"></span></h2>
+              <h3 class="display:inline heebo">H3: <span id="editor-heading-3"></span></h3>
+              <h4 class="display:inline heebo">H4: <span id="editor-heading-4"></span></h4>
+            </div>
+          </div>
+          <div class="pb:16px">
+            Anchor example:
+            <div class="b-silver:1px p:8px brr:8px text-align:center">
+              <a class="anchor:blue" id="editor-anchor"></a>
+            </div>
+          </div>
+          <div>
+            Button example:
+            <div class="b-silver:1px p:8px brr:8px text-align:center">
+              <button class="button:blue" id="editor-button"></button>
+            </div>
           </div>
         </div>
-        <div class="pb:16px">
-          Anchor example:
-          <div class="b-silver:1px p:8px brr:8px text-align:center">
-            <a class="anchor:blue" id="editor-anchor"></a>
-          </div>
+      </section>
+
+      <section class="row">
+        <div class="w:12 pb:16px">
+          <h2 class="display:inline play">Advanced</h2>
         </div>
-        <div>
-          Button example:
-          <div class="b-silver:1px p:8px brr:8px text-align:center">
-            <button class="button:blue" id="editor-button"></button>
+        <div class="w:12 pb:16px">
+          <div id="editor-advanced" class="brr:8px b-silver:1px mb:16px bgc:white p:8px" style="min-height:100px"><h1 class="heebo">Advanced Placeholder Text...</h1>
           </div>
+          <textarea id data-module="tinymce" data-tinymce-type="advanced" data-tinymce-onupdate-func="storm_eagle.tinymce.force_update_preview" data-tinymce-onload-element="editor-advanced" data-tinymce-preview="editor-advanced"></textarea>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="w:100% py:16px">
-    <div class="mw:1280px align-self:centered">
-      <h2 class="play:bold fs:32px color:eerie-black pb:16px">Advanced</h2>
-      <div id="editor-advanced" class="brr:8px b-silver:1px mb:16px bgc:white p:8px" style="min-height:100px"><h1 class="heebo">Advanced Placeholder Text...</h1>
-      </div>
-      <textarea id data-module="tinymce" data-tinymce-type="advanced" data-tinymce-onupdate-func="storm_eagle.tinymce.force_update_preview" data-tinymce-onload-element="editor-advanced" data-tinymce-preview="editor-advanced"></textarea>
-    </div>
-  </section>
+      <hr>
 
-  <hr>
+      <section class="row">
+        <div class="w:12 pb:16px">
+          <h2 class="display:inline play">Requirements</h2>
+        </div>
 
-  <section class="pt:16px mw:1280px align-self:centered">
-    <h2 class="play:bold fs:32px color:eerie-black pb:32px">Requirements</h2>
+        <div class="w:12">
+          <legend class="align-self:centered heebo:bold">Legend:</legend>
+          <dl class="row0 w:6 b-onyx:1px p:8px mb:32px">
+            <dt class="w:3 px:4px display:flex align:middle align:right">[blank]</dt>
+            <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Not required</dd>
+            <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"></div></dt>
+            <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Available and implemented in this example</dd>
+            <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"></div></dt>
+            <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Likely available but not implemented</dd>
+            <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:negative ic-size:24px ic-name:times"></div></dt>
+            <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Not available</dd>
+          </dl>
+        </div>
 
-    <legend class="align-self:centered heebo:bold">Legend:</legend>
-    <dl class="row w:6 b-onyx:1px p:8px mb:32px">
-      <dt class="w:3 px:4px display:flex align:middle align:right">[blank]</dt>
-      <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Not required</dd>
-      <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"></div></dt>
-      <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Available and implemented in this example</dd>
-      <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"></div></dt>
-      <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Likely available but not implemented</dd>
-      <dt class="w:3 px:4px display:flex align:middle align:right"><div class="display:inline-flex ic ic-type:solid ic-color:negative ic-size:24px ic-name:times"></div></dt>
-      <dd class="w:9 px:4px display:flex align:middle text-align:left ml:0">Not available</dd>
-    </dl>
-
-    <table class="w:100%" border="1">
-      <caption>
-        A table of requirements for the TinyMCE Editor example
-      </caption>
-      <thead>
-        <tr>
-          <td style="width:25%"></td>
-          <th style="width:25%">Example</th>
-          <th style="width:25%">Basic</th>
-          <th style="width:25%">Advanced</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th class="p:8px text-align:left">Font Switching</th>
-          <td class="p:8px">Heebo & Play</td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Headings</th>
-          <td class="p:8px">H1, H2, H3, H4</td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">B</th>
-          <td class="p:8px">&lt;strong&gt;</td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">I</th>
-          <td class="p:8px">&lt;em&gt;</td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Font Sizes</th>
-          <td class="p:8px">14px, 16px</td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Line Height</th>
-          <td class="p:8px">1.5</td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Superscript</th>
-          <td class="p:8px"></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Ordered List</th>
-          <td class="p:8px"><ol><li>List item</li><li>List item</li><li>List item</li></ol></td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Unordered List</th>
-          <td class="p:8px"><ul><li>List item</li><li>List item</li><li>List item</li></ul></td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Custom List</th>
-          <td class="p:8px"><ul><li>List item</li><li>List item</li><li>List item</li></ul></td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Alignment</th>
-          <td class="p:8px">left, right, center</td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Add Components</th>
-          <td class="p:8px">Link / Button / Tooltip</td>
-          <td class="p:8px text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">No Wrap/No Break</th>
-          <td class="p:8px"></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Span SR text/aria-hidden</th>
-          <td class="p:8px">
-            &lt;span role="text"&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="sr-only"&gt;<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span aria-hidden&gt;<br>
-            &lt;/span&gt;
-          </td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-        <tr>
-          <th class="p:8px text-align:left">Character Map</th>
-          <td class="p:8px">
-            à, â, ä, é, è, ê, ë, î, ï, ô, ù, û, ü, «, ç, œ, », ©, ®, ™, †, ††, ‡, ‡‡, §, §§, *, **, ***, Δ
-          </td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-          <td class="p:8px text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</main>
+        <table class="w:12 td-p:8px th-p:8px" border="1">
+          <caption>
+            A table of requirements for the TinyMCE Editor example
+          </caption>
+          <thead>
+            <tr>
+              <td style="width:25%"></td>
+              <th style="width:25%">Example</th>
+              <th style="width:25%">Basic</th>
+              <th style="width:25%">Advanced</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-align:left">Font Switching</th>
+              <td>Heebo & Play</td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Headings</th>
+              <td>H1, H2, H3, H4</td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">B</th>
+              <td>&lt;strong&gt;</td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">I</th>
+              <td>&lt;em&gt;</td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Font Sizes</th>
+              <td>14px, 16px</td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Line Height</th>
+              <td>1.5</td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Superscript</th>
+              <td></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Ordered List</th>
+              <td><ol><li>List item</li><li>List item</li><li>List item</li></ol></td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Unordered List</th>
+              <td><ul><li>List item</li><li>List item</li><li>List item</li></ul></td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Custom List</th>
+              <td><ul><li>List item</li><li>List item</li><li>List item</li></ul></td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Alignment</th>
+              <td>left, right, center</td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Add Components</th>
+              <td>Link / Button / Tooltip</td>
+              <td class="text-align:center">&nbsp;<span class="show-for-screen-reader-only">No</span></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">No Wrap/No Break</th>
+              <td></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Span SR text/aria-hidden</th>
+              <td>
+                &lt;span role="text"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="sr-only"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;span aria-hidden&gt;<br>
+                &lt;/span&gt;
+              </td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:warning ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+            <tr>
+              <th class="text-align:left">Character Map</th>
+              <td>
+                à, â, ä, é, è, ê, ë, î, ï, ô, ù, û, ü, «, ç, œ, », ©, ®, ™, †, ††, ‡, ‡‡, §, §§, *, **, ***, Δ
+              </td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+              <td class="text-align:center"><div class="display:inline-block ic ic-type:solid ic-color:positive ic-size:24px ic-name:check"><span class="show-for-screen-reader-only">Yes</span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
 
 <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
-<script src="https://cdn.tiny.cloud/1/<%=process.env.TINYMCE_API%>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/<%=process.env.TINYMCE_API%>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
