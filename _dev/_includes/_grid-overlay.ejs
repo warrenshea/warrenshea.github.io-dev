@@ -1,0 +1,127 @@
+<style>
+  .<%=id%> {
+    column-gap: 16px;
+    display:flex;
+    position:absolute;
+    z-index:0;
+    left:0;
+    right:0;
+    margin:0 auto;
+    max-width:1280px;
+    height:100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .<%=id%>.md {
+    column-gap: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .<%=id%>.lg {
+    column-gap: 24px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .<%=id%>.xl {
+    column-gap: 32px;
+    padding-left:0;
+    padding-right:0;
+  }
+  .<%=id%> > div {
+    width: 100%;
+    height:100%;
+    background-color:#7777ff;
+    opacity:.25;
+  }
+</style>
+
+<section id="<%=id%>" data-module="iframe-grid-sliders">
+  <div class="w:100% align-self:centered overflow:hidden" data-module="iframe-grid-container">
+    <div class="form:theme:gl0b3x align-self:centered position:relative">
+      <div class="range-slider-container fit pb:8px" data-module="range-slider.input-container">
+        <label class="sr-only">
+          <span class="description">Slider</span>
+        </label>
+        <input id data-module="range-slider.input-1" data-range-slider onInput="storm_eagle.grid_overlay.range_slider_input_1('<%=id%>');" class="align-self:centered w:100%" type="range" value="3000" steps="1" data-equalize-height="range-slider-input">
+        <input id data-module="range-slider.input-2" data-range-slider onInput="storm_eagle.grid_overlay.range_slider_input_2('<%=id%>');" class="align-self:centered w:100%" type="range" value="-3000" steps="1">
+        <span data-module="slider.background"><span data-module="slider.fill"></span></span>
+        <div data-module="slider.labels" class="position:relative text-align:center display:flex align:spaced w:100%">
+          <div class="position:absolute" style="left:calc(50% - 738px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1440)">1440</button></div>
+          <div class="position:absolute pt:2px xl-left">XL</div>
+          <div class="position:absolute" style="left:calc(50% - 657px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1280)">1280</button></div>
+          <div class="position:absolute pt:2px lg-left">LG</div>
+          <div class="position:absolute" style="left:calc(50% - 529px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1024)">1024</button></div>
+          <div class="position:absolute pt:2px md-left">MD</div>
+          <div class="position:absolute" style="left:calc(50% - 396px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',768)">768</button></div>
+          <div class="position:absolute pt:2px sm-left">SM</div>
+          <div class="position:absolute" style="left:calc(50% - 201px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',375)">375</button></div>
+          <div class="position:absolute" style="left:calc(50% - 125px);top:-6px;">
+            <button
+              type="button"
+              role="switch"
+              aria-checked="true"
+              id
+              data-module="switch.button"
+              data-theme-color="blue"
+              data-theme-size="small"
+              style="width:80px;"
+              onclick="(this.ariaChecked === 'false') ? storm_eagle.grid_overlay.show_grid('<%=id%>') : storm_eagle.grid_overlay.hide_grid('<%=id%>');">
+              <div data-module="switch.slider">
+                <div data-module="switch.thumb"></div>
+                <strong data-module="switch.text">Grid</strong>
+              </div>
+              <span aria-hidden="true" class="sr-only">off</span>
+              <span aria-hidden="true" class="sr-only">on</span>
+            </button>
+          </div>
+          <div><input type="text" class="brr:4px bgc:platinum py:16px px:4px text-align:center heebo:bold position:relative" style="width:72px;height:16px;margin-top:0;top:-8px;" data-module="range-slider-width" value="1280px" disabled=""><span></span></div>
+          <div class="position:absolute" style="right:calc(50% - 125px);top:-6px;">
+            <button
+              type="button"
+              role="switch"
+              aria-checked="true"
+              id
+              data-module="switch.button"
+              data-theme-color="blue"
+              data-theme-size="small"
+              style="width:80px;"
+              onclick="(this.ariaChecked === 'false') ? document.querySelector('#<%=id%>-background').classList.toggle('grid-background') : document.querySelector('#<%=id%>-background').classList.toggle('grid-background');">
+              <div data-module="switch.slider">
+                <div data-module="switch.thumb"></div>
+                <strong data-module="switch.text">BG</strong>
+              </div>
+              <span aria-hidden="true" class="sr-only">off</span>
+              <span aria-hidden="true" class="sr-only">on</span>
+            </button>
+          </div>
+          <div class="position:absolute" style="right:calc(50% - 201px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',375)">375</button></div>
+          <div class="position:absolute pt:2px sm-right">SM</div>
+          <div class="position:absolute" style="right:calc(50% - 396px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',768)">768</button></div>
+          <div class="position:absolute pt:2px md-right">MD</div>
+          <div class="position:absolute" style="right:calc(50% - 529px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1024)">1024</button></div>
+          <div class="position:absolute pt:2px lg-right">LG</div>
+          <div class="position:absolute" style="right:calc(50% - 657px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1280)">1280</button></div>
+          <div class="position:absolute pt:2px xl-right">XL</div>
+          <div class="position:absolute" style="right:calc(50% - 738px);"><button onclick="storm_eagle.grid_overlay.force_grid('<%=id%>',1440)">1440</button></div>
+        </ul>
+      </div>
+    </div>
+    <div id="<%=id%>-background" class="w:100% position:relative grid-background">
+      <div class="<%=id%> xl">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <iframe class="w:100% b:0 display:flex align-self:centered" src="<%=iframe%>" id="<%=id%>-id" data-module="iframe-grid"></iframe>
+    </div>
+  </div>
+</section>
