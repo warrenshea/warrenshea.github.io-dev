@@ -1,11 +1,15 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100%" role="main">
-      <section class="mw:1280px align-self:centered pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:16px">Waypoint + CSS Animation</h1>
-        <p>This uses <a class="anchor:blue" href="http://imakewebthings.com/waypoints/" target="_blank">Waypoint</a></p>
-        <p>Scroll down the page for 9 Waypoint + CSS animation examples</p>
+
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Waypoint + CSS Animation</h1>
+        <p class="w:12 pt:16px">This uses <a class="anchor:blue" href="http://imakewebthings.com/waypoints/" target="_blank">Waypoint</a></p>
+        <p class="w:12 pt:16px">Scroll down the page for 9 Waypoint + CSS animation examples</p>
+      </section>
+
+      <section class="row py:32px">
         <div class="text-align:center">
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          <div style="height:500px"></div>
           <div class="fs:32px heebo:bold ani-duration:1s ani-timing:linear opacity:0% ani-to-move-up:32px" id data-module="waypoint" data-element="this" data-waypoint-remove-classes="opacity:0%,ani-to-move-up:32px" data-waypoint-add-classes="sm+:ani-fadein-up:32px" data-waypoint-delay="0" data-waypoint-activate="50%">1. Fade in and up (from the bottom) at 50% of the screen</div>
           <br><br><br><br><br><br>
           <div class="fs:32px heebo:bold ani-duration:1s ani-timing:linear opacity:0% ani-to-move-left:32px" id data-module="waypoint" data-element="this" data-waypoint-remove-classes="opacity:0%,ani-to-move-left:32px" data-waypoint-add-classes="sm+:ani-fadein-left:32px" data-waypoint-delay="0" data-waypoint-activate="50%">2. Fade in and left (from the right) at 50% of the screen</div>
