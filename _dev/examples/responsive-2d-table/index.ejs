@@ -1,9 +1,11 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100% overflow:hidden" role="main">
-      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:64px">Responsive 2D Table using Flexbox</h1>
 
-        <div class="form:theme:gl0b3x position:relative xl+:show">
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Responsive 2D Table using Flexbox</h1>
+      </section>
+      <section class="row pb:32px">
+        <div class="w:12 pt:32px position:relative xl+:show form:theme:gl0b3x">
           <div data-module="slider.input-container">
             <input data-module="slider.input" data-slider id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = `${this.value}px`;" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
             <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
@@ -11,8 +13,8 @@
           </div>
         </div>
         <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
+      </section>
 
-      </div>
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
