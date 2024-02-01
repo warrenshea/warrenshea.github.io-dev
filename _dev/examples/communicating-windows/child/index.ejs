@@ -1,27 +1,30 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
 
-  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:32px">
-    <h1 class="play:bold pt:16px fs:28px color:eerie-black px:8px pb:16px">Child Frame</h1>
-    <div class="row">
-      <div class="w:6 px:8px">
-        <form id="child">
-          <div class="form:theme:gl0b3x">
-            <div class="position:relative pt:4px pb:16px">
-              <input id="message" name="message" type="text">
-              <label for="message">
-                <span class="description">Send Message to Parent Frame</span>
-              </label>
+    <main class="w:100% pb:96px" role="main">
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Communicating Windows</h1>
+      </section>
+
+      <section class="row py:32px">
+        <div class="w:6">
+          <form id="child">
+            <div class="form:theme:gl0b3x">
+              <div class="position:relative pt:4px pb:16px">
+                <input id="message" name="message" type="text" value=" ">
+                <label for="message">
+                  <span class="description">Send Message to Parent Frame</span>
+                </label>
+              </div>
+              <button type="submit" class="button:blue uppercase">Submit</button>
             </div>
-            <button type="submit" class="button:blue uppercase">Submit</button>
-          </div>
-        </form>
-      </div>
-      <div class="w:6 px:8px">
-        <div class="color:blue heebo:bold fs:14px">Message from Parent Frame</div>
-        <div id="from-parent" class="py:12px"></div>
-      </div>
-    </div>
-  </div>
+          </form>
+        </div>
+        <div class="w:6">
+          <div class="color:blue heebo:bold fs:14px">Message from Parent Frame</div>
+          <div id="from-parent" class="py:12px"></div>
+        </div>
+      </section>
+    </main>
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
