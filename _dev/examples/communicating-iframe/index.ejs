@@ -1,12 +1,15 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100% overflow:hidden" role="main">
-      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:16px">Communicating iframe</h1>
-        <div class="pb:48px lh:24">As the slider is moved, the iframe width increases/decreases, causing the height of the iframe to contents to change. The iframe then sends the height back to the parent frame and increases the height of the iframe container, removed the vertical scrollbar</div>
 
-        <div class="form:theme:gl0b3x position:relative xl+:show">
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Communicating iframe</h1>
+        <div class="pt:32px lh:24">As the slider is moved, the iframe width increases/decreases, causing the height of the iframe to contents to change. The iframe then sends the height back to the parent frame and increases the height of the iframe container, removed the vertical scrollbar</div>
+      </section>
+
+      <section class="row py:32px">
+        <div class="w:12 form:theme:gl0b3x position:relative xl+:show">
           <div data-module="slider.input-container">
-            <input data-module="slider.input" id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = `${this.value}px`;" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
+            <input data-module="slider.input" data-slider id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = `${this.value}px`;" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
             <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
             <ul data-module="slider.labels" class="text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
           </div>
