@@ -1,9 +1,9 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100%" role="main">
-      <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:16px">Responsive DOM Manipulators</h1>
 
-        <div>
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Responsive DOM Manipulators</h1>
+        <div class="w:12 pt:32px">
           <h2 class="fs:32px play:bold pb:16px">About this code</h2>
           <p class="pb:16px">Usually, HTML code order and screen reader reading and tab order follow the same, expected path: Left to right, top to bottom.</p>
           <p class="pb:16px">Responsive CSS and Grid can visually move elements around with <strong>Flex order</strong>, <strong>Position Absolute</strong>, or <strong>Floats</strong>. With these visual changes, sometimes it's difficult to ensure the <strong>HTML/DOM/TAB order</strong> is properly reflected (without very specific JavaScript to deal with focus).</p>
@@ -11,19 +11,23 @@
           <h2 class="fs:32px play:bold pb:16px">Give it a try</h2>
           <p class="pb:32px">Try tabbing through the area at different breakpoints. You'll see <strong>the tabbing order remains correct while the DOM changes significantly!</strong></p>
         </div>
+      </section>
 
-        <div class="form:theme:gl0b3x position:relative pb:32px xl+:show">
+      <section class="row">
+        <div class="w:12 form:theme:gl0b3x position:relative pb:32px xl+:show">
           <div data-module="slider.input-container">
-            <input data-module="slider.input" id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = `${this.value}px`;" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
+            <input data-module="slider.input" data-slider id onInput="document.getElementById('table-container').contentWindow.postMessage('update', window.location.origin);document.getElementById('table-container').style.width = `${this.value}px`;" value="1280" class="display:block align-self:centered w:100% slider" type="range" min="1" max="1280" steps="1" value="1280">
             <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
             <ul data-module="slider.labels" class="position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%"><li>1</li><li>320</li><li>640</li><li>960</li><li>1280</li></ul>
           </div>
         </div>
 
         <iframe class="w:100% b:0" src="inner-content/" id="table-container"></iframe>
+      </section>
 
-        <h2 class="fs:32px play:bold pt:32px pb:8px">HTML</h2>
-        <div>Note: classes and empty divs omitted for simplicity</div>
+      <section class="row pt:32px">
+        <h2 class="w:12 fs:32px play:bold pt:32px pb:8px">HTML</h2>
+        <div class="w:12">Note: classes and empty divs omitted for simplicity</div>
 <textarea data-code-reference="prism-code-html" class="hide">
         <section class="responsive-dom-manipulator-example" data-equalize-height="example">
           <div class="desktop-row-container">
@@ -122,9 +126,9 @@
           </div>
         </section>
 </textarea>
-        <pre><code class="language-html" data-code-snippet="prism-code-html"></code></pre>
+        <pre class="w:100%"><code class="language-html" data-code-snippet="prism-code-html"></code></pre>
 
-        <h2 class="fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
+        <h2 class="w:12 fs:32px play:bold pt:32px pb:8px">JavaScript</h2>
 <textarea data-code-reference="prism-code-javascript" class="hide">
 storm_eagle.module("responsive_dom_manipulator", () => {
   "use strict";
@@ -183,8 +187,8 @@ storm_eagle.module("responsive_dom_manipulator", () => {
   };
 });
 </textarea>
-        <pre><code class="language-javascript" data-code-snippet="prism-code-javascript"></code></pre>
-      </div>
+        <pre class="w:100%"><code class="language-javascript" data-code-snippet="prism-code-javascript"></code></pre>
+      </section>
     </main>
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
