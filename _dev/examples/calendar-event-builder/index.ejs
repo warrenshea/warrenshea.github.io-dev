@@ -1,39 +1,41 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-    <main class="w:100%" role="main">
-      <section class="mw:1200px align-self:centered pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:16px">Calendar Event Builder</h1>
-        <div class="row form:theme:gl0b3x">
-          <div class="w:5">
-            <h2 class="fs:32px play:bold pb:16px">Event Details</h2>
-            <form name="calendar-form" action="" method="post">
-              <div class="row">
-                <div class="w:8 position:relative pb:4px pr:16px"><input type="text" name="start_date" id="start_date" value=""><label for="start_date"><span class="description">Start Date</span></label></div>
-                <div class="w:4 position:relative pb:4px"><input type="text" name="start_time" id="start_time" value=""><label for="start_time"><span class="description">Start Time</span></label></div>
-              </div>
-              <div class="row">
-                <div class="w:8 position:relative pb:4px pr:16px"><input type="text" name="end_date" id="end_date" value=""><label for="end_date"><span class="description">End Date</span></label></div>
-                <div class="w:4 position:relative pb:4px"><input type="text" name="end_time" id="end_time" value=""><label for="end_time"><span class="description">End Time</span></label></div>
-              </div>
-              <div class="position:relative pb:4px"><input type="text" name="duration" id="duration" value=""><label for="duration"><span class="description">Duration</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="timezone" id="timezone" value=""><label for="timezone"><span class="description">Timezone</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="title" id="title" value=""><label for="title"><span class="description">Title</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="description" id="description" value=""><label for="description"><span class="description">Description</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="location" id="location" value=""><label for="location"><span class="description">Location</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="organizer" id="organizer" value=""><label for="organizer"><span class="description">Organizer</span></label></div>
-              <div class="position:relative pb:4px"><input type="text" name="organizer_email" id="organizer_email" value=""><label for="organizer_email"><span class="description">Organizer Email</span></label></div>
-              <div class="pt:8px"><button type="submit" value="Submit" class="button:blue uppercase">Submit</button></div>
-            </form>
-          </div>
-          <div class="w:6 offset:1">
-            <h2 class="fs:32px play:bold pb:16px">Results</h2>
-            <div class="results">
-              <a class="anchor:blue" href="" target="_blank" id="outlook">Outlook</a><br><br>
-              <a class="anchor:blue" href="" target="_blank" id="google">Google Calendar</a><br><br>
-              <a class="anchor:blue" href="" target="_blank" id="yahoo">Yahoo</a><br><br>
-              <div class="position:relative pt:16px">
-                <textarea id="icalendar" rows="4" placeholder="" style="min-height:435px"></textarea>
-                <label for="icalendar"><span class="description">iCalendar</span></label>
-              </div>
+    <main class="w:100% pb:96px" role="main">
+
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Calendar Event Builder</h1>
+      </section>
+
+      <section class="row form:theme:gl0b3x">
+        <div class="w:5">
+          <h2 class="fs:32px play:bold pb:16px">Event Details</h2>
+          <form name="calendar-form" action="" method="post">
+            <div class="row0">
+              <div class="w0:8 position:relative pb:4px pr:16px"><input type="text" name="start_date" id="start_date" value=""><label for="start_date"><span class="description">Start Date</span></label></div>
+              <div class="w0:4 position:relative pb:4px"><input type="text" name="start_time" id="start_time" value=""><label for="start_time"><span class="description">Start Time</span></label></div>
+            </div>
+            <div class="row0">
+              <div class="w0:8 position:relative pb:4px pr:16px"><input type="text" name="end_date" id="end_date" value=""><label for="end_date"><span class="description">End Date</span></label></div>
+              <div class="w0:4 position:relative pb:4px"><input type="text" name="end_time" id="end_time" value=""><label for="end_time"><span class="description">End Time</span></label></div>
+            </div>
+            <div class="position:relative pb:4px"><input type="text" name="duration" id="duration" value=""><label for="duration"><span class="description">Duration</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="timezone" id="timezone" value=""><label for="timezone"><span class="description">Timezone</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="title" id="title" value=""><label for="title"><span class="description">Title</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="description" id="description" value=""><label for="description"><span class="description">Description</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="location" id="location" value=""><label for="location"><span class="description">Location</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="organizer" id="organizer" value=""><label for="organizer"><span class="description">Organizer</span></label></div>
+            <div class="position:relative pb:4px"><input type="text" name="organizer_email" id="organizer_email" value=""><label for="organizer_email"><span class="description">Organizer Email</span></label></div>
+            <div class="pt:8px"><button type="submit" value="Submit" class="button:blue uppercase">Submit</button></div>
+          </form>
+        </div>
+        <div class="w:6 offset:1">
+          <h2 class="fs:32px play:bold pb:16px">Results</h2>
+          <div class="results">
+            <a class="anchor:blue" href="" target="_blank" id="outlook">Outlook</a><br><br>
+            <a class="anchor:blue" href="" target="_blank" id="google">Google Calendar</a><br><br>
+            <a class="anchor:blue" href="" target="_blank" id="yahoo">Yahoo</a><br><br>
+            <div class="position:relative pt:16px">
+              <textarea id="icalendar" rows="4" placeholder="" style="min-height:435px"></textarea>
+              <label for="icalendar"><span class="description">iCalendar</span></label>
             </div>
           </div>
         </div>
