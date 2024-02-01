@@ -64,22 +64,21 @@
         });
       },
       calculate_grid_lines: (grid_overlay_wrapper, width) => {
-        if (grid_overlay_wrapper === "grid-overlay-standard" || grid_overlay_wrapper === "grid-overlay-standard-wrap" || grid_overlay_wrapper === "grid-overlay-standard-centered" || grid_overlay_wrapper === "grid-overlay-rare" || grid_overlay_wrapper === "grid-overlay-flexible") {
-          document.querySelector(`.${grid_overlay_wrapper}`).classList.remove("sm");
-          document.querySelector(`.${grid_overlay_wrapper}`).classList.remove("md");
-          document.querySelector(`.${grid_overlay_wrapper}`).classList.remove("lg");
-          document.querySelector(`.${grid_overlay_wrapper}`).classList.remove("xl");
+        const wrapper = document.querySelector(`.${grid_overlay_wrapper}`);
+        const valid_overlay_types = ["grid-overlay-standard", "grid-overlay-standard-wrap", "grid-overlay-standard-centered", "grid-overlay-rare", "grid-overlay-flexible"];
+        if (valid_overlay_types.includes(grid_overlay_wrapper)) {
+          wrapper.classList.remove("sm","md","lg","xl");
           if (width >= 375 && width < 768) {
-            document.querySelector(`.${grid_overlay_wrapper}`).classList.add("sm");
+            wrapper.classList.add("sm");
           } else if (width >= 768 && width < 1024) {
-            document.querySelector(`.${grid_overlay_wrapper}`).classList.add("md");
+            wrapper.classList.add("md");
           } else if (width >= 1024 && width < 1280) {
-            document.querySelector(`.${grid_overlay_wrapper}`).classList.add("lg");
+            wrapper.classList.add("lg");
           } else {
-            document.querySelector(`.${grid_overlay_wrapper}`).classList.add("xl");
+            wrapper.classList.add("xl");
           }
         }
-        document.querySelector(`.${grid_overlay_wrapper}`).style.width = `${width}px`;
+        wrapper.style.width = `${width}px`;
       },
       range_slider_input_1: (id) => {
         let val1 = state[id]['slider_1'].value;
