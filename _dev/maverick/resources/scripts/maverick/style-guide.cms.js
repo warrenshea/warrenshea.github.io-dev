@@ -78,7 +78,7 @@ storm_eagle.module('editable_popup_sender', function () {
           <label class="sr-only" for="${key}-slider">
             <span class="description">Slider</span>
           </label>
-          <input id="${key}-slider" name="${key}" data-module="slider.input" value="0" class="display:block align-self:centered w:100% slider" type="range" min="0" max="${(classKeyValueConfig[key]['value'].length - 1)}" steps="1">
+          <input id="${key}-slider" data-slider name="${key}" data-module="slider.input" value="0" class="display:block align-self:centered w:100% slider" type="range" min="0" max="${(classKeyValueConfig[key]['value'].length - 1)}" steps="1">
           <span class="slider-background"><span class="slider-fill" data-module="slider.fill"></span></span>
           <ul data-module="slider.labels" class="slider-labels position:absolute text-align:center unstyle-pl:0 display:flex align:spaced w:100%">`;
       $(classKeyValueConfig[key]["label"]).each(function (index) {
