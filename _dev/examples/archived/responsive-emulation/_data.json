@@ -16,8 +16,7 @@
             ],
             "scripts": [
                 "/scripts/module.responsive-emulation.js",
-                "/scripts/module.slider.js",
-                "/scripts/module.range-slider.js"
+                "/scripts/module.slider.js"
             ]
         }
     }
