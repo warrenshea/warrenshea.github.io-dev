@@ -1,35 +1,38 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+    <main class="w:100% pb:96px" role="main">
 
-  <div class="mw:1280px align-self:centered sm+:px:8px xl+:px:32px">
-    <h1 class="play:bold pt:16px fs:28px color:eerie-black px:8px pb:16px">Parent Frame</h1>
-    <div class="row">
-      <div class="w:6 px:8px">
-        <form id="parent">
-          <div class="form:theme:gl0b3x">
-            <div class="position:relative pt:4px pb:16px">
-              <input id="message" name="message" type="text">
-              <label for="message">
-                <span class="description">Send Message to Child Frame</span>
-              </label>
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Communicating Windows</h1>
+      </section>
+
+      <section class="row py:32px">
+        <div class="w:6">
+          <form id="parent">
+            <div class="form:theme:gl0b3x">
+              <div class="position:relative pt:4px pb:16px">
+                <input id="message" name="message" type="text" value=" ">
+                <label for="message">
+                  <span class="description">Send Message to Child Frame</span>
+                </label>
+              </div>
+              <button type="button" class="button:blue uppercase" id="open-window-button">Open Child Frame</button> <button type="submit" class="button:blue uppercase">Submit</button>
             </div>
-            <button type="button" class="button:blue uppercase" id="open-window-button">Open Child Frame</button> <button type="submit" class="button:blue uppercase">Submit</button>
-          </div>
-        </form>
-      </div>
-      <div class="w:6 px:8px">
-        <div class="color:blue heebo:bold fs:14px">Message from Child Frame</div>
-        <div id="from-child" class="py:12px"></div>
-      </div>
-    </div>
+          </form>
+        </div>
+        <div class="w:6">
+          <div class="color:blue heebo:bold">Message from Child Frame</div>
+          <div id="from-child" class="py:12px"></div>
+        </div>
+      </section>
 
-    <hr class="mt:64px mb:32px">
+      <hr class="mt:32px">
 
-    <div class="row">
-      <div class="w:6 px:8px">
-        <h2 class="fs:32px play:bold pt:32px pb:8px">Parent Frame HTML</h2>
+      <section class="row py:32px">
+        <div class="w:6">
+          <h2 class="fs:24px play:bold pt:32px pb:8px">Parent Frame HTML</h2>
 <textarea data-code-reference="prism-code-parent-html" class="hide">
   <div class="row">
-    <div class="w:6 px:8px">
+    <div class="w:6">
       <form id="parent">
         <div class="form:theme:gl0b3x">
           <div class="position:relative pt:4px pb:16px">
@@ -42,14 +45,14 @@
         </div>
       </form>
     </div>
-    <div class="w:6 px:8px">
+    <div class="w:6">
       <div class="color:blue heebo:bold fs:14px">Message from Child Frame</div>
       <div id="from-child" class="py:12px"></div>
     </div>
   </div>
 </textarea>
-        <pre><code class="language-html" data-code-snippet="prism-code-parent-html"></code></pre>
-        <h2 class="fs:32px play:bold pt:32px pb:8px">Parent Frame JavaScript</h2>
+          <pre data-equalize-height="code1"><code class="language-html" data-code-snippet="prism-code-parent-html"></code></pre>
+          <h2 class="fs:24px play:bold pt:32px pb:8px">Parent Frame JavaScript</h2>
 <textarea data-code-reference="prism-code-parent-javascript" class="hide">
   storm_eagle.module('communicating_with_child_window', () => {
     'use strict';
@@ -84,13 +87,13 @@
     };
   })
 </textarea>
-        <pre><code class="language-javascript" data-code-snippet="prism-code-parent-javascript"></code></pre>
-      </div>
-      <div class="w:6 px:8px">
-        <h2 class="fs:32px play:bold pt:32px pb:8px">Child Frame HTML</h2>
+          <pre data-equalize-height="code2"><code class="language-javascript" data-code-snippet="prism-code-parent-javascript"></code></pre>
+        </div>
+        <div class="w:6">
+          <h2 class="fs:24px play:bold pt:32px pb:8px">Child Frame HTML</h2>
 <textarea data-code-reference="prism-code-child-html" class="hide">
   <div class="row pt:32px">
-    <div class="w:6 px:8px">
+    <div class="w:6">
       <form id="child">
         <div class="form:theme:gl0b3x">
           <div class="position:relative pt:4px pb:16px">
@@ -103,14 +106,14 @@
         </div>
       </form>
     </div>
-    <div class="w:6 px:8px">
+    <div class="w:6">
       <div class="color:blue heebo:bold fs:14px">Message from Parent Frame</div>
       <div id="from-parent" class="py:12px"></div>
     </div>
   </div>
 </textarea>
-        <pre><code class="language-html" data-code-snippet="prism-code-child-html"></code></pre>
-        <h2 class="fs:32px play:bold pt:32px pb:8px">Child Frame JavaScript</h2>
+          <pre data-equalize-height="code1"><code class="language-html" data-code-snippet="prism-code-child-html"></code></pre>
+          <h2 class="fs:24px play:bold pt:32px pb:8px">Child Frame JavaScript</h2>
 <textarea data-code-reference="prism-code-child-javascript" class="hide">
   storm_eagle.module('communicating_with_parent_window', () => {
     'use strict';
@@ -136,10 +139,10 @@
     };
   })
 </textarea>
-        <pre><code class="language-javascript" data-code-snippet="prism-code-child-javascript"></code></pre>
-      </div>
-    </div>
-  </div>
+          <pre data-equalize-height="code2"><code class="language-javascript" data-code-snippet="prism-code-child-javascript"></code></pre>
+        </div>
+      </section>
+    </main>
 
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
     <script>
