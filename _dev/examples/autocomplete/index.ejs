@@ -1,30 +1,68 @@
 <%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
     <main class="w:100%" role="main">
-      <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px form:theme:gl0b3x">
-        <h1 class="play:bold fs:40px color:eerie-black pb:64px">Autocomplete</h1>
-        <div class="autocomplete p:16px sm+:w:8 lg+:w:4 align-self:centered" data-module="autocomplete" id="pokemon-autocomplete">
-          <div class="position:relative w:100% pt:4px">
-            <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('pokemon-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.pokemon_search.get_pokemon_list" id="pokemon" name="pokemon" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
-            <label for="pokemon" id="autocomplete_label"><span class="description">Find a Pokémon</span></label>
+
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Autocomplete</h1>
+      </section>
+
+      <%id="pokemon"%>
+      <section class="row pt:32px form:theme:gl0b3x">
+        <div class="w:12">
+          <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Single Select</h2>
+          <div class="w:100%">
+            <div class="autocomplete p:16px sm+:w:8 lg+:w:4 align-self:centered" data-module="autocomplete" id="autocomplete-<%=id%>">
+              <div class="position:relative w:100% pt:4px">
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.pokemon_search.get_pokemon_list" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
+                <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="description">Find a Pokémon</span></label>
+              </div>
+              <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
+              <div class="position:relative">
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-<%=id%>-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              </div>
+              <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
+            </div>
           </div>
-          <div data-module="autocomplete.sr-description" id="pokemon-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
-          <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="pokemon" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
-          <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
         </div>
       </section>
 
-      <section class="mw:1280px align-self:centered sm+:px:8px xl+:px:0 pt:32px">
-        <h1 class="play:bold fs:40px color:eerie-black pb:64px">Autocomplete - Multiselect</h1>
-        <div class="display:flex w:100% align-self:centered">
-          <div class="w:100%" data-module="autocomplete" id="digimon-autocomplete">
-            <div data-module="autocomplete.multiselect" id class="br:4px b-gray:1px w:100%" style="top:24px">
-              <span class="display:flex flex-flow:row-wrap pl:4px" data-module="autocomplete.multiselect-tags"></span>
-              <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('digimon-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.digimon_search.get_digimon_list" id="digimon" name="digimon" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results-2" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="bt-silver:1px bl:0 br:0 bb:0 w:100% p:4px" placeholder="Please enter a digimon">
-              <label for="digimon" id="autocomplete_label2" class="sr-only"><span class="description">Find a Digimon</span></label>
+      <%id="digimon"%>
+      <section class="row pt:32px">
+        <div class="w:12">
+          <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Multiselect</h2>
+          <div class="display:flex w:100% align-self:centered">
+            <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>">
+              <div data-module="autocomplete.multiselect" id class="br:4px b-gray:1px w:100%" style="top:24px">
+                <span class="display:flex flex-flow:row-wrap pl:4px" data-module="autocomplete.multiselect-tags"></span>
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.digimon_search.get_digimon_list" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="bt-silver:1px bl:0 br:0 bb:0 w:100% p:4px" placeholder="Please enter a digimon">
+                <label for="<%=id%>" id="autocomplete-<%=id%>-label" class="sr-only"><span class="description">Find a Digimon</span></label>
+              </div>
+              <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
+              <div class="position:relative">
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-<%=id%>-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              </div>
+              <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
             </div>
-            <div data-module="autocomplete.sr-description" id="digimon-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
-            <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px" id="autocomplete-results-2" data-module="autocomplete.results" data-autocomplete-results="-1" data-bind="digimon" role="listbox" aria-labelledby="autocomplete_label2" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
-            <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
+          </div>
+        </div>
+      </section>
+
+      <%id="dragon-ball"%>
+      <section class="row pt:32px">
+        <div class="w:12">
+          <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Multiselect w/ Tags</h2>
+          <div class="display:flex w:100% align-self:centered">
+            <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>">
+              <div data-module="autocomplete.multiselect" id class="br:4px b-gray:1px w:100%" style="top:24px">
+                <span class="display:flex flex-flow:row-wrap pl:4px" data-module="autocomplete.multiselect-tags"></span>
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.digimon_search.get_digimon_list" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results " aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="bt-silver:1px bl:0 br:0 bb:0 w:100% p:4px" placeholder="Please enter a digimon">
+                <label for="<%=id%>" id="autocomplete-<%=id%>-label" class="sr-only"><span class="description">Find a Digimon</span></label>
+              </div>
+              <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
+              <div class="position:relative">
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-<%=id%>-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              </div>
+              <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
+            </div>
           </div>
         </div>
       </section>
@@ -67,7 +105,7 @@
                 if (data) {
                   if (data.length > 0) {
                     if (document.getElementById(input_id) === document.activeElement) {
-                      storm_eagle.autocomplete.close(autocomplete_id,true)
+                      storm_eagle.autocomplete.action.close();
 
                       for (let i = 0; i < data.length; i++) {
                         document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i]));
@@ -80,7 +118,7 @@
                       }
                     }
                   } else {
-                    storm_eagle.autocomplete.close(autocomplete_id,true)
+                    storm_eagle.autocomplete.action.close();
                   }
                 }
             }).catch(err => {
@@ -90,7 +128,7 @@
           render_autocomplete_result: (query, index, input_id, autocomplete_id, pokedex_entry) => {
             const num = pokedex_entry["num"];
             const name = pokedex_entry["name"];
-            return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${num} - ${name}" onclick="storm_eagle.pokemon_search.autocomplete_fill('${input_id}','${num}','${name}');storm_eagle.autocomplete.close('${autocomplete_id}',true);">${num} - ${name}</li>`;
+            return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${num} - ${name}" onclick="storm_eagle.pokemon_search.autocomplete_fill('${input_id}','${num}','${name}');storm_eagle.autocomplete.action.close();">${num} - ${name}</li>`;
           },
           autocomplete_fill: (input_id, num, name) => {
             document.getElementById(input_id).value = `${num} - ${name}`;
