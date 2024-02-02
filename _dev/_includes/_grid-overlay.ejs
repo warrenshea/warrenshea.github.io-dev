@@ -1,4 +1,7 @@
 <style>
+<%
+  const valid_overlay_types = ["grid-overlay-standard", "grid-overlay-standard-wrap", "grid-overlay-standard-centered", "grid-overlay-rare", "grid-overlay-flexible"];
+  if (valid_overlay_types.includes(id)) {%>
   .<%=id%> {
     column-gap: 16px;
     display:flex;
@@ -33,6 +36,28 @@
     background-color:#7777ff;
     opacity:.25;
   }
+<%
+  } else {
+%>
+  .<%=id%> {
+    display:flex;
+    position:absolute;
+    z-index:0;
+    left:0;
+    right:0;
+    margin:0 auto;
+    max-width:1280px;
+    height:100%;
+  }
+  .<%=id%> > div:first-child {
+    border-left:1px solid red;
+  }
+  .<%=id%> > div {
+    height:100%;
+    border-right:1px solid red;
+    width: 100%;
+  }
+<%}%>
 </style>
 
 <section id="<%=id%>" data-module="iframe-grid-sliders">
