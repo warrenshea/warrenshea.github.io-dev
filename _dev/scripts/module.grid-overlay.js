@@ -65,26 +65,23 @@
       },
       calculate_grid_lines: (grid_overlay_wrapper, width) => {
         const wrapper = document.querySelector(`.${grid_overlay_wrapper}`);
-        const valid_overlay_types = ["grid-overlay-standard", "grid-overlay-standard-wrap", "grid-overlay-standard-centered", "grid-overlay-rare", "grid-overlay-flexible"];
-        if (valid_overlay_types.includes(grid_overlay_wrapper)) {
-          wrapper.classList.remove("sm","md","lg","xl");
-          if (width >= 375 && width < 768) {
-            wrapper.classList.add("sm");
-          } else if (width >= 768 && width < 1024) {
-            wrapper.classList.add("md");
-          } else if (width >= 1024 && width < 1280) {
-            wrapper.classList.add("lg");
-          } else {
-            wrapper.classList.add("xl");
-          }
+        wrapper.classList.remove("sm","md","lg","xl");
+        if (width >= breakpoints.sm_min && width < breakpoints.md_min) {
+          wrapper.classList.add("sm");
+        } else if (width >= breakpoints.md_min && width < breakpoints.lg_min) {
+          wrapper.classList.add("md");
+        } else if (width >= breakpoints.lg_min && width < breakpoints.xl_min) {
+          wrapper.classList.add("lg");
+        } else {
+          wrapper.classList.add("xl");
         }
         wrapper.style.width = `${width}px`;
       },
       range_slider_input_1: (id) => {
         let val1 = state[id]['slider_1'].value;
         let val2 = state[id]['slider_2'].value;
-        if (val1 > -750) {
-          val1 = '-750';
+        if (val1 > (breakpoints.sm_min * -2)) {
+          val1 = (breakpoints.sm_min * -2).toString();
           state[id]['slider_1'].value = val1;
           state[id]['slider_1'].setAttribute('value', val1);
           state[id]['slider_2'].value = val2;
@@ -104,8 +101,8 @@
       range_slider_input_2: (id) => {
         let val1 = state[id]['slider_1'].value;
         let val2 = state[id]['slider_2'].value;
-        if (val2 < 750) {
-          val2 = '750';
+        if (val2 < (breakpoints.sm_min * 2)) {
+          val2 = (breakpoints.sm_min * -2).toString();
           state[id]['slider_1'].value = val1;
           state[id]['slider_1'].setAttribute('value', val1);
           state[id]['slider_2'].value = val2;
@@ -120,70 +117,58 @@
         const query = { action };
         state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
         state[id]['iframe'].style.width = `${Math.abs(val2 / 2)}px`;
-        self.calculate_grid_lines(id, Math.min(1280, Math.abs(val2 / 2)));
+        self.calculate_grid_lines(id, Math.min(breakpoints.xl_min, Math.abs(val2 / 2)));
       },
       force_grid: (id, grid_value) => {
         const action = "asking_for_height";
         const query = { action };
         switch (grid_value) {
-          case 1440:
-            //console.log(`force_grid (1440) > asking_for_height`);
-            state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
-            state[id]['slider_1'].value = -2880;
-            state[id]['slider_1'].setAttribute('value', -2880);
-            state[id]['slider_2'].value = 2880;
-            state[id]['slider_2'].setAttribute('value', 2880);
-            state[id]['iframe'].style.width = `${1440}px`;
-            self.calculate_grid_lines(id, 1280);
-            state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(2880 / 2))}px`;
-            storm_eagle.range_slider.ui.update_slider_track(state[id]['slider_1'].getAttribute('id'));
-            break;
           case 1280:
             //console.log(`force_grid (1280) > asking_for_height`);
             state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
-            state[id]['slider_1'].value = -2560;
-            state[id]['slider_1'].setAttribute('value', -2560);
-            state[id]['slider_2'].value = 2560;
-            state[id]['slider_2'].setAttribute('value', 2560);
-            state[id]['iframe'].style.width = `${1280}px`;
-            self.calculate_grid_lines(id, 1280);
-            state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(2560 / 2))}px`;
+            state[id]['slider_1'].value = breakpoints.xl_min * 2 * -1;
+            state[id]['slider_1'].setAttribute('value', breakpoints.xl_min * 2 * -1);
+            state[id]['slider_2'].value = breakpoints.xl_min * 2;
+            state[id]['slider_2'].setAttribute('value', breakpoints.xl_min * 2);
+            state[id]['iframe'].style.width = `${breakpoints.xl_min}px`;
+            self.calculate_grid_lines(id, breakpoints.xl_min);
+            state[id]['range_slider_width'].value = `  ${breakpoints.xl_min}px`;
             storm_eagle.range_slider.ui.update_slider_track(state[id]['slider_1'].getAttribute('id'));
             break;
           case 1024:
             //console.log(`force_grid (1024) > asking_for_height`);
             state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
-            state[id]['slider_1'].value = -2048;
-            state[id]['slider_1'].setAttribute('value', -2048);
-            state[id]['slider_2'].value = 2048;
-            state[id]['slider_2'].setAttribute('value', 2048);
-            state[id]['iframe'].style.width = `${1024}px`;
-            self.calculate_grid_lines(id, 1024);
-            state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(2048 / 2))}px`;
+            state[id]['slider_1'].value = breakpoints.lg_min * 2 * -1;
+            state[id]['slider_1'].setAttribute('value', breakpoints.lg_min * 2 * -1);
+            state[id]['slider_2'].value = breakpoints.lg_min * 2;
+            state[id]['slider_2'].setAttribute('value', breakpoints.lg_min* -1);
+            state[id]['iframe'].style.width = `${breakpoints.lg_min}px`;
+            self.calculate_grid_lines(id, breakpoints.lg_min);
+            state[id]['range_slider_width'].value = `  ${breakpoints.lg_min}px`;
             storm_eagle.range_slider.ui.update_slider_track(state[id]['slider_1'].getAttribute('id'));
             break;
           case 768:
             //console.log(`force_grid (768) > asking_for_height`);
             state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
-            state[id]['slider_1'].value = -1536.4;
-            state[id]['slider_1'].setAttribute('value', -1536.4);
-            state[id]['slider_2'].value = 1536.4;
-            state[id]['slider_2'].setAttribute('value', 1536.4);
-            state[id]['iframe'].style.width = `${768.2}px`;
-            self.calculate_grid_lines(id, 768.2);
-            state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(1536 / 2))}px`;
+            state[id]['slider_1'].value = breakpoints.md_min * 2 * -1;
+            state[id]['slider_1'].setAttribute('value', breakpoints.md_min * 2 * -1);
+            state[id]['slider_2'].value = breakpoints.md_min * 2;
+            state[id]['slider_2'].setAttribute('value', breakpoints.md_min* -1);
+            state[id]['iframe'].style.width = `${breakpoints.md_min}px`;
+            self.calculate_grid_lines(id, breakpoints.md_min);
+            state[id]['range_slider_width'].value = `  ${breakpoints.md_min}px`;
             storm_eagle.range_slider.ui.update_slider_track(state[id]['slider_1'].getAttribute('id'));
             break;
           case 375:
             //console.log(`force_grid (375) > asking_for_height`);
             state[id]['iframe'].contentWindow.postMessage(JSON.stringify(query), window.location.origin);
-            state[id]['slider_1'].value = -750;
-            state[id]['slider_1'].setAttribute('value', -750);
-            state[id]['slider_2'].value = 750;
-            state[id]['slider_2'].setAttribute('value', 750);
-            state[id]['iframe'].style.width = `${375}px`;
-            self.calculate_grid_lines(id, 375);
-            state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(750 / 2))}px`;
+            state[id]['slider_1'].value = breakpoints.sm_min * 2 * -1;
+            state[id]['slider_1'].setAttribute('value', breakpoints.sm_min * 2 * -1);
+            state[id]['slider_2'].value = breakpoints.sm_min * 2;
+            state[id]['slider_2'].setAttribute('value', breakpoints.sm_min * 2);
+            state[id]['iframe'].style.width = `${breakpoints.sm_min}px`;
+            self.calculate_grid_lines(id, breakpoints.sm_min);
+            state[id]['range_slider_width'].value = `  ${breakpoints.sm_min}px`;
             storm_eagle.range_slider.ui.update_slider_track(state[id]['slider_1'].getAttribute('id'));
             break;
           default:
@@ -197,7 +182,6 @@
             prev_body_width = document.querySelector('body').offsetWidth;
             Object.keys(state).forEach((key) => {
               self.update_range_sliders(key);
-              //self.update_iframe_width(key);
             });
           }
         }
