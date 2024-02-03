@@ -11,7 +11,8 @@
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css"
+                "/stylesheets/core.css",
+                "/stylesheets/grid-overlay.css"
             ],
             "scripts": [
                 "/scripts/module.grid-overlay.js",
