@@ -27,8 +27,8 @@ storm_eagle.module('grid_send_height', () => {
       if (height !== 0) {
         const action = "update_height";
         const new_height = height;
-        const new_id = document.querySelector("body").getAttribute("data-iframe-id");
-        const query = { action, new_height, new_id };
+        const id = document.querySelector("body").getAttribute("data-iframe-id");
+        const query = { action, new_height, id };
         parent.postMessage(JSON.stringify(query), window.location.origin);
       }
     }
