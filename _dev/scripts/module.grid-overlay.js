@@ -6,7 +6,7 @@
     return {
       initialize: () => {
         self = storm_eagle.grid_overlay;
-        document.querySelectorAll('[data-module="iframe-grid-sliders"]').forEach((el, index) => {
+        document.querySelectorAll('[data-module="iframe-grid-overlay"]').forEach((el, index) => {
           let id = el.getAttribute('id');
           state[id] = {
             iframe: el.querySelector('[data-module="iframe-grid"]'),
@@ -14,7 +14,6 @@
             slider_1: el.querySelector('[data-module="range-slider.input-1"]'),
             slider_2: el.querySelector('[data-module="range-slider.input-2"]'),
             range_slider_width: el.querySelector('[data-module="range-slider-width"]'),
-            overlay_grid_lines: el.querySelectorAll(`.${id} > div`),
           };
         });
         self.add_message_listener();
@@ -25,13 +24,13 @@
         window.addEventListener('message', (event) => {
           // console.log(`receiving message: ${event.data}`);
           if (event.data !== "") {
-            let { action, new_height, new_id } = JSON.parse(event.data);
+            let { action, new_height, id } = JSON.parse(event.data);
             if (action === "update_height") {
-              // console.log(state[new_id]['iframe']);
-              // console.log(`grid_overlay.js > message recieved > ${new_height}:${new_id}`);
+              // console.log(state[id]['iframe']);
+              // console.log(`grid_overlay.js > message recieved > ${new_height}:${id}`);
               new_height = parseInt(new_height);
-              state[new_id]['iframe'].style.height = `${new_height + 1}px`;
-              self.update_range_sliders(new_id);
+              state[id]['iframe'].style.height = `${new_height + 1}px`;
+              self.update_range_sliders(id);
               if (storm_eagle.isotope_cards) {
                 storm_eagle.isotope_cards.refresh_isotope();
               }
@@ -54,14 +53,10 @@
         }
       },
       show_grid: (id) => {
-        state[id]['overlay_grid_lines'].forEach((el) => {
-          el.classList.remove('hide');
-        });
+        document.querySelector(`.${id}`).classList.remove('hide');
       },
       hide_grid: (id) => {
-        state[id]['overlay_grid_lines'].forEach((el) => {
-          el.classList.add('hide');
-        });
+        document.querySelector(`.${id}`).classList.add('hide');
       },
       calculate_grid_lines: (grid_overlay_wrapper, width) => {
         const wrapper = document.querySelector(`.${grid_overlay_wrapper}`);
@@ -102,7 +97,7 @@
         let val1 = state[id]['slider_1'].value;
         let val2 = state[id]['slider_2'].value;
         if (val2 < (breakpoints.sm_min * 2)) {
-          val2 = (breakpoints.sm_min * -2).toString();
+          val2 = (breakpoints.sm_min * 2).toString();
           state[id]['slider_1'].value = val1;
           state[id]['slider_1'].setAttribute('value', val1);
           state[id]['slider_2'].value = val2;
@@ -200,7 +195,7 @@
             el.style.backgroundColor = "#3169b2";
           }
         }
-        document.querySelectorAll(`[data-module="iframe-grid-sliders"] [data-module="slider.fill"]`).forEach((el) => {
+        document.querySelectorAll(`[data-module="iframe-grid-overlay"] [data-module="slider.fill"]`).forEach((el) => {
           storm_eagle.resize_observer(el, change_fill_color, { "props": el });
         });
       },
