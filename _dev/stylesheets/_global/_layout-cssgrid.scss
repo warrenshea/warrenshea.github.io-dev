@@ -19,6 +19,14 @@ $sizes: (
       .#{$prefix}gap\:#{$size-name} {
         gap: #{$size-value};
       }
+
+      .#{$prefix}col-gap\:#{$size-name} {
+        column-gap: #{$size-value};
+      }
+
+      .#{$prefix}row-gap\:#{$size-name} {
+        row-gap: #{$size-value};
+      }
     }
   }
 }
