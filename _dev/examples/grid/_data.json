@@ -15,6 +15,7 @@
                 "/stylesheets/grid-overlay.css"
             ],
             "scripts": [
+                "/scripts/module.tabs.js",
                 "/scripts/module.grid-overlay.js",
                 "/scripts/module.slider.js",
                 "/scripts/module.form.switch.button.js",
