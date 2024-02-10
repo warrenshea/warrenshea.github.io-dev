@@ -4,229 +4,517 @@
         <h1 class="w:12 play:bold fs:40px color:eerie-black">Grid and Legacy Grid Examples</h1>
       </section>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.common.ejs`) %>
-
-      <section class="row">
-        <div class="w:12 b-onyx:1px brr:4px p:16px">
-          <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Grid</h2>
-          <ul class="row ml:16px">
-            <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
-            <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
-            <li class="w:3 pb:12px"><strong>Column Gap</strong>:
-              <dl class="display:flex flex-flow:row-wrap" style="width:150px">
-                <dt class="heebo:bold w0:3 text-align:right">SM</dt>
-                <dd class="offset0:1 w0:8">1rem (16px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">MD</dt>
-                <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">LG</dt>
-                <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">XL</dt>
-                <dd class="offset0:1 w0:8">2rem (32px)</dd>
-              </dl>
-            </li>
-            <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>:
-              <dl class="display:flex flex-flow:row-wrap" style="width:150px">
-                <dt class="heebo:bold w0:3 text-align:right">SM</dt>
-                <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">MD</dt>
-                <dd class="offset0:1 w0:8">2rem (32px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">LG</dt>
-                <dd class="offset0:1 w0:8">2rem (32px)</dd>
-                <dt class="heebo:bold w0:3 text-align:right">XL</dt>
-                <dd class="offset0:1 w0:8">0</dd>
-              </dl>
-            </li>
-          </ul>
-        </li>
-      </section>
-
-      <div class="row pt:32px">
-        <div class="w:12">
-          <h3 class="play text-align:center">Standard Grid resizing</h3>
+      <div class="pb:32px">
+        <div role="tablist" id class="w:12" data-module="tabs" data-tabs-initial="[1,0,0,0]" data-tab-trigger-inactive-classes="bgc:white-smoke,color:gray,bb-gray:1px" data-tab-trigger-active-classes="bgc:white,color:blue,bb-white:1px" data-tab-panel-inactive-classes="display:none" data-tab-panel-active-classes="display:block">
+          <div class="row w:12 md+:align-self:centered align:center">
+            <button type="button" role="tab" hidden class="sm=:w:12 b-gray:1px mx:4px p:12px heebo:bold" data-module="tabs.trigger" id aria-controls tabindex aria-label="Learn more about Tab 1: Two dogs, expands/collapses a pop-up">
+              Grid (CSS Grid) w/ Column Gap
+            </button>
+            <button type="button" role="tab" hidden class="sm=:w:12 b-gray:1px mx:4px p:12px heebo:bold" data-module="tabs.trigger" id aria-controls tabindex aria-label="Learn more about Tab 2: Lorem Ipsum Copy, expands/collapses a pop-up">
+              Grid (CSS Grid) w/o Column Gap
+            </button>
+            <button type="button" role="tab" hidden class="sm=:w:12 b-gray:1px mx:4px p:12px heebo:bold" data-module="tabs.trigger" id aria-controls tabindex aria-label="Learn more about Tab 1: Two dogs, expands/collapses a pop-up">
+              Grid (Flexbox) w/ Column Gap
+            </button>
+            <button type="button" role="tab" hidden class="sm=:w:12 b-gray:1px mx:4px p:12px heebo:bold" data-module="tabs.trigger" id aria-controls tabindex aria-label="Learn more about Tab 2: Lorem Ipsum Copy, expands/collapses a pop-up">
+              Grid (Flexbox) w/o Column Gap
+            </button>
+          </div>
         </div>
-      </div>
-
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-standard",
-      grid_type: "grid-type-gap",
-      iframe: "iframe-grid-standard.html"
-    })
-%>
-
-      <div class="row pt:32px">
-        <div class="w:12">
-          <h3 class="play text-align:center">Standard Grid (Wrap) resizing</h3>
-        </div>
-      </div>
-
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-standard-wrap",
-      grid_type: "grid-type-gap",
-      iframe: "iframe-grid-standard-wrap.html"
-    })
-%>
-
-      <div class="row pt:32px">
-        <div class="w:12">
-          <h3 class="play text-align:center">Standard Grid (Centered) resizing</h3>
-        </div>
-      </div>
-
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-standard-centered",
-      grid_type: "grid-type-gap",
-      iframe: "iframe-grid-standard-centered.html"
-    })
-%>
-
-      <div class="row pt:32px">
-        <div class="w:12">
-          <h3 class="play text-align:center">Rare Grid resizing</h3>
-        </div>
-      </div>
-
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-rare",
-      grid_type: "grid-type-gap",
-      iframe: "iframe-grid-rare.html"
-    })
-%>
-
-      <div class="row pt:32px">
-        <div class="w:12">
-          <h3 class="play text-align:center">Fully customizible Grid resizing</h3>
-          <div class="row0 py:16px">
-            <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
-              <strong>Row 1</strong>: 6 + 6<br>
-              <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
+        <div data-module="tabs.panel" id aria-labelledby role="tabpanel" class="bt-gray:1px z-index:-1 pt:16px" style="margin-top:-1px">
+          <div class="display:none">Grid (Gap) w/ Column Gap</div>
+          <section class="row">
+            <div class="w:12 b-onyx:1px brr:4px p:16px">
+              <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Grid (CSS Grid) with Column Gap</h2>
+              <ul class="row ml:16px">
+                <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
+                <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
+                <li class="w:3 pb:12px"><strong>Column Gap</strong>:
+                  <dl class="display:flex flex-flow:row-wrap" style="width:150px">
+                    <dt class="heebo:bold w0:3 text-align:right">SM</dt>
+                    <dd class="offset0:1 w0:8">1rem (16px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">MD</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">LG</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">XL</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                  </dl>
+                </li>
+                <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>:
+                  <dl class="display:flex flex-flow:row-wrap" style="width:150px">
+                    <dt class="heebo:bold w0:3 text-align:right">SM</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">MD</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">LG</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">XL</dt>
+                    <dd class="offset0:1 w0:8">0</dd>
+                  </dl>
+                </li>
+              </ul>
             </div>
-            <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
-              <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
-              <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
-            </div>
-            <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
-              <strong>Row 1</strong>: Centered 8<br>
-              <strong>Row 2</strong>: 6 + 6<br>
-              <strong>Row 3</strong>: 3 + 8
-            </div>
-            <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
-              <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
-              <strong>Row 2</strong>: Centered 6<br>
-              <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+          </section>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid resizing</h3>
             </div>
           </div>
-        </div>
-      </div>
 
 <%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-flexible",
+      id: "grid-overlay-cssgrid-gap-standard",
       grid_type: "grid-type-gap",
-      iframe: "iframe-grid-flexible.html"
+      iframe: "iframe-cssgrid-gap-standard.html"
     })
 %>
 
-      <hr class="mt:64px">
-
-      <div class="bgc:white-smoke pt:64px pb:96px">
-
-        <section class="row bgc:white">
-          <div class="w:12 b-onyx:1px brr:4px p:16px">
-            <h2 class="w:12 play:bold fs:32px color:eerie-black pb:32px">Config: Legacy Grid</h2>
-            <ul class="row ml:16px">
-              <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
-              <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
-              <li class="w:3 pb:12px"><strong>Column Gap:</strong> 0</li>
-              <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>: 0</li>
-            </ul>
-          </li>
-        </section>
-
-        <div class="row pt:32px">
-          <div class="w:12">
-            <h3 class="play text-align:center">Standard Grid resizing (Legacy Grid)</h3>
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Wrap) resizing</h3>
+            </div>
           </div>
-        </div>
 
 <%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-legacy-standard",
-      grid_type: "grid-type-legacy",
-      iframe: "iframe-grid-legacy-standard.html"
+      id: "grid-overlay-cssgrid-gap-standard-wrap",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-cssgrid-gap-standard-wrap.html"
     })
 %>
 
-        <div class="row pt:32px">
-          <div class="w:12">
-            <h3 class="play text-align:center">Standard Grid (Wrap) resizing (Legacy Grid)</h3>
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Centered) resizing</h3>
+            </div>
           </div>
-        </div>
 
 <%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-legacy-standard-wrap",
-      grid_type: "grid-type-legacy",
-      iframe: "iframe-grid-legacy-standard-wrap.html"
+      id: "grid-overlay-cssgrid-gap-standard-centered",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-cssgrid-gap-standard-centered.html"
     })
 %>
 
-        <div class="row pt:32px">
-          <div class="w:12">
-            <h3 class="play text-align:center">Standard Grid (Centered) resizing (Legacy Grid)</h3>
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Rare Grid resizing</h3>
+            </div>
           </div>
-        </div>
 
 <%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-legacy-standard-centered",
-      grid_type: "grid-type-legacy",
-      iframe: "iframe-grid-legacy-standard-centered.html"
+      id: "grid-overlay-cssgrid-gap-rare",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-cssgrid-gap-rare.html"
     })
 %>
 
-        <div class="row pt:32px">
-          <div class="w:12">
-            <h3 class="play text-align:center">Rare Grid resizing (Legacy Grid)</h3>
-          </div>
-        </div>
-
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-legacy-rare",
-      grid_type: "grid-type-legacy",
-      iframe: "iframe-grid-legacy-rare.html"
-    })
-%>
-
-        <div class="row pt:32px">
-          <div class="w:12">
-            <h3 class="play text-align:center">Fully customizible Grid resizing (Legacy Grid)</h3>
-            <div class="row0 py:16px">
-              <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
-                <strong>Row 1</strong>: 6 + 6<br>
-                <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
-              </div>
-              <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
-                <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
-                <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
-              </div>
-              <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
-                <strong>Row 1</strong>: Centered 8<br>
-                <strong>Row 2</strong>: 6 + 6<br>
-                <strong>Row 3</strong>: 3 + 8
-              </div>
-              <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
-                <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
-                <strong>Row 2</strong>: Centered 6<br>
-                <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Fully customizible Grid resizing</h3>
+              <div class="row0 py:16px">
+                <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
+                  <strong>Row 1</strong>: 6 + 6<br>
+                  <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
+                  <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
+                  <strong>Row 1</strong>: Centered 8<br>
+                  <strong>Row 2</strong>: 6 + 6<br>
+                  <strong>Row 3</strong>: 3 + 8
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
+                  <strong>Row 2</strong>: Centered 6<br>
+                  <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
 <%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
-      id: "grid-overlay-legacy-flexible",
-      grid_type: "grid-type-legacy",
-      iframe: "iframe-grid-legacy-flexible.html"
+      id: "grid-overlay-cssgrid-gap-flexible",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-cssgrid-gap-flexible.html"
     })
 %>
 
-        <div class="py:96px"></div>
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Using Split classes</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-gap-split",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-cssgrid-gap-split.html"
+    })
+%>
+        </div>
+        <div data-module="tabs.panel" id aria-labelledby role="tabpanel" class="bt-gray:1px z-index:-1 pt:16px" style="margin-top:-1px">
+          <div class="display:none">Grid (Current) w/ Column Gap</div>
+          <section class="row bgc:white">
+            <div class="w:12 b-onyx:1px brr:4px p:16px">
+              <h2 class="w:12 play:bold fs:32px color:eerie-black pb:32px">Grid (CSS Grid) without Column Gap (Flushed)</h2>
+              <ul class="row ml:16px">
+                <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
+                <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
+                <li class="w:3 pb:12px"><strong>Column Gap:</strong> 0</li>
+                <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>: 0</li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-standard",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-standard.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Wrap) resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-standard-wrap",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-standard-wrap.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Centered) resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-standard-centered",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-standard-centered.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Rare Grid resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-rare",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-rare.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Fully customizible Grid resizing (Legacy Grid)</h3>
+              <div class="row0 py:16px">
+                <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
+                  <strong>Row 1</strong>: 6 + 6<br>
+                  <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
+                  <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
+                  <strong>Row 1</strong>: Centered 8<br>
+                  <strong>Row 2</strong>: 6 + 6<br>
+                  <strong>Row 3</strong>: 3 + 8
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
+                  <strong>Row 2</strong>: Centered 6<br>
+                  <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+                </div>
+              </div>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-flexible",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-flexible.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Using Split classes (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-cssgrid-legacy-split",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-cssgrid-legacy-split.html"
+    })
+%>
+
+        </div>
+        <div data-module="tabs.panel" id aria-labelledby role="tabpanel" class="bt-gray:1px z-index:-1 pt:16px" style="margin-top:-1px">
+          <div class="display:none">Grid (Gap) w/ Column Gap</div>
+          <section class="row">
+            <div class="w:12 b-onyx:1px brr:4px p:16px">
+              <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Grid (Flexbox) with Column Gap</h2>
+              <ul class="row ml:16px">
+                <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
+                <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
+                <li class="w:3 pb:12px"><strong>Column Gap</strong>:
+                  <dl class="display:flex flex-flow:row-wrap" style="width:150px">
+                    <dt class="heebo:bold w0:3 text-align:right">SM</dt>
+                    <dd class="offset0:1 w0:8">1rem (16px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">MD</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">LG</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">XL</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                  </dl>
+                </li>
+                <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>:
+                  <dl class="display:flex flex-flow:row-wrap" style="width:150px">
+                    <dt class="heebo:bold w0:3 text-align:right">SM</dt>
+                    <dd class="offset0:1 w0:8">1.5rem (24px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">MD</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">LG</dt>
+                    <dd class="offset0:1 w0:8">2rem (32px)</dd>
+                    <dt class="heebo:bold w0:3 text-align:right">XL</dt>
+                    <dd class="offset0:1 w0:8">0</dd>
+                  </dl>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid resizing</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-standard",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-standard.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Wrap) resizing</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-standard-wrap",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-standard-wrap.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Centered) resizing</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-standard-centered",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-standard-centered.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Rare Grid resizing</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-rare",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-rare.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Fully customizible Grid resizing</h3>
+              <div class="row0 py:16px">
+                <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
+                  <strong>Row 1</strong>: 6 + 6<br>
+                  <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
+                  <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
+                  <strong>Row 1</strong>: Centered 8<br>
+                  <strong>Row 2</strong>: 6 + 6<br>
+                  <strong>Row 3</strong>: 3 + 8
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
+                  <strong>Row 2</strong>: Centered 6<br>
+                  <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+                </div>
+              </div>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-flexible",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-flexible.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Using Split classes</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-gap-split",
+      grid_type: "grid-type-gap",
+      iframe: "iframe-flexbox-gap-split.html"
+    })
+%>
+        </div>
+        <div data-module="tabs.panel" id aria-labelledby role="tabpanel" class="bt-gray:1px z-index:-1 pt:16px" style="margin-top:-1px">
+          <div class="display:none">Grid (Current) w/ Column Gap</div>
+          <section class="row bgc:white">
+            <div class="w:12 b-onyx:1px brr:4px p:16px">
+              <h2 class="w:12 play:bold fs:32px color:eerie-black pb:32px">Grid (Flexbox) without Column Gap (Flushed)</h2>
+              <ul class="row ml:16px">
+                <li class="w:3 pb:12px"><strong>Max Width:</strong> 1280px</li>
+                <li class="w:3 pb:12px"><strong>Number of Columns:</strong> 12</li>
+                <li class="w:3 pb:12px"><strong>Column Gap:</strong> 0</li>
+                <li class="w:3 pb:12px"><strong>Left and Right Padding</strong>: 0</li>
+              </ul>
+            </div>
+          </section>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-standard",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-standard.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Wrap) resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-standard-wrap",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-standard-wrap.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Standard Grid (Centered) resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-standard-centered",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-standard-centered.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Rare Grid resizing (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-rare",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-rare.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Fully customizible Grid resizing (Legacy Grid)</h3>
+              <div class="row0 py:16px">
+                <div class="w0:3" style="height:auto;border:0"><strong>SM:</strong><br>
+                  <strong>Row 1</strong>: 6 + 6<br>
+                  <strong>Row 2</strong>: 3 + 3 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>MD:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 4 + Offset(2) + 1 + Offset(2) + 1<br>
+                  <strong>Row 2</strong>: Offset(5) + 1 + Offset(5) + 1
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>LG:</strong><br>
+                  <strong>Row 1</strong>: Centered 8<br>
+                  <strong>Row 2</strong>: 6 + 6<br>
+                  <strong>Row 3</strong>: 3 + 8
+                </div>
+                <div class="w0:3" style="height:auto;border:0"><strong>XL:</strong><br>
+                  <strong>Row 1</strong>: Offset(2) + 3 + Offset(2) + 3 + 2<br>
+                  <strong>Row 2</strong>: Centered 6<br>
+                  <strong>Row 3</strong>: Offset(3) + 2 + Offset(7)
+                </div>
+              </div>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-flexible",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-flexible.html"
+    })
+%>
+
+          <div class="row pt:32px">
+            <div class="w:12">
+              <h3 class="play text-align:center">Using Split classes (Legacy Grid)</h3>
+            </div>
+          </div>
+
+<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+      id: "grid-overlay-flexbox-legacy-split",
+      grid_type: "grid-type-legacy",
+      iframe: "iframe-flexbox-legacy-split.html"
+    })
+%>
+
+        </div>
       </div>
 
     </main>
