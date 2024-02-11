@@ -1,0 +1,19 @@
+@use 'sass:math';
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    @for $i from 0 through 12 {
+      $percentage-num: math.div(100, 12);
+      $percentage: $i * $percentage-num * 1%;
+      .#{$prefix}gstart\:#{$i} {
+        grid-column-start: #{$i + 1};
+      }
+      .#{$prefix}gend\:#{$i} {
+        grid-column-end: #{$i + 1};
+      }
+    }
+  }
+}
