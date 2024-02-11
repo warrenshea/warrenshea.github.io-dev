@@ -96,6 +96,7 @@ const remove_focus_selector = [
  * storm_eagle.util.index_in_parent()
  * storm_eagle.util.closest_parent()
  * storm_eagle.util.run_str_func()
+ * storm_eagle.util.fetch()
  * storm_eagle.open_window()
  * storm_eagle.scroll_to()
  * storm_eagle.debounce()
@@ -821,7 +822,14 @@ var storm_eagle = (() => {
           return false;
         }
       },
-
+      fetch: (url) => {
+        return fetch(url)
+          .then(response => response.json())
+          .catch(err => {
+            console.warn('Something went wrong.', err);
+            return null;
+          });
+      }
     },
 
     /**
