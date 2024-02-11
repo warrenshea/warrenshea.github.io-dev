@@ -1,0 +1,85 @@
+@use 'sass:math';
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    $percentage-num: math.div(100, 12); // Moved outside the loop
+
+    @for $i from 1 through 12 {
+      $percentage: $i * $percentage-num * 1%;
+
+      .#{$prefix}w\:#{$i} {
+        flex: 0 0 calc(#{$percentage} - (var(--column-gap) * (#{12 - $i} / 12)));
+        max-width: calc(#{$percentage} - (var(--column-gap) * (#{12 - $i} / 12)));
+      }
+    }
+  }
+
+  @include breakpoint($breakpoint) {
+    @for $i from 1 through 12 {
+      $fraction: math.div(1, $i) * 100%;
+
+      .#{$prefix}w-split\:#{$i} > * {
+        flex: 0 0 calc(#{$fraction} - (var(--column-gap) * (#{$i - 1} / #{$i})));
+        max-width: calc(#{$fraction} - (var(--column-gap) * (#{$i - 1} / #{$i})));
+      }
+    }
+  }
+
+  @include breakpoint($breakpoint) {
+    $percentage-num: math.div(100, 12); // Moved outside the loop
+
+    @for $i from 1 through 12 {
+      $percentage: $i * $percentage-num * 1%;
+
+      .#{$prefix}w0\:#{$i} {
+        flex: 0 0 $percentage;
+        max-width: $percentage;
+      }
+    }
+  }
+
+  @include breakpoint($breakpoint) {
+    @for $i from 1 through 12 {
+      $fraction: math.div(1, $i) * 100%;
+
+      .#{$prefix}w0-split\:#{$i} > * {
+        flex: 0 0 $fraction;
+        max-width: $fraction;
+      }
+    }
+  }
+}
+
+.row.sm\+\:unstack > * {
+  flex: 1 1 0px;
+}
+
+.row.md\+\:unstack > * {
+  flex: 0 0 100%;
+}
+@include breakpoint(medium) {
+  .row.md\+\:unstack > * {
+    flex: 1 1 0px;
+  }
+}
+
+.row.lg\+\:unstack > * {
+  flex: 0 0 100%;
+}
+@include breakpoint(large) {
+  .row.lg\+\:unstack > * {
+    flex: 1 1 0px;
+  }
+}
+
+.row.xl\+\:unstack > * {
+  flex: 0 0 100%;
+}
+@include breakpoint(xlarge) {
+  .row.xl\+\:unstack > * {
+    flex: 1 1 0px;
+  }
+}
