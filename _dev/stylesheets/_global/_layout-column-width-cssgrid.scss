@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+@each $mediaquery in $mediaqueries {
+  $breakpoint: nth($mediaquery, 1);
+  $prefix: nth($mediaquery, 2);
+
+  @include breakpoint($breakpoint) {
+    @for $i from 1 through 12 {
+      .#{$prefix}gc\:#{$i},
+      .#{$prefix}gc0\:#{$i} {
+        grid-column: span #{$i};
+        &.#{$prefix}align-self\:centered {
+          align-self: center;
+
+          @if $i % 2 == 0 {
+            $start: math.ceil(math.div(12 - $i, 2)) + 1;
+            grid-column: $start / span #{$i};
+            margin-left: initial; //override flexbox align-self-centered class
+            margin-right: initial; //override flexbox align-self-centered class
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint($breakpoint) {
+    @for $i from 1 through 12 {
+      $fraction: math.div(1, $i) * 100%;
+
+      .#{$prefix}gc-split\:#{$i},
+      .#{$prefix}gc0-split\:#{$i} {
+        grid-template-columns: repeat($i, 1fr); // Creates a grid with $i equal columns
+        & > * {
+          grid-column: span 1 / auto; // Each child spans one fraction of the grid
+        }
+      }
+
+    }
+  }
+
+}
