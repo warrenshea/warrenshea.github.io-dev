@@ -823,11 +823,24 @@ var storm_eagle = (() => {
         }
       },
       fetch: (url) => {
+        if (!url) {
+          console.error('Fetch called without a URL');
+          return Promise.reject('No URL provided');
+        }
         return fetch(url)
-          .then(response => response.json())
+          .then(response => {
+            // Check if the response was successful
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+          })
           .catch(err => {
-            console.warn('Something went wrong.', err);
-            return null;
+            // Handle errors more specifically
+            console.error('Fetch error:', err);
+            // Depending on your application's needs, you might want to handle this differently,
+            // e.g., re-throw the error, return a default value, or return a specific error object.
+            return Promise.reject(err);
           });
       }
     },
