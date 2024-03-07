@@ -15,13 +15,14 @@ storm_eagle.module('autocomplete', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
+      document.querySelectorAll("[data-module='autocomplete']").forEach(async (el) => {
         let id = el.getAttribute('id');
         state[id] = {
           el,
           input: el.querySelector("[data-module='autocomplete.input']"),
           input_format: JSON.parse(el.querySelector("[data-module='autocomplete.input']").getAttribute('data-autocomplete-input-format')),
           filter: el.getAttribute("data-autocomplete-filter"),
+          defaults: el.getAttribute("data-autocomplete-defaults") ? JSON.parse(el.getAttribute("data-autocomplete-defaults")) : null,
           type: el.getAttribute("data-autocomplete-type"),
           data_source_type: el.getAttribute("data-autocomplete-source-type"),
           data_source: el.getAttribute("data-autocomplete-source"),
@@ -35,25 +36,39 @@ storm_eagle.module('autocomplete', () => {
           multiselect: el.querySelector("[data-module='autocomplete.multiselect']") || false,
           multiselect_tags_id: el.querySelector("[data-module='autocomplete.multiselect-tags']") ? el.querySelector("[data-module='autocomplete.multiselect-tags']").getAttribute('id') : null,
         };
-        self.data.initialize(id);
+        await self.data.initialize(id);
+        self.ui.create_default_tags(id);
         self.event_listeners.initialize(id);
       });
     },
     data: {
       initialize: async (id) => {
         try {
-          const { data_source_type, data_source } = state[id];
+          const { defaults, data_source_type, data_source } = state[id];
           let data;
           if (data_source_type === "fetch") {
             data = await storm_eagle.util.fetch(data_source);
           } else if (data_source_type === "file") {
-            state[id]["data_raw"] = data_source;
-            state[id]["data_working"] = data_source;
+            data = data_source;
           }
           if (data) {
             state[id]["data_raw"] = data;
+
+            // Initialize data_working with data, assuming no entry is selected initially
             state[id]["data_working"] = data.map(item => ({ ...item, status: '' }));
+
+            // If there are defaults, mark the corresponding entries in data_working as "selected"
+            if (defaults && defaults.length > 0) {
+              // Iterate over data_working to find and mark defaults
+              state[id]["data_working"].forEach(item => {
+                if (defaults.includes(item.id) || defaults.includes(item.name)) {
+                  // Mark this item as selected
+                  item.status = 'selected';
+                }
+              });
+            }
           }
+
         } catch (error) {
           console.error('Failed to initialize data:', error);
         }
@@ -185,6 +200,19 @@ storm_eagle.module('autocomplete', () => {
       },
     },
     ui: {
+      create_default_tags: (id) => {
+        const { data_working, multiselect_tags_id } = state[id];
+        if (data_working && multiselect_tags_id) {
+          // Find the container for the tags
+          const tagsContainer = document.getElementById(multiselect_tags_id);
+          data_working.forEach((item, index) => {
+            if (item.status === 'selected') {
+              let tag = self.util.create_tag_html(id, index, item.name);
+              tagsContainer.innerHTML += tag;
+            }
+          });
+        }
+      },
       show_autocomplete_list: (id) => {
         const { type, input, filter, data_working, results, max_num_results } = state[id];
         const query = input.value.trim();
@@ -230,12 +258,15 @@ storm_eagle.module('autocomplete', () => {
           results.innerHTML = "";
           input.value = result_string;
         } else if (type === "multiselect") {
+          const { multiselect_tags_id } = state[id];
+          console.log(multiselect_tags_id);
           data_working[index]["status"] = "selected";
           input.value = "";
           //self.data.get_working(id);
           self.ui.show_autocomplete_list(id);
-          let tag = `<div class='bgc:blue color:white heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${result_string} <button data-module='autocomplete.tag.button' class='heebo:bold fs:18px color:white' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});document.getElementById("${input_id}").focus();'>&times;</button></div>`;
-          document.querySelector(`[data-module="autocomplete.multiselect-tags"]:has(+ #${input_id})`).innerHTML += tag;
+          let tag = self.util.create_tag_html(id, index, result_string);
+          const tagsContainer = document.getElementById(multiselect_tags_id);
+          tagsContainer.innerHTML += tag;
         }
       },
       remove_selected: (id, index) => {
@@ -245,5 +276,10 @@ storm_eagle.module('autocomplete', () => {
         self.ui.show_autocomplete_list(id);
       }
     },
+    util: {
+      create_tag_html: (id, index, result_string) => {
+        return `<div class='bgc:blue color:white heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${result_string} <button data-module='autocomplete.tag.button' class='heebo:bold fs:18px color:white' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
+      }
+    }
   };
 });
