@@ -1,13 +1,5 @@
 [
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Agumon"
   },
@@ -22,14 +14,6 @@
   {
     "digivolution": "Mega",
     "name": "War Greymon"
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
   },
   {
     "digivolution": "Rookie",
@@ -48,14 +32,6 @@
     "name": "Metal Garurumon"
   },
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Tentomon"
   },
@@ -70,14 +46,6 @@
   {
     "digivolution": "Mega",
     "name": "TyrantKabuterimon"
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
   },
   {
     "digivolution": "Rookie",
@@ -96,14 +64,6 @@
     "name": "Rosemon"
   },
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Gomamon"
   },
@@ -118,14 +78,6 @@
   {
     "digivolution": "Mega",
     "name": "Vikemon"
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
   },
   {
     "digivolution": "Rookie",
@@ -144,14 +96,6 @@
     "name": "Phoenixmon"
   },
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Patamon"
   },
@@ -166,14 +110,6 @@
   {
     "digivolution": "Mega",
     "name": "Seraphimon"
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
   },
   {
     "digivolution": "Rookie",
@@ -192,14 +128,6 @@
     "name": "Ophanimon"
   },
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Veemon"
   },
@@ -216,36 +144,12 @@
     "name": "Imperialdramon"
   },
   {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Wommon"
   },
   {
     "digivolution": "Champion",
     "name": "Stingmon"
-  },
-  {
-    "digivolution": "Ultimate",
-    "name": ""
-  },
-  {
-    "digivolution": "Mega",
-    "name": ""
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
   },
   {
     "digivolution": "Rookie",
@@ -260,18 +164,6 @@
     "name": "Silphymon"
   },
   {
-    "digivolution": "Mega",
-    "name": ""
-  },
-  {
-    "digivolution": "Fresh",
-    "name": ""
-  },
-  {
-    "digivolution": "In-Training",
-    "name": ""
-  },
-  {
     "digivolution": "Rookie",
     "name": "Armadillomon"
   },
@@ -284,7 +176,12 @@
     "name": "Shakkoumon"
   },
   {
-    "digivolution": "Ultimate",
-    "name": ""
+    "digivolution": "Mega",
+    "name": "Omnimon"
+  },
+  {
+    "digivolution": "Mega",
+    "name": "Imperialdramon"
   }
+
 ]
