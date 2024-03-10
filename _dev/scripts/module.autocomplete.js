@@ -5,8 +5,9 @@ storm_eagle.module('autocomplete', () => {
   return {
     i18n: {
       notify: {
+        "en": 'As you start typing the application might suggest similar search terms. Use tab, up, or down arrow keys to select a suggested search string. Use Enter key to confirm that value. Use ESC key to exit the results and return focus to the input.',
         "en-CA": 'As you start typing the application might suggest similar search terms. Use tab, up, or down arrow keys to select a suggested search string. Use Enter key to confirm that value. Use ESC key to exit the results and return focus to the input.',
-        "fr-CA": "",
+        "fr": "",
       }
     },
     initialize: () => {
@@ -22,7 +23,7 @@ storm_eagle.module('autocomplete', () => {
           input: el.querySelector("[data-module='autocomplete.input']"),
           input_format: JSON.parse(el.querySelector("[data-module='autocomplete.input']").getAttribute('data-autocomplete-input-format')),
           filter: el.getAttribute("data-autocomplete-filter"),
-          defaults: el.getAttribute("data-autocomplete-defaults") ? JSON.parse(el.getAttribute("data-autocomplete-defaults")) : null,
+          input_values: el.getAttribute("data-autocomplete-values") ? JSON.parse(el.getAttribute("data-autocomplete-values")) : null,
           type: el.getAttribute("data-autocomplete-type"),
           data_source_type: el.getAttribute("data-autocomplete-source-type"),
           data_source: el.getAttribute("data-autocomplete-source"),
@@ -34,7 +35,8 @@ storm_eagle.module('autocomplete', () => {
           sr_description: el.querySelector("[data-module='autocomplete.sr-description']"),
           error_message: el.querySelector("[data-module='autocomplete.error']") || false,
           multiselect: el.querySelector("[data-module='autocomplete.multiselect']") || false,
-          multiselect_tags_id: el.querySelector("[data-module='autocomplete.multiselect-tags']") ? el.querySelector("[data-module='autocomplete.multiselect-tags']").getAttribute('id') : null,
+          multiselect_tags_container: el.querySelector("[data-module='autocomplete.multiselect-tags']") || false,
+          onupdate: el.getAttribute('data-autocomplete-onupdate-func') || false,
         };
         await self.data.initialize(id);
         self.ui.create_default_tags(id);
@@ -44,7 +46,7 @@ storm_eagle.module('autocomplete', () => {
     data: {
       initialize: async (id) => {
         try {
-          const { defaults, data_source_type, data_source } = state[id];
+          const { input_values, filter, data_source_type, data_source } = state[id];
           let data;
           if (data_source_type === "fetch") {
             data = await storm_eagle.util.fetch(data_source);
@@ -57,11 +59,11 @@ storm_eagle.module('autocomplete', () => {
             // Initialize data_working with data, assuming no entry is selected initially
             state[id]["data_working"] = data.map(item => ({ ...item, status: '' }));
 
-            // If there are defaults, mark the corresponding entries in data_working as "selected"
-            if (defaults && defaults.length > 0) {
-              // Iterate over data_working to find and mark defaults
+            // If there are input_values, mark the corresponding entries in data_working as "selected"
+            if (input_values && input_values.length > 0) {
+              // Iterate over data_working to find and mark input_values
               state[id]["data_working"].forEach(item => {
-                if (defaults.includes(item.id) || defaults.includes(item.name)) {
+                if (input_values.includes(item[filter])) {
                   // Mark this item as selected
                   item.status = 'selected';
                 }
@@ -73,6 +75,15 @@ storm_eagle.module('autocomplete', () => {
           console.error('Failed to initialize data:', error);
         }
       },
+      update_input_value: (id, selected_values) => {
+        console.log(selected_values);
+        const { el, onupdate } = state[id];
+        state[id].input_values = selected_values;
+        el.setAttribute('data-autocomplete-values', JSON.stringify(selected_values));
+        if (onupdate) {
+          storm_eagle.util.run_str_func( onupdate, { id } );
+        }
+      }
     },
     a11y: {
       update_sr_description: (id, value) => {
@@ -201,14 +212,13 @@ storm_eagle.module('autocomplete', () => {
     },
     ui: {
       create_default_tags: (id) => {
-        const { data_working, multiselect_tags_id } = state[id];
-        if (data_working && multiselect_tags_id) {
+        const { data_working, filter, multiselect_tags_container } = state[id];
+        if (data_working && multiselect_tags_container) {
           // Find the container for the tags
-          const tagsContainer = document.getElementById(multiselect_tags_id);
           data_working.forEach((item, index) => {
             if (item.status === 'selected') {
-              let tag = self.util.create_tag_html(id, index, item.name);
-              tagsContainer.innerHTML += tag;
+              let tag = self.util.create_tag_html(id, index, item[filter]);
+              multiselect_tags_container.innerHTML += tag;
             }
           });
         }
@@ -251,29 +261,39 @@ storm_eagle.module('autocomplete', () => {
         }
       },
       autocomplete_fill: (id, index, result_string) => {
-        const { type, input, max_num_results, results, data_working } = state[id];
+        const { el, filter, type, input, max_num_results, results, data_working } = state[id];
         const input_id = input.getAttribute("id");
         const query = input.value.trim();
         if (type === "single-select") {
           results.innerHTML = "";
           input.value = result_string;
         } else if (type === "multiselect") {
-          const { multiselect_tags_id } = state[id];
-          console.log(multiselect_tags_id);
+          const { multiselect_tags_container } = state[id];
           data_working[index]["status"] = "selected";
+
           input.value = "";
-          //self.data.get_working(id);
           self.ui.show_autocomplete_list(id);
           let tag = self.util.create_tag_html(id, index, result_string);
-          const tagsContainer = document.getElementById(multiselect_tags_id);
-          tagsContainer.innerHTML += tag;
+          multiselect_tags_container.innerHTML += tag;
+
+          const selected_values = state[id].input_values || [];
+          const new_value = data_working[index][filter]; // Assuming 'name' is the identifier
+          if (!selected_values.includes(new_value)) {
+            selected_values.push(new_value);
+          }
+          self.data.update_input_value(id, selected_values);
         }
       },
       remove_selected: (id, index) => {
-        const { input, max_num_results, results, data_working } = state[id];
+        const { el, filter, input, max_num_results, results, data_working } = state[id];
         document.getElementById(id).querySelector(`[data-autocomplete-tag="${index}"]`).remove();
         data_working[index]["status"] = "";
-        self.ui.show_autocomplete_list(id);
+        //self.ui.show_autocomplete_list(id);
+
+        const selected_values = state[id].input_values || [];
+        const value_to_remove = data_working[index][filter]; // Assuming 'name' is the identifier
+        const updated_values = selected_values.filter(value => value !== value_to_remove);
+        self.data.update_input_value(id, updated_values);
       }
     },
     util: {
