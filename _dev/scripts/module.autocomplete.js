@@ -76,7 +76,6 @@ storm_eagle.module('autocomplete', () => {
         }
       },
       update_input_value: (id, selected_values) => {
-        console.log(selected_values);
         const { el, onupdate } = state[id];
         state[id].input_values = selected_values;
         el.setAttribute('data-autocomplete-values', JSON.stringify(selected_values));
