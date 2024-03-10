@@ -8,11 +8,12 @@
 @import '_config/media-queries.scss';
 @import '_config/variables-box-shadow.scss';
 
-.b-positive-light-dashed\:2px { border: rem-calc(2) dashed $positive-light; }
-.b-negative-light-dashed\:2px { border: rem-calc(2) dashed $negative-light; }
-.b-blue-dashed\:2px { border: rem-calc(2) dashed $blue; }
-.b-dark-goldenrod-dashed\:2px { border: rem-calc(2) dashed $dark-goldenrod; }
-.b-english-violet-dashed\:2px { border: rem-calc(2) dashed $english-violet; }
+[data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; }
+[data-zs-page-editor-mode-remove-border] { border: rem-calc(2) dashed $negative-light; }
+[data-zs-page-editor-mode-reorder-border] { border: rem-calc(2) dashed $blue; }
+[data-zs-page-editor-mode-reorder-child-border] { border: rem-calc(4) solid $blue; }
+[data-zs-page-editor-mode-edit-border] { border: rem-calc(2) dashed $dark-goldenrod; }
+[data-zs-page-editor-mode-publish-border] { border: rem-calc(2) dashed $english-violet; }
 
 .color\:onyx { color: $onyx; }
 
@@ -169,34 +170,6 @@
   }
 }
 
-.grid-background {
-  background-size: rem-calc(16) rem-calc(16);
-  background-image: radial-gradient(circle, $platinum rem-calc(2), #f9f9f9 0);
-  background-position-x: center;
-}
-
-.overlay-grid-lines {
-  position: absolute;
-  top: 0;
-  width: 0;
-  border: rem-calc(1) solid $red;
-  opacity: .4;
-  height: 100%;
-  display: inline-block;
-  margin: 0;
-}
-
-[data-module="slider.labels"] {
-  .sm-left { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 385px); }
-  .sm-right { color:$silver;width:198px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 385px); }
-  .md-left { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 511px); }
-  .md-right { color:$silver;width:126px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 511px); }
-  .lg-left { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - 639px); }
-  .lg-right { color:$silver;width:127px;height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - 639px); }
-  .xl-left { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;right:50%;text-align:right;padding-right:670px; }
-  .xl-right { color:$silver;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;left:50%;text-align:left;padding-left:670px; }
-}
-
 .isotope-card-tag {
   margin: rem-calc(4) rem-calc(8);
   padding: rem-calc(4);
@@ -207,7 +180,7 @@
 
 .form\:theme\:cms {
   /* label styles */
-  input[type='text'] + label,
+  input[type='text']:not([data-module='autocomplete.input']) + label,
   input[type='number'] + label,
   input[type='email'] + label,
   input[type='password'] + label,
@@ -291,6 +264,13 @@
     }
   }
 
+  [data-module="autocomplete"] [data-module="autocomplete.multiselect-tags"] [data-autocomplete-tag] {
+    font-size: rem-calc(14);
+    > button {
+      font-size: rem-calc(16);
+    }
+  }
+
   input[type='text'],
   input[type='number'],
   input[type='email'],
@@ -309,6 +289,9 @@
     &:focus-visible {
       outline: 0;
     }
+  }
+  input[type='text'][data-module='autocomplete.input'] {
+    margin-top: 0;
   }
   input[type='text']:focus + label:before,
   input[type='text'].focus + label:before,
