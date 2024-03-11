@@ -381,11 +381,7 @@ fieldset.unstyle {
   }
 
   [data-module="autocomplete.multiselect"] input[type='text'][data-module='autocomplete.input']{
-    height: auto;
     margin-top: 0;
-    & + label.sr-only {
-      position: absolute;
-    }
   }
 
   [data-module='slider.input-container'],
