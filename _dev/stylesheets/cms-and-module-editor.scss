@@ -180,7 +180,7 @@
 
 .form\:theme\:cms {
   /* label styles */
-  input[type='text']:not([data-module='autocomplete.input']) + label,
+  input[type='text'] + label,
   input[type='number'] + label,
   input[type='email'] + label,
   input[type='password'] + label,
@@ -314,7 +314,7 @@
     font-size: rem-calc(14);
     font-family: 'heebo-regular';
     color: $negative;
-    background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
+    background: url(/dist/codebase/chill-penguin/assets/icon/exclamation-circle.negative.svg) no-repeat top left;
     background-size: rem-calc(16) rem-calc(16);
     visibility: hidden;
     opacity: 0;
@@ -349,7 +349,7 @@
       display: flex;
       line-height: rem-calc(24);
       padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
-      background-image: url(../assets/icon/times.negative.svg);
+      background-image: url(/dist/codebase/chill-penguin/assets/icon/times.negative.svg);
       background-repeat: no-repeat;
       background-position: top rem-calc(2) left rem-calc(2);
       background-size: rem-calc(24) rem-calc(24);
@@ -357,10 +357,10 @@
         display: flex;
       }
       &.pass {
-        background-image: url(../assets/icon/check.positive.svg);
+        background-image: url(/dist/codebase/chill-penguin/assets/icon/check.positive.svg);
       }
       &.fail {
-        background-image: url(../assets/icon/times.negative.svg);
+        background-image: url(/dist/codebase/chill-penguin/assets/icon/times.negative.svg);
       }
     }
   }
@@ -369,7 +369,7 @@
   select {
     cursor: pointer;
     background-color: transparent;
-    background-image: url('../assets/icon/chevron-down.blue.svg');
+    background-image: url('/dist/codebase/chill-penguin/assets/icon/chevron-down.blue.svg');
     background-repeat: no-repeat;
     background-position: right rem-calc(8) top rem-calc(10);
     background-size: rem-calc(16) rem-calc(16);
