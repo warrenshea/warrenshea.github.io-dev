@@ -26,18 +26,18 @@
       </section>
 
       <%id="digimon"%>
-      <section class="row py:32px">
+      <section class="row py:32px form:theme:gl0b3x">
         <div class="w:12">
           <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Multiselect</h2>
           <div class="display:flex w:100% align-self:centered">
             <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>" data-autocomplete-filter="name" data-autocomplete-source-type="fetch" data-autocomplete-source="/examples/autocomplete/digimon.json" data-autocomplete-type="multiselect">
               <div data-module="autocomplete.multiselect" id class="br:4px w:100%">
                 <span class="display:flex flex-flow:row-wrap pl:4px pb:12px" data-module="autocomplete.multiselect-tags"></span>
-                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-input-format='["digivolution","-","name"]' id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="b-silver:1px w:100% p:4px" placeholder="Please enter a digimon">
-                <label for="<%=id%>" id="autocomplete-<%=id%>-label" class="sr-only"><span class="description">Find a Digimon</span></label>
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-input-format='["digivolution","-","name"]' id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="" placeholder="Please enter a digimon">
+                <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="sr-only description">Find a Digimon</span></label>
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
-              <div class="position:relative z-index:1">
+              <div class="position:relative">
                 <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-results-format='["digivolution","-","name"]' data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
               </div>
               <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
@@ -47,18 +47,18 @@
       </section>
 
       <%id="digimon-with-defaults"%>
-      <section class="row py:32px">
+      <section class="row py:32px form:theme:gl0b3x">
         <div class="w:12">
           <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Multiselect with pre-selected/default options</h2>
           <div class="display:flex w:100% align-self:centered">
             <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>" data-autocomplete-filter="name" data-autocomplete-values='["War Greymon", "Omnimon", "Metal Garurumon"]' data-autocomplete-source-type="fetch" data-autocomplete-source="/examples/autocomplete/digimon.json" data-autocomplete-type="multiselect">
               <div data-module="autocomplete.multiselect" id class="br:4px w:100%">
                 <span class="display:flex flex-flow:row-wrap pl:4px pb:12px" data-module="autocomplete.multiselect-tags"></span>
-                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-input-format='["digivolution","-","name"]' id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="b-silver:1px w:100% p:4px" placeholder="Please enter a digimon">
-                <label for="<%=id%>" id="autocomplete-<%=id%>-label" class="sr-only"><span class="description">Find a Digimon</span></label>
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('autocomplete-<%=id%>',this.value);" data-module="autocomplete.input" data-autocomplete-input-format='["digivolution","-","name"]' id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="" placeholder="Please enter a digimon">
+                <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="sr-only description">Find a Digimon</span></label>
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
-              <div class="position:relative z-index:1">
+              <div class="position:relative">
                 <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-results-format='["digivolution","-","name"]' data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
               </div>
               <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
