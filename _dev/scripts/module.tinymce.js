@@ -378,7 +378,7 @@ storm_eagle.module('tinymce', () => {
               onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
             });
             editor.on('input ExecCommand', (event) => {
-              if (event.type === 'execcommand' || event.type === 'input') {
+              if ((event.type === 'execcommand' || event.type === 'input') && event.command !== 'mceFocus') {
                 if (onupdate) {
                   if (preview_id) {
                     storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
