@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@import '_config/variables-colors.scss';
+@import '_config/variables-dimensions.scss';
+@import '_config/unit.scss';
+@import '_config/breakpoint.scss';
+@import '_config/media-queries.scss';
+@import '_config/variables-box-shadow.scss';
+
+main > div:first-child,
+main > section:first-child {
+  padding-bottom: 2rem;
+  @include breakpoint($medium-min) {
+    padding-bottom: 3rem;
+  }
+  @include breakpoint($xlarge-min) {
+    padding-bottom: 4rem;
+  }
+}
+
+/* Apply negative margin to all but the first child */
+main > div:not(:first-child),
+main > section:not(:first-child) {
+  padding: 2rem 0;
+  margin-top: -2rem;
+  @include breakpoint($medium-min) {
+    padding: 3rem 0;
+    margin-top: -3rem;
+  }
+  @include breakpoint($xlarge-min) {
+    padding: 4rem 0;
+    margin-top: -4rem;
+  }
+
+}
+
+main > .bgc\:white-smoke + section,
+main > .bgc\:white-smoke + div,
+main > div  + .bgc\:white-smoke,
+main > section  + .bgc\:white-smoke {
+  margin-top: 0;
+}
+
+main > .bgc\:white-smoke + .bgc\:white-smoke {
+  margin-top: -2rem;
+  @include breakpoint($medium-min) {
+    margin-top: -3rem;
+  }
+  @include breakpoint($xlarge-min) {
+    margin-top: -4rem;
+  }
+}
