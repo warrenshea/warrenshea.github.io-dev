@@ -28,19 +28,21 @@
       }
       .isotope-size\:48 {width:64px;height:64px;margin:0 8px 8px 0;}
     </style>
-    <div class="row max-width:1280px form:theme:gl0b3x">
-      <div class="w:2 position:relative">
+    <div class="display:flex flex-flow:row-wrap form:theme:gl0b3x">
+      <div class="w0:2 position:relative">
         <div class="position:fixed" style="left:0;width:16.667%;">
           <h2 class="heebo:bold">Filters</h2>
 
           <div class="mx:2px mb:8px b-gray:2px brr:8px">
-            <div class="autocomplete p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete">
-              <div class="position:relative pt:4px">
-                <input type="text" onfocus="storm_eagle.autocomplete.update_sr_description('fa5dam-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-search="storm_eagle.fa5dam.get_icon_list" id="fa5dam" name="fa5dam" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
-                <label for="fa5dam" id="autocomplete_label"><span class="description">Keyword Search</span></label>
+            <div class="p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete" data-autocomplete-filter="tags" data-autocomplete-source-type="function" data-autocomplete-source="storm_eagle.fa5dam.get_keyword_database" data-autocomplete-type="single-select" data-autocomplete-onupdate-func="storm_eagle.fa5dam.refresh_isotope">
+              <div class="position:relative w:100% pt:4px">
+                <input type="text" onfocus="storm_eagle.autocomplete.a11y.update_sr_description('fa5dam-autocomplete',this.value);" data-module="autocomplete.input" data-autocomplete-input-format='["tags"]' id="fa5dam" name="fa5dam" role="combobox" aria-autocomplete="both" aria-owns="fa5dam-autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
+                <label for="fa5dam" id="fa5dam-autocomplete-label"><span class="description">Keyword Search</span></label>
               </div>
               <div data-module="autocomplete.sr-description" id="fa5dam-autocomplete-sr-description" class="show-for-sr" aria-live="assertive"></div>
-              <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px" id="autocomplete-results" data-module="autocomplete.results" data-autocomplete-results="13" data-bind="fa5dam" role="listbox" aria-labelledby="autocomplete_label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              <div class="position:relative z-index:1">
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="fa5dam-autocomplete-results" data-module="autocomplete.results" data-autocomplete-results-format='["tags"]' data-autocomplete-max-results="-1" data-bind="fa5dam" role="listbox" aria-labelledby="fa5dam-autocomplete-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+              </div>
               <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter an icon</span>
             </div>
           </div>
@@ -74,22 +76,22 @@
           </fieldset>
         </div>
       </div>
-      <div class="w:7">
+      <div class="w0:7">
         <h2 class="heebo:bold">Font Awesome 5 Icon Library</h2>
         <div class="assets hide">
         </div>
       </div>
-      <div class="w:3 position:relative">
+      <div class="w0:3 position:relative">
 
         <div class="position:fixed overflow:hidden" style="right:8px;width:24%;">
           <h2 class="heebo:bold">Preview</h2>
           <div class="display:flex align:center flex-dir:col h:100%">
             <div>
-              <div class="sm+:w:12 sm+:text-align:center display:flex align:center align:middle sm+:b-onyx:2px sm+:br:8px" style="border-style:groove;border-color:threedface;height:300px">
+              <div class="w0:12 text-align:center display:flex align:center align:middle b-onyx:2px br:8px" style="border-style:groove;border-color:threedface;height:300px">
                 <div id="asset" class="h:100%">
                 </div>
               </div>
-              <div class="sm+:w:12" style="min-height:500px">
+              <div class="w0:12" style="min-height:500px">
                 <h2 class="mt:16px fs:20px heebo:bold">Details</h2>
 <!--                 <h3 class="heebo:bold">Name: </h3>
                 <div class="sm+:mb:16px" id="name"></div> -->
@@ -119,7 +121,6 @@
     let filter_group;
     let filter_value;
     let filters = {};
-    let keyword_database = [];
 
     const isotope_container = document.querySelector(".assets");
     let isotope_obj;
@@ -155,23 +156,38 @@
           let all_isotope_keywords = "";
           tags_array.forEach((el,index) => {
             all_isotope_keywords += " keyword:" + el.toString().replace(/ /g,"_"); //convert space to underscore;
-
-            if(keyword_database.indexOf(el) === -1) {
-              keyword_database.push(el.toString());
-            }
           });
 
           //create each asset's html
           asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:platinum">`;
           asset_html += `  <span class="number">${parseInt(index)}</span>`;
           asset_html += `  <span class="name">${name}</span>`;
-          asset_html += `  <img src="${pathname}" class="w:100% h:100% object-fit:contain">`;
+          asset_html += `  <img src="${pathname}" class="w0:100% h:100% object-fit:contain">`;
           asset_html += `</div>`;
           //} for only loading a few icons at a time
         });
-        keyword_database = [...new Set(keyword_database)].sort();
 
         document.querySelector(".assets").innerHTML = asset_html;
+      },
+      get_keyword_database: () => {
+        let keyword_database = [];
+        assets.forEach((asset) => {
+          let tags_array = asset.tags.split(",");
+          tags_array.forEach((tag) => {
+            if(keyword_database.indexOf(tag) === -1) {
+              keyword_database.push(tag.toString());
+            }
+          });
+        });
+
+        // Sorting and removing duplicates is not necessary with the current approach
+        // since we're checking existence in the array before adding,
+        // but in case of future modifications, it's a good practice to ensure uniqueness.
+        keyword_database = [...new Set(keyword_database)].sort();
+
+        // Transforming the keyword_database into the desired format
+        let formatted_keywords = keyword_database.map(tag => ({ tags: tag }));
+        return formatted_keywords;
       },
       ready: () => {
         document.querySelector(".assets").classList.remove("hide");
@@ -185,7 +201,7 @@
       },
       add_event_listeners: () => {
 
-        _find_object_with_param = (object_array,param,val) => {
+        const _find_object_with_param = (object_array,param,val) => {
           let result = object_array.filter(obj => {
             return obj[param] === val;
           })
@@ -195,7 +211,7 @@
         document.querySelectorAll(".assets > div").forEach(el => {
           el.addEventListener('click', () => {
             let asset = _find_object_with_param(assets,"name",el.getAttribute("data-asset"));
-            document.getElementById("asset").innerHTML = `<img src="${asset[0]["pathname"]}" class="w:100% h:100% object-fit:contain">`;
+            document.getElementById("asset").innerHTML = `<img src="${asset[0]["pathname"]}" class="w0:100% h:100% object-fit:contain">`;
             // document.getElementById("name").innerHTML = asset[0]["name"];
             document.getElementById("pathname").innerHTML = asset[0]["pathname"];
             document.getElementById("color").innerHTML = asset[0]["color"];
@@ -213,97 +229,22 @@
         document.querySelectorAll(".option-set-assets input[type='radio']").forEach(el => {
           let filter_button_group;
           el.addEventListener('click', () => {
-            // get group key
             filter_button_group = el.parentElement;
             filter_group = filter_button_group.getAttribute('data-filter-group');
-            //console.log("filter_group",filter_group);
-            // set filter for group
-            //console.log("filters",filters);
             filters[filter_group] = _add_slashes(el.getAttribute('data-filter-value'));
-            // console.log("filters[filter_group]",filters[filter_group]);
-            // console.log("filters",filters);
-            // combine filters
-            filter_value = _concat_values(filters);
-            console.log(filter_value);
-            isotope_obj.arrange({ filter: filter_value });
+            self.refresh_isotope();
           });
         });
       },
-      get_icon_list: (query, input_id, results_id, autocomplete_id, results_max_results) => {
-        _helper_tags_database = (database_temp) => {
-          let new_database = [];
-          let database_temp_keyword;
-          let isQueryIn_database_temp_keyword;
-
-          //name entries go next
-          for(let j=0;j<database_temp.length;j++) {
-            database_temp_keyword = database_temp[j].toLowerCase();
-            isQueryIn_database_temp_keyword = (database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false;
-            if (isQueryIn_database_temp_keyword) {
-              /*the site search will always do this as there are no categories to refine the data*/
-              new_database.push(database_temp[j]);
-            }
-          }
-          return new_database;
+      refresh_isotope: () => {
+        const keyword = document.getElementById('fa5dam').value;
+        if (keyword === "") {
+          filters["keyword"] = ""
+        } else {
+          filters["keyword"] = _add_slashes(".keyword:" + keyword.replace(/ /g,"_"));
         }
-
-        let data = [];
-
-        //console.log(keyword_database);
-        data = _helper_tags_database(keyword_database);
-        //console.log(data);
-
-        if (data) {
-          if (data.length > 0) {
-            if (document.getElementById(input_id) === document.activeElement) {
-              document.getElementById(results_id).classList.remove("display:none");
-              document.getElementById(results_id).innerHTML = "";
-              document.getElementById(autocomplete_id).classList.remove("active");
-              document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
-
-              for (let i = 0; i < data.length; i++) {
-                if (i === 0) {
-                  document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result("", i, input_id, autocomplete_id, "", "Reset Keyword"));
-                }
-                document.getElementById(results_id).insertAdjacentHTML('beforeend', self.render_autocomplete_result(query, i, input_id, autocomplete_id, data[i], data[i]));
-                document.getElementById(results_id).classList.remove("display:none");
-                document.getElementById(autocomplete_id).classList.add("active");
-                document.getElementById(autocomplete_id).setAttribute("aria-expanded", "true");
-                if (i === results_max_results) {
-                  break;
-                }
-              }
-            }
-          } else {
-            document.getElementById(results_id).classList.remove("display:none");
-            document.getElementById(results_id).innerHTML = "";
-            document.getElementById(autocomplete_id).classList.remove("active");
-            document.getElementById(autocomplete_id).setAttribute("aria-expanded", "false");
-          }
-        }
-      },
-      render_autocomplete_result: (query, index, input_id, autocomplete_id, tag, tag_string) => {
-        //console.log(tag);
-        return `\n        <li role="option" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${tag}" onclick="storm_eagle.fa5dam.autocomplete_fill('${input_id}','${tag}');storm_eagle.autocomplete.close('${autocomplete_id}');">${tag_string}</li>`;
-      },
-      autocomplete_fill: (input_id, name) => {
-        _load_keyword = (keyword) => {
-          filter_group = "keyword";
-          //console.log("filter_group",filter_group);
-          //console.log("filters",filters);
-          if (keyword === "") {
-            filters[filter_group] = ""
-          } else {
-            filters[filter_group] = _add_slashes(".keyword:" + keyword.replace(/ /g,"_"));
-          }
-          //console.log("filters[filter_group]",filters[filter_group]);
-          filter_value = _concat_values(filters);
-          // console.log(filter_value);
-          isotope_obj.arrange({ filter: filter_value });
-        }
-
-        document.getElementById(input_id).value = `${name}`;
-        _load_keyword(name);
+        filter_value = _concat_values(filters);
+        isotope_obj.arrange({ filter: filter_value });
       },
     };
   });
