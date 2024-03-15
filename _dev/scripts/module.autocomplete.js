@@ -82,21 +82,19 @@ storm_eagle.module('autocomplete', () => {
               });
             }
           }
-
         } catch (error) {
           console.error('Failed to initialize data:', error);
         }
       },
       update_input_value: (id, selected_values) => {
         const { el, type, onupdate } = state[id];
-        if (onupdate) {
-          storm_eagle.util.run_str_func( onupdate, { id } );
-        }
         if (type === "multiselect") {
           state[id].input_values = selected_values;
           el.setAttribute('data-autocomplete-values', JSON.stringify(selected_values));
         }
-
+        if (onupdate) {
+          storm_eagle.util.run_str_func( onupdate, { id } );
+        }
       }
     },
     a11y: {
