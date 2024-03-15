@@ -1,7 +1,7 @@
 'use strict';
 storm_eagle.module('toast', () => {
   return {
-    add: (message,text_color="color:white",background="bgc:onyx") => {
+    add: (message,text_color="color:white",background="bgc:onyx",duration="2500") => {
 
       const create_toast_container = () => {
         const toast_container = document.createElement('div');
@@ -33,7 +33,7 @@ storm_eagle.module('toast', () => {
             document.body.removeChild(toast_container);
           }
         }, 500);
-      }, 2500);
+      }, duration);
     },
   };
 });
