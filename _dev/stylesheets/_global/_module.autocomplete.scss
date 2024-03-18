@@ -1,3 +1,14 @@
+[data-module='autocomplete.multiselect-tags']{
+  &[data-theme-bgc-color='blue'] > div {
+    background-color: $blue;
+    color:white;
+  }
+  &[data-theme-bgc-color='red'] > div {
+    background-color: $red;
+    color:white;
+  }
+}
+
 [data-module='autocomplete.results']{
   z-index:4; //to go over other input labels
   li {
