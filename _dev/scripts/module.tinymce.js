@@ -128,11 +128,21 @@ storm_eagle.module('tinymce', () => {
       }
       .fs\\:14px {
         font-size: 0.875rem;
-      }`,
+      }
+      .text-align\\:left {
+        text-align:left;
+      }
+      .text-align\\:center {
+        text-align:center;
+      }
+      .text-align\\:right {
+        text-align:right;
+      }`
+      ,
     formats : {
-      'text-align:left' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:left'},
-      'text-align:center' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:center'},
-      'text-align:right' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:right'},
+      'alignleft' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:left'},
+      'aligncenter' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:center'},
+      'alignright' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:right'},
       'heebo' : {selector: 'h1,h2,h3,h4', 'classes' : 'heebo'},
       'play' : {selector: 'h1,h2,h3,h4', 'classes' : 'play'},
       'heebo:bold' : {selector: 'p,td,th,div,ul,ol,li,span', 'classes' : 'heebo:bold'},
@@ -376,6 +386,7 @@ storm_eagle.module('tinymce', () => {
             });
             editor.on('init', (event) => {
               onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
+              preview_id && self.force_update_preview(editor, preview_id);
             });
             editor.on('input ExecCommand', (event) => {
               if ((event.type === 'execcommand' || event.type === 'input') && event.command !== 'mceFocus') {
