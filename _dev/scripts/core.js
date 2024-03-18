@@ -89,6 +89,8 @@ const remove_focus_selector = [
  * storm_eagle.page.set_hash()
  * storm_eagle.page.get_language_code()
  * storm_eagle.util.escape_string()
+ * storm_eagle.util.escape_quotes()
+ * storm_eagle.util.unescape_quotes()
  * storm_eagle.util.minify_html()
  * storm_eagle.util.encode_html_entities()
  * storm_eagle.util.decode_html_entities()
@@ -667,6 +669,14 @@ var storm_eagle = (() => {
         return new_str;
       },
 
+      escape_quotes: (original_str) => {
+        return original_str.replaceAll('"', '\\"').replaceAll("'", "\\'");
+      },
+
+      unescape_quotes: (escaped_str) => {
+        return escaped_str.replaceAll('\\"', '"').replaceAll("\\'", "'");
+      },
+
       minify_html: (html_string) => {
         return html_string.replace(/[\n\r\t]/g, '').replace(/ {2,}/g, ' ').replace(/> </g, '><');
       },
@@ -762,6 +772,7 @@ var storm_eagle = (() => {
        * @param {object} params_obj - An object containing parameters to pass to the function.
        */
       run_str_func: async (func_str, params_obj = {}) => {
+        console.log("run_str_func:", func_str);
         // Split the function string into its parts (namespace and function name).
         const func_parts = func_str.split('.');
 
@@ -1090,7 +1101,7 @@ storm_eagle.module('equalize_heights', () => {
      * Checks all the items that need to equalize height, and add keys to array
      */
     get_data_equal_height_items: () => {
-      document.querySelectorAll('[data-equalize-height]').forEach((el) => {
+      document.querySelectorAll('[data-equalize-height]:not([data-equalize-height=""])').forEach((el) => {
         let new_item = el.getAttribute("data-equalize-height");
         if (_data_equal_height_array.indexOf(new_item) < 0) {
           _data_equal_height_array.push(new_item);
