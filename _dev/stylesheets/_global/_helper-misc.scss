@@ -72,9 +72,6 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    .#{$prefix}display\:none {
-      display: none;
-    }
     .#{$prefix}display\:flex {
       display: flex;
     }
@@ -95,6 +92,9 @@
     }
     .#{$prefix}display\:table-cell {
       display: table-cell;
+    }
+    .#{$prefix}display\:none {
+      display: none;
     }
   }
 }
