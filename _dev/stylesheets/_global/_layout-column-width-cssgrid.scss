@@ -1,5 +1,7 @@
+/* file: layout-column-width-cssgrid.scss------------------------------------------------ */
 @use 'sass:math';
 
+/* purgecss start ignore */
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
@@ -37,5 +39,5 @@
 
     }
   }
-
 }
+/* purgecss end ignore */
