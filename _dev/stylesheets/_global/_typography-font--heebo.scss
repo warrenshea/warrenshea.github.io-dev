@@ -1,3 +1,4 @@
+/* file: typography-font--heebo.scss------------------------------------------------ */
 @font-face {
   font-family: 'heebo-light';
   font-style: normal;
@@ -47,6 +48,7 @@
   }
 }
 
+/* purgecss start ignore */
 h1.heebo {
   font-weight:700;
   font-family: 'heebo-bold', Arial, Sans-Serif;
@@ -74,3 +76,4 @@ h4.heebo {
   font-size: rem-calc(24);
   line-height: rem-calc(24);
 }
+/* purgecss end ignore */
