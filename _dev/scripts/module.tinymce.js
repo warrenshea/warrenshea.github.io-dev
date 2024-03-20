@@ -29,7 +29,7 @@ storm_eagle.module('tinymce', () => {
   const tinymce_advanced = {
     height: 350,
     plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
-    toolbar: "undo redo | blocks styles | bold italic superscript | bullist numlist | link openlink unlink | aligncenter alignjustify alignleft alignnone alignright | charmap | visualblocks | advanced",
+    toolbar: "undo redo | blocks styles | bold italic superscript | bullist numlist | link openlink unlink | alignleft aligncenter alignright alignjustify alignnone  | charmap | visualblocks | advanced",
     style_formats: [
       { title: 'Heading Font' },
       { title: 'Heebo', format: 'heebo', classes: 'heebo' },
