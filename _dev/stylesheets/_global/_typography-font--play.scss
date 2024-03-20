@@ -1,3 +1,4 @@
+/* file: typography-font--play.scss------------------------------------------------ */
 @font-face {
   font-family: 'play-regular';
   font-style: normal;
@@ -27,6 +28,7 @@
   }
 }
 
+/* purgecss start ignore */
 h1.play {
   font-weight:700;
   font-family: 'play-bold', Arial, Sans-Serif;
@@ -54,3 +56,4 @@ h4.play {
   font-size: rem-calc(24);
   line-height: rem-calc(24);
 }
+/* purgecss end ignore */
