@@ -290,10 +290,13 @@ storm_eagle.module('autocomplete', () => {
           multiselect_tags_container.innerHTML += tag;
 
           const selected_values = state[id].input_values || [];
-          const new_value = data_working[index][filter]; // Assuming 'name' is the identifier
-          if (!selected_values.includes(new_value)) {
-            selected_values.push(new_value);
+          const value_to_add = data_working[index][filter]; // Assuming 'name' is the identifier
+
+          if (!selected_values.includes(value_to_add)) {
+            selected_values.push(value_to_add);
           }
+          el.removeAttribute("data-autocomplete-last-removed");
+          el.setAttribute("data-autocomplete-last-added",value_to_add);
           self.data.update_input_value(id, selected_values);
         }
       },
@@ -306,6 +309,8 @@ storm_eagle.module('autocomplete', () => {
         const selected_values = state[id].input_values || [];
         const value_to_remove = data_working[index][filter]; // Assuming 'name' is the identifier
         const updated_values = selected_values.filter(value => value !== value_to_remove);
+        el.removeAttribute("data-autocomplete-last-added");
+        el.setAttribute("data-autocomplete-last-removed",value_to_remove);
         self.data.update_input_value(id, updated_values);
       }
     },
