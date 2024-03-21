@@ -70,6 +70,9 @@ storm_eagle.module('dialog', () => {
           self.a11y.first_tab_stop = focusable_elements[0];
           self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
 
+          document.querySelector('body').classList.add('overflow:hidden');
+          document.querySelector('body').style.paddingRight = `${storm_eagle.page.get_scrollbar_width()}px`;
+
           el.showModal();
 
           /* set focus to dialog (but not the first_tab_stop */
@@ -86,6 +89,9 @@ storm_eagle.module('dialog', () => {
       },
       close: () => {
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+
+        document.querySelector('body').classList.remove('overflow:hidden');
+        document.querySelector('body').style.removeProperty('padding-right');
 
         document.querySelectorAll("dialog").forEach((dialog) => {
           dialog.close();
