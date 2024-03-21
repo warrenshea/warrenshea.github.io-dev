@@ -1,5 +1,8 @@
 /* file: module.dialog.scss------------------------------------------------ */
 [data-module='dialog'] {
+  &::backdrop {
+    overflow-y: scroll;
+  }
   &[data-dialog-overlay='false']{
     &::backdrop {
       background-color: transparent;
