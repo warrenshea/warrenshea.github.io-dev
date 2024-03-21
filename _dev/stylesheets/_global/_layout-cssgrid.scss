@@ -31,3 +31,13 @@ $sizes: (
     }
   }
 }
+
+.row-gap-grid {
+  row-gap: 1rem;
+  @include breakpoint(medium up) {
+    row-gap: 1.5rem;
+  }
+  @include breakpoint(xlarge up) {
+    row-gap: 2rem;
+  }
+}
