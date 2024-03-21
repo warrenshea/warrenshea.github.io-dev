@@ -88,6 +88,7 @@ const remove_focus_selector = [
  * storm_eagle.page.get_hash()
  * storm_eagle.page.set_hash()
  * storm_eagle.page.get_language_code()
+ * storm_eagle.page.get_scrollbar_width
  * storm_eagle.util.escape_string()
  * storm_eagle.util.escape_quotes()
  * storm_eagle.util.unescape_quotes()
@@ -648,6 +649,18 @@ var storm_eagle = (() => {
       get_language_code: () => {
         return document.getElementsByTagName('html')[0].getAttribute('lang');
       },
+
+      get_scrollbar_width: () => {
+        const container = document.createElement('div');
+        container.style.cssText = 'visibility: hidden; overflow: scroll; position: absolute; width: 100px;';
+        document.body.appendChild(container);
+        const inner = document.createElement('div');
+        container.appendChild(inner);
+        const scrollbarWidth = container.offsetWidth - inner.offsetWidth;
+        document.body.removeChild(container);
+        return scrollbarWidth;
+      },
+
     },
 
     util: {
@@ -773,6 +786,17 @@ var storm_eagle = (() => {
        */
       run_str_func: async (func_str, params_obj = {}) => {
         console.log("run_str_func:", func_str);
+
+        // Check if func_str contains a comma and split it if so.
+        if (func_str.includes(',')) {
+          // Split the string by commas and trim any whitespace.
+          const parts = func_str.split(',').map(part => part.trim());
+          // Recursively call run_str_func for each part.
+          const results = await Promise.all(parts.map(part => this.run_str_func(part, params_obj)));
+          // Return an array of results from the recursive calls.
+          return results;
+        }
+
         // Split the function string into its parts (namespace and function name).
         const func_parts = func_str.split('.');
 
@@ -1072,17 +1096,18 @@ storm_eagle.module('equalize_heights', () => {
    * For each "key", determine the largest height and apply to all items with that key
    */
   let max_height = () => {
-    _data_equal_height_array.forEach((index, value) => {
+    _data_equal_height_array.forEach((key, value) => {
       let _highest = 0;
       let _heights = [];
-      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
-        /* get the height including the padding of an item */
+      document.querySelectorAll(`[data-equalize-height=${key}]`).forEach((el) => {
         el.style.height = 'auto';
+      });
+      document.querySelectorAll(`[data-equalize-height=${key}]`).forEach((el) => {
         _heights.push(el.getBoundingClientRect().height);
       });
       _heights = _heights.sort(sort_number).reverse();
       _highest = _heights[0];
-      document.querySelectorAll(`[data-equalize-height=${index}]`).forEach((el) => {
+      document.querySelectorAll(`[data-equalize-height=${key}]`).forEach((el) => {
         el.style.height = `${_highest}px`;
       });
     });
