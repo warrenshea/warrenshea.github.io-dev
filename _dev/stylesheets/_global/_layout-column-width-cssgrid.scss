@@ -1,12 +1,16 @@
 /* file: layout-column-width-cssgrid.scss------------------------------------------------ */
 @use 'sass:math';
 
-/* purgecss start ignore */
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
+
+    .#{$prefix}gc\:auto {
+      grid-column: auto;
+    }
+
     @for $i from 1 through 12 {
       .#{$prefix}gc\:#{$i},
       .#{$prefix}gc0\:#{$i} {
@@ -40,4 +44,3 @@
     }
   }
 }
-/* purgecss end ignore */
