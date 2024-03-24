@@ -46,7 +46,10 @@ storm_eagle.module('autocomplete', () => {
           error_message: el.querySelector("[data-module='autocomplete.error']") || false,
           multiselect: el.querySelector("[data-module='autocomplete.multiselect']") || false,
           multiselect_tags_container: el.querySelector("[data-module='autocomplete.multiselect-tags']") || false,
+          multiselect_tags_limit: parseInt(el.getAttribute("data-autocomplete-multiselect-tags-limit"),10) || Infinity,
           onupdate: el.getAttribute('data-autocomplete-onupdate-func') || false,
+          onpreview: el.getAttribute('data-autocomplete-preview-func') || false,
+          preview_value: el.getAttribute("data-autocomplete-preview-value") ? JSON.parse(el.getAttribute("data-autocomplete-preview-value")) : null,
         };
         if (data_source_type === "fetch" || data_source_type === "file") {
           await self.data.initialize(id);
@@ -120,9 +123,10 @@ storm_eagle.module('autocomplete', () => {
       input: {
         keydown_navigate_dropdown: (event) => {
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="autocomplete"]').getAttribute('id');
-          const { results, input } = state[id];
+          const { el, results, input, onpreview } = state[id];
           let selected_dropdown = results.querySelector('.selected');
-
+          const previous_selection = selected_dropdown && selected_dropdown.getAttribute('data-sr-description');
+          el.setAttribute("data-autocomplete-last-removed",previous_selection);
           switch (event.keyCode) {
             case keyboard.keys.down:
               // select next suggestion from list
@@ -139,8 +143,14 @@ storm_eagle.module('autocomplete', () => {
               }
 
               if (results.querySelector('.selected')) {
-                self.a11y.update_sr_description(id, results.querySelector('.selected').getAttribute('data-sr-description'));
+                const current_selection = results.querySelector('.selected').getAttribute('data-sr-description');
+                el.setAttribute("data-autocomplete-last-added",current_selection);
+                self.a11y.update_sr_description(id, current_selection);
+                el.setAttribute('data-autocomplete-preview-value', `["${current_selection}"]`);
                 input.setAttribute('aria-activedescendant', results.querySelector('.selected').getAttribute('id'));
+                if (onpreview) {
+                  storm_eagle.util.run_str_func( onpreview, { id } );
+                }
               }
               break;
 
@@ -155,8 +165,14 @@ storm_eagle.module('autocomplete', () => {
                   selected_dropdown.previousElementSibling.classList.add('selected');
                 }
 
-                self.a11y.update_sr_description(id, results.querySelector('.selected').getAttribute('data-sr-description'));
+                const current_selection = results.querySelector('.selected').getAttribute('data-sr-description');
+                el.setAttribute("data-autocomplete-last-added",current_selection);
+                self.a11y.update_sr_description(id, current_selection);
+                el.setAttribute('data-autocomplete-preview-value', `["${current_selection}"]`);
                 input.setAttribute('aria-activedescendant', results.querySelector('.selected').getAttribute('id'));
+                if (onpreview) {
+                  storm_eagle.util.run_str_func( onpreview, { id } );
+                }
               }
               break;
 
@@ -236,24 +252,30 @@ storm_eagle.module('autocomplete', () => {
         }
       },
       show_autocomplete_list: (id) => {
-        const { type, input, filter, data_working, results, max_num_results } = state[id];
+        const { type, input, filter, data_working, results, max_num_results, multiselect_tags_limit } = state[id];
         const query = input.value.trim();
         let database_temp_keyword;
+
         if (data_working.length > 0) {
           results.innerHTML = "";
           let count = 0;
-          for (let i = 0; i < data_working.length; i++) {
-            database_temp_keyword = data_working[i][filter].toLowerCase();
-            if (data_working[i]["status"] === "" && data_working[i][filter] !== "" && ((database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false)) {
-              count++;
-              results.insertAdjacentHTML('beforeend', self.ui.render_autocomplete_result(id, i, data_working[i]));
-              results.classList.remove("display:none");
-              document.getElementById(id).classList.add("active");
-              document.getElementById(id).setAttribute("aria-expanded", "true");
-              if (count === max_num_results) {
-                break;
+
+          if (data_working.filter(item => item.status === 'selected').length < multiselect_tags_limit) {
+            for (let i = 0; i < data_working.length; i++) {
+              database_temp_keyword = data_working[i][filter].toLowerCase();
+              if (data_working[i]["status"] === "" && data_working[i][filter] !== "" && ((database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false)) {
+                count++;
+                results.insertAdjacentHTML('beforeend', self.ui.render_autocomplete_result(id, i, data_working[i]));
+                results.classList.remove("display:none");
+                document.getElementById(id).classList.add("active");
+                document.getElementById(id).setAttribute("aria-expanded", "true");
+                if (count === max_num_results) {
+                  break;
+                }
               }
             }
+          } else {
+            results.classList.add("display:none");
           }
         }
       },
@@ -286,8 +308,7 @@ storm_eagle.module('autocomplete', () => {
 
           input.value = "";
           self.ui.show_autocomplete_list(id);
-          let tag = self.util.create_tag_html(id, index, result_string);
-          multiselect_tags_container.innerHTML += tag;
+          multiselect_tags_container.innerHTML += self.util.create_tag_html(id, index, result_string);
 
           const selected_values = state[id].input_values || [];
           const value_to_add = data_working[index][filter]; // Assuming 'name' is the identifier
