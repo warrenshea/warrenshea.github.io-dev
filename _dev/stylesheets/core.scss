@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* purgecss start ignore */
 @import '_config/variables-colors.scss';
 @import '_config/variables-dimensions.scss';
 @import '_config/unit.scss';
@@ -11,7 +10,6 @@
 @import '_global/root.scss';
 @import '_global/normalize.scss';
 @import '_global/default.scss';
-/* purgecss end ignore */
 @import '_global/layout-flexbox.scss';
 @import '_global/layout-row-column-flexbox.scss';
 @import '_global/layout-column-width-flexbox.scss';
@@ -24,11 +22,9 @@
 @import '_global/layout-visibility-orientation.scss';
 @import '_global/layout-alignment.scss';
 @import '_global/layout-order.scss';
-/* purgecss start ignore */
 @import '_global/layout-table.scss';
 @import '_global/interactive-anchors-buttons.scss';
 @import '_global/interactive-form.scss';
-/* purgecss end ignore */
 @import '_global/typography-font--play.scss';
 @import '_global/typography-font--heebo.scss';
 @import '_global/typography-font-size.scss';
@@ -40,7 +36,6 @@
 @import '_global/visual-illustrations.scss';
 @import '_global/animation.scss';
 
-/* purgecss start ignore */
 @import '_global/module.badge.scss';
 @import '_global/module.breadcrumbs.scss';
 @import '_global/module.accordion.scss';
@@ -51,7 +46,6 @@
 @import '_global/module.carousel.scss';
 @import '_global/module.toast.scss';
 @import '_global/module.autocomplete.scss';
-/* purgecss end ignore */
 
 @import '_global/helper-margin-padding.scss';
 @import '_global/helper-border.scss';
