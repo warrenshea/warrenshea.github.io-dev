@@ -18,8 +18,7 @@
     }
   }
 
-  /* purgecss start ignore */
-  @include breakpoint($breakpoint) {
+    @include breakpoint($breakpoint) {
     @for $i from 1 through 12 {
       $fraction: math.div(1, $i) * 100%;
 
@@ -29,7 +28,6 @@
       }
     }
   }
-  /* purgecss end ignore */
 
   @include breakpoint($breakpoint) {
     $percentage-num: math.div(100, 12); // Moved outside the loop
@@ -44,8 +42,7 @@
     }
   }
 
-  /* purgecss start ignore */
-  @include breakpoint($breakpoint) {
+    @include breakpoint($breakpoint) {
     @for $i from 1 through 12 {
       $fraction: math.div(1, $i) * 100%;
 
@@ -55,10 +52,8 @@
       }
     }
   }
-  /* purgecss end ignore */
 }
 
-/* purgecss start ignore */
 .row.sm\+\:unstack > * {
   flex: 1 1 0px;
 }
@@ -89,4 +84,3 @@
     flex: 1 1 0px;
   }
 }
-/* purgecss end ignore */
