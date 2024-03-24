@@ -48,6 +48,8 @@ $icons: (
   redo-alt,
   sass,
   sort-alt,
+  spider,
+  spider-web,
   spinner,
   terminal,
   times,
@@ -61,7 +63,6 @@ $types: (
   solid,
   brands
 );
-/* purgecss start ignore */
 @each $icon in $icons {
   @each $type in $types {
     .ic.ic-type\:#{$type}.ic-name\:#{$icon} {
@@ -70,7 +71,6 @@ $types: (
     }
   }
 }
-/* purgecss end ignore */
 
 $colors: (
   blue      : $blue,
