@@ -16026,9 +16026,10 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=radio] + label {
   cursor: pointer;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
   letter-spacing: 0.15px;
   line-height: 1.5rem;
+  text-indent: 0.5rem;
 }
 .form\:theme\:gl0b3x input[type=checkbox] + label:before,
 .form\:theme\:gl0b3x input[type=radio] + label:before {
