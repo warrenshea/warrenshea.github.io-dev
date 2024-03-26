@@ -1,10 +1,10 @@
 'use strict';
-storm_eagle.module('form_switch_button', () => {
+storm_eagle.module('form.switch_button', () => {
   let self;
   let state = {};
   return {
     initialize: () => {
-      self = storm_eagle.form_switch_button;
+      self = storm_eagle.form.switch_button;
       state = {};
       self.setup();
     },
