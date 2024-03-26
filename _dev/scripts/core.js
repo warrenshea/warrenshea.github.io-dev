@@ -682,12 +682,12 @@ var storm_eagle = (() => {
         return new_str;
       },
 
-      escape_quotes: (original_str) => {
-        return original_str.replaceAll('"', '\\"').replaceAll("'", "\\'");
+      escape_double_quotes: (original_str) => {
+        return original_str.replaceAll('"', '\\"');
       },
 
-      unescape_quotes: (escaped_str) => {
-        return escaped_str.replaceAll('\\"', '"').replaceAll("\\'", "'");
+      unescape_double_quotes: (escaped_str) => {
+        return escaped_str.replaceAll('\\"', '"');
       },
 
       minify_html: (html_string) => {
