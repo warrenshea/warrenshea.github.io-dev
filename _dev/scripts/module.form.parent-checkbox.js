@@ -1,10 +1,10 @@
 'use strict';
-storm_eagle.module('form_parent_checkbox', () => {
+storm_eagle.module('form.parent_checkbox', () => {
   let self;
   let state = {};
   return {
     initialize: () => {
-      self = storm_eagle.form_parent_checkbox;
+      self = storm_eagle.form.parent_checkbox;
       state = {};
       self.setup();
     },
