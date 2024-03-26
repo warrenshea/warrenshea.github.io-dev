@@ -235,9 +235,10 @@ fieldset.unstyle {
     & + label {
       cursor: pointer;
       position: relative;
-      padding-left: rem-calc(32);
+      padding-left: rem-calc(24);
       letter-spacing: 0.15px;
       line-height: rem-calc(24);
+      text-indent: rem-calc(8);
       &:before {
         content: '';
         position: absolute;
