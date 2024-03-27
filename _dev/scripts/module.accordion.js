@@ -31,12 +31,10 @@ storm_eagle.module('accordion', () => {
         const { el, all_headers, all_panels } = state[id];
         all_headers.forEach((header, index) => {
           const panel = header.parentNode.nextElementSibling;
-          header.setAttribute('tabindex', '-1');
           header.setAttribute('aria-expanded', 'false');
           header.setAttribute('aria-controls', panel.getAttribute('id'));
           panel.setAttribute('aria-labelledby', header.getAttribute('id'));
           if (index === 0) {
-            header.setAttribute('tabindex', '0');
             header.removeEventListener('focusin', self.event_listeners.header.focus.focus_class.add);
             header.addEventListener('focusin', self.event_listeners.header.focus.focus_class.add);
             header.removeEventListener('focusout', self.event_listeners.header.focus.focus_class.remove);
