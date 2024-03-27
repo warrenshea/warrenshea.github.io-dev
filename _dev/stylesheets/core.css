@@ -23526,14 +23526,11 @@ dl.unstyle > dd {
   box-shadow: 0 0 0 0.0625rem #1c3b65, inset 0 0 0 0.0625rem #1c3b65;
 }
 [data-module=accordion] [data-module="accordion.panel"] {
-  opacity: 1;
-  transition: 0.25s opacity ease;
+  transition: 0.25s height ease;
   overflow: hidden;
 }
 [data-module=accordion] [data-module="accordion.panel"][data-accordion-panel=hide] {
-  opacity: 0;
-  transition: 0.25s opacity ease;
-  overflow: hidden;
+  transition: 0.25s height ease;
   height: 0px;
 }
 
