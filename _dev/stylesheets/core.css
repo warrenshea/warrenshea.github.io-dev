@@ -461,6 +461,10 @@ strong {
   flex-direction: row;
 }
 
+.flex-dir\:row-reverse {
+  flex-direction: row-reverse;
+}
+
 .flex-dir\:col {
   flex-direction: column;
 }
@@ -486,6 +490,10 @@ strong {
     flex-direction: row;
   }
 
+  .sm\=\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .sm\=\:flex-dir\:col {
     flex-direction: column;
   }
@@ -508,6 +516,10 @@ strong {
 
 .sm\+\:flex-dir\:row {
   flex-direction: row;
+}
+
+.sm\+\:flex-dir\:row-reverse {
+  flex-direction: row-reverse;
 }
 
 .sm\+\:flex-dir\:col {
@@ -535,6 +547,10 @@ strong {
     flex-direction: row;
   }
 
+  .md-\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .md-\:flex-dir\:col {
     flex-direction: column;
   }
@@ -558,6 +574,10 @@ strong {
 
   .md\=\:flex-dir\:row {
     flex-direction: row;
+  }
+
+  .md\=\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
   }
 
   .md\=\:flex-dir\:col {
@@ -585,6 +605,10 @@ strong {
     flex-direction: row;
   }
 
+  .md\+\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .md\+\:flex-dir\:col {
     flex-direction: column;
   }
@@ -608,6 +632,10 @@ strong {
 
   .lg-\:flex-dir\:row {
     flex-direction: row;
+  }
+
+  .lg-\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
   }
 
   .lg-\:flex-dir\:col {
@@ -635,6 +663,10 @@ strong {
     flex-direction: row;
   }
 
+  .lg\=\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .lg\=\:flex-dir\:col {
     flex-direction: column;
   }
@@ -660,6 +692,10 @@ strong {
     flex-direction: row;
   }
 
+  .lg\+\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
+  }
+
   .lg\+\:flex-dir\:col {
     flex-direction: column;
   }
@@ -683,6 +719,10 @@ strong {
 
   .xl\+\:flex-dir\:row {
     flex-direction: row;
+  }
+
+  .xl\+\:flex-dir\:row-reverse {
+    flex-direction: row-reverse;
   }
 
   .xl\+\:flex-dir\:col {
@@ -23479,6 +23519,11 @@ dl.unstyle > dd {
 }
 [data-module=accordion] [data-module="accordion.header"][aria-expanded=true] > span > [data-module="accordion.inactive"] {
   display: block;
+}
+[data-module=accordion] [data-module="accordion.header"]:focus {
+  outline: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.0625rem #1c3b65, inset 0 0 0 0.0625rem #1c3b65;
 }
 [data-module=accordion] [data-module="accordion.panel"] {
   opacity: 1;
