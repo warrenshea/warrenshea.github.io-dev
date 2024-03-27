@@ -28,13 +28,10 @@
     }
   }
   [data-module='accordion.panel'] {
-    opacity: 1;
-    transition: .25s opacity ease;
+    transition: .25s height ease;
     overflow:hidden;
     &[data-accordion-panel='hide'] {
-      opacity: 0;
-      transition: .25s opacity ease;
-      overflow:hidden;
+      transition: .25s height ease;
       height:0px;
     }
   }
