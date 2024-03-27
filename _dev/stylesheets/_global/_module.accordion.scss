@@ -21,6 +21,11 @@
         }
       }
     }
+    &:focus {
+      outline: 0;
+      border-radius: rem-calc(8);
+      box-shadow: 0 0 0 rem-calc(1) $yale-blue, inset 0 0 0 rem-calc(1) $yale-blue;
+    }
   }
   [data-module='accordion.panel'] {
     opacity: 1;
