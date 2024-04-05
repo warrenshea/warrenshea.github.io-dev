@@ -1,3 +1,4 @@
+/* Variables, utility functions */
 /* file: variables-colors.scss------------------------------------------------ */
 /* PRIMARY COLOURS */
 /* BLUE COLOURS */
@@ -23820,6 +23821,7 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
   background-color: #e0e0e0;
 }
 
+/* Utility classes always go last, as they should always trump other pre-defined classes/styles. In general, we should never trump a utility class */
 /* file: helper-margin-padding.scss------------------------------------------------ */
 .m\:1px {
   margin: 0.0625rem;
