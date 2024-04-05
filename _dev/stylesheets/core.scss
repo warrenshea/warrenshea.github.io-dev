@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* Variables, utility functions */
 @import '_config/variables-colors.scss';
 @import '_config/variables-dimensions.scss';
 @import '_config/unit.scss';
@@ -47,6 +48,7 @@
 @import '_global/module.toast.scss';
 @import '_global/module.autocomplete.scss';
 
+/* Utility classes always go last, as they should always trump other pre-defined classes/styles. In general, we should never trump a utility class */
 @import '_global/helper-margin-padding.scss';
 @import '_global/helper-border.scss';
 @import '_global/helper-border-box-shadow.scss';
