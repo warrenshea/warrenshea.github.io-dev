@@ -28,7 +28,7 @@ storm_eagle.module('accordion', () => {
     },
     ui: {
       initialize: (id) => {
-        const { el, all_headers, all_panels } = state[id];
+        const { el, all_headers, all_panels, initial_active } = state[id];
         all_headers.forEach((header, index) => {
           const panel = header.parentNode.nextElementSibling;
           header.setAttribute('aria-expanded', 'false');
@@ -40,19 +40,36 @@ storm_eagle.module('accordion', () => {
             header.removeEventListener('focusout', self.event_listeners.header.focus.focus_class.remove);
             header.addEventListener('focusout', self.event_listeners.header.focus.focus_class.remove);
           }
-        });
-        all_panels.forEach((panel) => {
-          panel.setAttribute("data-accordion-panel","hide");
-        });
-        self.ui.initialize_initial_active(id);
-      },
-      initialize_initial_active: (id) => {
-        const { all_headers, initial_active } = state[id];
-        all_headers.forEach((header, index) => {
-          if (initial_active[index] === 1) {
-            self.action.toggle_accordion_item(id, header);
+          if(initial_active[index]) {
+            header.setAttribute('aria-expanded', 'true');
           }
         });
+        all_panels.forEach((panel, index) => {
+          panel.style.height = '0px'; // Start all panels closed
+          panel.setAttribute("data-accordion-panel","hide");
+
+          if(initial_active[index]) {
+            self.ui.animate_panel_open(panel,true); // Pass `true` if immediate animation is not required
+          }
+        });
+      },
+      animate_panel_open: (panel,on_initialize) => {
+        panel.style.height = 'auto';
+        if (!on_initialize) {
+          let panel_height = panel.scrollHeight + 'px';
+          panel.style.height = '0px';
+          requestAnimationFrame(() => {
+            panel.style.height = panel_height;
+          });
+        }
+        panel.setAttribute("data-accordion-panel", "");
+      },
+      animate_panel_close: (panel) => {
+        panel.style.height = panel.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          panel.style.height = '0px';
+        });
+        panel.setAttribute("data-accordion-panel", "hide");
       },
     },
     event_listeners: {
@@ -87,20 +104,24 @@ storm_eagle.module('accordion', () => {
       toggle_accordion_item: (id, header) => {
         const { all_headers, all_panels, active_setting } = state[id];
         const is_expanded = header.getAttribute('aria-expanded') === 'true';
-
-        if (active_setting === 'single') {
-          all_headers.forEach(h => h.setAttribute('aria-expanded', 'false'));
-          all_panels.forEach(panel => panel.setAttribute("data-accordion-panel", "hide"));
-          header.setAttribute('aria-expanded', !is_expanded);
-        } else if (active_setting === 'multiple') {
-          header.setAttribute('aria-expanded', !is_expanded ? 'true' : 'false');
-        }
-
         const panelId = header.getAttribute('aria-controls');
         const panel = document.getElementById(panelId);
-        panel.setAttribute("data-accordion-panel", is_expanded ? "hide" : "");
 
-        storm_eagle.equalize_heights.force_resize();
+        // Adjusting all panels and headers if 'single' mode is active
+        if (active_setting === 'single') {
+          all_headers.forEach(h => h.setAttribute('aria-expanded', 'false'));
+          all_panels.forEach(p => self.ui.animate_panel_close(p));
+        }
+
+        // Setting the current panel state
+        header.setAttribute('aria-expanded', !is_expanded);
+        if (!is_expanded) {
+          self.ui.animate_panel_open(panel);
+        } else {
+          self.ui.animate_panel_close(panel);
+        }
+
+        storm_eagle.equalize_heights.force_resize(); // Assuming this is a function you wish to call for layout purposes
       },
       open: (id, panel_id) => {
         if (state[id]) {
