@@ -10,18 +10,12 @@
 
 main > div:first-child,
 main > section:first-child {
-  padding-bottom: 2rem;
-  @include breakpoint($medium-min) {
-    padding-bottom: 3rem;
-  }
-  @include breakpoint($xlarge-min) {
-    padding-bottom: 4rem;
-  }
+  margin-top:0;
 }
 
 /* Apply negative margin to all but the first child */
-main > div:not(:first-child),
-main > section:not(:first-child) {
+main > div,
+main > section {
   padding: 2rem 0;
   margin-top: -2rem;
   @include breakpoint($medium-min) {
@@ -32,7 +26,6 @@ main > section:not(:first-child) {
     padding: 4rem 0;
     margin-top: -4rem;
   }
-
 }
 
 main > .bgc\:blue + section,
