@@ -25,6 +25,8 @@ const breakpoints = {
   xl_min: 1280,
 };
 
+const breakpoint_name = ['sm','md','lg','xl'];
+
 //turns everything to tabindex=0
 const focus_trap_selector = [
   `a[href]:not([disabled])`,
