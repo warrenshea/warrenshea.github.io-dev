@@ -12,7 +12,7 @@
       </section>
       <section class="mw:1280px align-self:centered" id="carousel-1">
         <div id
-          class="pt:32px b-silver:1px position:relative pb:64px bgc:white-smoke"
+          class="pt:32px b-silver:1px position:relative bgc:white-smoke display:flex flex-flow:row-wrap"
           data-module="carousel"
           data-carousel-item-active="1"
           data-carousel-number-active="[1,1,2,3]"
@@ -22,7 +22,7 @@
           data-carousel-control-active-classes="ic-color:blue"
           data-carousel-control-inactive-classes="ic-color:silver"
           data-carousel-control-class-selector=":scope > .ic">
-          <div data-module="carousel.controls-group" class="position:absolute bottom:0 w:100% display:flex align:center">
+          <div data-module="carousel.controls-group" class="order:2 w:100% display:flex align:center">
             <button data-module="carousel.controls" data-carousel-control-prev class="sm+:p:24px display:flex">
               <span class="show-for-sr">Previous</span>
               <div class="ic ic-type:solid ic-size:16px ic-name:chevron-left"></div>
@@ -33,7 +33,7 @@
               <div class="ic ic-type:solid ic-size:16px ic-name:chevron-right"></div>
             </button>
           </div>
-          <div class="w:100%">
+          <div class="w:100% order:1">
             <ul data-module="carousel.item-group" class="display:flex flex-flow:row-nowrap unstyle-pl:0 position:relative">
               <li data-module="carousel.item" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
