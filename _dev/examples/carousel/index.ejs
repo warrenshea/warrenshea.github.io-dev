@@ -23,19 +23,19 @@
           data-carousel-control-inactive-classes="ic-color:silver"
           data-carousel-control-class-selector=":scope > .ic">
           <div data-module="carousel.controls-group" class="order:2 w:100% display:flex align:center">
-            <button data-module="carousel.controls" data-carousel-control-prev class="sm+:p:24px display:flex">
+            <button data-module="carousel.controls" data-carousel-control-prev class="p:24px display:flex">
               <span class="show-for-sr">Previous</span>
               <div class="ic ic-type:solid ic-size:16px ic-name:chevron-left"></div>
             </button>
             <div data-module="carousel.indicators-group" class="display:flex align:center align:middle py:24px"></div>
-            <button data-module="carousel.controls" data-carousel-control-next class="sm+:p:24px display:flex">
+            <button data-module="carousel.controls" data-carousel-control-next class="p:24px display:flex">
               <span class="show-for-sr">Next</span>
               <div class="ic ic-type:solid ic-size:16px ic-name:chevron-right"></div>
             </button>
           </div>
           <div class="w:100% order:1">
-            <ul data-module="carousel.item-group" class="display:flex flex-flow:row-nowrap unstyle-pl:0 position:relative">
-              <li data-module="carousel.item" class="align-self:middle">
+            <ul data-module="carousel.slides" class="display:flex flex-flow:row-nowrap unstyle-pl:0 position:relative">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -55,7 +55,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -64,7 +64,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -84,7 +84,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -93,7 +93,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -102,7 +102,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -111,7 +111,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -120,7 +120,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -129,7 +129,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="sm+:px:4px md+:px:16px">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-1">
                     <div class="text-align:center">
@@ -345,7 +345,7 @@
       </section>
       <section class="w:100% align-self:centered bgc:white-smoke" id="carousel-2">
         <div id
-          class="position:relative"
+          class="position:relative display:flex flex-flow:row-wrap py:40px"
           data-module="carousel"
           data-carousel-item-active="2"
           data-carousel-number-active="[1,1,1,1]"
@@ -354,7 +354,7 @@
           data-carousel-transition-duration="[0.5,1,1,1]"
           data-carousel-control-active-classes="display:flex"
           data-carousel-control-inactive-classes="display:none">
-          <div data-module="carousel.controls-group" class="position:absolute w:100% h:100%">
+          <div data-module="carousel.controls-group" class="order:2 w:100%">
             <button data-module="carousel.controls" data-carousel-control-prev class="position:absolute p:16px bgc:white bxs:3 brr:50% display:flex z-index:1 left:0 ml:16px" style="top:50%;transform:translateY(-50%);">
               <span class="show-for-sr">Previous</span>
               <div class="ic ic-type:solid ic-color:blue ic-size:16px ic-name:chevron-left"></div>
@@ -365,9 +365,9 @@
               <div class="ic ic-type:solid ic-color:blue ic-size:16px ic-name:chevron-right"></div>
             </button>
           </div>
-          <div class="w:100% py:40px">
-            <ul data-module="carousel.item-group" class="display:flex flex-flow:row-nowrap unstyle-pl:0 position:relative">
-              <li data-module="carousel.item" class="align-self:middle">
+          <div class="w:100% order:1">
+            <ul data-module="carousel.slides" class="display:flex flex-flow:row-nowrap unstyle-pl:0 position:relative">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -376,7 +376,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -385,7 +385,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -394,7 +394,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -403,7 +403,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle">
+              <li data-module="carousel.slide" class="align-self:middle">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -412,7 +412,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -421,7 +421,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -430,7 +430,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
@@ -439,7 +439,7 @@
                   </div>
                 </div>
               </li>
-              <li data-module="carousel.item" class="align-self:middle display:none">
+              <li data-module="carousel.slide" class="align-self:middle display:none">
                 <div class="px:0">
                   <div class="content-container display:flex align:middle align:center bgc:white sm+:px:40px brr:4px relative py:40px" data-equalize-height="carousel-2">
                     <div class="text-align:center">
