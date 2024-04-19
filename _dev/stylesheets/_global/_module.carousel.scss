@@ -5,29 +5,17 @@
     left:0;
     transition-property:left;
     transition-timing-function: ease;
-    [data-module="carousel.item"] {
-      .content-container {
-        box-shadow: $box-shadow-custom-1;
-      }
-    }
   }
   &[data-carousel-active="true"] {
     [data-module="carousel.item-group"] {
       [data-module="carousel.item"] {
-        .content-container {
-          opacity: .6;
-          transition-property:opacity;
-          transition-duration:.25s;
-          transition-timing-function: ease;
-        }
+        opacity: .6;
+        transition-property:opacity;
+        transition-duration:.25s;
+        transition-timing-function: ease;
         &[data-carousel-item-active="true"],
         &[data-carousel-item-secondary-active="true"]{
-          .content-container {
-            opacity: 1;
-            transition-property:opacity;
-            transition-duration:.25s;
-            transition-timing-function: ease;
-          }
+          opacity: 1;
         }
       }
     }
