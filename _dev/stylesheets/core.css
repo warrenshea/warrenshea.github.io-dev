@@ -23672,20 +23672,14 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
   transition-property: left;
   transition-timing-function: ease;
 }
-[data-module=carousel] [data-module="carousel.item-group"] [data-module="carousel.item"] .content-container {
-  box-shadow: 0 0 0.125rem 0 rgba(32, 32, 32, 0.12), 0 0.125rem 0.125rem 0 rgba(32, 32, 32, 0.07);
-}
-[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"] .content-container {
+[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"] {
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.25s;
   transition-timing-function: ease;
 }
-[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-active=true] .content-container, [data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-secondary-active=true] .content-container {
+[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-active=true], [data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-secondary-active=true] {
   opacity: 1;
-  transition-property: opacity;
-  transition-duration: 0.25s;
-  transition-timing-function: ease;
 }
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control] {
   border-radius: 50%;
