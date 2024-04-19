@@ -13,8 +13,8 @@ storm_eagle.module('carousel', () => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
-          item_group: el.querySelector('[data-module="carousel.item-group"]'),
-          items: el.querySelectorAll('[data-module="carousel.item"]:not(.display\\:none)'),
+          item_group: el.querySelector('[data-module="carousel.slides"]'),
+          items: el.querySelectorAll('[data-module="carousel.slide"]:not(.display\\:none)'),
           item_width: '',
           indicators_group: el.querySelector('[data-module="carousel.indicators-group"]'),
           indicators_group_controls: el.querySelectorAll('[data-module="carousel.indicators-group"] > [data-carousel-indicator-control]'),
@@ -50,7 +50,7 @@ storm_eagle.module('carousel', () => {
       reinitiailize: (id) => {
         //console.log("set_items");
         const { el } = state[id];
-        state[id]['items'] = el.querySelectorAll('[data-module="carousel.item"]:not(.display\\:none)');
+        state[id]['items'] = el.querySelectorAll('[data-module="carousel.slide"]:not(.display\\:none)');
         state[id]['transition_duration_array'] = JSON.parse(el.getAttribute('data-carousel-transition-duration'));
         state[id]['number_of_active_array'] = JSON.parse(el.getAttribute('data-carousel-number-active'));
         state[id]['offset_left_array'] = JSON.parse(el.getAttribute('data-carousel-offset'));
