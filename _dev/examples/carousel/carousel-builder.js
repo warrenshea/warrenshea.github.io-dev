@@ -12,7 +12,7 @@ storm_eagle.module('carousel_builder', () => {
           document.querySelector(`#carousel-${carousel_number}`).classList.add(value);
           break;
         case 'num_slides':
-          document.querySelectorAll(`#carousel-${carousel_number} [data-module='carousel.slide']`).forEach((el, index) => {
+          document.querySelectorAll(`#carousel-${carousel_number} [data-module='carousel.item']`).forEach((el, index) => {
               el.classList.remove('display:none');
               document.querySelectorAll(`#carousel-active-${carousel_number} option`)[index].removeAttribute('disabled');
               document.querySelectorAll(`#carousel-num-active-sm-${carousel_number} option`)[index].removeAttribute('disabled');
@@ -33,7 +33,7 @@ storm_eagle.module('carousel_builder', () => {
           document.querySelector(`#carousel-${carousel_number} [data-module='carousel']`).setAttribute('data-carousel-breakpoint', value);
           break;
         case 'focused-item':
-          document.querySelectorAll(`#carousel-${carousel_number} [data-module='carousel.slide']`).forEach((item) => {
+          document.querySelectorAll(`#carousel-${carousel_number} [data-module='carousel.item']`).forEach((item) => {
             item.setAttribute("data-carousel-item-active","");
             item.setAttribute("data-carousel-item-secondary-active","");
           });
