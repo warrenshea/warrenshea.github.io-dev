@@ -9469,6 +9469,27 @@ strong {
   }
 }
 /* file: layout-table.scss------------------------------------------------ */
+.table-b-eerie-black\:1px {
+  border-collapse: collapse;
+  border: 1px solid #202020;
+}
+.table-b-eerie-black\:1px > thead > tr > th,
+.table-b-eerie-black\:1px > thead > tr > td,
+.table-b-eerie-black\:1px > tbody > tr > th,
+.table-b-eerie-black\:1px > tbody > tr > td {
+  border: 1px solid #202020;
+}
+
+.th-bgc\:blue > thead > tr > th,
+.th-bgc\:blue > tbody > tr > th {
+  background-color: #3169b2;
+}
+
+.td-vertical-align\:top > thead > tr > td,
+.td-vertical-align\:top > tbody > tr > td {
+  vertical-align: top;
+}
+
 .td-p\:4px > thead > tr > td,
 .td-p\:4px > tbody > tr > td {
   padding: 0.25rem;
@@ -23684,19 +23705,14 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control] {
   border-radius: 50%;
   transition: background-color 1s, border-color 1s, transform 1s;
-  height: 0.875rem;
-  width: 0.875rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  background: radial-gradient(circle, white 8px, #808080 8px, #808080 10px, transparent 10px);
   padding: 0;
-  border: 0.125rem solid #808080;
-  background-color: #ffffff;
-  margin: 0 0.75rem;
+  margin: 0 0.375rem;
 }
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control][data-carousel-indicator-active=true] {
-  background-color: #3169b2;
-  border-color: #3169b2;
-  margin: 0 0.6875rem;
-  height: 1rem;
-  width: 1rem;
+  background: radial-gradient(circle, #3169b2 8px, #808080 8px, #808080 10px, transparent 10px);
 }
 
 @media screen and (min-width: 48rem) {
