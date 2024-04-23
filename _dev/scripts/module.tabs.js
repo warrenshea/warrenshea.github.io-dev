@@ -31,7 +31,9 @@ storm_eagle.module('tabs', () => {
         state[id]['all_triggers'].forEach((trigger, index) => {
           trigger.removeAttribute("hidden");
           trigger.setAttribute('aria-controls', state[id]['all_panels'][index].getAttribute('id'));
-          all_panels[index].querySelector(':scope > div.display\\:none').innerHTML = trigger.innerHTML;
+          if (all_panels[index].querySelector(':scope > div.display\\:none')) {
+            all_panels[index].querySelector(':scope > div.display\\:none').innerHTML = trigger.innerHTML;
+          }
           all_panels[index].setAttribute('aria-labelledby', trigger.getAttribute('id'));
           if (index === 0) {
             trigger.setAttribute('tabindex', '0');
