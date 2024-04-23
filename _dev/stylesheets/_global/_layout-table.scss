@@ -1,4 +1,26 @@
 /* file: layout-table.scss------------------------------------------------ */
+.table-b-eerie-black\:1px {
+  border-collapse: collapse;
+  border: 1px solid $eerie-black;
+  > thead > tr > th,
+  > thead > tr > td,
+  > tbody > tr > th,
+  > tbody > tr > td {
+    border: 1px solid $eerie-black;
+  }
+}
+.th-bgc\:blue {
+  > thead > tr > th,
+  > tbody > tr > th {
+    background-color: $blue;
+  }
+}
+.td-vertical-align\:top {
+  > thead > tr > td,
+  > tbody > tr > td {
+    vertical-align: top;
+  }
+}
 .td-p\:4px {
   > thead > tr > td,
   > tbody > tr > td {
@@ -11,7 +33,6 @@
     padding: rem-calc(8);
   }
 }
-
 .th-p\:4px {
   > thead > tr > th,
   > tbody > tr > th {
