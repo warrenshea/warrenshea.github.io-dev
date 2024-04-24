@@ -17,6 +17,7 @@ storm_eagle.module('tinymce', () => {
     forced_root_block: 'faketag', //prevents a wrapping <p> tag as these should have no wrapper
     plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
     toolbar: "undo redo | charmap",
+    paste_as_text: true,
   };
 
   const tinymce_basic = {
@@ -35,16 +36,16 @@ storm_eagle.module('tinymce', () => {
       { title: 'Heebo', format: 'heebo', classes: 'heebo' },
       { title: 'Play', format: 'play', classes: 'play' },
       { title: 'Text Font' },
-      { title: 'Heebo Bold', format: 'heebo:bold', classes: 'heebo:bold' },
-      { title: 'Heebo Medium', format: 'heebo:medium', classes: 'heebo:medium' },
-      { title: 'Heebo Light', format: 'heebo:light', classes: 'heebo:light' },
+      { title: 'Heebo Bold', format: 'heebo:bold', inline: 'span', classes: 'heebo:bold' },
+      { title: 'Heebo Medium', format: 'heebo:medium', inline: 'span', classes: 'heebo:medium' },
+      { title: 'Heebo Light', format: 'heebo:light', inline: 'span', classes: 'heebo:light' },
       { title: 'Color' },
-      { title: 'blue', format: 'color:blue', classes: 'color:blue' },
-      { title: 'white', format: 'color:white', classes: 'color:white' },
-      { title: 'eerie-black', format: 'color:eerie-black', classes: 'color:eerie-black' },
-      { title: 'yale-blue', format: 'color:yale-blue', classes: 'color:yale-blue' },
-      { title: 'positive', format: 'color:positive', classes: 'color:positive' },
-      { title: 'negative', format: 'color:negative', classes: 'color:negative' },
+      { title: 'blue', format: 'color:blue', inline: 'span', classes: 'color:blue' },
+      { title: 'white', format: 'color:white', inline: 'span', classes: 'color:white' },
+      { title: 'eerie-black', format: 'color:eerie-black', inline: 'span', classes: 'color:eerie-black' },
+      { title: 'yale-blue', format: 'color:yale-blue', inline: 'span', classes: 'color:yale-blue' },
+      { title: 'positive', format: 'color:positive', inline: 'span', classes: 'color:positive' },
+      { title: 'negative', format: 'color:negative', inline: 'span', classes: 'color:negative' },
       { title: 'Font Size' },
       { title: '16px', format: 'fs:16px', classes: 'fs:16px' },
       { title: '14px', format: 'fs:14px', classes: 'fs:14px' },
@@ -56,8 +57,6 @@ storm_eagle.module('tinymce', () => {
         { title: 'Aside', block: 'aside', wrapper: true },
         { title: 'Article', block: 'article', wrapper: true, merge_siblings: false },
         { title: 'Blockquote', block: 'blockquote', wrapper: true },
-        { title: 'Hgroup', block: 'hgroup', wrapper: true },
-        { title: 'Figure', block: 'figure', wrapper: true }
       ]},
     ],
     block_formats: 'Paragraph=p; Header 1=h1; Header 2=h2; Header 3=h3; Header 4=h4;',
@@ -240,6 +239,7 @@ storm_eagle.module('tinymce', () => {
         const { type, preview_id, onload_id, onupdate } = state[id];
         let config = {
           selector: `#${id}`,
+          extended_valid_elements: 'span[class]',
           setup: (editor) => {
             editor.ui.registry.addMenuButton('advanced', {
               icon: 'search',
