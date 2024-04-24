@@ -137,6 +137,8 @@ storm_eagle.module('carousel', () => {
         self.state.set_breakpoint(id);
         const { breakpoint } = state[id];
         switch (breakpoint) {
+          case '':
+            return true;
           case 'sm=':
             return storm_eagle.client.viewport.is_sm_only();
           case 'sm+':
