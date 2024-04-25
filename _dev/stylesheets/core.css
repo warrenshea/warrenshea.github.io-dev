@@ -449,6 +449,10 @@ strong {
   font-family: "heebo-bold", Arial, Sans-Serif;
 }
 
+p {
+  line-height: 1.5;
+}
+
 /* file: layout-flexbox.scss------------------------------------------------ */
 .flex-flow\:row-wrap {
   flex-flow: row wrap;
@@ -23707,12 +23711,12 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
   transition: background-color 1s, border-color 1s, transform 1s;
   height: 1.75rem;
   width: 1.75rem;
-  background: radial-gradient(circle, white 8px, #808080 8px, #808080 10px, transparent 10px);
+  background: radial-gradient(circle, white 7px, #808080 9px, transparent 10px);
   padding: 0;
   margin: 0 0.375rem;
 }
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control][data-carousel-indicator-active=true] {
-  background: radial-gradient(circle, #3169b2 8px, #808080 8px, #808080 10px, transparent 10px);
+  background: radial-gradient(circle, #3169b2 7px, #808080 9px, transparent 10px);
 }
 
 @media screen and (min-width: 48rem) {
@@ -23776,6 +23780,23 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
 [data-module=carousel][data-carousel-breakpoint="xl+"] [data-carousel-control-prev],
 [data-module=carousel][data-carousel-breakpoint="xl+"] [data-carousel-control-next] {
     display: none;
+  }
+}
+
+.carousel-column-gap-grid [data-module="carousel.item-group"] [data-module="carousel.item"] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media screen and (min-width: 48rem) {
+  .carousel-column-gap-grid [data-module="carousel.item-group"] [data-module="carousel.item"] {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .carousel-column-gap-grid [data-module="carousel.item-group"] [data-module="carousel.item"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
