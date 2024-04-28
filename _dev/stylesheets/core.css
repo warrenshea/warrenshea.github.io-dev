@@ -6,7 +6,7 @@
 /* YELLOW COLOURS */
 /* GRAYSCALE COLOURS */
 /* FEEDBACK COLOURS */
-/* SECONDARY COLLOURS */
+/* SECONDARY COLOURS */
 /* file: variables-dimensions.scss------------------------------------------------ */
 /*rem-calc(375);*/
 /*rem-calc(1280);*/
@@ -382,6 +382,7 @@ template {
 /* file: default.scss------------------------------------------------ */
 html.storm-eagle {
   font-size: 16px;
+  line-height: 1.5;
   color: #202020;
   font-family: "heebo-light", Arial, Sans-Serif;
   box-sizing: border-box;
@@ -447,10 +448,6 @@ table {
 
 strong {
   font-family: "heebo-bold", Arial, Sans-Serif;
-}
-
-p {
-  line-height: 1.5;
 }
 
 /* file: layout-flexbox.scss------------------------------------------------ */
@@ -9517,8 +9514,6 @@ p {
 /* file: interactive-anchors-buttons.scss------------------------------------------------ */
 a.anchor\:blue,
 button.anchor\:blue,
-a.anchor\:transparent,
-button.anchor\:transparent,
 a.anchor\:white,
 button.anchor\:white,
 a.anchor\:red,
@@ -9537,8 +9532,6 @@ button.anchor\:yale-blue {
 }
 a.anchor\:blue > .ic.ic-size\:24px,
 button.anchor\:blue > .ic.ic-size\:24px,
-a.anchor\:transparent > .ic.ic-size\:24px,
-button.anchor\:transparent > .ic.ic-size\:24px,
 a.anchor\:white > .ic.ic-size\:24px,
 button.anchor\:white > .ic.ic-size\:24px,
 a.anchor\:red > .ic.ic-size\:24px,
@@ -9550,8 +9543,6 @@ button.anchor\:yale-blue > .ic.ic-size\:24px {
 }
 a.anchor\:blue > .ic.ic-size\:16px,
 button.anchor\:blue > .ic.ic-size\:16px,
-a.anchor\:transparent > .ic.ic-size\:16px,
-button.anchor\:transparent > .ic.ic-size\:16px,
 a.anchor\:white > .ic.ic-size\:16px,
 button.anchor\:white > .ic.ic-size\:16px,
 a.anchor\:red > .ic.ic-size\:16px,
@@ -9601,48 +9592,6 @@ a.anchor\:blue:disabled > .ic, a.anchor\:blue.disabled > .ic, a.anchor\:blue[dis
 button.anchor\:blue:disabled > .ic,
 button.anchor\:blue.disabled > .ic,
 button.anchor\:blue[disabled=true] > .ic {
-  background-color: #404040;
-}
-
-a.anchor\:transparent,
-button.anchor\:transparent {
-  color: #3169b2;
-}
-a.anchor\:transparent > .ic,
-button.anchor\:transparent > .ic {
-  background-color: #3169b2;
-}
-a.anchor\:transparent:hover, a.anchor\:transparent:hover:enabled, a.anchor\:transparent:focus, a.anchor\:transparent:focus:enabled, a.anchor\:transparent:active, a.anchor\:transparent:active:enabled,
-button.anchor\:transparent:hover,
-button.anchor\:transparent:hover:enabled,
-button.anchor\:transparent:focus,
-button.anchor\:transparent:focus:enabled,
-button.anchor\:transparent:active,
-button.anchor\:transparent:active:enabled {
-  color: #1c3b65;
-  text-decoration: underline;
-}
-a.anchor\:transparent:hover > .ic, a.anchor\:transparent:hover:enabled > .ic, a.anchor\:transparent:focus > .ic, a.anchor\:transparent:focus:enabled > .ic, a.anchor\:transparent:active > .ic, a.anchor\:transparent:active:enabled > .ic,
-button.anchor\:transparent:hover > .ic,
-button.anchor\:transparent:hover:enabled > .ic,
-button.anchor\:transparent:focus > .ic,
-button.anchor\:transparent:focus:enabled > .ic,
-button.anchor\:transparent:active > .ic,
-button.anchor\:transparent:active:enabled > .ic {
-  background-color: #1c3b65;
-}
-a.anchor\:transparent:disabled, a.anchor\:transparent.disabled, a.anchor\:transparent[disabled=true],
-button.anchor\:transparent:disabled,
-button.anchor\:transparent.disabled,
-button.anchor\:transparent[disabled=true] {
-  color: #404040;
-  cursor: default;
-  text-decoration: none;
-}
-a.anchor\:transparent:disabled > .ic, a.anchor\:transparent.disabled > .ic, a.anchor\:transparent[disabled=true] > .ic,
-button.anchor\:transparent:disabled > .ic,
-button.anchor\:transparent.disabled > .ic,
-button.anchor\:transparent[disabled=true] > .ic {
   background-color: #404040;
 }
 
@@ -9775,8 +9724,6 @@ button.anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (max-width: 47.99rem) {
   a.sm\=\:anchor\:blue,
 button.sm\=\:anchor\:blue,
-a.sm\=\:anchor\:transparent,
-button.sm\=\:anchor\:transparent,
 a.sm\=\:anchor\:white,
 button.sm\=\:anchor\:white,
 a.sm\=\:anchor\:red,
@@ -9795,8 +9742,6 @@ button.sm\=\:anchor\:yale-blue {
   }
   a.sm\=\:anchor\:blue > .ic.ic-size\:24px,
 button.sm\=\:anchor\:blue > .ic.ic-size\:24px,
-a.sm\=\:anchor\:transparent > .ic.ic-size\:24px,
-button.sm\=\:anchor\:transparent > .ic.ic-size\:24px,
 a.sm\=\:anchor\:white > .ic.ic-size\:24px,
 button.sm\=\:anchor\:white > .ic.ic-size\:24px,
 a.sm\=\:anchor\:red > .ic.ic-size\:24px,
@@ -9808,8 +9753,6 @@ button.sm\=\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.sm\=\:anchor\:blue > .ic.ic-size\:16px,
 button.sm\=\:anchor\:blue > .ic.ic-size\:16px,
-a.sm\=\:anchor\:transparent > .ic.ic-size\:16px,
-button.sm\=\:anchor\:transparent > .ic.ic-size\:16px,
 a.sm\=\:anchor\:white > .ic.ic-size\:16px,
 button.sm\=\:anchor\:white > .ic.ic-size\:16px,
 a.sm\=\:anchor\:red > .ic.ic-size\:16px,
@@ -9859,48 +9802,6 @@ button.sm\=\:anchor\:blue[disabled=true] {
 button.sm\=\:anchor\:blue:disabled > .ic,
 button.sm\=\:anchor\:blue.disabled > .ic,
 button.sm\=\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.sm\=\:anchor\:transparent,
-button.sm\=\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.sm\=\:anchor\:transparent > .ic,
-button.sm\=\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.sm\=\:anchor\:transparent:hover, a.sm\=\:anchor\:transparent:hover:enabled, a.sm\=\:anchor\:transparent:focus, a.sm\=\:anchor\:transparent:focus:enabled, a.sm\=\:anchor\:transparent:active, a.sm\=\:anchor\:transparent:active:enabled,
-button.sm\=\:anchor\:transparent:hover,
-button.sm\=\:anchor\:transparent:hover:enabled,
-button.sm\=\:anchor\:transparent:focus,
-button.sm\=\:anchor\:transparent:focus:enabled,
-button.sm\=\:anchor\:transparent:active,
-button.sm\=\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.sm\=\:anchor\:transparent:hover > .ic, a.sm\=\:anchor\:transparent:hover:enabled > .ic, a.sm\=\:anchor\:transparent:focus > .ic, a.sm\=\:anchor\:transparent:focus:enabled > .ic, a.sm\=\:anchor\:transparent:active > .ic, a.sm\=\:anchor\:transparent:active:enabled > .ic,
-button.sm\=\:anchor\:transparent:hover > .ic,
-button.sm\=\:anchor\:transparent:hover:enabled > .ic,
-button.sm\=\:anchor\:transparent:focus > .ic,
-button.sm\=\:anchor\:transparent:focus:enabled > .ic,
-button.sm\=\:anchor\:transparent:active > .ic,
-button.sm\=\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.sm\=\:anchor\:transparent:disabled, a.sm\=\:anchor\:transparent.disabled, a.sm\=\:anchor\:transparent[disabled=true],
-button.sm\=\:anchor\:transparent:disabled,
-button.sm\=\:anchor\:transparent.disabled,
-button.sm\=\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.sm\=\:anchor\:transparent:disabled > .ic, a.sm\=\:anchor\:transparent.disabled > .ic, a.sm\=\:anchor\:transparent[disabled=true] > .ic,
-button.sm\=\:anchor\:transparent:disabled > .ic,
-button.sm\=\:anchor\:transparent.disabled > .ic,
-button.sm\=\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -10032,8 +9933,6 @@ button.sm\=\:anchor\:yale-blue[disabled=true] > .ic {
 }
 a.sm\+\:anchor\:blue,
 button.sm\+\:anchor\:blue,
-a.sm\+\:anchor\:transparent,
-button.sm\+\:anchor\:transparent,
 a.sm\+\:anchor\:white,
 button.sm\+\:anchor\:white,
 a.sm\+\:anchor\:red,
@@ -10052,8 +9951,6 @@ button.sm\+\:anchor\:yale-blue {
 }
 a.sm\+\:anchor\:blue > .ic.ic-size\:24px,
 button.sm\+\:anchor\:blue > .ic.ic-size\:24px,
-a.sm\+\:anchor\:transparent > .ic.ic-size\:24px,
-button.sm\+\:anchor\:transparent > .ic.ic-size\:24px,
 a.sm\+\:anchor\:white > .ic.ic-size\:24px,
 button.sm\+\:anchor\:white > .ic.ic-size\:24px,
 a.sm\+\:anchor\:red > .ic.ic-size\:24px,
@@ -10065,8 +9962,6 @@ button.sm\+\:anchor\:yale-blue > .ic.ic-size\:24px {
 }
 a.sm\+\:anchor\:blue > .ic.ic-size\:16px,
 button.sm\+\:anchor\:blue > .ic.ic-size\:16px,
-a.sm\+\:anchor\:transparent > .ic.ic-size\:16px,
-button.sm\+\:anchor\:transparent > .ic.ic-size\:16px,
 a.sm\+\:anchor\:white > .ic.ic-size\:16px,
 button.sm\+\:anchor\:white > .ic.ic-size\:16px,
 a.sm\+\:anchor\:red > .ic.ic-size\:16px,
@@ -10116,48 +10011,6 @@ a.sm\+\:anchor\:blue:disabled > .ic, a.sm\+\:anchor\:blue.disabled > .ic, a.sm\+
 button.sm\+\:anchor\:blue:disabled > .ic,
 button.sm\+\:anchor\:blue.disabled > .ic,
 button.sm\+\:anchor\:blue[disabled=true] > .ic {
-  background-color: #404040;
-}
-
-a.sm\+\:anchor\:transparent,
-button.sm\+\:anchor\:transparent {
-  color: #3169b2;
-}
-a.sm\+\:anchor\:transparent > .ic,
-button.sm\+\:anchor\:transparent > .ic {
-  background-color: #3169b2;
-}
-a.sm\+\:anchor\:transparent:hover, a.sm\+\:anchor\:transparent:hover:enabled, a.sm\+\:anchor\:transparent:focus, a.sm\+\:anchor\:transparent:focus:enabled, a.sm\+\:anchor\:transparent:active, a.sm\+\:anchor\:transparent:active:enabled,
-button.sm\+\:anchor\:transparent:hover,
-button.sm\+\:anchor\:transparent:hover:enabled,
-button.sm\+\:anchor\:transparent:focus,
-button.sm\+\:anchor\:transparent:focus:enabled,
-button.sm\+\:anchor\:transparent:active,
-button.sm\+\:anchor\:transparent:active:enabled {
-  color: #1c3b65;
-  text-decoration: underline;
-}
-a.sm\+\:anchor\:transparent:hover > .ic, a.sm\+\:anchor\:transparent:hover:enabled > .ic, a.sm\+\:anchor\:transparent:focus > .ic, a.sm\+\:anchor\:transparent:focus:enabled > .ic, a.sm\+\:anchor\:transparent:active > .ic, a.sm\+\:anchor\:transparent:active:enabled > .ic,
-button.sm\+\:anchor\:transparent:hover > .ic,
-button.sm\+\:anchor\:transparent:hover:enabled > .ic,
-button.sm\+\:anchor\:transparent:focus > .ic,
-button.sm\+\:anchor\:transparent:focus:enabled > .ic,
-button.sm\+\:anchor\:transparent:active > .ic,
-button.sm\+\:anchor\:transparent:active:enabled > .ic {
-  background-color: #1c3b65;
-}
-a.sm\+\:anchor\:transparent:disabled, a.sm\+\:anchor\:transparent.disabled, a.sm\+\:anchor\:transparent[disabled=true],
-button.sm\+\:anchor\:transparent:disabled,
-button.sm\+\:anchor\:transparent.disabled,
-button.sm\+\:anchor\:transparent[disabled=true] {
-  color: #404040;
-  cursor: default;
-  text-decoration: none;
-}
-a.sm\+\:anchor\:transparent:disabled > .ic, a.sm\+\:anchor\:transparent.disabled > .ic, a.sm\+\:anchor\:transparent[disabled=true] > .ic,
-button.sm\+\:anchor\:transparent:disabled > .ic,
-button.sm\+\:anchor\:transparent.disabled > .ic,
-button.sm\+\:anchor\:transparent[disabled=true] > .ic {
   background-color: #404040;
 }
 
@@ -10290,8 +10143,6 @@ button.sm\+\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (max-width: 63.99rem) {
   a.md-\:anchor\:blue,
 button.md-\:anchor\:blue,
-a.md-\:anchor\:transparent,
-button.md-\:anchor\:transparent,
 a.md-\:anchor\:white,
 button.md-\:anchor\:white,
 a.md-\:anchor\:red,
@@ -10310,8 +10161,6 @@ button.md-\:anchor\:yale-blue {
   }
   a.md-\:anchor\:blue > .ic.ic-size\:24px,
 button.md-\:anchor\:blue > .ic.ic-size\:24px,
-a.md-\:anchor\:transparent > .ic.ic-size\:24px,
-button.md-\:anchor\:transparent > .ic.ic-size\:24px,
 a.md-\:anchor\:white > .ic.ic-size\:24px,
 button.md-\:anchor\:white > .ic.ic-size\:24px,
 a.md-\:anchor\:red > .ic.ic-size\:24px,
@@ -10323,8 +10172,6 @@ button.md-\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.md-\:anchor\:blue > .ic.ic-size\:16px,
 button.md-\:anchor\:blue > .ic.ic-size\:16px,
-a.md-\:anchor\:transparent > .ic.ic-size\:16px,
-button.md-\:anchor\:transparent > .ic.ic-size\:16px,
 a.md-\:anchor\:white > .ic.ic-size\:16px,
 button.md-\:anchor\:white > .ic.ic-size\:16px,
 a.md-\:anchor\:red > .ic.ic-size\:16px,
@@ -10374,48 +10221,6 @@ button.md-\:anchor\:blue[disabled=true] {
 button.md-\:anchor\:blue:disabled > .ic,
 button.md-\:anchor\:blue.disabled > .ic,
 button.md-\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.md-\:anchor\:transparent,
-button.md-\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.md-\:anchor\:transparent > .ic,
-button.md-\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.md-\:anchor\:transparent:hover, a.md-\:anchor\:transparent:hover:enabled, a.md-\:anchor\:transparent:focus, a.md-\:anchor\:transparent:focus:enabled, a.md-\:anchor\:transparent:active, a.md-\:anchor\:transparent:active:enabled,
-button.md-\:anchor\:transparent:hover,
-button.md-\:anchor\:transparent:hover:enabled,
-button.md-\:anchor\:transparent:focus,
-button.md-\:anchor\:transparent:focus:enabled,
-button.md-\:anchor\:transparent:active,
-button.md-\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.md-\:anchor\:transparent:hover > .ic, a.md-\:anchor\:transparent:hover:enabled > .ic, a.md-\:anchor\:transparent:focus > .ic, a.md-\:anchor\:transparent:focus:enabled > .ic, a.md-\:anchor\:transparent:active > .ic, a.md-\:anchor\:transparent:active:enabled > .ic,
-button.md-\:anchor\:transparent:hover > .ic,
-button.md-\:anchor\:transparent:hover:enabled > .ic,
-button.md-\:anchor\:transparent:focus > .ic,
-button.md-\:anchor\:transparent:focus:enabled > .ic,
-button.md-\:anchor\:transparent:active > .ic,
-button.md-\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.md-\:anchor\:transparent:disabled, a.md-\:anchor\:transparent.disabled, a.md-\:anchor\:transparent[disabled=true],
-button.md-\:anchor\:transparent:disabled,
-button.md-\:anchor\:transparent.disabled,
-button.md-\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.md-\:anchor\:transparent:disabled > .ic, a.md-\:anchor\:transparent.disabled > .ic, a.md-\:anchor\:transparent[disabled=true] > .ic,
-button.md-\:anchor\:transparent:disabled > .ic,
-button.md-\:anchor\:transparent.disabled > .ic,
-button.md-\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -10548,8 +10353,6 @@ button.md-\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
   a.md\=\:anchor\:blue,
 button.md\=\:anchor\:blue,
-a.md\=\:anchor\:transparent,
-button.md\=\:anchor\:transparent,
 a.md\=\:anchor\:white,
 button.md\=\:anchor\:white,
 a.md\=\:anchor\:red,
@@ -10568,8 +10371,6 @@ button.md\=\:anchor\:yale-blue {
   }
   a.md\=\:anchor\:blue > .ic.ic-size\:24px,
 button.md\=\:anchor\:blue > .ic.ic-size\:24px,
-a.md\=\:anchor\:transparent > .ic.ic-size\:24px,
-button.md\=\:anchor\:transparent > .ic.ic-size\:24px,
 a.md\=\:anchor\:white > .ic.ic-size\:24px,
 button.md\=\:anchor\:white > .ic.ic-size\:24px,
 a.md\=\:anchor\:red > .ic.ic-size\:24px,
@@ -10581,8 +10382,6 @@ button.md\=\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.md\=\:anchor\:blue > .ic.ic-size\:16px,
 button.md\=\:anchor\:blue > .ic.ic-size\:16px,
-a.md\=\:anchor\:transparent > .ic.ic-size\:16px,
-button.md\=\:anchor\:transparent > .ic.ic-size\:16px,
 a.md\=\:anchor\:white > .ic.ic-size\:16px,
 button.md\=\:anchor\:white > .ic.ic-size\:16px,
 a.md\=\:anchor\:red > .ic.ic-size\:16px,
@@ -10632,48 +10431,6 @@ button.md\=\:anchor\:blue[disabled=true] {
 button.md\=\:anchor\:blue:disabled > .ic,
 button.md\=\:anchor\:blue.disabled > .ic,
 button.md\=\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.md\=\:anchor\:transparent,
-button.md\=\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.md\=\:anchor\:transparent > .ic,
-button.md\=\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.md\=\:anchor\:transparent:hover, a.md\=\:anchor\:transparent:hover:enabled, a.md\=\:anchor\:transparent:focus, a.md\=\:anchor\:transparent:focus:enabled, a.md\=\:anchor\:transparent:active, a.md\=\:anchor\:transparent:active:enabled,
-button.md\=\:anchor\:transparent:hover,
-button.md\=\:anchor\:transparent:hover:enabled,
-button.md\=\:anchor\:transparent:focus,
-button.md\=\:anchor\:transparent:focus:enabled,
-button.md\=\:anchor\:transparent:active,
-button.md\=\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.md\=\:anchor\:transparent:hover > .ic, a.md\=\:anchor\:transparent:hover:enabled > .ic, a.md\=\:anchor\:transparent:focus > .ic, a.md\=\:anchor\:transparent:focus:enabled > .ic, a.md\=\:anchor\:transparent:active > .ic, a.md\=\:anchor\:transparent:active:enabled > .ic,
-button.md\=\:anchor\:transparent:hover > .ic,
-button.md\=\:anchor\:transparent:hover:enabled > .ic,
-button.md\=\:anchor\:transparent:focus > .ic,
-button.md\=\:anchor\:transparent:focus:enabled > .ic,
-button.md\=\:anchor\:transparent:active > .ic,
-button.md\=\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.md\=\:anchor\:transparent:disabled, a.md\=\:anchor\:transparent.disabled, a.md\=\:anchor\:transparent[disabled=true],
-button.md\=\:anchor\:transparent:disabled,
-button.md\=\:anchor\:transparent.disabled,
-button.md\=\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.md\=\:anchor\:transparent:disabled > .ic, a.md\=\:anchor\:transparent.disabled > .ic, a.md\=\:anchor\:transparent[disabled=true] > .ic,
-button.md\=\:anchor\:transparent:disabled > .ic,
-button.md\=\:anchor\:transparent.disabled > .ic,
-button.md\=\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -10806,8 +10563,6 @@ button.md\=\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (min-width: 48rem) {
   a.md\+\:anchor\:blue,
 button.md\+\:anchor\:blue,
-a.md\+\:anchor\:transparent,
-button.md\+\:anchor\:transparent,
 a.md\+\:anchor\:white,
 button.md\+\:anchor\:white,
 a.md\+\:anchor\:red,
@@ -10826,8 +10581,6 @@ button.md\+\:anchor\:yale-blue {
   }
   a.md\+\:anchor\:blue > .ic.ic-size\:24px,
 button.md\+\:anchor\:blue > .ic.ic-size\:24px,
-a.md\+\:anchor\:transparent > .ic.ic-size\:24px,
-button.md\+\:anchor\:transparent > .ic.ic-size\:24px,
 a.md\+\:anchor\:white > .ic.ic-size\:24px,
 button.md\+\:anchor\:white > .ic.ic-size\:24px,
 a.md\+\:anchor\:red > .ic.ic-size\:24px,
@@ -10839,8 +10592,6 @@ button.md\+\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.md\+\:anchor\:blue > .ic.ic-size\:16px,
 button.md\+\:anchor\:blue > .ic.ic-size\:16px,
-a.md\+\:anchor\:transparent > .ic.ic-size\:16px,
-button.md\+\:anchor\:transparent > .ic.ic-size\:16px,
 a.md\+\:anchor\:white > .ic.ic-size\:16px,
 button.md\+\:anchor\:white > .ic.ic-size\:16px,
 a.md\+\:anchor\:red > .ic.ic-size\:16px,
@@ -10890,48 +10641,6 @@ button.md\+\:anchor\:blue[disabled=true] {
 button.md\+\:anchor\:blue:disabled > .ic,
 button.md\+\:anchor\:blue.disabled > .ic,
 button.md\+\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.md\+\:anchor\:transparent,
-button.md\+\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.md\+\:anchor\:transparent > .ic,
-button.md\+\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.md\+\:anchor\:transparent:hover, a.md\+\:anchor\:transparent:hover:enabled, a.md\+\:anchor\:transparent:focus, a.md\+\:anchor\:transparent:focus:enabled, a.md\+\:anchor\:transparent:active, a.md\+\:anchor\:transparent:active:enabled,
-button.md\+\:anchor\:transparent:hover,
-button.md\+\:anchor\:transparent:hover:enabled,
-button.md\+\:anchor\:transparent:focus,
-button.md\+\:anchor\:transparent:focus:enabled,
-button.md\+\:anchor\:transparent:active,
-button.md\+\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.md\+\:anchor\:transparent:hover > .ic, a.md\+\:anchor\:transparent:hover:enabled > .ic, a.md\+\:anchor\:transparent:focus > .ic, a.md\+\:anchor\:transparent:focus:enabled > .ic, a.md\+\:anchor\:transparent:active > .ic, a.md\+\:anchor\:transparent:active:enabled > .ic,
-button.md\+\:anchor\:transparent:hover > .ic,
-button.md\+\:anchor\:transparent:hover:enabled > .ic,
-button.md\+\:anchor\:transparent:focus > .ic,
-button.md\+\:anchor\:transparent:focus:enabled > .ic,
-button.md\+\:anchor\:transparent:active > .ic,
-button.md\+\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.md\+\:anchor\:transparent:disabled, a.md\+\:anchor\:transparent.disabled, a.md\+\:anchor\:transparent[disabled=true],
-button.md\+\:anchor\:transparent:disabled,
-button.md\+\:anchor\:transparent.disabled,
-button.md\+\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.md\+\:anchor\:transparent:disabled > .ic, a.md\+\:anchor\:transparent.disabled > .ic, a.md\+\:anchor\:transparent[disabled=true] > .ic,
-button.md\+\:anchor\:transparent:disabled > .ic,
-button.md\+\:anchor\:transparent.disabled > .ic,
-button.md\+\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -11064,8 +10773,6 @@ button.md\+\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (max-width: 79.99rem) {
   a.lg-\:anchor\:blue,
 button.lg-\:anchor\:blue,
-a.lg-\:anchor\:transparent,
-button.lg-\:anchor\:transparent,
 a.lg-\:anchor\:white,
 button.lg-\:anchor\:white,
 a.lg-\:anchor\:red,
@@ -11084,8 +10791,6 @@ button.lg-\:anchor\:yale-blue {
   }
   a.lg-\:anchor\:blue > .ic.ic-size\:24px,
 button.lg-\:anchor\:blue > .ic.ic-size\:24px,
-a.lg-\:anchor\:transparent > .ic.ic-size\:24px,
-button.lg-\:anchor\:transparent > .ic.ic-size\:24px,
 a.lg-\:anchor\:white > .ic.ic-size\:24px,
 button.lg-\:anchor\:white > .ic.ic-size\:24px,
 a.lg-\:anchor\:red > .ic.ic-size\:24px,
@@ -11097,8 +10802,6 @@ button.lg-\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.lg-\:anchor\:blue > .ic.ic-size\:16px,
 button.lg-\:anchor\:blue > .ic.ic-size\:16px,
-a.lg-\:anchor\:transparent > .ic.ic-size\:16px,
-button.lg-\:anchor\:transparent > .ic.ic-size\:16px,
 a.lg-\:anchor\:white > .ic.ic-size\:16px,
 button.lg-\:anchor\:white > .ic.ic-size\:16px,
 a.lg-\:anchor\:red > .ic.ic-size\:16px,
@@ -11148,48 +10851,6 @@ button.lg-\:anchor\:blue[disabled=true] {
 button.lg-\:anchor\:blue:disabled > .ic,
 button.lg-\:anchor\:blue.disabled > .ic,
 button.lg-\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.lg-\:anchor\:transparent,
-button.lg-\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.lg-\:anchor\:transparent > .ic,
-button.lg-\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.lg-\:anchor\:transparent:hover, a.lg-\:anchor\:transparent:hover:enabled, a.lg-\:anchor\:transparent:focus, a.lg-\:anchor\:transparent:focus:enabled, a.lg-\:anchor\:transparent:active, a.lg-\:anchor\:transparent:active:enabled,
-button.lg-\:anchor\:transparent:hover,
-button.lg-\:anchor\:transparent:hover:enabled,
-button.lg-\:anchor\:transparent:focus,
-button.lg-\:anchor\:transparent:focus:enabled,
-button.lg-\:anchor\:transparent:active,
-button.lg-\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.lg-\:anchor\:transparent:hover > .ic, a.lg-\:anchor\:transparent:hover:enabled > .ic, a.lg-\:anchor\:transparent:focus > .ic, a.lg-\:anchor\:transparent:focus:enabled > .ic, a.lg-\:anchor\:transparent:active > .ic, a.lg-\:anchor\:transparent:active:enabled > .ic,
-button.lg-\:anchor\:transparent:hover > .ic,
-button.lg-\:anchor\:transparent:hover:enabled > .ic,
-button.lg-\:anchor\:transparent:focus > .ic,
-button.lg-\:anchor\:transparent:focus:enabled > .ic,
-button.lg-\:anchor\:transparent:active > .ic,
-button.lg-\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.lg-\:anchor\:transparent:disabled, a.lg-\:anchor\:transparent.disabled, a.lg-\:anchor\:transparent[disabled=true],
-button.lg-\:anchor\:transparent:disabled,
-button.lg-\:anchor\:transparent.disabled,
-button.lg-\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.lg-\:anchor\:transparent:disabled > .ic, a.lg-\:anchor\:transparent.disabled > .ic, a.lg-\:anchor\:transparent[disabled=true] > .ic,
-button.lg-\:anchor\:transparent:disabled > .ic,
-button.lg-\:anchor\:transparent.disabled > .ic,
-button.lg-\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -11322,8 +10983,6 @@ button.lg-\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
   a.lg\=\:anchor\:blue,
 button.lg\=\:anchor\:blue,
-a.lg\=\:anchor\:transparent,
-button.lg\=\:anchor\:transparent,
 a.lg\=\:anchor\:white,
 button.lg\=\:anchor\:white,
 a.lg\=\:anchor\:red,
@@ -11342,8 +11001,6 @@ button.lg\=\:anchor\:yale-blue {
   }
   a.lg\=\:anchor\:blue > .ic.ic-size\:24px,
 button.lg\=\:anchor\:blue > .ic.ic-size\:24px,
-a.lg\=\:anchor\:transparent > .ic.ic-size\:24px,
-button.lg\=\:anchor\:transparent > .ic.ic-size\:24px,
 a.lg\=\:anchor\:white > .ic.ic-size\:24px,
 button.lg\=\:anchor\:white > .ic.ic-size\:24px,
 a.lg\=\:anchor\:red > .ic.ic-size\:24px,
@@ -11355,8 +11012,6 @@ button.lg\=\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.lg\=\:anchor\:blue > .ic.ic-size\:16px,
 button.lg\=\:anchor\:blue > .ic.ic-size\:16px,
-a.lg\=\:anchor\:transparent > .ic.ic-size\:16px,
-button.lg\=\:anchor\:transparent > .ic.ic-size\:16px,
 a.lg\=\:anchor\:white > .ic.ic-size\:16px,
 button.lg\=\:anchor\:white > .ic.ic-size\:16px,
 a.lg\=\:anchor\:red > .ic.ic-size\:16px,
@@ -11406,48 +11061,6 @@ button.lg\=\:anchor\:blue[disabled=true] {
 button.lg\=\:anchor\:blue:disabled > .ic,
 button.lg\=\:anchor\:blue.disabled > .ic,
 button.lg\=\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.lg\=\:anchor\:transparent,
-button.lg\=\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.lg\=\:anchor\:transparent > .ic,
-button.lg\=\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.lg\=\:anchor\:transparent:hover, a.lg\=\:anchor\:transparent:hover:enabled, a.lg\=\:anchor\:transparent:focus, a.lg\=\:anchor\:transparent:focus:enabled, a.lg\=\:anchor\:transparent:active, a.lg\=\:anchor\:transparent:active:enabled,
-button.lg\=\:anchor\:transparent:hover,
-button.lg\=\:anchor\:transparent:hover:enabled,
-button.lg\=\:anchor\:transparent:focus,
-button.lg\=\:anchor\:transparent:focus:enabled,
-button.lg\=\:anchor\:transparent:active,
-button.lg\=\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.lg\=\:anchor\:transparent:hover > .ic, a.lg\=\:anchor\:transparent:hover:enabled > .ic, a.lg\=\:anchor\:transparent:focus > .ic, a.lg\=\:anchor\:transparent:focus:enabled > .ic, a.lg\=\:anchor\:transparent:active > .ic, a.lg\=\:anchor\:transparent:active:enabled > .ic,
-button.lg\=\:anchor\:transparent:hover > .ic,
-button.lg\=\:anchor\:transparent:hover:enabled > .ic,
-button.lg\=\:anchor\:transparent:focus > .ic,
-button.lg\=\:anchor\:transparent:focus:enabled > .ic,
-button.lg\=\:anchor\:transparent:active > .ic,
-button.lg\=\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.lg\=\:anchor\:transparent:disabled, a.lg\=\:anchor\:transparent.disabled, a.lg\=\:anchor\:transparent[disabled=true],
-button.lg\=\:anchor\:transparent:disabled,
-button.lg\=\:anchor\:transparent.disabled,
-button.lg\=\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.lg\=\:anchor\:transparent:disabled > .ic, a.lg\=\:anchor\:transparent.disabled > .ic, a.lg\=\:anchor\:transparent[disabled=true] > .ic,
-button.lg\=\:anchor\:transparent:disabled > .ic,
-button.lg\=\:anchor\:transparent.disabled > .ic,
-button.lg\=\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -11580,8 +11193,6 @@ button.lg\=\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (min-width: 64rem) {
   a.lg\+\:anchor\:blue,
 button.lg\+\:anchor\:blue,
-a.lg\+\:anchor\:transparent,
-button.lg\+\:anchor\:transparent,
 a.lg\+\:anchor\:white,
 button.lg\+\:anchor\:white,
 a.lg\+\:anchor\:red,
@@ -11600,8 +11211,6 @@ button.lg\+\:anchor\:yale-blue {
   }
   a.lg\+\:anchor\:blue > .ic.ic-size\:24px,
 button.lg\+\:anchor\:blue > .ic.ic-size\:24px,
-a.lg\+\:anchor\:transparent > .ic.ic-size\:24px,
-button.lg\+\:anchor\:transparent > .ic.ic-size\:24px,
 a.lg\+\:anchor\:white > .ic.ic-size\:24px,
 button.lg\+\:anchor\:white > .ic.ic-size\:24px,
 a.lg\+\:anchor\:red > .ic.ic-size\:24px,
@@ -11613,8 +11222,6 @@ button.lg\+\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.lg\+\:anchor\:blue > .ic.ic-size\:16px,
 button.lg\+\:anchor\:blue > .ic.ic-size\:16px,
-a.lg\+\:anchor\:transparent > .ic.ic-size\:16px,
-button.lg\+\:anchor\:transparent > .ic.ic-size\:16px,
 a.lg\+\:anchor\:white > .ic.ic-size\:16px,
 button.lg\+\:anchor\:white > .ic.ic-size\:16px,
 a.lg\+\:anchor\:red > .ic.ic-size\:16px,
@@ -11664,48 +11271,6 @@ button.lg\+\:anchor\:blue[disabled=true] {
 button.lg\+\:anchor\:blue:disabled > .ic,
 button.lg\+\:anchor\:blue.disabled > .ic,
 button.lg\+\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.lg\+\:anchor\:transparent,
-button.lg\+\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.lg\+\:anchor\:transparent > .ic,
-button.lg\+\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.lg\+\:anchor\:transparent:hover, a.lg\+\:anchor\:transparent:hover:enabled, a.lg\+\:anchor\:transparent:focus, a.lg\+\:anchor\:transparent:focus:enabled, a.lg\+\:anchor\:transparent:active, a.lg\+\:anchor\:transparent:active:enabled,
-button.lg\+\:anchor\:transparent:hover,
-button.lg\+\:anchor\:transparent:hover:enabled,
-button.lg\+\:anchor\:transparent:focus,
-button.lg\+\:anchor\:transparent:focus:enabled,
-button.lg\+\:anchor\:transparent:active,
-button.lg\+\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.lg\+\:anchor\:transparent:hover > .ic, a.lg\+\:anchor\:transparent:hover:enabled > .ic, a.lg\+\:anchor\:transparent:focus > .ic, a.lg\+\:anchor\:transparent:focus:enabled > .ic, a.lg\+\:anchor\:transparent:active > .ic, a.lg\+\:anchor\:transparent:active:enabled > .ic,
-button.lg\+\:anchor\:transparent:hover > .ic,
-button.lg\+\:anchor\:transparent:hover:enabled > .ic,
-button.lg\+\:anchor\:transparent:focus > .ic,
-button.lg\+\:anchor\:transparent:focus:enabled > .ic,
-button.lg\+\:anchor\:transparent:active > .ic,
-button.lg\+\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.lg\+\:anchor\:transparent:disabled, a.lg\+\:anchor\:transparent.disabled, a.lg\+\:anchor\:transparent[disabled=true],
-button.lg\+\:anchor\:transparent:disabled,
-button.lg\+\:anchor\:transparent.disabled,
-button.lg\+\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.lg\+\:anchor\:transparent:disabled > .ic, a.lg\+\:anchor\:transparent.disabled > .ic, a.lg\+\:anchor\:transparent[disabled=true] > .ic,
-button.lg\+\:anchor\:transparent:disabled > .ic,
-button.lg\+\:anchor\:transparent.disabled > .ic,
-button.lg\+\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
@@ -11838,8 +11403,6 @@ button.lg\+\:anchor\:yale-blue[disabled=true] > .ic {
 @media screen and (min-width: 80rem) {
   a.xl\+\:anchor\:blue,
 button.xl\+\:anchor\:blue,
-a.xl\+\:anchor\:transparent,
-button.xl\+\:anchor\:transparent,
 a.xl\+\:anchor\:white,
 button.xl\+\:anchor\:white,
 a.xl\+\:anchor\:red,
@@ -11858,8 +11421,6 @@ button.xl\+\:anchor\:yale-blue {
   }
   a.xl\+\:anchor\:blue > .ic.ic-size\:24px,
 button.xl\+\:anchor\:blue > .ic.ic-size\:24px,
-a.xl\+\:anchor\:transparent > .ic.ic-size\:24px,
-button.xl\+\:anchor\:transparent > .ic.ic-size\:24px,
 a.xl\+\:anchor\:white > .ic.ic-size\:24px,
 button.xl\+\:anchor\:white > .ic.ic-size\:24px,
 a.xl\+\:anchor\:red > .ic.ic-size\:24px,
@@ -11871,8 +11432,6 @@ button.xl\+\:anchor\:yale-blue > .ic.ic-size\:24px {
   }
   a.xl\+\:anchor\:blue > .ic.ic-size\:16px,
 button.xl\+\:anchor\:blue > .ic.ic-size\:16px,
-a.xl\+\:anchor\:transparent > .ic.ic-size\:16px,
-button.xl\+\:anchor\:transparent > .ic.ic-size\:16px,
 a.xl\+\:anchor\:white > .ic.ic-size\:16px,
 button.xl\+\:anchor\:white > .ic.ic-size\:16px,
 a.xl\+\:anchor\:red > .ic.ic-size\:16px,
@@ -11922,48 +11481,6 @@ button.xl\+\:anchor\:blue[disabled=true] {
 button.xl\+\:anchor\:blue:disabled > .ic,
 button.xl\+\:anchor\:blue.disabled > .ic,
 button.xl\+\:anchor\:blue[disabled=true] > .ic {
-    background-color: #404040;
-  }
-
-  a.xl\+\:anchor\:transparent,
-button.xl\+\:anchor\:transparent {
-    color: #3169b2;
-  }
-  a.xl\+\:anchor\:transparent > .ic,
-button.xl\+\:anchor\:transparent > .ic {
-    background-color: #3169b2;
-  }
-  a.xl\+\:anchor\:transparent:hover, a.xl\+\:anchor\:transparent:hover:enabled, a.xl\+\:anchor\:transparent:focus, a.xl\+\:anchor\:transparent:focus:enabled, a.xl\+\:anchor\:transparent:active, a.xl\+\:anchor\:transparent:active:enabled,
-button.xl\+\:anchor\:transparent:hover,
-button.xl\+\:anchor\:transparent:hover:enabled,
-button.xl\+\:anchor\:transparent:focus,
-button.xl\+\:anchor\:transparent:focus:enabled,
-button.xl\+\:anchor\:transparent:active,
-button.xl\+\:anchor\:transparent:active:enabled {
-    color: #1c3b65;
-    text-decoration: underline;
-  }
-  a.xl\+\:anchor\:transparent:hover > .ic, a.xl\+\:anchor\:transparent:hover:enabled > .ic, a.xl\+\:anchor\:transparent:focus > .ic, a.xl\+\:anchor\:transparent:focus:enabled > .ic, a.xl\+\:anchor\:transparent:active > .ic, a.xl\+\:anchor\:transparent:active:enabled > .ic,
-button.xl\+\:anchor\:transparent:hover > .ic,
-button.xl\+\:anchor\:transparent:hover:enabled > .ic,
-button.xl\+\:anchor\:transparent:focus > .ic,
-button.xl\+\:anchor\:transparent:focus:enabled > .ic,
-button.xl\+\:anchor\:transparent:active > .ic,
-button.xl\+\:anchor\:transparent:active:enabled > .ic {
-    background-color: #1c3b65;
-  }
-  a.xl\+\:anchor\:transparent:disabled, a.xl\+\:anchor\:transparent.disabled, a.xl\+\:anchor\:transparent[disabled=true],
-button.xl\+\:anchor\:transparent:disabled,
-button.xl\+\:anchor\:transparent.disabled,
-button.xl\+\:anchor\:transparent[disabled=true] {
-    color: #404040;
-    cursor: default;
-    text-decoration: none;
-  }
-  a.xl\+\:anchor\:transparent:disabled > .ic, a.xl\+\:anchor\:transparent.disabled > .ic, a.xl\+\:anchor\:transparent[disabled=true] > .ic,
-button.xl\+\:anchor\:transparent:disabled > .ic,
-button.xl\+\:anchor\:transparent.disabled > .ic,
-button.xl\+\:anchor\:transparent[disabled=true] > .ic {
     background-color: #404040;
   }
 
