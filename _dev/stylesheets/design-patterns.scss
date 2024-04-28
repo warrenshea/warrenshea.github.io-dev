@@ -8,43 +8,37 @@
 @import '_config/media-queries.scss';
 @import '_config/variables-box-shadow.scss';
 
-main > div:first-child,
-main > section:first-child {
-  margin-top:0;
-}
-
-/* Apply negative margin to all but the first child */
 main > div,
 main > section {
-  padding: 2rem 0;
-  margin-top: -2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   @include breakpoint($medium-min) {
-    padding: 3rem 0;
-    margin-top: -3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   @include breakpoint($xlarge-min) {
-    padding: 4rem 0;
-    margin-top: -4rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
+}
+
+main > section + section {
+  padding-top: 0;
 }
 
 main > .bgc\:blue + section,
 main > .bgc\:blue + div,
-main > div  + .bgc\:blue,
-main > section  + .bgc\:blue,
+main > div + .bgc\:blue,
+main > section + .bgc\:blue,
 main > .bgc\:white-smoke + section,
 main > .bgc\:white-smoke + div,
-main > div  + .bgc\:white-smoke,
-main > section  + .bgc\:white-smoke {
-  margin-top: 0;
-}
-
-main > .bgc\:white-smoke + .bgc\:white-smoke {
-  margin-top: -2rem;
+main > div + .bgc\:white-smoke,
+main > section + .bgc\:white-smoke {
+  padding-top: 2rem;
   @include breakpoint($medium-min) {
-    margin-top: -3rem;
+    padding-top: 3rem;
   }
   @include breakpoint($xlarge-min) {
-    margin-top: -4rem;
+    padding-top: 4rem;
   }
 }
