@@ -8,39 +8,51 @@
 @import '_config/media-queries.scss';
 @import '_config/variables-box-shadow.scss';
 
-[data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; }
+[data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; padding: 16px !important; margin-top:0 !important; }
+[data-zs-page-editor-mode-add-padding] { padding:8px;
+  &::before {
+    content: attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    border: rem-calc(2) solid $positive-light;
+    opacity: .75;
+  }
+}
 [data-zs-page-editor-mode-remove-border] { border: rem-calc(2) dashed $negative-light; }
-[data-zs-page-editor-mode-reorder-border] { border: rem-calc(2) dashed $blue; }
-[data-zs-page-editor-mode-reorder-child-border] { border: rem-calc(4) solid $blue; }
-[data-zs-page-editor-mode-edit-border] { border: rem-calc(2) dashed $dark-goldenrod; }
+[data-zs-page-editor-mode-reorder-border] { border: rem-calc(2) dashed $blue; padding: 16px !important; margin-top:0 !important; }
+[data-zs-page-editor-mode-reorder-child-border] { border: rem-calc(4) solid $blue; padding: 16px !important; margin-top:0 !important; }
+[data-zs-page-editor-mode-edit-border] { border: rem-calc(2) dashed $cocoa-brown; }
 [data-zs-page-editor-mode-publish-border] { border: rem-calc(2) dashed $english-violet; }
 
 .color\:onyx { color: $onyx; }
 
+.ic-color\:cocoa-brown { background-color: #{$cocoa-brown} };
 .ic-color\:dark-goldenrod { background-color: #{$dark-goldenrod} };
 .ic-color\:english-violet { background-color: #{$english-violet} };
 .bgc\:positive { background-color: $positive; }
 .bgc\:negative { background-color: $negative; }
 .bgc\:dark-goldenrod { background-color: $dark-goldenrod; }
 .bgc\:english-violet { background-color: $english-violet; }
+.bgc\:cocoa-brown { background-color: $cocoa-brown; }
 .color\:positive { color: $positive; }
 .color\:negative { color: $negative; }
 .color\:dark-goldenrod { color: $dark-goldenrod; }
 .color\:english-violet { color: $english-violet; }
+.color\:cocoa-brown { color: $cocoa-brown; }
 
 [data-module="placeholder"] {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='0' y='20' style='font-family:Arial;font-size:18px;font-weight:bold;fill:%2300000008;'%3Eplaceholder -- %3C/text%3E%3C/svg%3E");
   background-size: 125px 25px;
   background-repeat: repeat;
   background-color: transparent;
-  height: 100%;
+  // height: 100%;
   width: 100%;
 }
 
 [data-module="accordion"]:has([data-zs-page-editor-mode-add-styles]),
 [data-module="accordion.header"]:has([data-zs-page-editor-mode-add-styles]),
 [data-module="accordion.panel"]:has([data-zs-page-editor-mode-add-styles]),
-[data-module="dialog"]:has([data-zs-page-editor-mode-add-styles]) {
+[data-module="dialog"]:has([data-zs-page-editor-mode-add-styles]),
+[data-module="table.tr"]:has([data-zs-page-editor-mode-add-styles]),
+[data-module="table.td"]:has([data-zs-page-editor-mode-add-styles]) {
   padding: 6px 10px;
   border: rem-calc(2) dashed $positive-light;
 }
@@ -52,12 +64,34 @@
 [data-zs-page-editor-mode-edit-styles],
 [data-zs-page-editor-mode-publish-styles],
 [data-zs-page-editor-mode-confirm-publish-styles],
-[data-zs-page-editor-mode-publish-page-styles], {
+[data-zs-page-editor-mode-publish-page-styles] {
+  display: block;
+  grid-column: span 12;
+  margin-top:0 !important;
   background-repeat: repeat;
-  height: 100%;
+  // height: 100%;
   width: 100%;
   position: relative;
-  padding: 34px 10px 6px;
+  padding: 34px 10px 6px !important;
+  cursor: pointer;
+  &::before {
+    padding: 4px 8px;
+    font-size: 14px;
+    position: absolute;
+    text-align: center;
+    font-family: 'heebo-bold';
+    top: -2px;
+    left: -2px;
+    height: 24px;
+    background: white;
+    color: black;
+    line-height: rem-calc(14);
+    z-index:1;
+  }
+}
+
+[data-zs-page-editor-mode-inline-edit-styles]:hover {
+  position: relative;
   cursor: pointer;
   &::before {
     padding: 4px 8px;
@@ -81,7 +115,7 @@
   border: rem-calc(2) dashed $positive-light;
   padding: 12px 10px 6px;
   &::before {
-    content: "ADD to: " attr(data-zs-module-name);
+    content: "ADD to: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) solid $positive-light;
   }
 }
@@ -90,7 +124,7 @@
   border: rem-calc(2) dashed $positive-light;
   padding: 12px 10px 6px;
   &::before {
-    content: attr(data-zs-module-name);
+    content: attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) solid $positive-light;
     opacity: .75;
   }
@@ -99,7 +133,7 @@
 [data-zs-page-editor-mode-remove-styles] {
   border: rem-calc(2) dashed $negative-light;
   &::before {
-    content: "REMOVE: " attr(data-zs-module-name);
+    content: "REMOVE: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) dashed $negative-light;
   }
 }
@@ -107,23 +141,39 @@
 [data-zs-page-editor-mode-confirm-removal-styles] {
   border: rem-calc(2) dashed $negative-light;
   &::before {
-    content:"CONFIRM REMOVAL: " attr(data-zs-module-name);
+    content:"CONFIRM REMOVAL: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) dashed $negative-light;
   }
 }
 
 [data-zs-page-editor-mode-edit-styles] {
-  border: rem-calc(2) dashed $dark-goldenrod;
+  border: rem-calc(2) dashed $cocoa-brown;
   &::before {
-    content: "EDIT: " attr(data-zs-module-name);
-    border: rem-calc(2) dashed $dark-goldenrod;
+    content: "EDIT: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    border: rem-calc(2) dashed $cocoa-brown;
+  }
+}
+
+[data-zs-page-editor-mode-inline-edit-styles] {
+  transition: box-shadow .25s ease-in-out;
+  &::before {
+    transition: box-shadow .25s ease-in-out;
+  }
+  &:hover {
+    box-shadow: 0 0 0 rem-calc(1) $dark-goldenrod, 0 0 0 rem-calc(2) $dark-goldenrod !important;
+    transition: box-shadow .5s ease-in-out;
+    &::before {
+      content: "INLINE EDIT: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+      box-shadow: 0 0 0 rem-calc(1) $dark-goldenrod, 0 0 0 rem-calc(2) $dark-goldenrod !important;
+      transition: box-shadow .5s ease-in-out;
+    }
   }
 }
 
 [data-zs-page-editor-mode-publish-styles] {
   border: rem-calc(2) dashed $english-violet;
   &::before {
-    content: "PUBLISH: " attr(data-zs-module-name);
+    content: "PUBLISH: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) dashed $english-violet;
   }
 }
@@ -131,7 +181,7 @@
 [data-zs-page-editor-mode-confirm-publish-styles] {
   border: rem-calc(2) dashed $english-violet;
   &::before {
-    content:"CONFIRM PUBLISH: " attr(data-zs-module-name);
+    content:"CONFIRM PUBLISH: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) dashed $english-violet;
   }
 }
@@ -141,7 +191,7 @@
   cursor: default;
   &::before {
     color: $gray;
-    content: "TO BE PUBLISHED: " attr(data-zs-module-name);
+    content: "TO BE PUBLISHED: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) dashed $english-violet;
   }
 }
@@ -151,10 +201,51 @@
     opacity: 1 !important;
     height: auto !important;
   }
+  &[data-module='carousel'] {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  &[data-module='carousel.controls-group'] {
+    display: none !important;
+  }
+  &[data-module='carousel.controls-group'] + div {
+    width: 100% !important;
+    display: flex !important;
+  }
+  &[data-module='carousel.item-group'] {
+    width: 100% !important;
+    left: 0 !important;
+    flex-wrap: wrap !important;
+  }
+  &[data-module='carousel.item'] {
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+  &[data-module='carousel.controls-group'] {
+    position: static !important;
+  }
   &[data-module='dialog'] {
     display:block !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+  &[data-module='popover'] {
+    position: static !important;
+    visibility: initial !important;
+    [data-popover-close],
+    &:before,
+    &:after {
+      display:none !important;
+    }
+  }
+  &[data-module='table.td'],
+  &[data-module='table.th'] {
+    width: initial;
+    display: table-cell !important;
+  }
+  &[data-module='tabs.panel'] {
+    display:block !important;
   }
 }
 
@@ -405,7 +496,7 @@
         left: 0;
         width: rem-calc(24);
         height: rem-calc(24);
-        border: rem-calc(2) solid $onyx;
+        border: rem-calc(2) solid $gray;
         &:hover {
             cursor: pointer;
         }
@@ -479,8 +570,8 @@
         color: $blue;
         background-color: $white;
         width: 100%;
-        border: rem-calc(2) solid $onyx;
-        //border-radius: rem-calc(4);
+        border: rem-calc(2) solid $gray;
+        border-radius: rem-calc(4);
         transition: all .3s ease;
         box-shadow: 0 0 0 0 rgba($vista-blue, 0.65);
         white-space:nowrap;
