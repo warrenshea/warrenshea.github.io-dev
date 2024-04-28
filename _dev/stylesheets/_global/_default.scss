@@ -1,6 +1,7 @@
 /* file: default.scss------------------------------------------------ */
 html.storm-eagle {
   font-size: 16px;
+  line-height: 1.5;
   color: $eerie-black;
   font-family:"heebo-light", Arial, Sans-Serif;
   box-sizing: border-box;
@@ -67,8 +68,4 @@ table {
 
 strong {
   font-family:"heebo-bold", Arial, Sans-Serif;
-}
-
-p {
-  line-height: 1.5;
 }
