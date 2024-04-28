@@ -6,8 +6,6 @@
   @include breakpoint($breakpoint) {
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue,
-    a.#{$prefix}anchor\:transparent,
-    button.#{$prefix}anchor\:transparent,
     a.#{$prefix}anchor\:white,
     button.#{$prefix}anchor\:white,
     a.#{$prefix}anchor\:red,
@@ -35,36 +33,6 @@
 
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue {
-      color: $blue;
-      > .ic {
-        background-color: $blue;
-      }
-      &:hover,
-      &:hover:enabled,
-      &:focus,
-      &:focus:enabled,
-      &:active,
-      &:active:enabled {
-        color: $yale-blue;
-        text-decoration: underline;
-        > .ic {
-          background-color: $yale-blue;
-        }
-      }
-      &:disabled,
-      &.disabled,
-      &[disabled='true'] {
-        color: $onyx;
-        cursor: default;
-        text-decoration: none;
-        > .ic {
-          background-color: $onyx;
-        }
-      }
-    }
-
-    a.#{$prefix}anchor\:transparent,
-    button.#{$prefix}anchor\:transparent {
       color: $blue;
       > .ic {
         background-color: $blue;
