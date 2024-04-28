@@ -1033,6 +1033,29 @@ var storm_eagle = (() => {
 
 const LANG = storm_eagle.page.get_language_code();
 
+storm_eagle.module('image_default_dimensions', () => {
+  return {
+    initialize: () => {
+      const set_image_attribute = (image) => {
+        image.setAttribute("height",image.offsetHeight);
+        image.setAttribute("width",image.offsetWidth);
+        if (image.getAttribute("loading") !== "eager") {
+          image.setAttribute("loading","lazy");
+        }
+      }
+      document.querySelectorAll(`img`).forEach((image) => {
+        if (image.complete) {
+          set_image_attribute(image);
+        } else {
+          image.onload = () => {
+            set_image_attribute(image);
+          };
+        }
+      })
+    },
+  };
+});
+
 storm_eagle.module('autopopulate_empty_ids', () => {
   let self;
 
