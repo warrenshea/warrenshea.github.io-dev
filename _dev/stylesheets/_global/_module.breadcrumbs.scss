@@ -8,7 +8,7 @@
     }
     &:nth-last-child(2) {
       display:inline-flex;
-      &:before{
+      &::before{
         white-space: pre;
         content:" ";
         width:24px;
