@@ -4,12 +4,14 @@
   font-style: normal;
   font-weight: 400;
   src: url('../assets/font/play/play-regular.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'play-bold';
   font-style: normal;
   font-weight: 700;
   src: url('../assets/font/play/play-bold.ttf') format('truetype');
+  font-display: swap;
 }
 
 @each $mediaquery in $mediaqueries {
