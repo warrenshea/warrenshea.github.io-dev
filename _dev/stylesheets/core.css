@@ -16114,12 +16114,14 @@ fieldset.unstyle {
   font-style: normal;
   font-weight: 400;
   src: url("../assets/font/play/play-regular.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "play-bold";
   font-style: normal;
   font-weight: 700;
   src: url("../assets/font/play/play-bold.ttf") format("truetype");
+  font-display: swap;
 }
 .play\:regular {
   font-family: "play-regular", Arial, Sans-Serif;
@@ -16263,24 +16265,28 @@ h4.play {
   font-style: normal;
   font-weight: 300;
   src: url("../assets/font/heebo/heebo.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "heebo-regular";
   font-style: normal;
   font-weight: 400;
   src: url("../assets/font/heebo/heebo.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "heebo-medium";
   font-style: normal;
   font-weight: 500;
   src: url("../assets/font/heebo/heebo.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "heebo-bold";
   font-style: normal;
   font-weight: 700;
   src: url("../assets/font/heebo/heebo.ttf") format("truetype");
+  font-display: swap;
 }
 .heebo\:light {
   font-family: "heebo-light", Arial, Sans-Serif;
