@@ -4,24 +4,28 @@
   font-style: normal;
   font-weight: 300;
   src: url('../assets/font/heebo/heebo.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'heebo-regular';
   font-style: normal;
   font-weight: 400;
   src: url('../assets/font/heebo/heebo.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'heebo-medium';
   font-style: normal;
   font-weight: 500;
   src: url('../assets/font/heebo/heebo.ttf') format('truetype');
+  font-display: swap;
 }
 @font-face {
   font-family: 'heebo-bold';
   font-style: normal;
   font-weight: 700;
   src: url('../assets/font/heebo/heebo.ttf') format('truetype');
+  font-display: swap;
 }
 
 @each $mediaquery in $mediaqueries {
