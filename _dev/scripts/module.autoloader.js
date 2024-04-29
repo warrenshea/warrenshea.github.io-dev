@@ -17,29 +17,33 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.dialog.js',
       module_name: 'dialog',
     },
-    tabs: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.tabs.js',
-      module_name: 'tabs',
+    form_parent_checkbox: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.parent-checkbox.js',
+      module_name: 'form_parent_checkbox',
     },
-    popover: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.popover.js',
-      module_name: 'popover',
+    form_switch_button: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.switch.button.js',
+      module_name: 'form_switch_button',
     },
-    slider: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.slider.js',
-      module_name: 'slider',
-    },
-    waypoint: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.waypoint.js',
-      module_name: 'waypoint',
+    form_theme_gl0b3x: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.theme.gl0b3x.js',
+      module_name: 'form_theme_gl0b3x',
     },
     form_validation: {
       script_src: '/dist/codebase/chill-penguin/scripts/module.form.validation.js',
       module_name: 'form_validation',
     },
+    header: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.header.js',
+      module_name: 'header',
+    },
     menu_submenu: {
       script_src: '/dist/codebase/chill-penguin/scripts/module.menu-submenu.js',
       module_name: 'menu_submenu',
+    },
+    popover: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.popover.js',
+      module_name: 'popover',
     },
     range_slider: {
       script_src: '/dist/codebase/chill-penguin/scripts/module.range-slider.js',
@@ -49,21 +53,17 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.show-more.js',
       module_name: 'show_more',
     },
-    form_theme_gl0b3x: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.theme.gl0b3x.js',
-      module_name: 'form_theme_gl0b3x',
+    slider: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.slider.js',
+      module_name: 'slider',
     },
-    form_parent_checkbox: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.parent-checkbox.js',
-      module_name: 'form_parent_checkbox',
+    tabs: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.tabs.js',
+      module_name: 'tabs',
     },
-    form_switch_button: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.switch.button.js',
-      module_name: 'form_switch_button',
-    },
-    header: {
-      script_src: '/dist/codebase/chill-penguin/scripts/header.js',
-      module_name: 'header',
+    waypoint: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.waypoint.js',
+      module_name: 'waypoint',
     },
   };
 
@@ -83,23 +83,19 @@ storm_eagle.module('autoload_scripts', () => {
       const autocomplete = document.querySelectorAll("[data-module='autocomplete']").length > 0;
       const carousel = document.querySelectorAll("[data-module='carousel']").length > 0;
       const dialog = document.querySelectorAll("[data-module='dialog']").length > 0;
-      const tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
-      const popover = document.querySelectorAll("[data-module='popover']").length > 0;
-      const slider = document.querySelectorAll("[data-module='slider.input-container']").length > 0;
-      const waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
-      const form_validation = document.querySelectorAll(`[data-module='form']`).length > 0;
-      const menu_submenu = document.querySelectorAll('[data-module="menu"]').length > 0;
-      const range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
-      const show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
-      const form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
       const form_parent_checkbox = document.querySelectorAll('[data-module="parent-checkbox"]').length > 0;
       const form_switch_button = document.querySelectorAll('[data-module="switch.button"]').length > 0;
+      const form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
+      const form_validation = document.querySelectorAll(`[data-module='form']`).length > 0;
       const header = document.querySelectorAll("[data-module='header']").length > 0;
-      if (header) {
-        load_javascript('header').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
+      const menu_submenu = document.querySelectorAll('[data-module="menu"]').length > 0;
+      const popover = document.querySelectorAll("[data-module='popover']").length > 0;
+      const range_slider = document.querySelectorAll("[data-module='range-slider.input-container']").length > 0;
+      const show_more = document.querySelectorAll("[data-module='show-more']").length > 0;
+      const slider = document.querySelectorAll("[data-module='slider.input-container']").length > 0;
+      const tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
+      const waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
+
       if (accordion) {
         load_javascript('accordion').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
@@ -120,23 +116,18 @@ storm_eagle.module('autoload_scripts', () => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (tabs) {
-        load_javascript('tabs').catch((error) => {
+      if (form_parent_checkbox) {
+        load_javascript('form_parent_checkbox').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (popover) {
-        load_javascript('popover').catch((error) => {
+      if (form_switch_button) {
+        load_javascript('form_switch_button').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (slider) {
-        load_javascript('slider').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (waypoint) {
-        load_javascript('waypoint').catch((error) => {
+      if (form_theme_gl0b3x) {
+        load_javascript('form_theme_gl0b3x').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
@@ -145,8 +136,18 @@ storm_eagle.module('autoload_scripts', () => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
+      if (header) {
+        load_javascript('header').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
       if (menu_submenu) {
         load_javascript('menu_submenu').catch((error) => {
+          console.error(`autoload_scripts -> ${error}`);
+        });
+      }
+      if (popover) {
+        load_javascript('popover').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
@@ -160,18 +161,18 @@ storm_eagle.module('autoload_scripts', () => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (form_theme_gl0b3x) {
-        load_javascript('form_theme_gl0b3x').catch((error) => {
+      if (slider) {
+        load_javascript('slider').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (form_parent_checkbox) {
-        load_javascript('form_parent_checkbox').catch((error) => {
+      if (tabs) {
+        load_javascript('tabs').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
-      if (form_switch_button) {
-        load_javascript('form_switch_button').catch((error) => {
+      if (waypoint) {
+        load_javascript('waypoint').catch((error) => {
           console.error(`autoload_scripts -> ${error}`);
         });
       }
