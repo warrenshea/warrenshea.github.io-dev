@@ -37,7 +37,11 @@ main > section + .bgc\:white-smoke,
 main > .bgc\:eerie-black + section,
 main > .bgc\:eerie-black + div,
 main > div + .bgc\:eerie-black,
-main > section + .bgc\:eerie-black {
+main > section + .bgc\:eerie-black,
+main > .bgc\:silver + section,
+main > .bgc\:silver + div,
+main > div + .bgc\:silver,
+main > section + .bgc\:silver {
   padding-top: 2rem;
   @include breakpoint($medium-min) {
     padding-top: 3rem;
