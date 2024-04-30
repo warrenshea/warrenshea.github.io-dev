@@ -55101,6 +55101,10 @@ _:-ms-fullscreen, :root [data-module=popover][data-popover=active] {
   height: 100%;
 }
 
+.h\:100vh {
+  height: 100vh;
+}
+
 .h\:auto {
   height: auto;
 }
