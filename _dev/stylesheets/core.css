@@ -15340,13 +15340,13 @@ fieldset.unstyle {
   pointer-events: none;
   cursor: pointer;
 }
-.form\:theme\:gl0b3x input[type=text] + label:before,
-.form\:theme\:gl0b3x input[type=number] + label:before,
-.form\:theme\:gl0b3x input[type=email] + label:before,
-.form\:theme\:gl0b3x input[type=password] + label:before,
-.form\:theme\:gl0b3x input[type=search] + label:before,
-.form\:theme\:gl0b3x select + label:before,
-.form\:theme\:gl0b3x textarea + label:before {
+.form\:theme\:gl0b3x input[type=text] + label::before,
+.form\:theme\:gl0b3x input[type=number] + label::before,
+.form\:theme\:gl0b3x input[type=email] + label::before,
+.form\:theme\:gl0b3x input[type=password] + label::before,
+.form\:theme\:gl0b3x input[type=search] + label::before,
+.form\:theme\:gl0b3x select + label::before,
+.form\:theme\:gl0b3x textarea + label::before {
   /* blue label line, hidden */
   z-index: 4;
   content: "";
@@ -15441,7 +15441,7 @@ fieldset.unstyle {
   color: #3169b2;
   letter-spacing: 0.25px;
   transition: 0.3s ease-out;
-  top: 1.6875rem;
+  top: 1.875rem;
   position: absolute;
 }
 .form\:theme\:gl0b3x input[type=text] + label.force-active-label span.description, .form\:theme\:gl0b3x input[type=text] + label.active-label span.description,
@@ -15482,9 +15482,8 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x textarea {
   width: 100%;
   height: 2.25rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   white-space: nowrap;
-  line-height: 1.5;
   border: none;
   transition: all 0.3s ease-out;
 }
@@ -15614,8 +15613,8 @@ fieldset.unstyle {
   line-height: 1.5rem;
   text-indent: 0.5rem;
 }
-.form\:theme\:gl0b3x input[type=checkbox] + label:before,
-.form\:theme\:gl0b3x input[type=radio] + label:before {
+.form\:theme\:gl0b3x input[type=checkbox] + label::before,
+.form\:theme\:gl0b3x input[type=radio] + label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -15623,8 +15622,8 @@ fieldset.unstyle {
   height: 1.5rem;
   border: 0.125rem solid #808080;
 }
-.form\:theme\:gl0b3x input[type=checkbox] + label:before:hover,
-.form\:theme\:gl0b3x input[type=radio] + label:before:hover {
+.form\:theme\:gl0b3x input[type=checkbox] + label::before:hover,
+.form\:theme\:gl0b3x input[type=radio] + label::before:hover {
   cursor: pointer;
 }
 .form\:theme\:gl0b3x input[type=checkbox]:checked + label:before,
@@ -15660,12 +15659,12 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=radio]:disabled + label {
   color: #404040;
 }
-.form\:theme\:gl0b3x input[type=checkbox]:disabled + label:before,
-.form\:theme\:gl0b3x input[type=radio]:disabled + label:before {
+.form\:theme\:gl0b3x input[type=checkbox]:disabled + label::before,
+.form\:theme\:gl0b3x input[type=radio]:disabled + label::before {
   background-color: #c0c0c0;
   border: 0.125rem solid #404040;
 }
-.form\:theme\:gl0b3x input[type=checkbox] + label:before {
+.form\:theme\:gl0b3x input[type=checkbox] + label::before {
   border-radius: 0.25rem;
 }
 .form\:theme\:gl0b3x input[type=checkbox]:checked + label:before {
@@ -15697,7 +15696,7 @@ fieldset.unstyle {
   background-color: #3169b2;
   background-image: url("../assets/icon/check.white.svg");
 }
-.form\:theme\:gl0b3x input[type=radio] + label:before {
+.form\:theme\:gl0b3x input[type=radio] + label::before {
   border-radius: 50%;
   transition: background-color ease-in-out 250ms, border ease-in-out 250ms;
 }
@@ -15732,7 +15731,7 @@ fieldset.unstyle {
   box-shadow: 0 0 0 0 rgba(120, 156, 204, 0.65);
   white-space: nowrap;
 }
-.form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label:before {
+.form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label::before {
   display: none;
 }
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:hover + label, .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked + label {
@@ -19208,6 +19207,18 @@ dl.unstyle > dd {
     height: 6rem;
   }
 }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ic-name\:spinner {
+  animation: spin 2s linear infinite;
+}
+
 /* file: visual-illustrations.scss------------------------------------------------ */
 .illustration-size\:xs {
   width: 96px;
@@ -23028,7 +23039,7 @@ dl.unstyle > dd {
 .breadcrumbs ul li:nth-last-child(2) {
   display: inline-flex;
 }
-.breadcrumbs ul li:nth-last-child(2):before {
+.breadcrumbs ul li:nth-last-child(2)::before {
   white-space: pre;
   content: " ";
   width: 24px;
@@ -23036,7 +23047,7 @@ dl.unstyle > dd {
   background: url("../assets/icon/24/arrow-left.svg") center center;
 }
 @media screen and (min-width: 80rem) {
-  .breadcrumbs ul li:nth-last-child(2):before {
+  .breadcrumbs ul li:nth-last-child(2)::before {
     display: none;
   }
 }
@@ -23129,7 +23140,7 @@ dl.unstyle > dd {
   right: 0;
   visibility: hidden;
 }
-[data-module=popover]:before {
+[data-module=popover]::before {
   position: absolute;
   display: block;
   width: 0;
@@ -23149,7 +23160,7 @@ dl.unstyle > dd {
   content: "";
   top: 50%;
 }
-[data-module=popover].right:before {
+[data-module=popover].right::before {
   border-width: 11px;
   left: -11px;
   margin-top: -11px;
