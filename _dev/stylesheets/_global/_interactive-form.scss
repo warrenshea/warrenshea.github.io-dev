@@ -75,7 +75,7 @@ fieldset.unstyle {
       color: $blue;
       letter-spacing: 0.25px;
       transition: 0.3s ease-out;
-      top: rem-calc(27);
+      top: rem-calc(30);
       position: absolute;
     }
     &.force-active-label,
@@ -109,9 +109,8 @@ fieldset.unstyle {
   textarea {
     width: 100%;
     height: rem-calc(36);
-    margin-top: rem-calc(16);
+    margin-top: rem-calc(24);
     white-space: nowrap;
-    line-height: 1.5;
     border: none;
     transition: all 0.3s ease-out;
     &:not(:disabled) {
