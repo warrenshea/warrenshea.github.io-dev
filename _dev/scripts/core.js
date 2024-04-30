@@ -1248,14 +1248,14 @@ storm_eagle.module('zs_highlighter', () => {
     initialize: () => {
       if (storm_eagle.page.get_query_value('zs-highlight-mid')) {
         storm_eagle.page.get_query_value('zs-highlight-mid').split(",").forEach((mid_id) => {
-          document.querySelectorAll(`[data-zs*=mid\\:${mid_id}]`).forEach((element) => {
+          document.querySelectorAll(`[data-zs*=mid\\:'${mid_id},']`).forEach((element) => {
             element.classList.add("b-yellow:4px","p:4px");
           })
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-cid')) {
         storm_eagle.page.get_query_value('zs-highlight-cid').split(",").forEach((cid_id) => {
-          document.querySelectorAll(`[data-zs*=cid\\:${cid_id}]`).forEach((element) => {
+          document.querySelectorAll(`[data-zs*=cid\\:'${cid_id},']`).forEach((element) => {
             element.classList.add("b-red:4px","p:4px");
           })
         });
