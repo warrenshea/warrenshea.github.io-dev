@@ -9484,6 +9484,8 @@ strong {
 .th-bgc\:blue > thead > tr > th,
 .th-bgc\:blue > tbody > tr > th {
   background-color: #3169b2;
+  color: #ffffff;
+  font-family: "heebo-bold";
 }
 
 .td-vertical-align\:top > thead > tr > td,
@@ -17312,6 +17314,19 @@ dl.unstyle > dd {
   margin-left: 0;
 }
 
+ul.checkmark-list {
+  list-style: none;
+  padding-left: 0;
+}
+ul.checkmark-list > li {
+  background-image: url("../assets/icon/check.blue.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 24px 24px;
+  padding-left: 40px;
+  line-height: 24px;
+}
+
 .ws\:normal {
   white-space: normal;
 }
@@ -17530,9 +17545,7 @@ dl.unstyle > dd {
 }
 /* file: visual-icons.scss------------------------------------------------ */
 .ic {
-  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-position: center;
   mask-position: center;
 }
 
