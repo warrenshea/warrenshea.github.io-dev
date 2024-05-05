@@ -31,8 +31,9 @@ storm_eagle.module('autocomplete', () => {
         state[id] = {
           el,
           input: el.querySelector("[data-module='autocomplete.input']"),
-          input_format: JSON.parse(el.querySelector("[data-module='autocomplete.input']").getAttribute('data-autocomplete-input-format')),
+          input_format: JSON.parse(el.getAttribute('data-autocomplete-input-format')),
           filter: el.getAttribute("data-autocomplete-filter"),
+          value_format: el.getAttribute("data-autocomplete-value-format") ? el.getAttribute("data-autocomplete-value-format") : el.getAttribute("data-autocomplete-filter"),
           input_values: el.getAttribute("data-autocomplete-values") ? JSON.parse(el.getAttribute("data-autocomplete-values")) : null,
           type: el.getAttribute("data-autocomplete-type"),
           data_source_type: data_source_type,
@@ -40,7 +41,6 @@ storm_eagle.module('autocomplete', () => {
           data_raw: "",
           data_working: "",
           results: el.querySelector("[data-module='autocomplete.results']"),
-          results_format: JSON.parse(el.querySelector("[data-module='autocomplete.results']").getAttribute('data-autocomplete-results-format')),
           max_num_results: parseInt(el.querySelector("[data-module='autocomplete.results']").getAttribute('data-autocomplete-max-results')),
           sr_description: el.querySelector("[data-module='autocomplete.sr-description']"),
           error_message: el.querySelector("[data-module='autocomplete.error']") || false,
@@ -61,7 +61,7 @@ storm_eagle.module('autocomplete', () => {
     data: {
       initialize: async (id) => {
         try {
-          const { input_values, filter, data_source_type, data_source } = state[id];
+          const { input_values, value_format, data_source_type, data_source } = state[id];
           let data;
           if (data_source_type === "fetch") {
             data = await storm_eagle.util.fetch(data_source);
@@ -78,7 +78,7 @@ storm_eagle.module('autocomplete', () => {
             if (input_values && input_values.length > 0) {
               // Iterate over data_working to find and mark input_values
               state[id]["data_working"].forEach(item => {
-                if (input_values.includes(item[filter])) {
+                if (input_values.includes(item[value_format])) {
                   // Mark this item as selected
                   item.status = 'selected';
                 }
@@ -218,7 +218,7 @@ storm_eagle.module('autocomplete', () => {
               }, 250);
             }
           }
-    }
+        }
       },
     },
     action: {
@@ -240,12 +240,13 @@ storm_eagle.module('autocomplete', () => {
     },
     ui: {
       create_default_tags: (id) => {
-        const { data_working, filter, multiselect_tags_container } = state[id];
+        const { data_working, input_format, multiselect_tags_container } = state[id];
         if (data_working && multiselect_tags_container) {
-          // Find the container for the tags
           data_working.forEach((item, index) => {
             if (item.status === 'selected') {
-              let tag = self.util.create_tag_html(id, index, item[filter]);
+
+              const result_string = self.util.create_tag_format(input_format,item);
+              let tag = self.util.create_tag_html(id, index, result_string);
               multiselect_tags_container.innerHTML += tag;
             }
           });
@@ -263,7 +264,7 @@ storm_eagle.module('autocomplete', () => {
           if (data_working.filter(item => item.status === 'selected').length < multiselect_tags_limit) {
             for (let i = 0; i < data_working.length; i++) {
               database_temp_keyword = data_working[i][filter].toLowerCase();
-              if (data_working[i]["status"] === "" && data_working[i][filter] !== "" && ((database_temp_keyword.indexOf(query.toLowerCase()) > -1 || database_temp_keyword.toLowerCase().indexOf(query.toLowerCase()) > -1) ? true : false)) {
+              if (data_working[i]["status"] === "" && data_working[i][filter] !== "" && (query === "*" || database_temp_keyword.includes(query.toLowerCase()))) {
                 count++;
                 results.insertAdjacentHTML('beforeend', self.ui.render_autocomplete_result(id, i, data_working[i]));
                 results.classList.remove("display:none");
@@ -281,21 +282,16 @@ storm_eagle.module('autocomplete', () => {
       },
       render_autocomplete_result: (id, index, entry) => {
         const { type, input, input_format, max_num_results } = state[id];
-        const result_string = input_format.reduce((acc, key) => {
-          if (key in entry || key === '-') {
-              return acc + (entry[key] ? entry[key] : key) + ' ';
-          }
-          return acc;
-        }, '').trim();
+        const result_string = self.util.create_tag_format(input_format,entry);
         const input_id = input.getAttribute("id");
         if (type === "single-select") {
-          return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${result_string}" onclick="storm_eagle.autocomplete.ui.autocomplete_fill('${id}', ${index}, '${result_string}');storm_eagle.autocomplete.action.close();">${result_string}</li>`;
+          return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${result_string}" onclick="storm_eagle.autocomplete.ui.autocomplete_fill('${id}', ${index}, '${result_string}');storm_eagle.autocomplete.action.close();">${storm_eagle.util.encode_html_entities(result_string)}</li>`;
         } else if (type === "multiselect") {
-          return `\n        <li role='option' data-module="autocomplete.results-item" id='autocomplete-suggestion-${index}' class='unstyle w:100% display:flex align:middle' data-sr-description='${result_string}' onclick='storm_eagle.autocomplete.ui.autocomplete_fill("${id}", ${index}, "${result_string}");document.getElementById("${input_id}").focus();'>${result_string}</li>`;
+          return `\n        <li role='option' data-module="autocomplete.results-item" id='autocomplete-suggestion-${index}' class='unstyle w:100% display:flex align:middle' data-sr-description='${result_string}' onclick='storm_eagle.autocomplete.ui.autocomplete_fill("${id}", ${index}, "${result_string}");document.getElementById("${input_id}").focus();'>${storm_eagle.util.encode_html_entities(result_string)}</li>`;
         }
       },
       autocomplete_fill: (id, index, result_string) => {
-        const { el, filter, type, input, max_num_results, results, data_working, onupdate } = state[id];
+        const { el, value_format, type, input, max_num_results, results, data_working, onupdate } = state[id];
         const input_id = input.getAttribute("id");
         const query = input.value.trim();
         if (type === "single-select") {
@@ -305,13 +301,12 @@ storm_eagle.module('autocomplete', () => {
         } else if (type === "multiselect") {
           const { multiselect_tags_container } = state[id];
           data_working[index]["status"] = "selected";
-
           input.value = "";
           self.ui.show_autocomplete_list(id);
           multiselect_tags_container.innerHTML += self.util.create_tag_html(id, index, result_string);
 
           const selected_values = state[id].input_values || [];
-          const value_to_add = data_working[index][filter]; // Assuming 'name' is the identifier
+          const value_to_add = data_working[index][value_format];
 
           if (!selected_values.includes(value_to_add)) {
             selected_values.push(value_to_add);
@@ -322,13 +317,13 @@ storm_eagle.module('autocomplete', () => {
         }
       },
       remove_selected: (id, index) => {
-        const { el, filter, input, max_num_results, results, data_working } = state[id];
+        const { el, value_format, input, max_num_results, results, data_working } = state[id];
         document.getElementById(id).querySelector(`[data-autocomplete-tag="${index}"]`).remove();
         data_working[index]["status"] = "";
         //self.ui.show_autocomplete_list(id);
 
         const selected_values = state[id].input_values || [];
-        const value_to_remove = data_working[index][filter]; // Assuming 'name' is the identifier
+        const value_to_remove = data_working[index][value_format];
         const updated_values = selected_values.filter(value => value !== value_to_remove);
         el.removeAttribute("data-autocomplete-last-added");
         el.setAttribute("data-autocomplete-last-removed",value_to_remove);
@@ -336,8 +331,17 @@ storm_eagle.module('autocomplete', () => {
       }
     },
     util: {
+      create_tag_format: (input_format,entry) => {
+        const result_string = input_format.reduce((acc, key) => {
+          if (key in entry || key === '-') {
+              return acc + (entry[key] ? entry[key] : key) + ' ';
+          }
+          return acc;
+        }, '').trim();
+        return result_string;
+      },
       create_tag_html: (id, index, result_string) => {
-        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${result_string} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
+        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${storm_eagle.util.encode_html_entities(result_string)} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
       }
     }
   };
