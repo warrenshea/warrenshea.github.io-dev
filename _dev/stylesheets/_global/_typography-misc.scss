@@ -5,6 +5,20 @@ ol.unstyle { list-style: none; }
 ul.unstyle-pl\:0,
 ol.unstyle-pl\:0 { list-style: none; padding-left:0; }
 dl.unstyle > dd { margin-left:0;}
+
+ul.checkmark-list {
+  list-style: none;
+  padding-left: 0;
+  > li {
+    background-image: url('../assets/icon/check.blue.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 24px 24px;
+    padding-left: 40px;
+    line-height: 24px;
+  }
+}
+
 $whitespaces: (
   normal    : normal,
   nowrap    : nowrap,
