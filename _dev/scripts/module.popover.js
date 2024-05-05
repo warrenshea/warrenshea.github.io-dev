@@ -26,6 +26,7 @@ storm_eagle.module('popover', () => {
         };
         self.a11y.get_focusable_elements(id);
       });
+      self.ui.create_popover_overlay();
     },
     ui: {
       set_location: (id) => {
@@ -37,8 +38,11 @@ storm_eagle.module('popover', () => {
           el.style.left = '0px';
         } else if (storm_eagle.client.viewport.is_lg_up()) {
           el.style.top = `${trigger.getBoundingClientRect().height/2}px`;
-          el.style.left = `${trigger.offsetLeft + 40}px`;
+          el.style.left = `16px`;
         }
+      },
+      create_popover_overlay: () => {
+        document.body.insertAdjacentHTML('beforeend', '<div data-module="popover.overlay" class="popover-overlay"></div>');
       },
     },
     event_listeners: {
