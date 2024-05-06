@@ -5,25 +5,26 @@
         <h1 class="w:12 play:bold fs:40px color:eerie-black">Popover</h1>
       </section>
 
-      <%id="popover-1";%>
-      <span class="position:relative">
-        <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('<%=id%>',this);" aria-label="Popover information, opens in a new pop-up">
-          <span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span>
-        </button>
-        <span class="display:block right" data-module="popover" role="dialog" aria-modal="true" id="<%=id%>" aria-labelledby="<%=id%>-id">
-          <span class="display:block bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-            <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-            <span class="display:block lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-              <p id="<%=id%>-id">A <a class="anchor:blue heebo:bold" href="https://en.wikipedia.org/wiki/Popover" target="_blank">popover</a> is a light roll made from an egg batter similar to that of Yorkshire pudding, typically baked in muffin tins or dedicated popover pans, which have straight-walled sides rather than angled.</p>
+      <section class="row0 py:32px">
+        <%id="popover-1";%>
+        <span class="lh:0 position:relative">
+          <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('<%=id%>',this);" aria-label="Popover information, opens in a new pop-up">
+            <span class="ic ic-type:solid display:block ic-color:blue ic-size:16px ic-name:info-circle" aria-hidden="true"></span>
+          </button>
+          <span class="display:block right" data-module="popover" role="dialog" aria-modal="true" id="<%=id%>" aria-labelledby="<%=id%>-id">
+            <span class="display:block bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+              <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+              <span class="display:block lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                <p id="<%=id%>-id">A <a class="anchor:blue heebo:bold" href="https://en.wikipedia.org/wiki/Popover" target="_blank">popover</a> is a light roll made from an egg batter similar to that of Yorkshire pudding, typically baked in muffin tins or dedicated popover pans, which have straight-walled sides rather than angled.</p>
+              </span>
             </span>
           </span>
         </span>
-      </span>
+      </section>
 
       <section class="row0 py:32px">
-
         <%id="popover-2";%>
-        <span class="position:relative">
+        <span class="lh:0 position:relative">
           <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('<%=id%>',this);" aria-label="More popover information, opens in a new pop-up">
             <span class="ic ic-type:solid display:block ic-color:blue ic-size:32px ic-name:info-circle" aria-hidden="true"></span>
           </button>
@@ -41,7 +42,7 @@
       <section class="row0 py:32px">
         Popover 3
         <%id="popover-3";%>
-        <span class="position:relative">
+        <span class="lh:0 position:relative">
           <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('<%=id%>',this);" aria-label="Popover information, opens in a new pop-up">
             <span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:info-circle" aria-hidden="true"></span>
           </button>
@@ -56,7 +57,7 @@
         </span>
          &nbsp;and Popover 4
         <%id="popover-4";%>
-        <span class="position:relative">
+        <span class="lh:0 position:relative">
           <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('<%=id%>',this);" aria-label="More popover information, opens in a new pop-up">
             <span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:info-circle" aria-hidden="true"></span>
           </button>
