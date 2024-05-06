@@ -7,7 +7,7 @@
 storm_eagle.module('popover', () => {
   let self;
   let state = {};
-  const overlay = document.querySelector("[data-module='popover.overlay']");
+  let overlay;
 
   return {
     initialize: () => {
@@ -36,13 +36,15 @@ storm_eagle.module('popover', () => {
         if (storm_eagle.client.viewport.is_md_down()) {
           el.style.top = 'initial';
           el.style.left = '0px';
+          el.style.transform = `none`;
         } else if (storm_eagle.client.viewport.is_lg_up()) {
-          el.style.top = `${trigger.getBoundingClientRect().height/2}px`;
-          el.style.left = `16px`;
+          el.style.transform = `translateY(-50%)`;
+          el.style.left = `${trigger.getBoundingClientRect().width + 16}px`; //16 is the box arrow width
         }
       },
       create_popover_overlay: () => {
         document.body.insertAdjacentHTML('beforeend', '<div data-module="popover.overlay" class="popover-overlay"></div>');
+        overlay = document.querySelector("[data-module='popover.overlay']");
       },
     },
     event_listeners: {
