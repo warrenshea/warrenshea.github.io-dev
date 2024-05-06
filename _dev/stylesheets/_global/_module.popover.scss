@@ -58,17 +58,13 @@
     @include breakpoint(large) {
       box-shadow: $box-shadow-custom-1;
       position:absolute;
+      top:50%;
       bottom:auto;
       right:auto;
       width:300px;
       max-width:300px;
-      transform: translateY(calc(-50%));
     }
   }
-}
-_:-ms-fullscreen, :root [data-module='popover'][data-popover='active'] {
-  -ms-transform: translateY(-50%) translateY(12px);
-  transform: translateY(-50%) translateY(12px);
 }
 
 [data-module='popover.overlay'] {
