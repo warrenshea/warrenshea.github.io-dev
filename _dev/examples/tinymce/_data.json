@@ -14,6 +14,7 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
+                "/scripts/module.popover.js",
                 "/scripts/module.tinymce.js"
             ]
         }
