@@ -43,8 +43,10 @@ storm_eagle.module('popover', () => {
         }
       },
       create_popover_overlay: () => {
-        document.body.insertAdjacentHTML('beforeend', '<div data-module="popover.overlay" class="popover-overlay"></div>');
-        overlay = document.querySelector("[data-module='popover.overlay']");
+        if (!document.querySelector("[data-module='popover.overlay']")) {
+          document.body.insertAdjacentHTML('beforeend', '<div data-module="popover.overlay" class="popover-overlay"></div>');
+          overlay = document.querySelector("[data-module='popover.overlay']");
+        }
       },
     },
     event_listeners: {
