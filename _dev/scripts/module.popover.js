@@ -1,13 +1,11 @@
 'use strict';
 /**
  * data-module=popover         the popover
- * data-module=popover.overlay the full screen part behind the modal
  * data-module=popover.trigger the button that opens the popover
  */
 storm_eagle.module('popover', () => {
   let self;
   let state = {};
-  let overlay;
 
   return {
     initialize: () => {
@@ -26,26 +24,20 @@ storm_eagle.module('popover', () => {
         };
         self.a11y.get_focusable_elements(id);
       });
-      self.ui.create_popover_overlay();
     },
     ui: {
       set_location: (id) => {
         const { el  } = state[id];
-        let trigger = document.querySelector("[data-module='popover.trigger'][data-popover='active']");
+        const trigger = document.querySelector("[data-module='popover.trigger'][data-popover-trigger='active']");
 
         if (storm_eagle.client.viewport.is_md_down()) {
           el.style.top = 'initial';
           el.style.left = '0px';
           el.style.transform = `none`;
         } else if (storm_eagle.client.viewport.is_lg_up()) {
+          el.style.top = `${trigger.getBoundingClientRect().top + trigger.getBoundingClientRect().height/2}px`;
           el.style.transform = `translateY(-50%)`;
-          el.style.left = `${trigger.getBoundingClientRect().width + 16}px`; //16 is the box arrow width
-        }
-      },
-      create_popover_overlay: () => {
-        if (!document.querySelector("[data-module='popover.overlay']")) {
-          document.body.insertAdjacentHTML('beforeend', '<div data-module="popover.overlay" class="popover-overlay"></div>');
-          overlay = document.querySelector("[data-module='popover.overlay']");
+          el.style.left = `${trigger.getBoundingClientRect().left + trigger.getBoundingClientRect().width + 16}px`; //16 is the box arrow width
         }
       },
     },
@@ -62,9 +54,7 @@ storm_eagle.module('popover', () => {
         storm_eagle.resize_observer(document.querySelector('body'), force_resize);
       },
       mousedown_close: (event) => {
-        if (overlay && event.target.getAttribute("data-module") === 'popover.overlay') {
-          self.close();
-        }
+        self.close();
       },
       keyboard_focus_trap: (event) => {
         if (event.keyCode === keyboard.keys.tab) {
@@ -108,8 +98,7 @@ storm_eagle.module('popover', () => {
 
       /* updates popover visuals */
       el.setAttribute("data-popover","active");
-      overlay.setAttribute("data-popover","active");
-      trigger.setAttribute("data-popover","active");
+      trigger.setAttribute("data-popover-trigger","active");
       self.ui.set_location(id);
 
       /* set focus to popover (but not the self.a11y.first_tab_stop */
@@ -125,10 +114,11 @@ storm_eagle.module('popover', () => {
       /* updates popover visuals */
       document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
       document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('tabIndex', '-1');
-      document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('aria-expanded', false);
       document.querySelectorAll("[data-popover='active']").forEach((el) => {
-        el.setAttribute("data-popover","");
+        el.removeAttribute("data-popover");
+        el.hidePopover();
       });
+      document.querySelector("[data-popover-trigger='active']").removeAttribute("data-popover-trigger");
       document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
         const id = popover.getAttribute('id');
         const { focusable_elements } = state[id];
@@ -140,9 +130,6 @@ storm_eagle.module('popover', () => {
 
         /* remove keyboard event listener */
         popover.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      });
-      document.querySelectorAll("[data-module='popover.trigger']").forEach((trigger) => {
-        trigger.setAttribute('aria-expanded', false);
       });
 
       /* set focus to self.a11y.focus_placeholder */
