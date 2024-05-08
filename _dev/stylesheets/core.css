@@ -23152,9 +23152,12 @@ ul.checkmark-list > li {
   bottom: 0;
   border: 0;
   overflow: visible;
+  right: 0;
+  width: 100%;
 }
 @media screen and (min-width: 64rem) {
   [data-module=popover] {
+    position: absolute;
     box-shadow: 0 0 0.125rem 0 rgba(32, 32, 32, 0.12), 0 0.125rem 0.125rem 0 rgba(32, 32, 32, 0.07);
     top: 50%;
     bottom: auto;
