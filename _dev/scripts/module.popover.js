@@ -35,9 +35,11 @@ storm_eagle.module('popover', () => {
           el.style.left = '0px';
           el.style.transform = `none`;
         } else if (storm_eagle.client.viewport.is_lg_up()) {
-          el.style.top = `${trigger.getBoundingClientRect().top + trigger.getBoundingClientRect().height/2}px`;
+          const scroll_top = window.pageYOffset || document.trigger.scrollTop;
+          const trigger_location = trigger.getBoundingClientRect();
+          el.style.top = `${trigger_location.top + trigger_location.height/2 + scroll_top}px`;
           el.style.transform = `translateY(-50%)`;
-          el.style.left = `${trigger.getBoundingClientRect().left + trigger.getBoundingClientRect().width + 16}px`; //16 is the box arrow width
+          el.style.left = `${trigger_location.left + trigger_location.width + 16}px`; //16 is the box arrow width
         }
       },
     },
