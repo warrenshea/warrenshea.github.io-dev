@@ -1,13 +1,5 @@
 'use strict';
 
-/*
-@REFERENCE: All Plugins and Toolbars
-tinymce.init({
-  plugins: 'anchor casechange charmap checklist code codesample editimage emoticons export footnotes formatpainter fullscreen help image insertdatetime link lists media mergetags nonbreaking pagebreak pageembed permanentpen preview save searchreplace table tableofcontents template typography visualblocks visualchars wordcount',
-  toolbar: "aligncenter alignjustify alignleft alignnone alignright anchor blockquote blocks backcolor bold copy cut fontfamily fontsize forecolor h1 h2 h3 h4 h5 h6 hr indent italic language lineheight newdocument outdent paste pastetext print redo remove removeformat selectall strikethrough styles subscript superscript underline undo visualaid a11ycheck advtablerownumbering typopgraphy anchor restoredraft casechange charmap checklist code codesample addcomment showcomments ltr rtl editimage fliph flipv imageoptions rotateleft rotateright emoticons export footnotes footnotesupdate formatpainter fullscreen help image insertdatetime link openlink unlink bullist numlist media mergetags mergetags_list nonbreaking pagebreak pageembed permanentpen preview quickimage quicklink quicktable cancel save searchreplace spellcheckdialog spellchecker table tablecellprops tablecopyrow tablecutrow tabledelete tabledeletecol tabledeleterow tableinsertdialog tableinsertcolafter tableinsertcolbefore tableinsertrowafter tableinsertrowbefore tablemergecells tablepasterowafter tablepasterowbefore tableprops tablerowprops tablesplitcells tableclass tablecellclass tablecellvalign tablecellborderwidth tablecellborderstyle tablecaption tablecellbackgroundcolor tablecellbordercolor tablerowheader tablecolheader tableofcontents tableofcontentsupdate template typography insertfile visualblocks visualchars wordcount",
-});
-*/
-
 storm_eagle.module('tinymce', () => {
   let self;
   let state = {};
@@ -30,7 +22,7 @@ storm_eagle.module('tinymce', () => {
   const tinymce_advanced = {
     height: 350,
     plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
-    toolbar: "undo redo | blocks styles | bold italic superscript | bullist numlist | link openlink unlink | alignleft aligncenter alignright alignjustify alignnone  | charmap | visualblocks | advanced",
+    toolbar: "undo redo | blocks styles | bold italic superscript | bullist numlist custom_list | link openlink unlink | alignleft aligncenter alignright alignjustify alignnone  | charmap | visualblocks | advanced",
     style_formats: [
       { title: 'Heading Font' },
       { title: 'Heebo', format: 'heebo', classes: 'heebo' },
@@ -136,8 +128,11 @@ storm_eagle.module('tinymce', () => {
       }
       .text-align\\:right {
         text-align:right;
+      }
+      .display\\:inline {
+        display:inline;
       }`
-      ,
+    ,
     formats : {
       'alignleft' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:left'},
       'aligncenter' : {selector : 'p,h1,h2,h3,h4,td,th,div,ul,ol,li', 'classes' : 'text-align:center'},
@@ -237,13 +232,81 @@ storm_eagle.module('tinymce', () => {
     tinymce: {
       initialize: (id) => {
         const { type, preview_id, onload_id, onupdate } = state[id];
+
+        const update_preview = (editor) => {
+          if (onupdate) {
+            if (preview_id) {
+              storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
+            } else {
+              storm_eagle.util.run_str_func( onupdate, { editor, id } );
+            }
+          }
+        };
+
         let config = {
           selector: `#${id}`,
-          extended_valid_elements: 'span[class]',
+          valid_elements: '*[*]', // Allows all elements and attributes
+          valid_children: '*[*]',
+          extended_valid_elements: '*[*]',
+          noneditable_class: 'tiny-mce-not-editable',
           setup: (editor) => {
+            editor.on('init', (event) => {
+              onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
+              //preview_id && self.force_update_preview(editor, preview_id);
+            });
+            editor.on('input ExecCommand', (event) => {
+              if ((event.type === 'execcommand' || event.type === 'input') && event.command !== 'mceFocus') {
+                update_preview(editor);
+              }
+            });
+            editor.on('keydown change', (event) => {
+                update_preview(editor);
+            });
+            editor.on('keydown', (event) => {
+              if (event.keyCode === keyboard.keys.tab) {
+                const node = editor.selection.getNode();
+                if (node.nodeName === 'LI' || node.closest('ul, ol')) {
+                  update_preview(editor);
+                }
+              }
+            });
+            editor.ui.registry.addToggleButton('custom_list', {
+              icon: 'checklist',
+              text: '',
+              onAction: (api) => {
+                const node = editor.selection.getNode();
+                if (node.nodeName === 'LI') {
+                  node = node.parentNode;
+                }
+
+                if (node.nodeName === 'UL' && editor.dom.hasClass(node, 'checkmark-list')) {
+                  editor.dom.removeClass(node, 'checkmark-list');
+                  api.setActive(false);
+                } else {
+                  editor.dom.addClass(node, 'checkmark-list');
+                  api.setActive(true);
+                }
+
+                update_preview(editor);
+              },
+              onSetup: (api) => {
+                const editor_event_callback = (event) => {
+                  const node = editor.selection.getNode();
+                  if (node.nodeName === 'LI') {
+                    node = node.parentNode;
+                  }
+                  api.setActive(node.nodeName === 'UL' && editor.dom.hasClass(node, 'checkmark-list'));
+                };
+
+                editor.on('NodeChange', editor_event_callback);
+                return () => {
+                  editor.off('NodeChange', editor_event_callback);
+                };
+              }
+            });
             editor.ui.registry.addMenuButton('advanced', {
-              icon: 'search',
-              text: 'Advanced Options',
+              icon: 'image-options',
+              text: '',
               fetch: (callback) => {
                 const tinymce_advanced_menuitems = [
                   {
@@ -383,21 +446,6 @@ storm_eagle.module('tinymce', () => {
                 ];
                 callback(tinymce_advanced_menuitems);
               },
-            });
-            editor.on('init', (event) => {
-              onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
-              preview_id && self.force_update_preview(editor, preview_id);
-            });
-            editor.on('input ExecCommand', (event) => {
-              if ((event.type === 'execcommand' || event.type === 'input') && event.command !== 'mceFocus') {
-                if (onupdate) {
-                  if (preview_id) {
-                    storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
-                  } else {
-                    storm_eagle.util.run_str_func( onupdate, { editor, id } );
-                  }
-                }
-              }
             });
           },
         };
