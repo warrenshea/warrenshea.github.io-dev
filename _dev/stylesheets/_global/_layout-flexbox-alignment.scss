@@ -1,4 +1,4 @@
-/* file: layout-alignment.scss------------------------------------------------ */
+/* file: layout-flexbox-alignment.scss------------------------------------------------ */
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
