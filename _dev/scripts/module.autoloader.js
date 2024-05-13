@@ -71,6 +71,7 @@ storm_eagle.module('autoload_scripts', () => {
     return new Promise((resolve, reject) => {
       const script_element = document.createElement('script');
       script_element.src = chill_penguin_module[key]['script_src'];
+      script_element.defer = true;
       script_element.onload = resolve;
       script_element.onerror = reject;
       document.head.appendChild(script_element);
