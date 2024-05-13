@@ -168,15 +168,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-1',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-1" aria-labelledby="number-active-elements-1-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="number-active-elements-1-id">The number of full slides that will be on the screen at a given time</p>
-                        </div>
-                      </div>
-                    </div>
+                    Number of active slides <button class="flex-grow:0 ml:4px" popovertarget="number-active-elements-1" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-1',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="number-active-elements-1" aria-labelledby="number-active-elements-1-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="number-active-elements-1-id">The number of full slides that will be on the screen at a given time</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px">
@@ -247,15 +249,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-1',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-1" aria-labelledby="left-offset-1-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="left-offset-1-id">The offset from the left the slide will be.<br>Numbers 0 to 1 represent percentages.<br>Numbers 1+ represent pixels</p>
-                        </div>
-                      </div>
-                    </div>
+                    Left offset <button class="flex-grow:0 ml:4px" popovertarget="left-offset-1" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-1',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="left-offset-1" aria-labelledby="left-offset-1-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="left-offset-1-id">The offset from the left the slide will be.<br>Numbers 0 to 1 represent percentages.<br>Numbers 1+ represent pixels</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="32" onChange="storm_eagle.carousel_builder.update('1','left-offset-sm',this.value);" id="left-offset-sm-1"><label for="left-offset-sm-1"><span class="description"></span></label></td>
@@ -266,15 +270,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-1',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-1" aria-labelledby="transition-speed-1-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="transition-speed-1-id">The speed at which the slide will transition</p>
-                        </div>
-                      </div>
-                    </div>
+                    Transition Speed (s) <button class="flex-grow:0 ml:4px" popovertarget="transition-speed-1" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-1',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="transition-speed-1" aria-labelledby="transition-speed-1-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="transition-speed-1-id">The speed at which the slide will transition</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.5" onChange="storm_eagle.carousel_builder.update('1','transition-speed-sm',this.value);" id="transition-speed-sm-1"><label for="transition-speed-sm-1"><span class="description"></span></label></td>
@@ -285,15 +291,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-1',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-1" aria-labelledby="focused-item-1-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="focused-item-1-id">The slide that is focused on load</p>
-                        </div>
-                      </div>
-                    </div>
+                    Focused slide on load <button class="flex-grow:0 ml:4px" popovertarget="focused-item-1" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-1',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="focused-item-1" aria-labelledby="focused-item-1-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="focused-item-1-id">The slide that is focused on load</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td colspan="4">
@@ -459,15 +467,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Number of active slides <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-2',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="number-active-elements-2" aria-labelledby="number-active-elements-2-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="number-active-elements-2-id">The number of full slides that will be on the screen at a given time</p>
-                        </div>
-                      </div>
-                    </div>
+                    Number of active slides <button class="flex-grow:0 ml:4px" popovertarget="number-active-elements-2" data-module="popover.trigger" onclick="storm_eagle.popover.open('number-active-elements-2',this);" aria-label="What does 'number of active slides' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="number-active-elements-2" aria-labelledby="number-active-elements-2-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="number-active-elements-2-id">The number of full slides that will be on the screen at a given time</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px">
@@ -538,15 +548,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Left offset <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-2',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="left-offset-2" aria-labelledby="left-offset-2-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="left-offset-2-id">The offset from the left the slide will be.<br>Numbers 0 to 1 represent percentages.<br>Numbers 1+ represent pixels</p>
-                        </div>
-                      </div>
-                    </div>
+                    Left offset <button class="flex-grow:0 ml:4px" popovertarget="left-offset-2" data-module="popover.trigger" onclick="storm_eagle.popover.open('left-offset-2',this);" aria-label="What does 'left offset' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="left-offset-2" aria-labelledby="left-offset-2-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="left-offset-2-id">The offset from the left the slide will be.<br>Numbers 0 to 1 represent percentages.<br>Numbers 1+ represent pixels</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="32" onChange="storm_eagle.carousel_builder.update('2','left-offset-sm',this.value);" id="left-offset-sm-2"><label for="left-offset-sm-2"><span class="description"></span></label></td>
@@ -557,15 +569,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Transition Speed (s) <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-2',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="transition-speed-2" aria-labelledby="transition-speed-2-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="transition-speed-2-id">The speed at which the slide will transition</p>
-                        </div>
-                      </div>
-                    </div>
+                    Transition Speed (s) <button class="flex-grow:0 ml:4px" popovertarget="transition-speed-2" data-module="popover.trigger" onclick="storm_eagle.popover.open('transition-speed-2',this);" aria-label="What does 'transition speed(s)' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="transition-speed-2" aria-labelledby="transition-speed-2-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="transition-speed-2-id">The speed at which the slide will transition</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:60px" value="0.5" onChange="storm_eagle.carousel_builder.update('2','transition-speed-sm',this.value);" id="transition-speed-sm-2"><label for="transition-speed-sm-2"><span class="description"></span></label></td>
@@ -576,15 +590,17 @@
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
                   <div class="fs:16px position:relative display:flex align:middle align:right">
-                    Focused slide on load <button class="flex-grow:0 ml:4px" aria-haspopup="true" aria-expanded="false" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-2',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span></button>
-                    <div class="popover right" data-module="popover" role="dialog" aria-modal="true" id="focused-item-2" aria-labelledby="focused-item-2-id">
-                      <div class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                        <button class="close" data-trigger="popover-close" onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:onyx ic-size:24px ic-name:times" aria-hidden="true"></span></button>
-                        <div class="lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
-                          <p id="focused-item-2-id">The slide that is focused on load</p>
-                        </div>
-                      </div>
-                    </div>
+                    Focused slide on load <button class="flex-grow:0 ml:4px" popovertarget="focused-item-2" data-module="popover.trigger" onclick="storm_eagle.popover.open('focused-item-2',this);" aria-label="What does 'focused slide on load' mean?, opens in a new pop-up">
+                      <span class="ic ic-type:solid display:block ic-color:blue ic-size:20px ic-name:info-circle" aria-hidden="true"></span>
+                    </button>
+                    <span popover class="right" data-module="popover" id="focused-item-2" aria-labelledby="focused-item-2-id">
+                      <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
+                        <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up"><span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span></button>
+                        <span class="display:block text-align:left md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
+                          <span id="focused-item-2-id">The slide that is focused on load</span>
+                        </span>
+                      </span>
+                    </span>
                   </div>
                 </th>
                 <td colspan="4">
