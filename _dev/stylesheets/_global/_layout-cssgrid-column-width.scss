@@ -1,4 +1,4 @@
-/* file: layout-column-width-cssgrid.scss------------------------------------------------ */
+/* file: layout-cssgrid-column-width.scss------------------------------------------------ */
 @use 'sass:math';
 
 @each $mediaquery in $mediaqueries {
@@ -15,6 +15,7 @@
       .#{$prefix}gc\:#{$i},
       .#{$prefix}gc0\:#{$i} {
         grid-column: span #{$i};
+        &.align-self\:centered,
         &.#{$prefix}align-self\:centered {
           align-self: center;
 
