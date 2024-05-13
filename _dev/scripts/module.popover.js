@@ -35,7 +35,7 @@ storm_eagle.module('popover', () => {
           el.style.left = '0px';
           el.style.transform = `none`;
         } else if (storm_eagle.client.viewport.is_lg_up()) {
-          const scroll_top = window.pageYOffset || document.trigger.scrollTop;
+          const scroll_top = window.pageYOffset || trigger.scrollTop;
           const trigger_location = trigger.getBoundingClientRect();
           el.style.top = `${trigger_location.top + trigger_location.height/2 + scroll_top}px`;
           el.style.transform = `translateY(-50%)`;
