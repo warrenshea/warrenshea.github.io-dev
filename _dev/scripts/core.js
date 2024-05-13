@@ -787,7 +787,7 @@ var storm_eagle = (() => {
        * @param {object} params_obj - An object containing parameters to pass to the function.
        */
       run_str_func: async (func_str, params_obj = {}) => {
-        console.log("run_str_func:", func_str);
+        // console.log("run_str_func:", func_str);
 
         // Check if func_str contains a comma and split it if so.
         if (func_str.includes(',')) {
@@ -1037,11 +1037,9 @@ storm_eagle.module('image_default_dimensions', () => {
   return {
     initialize: () => {
       const set_image_attribute = (image) => {
-        image.setAttribute("height",image.offsetHeight);
-        image.setAttribute("width",image.offsetWidth);
-        if (image.getAttribute("loading") !== "eager") {
-          image.setAttribute("loading","lazy");
-        }
+        (!image.hasAttribute("height")) && image.setAttribute("height", image.offsetHeight);
+        (!image.hasAttribute("width")) && image.setAttribute("width", image.offsetWidth);
+        (image.getAttribute("loading") !== "eager") && image.setAttribute("loading","lazy");
       }
       document.querySelectorAll(`img`).forEach((image) => {
         if (image.complete) {
