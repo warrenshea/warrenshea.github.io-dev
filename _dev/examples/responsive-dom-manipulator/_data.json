@@ -12,10 +12,10 @@
             },
             "stylesheets": [
                 "/stylesheets/core.css",
-                "/stylesheets/vendor.prism.v.1.29.0.css"
+                "/stylesheets/libs/prism-v1.29.0.min.css"
             ],
             "scripts": [
-                "/scripts/vendor.prism.v.1.29.0.js",
+                "/scripts/libs/prism-v1.29.0.min.js",
                 "/scripts/prism.js",
                 "/scripts/module.slider.js"
             ]
