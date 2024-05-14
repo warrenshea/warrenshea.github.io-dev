@@ -668,6 +668,7 @@ var storm_eagle = (() => {
     util: {
       escape_string: (original_str) => {
         const char_to_escape_map = {
+          '%': '\\%',
           '/': '\\/',
           ':': '\\:',
           '+': '\\+',
