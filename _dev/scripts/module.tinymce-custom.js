@@ -96,8 +96,7 @@ chill_penguin.module('tinymce', () => {
       }
       .color\\:white {
         font-family: "heebo-bold", Arial, Sans-Serif;
-        color: white;
-        text-shadow: 0 0 3px #202020;
+        color: #999;
       }
       .color\\:eerie-black {
         font-family: "heebo-bold", Arial, Sans-Serif;
