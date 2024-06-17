@@ -1,6 +1,7 @@
 'use strict';
 storm_eagle.module('dialog', () => {
   let self;
+  let scroll_top;
   let state = {};
   return {
     initialize: () => {
@@ -70,8 +71,9 @@ storm_eagle.module('dialog', () => {
           self.a11y.first_tab_stop = focusable_elements[0];
           self.a11y.last_tab_stop = focusable_elements[focusable_elements.length - 1];
 
-          document.querySelector('body').classList.add('overflow:hidden');
-          document.querySelector('body').style.paddingRight = `${storm_eagle.page.get_scrollbar_width()}px`;
+          scroll_top = document.documentElement.scrollTop || document.body.scrollTop;
+          document.documentElement.style.top = `-${scroll_top}px`;
+          document.documentElement.classList.add('no-scroll');
 
           el.showModal();
 
@@ -90,8 +92,9 @@ storm_eagle.module('dialog', () => {
       close: () => {
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
 
-        document.querySelector('body').classList.remove('overflow:hidden');
-        document.querySelector('body').style.removeProperty('padding-right');
+        document.documentElement.classList.remove('no-scroll');
+        document.documentElement.style.removeProperty('top');
+        window.scrollTo(0,scroll_top);
 
         document.querySelectorAll("dialog").forEach((dialog) => {
           dialog.close();
