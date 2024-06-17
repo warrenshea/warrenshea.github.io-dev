@@ -36,6 +36,12 @@
   overflow-y: scroll;
 }
 
+.no-scroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .outline\:0 {
   outline: 0;
 }
