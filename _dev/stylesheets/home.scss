@@ -1,6 +1,6 @@
 h2 { transition: opacity 0.5s ease; }
 .heading { height:86px; transition: opacity 0.5s ease; }
-.description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 15%, #f9f9f9 15%, #f9f9f9 17%, #fff 17.5%, #fff 100%); transition: opacity 0.5s ease; }
+.description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 13%, #f9f9f9 13%, #f9f9f9 15%, #fff 15.5%, #fff 100%); transition: opacity 0.5s ease; }
 .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); transition: opacity 0.5s ease; }
 .title-a11y { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
 .title-angular { background: linear-gradient(105deg, #b92933 0, #b92933 92%, #e62a39 92.5%, #e62a39 100%); }
@@ -47,6 +47,8 @@ h2 { transition: opacity 0.5s ease; }
 .title-markdown { background: linear-gradient(105deg, #606870 0, #606870 92%, #ddd 92.5%, #ddd 100%); }
 .title-mindset { background: linear-gradient(105deg, #013b6b 0, #013b6b 92%, #035ba2 92.5%, #035ba2 100%); }
 .title-node { background: linear-gradient(105deg, #026e00 0, #026e00 92%, #233056 92.5%, #233056 100%); }
+.title-one-minute-manager { background: linear-gradient(105deg, #2e467b 0, #2e467b 92%, #e02828 92.5%, #e02828 100%); }
+.title-qbq { background: linear-gradient(105deg, #23408e 0, #23408e 92%, #f9d676 92.5%, #f9d676 100%); }
 .title-performance { background: linear-gradient(105deg, #cceeff 0, #cceeff 92%, #cc66ff 92.5%, #cc66ff 100%); }
 .title-personal-brand { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
 .title-php { background: linear-gradient(105deg, #4f5b90 0, #4f5b90 92%, #fff 92.5%, #fff 100%); }
