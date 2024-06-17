@@ -17822,6 +17822,21 @@ ul.checkmark-list > li {
   mask-image: url("../assets/icon/brands/check.svg");
 }
 
+.ic.ic-type\:light.ic-name\:check-double {
+  -webkit-mask-image: url("../assets/icon/light/check-double.svg");
+  mask-image: url("../assets/icon/light/check-double.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:check-double {
+  -webkit-mask-image: url("../assets/icon/solid/check-double.svg");
+  mask-image: url("../assets/icon/solid/check-double.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:check-double {
+  -webkit-mask-image: url("../assets/icon/brands/check-double.svg");
+  mask-image: url("../assets/icon/brands/check-double.svg");
+}
+
 .ic.ic-type\:light.ic-name\:check-circle {
   -webkit-mask-image: url("../assets/icon/light/check-circle.svg");
   mask-image: url("../assets/icon/light/check-circle.svg");
@@ -18270,6 +18285,21 @@ ul.checkmark-list > li {
 .ic.ic-type\:brands.ic-name\:sass {
   -webkit-mask-image: url("../assets/icon/brands/sass.svg");
   mask-image: url("../assets/icon/brands/sass.svg");
+}
+
+.ic.ic-type\:light.ic-name\:search-plus {
+  -webkit-mask-image: url("../assets/icon/light/search-plus.svg");
+  mask-image: url("../assets/icon/light/search-plus.svg");
+}
+
+.ic.ic-type\:solid.ic-name\:search-plus {
+  -webkit-mask-image: url("../assets/icon/solid/search-plus.svg");
+  mask-image: url("../assets/icon/solid/search-plus.svg");
+}
+
+.ic.ic-type\:brands.ic-name\:search-plus {
+  -webkit-mask-image: url("../assets/icon/brands/search-plus.svg");
+  mask-image: url("../assets/icon/brands/search-plus.svg");
 }
 
 .ic.ic-type\:light.ic-name\:sort-alt {
@@ -23266,9 +23296,6 @@ ul.checkmark-list > li {
 }
 
 /* file: module.dialog.scss------------------------------------------------ */
-[data-module=dialog]::backdrop {
-  overflow-y: scroll;
-}
 [data-module=dialog][data-dialog-overlay=false]::backdrop {
   background-color: transparent;
 }
@@ -23477,8 +23504,13 @@ ul.checkmark-list > li {
   border-radius: 0.25rem;
   opacity: 0;
   transition: opacity 0.5s;
-  text-align: right;
+  text-align: left;
   max-width: 400px;
+  font-size: 16px !important;
+}
+[data-module="module.toast"] .toast h1, [data-module="module.toast"] .toast h2, [data-module="module.toast"] .toast h3, [data-module="module.toast"] .toast h4, [data-module="module.toast"] .toast p, [data-module="module.toast"] .toast span, [data-module="module.toast"] .toast div, [data-module="module.toast"] .toast a, [data-module="module.toast"] .toast button {
+  font-size: 16px !important;
+  line-height: 1.15 !important;
 }
 
 /* file: module.autocomplete.scss------------------------------------------------ */
@@ -55201,6 +55233,12 @@ ul.checkmark-list > li {
 
 .overflow-y\:scroll {
   overflow-y: scroll;
+}
+
+.no-scroll {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
 }
 
 .outline\:0 {
