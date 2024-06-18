@@ -10,15 +10,15 @@
 
 main > div,
 main > section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: rem-calc(32);
+  padding-bottom: rem-calc(32);
   @include breakpoint($medium-min) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: rem-calc(48);
+    padding-bottom: rem-calc(48);
   }
   @include breakpoint($xlarge-min) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: rem-calc(64);
+    padding-bottom: rem-calc(64);
   }
 }
 
@@ -42,23 +42,23 @@ main > .bgc\:silver + section,
 main > .bgc\:silver + div,
 main > div + .bgc\:silver,
 main > section + .bgc\:silver {
-  padding-top: 2rem;
+  padding-top: rem-calc(32);
   @include breakpoint($medium-min) {
-    padding-top: 3rem;
+    padding-top: rem-calc(48);
   }
   @include breakpoint($xlarge-min) {
-    padding-top: 4rem;
+    padding-top: rem-calc(64);
   }
 }
 
 .zs-hightlight-blue {
-  box-shadow: 0 0 5px 4px $blue !important;
+  box-shadow: 0 0 rem-calc(5) rem-calc(4) $blue !important;
 }
 
 .zs-hightlight-yellow {
-  box-shadow: 0 0 5px 4px $yellow !important;
+  box-shadow: 0 0 rem-calc(5) rem-calc(4) $yellow !important;
 }
 
 .zs-hightlight-red {
-  box-shadow: 0 0 5px 4px $red !important;
+  box-shadow: 0 0 rem-calc(5) rem-calc(4) $red !important;
 }
