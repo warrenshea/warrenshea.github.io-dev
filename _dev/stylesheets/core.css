@@ -23274,6 +23274,12 @@ ul.checkmark-list > li {
   transition: 0.25s height ease;
   height: 0px;
 }
+[data-module=accordion] :where(.accordion-header-py\:16px-px\:24px > div > *) > button {
+  padding: 1rem 1.5rem;
+}
+[data-module=accordion] :where(.accordion-panel-p\:24px > div > div[data-module="accordion.panel"]) > div {
+  padding: 1.5rem;
+}
 
 /* file: module.tabs.scss------------------------------------------------ */
 [data-module=tabs] [data-module="tabs.panel"] {
