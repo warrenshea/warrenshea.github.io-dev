@@ -35,4 +35,13 @@
       height:0px;
     }
   }
+  /* Design Patterns */
+  & :where(.accordion-header-py\:16px-px\:24px > div > *) > button {
+    padding: rem-calc(16) rem-calc(24);
+  }
+
+  & :where(.accordion-panel-p\:24px > div > div[data-module='accordion.panel']) > div {
+    padding: rem-calc(24);
+  }
 }
+
