@@ -349,36 +349,40 @@ fieldset.unstyle {
     }
   }
 
-  .box-radio-buttons {
-    input[type='radio'] {
-      & + label {
-        padding: rem-calc(4) rem-calc(16);
-        font-family: 'heebo-bold';
-        font-size: rem-calc(14);
-        color: $blue;
-        background-color: $white;
-        width: 100%;
-        border: rem-calc(2) solid $gray;
-        line-height: 2.25rem;
-        border-radius: rem-calc(4);
-        transition: all 0.3s ease;
-        box-shadow: 0 0 0 0 rgba($vista-blue, 0.65);
-        white-space: nowrap;
-        &::before {
-          display: none;
-        }
-      }
-      &:hover + label,
-      &:checked + label {
-        color: $white;
-        background-color: $blue;
-        border: rem-calc(2) $blue solid;
-      }
-      &:checked:focus + label {
-        border: rem-calc(2) $vista-blue solid;
-        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+  .box-checkboxes input[type='checkbox'],
+  .box-radio-buttons input[type='radio'] {
+    & + label {
+      padding: rem-calc(4) rem-calc(16);
+      font-family: 'heebo-bold';
+      font-size: rem-calc(14);
+      color: $blue;
+      background-color: $white;
+      width: 100%;
+      border: rem-calc(2) solid $gray;
+      line-height: 2.25rem;
+      border-radius: rem-calc(4);
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 0 rgba($vista-blue, 0.65);
+      white-space: nowrap;
+      &::before {
+        display: none;
       }
     }
+    &:hover + label,
+    &:checked + label {
+      color: $white;
+      background-color: $blue;
+      border: rem-calc(2) $blue solid;
+    }
+    &:checked:focus + label {
+      border: rem-calc(2) $vista-blue solid;
+      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+    }
+  }
+
+  .box-checkboxes input[type='checkbox'][aria-checked='mixed'] + label {
+    color: $white;
+    background-color: $powder-blue;
   }
 
   [data-module="autocomplete.multiselect"] input[type='text'][data-module='autocomplete.input']{
