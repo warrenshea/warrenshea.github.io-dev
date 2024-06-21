@@ -9,66 +9,57 @@
 @import '_config/variables-box-shadow.scss';
 
 
-[data-zs-inline-edit]:before,
-[data-zs-edit]:before,
-[data-zs-add]:before,
-[data-zs-remove]:before,
-[data-zs-reorder]:before,
-[data-zs-publish]:before,
-[data-zs-publish-page]:before {
+[data-zs-page-editor-menu] button:before {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   pointer-events: none;
   white-space: nowrap;
+  background: #fff;
   transform: translateX(-20px);
   transition: opacity 0.1s ease, visibility 0.1s ease;
-  background: #FFF;
   border-radius: rem-calc(16) 0 0 rem-calc(16);
   border:1px solid $onyx;
   padding: rem-calc(4) rem-calc(32) rem-calc(4) rem-calc(24);
   z-index:-1;
 }
 
-[data-zs-inline-edit]:hover,
-[data-zs-edit]:hover,
-[data-zs-add]:hover,
-[data-zs-remove]:hover,
-[data-zs-reorder]:hover,
-[data-zs-publish]:hover,
-[data-zs-publish-page]:hover {
-  box-shadow: 0 0 0.5rem 0 rgba(32, 32, 32, 0.5), 0 0.25rem 1.5rem 0 rgba(32, 32, 32, 0.15);
+[data-zs-page-editor-menu] button[value=true] {
+  box-shadow: 0 0 0 rem-calc(2) #FFF;
 }
 
-[data-zs-inline-edit]:hover:before,
-[data-zs-inline-edit][value=true]:before,
-[data-zs-edit]:hover:before,
-[data-zs-edit][value=true]:before,
-[data-zs-add]:hover:before,
-[data-zs-add][value=true]:before,
-[data-zs-remove]:hover:before,
-[data-zs-remove][value=true]:before,
-[data-zs-reorder]:hover:before,
-[data-zs-reorder][value=true]:before,
-[data-zs-publish]:hover:before,
-[data-zs-publish][value=true]:before,
-[data-zs-publish-page]:hover:before,
-[data-zs-publish-page][value=true]:before {
+
+[data-zs-page-editor-menu] button:hover:before,
+[data-zs-page-editor-menu] button[value=true]:before {
   transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: visible;
   opacity: 1;
 }
 
 [data-zs-inline-edit]:before { content: "Inline Edit";  border:1px solid $dark-goldenrod; }
+[data-zs-inline-edit].bgc\:dark-goldenrod:before { content: "Inline Edit";  border:1px solid $dark-goldenrod; background: $dark-goldenrod; }
+
 [data-zs-edit]:before { content: "Exploded Edit";  border:1px solid $cocoa-brown; }
+[data-zs-edit].bgc\:cocoa-brown:before { content: "Exploded Edit";  border:1px solid $cocoa-brown; background: $cocoa-brown; }
+
 [data-zs-add]:before { content: "Add";  border:1px solid $positive; }
+[data-zs-add].bgc\:positive:before { content: "Add";  border:1px solid $positive; background: $positive; }
+
 [data-zs-remove]:before { content: "Remove";  border:1px solid $negative; }
+[data-zs-remove].bgc\:negative:before { content: "Remove";  border:1px solid $negative; background: $negative; }
+
 [data-zs-reorder]:before { content: "Reorder";  border:1px solid $blue; }
+[data-zs-reorder].bgc\:blue:before { content: "Reorder";  border:1px solid $blue; background: $blue; }
+
 [data-zs-publish]:before { content: "Publish";  border:1px solid $english-violet; }
+[data-zs-publish].bgc\:english-violet:before { content: "Publish";  border:1px solid $english-violet; background: $english-violet; }
+
 [data-zs-publish-page]:before { content: "Publish Page";  border:1px solid $positive; }
+[data-zs-publish-page].bgc\:positive:before { content: "Publish Page";  border:1px solid $positive; background: $positive; }
 
 [data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; padding: 16px !important; margin-top:0 !important; }
-[data-zs-page-editor-mode-add-padding] { padding:8px;
+[data-zs-page-editor-mode-add-padding] {
+  padding:8px;
   &::before {
     content: attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
     border: rem-calc(2) solid $positive-light;
