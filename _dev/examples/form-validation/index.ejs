@@ -354,6 +354,47 @@
             </div>
 
             <div class="bgc:platinum p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Box Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:gl0b3x p:16px" data-equalize-height="box-traditional-checkboxes">
+              <div class="box-checkboxes">
+                <input type="checkbox" name="box-traditional-checkbox-required" value="0" id="box-traditional-checkbox-required-1" data-required="is_not_empty">
+                <label for="box-traditional-checkbox-required-1" class="mb:4px py:2px">Checkbox Label</label>
+                <input type="checkbox" name="box-traditional-checkbox-required" value="1" id="box-traditional-checkbox-required-2">
+                <label for="box-traditional-checkbox-required-2" class="mb:4px py:2px">Checkbox Label</label>
+                <input type="checkbox" name="box-traditional-checkbox-required" value="2" id="box-traditional-checkbox-required-3" disabled="">
+                <label for="box-traditional-checkbox-required-3" class="mb:4px py:2px">Checkbox (Disabled) Label</label>
+                <span class="error-message" id="box-traditional-checkbox-required:is_not_empty">Please select an option</span>
+              </div>
+            </div>
+
+            <div class="bgc:platinum p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Parent-Child Box Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:gl0b3x p:16px" data-equalize-height="box-parent-child-checkboxes">
+              <div class="box-checkboxes" data-module="parent-checkbox.container">
+                <input type="checkbox" data-module='parent-checkbox' aria-controls="box-child-checkbox-required-1 box-child-checkbox-required-2 box-child-checkbox-required-3" name="box-checkbox-parent-required" id="box-checkbox-parent-required" aria-checked="mixed">
+                <label for="box-checkbox-parent-required" class="display:inline mb:4px py:2px">Parent Checkbox Label</label>
+                <ul class="unstyle-pl:0 display:inline">
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-required-1" id="box-child-checkbox-required-1" checked="" aria-checked="true">
+                    <label for="box-child-checkbox-required-1" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-required-2" id="box-child-checkbox-required-2" checked="" aria-checked="true">
+                    <label for="box-child-checkbox-required-2" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-required-3" id="box-child-checkbox-required-3" aria-checked="false">
+                    <label for="box-child-checkbox-required-3" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:platinum p:16px br-white:2px">
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
@@ -1934,6 +1975,46 @@
             </div>
 
             <div class="bgc:platinum p:16px bl-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Traditional Box Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:gl0b3x p:16px" data-equalize-height="box-traditional-checkboxes">
+              <div class="box-checkboxes">
+                <input type="checkbox" name="box-traditional-checkbox-optional" value="0" id="box-traditional-checkbox-optional-1" checked="">
+                <label for="box-traditional-checkbox-optional-1" class="mb:4px py:2px">Checkbox Label</label>
+                <input type="checkbox" name="box-traditional-checkbox-optional" value="1" id="box-traditional-checkbox-optional-2">
+                <label for="box-traditional-checkbox-optional-2" class="mb:4px py:2px">Checkbox Label</label>
+                <input type="checkbox" name="box-traditional-checkbox-optional" value="2" id="box-traditional-checkbox-optional-3" disabled="" checked="">
+                <label for="box-traditional-checkbox-optional-3" class="mb:4px py:2px">Checkbox (Disabled) Label</label>
+              </div>
+            </div>
+
+            <div class="bgc:platinum p:16px br-white:2px">
+              <h3 class="fs:20px lh:24 text-align:center">Parent-Child Box Checkboxes</h3>
+            </div>
+
+            <div class="form:theme:gl0b3x p:16px" data-equalize-height="box-parent-child-checkboxes">
+              <div class="box-checkboxes" data-module="parent-checkbox.container">
+                <input type="checkbox" data-module='parent-checkbox' aria-controls="box-child-checkbox-optional-1 box-child-checkbox-optional-2 box-child-checkbox-optional-3" name="box-checkbox-parent-optional" id="box-checkbox-parent-optional" aria-checked="mixed">
+                <label for="box-checkbox-parent-optional" class="display:inline mb:4px py:2px">Parent Checkbox Label</label>
+                <ul class="unstyle-pl:0 display:inline">
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-optional-1" id="box-child-checkbox-optional-1" checked="" aria-checked="true">
+                    <label for="box-child-checkbox-optional-1" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-optional-2" id="box-child-checkbox-optional-2" checked="" aria-checked="true">
+                    <label for="box-child-checkbox-optional-2" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                  <li class="display:inline">
+                    <input type="checkbox" name="box-child-checkbox-optional-3" id="box-child-checkbox-optional-3" aria-checked="false">
+                    <label for="box-child-checkbox-optional-3" class="mb:4px py:2px">Checkbox Label</label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="bgc:platinum p:16px bl-white:2px">
               <h3 class="fs:20px lh:24 text-align:center">Card Checkbox</h3>
             </div>
 
@@ -2126,6 +2207,7 @@
             document.querySelector("[for=month-fr-required]").classList.add("active-label");
             document.getElementById("traditional-checkbox-required-1").checked = "checked";
             document.getElementById("card-checkbox-required-1").checked = "checked";
+            document.getElementById("box-traditional-checkbox-required-1").checked = "checked";
             document.getElementById("traditional-radio-button-required-1").checked = "checked";
             document.getElementById("radio-box-required-1").checked = "checked";
             document.getElementById("card-radiobuttons-required-1").checked = "checked";
@@ -2167,6 +2249,9 @@
             document.getElementById("traditional-checkbox-required-3").checked = false;
             document.getElementById("card-checkbox-required-1").checked = false;
             document.getElementById("card-checkbox-required-2").checked = false;
+            document.getElementById("box-traditional-checkbox-required-1").checked = false;
+            document.getElementById("box-traditional-checkbox-required-2").checked = false;
+            document.getElementById("box-traditional-checkbox-required-3").checked = false;
             document.getElementById("traditional-radio-button-required-1").checked = false;
             document.getElementById("traditional-radio-button-required-2").checked = false;
             document.getElementById("radio-box-required-1").checked = false;
@@ -2218,6 +2303,7 @@
             document.querySelector("[for=month-fr-optional]").classList.add("active-label");
             document.getElementById("traditional-checkbox-optional-1").checked = "checked";
             document.getElementById("card-checkbox-optional-1").checked = "checked";
+            document.getElementById("box-traditional-checkbox-optional-1").checked = "checked";
             document.getElementById("traditional-radio-button-optional-1").checked = "checked";
             document.getElementById("radio-box-optional-1").checked = "checked";
             document.getElementById("card-radiobuttons-optional-1").checked = "checked";
@@ -2278,6 +2364,9 @@
             document.getElementById("traditional-checkbox-optional-3").checked = false;
             document.getElementById("card-checkbox-optional-1").checked = false;
             document.getElementById("card-checkbox-optional-2").checked = false;
+            document.getElementById("box-traditional-checkbox-optional-1").checked = false;
+            document.getElementById("box-traditional-checkbox-optional-2").checked = false;
+            document.getElementById("box-traditional-checkbox-optional-3").checked = false;
             document.getElementById("traditional-radio-button-optional-1").checked = false;
             document.getElementById("traditional-radio-button-optional-2").checked = false;
             document.getElementById("radio-box-optional-1").checked = false;
