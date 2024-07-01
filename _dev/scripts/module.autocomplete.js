@@ -341,7 +341,7 @@ storm_eagle.module('autocomplete', () => {
         return result_string;
       },
       create_tag_html: (id, index, result_string) => {
-        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px' data-autocomplete-tag='${index}'>${storm_eagle.util.encode_html_entities(result_string)} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
+        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px display:flex align:middle' data-autocomplete-tag='${index}'>${storm_eagle.util.encode_html_entities(result_string)} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white pl:4px lh:0' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
       }
     }
   };
