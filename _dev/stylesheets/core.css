@@ -15842,6 +15842,7 @@ fieldset.unstyle {
   background-color: #c0c0c0;
   border: 0.375rem solid #404040;
 }
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox] + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label {
   padding: 0.25rem 1rem;
   font-family: "heebo-bold";
@@ -15856,17 +15857,25 @@ fieldset.unstyle {
   box-shadow: 0 0 0 0 rgba(120, 156, 204, 0.65);
   white-space: nowrap;
 }
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox] + label::before,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label::before {
   display: none;
 }
-.form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:hover + label, .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked + label {
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:hover + label, .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:checked + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:hover + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked + label {
   color: #ffffff;
   background-color: #3169b2;
   border: 0.125rem #3169b2 solid;
 }
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:checked:focus + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked:focus + label {
   border: 0.125rem #789ccc solid;
   box-shadow: 0 0 0.25rem 0.1875rem rgba(120, 156, 204, 0.65);
+}
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][aria-checked=mixed] + label {
+  color: #ffffff;
+  background-color: #9bb6d9;
 }
 .form\:theme\:gl0b3x [data-module="autocomplete.multiselect"] input[type=text][data-module="autocomplete.input"] {
   margin-top: 0;
@@ -55235,6 +55244,10 @@ ul.checkmark-list > li {
 
 .overflow\:hidden {
   overflow: hidden;
+}
+
+.overflow-x\:scroll {
+  overflow-x: scroll;
 }
 
 .overflow-y\:scroll {
