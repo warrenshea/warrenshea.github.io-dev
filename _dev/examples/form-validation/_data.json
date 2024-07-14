@@ -22,6 +22,7 @@
                 "/scripts/module.form.theme.gl0b3x.js",
                 "/scripts/module.form.parent-checkbox.js",
                 "/scripts/module.form.switch.button.js",
+                "/scripts/module.form.select-all.js",
                 "/scripts/module.dialog.js"
             ]
         }
