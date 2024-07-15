@@ -21,6 +21,10 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/dist/codebase/chill-penguin/scripts/module.form.parent-checkbox.js',
       module_name: 'form_parent_checkbox',
     },
+    form_select_all: {
+      script_src: '/dist/codebase/chill-penguin/scripts/module.form.select-all.js',
+      module_name: 'form_select_all',
+    },
     form_switch_button: {
       script_src: '/dist/codebase/chill-penguin/scripts/module.form.switch.button.js',
       module_name: 'form_switch_button',
@@ -85,6 +89,7 @@ storm_eagle.module('autoload_scripts', () => {
       const carousel = document.querySelectorAll("[data-module='carousel']").length > 0;
       const dialog = document.querySelectorAll("[data-module='dialog']").length > 0;
       const form_parent_checkbox = document.querySelectorAll('[data-module="parent-checkbox"]').length > 0;
+      const form_select_all = document.querySelectorAll('[data-module="select-all"]').length > 0;
       const form_switch_button = document.querySelectorAll('[data-module="switch.button"]').length > 0;
       const form_theme_gl0b3x = document.querySelectorAll('.form\\:theme\\:gl0b3x').length > 0;
       const form_validation = document.querySelectorAll(`[data-module='form']`).length > 0;
@@ -97,86 +102,33 @@ storm_eagle.module('autoload_scripts', () => {
       const tabs = document.querySelectorAll("[data-module='tabs']").length > 0;
       const waypoint = document.querySelectorAll("[data-module='waypoint']").length > 0;
 
-      if (accordion) {
-        load_javascript('accordion').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (autocomplete) {
-        load_javascript('autocomplete').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (carousel) {
-        load_javascript('carousel').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (dialog) {
-        load_javascript('dialog').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (form_parent_checkbox) {
-        load_javascript('form_parent_checkbox').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (form_switch_button) {
-        load_javascript('form_switch_button').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (form_theme_gl0b3x) {
-        load_javascript('form_theme_gl0b3x').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (form_validation) {
-        load_javascript('form_validation').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (header) {
-        load_javascript('header').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (menu_submenu) {
-        load_javascript('menu_submenu').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (popover) {
-        load_javascript('popover').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (range_slider) {
-        load_javascript('range_slider').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (show_more) {
-        load_javascript('show_more').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (slider) {
-        load_javascript('slider').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (tabs) {
-        load_javascript('tabs').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
-      if (waypoint) {
-        load_javascript('waypoint').catch((error) => {
-          console.error(`autoload_scripts -> ${error}`);
-        });
-      }
+      const scripts = [
+        'accordion',
+        'autocomplete',
+        'carousel',
+        'dialog',
+        'form_parent_checkbox',
+        'form_select_all',
+        'form_switch_button',
+        'form_theme_gl0b3x',
+        'form_validation',
+        'header',
+        'menu_submenu',
+        'popover',
+        'range_slider',
+        'show_more',
+        'slider',
+        'tabs',
+        'waypoint'
+      ];
+
+      scripts.forEach(script => {
+        if (window[script]) {
+          load_javascript(script).catch(error => {
+            console.error(`autoload_scripts -> ${error}`);
+          });
+        }
+      });
     },
   };
 });
