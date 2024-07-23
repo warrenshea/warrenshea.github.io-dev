@@ -1,0 +1,24 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Isotope • warrenshea",
+                "urlEn": "/examples/isotope/",
+                "urlCanonical": "/examples/isotope/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.form.select-all.js",
+                "/scripts/libs/isotope-v3.0.6.min.js",
+                "/scripts/module.isotope.js",
+                "/scripts/module.autocomplete.js"
+            ]
+        }
+    }
+}
