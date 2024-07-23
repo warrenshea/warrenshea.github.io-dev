@@ -31,6 +31,8 @@
               new_height = parseInt(new_height);
               state[id]['iframe'].style.height = `${new_height + 1}px`;
               self.update_range_sliders(id);
+              //@TODO: REFACTOR THIS
+              //This occurs on the Design UI Styleguide, when modifying the grid, the items in the overlay also needs to refresh to adjust to the height
               if (storm_eagle.isotope_cards) {
                 storm_eagle.isotope_cards.refresh_isotope();
               }
