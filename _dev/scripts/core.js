@@ -61,11 +61,13 @@ const remove_focus_selector = [
  * storm_eagle.format.percentage()
  * storm_eagle.reverse_format.get_numeric_value()
  * storm_eagle.button.is_checked()
+ * storm_eagle.button.set_checked()
  * storm_eagle.checkbox.is_checked()
  * storm_eagle.checkbox.set_checked()
  * storm_eagle.checkbox.get_values()
  * storm_eagle.radiobutton.is_checked()
  * storm_eagle.radiobutton.set_checked()
+ * storm_eagle.radiobutton.set_checked_from_value()
  * storm_eagle.radiobutton.get_value()
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
@@ -419,13 +421,13 @@ var storm_eagle = (() => {
         element.setAttribute('aria-checked', value);
       },
 
-      //gets the value of the checkboxes as an array
-      get_values: (selector) => {
+      // Gets the values of the checkboxes as an array
+      get_values: (selector, attribute = null) => {
         let checkbox_values = [];
         let elements = document.querySelectorAll(selector);
         elements.forEach((el) => {
           if (storm_eagle.checkbox.is_checked(el)) {
-            checkbox_values.push(el.value);
+            checkbox_values.push(attribute ? el.getAttribute(attribute) : el.value);
           }
         });
         return checkbox_values;
@@ -458,9 +460,13 @@ var storm_eagle = (() => {
         });
       },
 
-      //gets the value of a radio button
-      get_value: (selector) => {
-        return document.querySelector(`${selector}:checked`) ? document.querySelector(`${selector}:checked`).value : null;
+      // Gets the value of a radio button or any attribute
+      get_value: (selector, attribute = null) => {
+        const element = document.querySelector(`${selector}:checked`);
+        if (element) {
+          return attribute ? element.getAttribute(attribute) : element.value;
+        }
+        return null;
       },
     },
 
