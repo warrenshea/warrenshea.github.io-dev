@@ -28,13 +28,27 @@
       }
       .isotope-size\:48 {width:64px;height:64px;margin:0 8px 8px 0;}
     </style>
-    <div class="display:flex flex-flow:row-wrap form:theme:gl0b3x">
+    <div class="display:flex flex-flow:row-wrap form:theme:gl0b3x"
+      id
+      data-module="isotope"
+      data-isotope-sort-data='{"number": "[data-sort-number] parseInt"}'
+      data-isotope-sortBy-bind-id="isotope-sort"
+      data-isotope-filters-bind-ids='["fa5dam-autocomplete","fa5dam-type","fa5dam-color"]'
+      data-isotope-filter-initial='*'
+      data-isotope-filter-no-results='*'>
+      <fieldset class="hide" id="isotope-sort" data-isotope-sort-group="sort">
+        <legend>Sort</legend>
+        <input type="radio" name="sort" id="sort-number" value="number" checked>
+        <label for="sort-number">Number</label>
+      </fieldset>
+
       <div class="w0:2 position:relative">
-        <div class="position:fixed" style="left:0;width:16.667%;">
+        <div
+          class="position:fixed" style="left:0;width:16.667%;">
           <h2 class="heebo:bold">Filters</h2>
 
           <div class="mx:2px mb:8px b-gray:2px brr:8px">
-            <div class="p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete" data-autocomplete-filter="tags" data-autocomplete-input-format='["tags"]' data-autocomplete-source-type="function" data-autocomplete-source="storm_eagle.fa5dam.get_keyword_database" data-autocomplete-type="single-select" data-autocomplete-onupdate-func="storm_eagle.fa5dam.refresh_isotope">
+            <div class="p:8px w:100% align-self:centered" data-module="autocomplete" id="fa5dam-autocomplete" data-autocomplete-filter="tags" data-autocomplete-value-format='[".","keyword-","tags"]' data-autocomplete-input-format='["tags"]' data-autocomplete-source-type="function" data-autocomplete-source="storm_eagle.fa5dam.get_keyword_database" data-autocomplete-type="single-select" data-isotope-filter-group="name" data-isotope-filter-group-type="input_autocomplete" data-autocomplete-onupdate-func="storm_eagle.isotope.ui.refresh_all">
               <div class="position:relative w:100% pt:4px">
                 <input type="text" data-module="autocomplete.input" id="fa5dam" name="fa5dam" role="combobox" aria-autocomplete="both" aria-owns="fa5dam-autocomplete-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
                 <label for="fa5dam" id="fa5dam-autocomplete-label"><span class="description">Keyword Search</span></label>
@@ -47,38 +61,43 @@
             </div>
           </div>
 
-          <fieldset class="option-set-assets brr:8px mb:8px" data-filter-group="type">
+          <fieldset class="brr:8px mb:8px"
+            id="fa5dam-type"
+            data-isotope-filter-group="type"
+            data-isotope-filter-group-type="radiobutton">
             <legend class="hide">Type</legend>
             <h3>Type</h3>
-            <input type="radio" name="type" id="all" value="all" data-filter-value="" checked>
+            <input type="radio" name="type" id="all" data-isotope-filter-value="*" checked>
             <label for="all" class="display:block mb:4px">All</label>
-            <input type="radio" name="type" id="icon" value="icon" data-filter-value=".type-icon">
+            <input type="radio" name="type" id="icon" data-isotope-filter-value=".type-icon">
             <label for="icon" class="display:block mb:4px">Icon</label>
-            <input type="radio" name="type" id="brand" value="brand" data-filter-value=".type-brand">
+            <input type="radio" name="type" id="brand" data-isotope-filter-value=".type-brand">
             <label for="brand" class="display:block mb:4px">Brand</label>
           </fieldset>
-
-          <fieldset class="option-set-assets brr:8px" data-filter-group="color">
+          <fieldset class="brr:8px"
+            id="fa5dam-color"
+            data-isotope-filter-group="color"
+            data-isotope-filter-group-type="radiobutton">
             <legend class="hide">Color</legend>
             <h3>Color</h3>
-            <input type="radio" name="color" id="color-all" value="all" data-filter-value="" checked>
+            <input type="radio" name="color" id="color-all" data-isotope-filter-value="*" checked>
             <label for="color-all" class="display:block mb:4px">All</label>
-            <input type="radio" name="color" id="duotone" value="duotone" data-filter-value=".isotope-color:duotone">
+            <input type="radio" name="color" id="duotone" data-isotope-filter-value=".isotope-color-duotone">
             <label for="duotone" class="display:block mb:4px">Duotone</label>
-            <input type="radio" name="color" id="various" value="various" data-filter-value=".isotope-color:various">
+            <input type="radio" name="color" id="various" data-isotope-filter-value=".isotope-color-various">
             <label for="various" class="display:block mb:4px">Various</label>
-           <input type="radio" name="color" id="light" value="light" data-filter-value=".isotope-color:light" disabled>
+            <input type="radio" name="color" id="light" data-isotope-filter-value=".isotope-color-light" disabled>
             <label for="light" class="display:block mb:4px">Light (Disabled)</label>
-            <input type="radio" name="color" id="regular" value="regular" data-filter-value=".isotope-color:regular" disabled>
+            <input type="radio" name="color" id="regular" data-isotope-filter-value=".isotope-color-regular" disabled>
             <label for="regular" class="display:block mb:4px">Regular (Disabled)</label>
-            <input type="radio" name="color" id="solid" value="solid" data-filter-value=".isotope-color:solid" disabled>
+            <input type="radio" name="color" id="solid" data-isotope-filter-value=".isotope-color-solid" disabled>
             <label for="solid" class="display:block mb:4px">Solid (Disabled)</label>
           </fieldset>
         </div>
       </div>
       <div class="w0:7">
         <h2 class="heebo:bold">Font Awesome 5 Icon Library</h2>
-        <div class="assets hide">
+        <div class="assets" data-module="isotope.elements-container">
         </div>
       </div>
       <div class="w0:3 position:relative">
@@ -116,26 +135,10 @@
   storm_eagle.module('fa5dam', () => {
     'use strict';
     let self;
-    let errormessage = "";
-
-    let filter_group;
-    let filter_value;
-    let filters = {};
-
-    const isotope_container = document.querySelector(".assets");
-    let isotope_obj;
 
     const _add_slashes = (string) => {
       //no need to do (str+'') anymore because 'this' can only be a string
       return string.replace(/[:]+/g, '\\\:').replace(/[&]/g, '\\\&').replace(/[$]/g, '\\\$').replace(/[?]/g, '\\\?').replace(/[!]/g, '\\\!');
-    }
-
-    const _concat_values = (obj) => {
-      let value = '';
-      for (let prop in obj) {
-        value += obj[prop];
-      }
-      return value;
     }
 
     return {
@@ -155,11 +158,11 @@
           tags_array = tags.split(",");
           let all_isotope_keywords = "";
           tags_array.forEach((el,index) => {
-            all_isotope_keywords += " keyword:" + el.toString().replace(/ /g,"_"); //convert space to underscore;
+            all_isotope_keywords += " keyword-" + el.toString().replace(/ /g,"_"); //convert space to underscore;
           });
 
           //create each asset's html
-          asset_html += `<div data-asset="${name}" class="asset ${all_isotope_keywords} type-${type} isotope-color:${color} isotope-size:48 align:center bgc:platinum">`;
+          asset_html += `<div data-asset="${name}" data-module="isotope.element" data-sort-number="${index}" class="asset ${all_isotope_keywords} type-${type} isotope-color-${color} isotope-size:48 align:center bgc:platinum">`;
           asset_html += `  <span class="number">${parseInt(index)}</span>`;
           asset_html += `  <span class="name">${name}</span>`;
           asset_html += `  <img src="${pathname}" class="w0:100% h:100% object-fit:contain">`;
@@ -189,16 +192,6 @@
         let formatted_keywords = keyword_database.map(tag => ({ tags: tag }));
         return formatted_keywords;
       },
-      ready: () => {
-        document.querySelector(".assets").classList.remove("hide");
-
-        //once everything has loaded, set the isotope
-        isotope_obj = new Isotope( isotope_container, {
-          itemSelector: ".asset",
-          sortBy : "number",
-          layoutMode: "masonry",
-        });
-      },
       add_event_listeners: () => {
 
         const _find_object_with_param = (object_array,param,val) => {
@@ -225,26 +218,6 @@
             document.getElementById("icon-solid").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","solid")}" class="" style="width:60px;height:60px;">`;
           });
         });
-
-        document.querySelectorAll(".option-set-assets input[type='radio']").forEach(el => {
-          let filter_button_group;
-          el.addEventListener('click', () => {
-            filter_button_group = el.parentElement;
-            filter_group = filter_button_group.getAttribute('data-filter-group');
-            filters[filter_group] = _add_slashes(el.getAttribute('data-filter-value'));
-            self.refresh_isotope();
-          });
-        });
-      },
-      refresh_isotope: () => {
-        const keyword = document.getElementById('fa5dam').value;
-        if (keyword === "") {
-          filters["keyword"] = ""
-        } else {
-          filters["keyword"] = _add_slashes(".keyword:" + keyword.replace(/ /g,"_"));
-        }
-        filter_value = _concat_values(filters);
-        isotope_obj.arrange({ filter: filter_value });
       },
     };
   });
