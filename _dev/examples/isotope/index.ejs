@@ -1,0 +1,513 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+<style>
+
+.text-shadow { text-shadow: 0 0 2px black; }
+
+<%
+normal='#9fa19f';
+fire='#e33130';
+water='#2f7fe9';
+electric='#f9c13a';
+grass='#45a03b';
+ice='#4ad7fc';
+fighting='#fc822a';
+poison='#8f43c5';
+ground='#905229';
+flying='#83b8eb';
+psychic='#ec4778';
+bug='#91a134';
+rock='#afa984';
+ghost='#6f426e';
+dragon='#5060db';
+dark='#50413f';
+steel='#63a0b6';
+fairy='#ec73e9';
+%>
+
+.type-normal > div > .type { background: <%=normal%>;}
+.type-bug > div > .type { background: <%=bug%>;}
+.type-fire > div > .type { background: <%=fire%>;}
+.type-water > div > .type { background: <%=water%>;}
+.type-electric > div > .type { background: <%=electric%>;}
+.type-grass > div > .type { background: <%=grass%>;}
+.type-ice > div > .type { background: <%=ice%>;}
+.type-fighting > div > .type { background: <%=fighting%>;}
+.type-poison > div > .type { background: <%=poison%>;}
+.type-ground > div > .type { background: <%=ground%>;}
+.type-flying > div > .type { background: <%=flying%>;}
+.type-psychic > div > .type { background: <%=psychic%>;}
+.type-rock > div > .type { background: <%=rock%>;}
+.type-ghost > div > .type { background: <%=ghost%>;}
+.type-dragon > div > .type { background: <%=dragon%>;}
+.type-dark > div > .type { background: <%=dark%>;}
+.type-steel > div > .type { background: <%=steel%>;}
+.type-fairy > div > .type { background: <%=fairy%>;}
+.type-normal.type-fire > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=fire%>, <%=fire%>);}
+.type-normal.type-water > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=water%>, <%=water%>);}
+.type-normal.type-electric > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=electric%>, <%=electric%>);}
+.type-normal.type-grass > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=grass%>, <%=grass%>);}
+.type-normal.type-ice > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=ice%>, <%=ice%>);}
+.type-normal.type-fighting > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=fighting%>, <%=fighting%>);}
+.type-normal.type-poison > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=poison%>, <%=poison%>);}
+.type-normal.type-ground > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=ground%>, <%=ground%>);}
+.type-normal.type-flying > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=flying%>, <%=flying%>);}
+.type-normal.type-psychic > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=psychic%>, <%=psychic%>);}
+.type-normal.type-rock > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=rock%>, <%=rock%>);}
+.type-normal.type-ghost > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=ghost%>, <%=ghost%>);}
+.type-normal.type-dragon > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=dragon%>, <%=dragon%>);}
+.type-normal.type-dark > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=dark%>, <%=dark%>);}
+.type-normal.type-steel > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=steel%>, <%=steel%>);}
+.type-normal.type-fairy > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=fairy%>, <%=fairy%>);}
+.type-bug.type-normal > div > .type { background: linear-gradient(to right, <%=normal%>, <%=normal%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-fire > div > .type { background: linear-gradient(to left, <%=fire%>, <%=fire%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-water > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-electric > div > .type { background: linear-gradient(to left, <%=electric%>, <%=electric%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-grass > div > .type { background: linear-gradient(to left, <%=grass%>, <%=grass%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-ice > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-fighting > div > .type { background: linear-gradient(to left, <%=fighting%>, <%=fighting%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-poison > div > .type { background: linear-gradient(to left, <%=poison%>, <%=poison%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-ground > div > .type { background: linear-gradient(to left, <%=ground%>, <%=ground%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-flying > div > .type { background: linear-gradient(to left, <%=flying%>, <%=flying%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-psychic > div > .type { background: linear-gradient(to left, <%=psychic%>, <%=psychic%>, <%=bug%>, <%=bug%>);}
+.type-bug.type-rock > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=rock%>, <%=rock%>);}
+.type-bug.type-ghost > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=ghost%>, <%=ghost%>);}
+.type-bug.type-dragon > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=dragon%>, <%=dragon%>);}
+.type-fire.type-water > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=water%>, <%=water%>);}
+.type-fire.type-electric > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=electric%>, <%=electric%>);}
+.type-fire.type-grass > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=grass%>, <%=grass%>);}
+.type-fire.type-ice > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=ice%>, <%=ice%>);}
+.type-fire.type-fighting > div > .type { background: linear-gradient(to left, <%=fire%>, <%=fire%>, <%=fighting%>, <%=fighting%>);}
+.type-fire.type-poison > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=poison%>, <%=poison%>);}
+.type-fire.type-ground > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=ground%>, <%=ground%>);}
+.type-fire.type-flying > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=flying%>, <%=flying%>);}
+.type-fire.type-psychic > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=psychic%>, <%=psychic%>);}
+.type-fire.type-rock > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=rock%>, <%=rock%>);}
+.type-fire.type-ghost > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=ghost%>, <%=ghost%>);}
+.type-fire.type-dragon > div > .type { background: linear-gradient(to left, <%=fire%>, <%=fire%>, <%=dragon%>, <%=dragon%>);}
+.type-water.type-electric > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=electric%>, <%=electric%>);}
+.type-water.type-grass > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=grass%>, <%=grass%>);}
+.type-water.type-ice > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=ice%>, <%=ice%>);}
+.type-water.type-fighting > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=fighting%>, <%=fighting%>);}
+.type-water.type-poison > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=poison%>, <%=poison%>);}
+.type-water.type-ground > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=ground%>, <%=ground%>);}
+.type-water.type-flying > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=flying%>, <%=flying%>);}
+.type-water.type-psychic > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=psychic%>, <%=psychic%>);}
+.type-water.type-rock > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=rock%>, <%=rock%>);}
+.type-water.type-ghost > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=ghost%>, <%=ghost%>);}
+.type-water.type-dragon > div > .type { background: linear-gradient(to left, <%=water%>, <%=water%>, <%=dragon%>, <%=dragon%>);}
+.type-electric.type-grass > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=grass%>, <%=grass%>);}
+.type-electric.type-ice > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=ice%>, <%=ice%>);}
+.type-electric.type-fighting > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=fighting%>, <%=fighting%>);}
+.type-electric.type-poison > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=poison%>, <%=poison%>);}
+.type-electric.type-ground > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=ground%>, <%=ground%>);}
+.type-electric.type-flying > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=flying%>, <%=flying%>);}
+.type-electric.type-psychic > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=psychic%>, <%=psychic%>);}
+.type-electric.type-rock > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=rock%>, <%=rock%>);}
+.type-electric.type-ghost > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=ghost%>, <%=ghost%>);}
+.type-electric.type-dragon > div > .type { background: linear-gradient(to left, <%=electric%>, <%=electric%>, <%=dragon%>, <%=dragon%>);}
+.type-grass.type-ice > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=ice%>, <%=ice%>);}
+.type-grass.type-fighting > div > .type { background: linear-gradient(to left, <%=grass%>, <%=grass%>, <%=fighting%>, <%=fighting%>);}
+.type-grass.type-poison > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=poison%>, <%=poison%>);}
+.type-grass.type-ground > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=ground%>, <%=ground%>);}
+.type-grass.type-flying > div > .type { background: linear-gradient(to left, <%=grass%>, <%=grass%>, <%=flying%>, <%=flying%>);}
+.type-grass.type-psychic > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=psychic%>, <%=psychic%>);}
+.type-grass.type-rock > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=rock%>, <%=rock%>);}
+.type-grass.type-ghost > div > .type { background: linear-gradient(to left, <%=grass%>, <%=grass%>, <%=ghost%>, <%=ghost%>);}
+.type-grass.type-dragon > div > .type { background: linear-gradient(to left, <%=grass%>, <%=grass%>, <%=dragon%>, <%=dragon%>);}
+.type-ice.type-fighting > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=fighting%>, <%=fighting%>);}
+.type-ice.type-poison > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=poison%>, <%=poison%>);}
+.type-ice.type-ground > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=ground%>, <%=ground%>);}
+.type-ice.type-flying > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=flying%>, <%=flying%>);}
+.type-ice.type-psychic > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=psychic%>, <%=psychic%>);}
+.type-ice.type-rock > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=rock%>, <%=rock%>);}
+.type-ice.type-ghost > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=ghost%>, <%=ghost%>);}
+.type-ice.type-dragon > div > .type { background: linear-gradient(to left, <%=ice%>, <%=ice%>, <%=dragon%>, <%=dragon%>);}
+.type-fighting.type-poison > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=poison%>, <%=poison%>);}
+.type-fighting.type-ground > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=ground%>, <%=ground%>);}
+.type-fighting.type-flying > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=flying%>, <%=flying%>);}
+.type-fighting.type-psychic > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=psychic%>, <%=psychic%>);}
+.type-fighting.type-rock > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=rock%>, <%=rock%>);}
+.type-fighting.type-ghost > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=ghost%>, <%=ghost%>);}
+.type-fighting.type-dragon > div > .type { background: linear-gradient(to left, <%=fighting%>, <%=fighting%>, <%=dragon%>, <%=dragon%>);}
+.type-poison.type-ground > div > .type { background: linear-gradient(to left, <%=poison%>, <%=poison%>, <%=ground%>, <%=ground%>);}
+.type-poison.type-flying > div > .type { background: linear-gradient(to left, <%=poison%>, <%=poison%>, <%=flying%>, <%=flying%>);}
+.type-poison.type-psychic > div > .type { background: linear-gradient(to right, <%=poison%>, <%=poison%>, <%=psychic%>, <%=psychic%>);}
+.type-poison.type-rock > div > .type { background: linear-gradient(to right, <%=poison%>, <%=poison%>, <%=rock%>, <%=rock%>);}
+.type-poison.type-ghost > div > .type { background: linear-gradient(to left, <%=poison%>, <%=poison%>, <%=ghost%>, <%=ghost%>);}
+.type-poison.type-dragon > div > .type { background: linear-gradient(to left, <%=poison%>, <%=poison%>, <%=dragon%>, <%=dragon%>);}
+.type-ground.type-flying > div > .type { background: linear-gradient(to left, <%=ground%>, <%=ground%>, <%=flying%>, <%=flying%>);}
+.type-ground.type-psychic > div > .type { background: linear-gradient(to right, <%=ground%>, <%=ground%>, <%=psychic%>, <%=psychic%>);}
+.type-ground.type-rock > div > .type { background: linear-gradient(to right, <%=ground%>, <%=ground%>, <%=rock%>, <%=rock%>);}
+.type-ground.type-ghost > div > .type { background: linear-gradient(to left, <%=ground%>, <%=ground%>, <%=ghost%>, <%=ghost%>);}
+.type-ground.type-dragon > div > .type { background: linear-gradient(to left, <%=ground%>, <%=ground%>, <%=dragon%>, <%=dragon%>);}
+.type-flying.type-psychic > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=psychic%>, <%=psychic%>);}
+.type-flying.type-rock > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=rock%>, <%=rock%>);}
+.type-flying.type-ghost > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=ghost%>, <%=ghost%>);}
+.type-flying.type-dragon > div > .type { background: linear-gradient(to left, <%=flying%>, <%=flying%>, <%=dragon%>, <%=dragon%>);}
+.type-psychic.type-rock > div > .type { background: linear-gradient(to left, <%=psychic%>, <%=psychic%>, <%=rock%>, <%=rock%>);}
+.type-psychic.type-ghost > div > .type { background: linear-gradient(to left, <%=psychic%>, <%=psychic%>, <%=ghost%>, <%=ghost%>);}
+.type-psychic.type-dragon > div > .type { background: linear-gradient(to left, <%=psychic%>, <%=psychic%>, <%=dragon%>, <%=dragon%>);}
+.type-rock.type-ghost > div > .type { background: linear-gradient(to right, <%=rock%>, <%=rock%>, <%=ghost%>, <%=ghost%>);}
+.type-rock.type-dragon > div > .type { background: linear-gradient(to left, <%=rock%>, <%=rock%>, <%=dragon%>, <%=dragon%>);}
+.type-ghost.type-dragon > div > .type { background: linear-gradient(to left, <%=ghost%>, <%=ghost%>, <%=dragon%>, <%=dragon%>);}
+
+.type-bug.type-dark > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=dark%>, <%=dark%>);}
+.type-fire.type-dark > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=dark%>, <%=dark%>);}
+.type-water.type-dark > div > .type { background: linear-gradient(to right, <%=water%>, <%=water%>, <%=dark%>, <%=dark%>);}
+.type-electric.type-dark > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=dark%>, <%=dark%>);}
+.type-grass.type-dark > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=dark%>, <%=dark%>);}
+.type-ice.type-dark > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=dark%>, <%=dark%>);}
+.type-fighting.type-dark > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=dark%>, <%=dark%>);}
+.type-poison.type-dark > div > .type { background: linear-gradient(to right, <%=poison%>, <%=poison%>, <%=dark%>, <%=dark%>);}
+.type-ground.type-dark > div > .type { background: linear-gradient(to right, <%=ground%>, <%=ground%>, <%=dark%>, <%=dark%>);}
+.type-flying.type-dark > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=dark%>, <%=dark%>);}
+.type-psychic.type-dark > div > .type { background: linear-gradient(to right, <%=psychic%>, <%=psychic%>, <%=dark%>, <%=dark%>);}
+.type-rock.type-dark > div > .type { background: linear-gradient(to right, <%=rock%>, <%=rock%>, <%=dark%>, <%=dark%>);}
+.type-ghost.type-dark > div > .type { background: linear-gradient(to right, <%=ghost%>, <%=ghost%>, <%=dark%>, <%=dark%>);}
+.type-dragon.type-dark > div > .type { background: linear-gradient(to right, <%=dragon%>, <%=dragon%>, <%=dark%>, <%=dark%>);}
+.type-fairy.type-dark > div > .type { background: linear-gradient(to left, <%=fairy%>, <%=fairy%>, <%=dark%>, <%=dark%>);}
+.type-bug.type-steel > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=steel%>, <%=steel%>);}
+.type-fire.type-steel > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=steel%>, <%=steel%>);}
+.type-water.type-steel > div > .type { background: linear-gradient(to right, <%=water%>, <%=water%>, <%=steel%>, <%=steel%>);}
+.type-electric.type-steel > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=steel%>, <%=steel%>);}
+.type-grass.type-steel > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=steel%>, <%=steel%>);}
+.type-ice.type-steel > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=steel%>, <%=steel%>);}
+.type-fighting.type-steel > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=steel%>, <%=steel%>);}
+.type-poison.type-steel > div > .type { background: linear-gradient(to right, <%=poison%>, <%=poison%>, <%=steel%>, <%=steel%>);}
+.type-ground.type-steel > div > .type { background: linear-gradient(to right, <%=ground%>, <%=ground%>, <%=steel%>, <%=steel%>);}
+.type-flying.type-steel > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=steel%>, <%=steel%>);}
+.type-psychic.type-steel > div > .type { background: linear-gradient(to right, <%=psychic%>, <%=psychic%>, <%=steel%>, <%=steel%>);}
+.type-rock.type-steel > div > .type { background: linear-gradient(to right, <%=rock%>, <%=rock%>, <%=steel%>, <%=steel%>);}
+.type-ghost.type-steel > div > .type { background: linear-gradient(to right, <%=ghost%>, <%=ghost%>, <%=steel%>, <%=steel%>);}
+.type-dragon.type-steel > div > .type { background: linear-gradient(to right, <%=dragon%>, <%=dragon%>, <%=steel%>, <%=steel%>);}
+.type-fairy.type-steel > div > .type { background: linear-gradient(to left, <%=fairy%>, <%=fairy%>, <%=steel%>, <%=steel%>);}
+.type-dark.type-steel > div > .type { background: linear-gradient(to right, <%=dark%>, <%=dark%>, <%=steel%>, <%=steel%>);}
+.type-bug.type-fairy > div > .type { background: linear-gradient(to right, <%=bug%>, <%=bug%>, <%=fairy%>, <%=fairy%>);}
+.type-fire.type-fairy > div > .type { background: linear-gradient(to right, <%=fire%>, <%=fire%>, <%=fairy%>, <%=fairy%>);}
+.type-water.type-fairy > div > .type { background: linear-gradient(to right, <%=water%>, <%=water%>, <%=fairy%>, <%=fairy%>);}
+.type-electric.type-fairy > div > .type { background: linear-gradient(to right, <%=electric%>, <%=electric%>, <%=fairy%>, <%=fairy%>);}
+.type-grass.type-fairy > div > .type { background: linear-gradient(to right, <%=grass%>, <%=grass%>, <%=fairy%>, <%=fairy%>);}
+.type-ice.type-fairy > div > .type { background: linear-gradient(to right, <%=ice%>, <%=ice%>, <%=fairy%>, <%=fairy%>);}
+.type-fighting.type-fairy > div > .type { background: linear-gradient(to right, <%=fighting%>, <%=fighting%>, <%=fairy%>, <%=fairy%>);}
+.type-poison.type-fairy > div > .type { background: linear-gradient(to right, <%=poison%>, <%=poison%>, <%=fairy%>, <%=fairy%>);}
+.type-ground.type-fairy > div > .type { background: linear-gradient(to right, <%=ground%>, <%=ground%>, <%=fairy%>, <%=fairy%>);}
+.type-flying.type-fairy > div > .type { background: linear-gradient(to right, <%=flying%>, <%=flying%>, <%=fairy%>, <%=fairy%>);}
+.type-psychic.type-fairy > div > .type { background: linear-gradient(to right, <%=psychic%>, <%=psychic%>, <%=fairy%>, <%=fairy%>);}
+.type-rock.type-fairy > div > .type { background: linear-gradient(to right, <%=rock%>, <%=rock%>, <%=fairy%>, <%=fairy%>);}
+.type-ghost.type-fairy > div > .type { background: linear-gradient(to right, <%=ghost%>, <%=ghost%>, <%=fairy%>, <%=fairy%>);}
+.type-dragon.type-fairy > div > .type { background: linear-gradient(to right, <%=dragon%>, <%=dragon%>, <%=fairy%>, <%=fairy%>);}
+
+  [data-module="isotope.elements-container"].one > div {
+    width: 16.67%;
+  }
+  [data-module="isotope.elements-container"].two > div {
+    height: 50px;
+    background: pink;
+    width: 50px;
+
+  }
+</style>
+    <main class="w:100% pb:96px form:theme:gl0b3x" role="main">
+
+      <section class="row py:32px">
+        <h1 class="w:12 play:bold fs:40px color:eerie-black">Isotope</h1>
+      </section>
+
+      <section class="row">
+        <div class="w:12">
+          Isotope is a filtering and sorting library. It can be found here: <a href="https://isotope.metafizzy.co/" target="_blank">https://isotope.metafizzy.co/</a>
+        </div>
+      </section>
+
+      <div
+        class="pt:32px"
+        id
+        data-module="isotope"
+        data-isotope-sort-data='{"name": "[data-sort-name]", "number": "[data-sort-number] parseInt", "type": "[data-sort-type]"}'
+        data-isotope-sortBy-bind-id="isotope-sort"
+        data-isotope-sortAscending-bind-id="isotope-sort-order"
+        data-isotope-filters-bind-ids='["select-all-type-checkboxes","type-category","select-all-generation-checkboxes","autocomplete-pokemon-pokedex-num"]'
+        data-isotope-initial-filter='*'>
+        <div class="row">
+          <h2 class="w:12 play pb:32px">Pokémon</h2>
+          <div class="w:9 brr:8px b-silver:1px p:16px">
+            <h3 class="play w:12 pb:16px">Filter by:</h3>
+            <div><strong>Type:</strong></div>
+            <div class="display:flex flex-flow:row-nowrap align:justify">
+              <div class="box-checkboxes"
+                data-module="select-all"
+                data-select-all-type="checkbox"
+                data-select-all-bind="select-all-type-checkbox"
+                id="select-all-type-checkboxes"
+                data-isotope-filter-group="type"
+                data-isotope-filter-group-type="checkbox"
+                data-isotope-or-and-bind="isotope-or-and-type">
+                <input type="checkbox" name="normal" data-isotope-filter-value=".type-normal" id="isotope-filter-type-normal" checked>
+                <label for="isotope-filter-type-normal">Normal</label>
+                <input type="checkbox" name="fire" data-isotope-filter-value=".type-fire" id="isotope-filter-type-fire" checked>
+                <label for="isotope-filter-type-fire">Fire</label>
+                <input type="checkbox" name="water" data-isotope-filter-value=".type-water" id="isotope-filter-type-water" checked>
+                <label for="isotope-filter-type-water">Water</label>
+                <input type="checkbox" name="electric" data-isotope-filter-value=".type-electric" id="isotope-filter-type-electric" checked>
+                <label for="isotope-filter-type-electric">Electric</label>
+                <input type="checkbox" name="grass" data-isotope-filter-value=".type-grass" id="isotope-filter-type-grass" checked>
+                <label for="isotope-filter-type-grass">Grass</label>
+                <input type="checkbox" name="ice" data-isotope-filter-value=".type-ice" id="isotope-filter-type-ice" checked>
+                <label for="isotope-filter-type-ice">Ice</label>
+                <input type="checkbox" name="fighting" data-isotope-filter-value=".type-fighting" id="isotope-filter-type-fighting" checked>
+                <label for="isotope-filter-type-fighting">Fighting</label>
+                <input type="checkbox" name="poison" data-isotope-filter-value=".type-poison" id="isotope-filter-type-poison" checked>
+                <label for="isotope-filter-type-poison">Poison</label>
+                <input type="checkbox" name="ground" data-isotope-filter-value=".type-ground" id="isotope-filter-type-ground" checked>
+                <label for="isotope-filter-type-ground">Ground</label>
+                <input type="checkbox" name="flying" data-isotope-filter-value=".type-flying" id="isotope-filter-type-flying" checked>
+                <label for="isotope-filter-type-flying">Flying</label>
+                <input type="checkbox" name="psychic" data-isotope-filter-value=".type-psychic" id="isotope-filter-type-psychic" checked>
+                <label for="isotope-filter-type-psychic">Psychic</label>
+                <input type="checkbox" name="bug" data-isotope-filter-value=".type-bug" id="isotope-filter-type-bug" checked>
+                <label for="isotope-filter-type-bug">Bug</label>
+                <input type="checkbox" name="rock" data-isotope-filter-value=".type-rock" id="isotope-filter-type-rock" checked>
+                <label for="isotope-filter-type-rock">Rock</label>
+                <input type="checkbox" name="ghost" data-isotope-filter-value=".type-ghost" id="isotope-filter-type-ghost" checked>
+                <label for="isotope-filter-type-ghost">Ghost</label>
+                <input type="checkbox" name="dragon" data-isotope-filter-value=".type-dragon" id="isotope-filter-type-dragon" checked>
+                <label for="isotope-filter-type-dragon">Dragon</label>
+                <input type="checkbox" name="dark" data-isotope-filter-value=".type-dark" id="isotope-filter-type-dark" checked>
+                <label for="isotope-filter-type-dark">Dark</label>
+                <input type="checkbox" name="steel" data-isotope-filter-value=".type-steel" id="isotope-filter-type-steel" checked>
+                <label for="isotope-filter-type-steel">Steel</label>
+                <input type="checkbox" name="fairy" data-isotope-filter-value=".type-fairy" id="isotope-filter-type-fairy" checked>
+                <label for="isotope-filter-type-fairy">Fairy</label>
+              </div>
+              <div>
+                <fieldset class="ws:nowrap box-radio-buttons b:0 pl:32px py:0 pr:0" id="select-all-type-checkbox">
+                  <input type="radio" name="select-all-type-checkbox" data-module="select-all.all" id="select-all-type-checkbox-0" value="true">
+                  <label for="select-all-type-checkbox-0" class="box-radio-label">All</label>
+                  <input type="radio" name="select-all-type-checkbox" data-module="select-all.none" id="select-all-type-checkbox-1" value="false">
+                  <label for="select-all-type-checkbox-1" class="box-radio-label">None</label>
+                  <input type="radio" name="select-all-type-checkbox"  data-module="select-all.some" id="select-all-type-checkbox-2" value="mixed" disabled>
+                  <label for="select-all-type-checkbox-2" class="box-radio-label">Some</label>
+                </fieldset>
+                <fieldset class="ws:nowrap box-radio-buttons b:0 pl:32px pt:8px pb:0 pr:0" id="isotope-or-and-type">
+                  <input type="radio" name="isotope-or-and-type" data-module="isotope.or" id="isotope-or-and-type-or" value="or" checked>
+                  <label for="isotope-or-and-type-or" class="box-radio-label">Or</label>
+                  <input type="radio" name="isotope-or-and-type" data-module="isotope.and" id="isotope-or-and-type-and" value="and">
+                  <label for="isotope-or-and-type-and" class="box-radio-label">And</label>
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="pt:16px"><strong>Type Category:</strong></div>
+            <fieldset class="box-radio-buttons b:0 p:0"
+              id="type-category"
+              data-isotope-filter-group="type-category"
+              data-isotope-filter-group-type="radiobutton">
+              <legend class="hide">Type Category</legend>
+              <input type="radio" name="type-category" id="isotope-filter-type-category-all" value="*" checked>
+              <label for="isotope-filter-type-category-all">All</label>
+              <input type="radio" name="type-category" id="isotope-filter-type-category-single" value=".type-category-single">
+              <label for="isotope-filter-type-category-single">Single Type</label>
+              <input type="radio" name="type-category" id="isotope-filter-type-category-dual" value=".type-category-dual">
+              <label for="isotope-filter-type-category-dual">Dual Type</label>
+            </fieldset>
+
+            <div class="pt:16px"><strong>Generation:</strong></div>
+            <div class="display:flex flex-flow:row-nowrap align:justify">
+              <div class="box-checkboxes"
+                data-module="select-all"
+                data-select-all-type="checkbox"
+                data-select-all-bind="select-all-generation-checkbox"
+                id="select-all-generation-checkboxes"
+                data-isotope-filter-group="generation"
+                data-isotope-filter-group-type="checkbox">
+                <input type="checkbox" name="one" data-isotope-filter-value=".generation-one" id="isotope-filter-generation-one" checked>
+                <label for="isotope-filter-generation-one">I</label>
+                <input type="checkbox" name="two" data-isotope-filter-value=".generation-two" id="isotope-filter-generation-two" checked>
+                <label for="isotope-filter-generation-two">II</label>
+                <input type="checkbox" name="three" data-isotope-filter-value=".generation-three" id="isotope-filter-generation-three" checked>
+                <label for="isotope-filter-generation-three">III</label>
+                <input type="checkbox" name="four" data-isotope-filter-value=".generation-four" id="isotope-filter-generation-four" checked>
+                <label for="isotope-filter-generation-four">IV</label>
+                <input type="checkbox" name="five" data-isotope-filter-value=".generation-five" id="isotope-filter-generation-five" checked>
+                <label for="isotope-filter-generation-five">V</label>
+                <input type="checkbox" name="six" data-isotope-filter-value=".generation-six" id="isotope-filter-generation-six" checked>
+                <label for="isotope-filter-generation-six">VI</label>
+                <input type="checkbox" name="seven" data-isotope-filter-value=".generation-seven" id="isotope-filter-generation-seven" checked>
+                <label for="isotope-filter-generation-seven">VII</label>
+                <input type="checkbox" name="eight" data-isotope-filter-value=".generation-eight" id="isotope-filter-generation-eight" checked>
+                <label for="isotope-filter-generation-eight">VIII</label>
+                <input type="checkbox" name="nine" data-isotope-filter-value=".generation-nine" id="isotope-filter-generation-nine" checked>
+                <label for="isotope-filter-generation-nine">IX</label>
+<!--                 <input type="checkbox" name="10" data-isotope-filter-value=".generation-ten" id="isotope-filter-generation-ten" checked>
+                <label for="isotope-filter-generation-ten">X</label> -->
+              </div>
+              <fieldset class="ws:nowrap box-radio-buttons b:0 pl:32px py:0 pr:0" id="select-all-generation-checkbox">
+                <input type="radio" name="select-all-generation-checkbox" data-module="select-all.all" id="select-all-generation-checkbox-0" value="true">
+                <label for="select-all-generation-checkbox-0" class="box-radio-label">All</label>
+                <input type="radio" name="select-all-generation-checkbox" data-module="select-all.none" id="select-all-generation-checkbox-1" value="false">
+                <label for="select-all-generation-checkbox-1" class="box-radio-label">None</label>
+                <input type="radio" name="select-all-generation-checkbox" data-module="select-all.some" id="select-all-generation-checkbox-2" value="mixed" disabled>
+                <label for="select-all-generation-checkbox-2" class="box-radio-label">Some</label>
+              </fieldset>
+            </div>
+
+            <div class="pt:16px"><strong>Name:</strong></div>
+            <div class="w:12 row align-self:middle pt:4px">
+              <%id="pokemon-pokedex-num"%>
+              <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>" data-autocomplete-value-format='[".","name"]' data-autocomplete-filter="name" data-autocomplete-input-format='["#","num"," - ","name"]' data-autocomplete-source-type="fetch" data-autocomplete-source="/data/pokedex.json" data-autocomplete-type="multiselect" data-isotope-filter-group="name" data-isotope-filter-group-type="input_autocomplete" data-autocomplete-onupdate-func="storm_eagle.isotope.ui.refresh_all">
+                <div data-module="autocomplete.multiselect" class="br:4px w:100%">
+                  <span class="display:flex flex-flow:row-wrap pb:12px" data-module="autocomplete.multiselect-tags" data-theme-bgc-color="blue"></span>
+                  <input type="text" data-module="autocomplete.input" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="" placeholder="Please enter a Pokémon">
+                  <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="sr-only description">Find a Pokémon</span></label>
+                </div>
+                <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
+                <div class="position:relative">
+                  <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                </div>
+                <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="w:3 brr:8px b-silver:1px p:16px">
+            <h3 class="play pb:16px">Sort by:</h3>
+            <fieldset class="box-radio-buttons b:0 p:0 mb:16px" id="isotope-sort" data-isotope-sort-group="sort">
+              <legend class="hide">Sort</legend>
+              <input type="radio" name="sort" id="sort-number" value="number" checked>
+              <label for="sort-number">Number</label>
+              <input type="radio" name="sort" id="sort-name" value="name">
+              <label for="sort-name">Name</label>
+              <input type="radio" name="sort" id="sort-type" value="type">
+              <label for="sort-type">Type</label>
+            </fieldset>
+            <fieldset class="box-radio-buttons b:0 p:0" id="isotope-sort-order" data-isotope-sort-group="sort-order">
+              <legend class="hide">Sort Order</legend>
+              <input type="radio" name="sort-order" id="sort-ascending" value="true" checked>
+              <label for="sort-ascending">Ascending</label>
+              <input type="radio" name="sort-order" id="sort-descending" value="false">
+              <label for="sort-descending">Descending</label>
+            </fieldset>
+          </div>
+
+        </div>
+
+        <section class="row">
+          <div class="w:12 one" data-module="isotope.elements-container">
+<%  let pokemons = JSON.parse(include(`${process.env.PWD}/_dev/data/pokedex.json`));
+    const generation_map = {
+      1: "generation-one",
+      2: "generation-two",
+      3: "generation-three",
+      4: "generation-four",
+      5: "generation-five",
+      6: "generation-six",
+      7: "generation-seven",
+      8: "generation-eight",
+      9: "generation-nine",
+      10: "generation-ten"
+    };
+    const generation_map_roman = {
+      1: "Kanto (I)",
+      2: "Johto (II)",
+      3: "Hoenn (III)",
+      4: "Sinnoh (IV)",
+      5: "Unova (V)",
+      6: "Kalos (VI)",
+      7: "Alola (VII)",
+      8: "Galar/Hisui (VIII)",
+      9: "Paldea (XI)",
+      10: "X"
+    };
+    pokemons.forEach(pokemon => {
+      const types = pokemon.type.map(type => `type-${type}`).join(' ');
+      const type_category = (pokemon.type.length === 1) ? 'type-category-single' : 'type-category-dual';
+      const generation = generation_map[pokemon.gen] || "unknown-generation";
+      const name = pokemon.name.toString().toLowerCase();
+    %>
+            <div class="<%=types %> <%=type_category%> <%=generation%> <%=name%>"
+              data-module="isotope.element"
+              data-sort-number="<%= pokemon.num %>"
+              data-sort-name="<%= pokemon.name %>"
+              data-sort-type="<%= pokemon.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join('/') %>">
+                <div class="brr:4px b-onyx:1px mx:8px my:16px bxs:3">
+                  <div class="p:4px bb-silver:1px display:flex align:justify">
+                    <strong>#<%= pokemon.num %></strong>
+                    <strong><%= generation_map_roman[pokemon.gen] %></strong></span>
+                  </div>
+                  <div class="p:8px name text-align:center bb-silver:1px">
+                    <strong><%= pokemon.name %></strong><div style="height:45px;" class="text-align:center"><img src="/assets/images/pokemon/<%=pokemon.num%>.png"></div>
+                  </div>
+                  <div class="p:4px type text-align:center color:white"><strong class="text-shadow"><%= pokemon.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join('  /  ') %></strong></div>
+                </div>
+            </div>
+  <% }); %>
+          </div>
+        </section>
+      </div>
+
+<!--
+
+Examples:<br><br>
+
+Checkboxes and All Some None<br>
+    show all by default<br>
+    show none by default<br><br>
+
+Checkboxes<br>
+    show all by default<br>
+    show none by default<br><br>
+
+Radio Buttons and All Some None<br>
+    show all by default<br>
+    show none by default<br><br>
+
+Radio Buttons<br>
+    show all by default<br>
+    show none by default<br><br>
+
+Search Box Filter<br><br>
+
+Cross-reference<br><br>
+
+
+warrenshea.github.io Examples
+-----------------------------
+Font Awesome
+
+Zero System Examples
+--------------------
+
+Component Library<br>
+    Checkboxes and All Some None + Radio + Filter by string<br>
+        Show all by default<br>
+    Checking the checkbox filters items with those checkbox values<br><br>
+
+List of Components<br>
+    Checkboxes + Radio + Filter by string<br>
+        Show all by default<br>
+    Checking the checkbox filters items with those checkbox values<br><br>
+
+Module Editor<br>
+    Checkboxes<br>
+        Show all by default<br>
+    Checking the checkbox filters items with those checkbox values<br><br>
+
+Icon Library<br>
+    Filter By String + Radio Buttons to filter further<br>
+        Show all by default<br><br>
+
+CSS Class Search Tool<br>
+    Checkboxes and All Some None + Radio + Filter by string<br>
+        Show none by default<br><br>
+
+
+
+Kotobishoujo<br><br>
+
+
+
+ -->    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
