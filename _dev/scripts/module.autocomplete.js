@@ -91,10 +91,8 @@ storm_eagle.module('autocomplete', () => {
       },
       update_input_value: (id, selected_values) => {
         const { el, type, onupdate } = state[id];
-        if (type === "multiselect") {
-          state[id].input_values = selected_values;
-          el.setAttribute('data-autocomplete-values', JSON.stringify(selected_values));
-        }
+        state[id].input_values = selected_values;
+        el.setAttribute('data-autocomplete-values', JSON.stringify(selected_values));
         if (onupdate) {
           storm_eagle.util.run_str_func( onupdate, { id } );
         }
@@ -115,6 +113,8 @@ storm_eagle.module('autocomplete', () => {
         input.addEventListener('keydown', self.event_listeners.input.keydown_navigate_dropdown);
         input.removeEventListener('keydown', self.event_listeners.input.keydown_search_string);
         input.addEventListener('keydown', self.event_listeners.input.keydown_search_string);
+        input.removeEventListener('keyup', self.event_listeners.input.clear_input);
+        input.addEventListener('keyup', self.event_listeners.input.clear_input);
         input.removeEventListener('focus', self.event_listeners.input.focus);
         input.addEventListener('focus', self.event_listeners.input.focus);
         document.removeEventListener('click', self.event_listeners.outside_dropdown.click.close);
@@ -199,6 +199,19 @@ storm_eagle.module('autocomplete', () => {
           const id = storm_eagle.util.closest_parent(event.target, '[data-module="autocomplete"]').getAttribute('id');
           if (!self.event_listeners.keys_to_ignore.includes(event.keyCode)) {
             self.action.execute_search(id);
+          }
+        },
+        clear_input: (event) => {
+          const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="autocomplete"]').getAttribute('id');
+
+          switch (event.keyCode) {
+            case keyboard.keys.backspace:
+            case keyboard.keys.delete:
+              if (event.currentTarget.value === "") {
+                self.data.update_input_value(id,['']);
+                self.action.close(id, true);
+              }
+              break;
           }
         },
         focus: (event) => {
@@ -298,7 +311,7 @@ storm_eagle.module('autocomplete', () => {
         if (type === "single-select") {
           results.innerHTML = "";
           input.value = result_string;
-          self.data.update_input_value(id);
+          self.data.update_input_value(id,[self.util.modify_format(value_format,data_working[index])]);
         } else if (type === "multiselect") {
           const { multiselect_tags_container } = state[id];
           data_working[index]["status"] = "selected";
@@ -321,8 +334,6 @@ storm_eagle.module('autocomplete', () => {
         const { el, value_format, input, max_num_results, results, data_working } = state[id];
         document.getElementById(id).querySelector(`[data-autocomplete-tag="${index}"]`).remove();
         data_working[index]["status"] = "";
-        //self.ui.show_autocomplete_list(id);
-
         const selected_values = state[id].input_values || [];
         const value_to_remove = self.util.modify_format(value_format,data_working[index]);
         const updated_values = selected_values.filter(value => value !== value_to_remove);
@@ -335,11 +346,11 @@ storm_eagle.module('autocomplete', () => {
       modify_format: (format,entry) => {
         const result_string = format.reduce((acc, key) => {
           if (key in entry) {
-              // If the key exists in entry and entry[key] is truthy, use entry[key]
-              return acc + (entry[key] ? entry[key] : key);
-            }
-            // If the key is not present in entry, use the key itself
-            return acc + key;
+            // If the key exists in entry and entry[key] is truthy, use entry[key]
+            return acc + (entry[key] ? entry[key] : key);
+          }
+          // If the key is not present in entry, use the key itself
+          return acc + key;
         }, '').trim();
         return result_string;
       },
