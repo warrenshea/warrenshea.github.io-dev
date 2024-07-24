@@ -274,7 +274,7 @@ storm_eagle.module('tinymce', () => {
               icon: 'checklist',
               text: '',
               onAction: (api) => {
-                const node = editor.selection.getNode();
+                let node = editor.selection.getNode();
                 if (node.nodeName === 'LI') {
                   node = node.parentNode;
                 }
@@ -291,7 +291,7 @@ storm_eagle.module('tinymce', () => {
               },
               onSetup: (api) => {
                 const editor_event_callback = (event) => {
-                  const node = editor.selection.getNode();
+                  let node = editor.selection.getNode();
                   if (node.nodeName === 'LI') {
                     node = node.parentNode;
                   }
