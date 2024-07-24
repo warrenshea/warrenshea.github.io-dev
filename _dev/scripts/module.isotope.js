@@ -39,9 +39,10 @@ storm_eagle.module('isotope', () => {
           sort_by_id: el.getAttribute('data-isotope-sortBy-bind-id') || null,
           sort_by_value: null,
           sort_ascending_id: el.getAttribute('data-isotope-sortAscending-bind-id') || null,
-          sort_ascending_value: null,
-          filter_values: [el.getAttribute('data-isotope-initial-filter')],
-          initial_filter: el.getAttribute('data-isotope-initial-filter'), //* or .isotope-no-results
+          sort_ascending_value: true,
+          filter_values: [el.getAttribute('data-isotope-filter-initial')],
+          filter_initial: el.getAttribute('data-isotope-filter-initial'), //* or .isotope-no-results
+          filter_no_results: el.getAttribute('data-isotope-filter-no-results'), //* or .isotope-no-results
           filters: {},
           filter_groups_ids: JSON.parse(el.getAttribute('data-isotope-filters-bind-ids')) || [],
           filter_groups_key: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group') || null),
@@ -77,25 +78,31 @@ storm_eagle.module('isotope', () => {
             }
           },
           filter: (id) => {
-            const { initial_filter, filter_groups_ids, filter_groups_types } = state[id];
+            const { filter_initial, filter_no_results, filter_groups_ids, filter_groups_types } = state[id];
             if (filter_groups_ids.length > 0) {
               filter_groups_ids.forEach((filter_group_id, index) => {
                 switch (filter_groups_types[index]) {
                   case "checkbox":
-                    let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} > input`,'data-isotope-filter-value');
-                    if (document.querySelector(`#${filter_group_id}`).hasAttribute("data-isotope-or-and-bind")) {
-                      const or_and_value = storm_eagle.radiobutton.get_value(`#${document.querySelector(`#${filter_group_id}`).getAttribute("data-isotope-or-and-bind")} > input`);
-                      filter_group_checkbox_values = (or_and_value === "and") ? [filter_group_checkbox_values.join('') || self.util.get_filter_type(id)] : filter_group_checkbox_values;
+                    const all_checkboxes = document.querySelectorAll(`#${filter_group_id} > input`);
+                    if (Array.from(all_checkboxes).every(checkbox => checkbox.checked)) {
+                      state[id].filters[filter_group_id] = '*';
+                    } else {
+                      let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} > input`,'data-isotope-filter-value');
+
+                      if (document.querySelector(`#${filter_group_id}`).hasAttribute("data-isotope-or-and-bind")) {
+                        const or_and_value = storm_eagle.radiobutton.get_value(`#${document.querySelector(`#${filter_group_id}`).getAttribute("data-isotope-or-and-bind")} > input`);
+                        filter_group_checkbox_values = (or_and_value === "and") ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
+                      }
+                      state[id].filters[filter_group_id] = filter_group_checkbox_values;
                     }
-                    state[id].filters[filter_group_id] = filter_group_checkbox_values;
                     break;
                   case "radiobutton":
-                    state[id].filters[filter_group_id] = storm_eagle.radiobutton.get_value(`#${filter_group_id} > input`);
+                    state[id].filters[filter_group_id] = storm_eagle.radiobutton.get_value(`#${filter_group_id} > input`,'data-isotope-filter-value');
                     break;
                   case "input_autocomplete":
                     if (document.querySelector(`#${filter_group_id}`).hasAttribute('data-autocomplete-values')) {
                       if (document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values') === '[]') {
-                        state[id].filters[filter_group_id] = initial_filter;
+                        state[id].filters[filter_group_id] = filter_initial;
                       } else {
                         state[id].filters[filter_group_id] = (JSON.parse(document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values')).map(str => str.toLowerCase()));
                       }
@@ -105,7 +112,7 @@ storm_eagle.module('isotope', () => {
                     break;
                 }
               });
-              // console.log(state[id].filters);
+              //console.log(state[id].filters);
               state[id].filter_values = storm_eagle.isotope.util.combine_obj_value(state[id].filters);
             }
           }
@@ -114,25 +121,29 @@ storm_eagle.module('isotope', () => {
     },
     ui : {
       initialize: (id) => {
-        const { initial_filter, sort_data_config, elements_container } = state[id];
+        const { filter_initial, sort_data_config, elements_container } = state[id];
         self.config.state.set.sort_by(id);
         self.config.state.set.sort_ascending(id);
         self.config.state.set.filter(id);
-        state[id].isotope_object = new Isotope(elements_container, {
+        const config = {
           itemSelector: '[data-module="isotope.element"]',
           layoutMode: 'masonry',
           getSortData: JSON.parse(sort_data_config),
           sortBy: self.config.state.get.sort_by(id),
-          filter: initial_filter,
+          filter: filter_initial,
           sortAscending: self.config.state.get.sort_ascending(id),
-        });
+        }
+        //console.log(config);
+        state[id].isotope_object = new Isotope(elements_container, config);
+        //console.log(state[id].isotope_object);
       },
       refresh: (id) => {
-        const { initial_filter } = state[id];
+        const { filter_no_results } = state[id];
         setTimeout(() => {
+          //console.log(self.config.state.get.filter(id));
           const new_config = {
             sortBy: self.config.state.get.sort_by(id),
-            filter: (self.config.state.get.filter(id).length > 0) ? self.config.state.get.filter(id) : self.util.get_filter_type(id),
+            filter: (self.config.state.get.filter(id).length > 0) ? self.config.state.get.filter(id) : filter_no_results,
             sortAscending: self.config.state.get.sort_ascending(id),
           };
           //console.log(new_config);
@@ -145,6 +156,8 @@ storm_eagle.module('isotope', () => {
       refresh_all: () => {
         document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
           const id = el.getAttribute('id');
+          self.config.state.set.sort_by(id);
+          self.config.state.set.sort_ascending(id);
           self.config.state.set.filter(id);
           self.ui.refresh(id);
         });
@@ -183,14 +196,6 @@ storm_eagle.module('isotope', () => {
       filters: (id) => {
         const { filter_groups_ids } = state[id];
         filter_groups_ids.forEach((filter_group_id) => {
-          // if (document.querySelector(`#${filter_group_id}[data-module='autocomplete']`)) {
-          //   document.querySelectorAll(`#${filter_group_id} > div > input`).forEach((el) => {
-          //     el.addEventListener('focusout', () => {
-          //       self.config.state.set.filter(id);
-          //       self.ui.refresh(id);
-          //     });
-          //   });
-          // } else {
             document.querySelectorAll(`#${filter_group_id} > input`).forEach((el) => {
               el.addEventListener('click', () => {
                 self.config.state.set.filter(id);
@@ -232,13 +237,13 @@ storm_eagle.module('isotope', () => {
       }
     },
     util: {
-      get_filter_type: (id) => {
-        const { initial_filter } = state[id];
-        return (initial_filter === '*') ? '.isotope-no-results' : '*';
-      },
       combine_obj_value: (obj) => {
         // Get an array of property values
         const values = Object.values(obj);
+
+        if (values.every(value => value === "*")) {
+          return "*";
+        }
 
         // Use reduce to iterate through the arrays and combine values
         const combined_values = values.reduce((acc, current_value) => {
