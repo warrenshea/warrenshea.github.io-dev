@@ -32,9 +32,9 @@ storm_eagle.module('autocomplete', () => {
           el,
           input: el.querySelector("[data-module='autocomplete.input']"),
           input_format: JSON.parse(el.getAttribute('data-autocomplete-input-format')),
-          filter: el.getAttribute("data-autocomplete-filter"),
-          value_format: JSON.parse(el.getAttribute("data-autocomplete-value-format")) ? JSON.parse(el.getAttribute("data-autocomplete-value-format")) : JSON.parse(`["${el.getAttribute("data-autocomplete-filter")}"]`),
           input_values: el.getAttribute("data-autocomplete-values") ? JSON.parse(el.getAttribute("data-autocomplete-values")) : null,
+          value_format: JSON.parse(el.getAttribute("data-autocomplete-value-format")) ? JSON.parse(el.getAttribute("data-autocomplete-value-format")) : JSON.parse(`["${el.getAttribute("data-autocomplete-filter")}"]`),
+          filter: el.getAttribute("data-autocomplete-filter"),
           type: el.getAttribute("data-autocomplete-type"),
           data_source_type: data_source_type,
           data_source: el.getAttribute("data-autocomplete-source"),
@@ -333,7 +333,6 @@ storm_eagle.module('autocomplete', () => {
     },
     util: {
       modify_format: (format,entry) => {
-        console.log(format);
         const result_string = format.reduce((acc, key) => {
           if (key in entry) {
               // If the key exists in entry and entry[key] is truthy, use entry[key]
