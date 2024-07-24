@@ -222,7 +222,7 @@ storm_eagle.module('tinymce', () => {
         state[id] = {
           el,
           type: el.getAttribute('data-tinymce-type'),
-          preview_id: el.getAttribute('data-tinymce-preview') || false,
+          preview_ids: JSON.parse(el.getAttribute('data-tinymce-preview')) || [],
           onload_id: el.getAttribute('data-tinymce-onload-element') || false,
           onupdate: el.getAttribute('data-tinymce-onupdate-func') || false,
         };
@@ -231,12 +231,15 @@ storm_eagle.module('tinymce', () => {
     },
     tinymce: {
       initialize: (id) => {
-        const { type, preview_id, onload_id, onupdate } = state[id];
+        const { type, preview_ids, onload_id, onupdate } = state[id];
 
         const update_preview = (editor) => {
           if (onupdate) {
-            if (preview_id) {
-              storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
+            if (preview_ids) {
+              preview_ids.forEach((preview_id) => {
+                storm_eagle.util.run_str_func( onupdate, { editor, preview_id } );
+              });
+
             } else {
               storm_eagle.util.run_str_func( onupdate, { editor, id } );
             }
@@ -252,7 +255,10 @@ storm_eagle.module('tinymce', () => {
           setup: (editor) => {
             editor.on('init', (event) => {
               onload_id && tinymce.get(id).setContent(document.getElementById(onload_id).innerHTML);
-              //preview_id && self.force_update_preview(editor, preview_id);
+
+              preview_ids.forEach((preview_id) => {
+                self.force_update_preview(editor, preview_id);
+              });
             });
             editor.on('input ExecCommand', (event) => {
               if ((event.type === 'execcommand' || event.type === 'input') && event.command !== 'mceFocus') {
@@ -465,8 +471,8 @@ storm_eagle.module('tinymce', () => {
         tinymce.init(config);
       }
     },
-    force_update_preview: (editor, preview_id) => {
-      const ids = preview_id.includes(',') ? preview_id.split(',').map(id => id.trim()) : [preview_id];
+    force_update_preview: (editor, preview_ids) => {
+      const ids = preview_ids.includes(',') ? preview_ids.split(',').map(id => id.trim()) : [preview_ids];
 
       ids.forEach((id) => {
         const element = document.getElementById(id);
