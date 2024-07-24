@@ -15,6 +15,7 @@
             ],
             "scripts": [
                 "/scripts/libs/isotope-v3.0.6.min.js",
+                "/scripts/module.isotope.js",
                 "assets.js",
                 "/scripts/module.autocomplete.js",
                 "/scripts/module.form.theme.gl0b3x.js"
