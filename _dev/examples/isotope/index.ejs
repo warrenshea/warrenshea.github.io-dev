@@ -228,7 +228,8 @@ fairy='#ec73e9';
         data-isotope-sortBy-bind-id="isotope-sort"
         data-isotope-sortAscending-bind-id="isotope-sort-order"
         data-isotope-filters-bind-ids='["select-all-type-checkboxes","type-category","select-all-generation-checkboxes","autocomplete-pokemon-pokedex-num"]'
-        data-isotope-initial-filter='*'>
+        data-isotope-filter-initial='*'
+        data-isotope-filter-no-results='.isotope-no-results'>
         <div class="row">
           <h2 class="w:12 play pb:32px">Pokémon</h2>
           <div class="w:9 brr:8px b-silver:1px p:16px">
@@ -304,11 +305,11 @@ fairy='#ec73e9';
               data-isotope-filter-group="type-category"
               data-isotope-filter-group-type="radiobutton">
               <legend class="hide">Type Category</legend>
-              <input type="radio" name="type-category" id="isotope-filter-type-category-all" value="*" checked>
+              <input type="radio" name="type-category" id="isotope-filter-type-category-all" data-isotope-filter-value="*" checked>
               <label for="isotope-filter-type-category-all">All</label>
-              <input type="radio" name="type-category" id="isotope-filter-type-category-single" value=".type-category-single">
+              <input type="radio" name="type-category" id="isotope-filter-type-category-single" data-isotope-filter-value=".type-category-single">
               <label for="isotope-filter-type-category-single">Single Type</label>
-              <input type="radio" name="type-category" id="isotope-filter-type-category-dual" value=".type-category-dual">
+              <input type="radio" name="type-category" id="isotope-filter-type-category-dual" data-isotope-filter-value=".type-category-dual">
               <label for="isotope-filter-type-category-dual">Dual Type</label>
             </fieldset>
 
