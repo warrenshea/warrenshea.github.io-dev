@@ -353,11 +353,11 @@ fairy='#ec73e9';
             </div>
 
             <div class="pt:16px"><strong>Name:</strong></div>
-            <div class="w:12 row align-self:middle pt:4px">
+            <div class="w:12 row align-self:middle">
               <%id="pokemon-pokedex-num"%>
               <div class="w:100%" data-module="autocomplete" id="autocomplete-<%=id%>" data-autocomplete-value-format='[".","name"]' data-autocomplete-filter="name" data-autocomplete-input-format='["#","num"," - ","name"]' data-autocomplete-source-type="fetch" data-autocomplete-source="/data/pokedex.json" data-autocomplete-type="multiselect" data-isotope-filter-group="name" data-isotope-filter-group-type="input_autocomplete" data-autocomplete-onupdate-func="storm_eagle.isotope.ui.refresh_all">
                 <div data-module="autocomplete.multiselect" class="br:4px w:100%">
-                  <span class="display:flex flex-flow:row-wrap pb:12px" data-module="autocomplete.multiselect-tags" data-theme-bgc-color="blue"></span>
+                  <span class="display:flex flex-flow:row-wrap pb:4px" data-module="autocomplete.multiselect-tags" data-theme-bgc-color="blue"></span>
                   <input type="text" data-module="autocomplete.input" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" class="" placeholder="Please enter a Pokémon">
                   <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="sr-only description">Find a Pokémon</span></label>
                 </div>
