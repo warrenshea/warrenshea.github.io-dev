@@ -182,7 +182,7 @@
     {
         "num": "0031",
         "name": "Nidoqueen",
-        "type": ["poison", "ground"],
+        "type": ["ground", "poison"],
         "gen": 1
     },
     {
@@ -200,7 +200,7 @@
     {
         "num": "0034",
         "name": "Nidoking",
-        "type": ["poison", "ground"],
+        "type": ["ground", "poison"],
         "gen": 1
     },
     {
@@ -242,13 +242,13 @@
     {
         "num": "0041",
         "name": "Zubat",
-        "type": ["poison", "flying"],
+        "type": ["flying", "poison"],
         "gen": 1
     },
     {
         "num": "0042",
         "name": "Golbat",
-        "type": ["poison", "flying"],
+        "type": ["flying", "poison"],
         "gen": 1
     },
     {
@@ -368,7 +368,7 @@
     {
         "num": "0062",
         "name": "Poliwrath",
-        "type": ["water", "fighting"],
+        "type": ["fighting", "water"],
         "gen": 1
     },
     {
@@ -428,31 +428,31 @@
     {
         "num": "0072",
         "name": "Tentacool",
-        "type": ["water", "poison"],
+        "type": ["poison", "water"],
         "gen": 1
     },
     {
         "num": "0073",
         "name": "Tentacruel",
-        "type": ["water", "poison"],
+        "type": ["poison", "water"],
         "gen": 1
     },
     {
         "num": "0074",
         "name": "Geodude",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 1
     },
     {
         "num": "0075",
         "name": "Graveler",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 1
     },
     {
         "num": "0076",
         "name": "Golem",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 1
     },
     {
@@ -470,13 +470,13 @@
     {
         "num": "0079",
         "name": "Slowpoke",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 1
     },
     {
         "num": "0080",
         "name": "Slowbro",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 1
     },
     {
@@ -518,7 +518,7 @@
     {
         "num": "0087",
         "name": "Dewgong",
-        "type": ["water", "ice"],
+        "type": ["ice", "water"],
         "gen": 1
     },
     {
@@ -542,7 +542,7 @@
     {
         "num": "0091",
         "name": "Cloyster",
-        "type": ["water", "ice"],
+        "type": ["ice", "water"],
         "gen": 1
     },
     {
@@ -566,7 +566,7 @@
     {
         "num": "0095",
         "name": "Onix",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 1
     },
     {
@@ -722,7 +722,7 @@
     {
         "num": "0121",
         "name": "Starmie",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 1
     },
     {
@@ -776,13 +776,13 @@
     {
         "num": "0130",
         "name": "Gyarados",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 1
     },
     {
         "num": "0131",
         "name": "Lapras",
-        "type": ["water", "ice"],
+        "type": ["ice", "water"],
         "gen": 1
     },
     {
@@ -848,7 +848,7 @@
     {
         "num": "0142",
         "name": "Aerodactyl",
-        "type": ["rock", "flying"],
+        "type": ["flying", "rock"],
         "gen": 1
     },
     {
@@ -860,7 +860,7 @@
     {
         "num": "0144",
         "name": "Articuno",
-        "type": ["ice", "flying"],
+        "type": ["flying", "ice"],
         "gen": 1
     },
     {
@@ -1010,19 +1010,19 @@
     {
         "num": "0169",
         "name": "Crobat",
-        "type": ["poison", "flying"],
+        "type": ["flying", "poison"],
         "gen": 2
     },
     {
         "num": "0170",
         "name": "Chinchou",
-        "type": ["water", "electric"],
+        "type": ["electric", "water"],
         "gen": 2
     },
     {
         "num": "0171",
         "name": "Lanturn",
-        "type": ["water", "electric"],
+        "type": ["electric", "water"],
         "gen": 2
     },
     {
@@ -1052,19 +1052,19 @@
     {
         "num": "0176",
         "name": "Togetic",
-        "type": ["fairy", "flying"],
+        "type": ["flying", "fairy"],
         "gen": 2
     },
     {
         "num": "0177",
         "name": "Natu",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 2
     },
     {
         "num": "0178",
         "name": "Xatu",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 2
     },
     {
@@ -1118,19 +1118,19 @@
     {
         "num": "0187",
         "name": "Hoppip",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 2
     },
     {
         "num": "0188",
         "name": "Skiploom",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 2
     },
     {
         "num": "0189",
         "name": "Jumpluff",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 2
     },
     {
@@ -1160,13 +1160,13 @@
     {
         "num": "0194",
         "name": "Wooper",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 2
     },
     {
         "num": "0195",
         "name": "Quagsire",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 2
     },
     {
@@ -1184,13 +1184,13 @@
     {
         "num": "0198",
         "name": "Murkrow",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 2
     },
     {
         "num": "0199",
         "name": "Slowking",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 2
     },
     {
@@ -1238,13 +1238,13 @@
     {
         "num": "0207",
         "name": "Gligar",
-        "type": ["ground", "flying"],
+        "type": ["flying", "ground"],
         "gen": 2
     },
     {
         "num": "0208",
         "name": "Steelix",
-        "type": ["steel", "ground"],
+        "type": ["ground", "steel"],
         "gen": 2
     },
     {
@@ -1262,7 +1262,7 @@
     {
         "num": "0211",
         "name": "Qwilfish",
-        "type": ["water", "poison"],
+        "type": ["poison", "water"],
         "gen": 2
     },
     {
@@ -1286,7 +1286,7 @@
     {
         "num": "0215",
         "name": "Sneasel",
-        "type": ["dark", "ice"],
+        "type": ["ice", "dark"],
         "gen": 2
     },
     {
@@ -1316,19 +1316,19 @@
     {
         "num": "0220",
         "name": "Swinub",
-        "type": ["ice", "ground"],
+        "type": ["ground", "ice"],
         "gen": 2
     },
     {
         "num": "0221",
         "name": "Piloswine",
-        "type": ["ice", "ground"],
+        "type": ["ground", "ice"],
         "gen": 2
     },
     {
         "num": "0222",
         "name": "Corsola",
-        "type": ["water", "rock"],
+        "type": ["rock", "water"],
         "gen": 2
     },
     {
@@ -1346,37 +1346,37 @@
     {
         "num": "0225",
         "name": "Delibird",
-        "type": ["ice", "flying"],
+        "type": ["flying", "ice"],
         "gen": 2
     },
     {
         "num": "0226",
         "name": "Mantine",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 2
     },
     {
         "num": "0227",
         "name": "Skarmory",
-        "type": ["steel", "flying"],
+        "type": ["flying", "steel"],
         "gen": 2
     },
     {
         "num": "0228",
         "name": "Houndour",
-        "type": ["dark", "fire"],
+        "type": ["fire", "dark"],
         "gen": 2
     },
     {
         "num": "0229",
         "name": "Houndoom",
-        "type": ["dark", "fire"],
+        "type": ["fire", "dark"],
         "gen": 2
     },
     {
         "num": "0230",
         "name": "Kingdra",
-        "type": ["water", "dragon"],
+        "type": ["dragon", "water"],
         "gen": 2
     },
     {
@@ -1472,13 +1472,13 @@
     {
         "num": "0246",
         "name": "Larvitar",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 2
     },
     {
         "num": "0247",
         "name": "Pupitar",
-        "type": ["rock", "ground"],
+        "type": ["ground", "rock"],
         "gen": 2
     },
     {
@@ -1490,7 +1490,7 @@
     {
         "num": "0249",
         "name": "Lugia",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 2
     },
     {
@@ -1502,7 +1502,7 @@
     {
         "num": "0251",
         "name": "Celebi",
-        "type": ["psychic", "grass"],
+        "type": ["grass", "psychic"],
         "gen": 2
     },
     {
@@ -1532,13 +1532,13 @@
     {
         "num": "0256",
         "name": "Combusken",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 3
     },
     {
         "num": "0257",
         "name": "Blaziken",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 3
     },
     {
@@ -1550,13 +1550,13 @@
     {
         "num": "0259",
         "name": "Marshtomp",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 3
     },
     {
         "num": "0260",
         "name": "Swampert",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 3
     },
     {
@@ -1616,19 +1616,19 @@
     {
         "num": "0270",
         "name": "Lotad",
-        "type": ["water", "grass"],
+        "type": ["grass", "water"],
         "gen": 3
     },
     {
         "num": "0271",
         "name": "Lombre",
-        "type": ["water", "grass"],
+        "type": ["grass", "water"],
         "gen": 3
     },
     {
         "num": "0272",
         "name": "Ludicolo",
-        "type": ["water", "grass"],
+        "type": ["grass", "water"],
         "gen": 3
     },
     {
@@ -1664,13 +1664,13 @@
     {
         "num": "0278",
         "name": "Wingull",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 3
     },
     {
         "num": "0279",
         "name": "Pelipper",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 3
     },
     {
@@ -1712,7 +1712,7 @@
     {
         "num": "0286",
         "name": "Breloom",
-        "type": ["grass", "fighting"],
+        "type": ["fighting", "grass"],
         "gen": 3
     },
     {
@@ -1808,7 +1808,7 @@
     {
         "num": "0302",
         "name": "Sableye",
-        "type": ["dark", "ghost"],
+        "type": ["ghost", "dark"],
         "gen": 3
     },
     {
@@ -1820,19 +1820,19 @@
     {
         "num": "0304",
         "name": "Aron",
-        "type": ["steel", "rock"],
+        "type": ["rock", "steel"],
         "gen": 3
     },
     {
         "num": "0305",
         "name": "Lairon",
-        "type": ["steel", "rock"],
+        "type": ["rock", "steel"],
         "gen": 3
     },
     {
         "num": "0306",
         "name": "Aggron",
-        "type": ["steel", "rock"],
+        "type": ["rock", "steel"],
         "gen": 3
     },
     {
@@ -1970,13 +1970,13 @@
     {
         "num": "0329",
         "name": "Vibrava",
-        "type": ["ground", "dragon"],
+        "type": ["dragon", "ground"],
         "gen": 3
     },
     {
         "num": "0330",
         "name": "Flygon",
-        "type": ["ground", "dragon"],
+        "type": ["dragon", "ground"],
         "gen": 3
     },
     {
@@ -2030,13 +2030,13 @@
     {
         "num": "0339",
         "name": "Barboach",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 3
     },
     {
         "num": "0340",
         "name": "Whiscash",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 3
     },
     {
@@ -2066,25 +2066,25 @@
     {
         "num": "0345",
         "name": "Lileep",
-        "type": ["rock", "grass"],
+        "type": ["grass", "rock"],
         "gen": 3
     },
     {
         "num": "0346",
         "name": "Cradily",
-        "type": ["rock", "grass"],
+        "type": ["grass", "rock"],
         "gen": 3
     },
     {
         "num": "0347",
         "name": "Anorith",
-        "type": ["rock", "bug"],
+        "type": ["bug", "rock"],
         "gen": 3
     },
     {
         "num": "0348",
         "name": "Armaldo",
-        "type": ["rock", "bug"],
+        "type": ["bug", "rock"],
         "gen": 3
     },
     {
@@ -2138,7 +2138,7 @@
     {
         "num": "0357",
         "name": "Tropius",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 3
     },
     {
@@ -2210,7 +2210,7 @@
     {
         "num": "0369",
         "name": "Relicanth",
-        "type": ["water", "rock"],
+        "type": ["rock", "water"],
         "gen": 3
     },
     {
@@ -2240,19 +2240,19 @@
     {
         "num": "0374",
         "name": "Beldum",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 3
     },
     {
         "num": "0375",
         "name": "Metang",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 3
     },
     {
         "num": "0376",
         "name": "Metagross",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 3
     },
     {
@@ -2306,7 +2306,7 @@
     {
         "num": "0385",
         "name": "Jirachi",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 3
     },
     {
@@ -2342,13 +2342,13 @@
     {
         "num": "0391",
         "name": "Monferno",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 4
     },
     {
         "num": "0392",
         "name": "Infernape",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 4
     },
     {
@@ -2534,7 +2534,7 @@
     {
         "num": "0423",
         "name": "Gastrodon",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 4
     },
     {
@@ -2546,13 +2546,13 @@
     {
         "num": "0425",
         "name": "Drifloon",
-        "type": ["ghost", "flying"],
+        "type": ["flying", "ghost"],
         "gen": 4
     },
     {
         "num": "0426",
         "name": "Drifblim",
-        "type": ["ghost", "flying"],
+        "type": ["flying", "ghost"],
         "gen": 4
     },
     {
@@ -2576,7 +2576,7 @@
     {
         "num": "0430",
         "name": "Honchkrow",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 4
     },
     {
@@ -2612,13 +2612,13 @@
     {
         "num": "0436",
         "name": "Bronzor",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 4
     },
     {
         "num": "0437",
         "name": "Bronzong",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 4
     },
     {
@@ -2702,7 +2702,7 @@
     {
         "num": "0451",
         "name": "Skorupi",
-        "type": ["poison", "bug"],
+        "type": ["bug", "poison"],
         "gen": 4
     },
     {
@@ -2714,13 +2714,13 @@
     {
         "num": "0453",
         "name": "Croagunk",
-        "type": ["poison", "fighting"],
+        "type": ["fighting", "poison"],
         "gen": 4
     },
     {
         "num": "0454",
         "name": "Toxicroak",
-        "type": ["poison", "fighting"],
+        "type": ["fighting", "poison"],
         "gen": 4
     },
     {
@@ -2744,7 +2744,7 @@
     {
         "num": "0458",
         "name": "Mantyke",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 4
     },
     {
@@ -2762,7 +2762,7 @@
     {
         "num": "0461",
         "name": "Weavile",
-        "type": ["dark", "ice"],
+        "type": ["ice", "dark"],
         "gen": 4
     },
     {
@@ -2804,7 +2804,7 @@
     {
         "num": "0468",
         "name": "Togekiss",
-        "type": ["fairy", "flying"],
+        "type": ["flying", "fairy"],
         "gen": 4
     },
     {
@@ -2828,13 +2828,13 @@
     {
         "num": "0472",
         "name": "Gliscor",
-        "type": ["ground", "flying"],
+        "type": ["flying", "ground"],
         "gen": 4
     },
     {
         "num": "0473",
         "name": "Mamoswine",
-        "type": ["ice", "ground"],
+        "type": ["ground", "ice"],
         "gen": 4
     },
     {
@@ -2846,7 +2846,7 @@
     {
         "num": "0475",
         "name": "Gallade",
-        "type": ["psychic", "fighting"],
+        "type": ["fighting", "psychic"],
         "gen": 4
     },
     {
@@ -2864,7 +2864,7 @@
     {
         "num": "0478",
         "name": "Froslass",
-        "type": ["ice", "ghost"],
+        "type": ["ghost", "ice"],
         "gen": 4
     },
     {
@@ -2894,13 +2894,13 @@
     {
         "num": "0483",
         "name": "Dialga",
-        "type": ["steel", "dragon"],
+        "type": ["dragon", "steel"],
         "gen": 4
     },
     {
         "num": "0484",
         "name": "Palkia",
-        "type": ["water", "dragon"],
+        "type": ["dragon", "water"],
         "gen": 4
     },
     {
@@ -2918,7 +2918,7 @@
     {
         "num": "0487",
         "name": "Giratina",
-        "type": ["ghost", "dragon"],
+        "type": ["dragon", "ghost"],
         "gen": 4
     },
     {
@@ -2960,7 +2960,7 @@
     {
         "num": "0494",
         "name": "Victini",
-        "type": ["psychic", "fire"],
+        "type": ["fire", "psychic"],
         "gen": 5
     },
     {
@@ -2990,13 +2990,13 @@
     {
         "num": "0499",
         "name": "Pignite",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 5
     },
     {
         "num": "0500",
         "name": "Emboar",
-        "type": ["fire", "fighting"],
+        "type": ["fighting", "fire"],
         "gen": 5
     },
     {
@@ -3158,13 +3158,13 @@
     {
         "num": "0527",
         "name": "Woobat",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 5
     },
     {
         "num": "0528",
         "name": "Swoobat",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 5
     },
     {
@@ -3212,13 +3212,13 @@
     {
         "num": "0536",
         "name": "Palpitoad",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 5
     },
     {
         "num": "0537",
         "name": "Seismitoad",
-        "type": ["water", "ground"],
+        "type": ["ground", "water"],
         "gen": 5
     },
     {
@@ -3350,19 +3350,19 @@
     {
         "num": "0559",
         "name": "Scraggy",
-        "type": ["dark", "fighting"],
+        "type": ["fighting", "dark"],
         "gen": 5
     },
     {
         "num": "0560",
         "name": "Scrafty",
-        "type": ["dark", "fighting"],
+        "type": ["fighting", "dark"],
         "gen": 5
     },
     {
         "num": "0561",
         "name": "Sigilyph",
-        "type": ["psychic", "flying"],
+        "type": ["flying", "psychic"],
         "gen": 5
     },
     {
@@ -3380,25 +3380,25 @@
     {
         "num": "0564",
         "name": "Tirtouga",
-        "type": ["water", "rock"],
+        "type": ["rock", "water"],
         "gen": 5
     },
     {
         "num": "0565",
         "name": "Carracosta",
-        "type": ["water", "rock"],
+        "type": ["rock", "water"],
         "gen": 5
     },
     {
         "num": "0566",
         "name": "Archen",
-        "type": ["rock", "flying"],
+        "type": ["flying", "rock"],
         "gen": 5
     },
     {
         "num": "0567",
         "name": "Archeops",
-        "type": ["rock", "flying"],
+        "type": ["flying", "rock"],
         "gen": 5
     },
     {
@@ -3476,13 +3476,13 @@
     {
         "num": "0580",
         "name": "Ducklett",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 5
     },
     {
         "num": "0581",
         "name": "Swanna",
-        "type": ["water", "flying"],
+        "type": ["flying", "water"],
         "gen": 5
     },
     {
@@ -3548,13 +3548,13 @@
     {
         "num": "0592",
         "name": "Frillish",
-        "type": ["water", "ghost"],
+        "type": ["ghost", "water"],
         "gen": 5
     },
     {
         "num": "0593",
         "name": "Jellicent",
-        "type": ["water", "ghost"],
+        "type": ["ghost", "water"],
         "gen": 5
     },
     {
@@ -3638,19 +3638,19 @@
     {
         "num": "0607",
         "name": "Litwick",
-        "type": ["ghost", "fire"],
+        "type": ["fire", "ghost"],
         "gen": 5
     },
     {
         "num": "0608",
         "name": "Lampent",
-        "type": ["ghost", "fire"],
+        "type": ["fire", "ghost"],
         "gen": 5
     },
     {
         "num": "0609",
         "name": "Chandelure",
-        "type": ["ghost", "fire"],
+        "type": ["fire", "ghost"],
         "gen": 5
     },
     {
@@ -3704,7 +3704,7 @@
     {
         "num": "0618",
         "name": "Stunfisk",
-        "type": ["ground", "electric"],
+        "type": ["electric", "ground"],
         "gen": 5
     },
     {
@@ -3728,13 +3728,13 @@
     {
         "num": "0622",
         "name": "Golett",
-        "type": ["ground", "ghost"],
+        "type": ["ghost", "ground"],
         "gen": 5
     },
     {
         "num": "0623",
         "name": "Golurk",
-        "type": ["ground", "ghost"],
+        "type": ["ghost", "ground"],
         "gen": 5
     },
     {
@@ -3770,13 +3770,13 @@
     {
         "num": "0629",
         "name": "Vullaby",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 5
     },
     {
         "num": "0630",
         "name": "Mandibuzz",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 5
     },
     {
@@ -3794,19 +3794,19 @@
     {
         "num": "0633",
         "name": "Deino",
-        "type": ["dark", "dragon"],
+        "type": ["dragon", "dark"],
         "gen": 5
     },
     {
         "num": "0634",
         "name": "Zweilous",
-        "type": ["dark", "dragon"],
+        "type": ["dragon", "dark"],
         "gen": 5
     },
     {
         "num": "0635",
         "name": "Hydreigon",
-        "type": ["dark", "dragon"],
+        "type": ["dragon", "dark"],
         "gen": 5
     },
     {
@@ -3824,19 +3824,19 @@
     {
         "num": "0638",
         "name": "Cobalion",
-        "type": ["steel", "fighting"],
+        "type": ["fighting", "steel"],
         "gen": 5
     },
     {
         "num": "0639",
         "name": "Terrakion",
-        "type": ["rock", "fighting"],
+        "type": ["fighting", "rock"],
         "gen": 5
     },
     {
         "num": "0640",
         "name": "Virizion",
-        "type": ["grass", "fighting"],
+        "type": ["fighting", "grass"],
         "gen": 5
     },
     {
@@ -3866,7 +3866,7 @@
     {
         "num": "0645",
         "name": "Landorus",
-        "type": ["ground", "flying"],
+        "type": ["flying", "ground"],
         "gen": 5
     },
     {
@@ -3878,7 +3878,7 @@
     {
         "num": "0647",
         "name": "Keldeo",
-        "type": ["water", "fighting"],
+        "type": ["fighting", "water"],
         "gen": 5
     },
     {
@@ -3908,7 +3908,7 @@
     {
         "num": "0652",
         "name": "Chesnaught",
-        "type": ["grass", "fighting"],
+        "type": ["fighting", "grass"],
         "gen": 6
     },
     {
@@ -3998,13 +3998,13 @@
     {
         "num": "0667",
         "name": "Litleo",
-        "type": ["fire", "normal"],
+        "type": ["normal", "fire"],
         "gen": 6
     },
     {
         "num": "0668",
         "name": "Pyroar",
-        "type": ["fire", "normal"],
+        "type": ["normal", "fire"],
         "gen": 6
     },
     {
@@ -4070,19 +4070,19 @@
     {
         "num": "0679",
         "name": "Honedge",
-        "type": ["steel", "ghost"],
+        "type": ["ghost", "steel"],
         "gen": 6
     },
     {
         "num": "0680",
         "name": "Doublade",
-        "type": ["steel", "ghost"],
+        "type": ["ghost", "steel"],
         "gen": 6
     },
     {
         "num": "0681",
         "name": "Aegislash",
-        "type": ["steel", "ghost"],
+        "type": ["ghost", "steel"],
         "gen": 6
     },
     {
@@ -4112,13 +4112,13 @@
     {
         "num": "0686",
         "name": "Inkay",
-        "type": ["dark", "psychic"],
+        "type": ["psychic", "dark"],
         "gen": 6
     },
     {
         "num": "0687",
         "name": "Malamar",
-        "type": ["dark", "psychic"],
+        "type": ["psychic", "dark"],
         "gen": 6
     },
     {
@@ -4142,7 +4142,7 @@
     {
         "num": "0691",
         "name": "Dragalge",
-        "type": ["poison", "dragon"],
+        "type": ["dragon", "poison"],
         "gen": 6
     },
     {
@@ -4160,37 +4160,37 @@
     {
         "num": "0694",
         "name": "Helioptile",
-        "type": ["electric", "normal"],
+        "type": ["normal", "electric"],
         "gen": 6
     },
     {
         "num": "0695",
         "name": "Heliolisk",
-        "type": ["electric", "normal"],
+        "type": ["normal", "electric"],
         "gen": 6
     },
     {
         "num": "0696",
         "name": "Tyrunt",
-        "type": ["rock", "dragon"],
+        "type": ["dragon", "rock"],
         "gen": 6
     },
     {
         "num": "0697",
         "name": "Tyrantrum",
-        "type": ["rock", "dragon"],
+        "type": ["dragon", "rock"],
         "gen": 6
     },
     {
         "num": "0698",
         "name": "Amaura",
-        "type": ["rock", "ice"],
+        "type": ["ice", "rock"],
         "gen": 6
     },
     {
         "num": "0699",
         "name": "Aurorus",
-        "type": ["rock", "ice"],
+        "type": ["ice", "rock"],
         "gen": 6
     },
     {
@@ -4280,13 +4280,13 @@
     {
         "num": "0714",
         "name": "Noibat",
-        "type": ["flying", "dragon"],
+        "type": ["dragon", "flying"],
         "gen": 6
     },
     {
         "num": "0715",
         "name": "Noivern",
-        "type": ["flying", "dragon"],
+        "type": ["dragon", "flying"],
         "gen": 6
     },
     {
@@ -4298,7 +4298,7 @@
     {
         "num": "0717",
         "name": "Yveltal",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 6
     },
     {
@@ -4316,7 +4316,7 @@
     {
         "num": "0720",
         "name": "Hoopa",
-        "type": ["psychic", "ghost"],
+        "type": ["ghost", "psychic"],
         "gen": 6
     },
     {
@@ -4328,19 +4328,19 @@
     {
         "num": "0722",
         "name": "Rowlet",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 7
     },
     {
         "num": "0723",
         "name": "Dartrix",
-        "type": ["grass", "flying"],
+        "type": ["flying", "grass"],
         "gen": 7
     },
     {
         "num": "0724",
         "name": "Decidueye",
-        "type": ["grass", "ghost"],
+        "type": ["ghost", "grass"],
         "gen": 7
     },
     {
@@ -4502,13 +4502,13 @@
     {
         "num": "0751",
         "name": "Dewpider",
-        "type": ["water", "bug"],
+        "type": ["bug", "water"],
         "gen": 7
     },
     {
         "num": "0752",
         "name": "Araquanid",
-        "type": ["water", "bug"],
+        "type": ["bug", "water"],
         "gen": 7
     },
     {
@@ -4538,13 +4538,13 @@
     {
         "num": "0757",
         "name": "Salandit",
-        "type": ["poison", "fire"],
+        "type": ["fire", "poison"],
         "gen": 7
     },
     {
         "num": "0758",
         "name": "Salazzle",
-        "type": ["poison", "fire"],
+        "type": ["fire", "poison"],
         "gen": 7
     },
     {
@@ -4640,7 +4640,7 @@
     {
         "num": "0774",
         "name": "Minior",
-        "type": ["rock", "flying"],
+        "type": ["flying", "rock"],
         "gen": 7
     },
     {
@@ -4652,7 +4652,7 @@
     {
         "num": "0776",
         "name": "Turtonator",
-        "type": ["fire", "dragon"],
+        "type": ["dragon", "fire"],
         "gen": 7
     },
     {
@@ -4670,7 +4670,7 @@
     {
         "num": "0779",
         "name": "Bruxish",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 7
     },
     {
@@ -4748,13 +4748,13 @@
     {
         "num": "0792",
         "name": "Lunala",
-        "type": ["psychic", "ghost"],
+        "type": ["ghost", "psychic"],
         "gen": 7
     },
     {
         "num": "0793",
         "name": "Nihilego",
-        "type": ["rock", "poison"],
+        "type": ["poison", "rock"],
         "gen": 7
     },
     {
@@ -4778,7 +4778,7 @@
     {
         "num": "0797",
         "name": "Celesteela",
-        "type": ["steel", "flying"],
+        "type": ["flying", "steel"],
         "gen": 7
     },
     {
@@ -4790,7 +4790,7 @@
     {
         "num": "0799",
         "name": "Guzzlord",
-        "type": ["dark", "dragon"],
+        "type": ["dragon", "dark"],
         "gen": 7
     },
     {
@@ -4820,7 +4820,7 @@
     {
         "num": "0804",
         "name": "Naganadel",
-        "type": ["poison", "dragon"],
+        "type": ["dragon", "poison"],
         "gen": 7
     },
     {
@@ -5000,7 +5000,7 @@
     {
         "num": "0834",
         "name": "Drednaw",
-        "type": ["water", "rock"],
+        "type": ["rock", "water"],
         "gen": 8
     },
     {
@@ -5024,31 +5024,31 @@
     {
         "num": "0838",
         "name": "Carkol",
-        "type": ["rock", "fire"],
+        "type": ["fire", "rock"],
         "gen": 8
     },
     {
         "num": "0839",
         "name": "Coalossal",
-        "type": ["rock", "fire"],
+        "type": ["fire", "rock"],
         "gen": 8
     },
     {
         "num": "0840",
         "name": "Applin",
-        "type": ["grass", "dragon"],
+        "type": ["dragon", "grass"],
         "gen": 8
     },
     {
         "num": "0841",
         "name": "Flapple",
-        "type": ["grass", "dragon"],
+        "type": ["dragon", "grass"],
         "gen": 8
     },
     {
         "num": "0842",
         "name": "Appletun",
-        "type": ["grass", "dragon"],
+        "type": ["dragon", "grass"],
         "gen": 8
     },
     {
@@ -5096,13 +5096,13 @@
     {
         "num": "0850",
         "name": "Sizzlipede",
-        "type": ["fire", "bug"],
+        "type": ["bug", "fire"],
         "gen": 8
     },
     {
         "num": "0851",
         "name": "Centiskorch",
-        "type": ["fire", "bug"],
+        "type": ["bug", "fire"],
         "gen": 8
     },
     {
@@ -5168,7 +5168,7 @@
     {
         "num": "0862",
         "name": "Obstagoon",
-        "type": ["dark", "normal"],
+        "type": ["normal", "dark"],
         "gen": 8
     },
     {
@@ -5198,7 +5198,7 @@
     {
         "num": "0867",
         "name": "Runerigus",
-        "type": ["ground", "ghost"],
+        "type": ["ghost", "ground"],
         "gen": 8
     },
     {
@@ -5228,13 +5228,13 @@
     {
         "num": "0872",
         "name": "Snom",
-        "type": ["ice", "bug"],
+        "type": ["bug", "ice"],
         "gen": 8
     },
     {
         "num": "0873",
         "name": "Frosmoth",
-        "type": ["ice", "bug"],
+        "type": ["bug", "ice"],
         "gen": 8
     },
     {
@@ -5252,7 +5252,7 @@
     {
         "num": "0876",
         "name": "Indeedee",
-        "type": ["psychic", "normal"],
+        "type": ["normal", "psychic"],
         "gen": 8
     },
     {
@@ -5276,7 +5276,7 @@
     {
         "num": "0880",
         "name": "Dracozolt",
-        "type": ["electric", "dragon"],
+        "type": ["dragon", "electric"],
         "gen": 8
     },
     {
@@ -5288,19 +5288,19 @@
     {
         "num": "0882",
         "name": "Dracovish",
-        "type": ["water", "dragon"],
+        "type": ["dragon", "water"],
         "gen": 8
     },
     {
         "num": "0883",
         "name": "Arctovish",
-        "type": ["water", "ice"],
+        "type": ["ice", "water"],
         "gen": 8
     },
     {
         "num": "0884",
         "name": "Duraludon",
-        "type": ["steel", "dragon"],
+        "type": ["dragon", "steel"],
         "gen": 8
     },
     {
@@ -5336,7 +5336,7 @@
     {
         "num": "0890",
         "name": "Eternatus",
-        "type": ["poison", "dragon"],
+        "type": ["dragon", "poison"],
         "gen": 8
     },
     {
@@ -5354,7 +5354,7 @@
     {
         "num": "0893",
         "name": "Zarude",
-        "type": ["dark", "grass"],
+        "type": ["grass", "dark"],
         "gen": 8
     },
     {
@@ -5384,7 +5384,7 @@
     {
         "num": "0898",
         "name": "Calyrex",
-        "type": ["psychic", "grass"],
+        "type": ["grass", "psychic"],
         "gen": 8
     },
     {
@@ -5402,13 +5402,13 @@
     {
         "num": "0901",
         "name": "Ursaluna",
-        "type": ["ground", "normal"],
+        "type": ["normal", "ground"],
         "gen": 8
     },
     {
         "num": "0902",
         "name": "Basculegion",
-        "type": ["water", "ghost"],
+        "type": ["ghost", "water"],
         "gen": 8
     },
     {
@@ -5420,13 +5420,13 @@
     {
         "num": "0904",
         "name": "Overqwil",
-        "type": ["dark", "poison"],
+        "type": ["poison", "dark"],
         "gen": 8
     },
     {
         "num": "0905",
         "name": "Enamorus",
-        "type": ["fairy", "flying"],
+        "type": ["flying", "fairy"],
         "gen": 8
     },
     {
@@ -5480,7 +5480,7 @@
     {
         "num": "0914",
         "name": "Quaquaval",
-        "type": ["water", "fighting"],
+        "type": ["fighting", "water"],
         "gen": 9
     },
     {
@@ -5564,19 +5564,19 @@
     {
         "num": "0928",
         "name": "Smoliv",
-        "type": ["grass", "normal"],
+        "type": ["normal", "grass"],
         "gen": 9
     },
     {
         "num": "0929",
         "name": "Dolliv",
-        "type": ["grass", "normal"],
+        "type": ["normal", "grass"],
         "gen": 9
     },
     {
         "num": "0930",
         "name": "Arboliva",
-        "type": ["grass", "normal"],
+        "type": ["normal", "grass"],
         "gen": 9
     },
     {
@@ -5660,37 +5660,37 @@
     {
         "num": "0944",
         "name": "Shroodle",
-        "type": ["poison", "normal"],
+        "type": ["normal", "poison"],
         "gen": 9
     },
     {
         "num": "0945",
         "name": "Grafaiai",
-        "type": ["poison", "normal"],
+        "type": ["normal", "poison"],
         "gen": 9
     },
     {
         "num": "0946",
         "name": "Bramblin",
-        "type": ["grass", "ghost"],
+        "type": ["ghost", "grass"],
         "gen": 9
     },
     {
         "num": "0947",
         "name": "Brambleghast",
-        "type": ["grass", "ghost"],
+        "type": ["ghost", "grass"],
         "gen": 9
     },
     {
         "num": "0948",
         "name": "Toedscool",
-        "type": ["ground", "grass"],
+        "type": ["grass", "ground"],
         "gen": 9
     },
     {
         "num": "0949",
         "name": "Toedscruel",
-        "type": ["ground", "grass"],
+        "type": ["grass", "ground"],
         "gen": 9
     },
     {
@@ -5708,7 +5708,7 @@
     {
         "num": "0952",
         "name": "Scovillain",
-        "type": ["grass", "fire"],
+        "type": ["fire", "grass"],
         "gen": 9
     },
     {
@@ -5738,19 +5738,19 @@
     {
         "num": "0957",
         "name": "Tinkatink",
-        "type": ["fairy", "steel"],
+        "type": ["steel", "fairy"],
         "gen": 9
     },
     {
         "num": "0958",
         "name": "Tinkatuff",
-        "type": ["fairy", "steel"],
+        "type": ["steel", "fairy"],
         "gen": 9
     },
     {
         "num": "0959",
         "name": "Tinkaton",
-        "type": ["fairy", "steel"],
+        "type": ["steel", "fairy"],
         "gen": 9
     },
     {
@@ -5786,19 +5786,19 @@
     {
         "num": "0965",
         "name": "Varoom",
-        "type": ["steel", "poison"],
+        "type": ["poison", "steel"],
         "gen": 9
     },
     {
         "num": "0966",
         "name": "Revavroom",
-        "type": ["steel", "poison"],
+        "type": ["poison", "steel"],
         "gen": 9
     },
     {
         "num": "0967",
         "name": "Cyclizar",
-        "type": ["dragon", "normal"],
+        "type": ["normal", "dragon"],
         "gen": 9
     },
     {
@@ -5810,13 +5810,13 @@
     {
         "num": "0969",
         "name": "Glimmet",
-        "type": ["rock", "poison"],
+        "type": ["poison", "rock"],
         "gen": 9
     },
     {
         "num": "0970",
         "name": "Glimmora",
-        "type": ["rock", "poison"],
+        "type": ["poison", "rock"],
         "gen": 9
     },
     {
@@ -5834,7 +5834,7 @@
     {
         "num": "0973",
         "name": "Flamigo",
-        "type": ["flying", "fighting"],
+        "type": ["fighting", "flying"],
         "gen": 9
     },
     {
@@ -5852,7 +5852,7 @@
     {
         "num": "0976",
         "name": "Veluza",
-        "type": ["water", "psychic"],
+        "type": ["psychic", "water"],
         "gen": 9
     },
     {
@@ -5876,7 +5876,7 @@
     {
         "num": "0980",
         "name": "Clodsire",
-        "type": ["poison", "ground"],
+        "type": ["ground", "poison"],
         "gen": 9
     },
     {
@@ -5900,13 +5900,13 @@
     {
         "num": "0984",
         "name": "Great Tusk",
-        "type": ["ground", "fighting"],
+        "type": ["fighting", "ground"],
         "gen": 9
     },
     {
         "num": "0985",
         "name": "Scream Tail",
-        "type": ["fairy", "psychic"],
+        "type": ["psychic", "fairy"],
         "gen": 9
     },
     {
@@ -5948,13 +5948,13 @@
     {
         "num": "0992",
         "name": "Iron Hands",
-        "type": ["fighting", "electric"],
+        "type": ["electric", "fighting"],
         "gen": 9
     },
     {
         "num": "0993",
         "name": "Iron Jugulis",
-        "type": ["dark", "flying"],
+        "type": ["flying", "dark"],
         "gen": 9
     },
     {
@@ -5966,7 +5966,7 @@
     {
         "num": "0995",
         "name": "Iron Thorns",
-        "type": ["rock", "electric"],
+        "type": ["electric", "rock"],
         "gen": 9
     },
     {
@@ -5996,31 +5996,31 @@
     {
         "num": "1000",
         "name": "Gholdengo",
-        "type": ["steel", "ghost"],
+        "type": ["ghost", "steel"],
         "gen": 9
     },
     {
         "num": "1001",
         "name": "Wo-Chien",
-        "type": ["dark", "grass"],
+        "type": ["grass", "dark"],
         "gen": 9
     },
     {
         "num": "1002",
         "name": "Chien-Pao",
-        "type": ["dark", "ice"],
+        "type": ["ice", "dark"],
         "gen": 9
     },
     {
         "num": "1003",
         "name": "Ting-Lu",
-        "type": ["dark", "ground"],
+        "type": ["ground", "dark"],
         "gen": 9
     },
     {
         "num": "1004",
         "name": "Chi-Yu",
-        "type": ["dark", "fire"],
+        "type": ["fire", "dark"],
         "gen": 9
     },
     {
@@ -6032,25 +6032,25 @@
     {
         "num": "1006",
         "name": "Iron Valiant",
-        "type": ["fairy", "fighting"],
+        "type": ["fighting", "fairy"],
         "gen": 9
     },
     {
         "num": "1007",
         "name": "Koraidon",
-        "type": ["fighting", "dragon"],
+        "type": ["dragon", "fighting"],
         "gen": 9
     },
     {
         "num": "1008",
         "name": "Miraidon",
-        "type": ["electric", "dragon"],
+        "type": ["dragon", "electric"],
         "gen": 9
     },
     {
         "num": "1009",
         "name": "Walking Wake",
-        "type": ["water", "dragon"],
+        "type": ["dragon", "water"],
         "gen": 9
     },
     {
@@ -6062,25 +6062,25 @@
     {
         "num": "1011",
         "name": "Dipplin",
-        "type": ["grass", "dragon"],
+        "type": ["dragon", "grass"],
         "gen": 9
     },
     {
         "num": "1012",
         "name": "Poltchageist",
-        "type": ["grass", "ghost"],
+        "type": ["ghost", "grass"],
         "gen": 9
     },
     {
         "num": "1013",
         "name": "Sinistcha",
-        "type": ["grass", "ghost"],
+        "type": ["ghost", "grass"],
         "gen": 9
     },
     {
         "num": "1014",
         "name": "Okidogi",
-        "type": ["poison", "fighting"],
+        "type": ["fighting", "poison"],
         "gen": 9
     },
     {
@@ -6104,25 +6104,25 @@
     {
         "num": "1018",
         "name": "Archaludon",
-        "type": ["steel", "dragon"],
+        "type": ["dragon", "steel"],
         "gen": 9
     },
     {
         "num": "1019",
         "name": "Hydrapple",
-        "type": ["grass", "dragon"],
+        "type": ["dragon", "grass"],
         "gen": 9
     },
     {
         "num": "1020",
         "name": "Gouging Fire",
-        "type": ["fire", "dragon"],
+        "type": ["dragon", "fire"],
         "gen": 9
     },
     {
         "num": "1021",
         "name": "Raging Bolt",
-        "type": ["electric", "dragon"],
+        "type": ["dragon", "electric"],
         "gen": 9
     },
     {
@@ -6134,7 +6134,7 @@
     {
         "num": "1023",
         "name": "Iron Crown",
-        "type": ["steel", "psychic"],
+        "type": ["psychic", "steel"],
         "gen": 9
     },
     {
@@ -6146,7 +6146,7 @@
     {
         "num": "1025",
         "name": "Pecharunt",
-        "type": ["poison", "ghost"],
+        "type": ["ghost", "poison"],
         "gen": 9
     }
 ]
