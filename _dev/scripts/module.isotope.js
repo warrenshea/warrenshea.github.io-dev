@@ -47,6 +47,7 @@ storm_eagle.module('isotope', () => {
           filter_groups_ids: JSON.parse(el.getAttribute('data-isotope-filters-bind-ids')) || [],
           filter_groups_key: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group') || null),
           filter_groups_types: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group-type') || null),
+          filtered_elements_id: el.getAttribute('data-isotope-number-filtered-elements-bind-id') || null,
         };
         self.event_listeners.initialize(id);
       });
@@ -62,6 +63,11 @@ storm_eagle.module('isotope', () => {
           },
           filter: (id) => {
             return state[id].filter_values;
+          },
+          number_filtered_elements: (id) => {
+            if (state[id].filtered_elements_id && document.querySelector(`#${state[id].filtered_elements_id}`)) {
+              document.querySelector(`#${state[id].filtered_elements_id}`).innerHTML = state[id].isotope_object.getFilteredItemElements().length;
+            }
           },
         },
         set: {
@@ -173,6 +179,7 @@ storm_eagle.module('isotope', () => {
         }
         //console.log(config);
         state[id].isotope_object = new Isotope(elements_container, config);
+        self.config.state.get.number_filtered_elements(id);
         //console.log(state[id].isotope_object);
       },
       refresh: (id) => {
@@ -186,6 +193,7 @@ storm_eagle.module('isotope', () => {
           };
           //console.log(new_config);
           state[id].isotope_object.arrange(new_config);
+          self.config.state.get.number_filtered_elements(id);
           setTimeout(() => {
             storm_eagle.equalize_heights.force_resize();
           },100);
