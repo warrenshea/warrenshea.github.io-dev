@@ -229,7 +229,8 @@ fairy='#ec73e9';
         data-isotope-sortAscending-bind-id="isotope-sort-order"
         data-isotope-filters-bind-ids='["select-all-type-checkboxes","type-category","select-all-generation-checkboxes","autocomplete-pokemon-pokedex-num"]'
         data-isotope-filter-initial='*'
-        data-isotope-filter-no-results='.isotope-no-results'>
+        data-isotope-filter-no-results='.isotope-no-results'
+        data-isotope-number-filtered-elements-bind-id="results-number">
         <div class="row">
           <h2 class="w:12 play pb:32px">Pokémon</h2>
           <div class="w:9 brr:8px b-silver:1px p:16px">
@@ -244,41 +245,41 @@ fairy='#ec73e9';
                 data-isotope-filter-group="type"
                 data-isotope-filter-group-type="checkbox"
                 data-isotope-or-and-bind="isotope-or-and-type">
-                <input type="checkbox" name="normal" data-isotope-filter-value=".type-normal" id="isotope-filter-type-normal" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-normal" id="isotope-filter-type-normal" checked>
                 <label for="isotope-filter-type-normal">Normal</label>
-                <input type="checkbox" name="fire" data-isotope-filter-value=".type-fire" id="isotope-filter-type-fire" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-fire" id="isotope-filter-type-fire" checked>
                 <label for="isotope-filter-type-fire">Fire</label>
-                <input type="checkbox" name="water" data-isotope-filter-value=".type-water" id="isotope-filter-type-water" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-water" id="isotope-filter-type-water" checked>
                 <label for="isotope-filter-type-water">Water</label>
-                <input type="checkbox" name="electric" data-isotope-filter-value=".type-electric" id="isotope-filter-type-electric" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-electric" id="isotope-filter-type-electric" checked>
                 <label for="isotope-filter-type-electric">Electric</label>
-                <input type="checkbox" name="grass" data-isotope-filter-value=".type-grass" id="isotope-filter-type-grass" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-grass" id="isotope-filter-type-grass" checked>
                 <label for="isotope-filter-type-grass">Grass</label>
-                <input type="checkbox" name="ice" data-isotope-filter-value=".type-ice" id="isotope-filter-type-ice" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-ice" id="isotope-filter-type-ice" checked>
                 <label for="isotope-filter-type-ice">Ice</label>
-                <input type="checkbox" name="fighting" data-isotope-filter-value=".type-fighting" id="isotope-filter-type-fighting" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-fighting" id="isotope-filter-type-fighting" checked>
                 <label for="isotope-filter-type-fighting">Fighting</label>
-                <input type="checkbox" name="poison" data-isotope-filter-value=".type-poison" id="isotope-filter-type-poison" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-poison" id="isotope-filter-type-poison" checked>
                 <label for="isotope-filter-type-poison">Poison</label>
-                <input type="checkbox" name="ground" data-isotope-filter-value=".type-ground" id="isotope-filter-type-ground" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-ground" id="isotope-filter-type-ground" checked>
                 <label for="isotope-filter-type-ground">Ground</label>
-                <input type="checkbox" name="flying" data-isotope-filter-value=".type-flying" id="isotope-filter-type-flying" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-flying" id="isotope-filter-type-flying" checked>
                 <label for="isotope-filter-type-flying">Flying</label>
-                <input type="checkbox" name="psychic" data-isotope-filter-value=".type-psychic" id="isotope-filter-type-psychic" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-psychic" id="isotope-filter-type-psychic" checked>
                 <label for="isotope-filter-type-psychic">Psychic</label>
-                <input type="checkbox" name="bug" data-isotope-filter-value=".type-bug" id="isotope-filter-type-bug" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-bug" id="isotope-filter-type-bug" checked>
                 <label for="isotope-filter-type-bug">Bug</label>
-                <input type="checkbox" name="rock" data-isotope-filter-value=".type-rock" id="isotope-filter-type-rock" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-rock" id="isotope-filter-type-rock" checked>
                 <label for="isotope-filter-type-rock">Rock</label>
-                <input type="checkbox" name="ghost" data-isotope-filter-value=".type-ghost" id="isotope-filter-type-ghost" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-ghost" id="isotope-filter-type-ghost" checked>
                 <label for="isotope-filter-type-ghost">Ghost</label>
-                <input type="checkbox" name="dragon" data-isotope-filter-value=".type-dragon" id="isotope-filter-type-dragon" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-dragon" id="isotope-filter-type-dragon" checked>
                 <label for="isotope-filter-type-dragon">Dragon</label>
-                <input type="checkbox" name="dark" data-isotope-filter-value=".type-dark" id="isotope-filter-type-dark" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-dark" id="isotope-filter-type-dark" checked>
                 <label for="isotope-filter-type-dark">Dark</label>
-                <input type="checkbox" name="steel" data-isotope-filter-value=".type-steel" id="isotope-filter-type-steel" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-steel" id="isotope-filter-type-steel" checked>
                 <label for="isotope-filter-type-steel">Steel</label>
-                <input type="checkbox" name="fairy" data-isotope-filter-value=".type-fairy" id="isotope-filter-type-fairy" checked>
+                <input type="checkbox" name="type" data-isotope-filter-value=".type-fairy" id="isotope-filter-type-fairy" checked>
                 <label for="isotope-filter-type-fairy">Fairy</label>
               </div>
               <div>
@@ -322,26 +323,24 @@ fairy='#ec73e9';
                 id="select-all-generation-checkboxes"
                 data-isotope-filter-group="generation"
                 data-isotope-filter-group-type="checkbox">
-                <input type="checkbox" name="one" data-isotope-filter-value=".generation-one" id="isotope-filter-generation-one" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-one" id="isotope-filter-generation-one" checked>
                 <label for="isotope-filter-generation-one">I</label>
-                <input type="checkbox" name="two" data-isotope-filter-value=".generation-two" id="isotope-filter-generation-two" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-two" id="isotope-filter-generation-two" checked>
                 <label for="isotope-filter-generation-two">II</label>
-                <input type="checkbox" name="three" data-isotope-filter-value=".generation-three" id="isotope-filter-generation-three" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-three" id="isotope-filter-generation-three" checked>
                 <label for="isotope-filter-generation-three">III</label>
-                <input type="checkbox" name="four" data-isotope-filter-value=".generation-four" id="isotope-filter-generation-four" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-four" id="isotope-filter-generation-four" checked>
                 <label for="isotope-filter-generation-four">IV</label>
-                <input type="checkbox" name="five" data-isotope-filter-value=".generation-five" id="isotope-filter-generation-five" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-five" id="isotope-filter-generation-five" checked>
                 <label for="isotope-filter-generation-five">V</label>
-                <input type="checkbox" name="six" data-isotope-filter-value=".generation-six" id="isotope-filter-generation-six" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-six" id="isotope-filter-generation-six" checked>
                 <label for="isotope-filter-generation-six">VI</label>
-                <input type="checkbox" name="seven" data-isotope-filter-value=".generation-seven" id="isotope-filter-generation-seven" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-seven" id="isotope-filter-generation-seven" checked>
                 <label for="isotope-filter-generation-seven">VII</label>
-                <input type="checkbox" name="eight" data-isotope-filter-value=".generation-eight" id="isotope-filter-generation-eight" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-eight" id="isotope-filter-generation-eight" checked>
                 <label for="isotope-filter-generation-eight">VIII</label>
-                <input type="checkbox" name="nine" data-isotope-filter-value=".generation-nine" id="isotope-filter-generation-nine" checked>
+                <input type="checkbox" name="generation" data-isotope-filter-value=".generation-nine" id="isotope-filter-generation-nine" checked>
                 <label for="isotope-filter-generation-nine">IX</label>
-<!--                 <input type="checkbox" name="10" data-isotope-filter-value=".generation-ten" id="isotope-filter-generation-ten" checked>
-                <label for="isotope-filter-generation-ten">X</label> -->
               </div>
               <fieldset class="ws:nowrap box-radio-buttons b:0 pl:32px py:0 pr:0" id="select-all-generation-checkbox">
                 <input type="radio" name="select-all-generation-checkbox" data-module="select-all.all" id="select-all-generation-checkbox-0" value="true">
@@ -395,6 +394,7 @@ fairy='#ec73e9';
         </div>
 
         <section class="row">
+          <strong class="pt:16px">Results: <span id="results-number"></span></strong>
           <div class="w:12 one" data-module="isotope.elements-container">
 <%  let pokemons = JSON.parse(include(`${process.env.PWD}/_dev/data/pokedex.json`));
     const generation_map = {
@@ -438,7 +438,10 @@ fairy='#ec73e9';
                     <strong><%= generation_map_roman[pokemon.gen] %></strong></span>
                   </div>
                   <div class="p:8px name text-align:center bb-silver:1px">
-                    <strong><%= pokemon.name %></strong><div style="height:45px;" class="text-align:center"><img src="/assets/images/pokemon/<%=pokemon.num%>.png"></div>
+                    <strong><%= pokemon.name %></strong>
+                    <div style="height:45px;" class="text-align:center">
+                      <img src="/assets/images/pokemon/<%=pokemon.num%>.png">
+                    </div>
                   </div>
                   <div class="p:4px type text-align:center color:white"><strong class="text-shadow"><%= pokemon.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join('  /  ') %></strong></div>
                 </div>
