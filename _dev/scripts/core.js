@@ -390,6 +390,17 @@ var storm_eagle = (() => {
       set_checked: (element, value) => {
         element.setAttribute('aria-checked',value.toString());
       },
+
+      get_values: (selector, attribute = null) => {
+        let button_values = [];
+        let elements = document.querySelectorAll(selector);
+        elements.forEach((el) => {
+          if (storm_eagle.button.is_checked(el)) {
+            button_values.push(attribute ? el.getAttribute(attribute) : el.value);
+          }
+        });
+        return button_values;
+      },
     },
 
     checkbox: {
