@@ -71,17 +71,6 @@ storm_eagle.module('autoload_scripts', () => {
     },
   };
 
-  const load_javascript = (key) => {
-    return new Promise((resolve, reject) => {
-      const script_element = document.createElement('script');
-      script_element.src = chill_penguin_module[key]['script_src'];
-      script_element.defer = true;
-      script_element.onload = resolve;
-      script_element.onerror = reject;
-      document.head.appendChild(script_element);
-    });
-  };
-
   return {
     initialize: () => {
       const modules = {
@@ -106,7 +95,7 @@ storm_eagle.module('autoload_scripts', () => {
 
       Object.entries(modules).forEach(([script, query]) => {
         if (document.querySelectorAll(query).length > 0) {
-          load_javascript(script).catch(error => {
+          storm_eagle.util.load_javascript(storm_eagle_module[script]['script_src']).catch(error => {
             console.error(`autoload_scripts -> ${error}`);
           });
         }
