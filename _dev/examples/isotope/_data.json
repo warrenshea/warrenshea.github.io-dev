@@ -14,9 +14,7 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.form.select-all.js",
-                "/scripts/module.isotope.js",
-                "/scripts/module.autocomplete.js"
+                "/scripts/module.isotope.js"
             ]
         }
     }
