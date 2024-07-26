@@ -41,6 +41,10 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/scripts/module.header.js',
       module_name: 'header',
     },
+    isotope: {
+      script_src: '/scripts/module.isotope.js',
+      module_name: 'isotope',
+    },
     menu_submenu: {
       script_src: '/scripts/module.menu-submenu.js',
       module_name: 'menu_submenu',
@@ -84,6 +88,7 @@ storm_eagle.module('autoload_scripts', () => {
         form_theme_gl0b3x: '.form\\:theme\\:gl0b3x',
         form_validation: `[data-module='form']`,
         header: "[data-module='header']",
+        isotope: "[data-module='isotope']",
         menu_submenu: '[data-module="menu"]',
         popover: "[data-module='popover']",
         range_slider: "[data-module='range-slider.input-container']",
