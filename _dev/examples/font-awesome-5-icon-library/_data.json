@@ -16,7 +16,6 @@
             "scripts": [
                 "/scripts/module.isotope.js",
                 "assets.js",
-                "/scripts/module.autocomplete.js",
                 "/scripts/module.form.theme.gl0b3x.js"
             ]
         }
