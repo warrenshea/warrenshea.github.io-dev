@@ -15,7 +15,6 @@
             ],
             "scripts": [
                 "/scripts/module.form.select-all.js",
-                "/scripts/libs/isotope-v3.0.6.min.js",
                 "/scripts/module.isotope.js",
                 "/scripts/module.autocomplete.js"
             ]
