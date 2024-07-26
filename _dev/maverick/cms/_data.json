@@ -16,8 +16,8 @@
             ],
             "scripts": [
                 "/scripts/libs/jquery-v1.12.4.min.js",
-                "/scripts/libs/isotope-v3.0.6.min.js",
                 "/scripts/module.slider.js",
+                "/scripts/module.isotope.js",
                 "/maverick/resources/scripts/maverick/style-guide.cms.class-config.js",
                 "/maverick/resources/scripts/maverick/style-guide.cms.js"
             ]
