@@ -15843,6 +15843,8 @@ fieldset.unstyle {
   border: 0.375rem solid #404040;
 }
 .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox] + label,
+.form\:theme\:gl0b3x .box-checkboxes input[type=radio] + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox] + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label {
   padding: 0.25rem 1rem;
   font-family: "heebo-bold";
@@ -15858,10 +15860,16 @@ fieldset.unstyle {
   white-space: nowrap;
 }
 .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox] + label::before,
+.form\:theme\:gl0b3x .box-checkboxes input[type=radio] + label::before,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox] + label::before,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio] + label::before {
   display: none;
 }
 .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:hover + label, .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:checked + label,
+.form\:theme\:gl0b3x .box-checkboxes input[type=radio]:hover + label,
+.form\:theme\:gl0b3x .box-checkboxes input[type=radio]:checked + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox]:hover + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox]:checked + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:hover + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked + label {
   color: #ffffff;
@@ -15869,9 +15877,104 @@ fieldset.unstyle {
   border: 0.125rem #3169b2 solid;
 }
 .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox]:checked:focus + label,
+.form\:theme\:gl0b3x .box-checkboxes input[type=radio]:checked:focus + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox]:checked:focus + label,
 .form\:theme\:gl0b3x .box-radio-buttons input[type=radio]:checked:focus + label {
   border: 0.125rem #789ccc solid;
   box-shadow: 0 0 0.25rem 0.1875rem rgba(120, 156, 204, 0.65);
+}
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][data-theme-color=red] + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox][data-theme-color=red] + label {
+  padding: 0.25rem 1rem;
+  font-family: "heebo-bold";
+  font-size: 0.875rem;
+  color: #ab1e23;
+  background-color: #ffffff;
+  width: 100%;
+  border: 0.125rem solid #808080;
+  line-height: 2.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(155, 27, 32, 0.65);
+  white-space: nowrap;
+}
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][data-theme-color=red] + label::before,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox][data-theme-color=red] + label::before {
+  display: none;
+}
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][data-theme-color=red]:hover + label, .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][data-theme-color=red]:checked + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox][data-theme-color=red]:hover + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox][data-theme-color=red]:checked + label {
+  color: #ffffff;
+  background-color: #ab1e23;
+  border: 0.125rem #ab1e23 solid;
+}
+.form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][data-theme-color=red]:checked:focus + label,
+.form\:theme\:gl0b3x .box-radio-buttons input[type=checkbox][data-theme-color=red]:checked:focus + label {
+  border: 0.125rem #9b1b20 solid;
+  box-shadow: 0 0 0.25rem 0.1875rem rgba(155, 27, 32, 0.65);
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=red] input[type=checkbox] + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=red] input[type=checkbox] + label {
+  padding: 0.25rem 1rem;
+  font-family: "heebo-bold";
+  font-size: 0.875rem;
+  color: #ab1e23;
+  background-color: #ffffff;
+  width: 100%;
+  border: 0.125rem solid #808080;
+  line-height: 2.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(155, 27, 32, 0.65);
+  white-space: nowrap;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=red] input[type=checkbox] + label::before,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=red] input[type=checkbox] + label::before {
+  display: none;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=red] input[type=checkbox]:hover + label, .form\:theme\:gl0b3x .box-checkboxes[data-theme-color=red] input[type=checkbox]:checked + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=red] input[type=checkbox]:hover + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=red] input[type=checkbox]:checked + label {
+  color: #ffffff;
+  background-color: #ab1e23;
+  border: 0.125rem #ab1e23 solid;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=red] input[type=checkbox]:checked:focus + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=red] input[type=checkbox]:checked:focus + label {
+  border: 0.125rem #9b1b20 solid;
+  box-shadow: 0 0 0.25rem 0.1875rem rgba(155, 27, 32, 0.65);
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=dark-goldenrod] input[type=checkbox] + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=dark-goldenrod] input[type=checkbox] + label {
+  padding: 0.25rem 1rem;
+  font-family: "heebo-bold";
+  font-size: 0.875rem;
+  color: #b7901d;
+  background-color: #ffffff;
+  width: 100%;
+  border: 0.125rem solid #808080;
+  line-height: 2.25rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(183, 144, 29, 0.65);
+  white-space: nowrap;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=dark-goldenrod] input[type=checkbox] + label::before,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=dark-goldenrod] input[type=checkbox] + label::before {
+  display: none;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=dark-goldenrod] input[type=checkbox]:hover + label, .form\:theme\:gl0b3x .box-checkboxes[data-theme-color=dark-goldenrod] input[type=checkbox]:checked + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=dark-goldenrod] input[type=checkbox]:hover + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=dark-goldenrod] input[type=checkbox]:checked + label {
+  color: #ffffff;
+  background-color: #b7901d;
+  border: 0.125rem #b7901d solid;
+}
+.form\:theme\:gl0b3x .box-checkboxes[data-theme-color=dark-goldenrod] input[type=checkbox]:checked:focus + label,
+.form\:theme\:gl0b3x .box-radio-buttons[data-theme-color=dark-goldenrod] input[type=checkbox]:checked:focus + label {
+  border: 0.125rem #b7901d solid;
+  box-shadow: 0 0 0.25rem 0.1875rem rgba(183, 144, 29, 0.65);
 }
 .form\:theme\:gl0b3x .box-checkboxes input[type=checkbox][aria-checked=mixed] + label {
   color: #ffffff;
