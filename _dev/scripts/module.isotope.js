@@ -19,21 +19,33 @@ storm_eagle.module('isotope', () => {
     initialize: () => {
       self = storm_eagle.isotope;
       state = {};
-      self.dependency.load.select_all().then(() => {
-        return self.dependency.load.isotope_lib();
-      }).then(() => {
+      self.dependency.load_all().then(() => {
         self.setup();
       }).catch(error => {
         console.error('Error loading dependencies:', error);
       });
     },
     dependency: {
+      load_all: () => {
+        return Promise.all([
+          self.dependency.load.isotope_lib(),
+          self.dependency.load.select_all(),
+          self.dependency.load.autocomplete()
+        ]);
+      },
       load: {
         select_all: () => {
           if (storm_eagle.form?.select_all) {
             return Promise.resolve();
           } else {
             return storm_eagle.util.load_javascript("/scripts/module.form.select-all.js");
+          }
+        },
+        autocomplete: () => {
+          if (storm_eagle.form?.autocomplete) {
+            return Promise.resolve();
+          } else {
+            return storm_eagle.util.load_javascript("/scripts/module.form.autocomplete.js");
           }
         },
         isotope_lib: () => {
