@@ -19,13 +19,27 @@ storm_eagle.module('isotope', () => {
     initialize: () => {
       self = storm_eagle.isotope;
       state = {};
-      self.setup();
-    },
-    ready: () => {
-      document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
-        const id = el.getAttribute('id');
-        self.ui.initialize(id);
+      self.dependency.load.select_all().then(() => {
+        return self.dependency.load.isotope_lib();
+      }).then(() => {
+        self.setup();
+      }).catch(error => {
+        console.error('Error loading dependencies:', error);
       });
+    },
+    dependency: {
+      load: {
+        select_all: () => {
+          if (storm_eagle.form?.select_all) {
+            return Promise.resolve();
+          } else {
+            return storm_eagle.util.load_javascript("/scripts/module.form.select-all.js");
+          }
+        },
+        isotope_lib: () => {
+          return storm_eagle.util.load_javascript("/scripts/libs/isotope-v3.0.6.min.js");
+        },
+      },
     },
     setup: () => {
       document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
@@ -52,6 +66,7 @@ storm_eagle.module('isotope', () => {
           custom_styles: JSON.parse(el.getAttribute('data-isotope-zebra-stripes')) || [],
         };
         self.event_listeners.initialize(id);
+        self.ui.initialize(id);
       });
     },
     config: {
@@ -92,20 +107,6 @@ storm_eagle.module('isotope', () => {
               filter_groups_ids.forEach((filter_group_id, index) => {
                 switch (filter_groups_types[index]) {
                   case "checkbox":
-                    // const all_checkboxes = document.querySelectorAll(`#${filter_group_id} > input`);
-                    // if (Array.from(all_checkboxes).every(checkbox => checkbox.checked)) {
-                    //   state[id].filters[filter_group_id] = '*';
-                    // } else {
-                    //   let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} > input`,'data-isotope-filter-value');
-
-                    //   if (document.querySelector(`#${filter_group_id}`).hasAttribute("data-isotope-or-and-bind")) {
-                    //     const or_and_value = storm_eagle.radiobutton.get_value(`#${document.querySelector(`#${filter_group_id}`).getAttribute("data-isotope-or-and-bind")} > input`);
-                    //     filter_group_checkbox_values = (or_and_value === "and") ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
-                    //   }
-                    //   state[id].filters[filter_group_id] = filter_group_checkbox_values;
-                    // }
-                    // break;
-
                     const all_checkboxes = document.querySelectorAll(`#${filter_group_id} > input`);
                     const all_checkboxes_checked = Array.from(all_checkboxes).every(checkbox => checkbox.checked);
                     filter_group_elem = document.querySelector(`#${filter_group_id}`);
