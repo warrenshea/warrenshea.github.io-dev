@@ -2,71 +2,71 @@
 storm_eagle.module('autoload_scripts', () => {
   const storm_eagle_module = {
     accordion: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.accordion.js',
+      script_src: '/scripts/module.accordion.js',
       module_name: 'accordion',
     },
     autocomplete: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.autocomplete.js',
+      script_src: '/scripts/module.autocomplete.js',
       module_name: 'autocomplete',
     },
     carousel: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.carousel.js',
+      script_src: '/scripts/module.carousel.js',
       module_name: 'carousel',
     },
     dialog: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.dialog.js',
+      script_src: '/scripts/module.dialog.js',
       module_name: 'dialog',
     },
     form_parent_checkbox: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.parent-checkbox.js',
+      script_src: '/scripts/module.form.parent-checkbox.js',
       module_name: 'form_parent_checkbox',
     },
     form_select_all: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.select-all.js',
+      script_src: '/scripts/module.form.select-all.js',
       module_name: 'form_select_all',
     },
     form_switch_button: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.switch.button.js',
+      script_src: '/scripts/module.form.switch.button.js',
       module_name: 'form_switch_button',
     },
     form_theme_gl0b3x: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.theme.gl0b3x.js',
+      script_src: '/scripts/module.form.theme.gl0b3x.js',
       module_name: 'form_theme_gl0b3x',
     },
     form_validation: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.form.validation.js',
+      script_src: '/scripts/module.form.validation.js',
       module_name: 'form_validation',
     },
     header: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.header.js',
+      script_src: '/scripts/module.header.js',
       module_name: 'header',
     },
     menu_submenu: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.menu-submenu.js',
+      script_src: '/scripts/module.menu-submenu.js',
       module_name: 'menu_submenu',
     },
     popover: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.popover.js',
+      script_src: '/scripts/module.popover.js',
       module_name: 'popover',
     },
     range_slider: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.range-slider.js',
+      script_src: '/scripts/module.range-slider.js',
       module_name: 'range_slider',
     },
     show_more: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.show-more.js',
+      script_src: '/scripts/module.show-more.js',
       module_name: 'show_more',
     },
     slider: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.slider.js',
+      script_src: '/scripts/module.slider.js',
       module_name: 'slider',
     },
     tabs: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.tabs.js',
+      script_src: '/scripts/module.tabs.js',
       module_name: 'tabs',
     },
     waypoint: {
-      script_src: '/dist/codebase/chill-penguin/scripts/module.waypoint.js',
+      script_src: '/scripts/module.waypoint.js',
       module_name: 'waypoint',
     },
   };
