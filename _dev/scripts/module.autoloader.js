@@ -5,10 +5,6 @@ storm_eagle.module('autoload_scripts', () => {
       script_src: '/scripts/module.accordion.js',
       module_name: 'accordion',
     },
-    autocomplete: {
-      script_src: '/scripts/module.autocomplete.js',
-      module_name: 'autocomplete',
-    },
     carousel: {
       script_src: '/scripts/module.carousel.js',
       module_name: 'carousel',
@@ -16,6 +12,10 @@ storm_eagle.module('autoload_scripts', () => {
     dialog: {
       script_src: '/scripts/module.dialog.js',
       module_name: 'dialog',
+    },
+    form_autocomplete: {
+      script_src: '/scripts/module.form.autocomplete.js',
+      module_name: 'form_autocomplete',
     },
     form_parent_checkbox: {
       script_src: '/scripts/module.form.parent-checkbox.js',
@@ -79,9 +79,9 @@ storm_eagle.module('autoload_scripts', () => {
     initialize: () => {
       const modules = {
         accordion: '[data-module="accordion"]',
-        autocomplete: "[data-module='autocomplete']",
         carousel: "[data-module='carousel']",
         dialog: "[data-module='dialog']",
+        form_autocomplete: "[data-module='autocomplete']",
         form_parent_checkbox: '[data-module="parent-checkbox"]',
         form_select_all: '[data-module="select-all"]',
         form_switch_button: '[data-module="switch.button"]',
