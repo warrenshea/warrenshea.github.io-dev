@@ -8,12 +8,6 @@ storm_eagle.module('form.select_all', () => {
       state = {};
       self.setup();
     },
-    ready: () => {
-      document.querySelectorAll('[data-module="select-all"]').forEach((el) => {
-        const id = el.getAttribute('id');
-        self.ui.initialize(id);
-      });
-    },
     setup: () => {
       document.querySelectorAll('[data-module="select-all"]').forEach((el) => {
         const id = el.getAttribute('id');
@@ -24,12 +18,17 @@ storm_eagle.module('form.select_all', () => {
           select_all_radiobuttons_id: el.getAttribute('data-select-all-bind'),
           onupdate: el.getAttribute('data-select-all-onupdate-func') || false,
         };
+        self.ui.initialize(id);
         self.event_listeners.elements.initialize(id);
         self.event_listeners.select_all_radiobuttons.initialize(id);
       });
     },
     ui: {
       initialize: (id) => {
+        self.ui.set_select_all_radio(id);
+      },
+      set_select_all_radio_wrapper: () => {
+        const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all"]').getAttribute('id');
         self.ui.set_select_all_radio(id);
       },
       set_select_all_radio: (id) => {
@@ -48,17 +47,27 @@ storm_eagle.module('form.select_all', () => {
         });
         if (count === 0) {
           /* None */
-          document.querySelectorAll(`#${select_all_radiobuttons_id} > input`)[1].checked = true;
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).checked = true;
         } else if (count === type_elements.length) {
           /* All */
-          document.querySelectorAll(`#${select_all_radiobuttons_id} > input`)[0].checked = true;
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).checked = true;
         } else {
           /* Some */
-          document.querySelectorAll(`#${select_all_radiobuttons_id} > input`)[2].checked = true;
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.some']`).checked = true;
         }
         if (onupdate) {
           storm_eagle.util.run_str_func( onupdate, { id } );
         }
+      },
+      set_all_elements_true: () => {
+        const select_all_options_id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all.options"]').getAttribute('id');
+        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute("id");
+        self.ui.set_all_elements(id, true);
+      },
+      set_all_elements_false: () => {
+        const select_all_options_id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all.options"]').getAttribute('id');
+        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute("id");
+        self.ui.set_all_elements(id, false);
       },
       set_all_elements: (id, value) => {
         const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
@@ -84,23 +93,18 @@ storm_eagle.module('form.select_all', () => {
         initialize: (id) => {
           const { type_elements } = state[id];
           type_elements.forEach((el) => {
-            el.addEventListener('click', (event) => {
-              setTimeout(() => {
-                self.ui.set_select_all_radio(id);
-              }, 0);
-            });
+            el.removeEventListener('click', self.ui.set_select_all_radio_wrapper);
+            el.addEventListener('click', self.ui.set_select_all_radio_wrapper);
           });
         }
       },
       select_all_radiobuttons: {
         initialize: (id) => {
           const { select_all_radiobuttons_id } = state[id];
-          document.querySelectorAll(`#${select_all_radiobuttons_id} > input`)[0].addEventListener('click', (event) => {
-            self.ui.set_all_elements(id, true);
-          });
-          document.querySelectorAll(`#${select_all_radiobuttons_id} > input`)[1].addEventListener('click', (event) => {
-            self.ui.set_all_elements(id, false);
-          });
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).removeEventListener('click', self.ui.set_all_elements_true);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).addEventListener('click', self.ui.set_all_elements_true);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).removeEventListener('click', self.ui.set_all_elements_false);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).addEventListener('click', self.ui.set_all_elements_false);
         }
       },
     },
