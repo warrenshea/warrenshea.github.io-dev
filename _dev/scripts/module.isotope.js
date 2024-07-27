@@ -113,67 +113,71 @@ storm_eagle.module('isotope', () => {
             }
           },
           filter: (id) => {
-            const { filter_initial, filter_no_results, filter_groups_ids, filter_groups_types } = state[id];
-            let filter_group_elem;
-            if (filter_groups_ids.length > 0) {
-              filter_groups_ids.forEach((filter_group_id, index) => {
-                switch (filter_groups_types[index]) {
-                  case "checkbox":
-                    const all_checkboxes = document.querySelectorAll(`#${filter_group_id} > input`);
-                    const all_checkboxes_checked = Array.from(all_checkboxes).every(checkbox => checkbox.checked);
-                    filter_group_elem = document.querySelector(`#${filter_group_id}`);
+            //this setTimeout ensures the select_all event listener is run first, regardless of when the event listener is initialized
+            //the select_all has to run first or the checkboxes will not be accurately retrieved
+            setTimeout(() => {
+              const { filter_initial, filter_no_results, filter_groups_ids, filter_groups_types } = state[id];
+              let filter_group_elem;
+              if (filter_groups_ids.length > 0) {
+                filter_groups_ids.forEach((filter_group_id, index) => {
+                  switch (filter_groups_types[index]) {
+                    case "checkbox":
+                      const all_checkboxes = document.querySelectorAll(`#${filter_group_id} > input`);
+                      const all_checkboxes_checked = Array.from(all_checkboxes).every(checkbox => checkbox.checked);
+                      filter_group_elem = document.querySelector(`#${filter_group_id}`);
 
-                    if (all_checkboxes_checked) {
-                      state[id].filters[filter_group_id] = '*';
-                    } else {
-                      let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} > input`, 'data-isotope-filter-value');
-
-                      if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
-                        const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
-                        const or_and_value = storm_eagle.radiobutton.get_value(`#${or_and_bind_id} > input`);
-                        filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
-                      }
-                      state[id].filters[filter_group_id] = filter_group_checkbox_values;
-                    }
-                    break;
-                  case "radiobutton":
-                    state[id].filters[filter_group_id] = storm_eagle.radiobutton.get_value(`#${filter_group_id} > input`,'data-isotope-filter-value');
-                    break;
-                  case "input_autocomplete":
-                    if (document.querySelector(`#${filter_group_id}`).hasAttribute('data-autocomplete-values')) {
-                      if (document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values') === '[]') {
-                        state[id].filters[filter_group_id] = filter_initial;
+                      if (all_checkboxes_checked) {
+                        state[id].filters[filter_group_id] = '*';
                       } else {
-                        state[id].filters[filter_group_id] = (JSON.parse(document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values')).map(str => str.toLowerCase()));
+                        let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} > input`, 'data-isotope-filter-value');
+
+                        if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
+                          const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
+                          const or_and_value = storm_eagle.radiobutton.get_value(`#${or_and_bind_id} > input`);
+                          filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
+                        }
+                        state[id].filters[filter_group_id] = filter_group_checkbox_values;
                       }
-                    }
-                    break;
-                  case "switch":
-                    const all_switches = document.querySelectorAll(`#${filter_group_id} > button`);
-                    const all_switches_checked = Array.from(document.querySelectorAll('button[aria-checked]')).every(button => button.getAttribute('aria-checked') === 'true');
-
-                    filter_group_elem = document.querySelector(`#${filter_group_id}`);
-
-                    if (all_switches_checked) {
-                      state[id].filters[filter_group_id] = '*';
-                    } else {
-                      let filter_group_checkbox_values = storm_eagle.button.get_values(`#${filter_group_id} > button`, 'data-isotope-filter-value');
-
-                      if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
-                        const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
-                        const or_and_value = storm_eagle.button.get_value(`#${or_and_bind_id} > button`);
-                        filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
+                      break;
+                    case "radiobutton":
+                      state[id].filters[filter_group_id] = storm_eagle.radiobutton.get_value(`#${filter_group_id} > input`,'data-isotope-filter-value');
+                      break;
+                    case "input_autocomplete":
+                      if (document.querySelector(`#${filter_group_id}`).hasAttribute('data-autocomplete-values')) {
+                        if (document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values') === '[]') {
+                          state[id].filters[filter_group_id] = filter_initial;
+                        } else {
+                          state[id].filters[filter_group_id] = (JSON.parse(document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values')).map(str => str.toLowerCase()));
+                        }
                       }
-                      state[id].filters[filter_group_id] = filter_group_checkbox_values;
-                    }
-                    break;
-                  default:
-                    break;
-                }
-              });
-              //console.log(state[id].filters);
-              state[id].filter_values = storm_eagle.isotope.util.combine_obj_value(state[id].filters);
-            }
+                      break;
+                    case "switch":
+                      const all_switches = document.querySelectorAll(`#${filter_group_id} > button`);
+                      const all_switches_checked = Array.from(document.querySelectorAll('button[aria-checked]')).every(button => button.getAttribute('aria-checked') === 'true');
+
+                      filter_group_elem = document.querySelector(`#${filter_group_id}`);
+
+                      if (all_switches_checked) {
+                        state[id].filters[filter_group_id] = '*';
+                      } else {
+                        let filter_group_checkbox_values = storm_eagle.button.get_values(`#${filter_group_id} > button`, 'data-isotope-filter-value');
+
+                        if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
+                          const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
+                          const or_and_value = storm_eagle.button.get_value(`#${or_and_bind_id} > button`);
+                          filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
+                        }
+                        state[id].filters[filter_group_id] = filter_group_checkbox_values;
+                      }
+                      break;
+                    default:
+                      break;
+                  }
+                });
+                // console.log(state[id].filters);
+                state[id].filter_values = storm_eagle.isotope.util.combine_obj_value(state[id].filters);
+              }
+            }, 0);
           }
         },
       },
@@ -293,10 +297,10 @@ storm_eagle.module('isotope', () => {
         const { el } = state[id];
         el.querySelectorAll(`[data-module="select-all"]`).forEach((select_all_el) => {
           const select_all_radiobuttons_id = select_all_el.getAttribute('data-select-all-bind');
-          el.querySelector(`#${select_all_radiobuttons_id} > [data-module='select-all.all']`).removeEventListener('click', self.event_listeners.set.filter);
-          el.querySelector(`#${select_all_radiobuttons_id} > [data-module='select-all.all']`).addEventListener('click', self.event_listeners.set.filter);
-          el.querySelector(`#${select_all_radiobuttons_id} > [data-module='select-all.none']`).removeEventListener('click', self.event_listeners.set.filter);
-          el.querySelector(`#${select_all_radiobuttons_id} > [data-module='select-all.none']`).addEventListener('click', self.event_listeners.set.filter);
+          el.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).removeEventListener('click', self.event_listeners.set.filter);
+          el.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).addEventListener('click', self.event_listeners.set.filter);
+          el.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).removeEventListener('click', self.event_listeners.set.filter);
+          el.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).addEventListener('click', self.event_listeners.set.filter);
         });
       },
       or_and: (id) => {
@@ -304,10 +308,10 @@ storm_eagle.module('isotope', () => {
         el.querySelectorAll(`[data-module="select-all"]`).forEach((select_all_el) => {
           if (select_all_el.getAttribute('data-isotope-or-and-bind')) {
             const isotope_or_and_radiobuttons_id = select_all_el.getAttribute('data-isotope-or-and-bind');
-            el.querySelector(`#${isotope_or_and_radiobuttons_id} > [data-module='isotope.or']`).removeEventListener('click', self.event_listeners.set.filter);
-            el.querySelector(`#${isotope_or_and_radiobuttons_id} > [data-module='isotope.or']`).addEventListener('click', self.event_listeners.set.filter);
-            el.querySelector(`#${isotope_or_and_radiobuttons_id} > [data-module='isotope.and']`).removeEventListener('click', self.event_listeners.set.filter);
-            el.querySelector(`#${isotope_or_and_radiobuttons_id} > [data-module='isotope.and']`).addEventListener('click', self.event_listeners.set.filter);
+            el.querySelector(`#${isotope_or_and_radiobuttons_id} > input[data-module='isotope.or']`).removeEventListener('click', self.event_listeners.set.filter);
+            el.querySelector(`#${isotope_or_and_radiobuttons_id} > input[data-module='isotope.or']`).addEventListener('click', self.event_listeners.set.filter);
+            el.querySelector(`#${isotope_or_and_radiobuttons_id} > input[data-module='isotope.and']`).removeEventListener('click', self.event_listeners.set.filter);
+            el.querySelector(`#${isotope_or_and_radiobuttons_id} > input[data-module='isotope.and']`).addEventListener('click', self.event_listeners.set.filter);
           }
         });
       }
