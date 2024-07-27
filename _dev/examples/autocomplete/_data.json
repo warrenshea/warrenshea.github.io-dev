@@ -14,7 +14,7 @@
                 "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/module.autocomplete.js",
+                "/scripts/module.form.autocomplete.js",
                 "/scripts/module.form.theme.gl0b3x.js"
             ]
         }
