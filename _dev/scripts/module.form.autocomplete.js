@@ -1,5 +1,5 @@
 'use strict';
-storm_eagle.module('autocomplete', () => {
+storm_eagle.module('form.autocomplete', () => {
   let self;
   let state = {};
   return {
@@ -11,7 +11,7 @@ storm_eagle.module('autocomplete', () => {
       }
     },
     initialize: () => {
-      self = storm_eagle.autocomplete;
+      self = storm_eagle.form.autocomplete;
       state = {};
       self.setup();
     },
@@ -299,9 +299,9 @@ storm_eagle.module('autocomplete', () => {
         const result_string = self.util.modify_format(input_format,entry);
         const input_id = input.getAttribute("id");
         if (type === "single-select") {
-          return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${result_string}" onclick="storm_eagle.autocomplete.ui.autocomplete_fill('${id}', ${index}, '${result_string}');storm_eagle.autocomplete.action.close();">${storm_eagle.util.encode_html_entities(result_string)}</li>`;
+          return `\n        <li role="option" data-module="autocomplete.results-item" id="autocomplete-suggestion-${index}" class="unstyle w:100% display:flex align:middle" data-sr-description="${result_string}" onclick="storm_eagle.form.autocomplete.ui.autocomplete_fill('${id}', ${index}, '${result_string}');storm_eagle.form.autocomplete.action.close();">${storm_eagle.util.encode_html_entities(result_string)}</li>`;
         } else if (type === "multiselect") {
-          return `\n        <li role='option' data-module="autocomplete.results-item" id='autocomplete-suggestion-${index}' class='unstyle w:100% display:flex align:middle' data-sr-description='${result_string}' onclick='storm_eagle.autocomplete.ui.autocomplete_fill("${id}", ${index}, "${result_string}");document.getElementById("${input_id}").focus();'>${storm_eagle.util.encode_html_entities(result_string)}</li>`;
+          return `\n        <li role='option' data-module="autocomplete.results-item" id='autocomplete-suggestion-${index}' class='unstyle w:100% display:flex align:middle' data-sr-description='${result_string}' onclick='storm_eagle.form.autocomplete.ui.autocomplete_fill("${id}", ${index}, "${result_string}");document.getElementById("${input_id}").focus();'>${storm_eagle.util.encode_html_entities(result_string)}</li>`;
         }
       },
       autocomplete_fill: (id, index, result_string) => {
@@ -355,7 +355,7 @@ storm_eagle.module('autocomplete', () => {
         return result_string;
       },
       create_tag_html: (id, index, result_string) => {
-        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px display:flex align:middle' data-autocomplete-tag='${index}'>${storm_eagle.util.encode_html_entities(result_string)} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white pl:4px lh:0' onclick='storm_eagle.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
+        return `<div class='heebo:bold py:2px px:8px brr:4px mr:4px my:2px b-silver:1px display:flex align:middle' data-autocomplete-tag='${index}'>${storm_eagle.util.encode_html_entities(result_string)} <button data-module='autocomplete.tag.button' class='heebo:bold fs:20px color:white pl:4px lh:0' onclick='storm_eagle.form.autocomplete.ui.remove_selected("${id}", ${index});'>&times;</button></div>`;
       }
     }
   };
