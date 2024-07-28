@@ -332,11 +332,12 @@
 }
 
 .isotope-card-tag {
-  margin: rem-calc(4) rem-calc(8);
-  padding: rem-calc(4);
+  margin: rem-calc(2) rem-calc(8);
+  padding: 0 rem-calc(8);
   border-radius: rem-calc(4);
   background: $blue;
-  color: $white
+  color: $white;
+  font-family: 'heebo-bold';
 }
 
 .form\:theme\:cms {
