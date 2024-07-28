@@ -32,32 +32,34 @@ storm_eagle.module('form.select_all', () => {
         self.ui.set_select_all_radio(id);
       },
       set_select_all_radio: (id) => {
-        let count = 0;
-        const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
-        type_elements.forEach((el) => {
-          if (type === 'checkbox') {
-            if (storm_eagle.checkbox.is_checked(el)) {
-              count++;
+        setTimeout(() => {
+          let count = 0;
+          const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
+          type_elements.forEach((el) => {
+            if (type === 'checkbox') {
+              if (storm_eagle.checkbox.is_checked(el)) {
+                count++;
+              }
+            } else if (type === 'switch') {
+              if (storm_eagle.button.is_checked(el)) {
+                count++;
+              }
             }
-          } else if (type === 'switch') {
-            if (storm_eagle.button.is_checked(el)) {
-              count++;
-            }
+          });
+          if (count === 0) {
+            /* None */
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).checked = true;
+          } else if (count === type_elements.length) {
+            /* All */
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).checked = true;
+          } else {
+            /* Some */
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.some']`).checked = true;
           }
-        });
-        if (count === 0) {
-          /* None */
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).checked = true;
-        } else if (count === type_elements.length) {
-          /* All */
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).checked = true;
-        } else {
-          /* Some */
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.some']`).checked = true;
-        }
-        if (onupdate) {
-          storm_eagle.util.run_str_func( onupdate, { id } );
-        }
+          if (onupdate) {
+            storm_eagle.util.run_str_func( onupdate, { id } );
+          }
+        }, 0);
       },
       set_all_elements_true: () => {
         const select_all_options_id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all.options"]').getAttribute('id');
