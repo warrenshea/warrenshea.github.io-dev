@@ -524,7 +524,7 @@ fieldset.unstyle {
         position: absolute;
       }
       &[data-range-slider] + input[type='range'][data-range-slider] + [data-module='slider.background'] {
-        margin-top: rem-calc(-16);
+        margin-top: rem-calc(-20);
       }
     }
   }
