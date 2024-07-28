@@ -76,6 +76,7 @@ storm_eagle.module('isotope', () => {
           filter_groups_types: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group-type') || null),
           filtered_elements_id: el.getAttribute('data-isotope-number-filtered-elements-bind-id') || null,
           custom_styles: JSON.parse(el.getAttribute('data-isotope-zebra-stripes')) || [],
+          onupdate: el.getAttribute('data-isotope-onupdate-func') || false,
         };
         self.event_listeners.initialize(id);
         self.ui.initialize(id);
@@ -196,7 +197,7 @@ storm_eagle.module('isotope', () => {
     },
     ui : {
       initialize: (id) => {
-        const { layout_mode, filter_initial, sort_data_config, elements_container } = state[id];
+        const { layout_mode, filter_initial, sort_data_config, elements_container, onupdate } = state[id];
         self.config.state.set.sort_by(id);
         self.config.state.set.sort_ascending(id);
         self.config.state.set.filter(id);
@@ -212,10 +213,13 @@ storm_eagle.module('isotope', () => {
         state[id].isotope_object = new Isotope(elements_container, config);
         self.config.state.get.number_filtered_elements(id);
         self.ui.custom_styles(id);
+        if (onupdate) {
+          storm_eagle.util.run_str_func( onupdate, { id } );
+        }
         //console.log(state[id].isotope_object);
       },
       refresh: (id) => {
-        const { filter_no_results } = state[id];
+        const { filter_no_results, onupdate } = state[id];
         setTimeout(() => {
           //console.log(self.config.state.get.filter(id));
           const new_config = {
@@ -227,9 +231,12 @@ storm_eagle.module('isotope', () => {
           state[id].isotope_object.arrange(new_config);
           self.config.state.get.number_filtered_elements(id);
           self.ui.custom_styles(id);
+          if (onupdate) {
+            storm_eagle.util.run_str_func( onupdate, { id } );
+          }
           setTimeout(() => {
             storm_eagle.equalize_heights.force_resize();
-          },100);
+          },250);
         },100);
       },
       refresh_all: () => {
