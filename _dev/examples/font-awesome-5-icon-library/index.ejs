@@ -159,7 +159,7 @@
           tags_array = tags.split(",");
           let all_isotope_keywords = "";
           tags_array.forEach((el,index) => {
-            all_isotope_keywords += " keyword-" + el.toString().replace(/ /g,"_"); //convert space to underscore;
+            all_isotope_keywords += " keyword-" + el.toString().replace(/ /g,"-"); //convert space to dashes;
           });
 
           //create each asset's html
