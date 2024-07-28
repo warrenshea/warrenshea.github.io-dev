@@ -124,7 +124,7 @@ storm_eagle.module('isotope', () => {
                   state[id].filters[filter_groups_key[index]] = [];
                 });
                 filter_groups_ids.forEach((filter_group_id, index) => {
-                  console.log(filter_groups_key[index]);
+                  //console.log(filter_groups_key[index]);
                   switch (filter_groups_types[index]) {
                     case "checkbox":
                       const all_checkboxes = document.querySelectorAll(`#${filter_group_id} input`);
@@ -142,7 +142,7 @@ storm_eagle.module('isotope', () => {
                           const or_and_value = storm_eagle.radiobutton.get_value(`#${or_and_bind_id}  input`);
                           filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
                         }
-                        console.log(filter_group_checkbox_values);
+                        //console.log(filter_group_checkbox_values);
                         state[id].filters[filter_groups_key[index]] = [...new Set([...(state[id].filters[filter_groups_key[index]] || []), ...filter_group_checkbox_values])];
                       }
                       break;
@@ -152,10 +152,8 @@ storm_eagle.module('isotope', () => {
                     case "input_autocomplete":
                       if (document.querySelector(`#${filter_group_id}`).hasAttribute('data-autocomplete-values')) {
                         if (document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values') === '[]') {
-                          console.log("empty");
                           state[id].filters[filter_groups_key[index]] = filter_initial;
                         } else {
-                          console.log("not empty");
                           state[id].filters[filter_groups_key[index]] = (JSON.parse(document.querySelector(`#${filter_group_id}`).getAttribute('data-autocomplete-values'))
                             .map(str => str.toLowerCase().replace(/ /g, '-')));
                         }
@@ -179,7 +177,7 @@ storm_eagle.module('isotope', () => {
                           const or_and_value = storm_eagle.button.get_value(`#${or_and_bind_id} button`);
                           filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
                         }
-                        console.log(filter_group_checkbox_values);
+                        //console.log(filter_group_checkbox_values);
                         state[id].filters[filter_groups_key[index]] = [...new Set([...(state[id].filters[filter_groups_key[index]] || []), ...filter_group_checkbox_values])];
                       }
                       break;
@@ -187,7 +185,7 @@ storm_eagle.module('isotope', () => {
                       break;
                   }
                 });
-                 console.log(state[id].filters);
+                //console.log(state[id].filters);
                 state[id].filter_values = storm_eagle.isotope.util.combine_obj_value(state[id].filters);
               }
             }, 0);
