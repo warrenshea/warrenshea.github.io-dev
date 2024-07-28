@@ -2134,12 +2134,12 @@
                 <label for="select-all-box-checkbox-required-3" class="mb:4px py:2px">Checkbox 3</label>
               </div>
 
-              <fieldset class="box-radio-buttons b:0 p:0 mx:0 mb:0 mt:4px" id="select-all-box-checkbox">
-                <input type="radio" name="select-all-box-checkbox" id="select-all-box-checkbox-0" value="true">
+              <fieldset class="box-radio-buttons b:0 p:0 mx:0 mb:0 mt:4px" data-module="select-all.options" id="select-all-box-checkbox">
+                <input type="radio" name="select-all-box-checkbox" data-module='select-all.all' id="select-all-box-checkbox-0" value="true">
                 <label for="select-all-box-checkbox-0" class="box-radio-label">All</label>
-                <input type="radio" name="select-all-box-checkbox" id="select-all-box-checkbox-1" value="false">
+                <input type="radio" name="select-all-box-checkbox" data-module='select-all.none' id="select-all-box-checkbox-1" value="false">
                 <label for="select-all-box-checkbox-1" class="box-radio-label">None</label>
-                <input type="radio" name="select-all-box-checkbox" id="select-all-box-checkbox-2" value="mixed" disabled>
+                <input type="radio" name="select-all-box-checkbox" data-module='select-all.some' id="select-all-box-checkbox-2" value="mixed" disabled>
                 <label for="select-all-box-checkbox-2" class="box-radio-label">Some</label>
               </fieldset>
 
@@ -2174,12 +2174,12 @@
                 </button>
               </div>
 
-              <fieldset class="box-radio-buttons b:0 p:0 mx:0 mb:0 mt:4px" id="select-all-switch">
-                <input type="radio" name="select-all-switches" id="select-all-switches-0" value="true">
+              <fieldset class="box-radio-buttons b:0 p:0 mx:0 mb:0 mt:4px" data-module="select-all.options" id="select-all-switch">
+                <input type="radio" name="select-all-switches"data-module='select-all.all' id="select-all-switches-0" value="true">
                 <label for="select-all-switches-0" class="box-radio-label">All</label>
-                <input type="radio" name="select-all-switches" id="select-all-switches-1" value="false">
+                <input type="radio" name="select-all-switches"data-module='select-all.none' id="select-all-switches-1" value="false">
                 <label for="select-all-switches-1" class="box-radio-label">None</label>
-                <input type="radio" name="select-all-switches" id="select-all-switches-2" value="mixed" disabled>
+                <input type="radio" name="select-all-switches"data-module='select-all.some' id="select-all-switches-2" value="mixed" disabled>
                 <label for="select-all-switches-2" class="box-radio-label">Some</label>
               </fieldset>
             </div>
