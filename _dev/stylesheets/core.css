@@ -489,6 +489,29 @@ strong {
   padding-right: 0;
 }
 
+.row-p {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 48rem) and (max-width: 63.99rem) {
+  .row-p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 64rem) and (max-width: 79.99rem) {
+  .row-p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .row-p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .row0 {
   display: flex;
   flex-flow: row wrap;
@@ -5634,6 +5657,29 @@ strong {
 }
 .grid > * {
   grid-column: span 12;
+}
+
+.grid-p {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media screen and (min-width: 48rem) and (max-width: 63.99rem) {
+  .grid-p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 64rem) and (max-width: 79.99rem) {
+  .grid-p {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .grid-p {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .grid .grid {
