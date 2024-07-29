@@ -28,6 +28,23 @@
   padding-right: rem-calc(0);
 }
 
+.row-p {
+  padding-left: rem-calc(24);
+  padding-right: rem-calc(24);
+  @include breakpoint(medium only) {
+    padding-left: rem-calc(32);
+    padding-right: rem-calc(32);
+  }
+  @include breakpoint(large only) {
+    padding-left: rem-calc(32);
+    padding-right: rem-calc(32);
+  }
+  @include breakpoint(xlarge up) {
+    padding-left: rem-calc(0);
+    padding-right: rem-calc(0);
+  }
+}
+
 .row0 {
   display: flex;
   flex-flow: row wrap;
