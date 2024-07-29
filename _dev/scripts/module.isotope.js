@@ -236,16 +236,32 @@ storm_eagle.module('isotope', () => {
           }
           setTimeout(() => {
             storm_eagle.equalize_heights.force_resize();
-          },250);
+          },500);
         },100);
       },
       refresh_all: () => {
         document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
-          const id = el.getAttribute('id');
-          self.config.state.set.sort_by(id);
-          self.config.state.set.sort_ascending(id);
-          self.config.state.set.filter(id);
-          self.ui.refresh(id);
+          if (el.offsetParent !== null) {
+            const id = el.getAttribute('id');
+            if (state[id]) {
+              //console.log("refresh_all");
+              self.config.state.set.sort_by(id);
+              self.config.state.set.sort_ascending(id);
+              self.config.state.set.filter(id);
+              self.ui.refresh(id);
+            }
+          }
+        });
+      },
+      rearrange_heights: () => {
+        document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
+          if (el.offsetParent !== null) {
+            //console.log("rearrange_heights");
+            const id = el.getAttribute('id');
+            if (state[id]) {
+              self.ui.refresh(id);
+            }
+          }
         });
       },
       custom_styles: (id) => {
