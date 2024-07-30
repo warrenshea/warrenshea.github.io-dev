@@ -4,6 +4,9 @@
     &[aria-expanded='false'] {
       [data-module='menu.inactive'] {
         display: block;
+        &.display\:flex {
+          display:flex
+        }
       }
       [data-module='menu.active'] {
         display: none;
@@ -15,7 +18,11 @@
       }
       [data-module='menu.active'] {
         display: block;
+        &.display\:flex {
+          display:flex
+        }
       }
+
     }
   }
 }
