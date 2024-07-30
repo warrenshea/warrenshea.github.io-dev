@@ -13,6 +13,26 @@ storm_eagle.module('prism', () => {
   return {
     initialize: () => {
       self = storm_eagle.prism;
+      self.dependency.load_all().then(() => {
+        self.setup();
+      }).catch(error => {
+        console.error('Error loading dependencies:', error);
+      });
+    },
+    dependency: {
+      load_all: () => {
+        return Promise.all([
+          self.dependency.load.prism_lib(),
+        ]);
+      },
+      load: {
+        prism_lib: () => {
+          return storm_eagle.util.load_css("/stylesheets/libs/prism-v1.29.0.min.css");
+          return storm_eagle.util.load_javascript("/scripts/libs/prism-v1.29.0.min.js");
+        },
+      },
+    },
+    setup: () => {
       if (document.querySelectorAll('[data-code-reference]').length > 0) {
         self.link_code_with_prism_snippet();
       }
