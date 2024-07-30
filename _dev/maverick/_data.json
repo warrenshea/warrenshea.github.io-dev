@@ -11,12 +11,10 @@
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css",
-                "/stylesheets/libs/prism-v1.29.0.min.css"
+                "/stylesheets/core.css"
             ],
             "scripts": [
                 "/scripts/libs/jquery-v1.12.4.min.js",
-                "/scripts/libs/prism-v1.29.0.min.js",
                 "/scripts/module.slider.js",
                 "/maverick/resources/scripts/maverick/style-guide.default.js"
             ]
