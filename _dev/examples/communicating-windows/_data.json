@@ -11,11 +11,9 @@
                 "metaPageDescription": ""
             },
             "stylesheets": [
-                "/stylesheets/core.css",
-                "/stylesheets/libs/prism-v1.29.0.min.css"
+                "/stylesheets/core.css"
             ],
             "scripts": [
-                "/scripts/libs/prism-v1.29.0.min.js",
                 "/scripts/module.form.theme.gl0b3x.js",
                 "/scripts/prism.js"
             ]
