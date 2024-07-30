@@ -23449,6 +23449,9 @@ ul.checkmark-list > li {
 [data-module=menu] [data-module="menu.trigger"][aria-expanded=false] [data-module="menu.inactive"] {
   display: block;
 }
+[data-module=menu] [data-module="menu.trigger"][aria-expanded=false] [data-module="menu.inactive"].display\:flex {
+  display: flex;
+}
 [data-module=menu] [data-module="menu.trigger"][aria-expanded=false] [data-module="menu.active"] {
   display: none;
 }
@@ -23457,6 +23460,9 @@ ul.checkmark-list > li {
 }
 [data-module=menu] [data-module="menu.trigger"][aria-expanded=true] [data-module="menu.active"] {
   display: block;
+}
+[data-module=menu] [data-module="menu.trigger"][aria-expanded=true] [data-module="menu.active"].display\:flex {
+  display: flex;
 }
 
 /* file: module.dialog.scss------------------------------------------------ */
