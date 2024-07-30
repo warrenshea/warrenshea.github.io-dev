@@ -25,7 +25,7 @@
           // console.log(`receiving message: ${event.data}`);
           if (event.data !== "") {
             let { action, new_height, id } = JSON.parse(event.data);
-            if (action === "update_height") {
+            if (action === "update_height" && state[id]['iframe'].offsetParent !== null) {
               // console.log(state[id]['iframe']);
               // console.log(`grid_overlay.js > message recieved > ${new_height}:${id}`);
               new_height = parseInt(new_height);
