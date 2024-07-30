@@ -15,6 +15,7 @@ storm_eagle.module('prism', () => {
       self = storm_eagle.prism;
       self.dependency.load_all().then(() => {
         self.setup();
+        self.force_prism_reinit();
       }).catch(error => {
         console.error('Error loading dependencies:', error);
       });
@@ -22,12 +23,15 @@ storm_eagle.module('prism', () => {
     dependency: {
       load_all: () => {
         return Promise.all([
-          self.dependency.load.prism_lib(),
+          self.dependency.load.prism_css_lib(),
+          self.dependency.load.prism_js_lib(),
         ]);
       },
       load: {
-        prism_lib: () => {
+        prism_css_lib: () => {
           return storm_eagle.util.load_css("/stylesheets/libs/prism-v1.29.0.min.css");
+        },
+        prism_js_lib: () => {
           return storm_eagle.util.load_javascript("/scripts/libs/prism-v1.29.0.min.js");
         },
       },
