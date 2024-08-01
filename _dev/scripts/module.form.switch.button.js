@@ -17,12 +17,12 @@ storm_eagle.module('form.switch_button', () => {
           thumb: el.querySelector(':scope > [data-module="switch.slider"] > [data-module="switch.thumb"]'),
           text: el.querySelector(':scope > [data-module="switch.slider"] > [data-module="switch.text"]'),
           label: (el.nextElementSibling?.tagName.toLowerCase() === "label") ? el.nextElementSibling : false,
-          text_active_classes: el.getAttribute('data-switch-text-active-classes') ? el.getAttribute('data-switch-text-active-classes').split(',') : '',
-          text_inactive_classes: el.getAttribute('data-switch-text-inactive-classes') ? el.getAttribute('data-switch-text-inactive-classes').split(',') : '',
-          bg_active_classes: el.getAttribute('data-switch-bg-active-classes') ? el.getAttribute('data-switch-bg-active-classes').split(',') : '',
-          bg_inactive_classes: el.getAttribute('data-switch-bg-inactive-classes') ? el.getAttribute('data-switch-bg-inactive-classes').split(',') : '',
-          thumb_active_class: el.getAttribute('data-switch-thumb-active-class') ? el.getAttribute('data-switch-thumb-active-class').split(',') : '',
-          thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? el.getAttribute('data-switch-thumb-inactive-class').split(',') : '',
+          text_active_classes: el.getAttribute('data-switch-text-active-classes') ? JSON.parse(el.getAttribute('data-switch-text-active-classes')): [],
+          text_inactive_classes: el.getAttribute('data-switch-text-inactive-classes') ? JSON.parse(el.getAttribute('data-switch-text-inactive-classes')): [],
+          bg_active_classes: el.getAttribute('data-switch-bg-active-classes') ? JSON.parse(el.getAttribute('data-switch-bg-active-classes')): [],
+          bg_inactive_classes: el.getAttribute('data-switch-bg-inactive-classes') ? JSON.parse(el.getAttribute('data-switch-bg-inactive-classes')): [],
+          thumb_active_class: el.getAttribute('data-switch-thumb-active-class') ? JSON.parse(el.getAttribute('data-switch-thumb-active-class')): [],
+          thumb_inactive_class: el.getAttribute('data-switch-thumb-inactive-class') ? JSON.parse(el.getAttribute('data-switch-thumb-inactive-class')): [],
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
