@@ -20,8 +20,8 @@ storm_eagle.module('menu_submenu', () => {
           all_triggers: el.querySelectorAll(':scope > li > [data-module="menu.trigger"],:scope > [data-module="menu.trigger"]'),
           all_submenus: el.querySelectorAll(':scope > li > [data-module="menu.submenu"],:scope > [data-module="menu.submenu"]'),
           active_setting: el.getAttribute('data-menu-active'),
-          active_classes: el.getAttribute('data-menu-active-classes') ? el.getAttribute('data-menu-active-classes').split(',') : '',
-          inactive_classes: el.getAttribute('data-menu-inactive-classes') ? el.getAttribute('data-menu-inactive-classes').split(',') : '',
+          active_classes: el.getAttribute('data-menu-active-classes') ? JSON.parse(el.getAttribute('data-menu-active-classes').split(',')) : [],
+          inactive_classes: el.getAttribute('data-menu-inactive-classes') ? JSON.parse(el.getAttribute('data-menu-inactive-classes').split(',')) : [],
           open_on_load: el.querySelectorAll(':scope > li > [data-module="menu.trigger"][data-menu-open],:scope > [data-module="menu.trigger"][data-menu-open]'),
         };
         self.ui.initialize(id);
