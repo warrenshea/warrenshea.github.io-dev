@@ -15,10 +15,10 @@ storm_eagle.module('tabs', () => {
           el,
           all_triggers: el.querySelectorAll('[data-module="tabs.trigger"]'),
           all_panels: el.parentNode.querySelectorAll('[data-module="tabs.panel"]'),
-          active_trigger_classes: el.getAttribute('data-tab-trigger-active-classes') ? el.getAttribute('data-tab-trigger-active-classes').split(',') : '',
-          inactive_trigger_classes: el.getAttribute('data-tab-trigger-inactive-classes') ? el.getAttribute('data-tab-trigger-inactive-classes').split(',') : '',
-          active_panel_classes: el.getAttribute('data-tab-panel-active-classes') ? el.getAttribute('data-tab-panel-active-classes').split(',') : '',
-          inactive_panel_classes: el.getAttribute('data-tab-panel-inactive-classes') ? el.getAttribute('data-tab-panel-inactive-classes').split(',') : '',
+          active_trigger_classes: el.getAttribute('data-tab-trigger-active-classes') ? JSON.parse(el.getAttribute('data-tab-trigger-active-classes')) : [],
+          inactive_trigger_classes: el.getAttribute('data-tab-trigger-inactive-classes') ? JSON.parse(el.getAttribute('data-tab-trigger-inactive-classes')) : [],
+          active_panel_classes: el.getAttribute('data-tab-panel-active-classes') ? JSON.parse(el.getAttribute('data-tab-panel-active-classes')) : [],
+          inactive_panel_classes: el.getAttribute('data-tab-panel-inactive-classes') ? JSON.parse(el.getAttribute('data-tab-panel-inactive-classes')) : [],
           initial_active: JSON.parse(el.getAttribute('data-tabs-initial')),
         };
         self.ui.initialize(id);
