@@ -32,7 +32,7 @@
               state[id]['iframe'].style.height = `${new_height + 1}px`;
               self.update_range_sliders(id);
               if (storm_eagle.isotope) {
-                storm_eagle.isotope.ui.refresh_all();
+                storm_eagle.isotope.ui.rearrange_heights();
               }
             }
           }
