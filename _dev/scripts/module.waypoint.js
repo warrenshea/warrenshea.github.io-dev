@@ -14,9 +14,9 @@ storm_eagle.module('waypoint', () => {
         state[id] = {
           el,
           element: el.getAttribute('data-waypoint-element'),
-          add_class: el.getAttribute('data-waypoint-add-classes') ? el.getAttribute('data-waypoint-add-classes').split(',') : '',
-          remove_class: el.getAttribute('data-waypoint-remove-classes') ? el.getAttribute('data-waypoint-remove-classes').split(',') : '',
-          toggle_class: el.getAttribute('data-waypoint-toggle-classes') ? el.getAttribute('data-waypoint-toggle-classes').split(',') : '',
+          add_class: el.getAttribute('data-waypoint-add-classes') ? JSON.parse(el.getAttribute('data-waypoint-add-classes')) : [],
+          remove_class: el.getAttribute('data-waypoint-remove-classes') ? JSON.parse(el.getAttribute('data-waypoint-remove-classes')) : [],
+          toggle_class: el.getAttribute('data-waypoint-toggle-classes') ? JSON.parse(el.getAttribute('data-waypoint-toggle-classes')) : [],
           delay: el.getAttribute('data-waypoint-delay'),
           activate: el.getAttribute('data-waypoint-activate'),
           new_waypoint_obj: {},
@@ -31,9 +31,9 @@ storm_eagle.module('waypoint', () => {
           element: 'this' ? document.getElementById(id) : document.querySelector(element),
           handler: () => {
             setTimeout(() => {
-              (remove_class) && document.getElementById(id).classList.remove(...remove_class);
-              (add_class) && document.getElementById(id).classList.add(...add_class);
-              (toggle_class) && document.getElementById(id).classList.toggle(...toggle_class);
+              (storm_eagle.validation.is_array(remove_class)) && document.getElementById(id).classList.remove(...remove_class);
+              (storm_eagle.validation.is_array(add_class)) && document.getElementById(id).classList.add(...add_class);
+              (storm_eagle.validation.is_array(toggle_class)) && document.getElementById(id).classList.toggle(...toggle_class);
             }, delay);
           },
           offset: activate,
