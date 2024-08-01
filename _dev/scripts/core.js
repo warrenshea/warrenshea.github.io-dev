@@ -267,6 +267,18 @@ var storm_eagle = (() => {
             return false;
         }
       },
+
+
+      /**
+       * Checks if a value is an Array and is empty
+       *
+       * @param mixed value
+       * @return boolean
+       * @scope public
+       */
+      is_array: (value) => {
+        return Array.isArray(value) && value.length > 0;
+      },
     },
 
     format: {
@@ -1077,9 +1089,11 @@ storm_eagle.module('image_default_dimensions', () => {
   return {
     initialize: () => {
       const set_image_attribute = (image) => {
-        (!image.hasAttribute("height")) && image.setAttribute("height", image.offsetHeight);
-        (!image.hasAttribute("width")) && image.setAttribute("width", image.offsetWidth);
-        (image.getAttribute("loading") !== "eager") && image.setAttribute("loading","lazy");
+        if (image.offsetParent !== null) { // if the item isn't in a hidden
+          (!image.hasAttribute("height")) && image.setAttribute("height", image.offsetHeight);
+          (!image.hasAttribute("width")) && image.setAttribute("width", image.offsetWidth);
+          (image.getAttribute("loading") !== "eager") && image.setAttribute("loading","lazy");
+        }
       }
       document.querySelectorAll(`img`).forEach((image) => {
         if (image.complete) {
