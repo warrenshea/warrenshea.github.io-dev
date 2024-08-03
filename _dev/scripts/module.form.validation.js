@@ -230,7 +230,7 @@ storm_eagle.module('form.validation', () => {
       //hightlight_error(): highlights/hides the border of the input that has an issue
       hightlight_error: (element_name, type, has_validation_passed) => {
         //console.log(element_name,type,validation_rules,has_validation_passed);
-        if (type === 'text' || type === 'number') {
+        if (type === 'text' || type === 'number' || type === 'dropdown') {
           const label = document.querySelector(`label[for='${element_name}']`);
           if (has_validation_passed) {
             label.classList.remove('error-field');
