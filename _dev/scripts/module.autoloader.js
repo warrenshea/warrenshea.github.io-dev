@@ -76,7 +76,7 @@ storm_eagle.module('autoload_scripts', () => {
   };
 
   return {
-    initialize: () => {
+    initialize: async () => {
       const modules = {
         accordion: '[data-module="accordion"]',
         carousel: "[data-module='carousel']",
@@ -98,13 +98,16 @@ storm_eagle.module('autoload_scripts', () => {
         waypoint: "[data-module='waypoint']"
       };
 
-      Object.entries(modules).forEach(([script, query]) => {
+      for (const [script, query] of Object.entries(modules)) {
         if (document.querySelectorAll(query).length > 0) {
-          storm_eagle.util.load_javascript(storm_eagle_module[script]['script_src']).catch(error => {
+          try {
+            await storm_eagle.util.load_javascript(storm_eagle_module[script]['script_src']);
+          } catch (error) {
             console.error(`autoload_scripts -> ${error}`);
-          });
+          }
         }
-      });
+      }
+
     },
   };
 });
