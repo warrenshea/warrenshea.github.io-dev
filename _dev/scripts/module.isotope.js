@@ -26,30 +26,30 @@ storm_eagle.module('isotope', () => {
       });
     },
     dependency: {
-      load_all: () => {
-        return Promise.all([
+      load_all: async () => {
+        await Promise.all([
           self.dependency.load.isotope_lib(),
           self.dependency.load.select_all(),
           self.dependency.load.autocomplete()
         ]);
       },
       load: {
-        select_all: () => {
+        select_all: async () => {
           if (storm_eagle.form?.select_all) {
             return Promise.resolve();
           } else {
-            return storm_eagle.util.load_javascript("/scripts/module.form.select-all.js");
+            return await storm_eagle.util.load_javascript("/scripts/module.form.select-all.js");
           }
         },
-        autocomplete: () => {
+        autocomplete: async () => {
           if (storm_eagle.form?.autocomplete) {
             return Promise.resolve();
           } else {
-            return storm_eagle.util.load_javascript("/scripts/module.form.autocomplete.js");
+            return await storm_eagle.util.load_javascript("/scripts/module.form.autocomplete.js");
           }
         },
-        isotope_lib: () => {
-          return storm_eagle.util.load_javascript("/scripts/libs/isotope-v3.0.6.min.js");
+        isotope_lib: async () => {
+          return await storm_eagle.util.load_javascript("/scripts/libs/isotope-v3.0.6.min.js");
         },
       },
     },
