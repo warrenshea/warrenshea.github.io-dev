@@ -56,7 +56,9 @@ storm_eagle.module('popover', () => {
         storm_eagle.resize_observer(document.querySelector('body'), force_resize);
       },
       mousedown_close: (event) => {
-        self.close();
+        if (event.target.querySelector("[data-module='popover'], [data-module='popover'] > *")) {
+          self.action.close();
+        }
       },
       keyboard_focus_trap: (event) => {
         if (event.keyCode === keyboard.keys.tab) {
@@ -73,69 +75,71 @@ storm_eagle.module('popover', () => {
           }
         }
         if (event.keyCode === keyboard.keys.esc) {
-          self.close();
+          self.action.close();
         }
       },
     },
-    open: (id, trigger) => {
-      const { el, focusable_elements, remove_focusable_elements } = state[id];
-      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-      document.addEventListener('mousedown', self.event_listeners.mousedown_close);
+    action: {
+      open: (id, trigger) => {
+        const { el, focusable_elements, remove_focusable_elements } = state[id];
+        document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+        document.addEventListener('mousedown', self.event_listeners.mousedown_close);
 
-      focusable_elements.forEach((focusable_element) => {
-        focusable_element.setAttribute('tabindex', '0');
-      });
-      remove_focusable_elements.forEach((remove_focusable_element) => {
-        remove_focusable_element.setAttribute('tabindex', '-1');
-      });
-      /* remove focusable elements from nodelist, e.g. popover inside dialog */
-      state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
-        return ![...remove_focusable_elements].includes(focusable_element);
-      });
-
-      /* saves item that opened popover for later */
-      self.a11y.focus_placeholder = document.activeElement;
-      self.a11y.first_tab_stop = state[id]['focusable_elements'][0];
-      self.a11y.last_tab_stop = state[id]['focusable_elements'][state[id]['focusable_elements'].length - 1];
-
-      /* updates popover visuals */
-      el.setAttribute("data-popover","active");
-      trigger.setAttribute("data-popover-trigger","active");
-      self.ui.set_location(id);
-
-      /* set focus to popover (but not the self.a11y.first_tab_stop */
-      setTimeout(() => {
-        (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
-      }, 100);
-
-      /* add keyboard event listener */
-      el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-    },
-    close: () => {
-      /* updates popover visuals */
-      document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-      document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('tabIndex', '-1');
-      document.querySelectorAll("[data-popover='active']").forEach((el) => {
-        el.removeAttribute("data-popover");
-        el.hidePopover();
-      });
-      document.querySelector("[data-popover-trigger='active']").removeAttribute("data-popover-trigger");
-      document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
-        const id = popover.getAttribute('id');
-        const { focusable_elements } = state[id];
-
-        /* remove focus from popover elements */
         focusable_elements.forEach((focusable_element) => {
-          focusable_element.setAttribute('tabindex', '-1');
+          focusable_element.setAttribute('tabindex', '0');
+        });
+        remove_focusable_elements.forEach((remove_focusable_element) => {
+          remove_focusable_element.setAttribute('tabindex', '-1');
+        });
+        /* remove focusable elements from nodelist, e.g. popover inside dialog */
+        state[id]['focusable_elements'] = [...focusable_elements].filter((focusable_element) => {
+          return ![...remove_focusable_elements].includes(focusable_element);
         });
 
-        /* remove keyboard event listener */
-        popover.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
-      });
+        /* saves item that opened popover for later */
+        self.a11y.focus_placeholder = document.activeElement;
+        self.a11y.first_tab_stop = state[id]['focusable_elements'][0];
+        self.a11y.last_tab_stop = state[id]['focusable_elements'][state[id]['focusable_elements'].length - 1];
 
-      /* set focus to self.a11y.focus_placeholder */
-      self.a11y.focus_placeholder.focus();
+        /* updates popover visuals */
+        el.setAttribute("data-popover","active");
+        trigger.setAttribute("data-popover-trigger","active");
+        self.ui.set_location(id);
+
+        /* set focus to popover (but not the self.a11y.first_tab_stop */
+        setTimeout(() => {
+          (self.a11y.first_tab_stop) && self.a11y.first_tab_stop.focus();
+        }, 100);
+
+        /* add keyboard event listener */
+        el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        el.addEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+      },
+      close: () => {
+        /* updates popover visuals */
+        document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
+        document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('tabIndex', '-1');
+        document.querySelectorAll("[data-popover='active']").forEach((el) => {
+          el.removeAttribute("data-popover");
+          el.hidePopover();
+        });
+        document.querySelector("[data-popover-trigger='active']").removeAttribute("data-popover-trigger");
+        document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
+          const id = popover.getAttribute('id');
+          const { focusable_elements } = state[id];
+
+          /* remove focus from popover elements */
+          focusable_elements.forEach((focusable_element) => {
+            focusable_element.setAttribute('tabindex', '-1');
+          });
+
+          /* remove keyboard event listener */
+          popover.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
+        });
+
+        /* set focus to self.a11y.focus_placeholder */
+        self.a11y.focus_placeholder.focus();
+      },
     },
     a11y: {
       focus_placeholder: null,
