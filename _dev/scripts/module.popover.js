@@ -84,6 +84,13 @@ storm_eagle.module('popover', () => {
         const { el, focusable_elements, remove_focusable_elements } = state[id];
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
         document.addEventListener('mousedown', self.event_listeners.mousedown_close);
+        document.querySelectorAll("[data-popover='active']").forEach((el) => {
+          el.removeAttribute("data-popover");
+          el.hidePopover();
+        });
+        document.querySelectorAll("[data-popover-trigger='active']").forEach((el) => {
+          el.removeAttribute("data-popover-trigger");
+        });
 
         focusable_elements.forEach((focusable_element) => {
           focusable_element.setAttribute('tabindex', '0');
@@ -123,7 +130,9 @@ storm_eagle.module('popover', () => {
           el.removeAttribute("data-popover");
           el.hidePopover();
         });
-        document.querySelector("[data-popover-trigger='active']").removeAttribute("data-popover-trigger");
+        document.querySelectorAll("[data-popover-trigger='active']").forEach((el) => {
+          el.removeAttribute("data-popover-trigger");
+        });
         document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
           const id = popover.getAttribute('id');
           const { focusable_elements } = state[id];
