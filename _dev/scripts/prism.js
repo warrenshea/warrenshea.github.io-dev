@@ -21,18 +21,18 @@ storm_eagle.module('prism', () => {
       });
     },
     dependency: {
-      load_all: () => {
-        return Promise.all([
+      load_all: async () => {
+        await Promise.all([
           self.dependency.load.prism_css_lib(),
           self.dependency.load.prism_js_lib(),
         ]);
       },
       load: {
-        prism_css_lib: () => {
-          return storm_eagle.util.load_css("/stylesheets/libs/prism-v1.29.0.min.css");
+        prism_css_lib: async() => {
+          return await storm_eagle.util.load_css("/stylesheets/libs/prism-v1.29.0.min.css");
         },
-        prism_js_lib: () => {
-          return storm_eagle.util.load_javascript("/scripts/libs/prism-v1.29.0.min.js");
+        prism_js_lib: async() => {
+          return await storm_eagle.util.load_javascript("/scripts/libs/prism-v1.29.0.min.js");
         },
       },
     },
