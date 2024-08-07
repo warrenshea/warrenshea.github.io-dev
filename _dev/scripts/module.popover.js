@@ -37,9 +37,24 @@ storm_eagle.module('popover', () => {
         } else if (storm_eagle.client.viewport.is_lg_up()) {
           const scroll_top = window.pageYOffset || trigger.scrollTop;
           const trigger_location = trigger.getBoundingClientRect();
-          el.style.top = `${trigger_location.top + trigger_location.height/2 + scroll_top}px`;
-          el.style.transform = `translateY(-50%)`;
-          el.style.left = `${trigger_location.left + trigger_location.width + 16}px`; //16 is the box arrow width
+          switch (el.getAttribute("data-popover-direction")) {
+            case "top":
+              el.style.left = `${trigger_location.left + trigger_location.width/2 + scroll_top}px`;
+              el.style.transform = `translate(-50%,-100%)`;
+              el.style.top = `${trigger_location.top - 16}px`;
+              break;
+            case "bottom":
+              el.style.left = `${trigger_location.left + trigger_location.width/2 + scroll_top}px`;
+              el.style.transform = `translateX(-50%)`;
+              el.style.top = `${trigger_location.top + trigger_location.height + 16}px`; //16 is the box arrow width
+              break;
+            case "right":
+            default:
+              el.style.top = `${trigger_location.top + trigger_location.height/2 + scroll_top}px`;
+              el.style.transform = `translateY(-50%)`;
+              el.style.left = `${trigger_location.left + trigger_location.width + 16}px`; //16 is the box arrow width
+              break;
+          }
         }
       },
     },
