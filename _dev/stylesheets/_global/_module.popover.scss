@@ -23,7 +23,6 @@
     border-color: transparent;
     border-style: solid;
     content:"";
-    top: 50%;
   }
   &:after{
     position: absolute;
@@ -33,15 +32,15 @@
     border-color: transparent;
     border-style: solid;
     content:"";
-    top: 50%;
   }
-  &.right {
+  &[data-popover-direction='right'] {
     &::before{
       border-width:11px;
       left: -11px;
       margin-top: -11px;
       border-left-width: 0;
       border-right-color: #ddd;
+      top: 50%;
     }
     &:after{
       border-width:10px;
@@ -49,6 +48,39 @@
       transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
+      top: 50%;
+    }
+  }
+  &[data-popover-direction='top'] {
+    &::before{
+      border-width:11px;
+      bottom: -11px;
+      left: calc(50% - 12px);
+      border-bottom-width: 0;
+      border-top-color: #ddd;
+    }
+    &:after{
+      border-width:10px;
+      bottom: -10px;
+      left: calc(50% - 11px);
+      border-bottom-width: 0;
+      border-top-color: #fff;
+    }
+  }
+  &[data-popover-direction='bottom'] {
+    &::before{
+      border-width:11px;
+      top: -11px;
+      left: calc(50% - 12px);
+      border-top-width: 0;
+      border-bottom-color: #ddd;
+    }
+    &:after{
+      border-width:10px;
+      top: -10px;
+      left: calc(50% - 11px);
+      border-top-width: 0;
+      border-bottom-color: #fff;
     }
   }
   button[data-popover-close] {
