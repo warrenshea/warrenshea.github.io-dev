@@ -28,10 +28,11 @@
     }
   }
   [data-module='accordion.panel'] {
-    transition: .25s height ease;
+    transition: height .25s ease;
     overflow:hidden;
+    // someday....
+    // height: calc-size(auto);
     &[data-accordion-panel='hide'] {
-      transition: .25s height ease;
       height:0px;
     }
   }
