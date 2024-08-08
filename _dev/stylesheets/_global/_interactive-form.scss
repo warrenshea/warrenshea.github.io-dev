@@ -73,19 +73,25 @@ fieldset.unstyle {
       overflow: hidden;
       font-size: rem-calc(16);
       color: $blue;
-      letter-spacing: 0.25px;
+      letter-spacing: rem-calc(0.25);
       transition: 0.3s ease-out;
-      top: rem-calc(30);
+      top: rem-calc(32);
+      padding-left: rem-calc(8);
       position: absolute;
     }
     &.force-active-label,
     &.active-label {
       span.description {
-        position: absolute;
         top: rem-calc(2);
+        padding-left: rem-calc(2);
         font-size: rem-calc(14);
         font-family: 'heebo-medium';
       }
+    }
+  }
+  textarea + label {
+    span.description {
+      top: rem-calc(30);
     }
   }
 
@@ -96,7 +102,7 @@ fieldset.unstyle {
     color: $eerie-black;
     transition: all 0.3s ease-out;
     :disabled {
-      color: $onyx;
+      color: $black;
     }
   }
 
@@ -111,10 +117,15 @@ fieldset.unstyle {
     height: rem-calc(36);
     margin-top: rem-calc(24);
     white-space: nowrap;
-    border: none;
+    border: rem-calc(1) solid #e0e0e0;
+    border-bottom: 0;
     transition: all 0.3s ease-out;
+    padding-left: rem-calc(8);
     &:not(:disabled) {
-      background-color: transparent;
+      background-color: #fafafa;
+    }
+    &:disabled {
+      background-color: #eee;
     }
   }
   input[type='text']:focus + label:before,
@@ -140,6 +151,7 @@ fieldset.unstyle {
   textarea:focus + label span.description,
   textarea.focus + label span.description {
     top: rem-calc(2);
+    padding-left: rem-calc(2);
     font-size: rem-calc(14);
     font-family: 'heebo-medium';
   }
@@ -174,7 +186,7 @@ fieldset.unstyle {
     color: $onyx;
     font-size: rem-calc(14);
     margin-top: rem-calc(4);
-    letter-spacing: 0.25px;
+    letter-spacing: rem-calc(0.25);
   }
 
   .helper-description-pass-fail {
@@ -216,9 +228,9 @@ fieldset.unstyle {
   /* textarea styles */
   textarea {
     transition: all 0.3s ease;
-    padding-top: rem-calc(6); /* to remain consistent with input boxes */
-    padding-bottom: rem-calc(6); /* to remain consistent with input boxes */
-    margin-bottom: rem-calc(-4); /* to remain consistent with input boxes */
+    padding-top: rem-calc(8); /* to remain consistent with input boxes */
+    padding-bottom: rem-calc(4); /* to remain consistent with input boxes */
+    margin-bottom: rem-calc(-10); /* to remain consistent with input boxes */
     white-space: pre-wrap;
   }
 
@@ -235,7 +247,7 @@ fieldset.unstyle {
       cursor: pointer;
       position: relative;
       padding-left: rem-calc(32);
-      letter-spacing: 0.15px;
+      letter-spacing: rem-calc(0.15);
       line-height: rem-calc(24);
       &::before {
         content: '';
