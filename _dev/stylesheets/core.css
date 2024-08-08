@@ -15611,9 +15611,10 @@ fieldset.unstyle {
   overflow: hidden;
   font-size: 1rem;
   color: #3169b2;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.015625rem;
   transition: 0.3s ease-out;
-  top: 1.875rem;
+  top: 2rem;
+  padding-left: 0.5rem;
   position: absolute;
 }
 .form\:theme\:gl0b3x input[type=text] + label.force-active-label span.description, .form\:theme\:gl0b3x input[type=text] + label.active-label span.description,
@@ -15629,10 +15630,13 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x select + label.active-label span.description,
 .form\:theme\:gl0b3x textarea + label.force-active-label span.description,
 .form\:theme\:gl0b3x textarea + label.active-label span.description {
-  position: absolute;
   top: 0.125rem;
+  padding-left: 0.125rem;
   font-size: 0.875rem;
   font-family: "heebo-medium";
+}
+.form\:theme\:gl0b3x textarea + label span.description {
+  top: 1.875rem;
 }
 .form\:theme\:gl0b3x input,
 .form\:theme\:gl0b3x select,
@@ -15643,7 +15647,7 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input :disabled,
 .form\:theme\:gl0b3x select :disabled,
 .form\:theme\:gl0b3x textarea :disabled {
-  color: #404040;
+  color: #000000;
 }
 .form\:theme\:gl0b3x input[type=text],
 .form\:theme\:gl0b3x input[type=number],
@@ -15656,8 +15660,10 @@ fieldset.unstyle {
   height: 2.25rem;
   margin-top: 1.5rem;
   white-space: nowrap;
-  border: none;
+  border: 0.0625rem solid #e0e0e0;
+  border-bottom: 0;
   transition: all 0.3s ease-out;
+  padding-left: 0.5rem;
 }
 .form\:theme\:gl0b3x input[type=text]:not(:disabled),
 .form\:theme\:gl0b3x input[type=number]:not(:disabled),
@@ -15666,7 +15672,16 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=search]:not(:disabled),
 .form\:theme\:gl0b3x select:not(:disabled),
 .form\:theme\:gl0b3x textarea:not(:disabled) {
-  background-color: transparent;
+  background-color: #fafafa;
+}
+.form\:theme\:gl0b3x input[type=text]:disabled,
+.form\:theme\:gl0b3x input[type=number]:disabled,
+.form\:theme\:gl0b3x input[type=email]:disabled,
+.form\:theme\:gl0b3x input[type=password]:disabled,
+.form\:theme\:gl0b3x input[type=search]:disabled,
+.form\:theme\:gl0b3x select:disabled,
+.form\:theme\:gl0b3x textarea:disabled {
+  background-color: #eee;
 }
 .form\:theme\:gl0b3x input[type=text]:focus + label:before,
 .form\:theme\:gl0b3x input[type=text].focus + label:before,
@@ -15690,6 +15705,7 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x textarea:focus + label span.description,
 .form\:theme\:gl0b3x textarea.focus + label span.description {
   top: 0.125rem;
+  padding-left: 0.125rem;
   font-size: 0.875rem;
   font-family: "heebo-medium";
 }
@@ -15721,7 +15737,7 @@ fieldset.unstyle {
   color: #404040;
   font-size: 0.875rem;
   margin-top: 0.25rem;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.015625rem;
 }
 .form\:theme\:gl0b3x .helper-description-pass-fail {
   list-style: none;
@@ -15758,11 +15774,11 @@ fieldset.unstyle {
 }
 .form\:theme\:gl0b3x textarea {
   transition: all 0.3s ease;
-  padding-top: 0.375rem;
+  padding-top: 0.5rem;
   /* to remain consistent with input boxes */
-  padding-bottom: 0.375rem;
+  padding-bottom: 0.25rem;
   /* to remain consistent with input boxes */
-  margin-bottom: -0.25rem;
+  margin-bottom: -0.625rem;
   /* to remain consistent with input boxes */
   white-space: pre-wrap;
 }
@@ -15781,7 +15797,7 @@ fieldset.unstyle {
   cursor: pointer;
   position: relative;
   padding-left: 2rem;
-  letter-spacing: 0.15px;
+  letter-spacing: 0.009375rem;
   line-height: 1.5rem;
 }
 .form\:theme\:gl0b3x input[type=checkbox] + label::before,
@@ -23425,11 +23441,10 @@ ul.checkmark-list > li {
   box-shadow: 0 0 0 0.0625rem #1c3b65, inset 0 0 0 0.0625rem #1c3b65;
 }
 [data-module=accordion] [data-module="accordion.panel"] {
-  transition: 0.25s height ease;
+  transition: height 0.25s ease;
   overflow: hidden;
 }
 [data-module=accordion] [data-module="accordion.panel"][data-accordion-panel=hide] {
-  transition: 0.25s height ease;
   height: 0px;
 }
 [data-module=accordion] :where(.accordion-header-py\:16px-px\:24px > div > *) > button {
@@ -23498,7 +23513,6 @@ ul.checkmark-list > li {
     bottom: auto;
     right: auto;
     width: 300px;
-    max-width: 300px;
   }
 }
 [data-module=popover]::before {
