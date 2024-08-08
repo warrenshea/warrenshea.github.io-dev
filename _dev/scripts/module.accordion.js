@@ -55,16 +55,21 @@ storm_eagle.module('accordion', () => {
       },
       animate_panel_open: (panel,on_initialize) => {
         panel.style.height = 'auto';
+        //refactor when calc-size(auto) is supported
         if (!on_initialize) {
           let panel_height = panel.scrollHeight + 'px';
           panel.style.height = '0px';
           requestAnimationFrame(() => {
             panel.style.height = panel_height;
+            setTimeout(() => {
+              panel.style.height = 'auto';
+            },250);
           });
         }
         panel.setAttribute("data-accordion-panel", "");
       },
       animate_panel_close: (panel) => {
+        //refactor when calc-size(auto) is supported
         panel.style.height = panel.scrollHeight + 'px';
         requestAnimationFrame(() => {
           panel.style.height = '0px';
