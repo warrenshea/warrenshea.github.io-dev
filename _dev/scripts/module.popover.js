@@ -140,7 +140,7 @@ storm_eagle.module('popover', () => {
       close: () => {
         /* updates popover visuals */
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-        document.querySelector("[data-module='popover'][data-popover='active']").setAttribute('tabIndex', '-1');
+        document.querySelector("[data-module='popover'][data-popover='active']")?.setAttribute('tabIndex', '-1');
         document.querySelectorAll("[data-popover='active']").forEach((el) => {
           el.removeAttribute("data-popover");
           el.hidePopover();
