@@ -112,7 +112,7 @@ storm_eagle.module('form.validation', () => {
           }
         }
       },
-      form: (event, form_name, on_success_function) => {
+      form: (event, form_name, on_success_function, on_success_args) => {
         error_number = 0;
         has_validation_passed = true;
 
@@ -167,9 +167,14 @@ storm_eagle.module('form.validation', () => {
                   let el_comparison = document.getElementById(el.getAttribute('data-matching'));
                   has_validation_passed = self.validate.string_value(el.value, 'equals', el_comparison.value);
                   self.ui.display_error_message(form_element_names[i], 'equals', has_validation_passed);
+                  self.ui.hightlight_error(form_element_names[i], type, has_validation_passed);
                 } else {
                   has_validation_passed = self.validate.input_type(form_element_names[i], type, state[form_name][form_element_names[i]]['validation_criteria'][j]);
                   self.ui.display_error_message(form_element_names[i], state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
+                  if (has_validation_passed === false) {
+                    self.ui.hightlight_error(form_element_names[i], type, false);
+                    break;
+                  }
                 }
                 error_number += has_validation_passed ? 0 : 1;
               }
@@ -186,7 +191,7 @@ storm_eagle.module('form.validation', () => {
               event.preventDefault();
               (async () => {
                 try {
-                  let result = await on_success_function();
+                  let result = await on_success_function(...on_success_args);
                   if (typeof result === 'boolean') {
                     if (result === true) {
                       document.getElementById(form_name).submit();
