@@ -1,5 +1,5 @@
 'use strict';
-storm_eagle.module('autoload_scripts', () => {
+storm_eagle.module('autoloader', () => {
   const storm_eagle_module = {
     accordion: {
       script_src: '/scripts/module.accordion.js',
@@ -103,7 +103,7 @@ storm_eagle.module('autoload_scripts', () => {
           try {
             await storm_eagle.util.load_javascript(storm_eagle_module[script]['script_src']);
           } catch (error) {
-            console.error(`autoload_scripts -> ${error}`);
+            console.error(`autoloader -> ${error}`);
           }
         }
       }
