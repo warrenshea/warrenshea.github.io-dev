@@ -12,6 +12,8 @@
 
 [data-module='autocomplete.results']{
   z-index:4; //to go over other input labels
+  overflow-y:scroll;
+  overflow-x:hidden;
   li {
     display: flex;
     font-size: rem-calc(14);
