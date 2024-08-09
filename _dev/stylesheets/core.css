@@ -23512,7 +23512,7 @@ ul.checkmark-list > li {
     top: 50%;
     bottom: auto;
     right: auto;
-    width: 300px;
+    width: var(--popover-width, 300px);
   }
 }
 [data-module=popover]::before {
@@ -23563,19 +23563,21 @@ ul.checkmark-list > li {
   border-bottom-width: 0;
   border-top-color: #fff;
 }
-[data-module=popover][data-popover-direction=bottom]::before {
-  border-width: 11px;
-  top: -11px;
-  left: calc(50% - 12px);
-  border-top-width: 0;
-  border-bottom-color: #ddd;
-}
-[data-module=popover][data-popover-direction=bottom]:after {
-  border-width: 10px;
-  top: -10px;
-  left: calc(50% - 11px);
-  border-top-width: 0;
-  border-bottom-color: #fff;
+@media screen and (min-width: 64rem) {
+  [data-module=popover][data-popover-direction=bottom]::before {
+    border-width: 11px;
+    top: -11px;
+    left: calc(50% - 12px);
+    border-top-width: 0;
+    border-bottom-color: #ddd;
+  }
+  [data-module=popover][data-popover-direction=bottom]:after {
+    border-width: 10px;
+    top: -10px;
+    left: calc(50% - 11px);
+    border-top-width: 0;
+    border-bottom-color: #fff;
+  }
 }
 [data-module=popover] button[data-popover-close] {
   position: absolute;
@@ -23737,6 +23739,8 @@ ul.checkmark-list > li {
 
 [data-module="autocomplete.results"] {
   z-index: 4;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 [data-module="autocomplete.results"] li {
   display: flex;
