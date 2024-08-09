@@ -303,6 +303,7 @@
   &[data-module='popover'] {
     position: static !important;
     visibility: initial !important;
+    display: block !important;
     [data-popover-close],
     &::before,
     &:after {
