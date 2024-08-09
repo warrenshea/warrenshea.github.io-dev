@@ -117,8 +117,6 @@ storm_eagle.module('form.autocomplete', () => {
         input.addEventListener('keyup', self.event_listeners.input.clear_input);
         input.removeEventListener('focus', self.event_listeners.input.focus);
         input.addEventListener('focus', self.event_listeners.input.focus);
-        document.removeEventListener('click', self.event_listeners.outside_dropdown.click.close);
-        document.addEventListener('click', self.event_listeners.outside_dropdown.click.close);
       },
       input: {
         keydown_navigate_dropdown: (event) => {
@@ -208,7 +206,7 @@ storm_eagle.module('form.autocomplete', () => {
             case keyboard.keys.backspace:
             case keyboard.keys.delete:
               if (event.currentTarget.value === "") {
-                self.data.update_input_value(id,['']);
+                self.data.update_input_value(id,[]);
                 self.action.close(id, true);
               }
               break;
@@ -226,10 +224,8 @@ storm_eagle.module('form.autocomplete', () => {
       outside_dropdown: {
         click: {
           close: () => {
-            if (event.target.getAttribute('data-module') !== 'autocomplete.results-item' && event.target.getAttribute('data-module') !== 'autocomplete.tag.button') {
-              setTimeout(() => {
-                self.action.close();
-              }, 250);
+            if (!event.target.closest("[data-module='autocomplete.results'], [data-module='autocomplete.results'] > *")) {
+              self.action.close();
             }
           }
         }
@@ -244,6 +240,7 @@ storm_eagle.module('form.autocomplete', () => {
         }
       },
       close: () => {
+        document.removeEventListener('click', self.event_listeners.outside_dropdown.click.close);
         document.querySelectorAll("[data-module='autocomplete']").forEach((el) => {
           el.classList.remove('active');
           el.setAttribute('aria-expanded', 'false');
@@ -280,6 +277,8 @@ storm_eagle.module('form.autocomplete', () => {
               database_temp_keyword = data_working[i][filter].toLowerCase();
               if (data_working[i]["status"] === "" && data_working[i][filter] !== "" && (query === "*" || database_temp_keyword.includes(query.toLowerCase()))) {
                 count++;
+                document.removeEventListener('click', self.event_listeners.outside_dropdown.click.close);
+                document.addEventListener('click', self.event_listeners.outside_dropdown.click.close);
                 results.insertAdjacentHTML('beforeend', self.ui.render_autocomplete_result(id, i, data_working[i]));
                 results.classList.remove("display:none");
                 document.getElementById(id).classList.add("active");
