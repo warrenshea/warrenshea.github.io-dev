@@ -831,25 +831,26 @@ var storm_eagle = (() => {
           return results;
         }
 
-        // Split the function string into its parts (namespace and function name).
-        const func_parts = func_str.split('.');
+        const func_temp = func_str.split('.').reduce((obj, path) => obj?.[path], window);
+        // // Split the function string into its parts (namespace and function name).
+        // const func_parts = func_str.split('.');
 
-        // Initialize a temporary variable to navigate through the object hierarchy.
-        let func_temp = window;
+        // // Initialize a temporary variable to navigate through the object hierarchy.
+        // let func_temp = window;
 
-        // Traverse the object hierarchy to find the target function.
-        for (const path of func_parts) {
-          func_temp = func_temp[path];
+        // // Traverse the object hierarchy to find the target function.
+        // for (const path of func_parts) {
+        //   func_temp = func_temp[path];
 
-          // If the current part is not an object, break the loop.
-          if (typeof func_temp !== 'object') {
-            break;
-          }
-        }
+        //   // If the current part is not an object, break the loop.
+        //   if (typeof func_temp !== 'object') {
+        //     break;
+        //   }
+        // }
 
         // Check if the function was found. If not, throw an error and exit function
         if (typeof func_temp !== 'function') {
-          console.error('Function not found');
+          console.error(`Function not found: ${func_temp}`);
           return;
         }
 
@@ -872,7 +873,7 @@ var storm_eagle = (() => {
           if (func_temp.constructor.name === 'AsyncFunction') {
             //console.log('is async function? yes');
             //synchronous function won't wait for async function to finish, so event.preventDefault(); will prevent default return true
-            event.preventDefault();
+            event?.preventDefault();
             return new Promise(async (resolve, reject) => {
               try {
                 let result = await func_temp(...param_values);
