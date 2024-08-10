@@ -831,9 +831,10 @@ var storm_eagle = (() => {
           return results;
         }
 
-        const func_temp = func_str.split('.').reduce((obj, path) => obj?.[path], window);
+        const func_parts = func_str.split('.');
+        const func_temp = func_parts.reduce((obj, path) => obj?.[path], window);
         // // Split the function string into its parts (namespace and function name).
-        // const func_parts = func_str.split('.');
+
 
         // // Initialize a temporary variable to navigate through the object hierarchy.
         // let func_temp = window;
