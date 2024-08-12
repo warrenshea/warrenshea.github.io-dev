@@ -39,14 +39,14 @@ storm_eagle.module('popover', () => {
           const trigger_location = trigger.getBoundingClientRect();
           switch (el.getAttribute("data-popover-direction")) {
             case "top":
-              el.style.left = `${trigger_location.left + trigger_location.width/2 + scroll_top}px`;
+              el.style.left = `${trigger_location.left + trigger_location.width/2}px`;
               el.style.transform = `translate(-50%,-100%)`;
-              el.style.top = `${trigger_location.top - 16}px`;
+              el.style.top = `${trigger_location.top + scroll_top - 16}px`;
               break;
             case "bottom":
-              el.style.left = `${trigger_location.left + trigger_location.width/2 + scroll_top}px`;
+              el.style.left = `${trigger_location.left + trigger_location.width/2}px`;
               el.style.transform = `translateX(-50%)`;
-              el.style.top = `${trigger_location.top + trigger_location.height + 16}px`; //16 is the box arrow width
+              el.style.top = `${trigger_location.top + scroll_top + trigger_location.height + 16}px`; //16 is the box arrow width
               break;
             case "right":
             default:
