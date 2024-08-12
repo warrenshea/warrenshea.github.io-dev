@@ -201,12 +201,14 @@ storm_eagle.module('form.autocomplete', () => {
         },
         clear_input: (event) => {
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="autocomplete"]').getAttribute('id');
-
+          const { type } = state[id];
           switch (event.keyCode) {
             case keyboard.keys.backspace:
             case keyboard.keys.delete:
               if (event.currentTarget.value === "") {
-                self.data.update_input_value(id,[]);
+                if (type === "single-select") {
+                  self.data.update_input_value(id,[]);
+                }
                 self.action.close(id, true);
               }
               break;
@@ -224,8 +226,10 @@ storm_eagle.module('form.autocomplete', () => {
       outside_dropdown: {
         click: {
           close: () => {
-            if (!event.target.closest("[data-module='autocomplete.results'], [data-module='autocomplete.results'] > *")) {
-              self.action.close();
+            if (event.target.getAttribute('data-module') !== 'autocomplete.results-item' && event.target.getAttribute('data-module') !== 'autocomplete.tag.button') {
+              setTimeout(() => {
+                self.action.close();
+              }, 250);
             }
           }
         }
