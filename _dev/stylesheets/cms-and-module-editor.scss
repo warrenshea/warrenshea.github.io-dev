@@ -79,7 +79,7 @@
 [data-zs-page-editor-mode-add-padding] {
   padding:8px;
   &::before {
-    content: attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) solid $positive-light;
     opacity: .75;
   }
@@ -115,9 +115,6 @@
   width: 100%;
 }
 
-[data-module="accordion"]:has([data-zs-page-editor-mode-add-styles]),
-[data-module="accordion.header"]:has([data-zs-page-editor-mode-add-styles]),
-[data-module="accordion.panel"]:has([data-zs-page-editor-mode-add-styles]),
 [data-module="dialog"]:has([data-zs-page-editor-mode-add-styles]),
 [data-module="table.tr"]:has([data-zs-page-editor-mode-add-styles]),
 [data-module="table.td"]:has([data-zs-page-editor-mode-add-styles]) {
@@ -142,6 +139,10 @@
   position: relative;
   padding: 34px 10px 6px !important;
   cursor: pointer;
+  &.row,
+  &.row0 {
+    display: flex;
+  }
   &::before {
     padding: 4px 8px;
     font-size: 14px;
@@ -183,18 +184,20 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none'%3E%3Crect width='100' height='100' fill='%2384b48e30'/%3E%3Cline x1='0' y1='0' x2='100' y2='100' stroke='%23cccccc' stroke-width='2'/%3E%3Cline x1='0' y1='100' x2='100' y2='0' stroke='%23cccccc' stroke-width='2'/%3E%3C/svg%3E");
   background-size: 20px 20px;
   border: rem-calc(2) dashed $positive-light;
-  padding: 12px 10px 6px;
+  padding: 24px 10px 4px !important;
   &::before {
-    content: "ADD to: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
-    border: rem-calc(2) solid $positive-light;
+    content: "ADD to: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
+    left:0;
+    width:100%;
+    background:none;
   }
 }
 
 [data-zs-page-editor-mode-add-label-styles] {
   border: rem-calc(2) dashed $positive-light;
-  padding: 12px 10px 6px;
+  padding: 34px 24px 18px !important;
   &::before {
-    content: attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) solid $positive-light;
     opacity: .75;
   }
@@ -203,7 +206,7 @@
 [data-zs-page-editor-mode-remove-styles] {
   border: rem-calc(2) dashed $negative-light;
   &::before {
-    content: "REMOVE: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: "REMOVE: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $negative-light;
   }
 }
@@ -211,7 +214,7 @@
 [data-zs-page-editor-mode-confirm-removal-styles] {
   border: rem-calc(2) dashed $negative-light;
   &::before {
-    content:"CONFIRM REMOVAL: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content:"CONFIRM REMOVAL: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $negative-light;
   }
 }
@@ -219,7 +222,7 @@
 [data-zs-page-editor-mode-edit-styles] {
   border: rem-calc(2) dashed $cocoa-brown;
   &::before {
-    content: "EDIT: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: "EDIT: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $cocoa-brown;
   }
 }
@@ -233,7 +236,7 @@
     box-shadow: 0 0 0 rem-calc(1) $dark-goldenrod, 0 0 0 rem-calc(2) $dark-goldenrod !important;
     transition: box-shadow .5s ease-in-out;
     &::before {
-      content: "INLINE EDIT: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+      content: "INLINE EDIT: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
       box-shadow: 0 0 0 rem-calc(1) $dark-goldenrod, 0 0 0 rem-calc(2) $dark-goldenrod !important;
       transition: box-shadow .5s ease-in-out;
     }
@@ -243,7 +246,7 @@
 [data-zs-page-editor-mode-publish-styles] {
   border: rem-calc(2) dashed $english-violet;
   &::before {
-    content: "PUBLISH: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: "PUBLISH: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $english-violet;
   }
 }
@@ -251,7 +254,7 @@
 [data-zs-page-editor-mode-confirm-publish-styles] {
   border: rem-calc(2) dashed $english-violet;
   &::before {
-    content:"CONFIRM PUBLISH: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content:"CONFIRM PUBLISH: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $english-violet;
   }
 }
@@ -261,7 +264,7 @@
   cursor: default;
   &::before {
     color: $gray;
-    content: "TO BE PUBLISHED: " attr(data-zs-module-name) ", mid:" attr(data-zs-mid);
+    content: "TO BE PUBLISHED: " attr(data-zs-module-name) " (mid:" attr(data-zs-mid) ")";
     border: rem-calc(2) dashed $english-violet;
   }
 }
