@@ -112,7 +112,7 @@ storm_eagle.module('form.validation', () => {
           }
         }
       },
-      form: (event, form_name, on_success_function, on_success_args) => {
+      form: (event, form_name, on_success_function, on_success_args=[]) => {
         error_number = 0;
         has_validation_passed = true;
 
