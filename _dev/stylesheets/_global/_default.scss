@@ -18,11 +18,11 @@ html.storm-eagle {
 }
 
 img {
-  /* Get rid of gap under images by making them display: inline-block; by default */
+  // Get rid of gap under images by making them display: inline-block; by default
   display: inline-block;
   vertical-align: middle;
 
-  /* Grid defaults to get images and embeds to work properly */
+  // Grid defaults to get images and embeds to work properly
   max-width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
@@ -46,7 +46,7 @@ button {
 }
 
 abbr[title] {
-  /* override */
+  // override
   text-decoration: none;
 }
 
