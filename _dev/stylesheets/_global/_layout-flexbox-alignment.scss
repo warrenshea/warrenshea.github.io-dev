@@ -4,7 +4,7 @@
   $prefix: nth($mediaquery, 2);
 
   @include breakpoint($breakpoint) {
-    /* for flex parent container */
+    // for flex parent container
     .#{$prefix}align\:right {justify-content: flex-end;}
     .#{$prefix}align\:center {justify-content: center;}
     .#{$prefix}align\:justify {justify-content: space-between;}
@@ -15,12 +15,12 @@
     .#{$prefix}align\:middle {align-items: center;}
     .#{$prefix}align\:stretch {align-items: stretch;}
 
-     /* for flex childen */
+     // for flex childen
     .#{$prefix}align-self\:top {align-self: flex-start;}
     .#{$prefix}align-self\:bottom {align-self: flex-end;}
     .#{$prefix}align-self\:middle {align-self: center;}
     .#{$prefix}align-self\:stretch {align-self: stretch;}
-    /* the non-flex way to center a block element, so you don't need a parent flex container */
+    // the non-flex way to center a block element, so you don't need a parent flex container
     .#{$prefix}align-self\:centered {
       margin-left: auto;
       margin-right: auto;
