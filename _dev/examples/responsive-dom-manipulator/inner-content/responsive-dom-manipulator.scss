@@ -1,22 +1,22 @@
+@import '../../../stylesheets/_config/unit.scss';
 @import '../../../stylesheets/_config/variables-colors.scss';
 @import '../../../stylesheets/_config/variables-dimensions.scss';
-@import '../../../stylesheets/_config/unit.scss';
+@import '../../../stylesheets/_config/variables-box-shadow.scss';
 @import '../../../stylesheets/_config/breakpoint.scss';
 @import '../../../stylesheets/_config/media-queries.scss';
-@import '../../../stylesheets/_config/variables-box-shadow.scss';
 
 section.responsive-dom-manipulator-example {
   border: 1px solid $onyx;
 
   a {
-    border:10px solid lightgray;
-    padding:4px;
+    border:rem-calc(10) solid lightgray;
+    padding:rem-calc(4);
     display:flex;
     flex-flow:column;
     align-items: center;
     height:100%;
     &:focus {
-      border:10px solid red;
+      border:rem-calc(10) solid red;
     }
   }
 
@@ -50,7 +50,7 @@ section.responsive-dom-manipulator-example {
     width:100%;
     display:flex;
     justify-content: flex-end;
-    max-width:1440px;
+    max-width:rem-calc(1440);
     margin:0 auto;
   }
 
@@ -64,13 +64,13 @@ section.responsive-dom-manipulator-example {
       border-bottom: 0;
     }
     @include breakpoint(xlarge up) {
-      max-width:1440px;
+      max-width:rem-calc(1440);
       margin:0 auto;
     }
   }
 
     .hamburger-icon-container {
-      width: 72px;
+      width: rem-calc(72);
       display: block;
       cursor: pointer;
       @include breakpoint(large up) {
@@ -87,7 +87,7 @@ section.responsive-dom-manipulator-example {
         white-space: nowrap;
         padding: 0;
         margin: 0;
-        min-width: 40px;
+        min-width: rem-calc(40);
         justify-content: center;
         display:block;
       }
