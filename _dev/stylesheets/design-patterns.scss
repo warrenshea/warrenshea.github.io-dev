@@ -1,12 +1,12 @@
 /* file: design-patterns.scss------------------------------------------------ */
 @charset "UTF-8";
 
+@import '_config/unit.scss';
 @import '_config/variables-colors.scss';
 @import '_config/variables-dimensions.scss';
-@import '_config/unit.scss';
+@import '_config/variables-box-shadow.scss';
 @import '_config/breakpoint.scss';
 @import '_config/media-queries.scss';
-@import '_config/variables-box-shadow.scss';
 
 main > div,
 main > section {
