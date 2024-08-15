@@ -71,14 +71,14 @@
       &::before{
         border-width: rem-calc(11);
         top: rem-calc(-11);
-        left: calc(50% - 12px);
+        left: calc(50% - rem-calc(12));
         border-top-width: 0;
         border-bottom-color: #ddd;
       }
       &:after{
         border-width: rem-calc(10);
         top: rem-calc(-10);
-        left: calc(50% - 11px);
+        left: calc(50% - rem-calc(11));
         border-top-width: 0;
         border-bottom-color: #fff;
       }
