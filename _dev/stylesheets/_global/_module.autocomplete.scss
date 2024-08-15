@@ -21,7 +21,7 @@
     border-bottom: 1px solid $silver;
     cursor:pointer;
     width:100%;
-    padding: 12px 12px 10px;
+    padding: rem-calc(12) rem-calc(12) rem-calc(10);
     span.name {
       text-align:left;
       flex-grow:1;
