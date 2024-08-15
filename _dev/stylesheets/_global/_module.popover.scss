@@ -34,16 +34,16 @@
   }
   &[data-popover-direction='right'] {
     &::before{
-      border-width:11px;
-      left: -11px;
-      margin-top: -11px;
+      border-width: rem-calc(11);
+      left: rem-calc(-11);
+      margin-top: rem-calc(-11);
       border-left-width: 0;
       border-right-color: #ddd;
       top: 50%;
     }
     &:after{
-      border-width:10px;
-      left: -10px;
+      border-width: rem-calc(10);
+      left: rem-calc(-10);
       transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
@@ -52,16 +52,16 @@
   }
   &[data-popover-direction='top'] {
     &::before{
-      border-width:11px;
-      bottom: -11px;
-      left: calc(50% - 12px);
+      border-width: rem-calc(11);
+      bottom: rem-calc(-11);
+      left: calc(50% - rem-calc(12));
       border-bottom-width: 0;
       border-top-color: #ddd;
     }
     &:after{
-      border-width:10px;
-      bottom: -10px;
-      left: calc(50% - 11px);
+      border-width: rem-calc(10);
+      bottom: rem-calc(-10);
+      left: calc(50% - rem-calc(11));
       border-bottom-width: 0;
       border-top-color: #fff;
     }
@@ -69,15 +69,15 @@
   &[data-popover-direction='bottom'] {
     @include breakpoint(large) {
       &::before{
-        border-width:11px;
-        top: -11px;
+        border-width: rem-calc(11);
+        top: rem-calc(-11);
         left: calc(50% - 12px);
         border-top-width: 0;
         border-bottom-color: #ddd;
       }
       &:after{
-        border-width:10px;
-        top: -10px;
+        border-width: rem-calc(10);
+        top: rem-calc(-10);
         left: calc(50% - 11px);
         border-top-width: 0;
         border-bottom-color: #fff;
@@ -86,11 +86,11 @@
   }
   button[data-popover-close] {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: rem-calc(10);
+    right: rem-calc(10);
     @include breakpoint(large) {
-      top: 20px;
-      right: 20px;
+      top: rem-calc(20);
+      right: rem-calc(20);
     }
   }
 }
