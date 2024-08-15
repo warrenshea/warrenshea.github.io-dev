@@ -77,10 +77,10 @@
       background-color: $disabled;
     }
 
-    /* | means it's a hard line distinction */
-    /* ~ means it's a transitional gradient */
+    // | means it's a hard line distinction
+    // ~ means it's a transitional gradient
 
-    /* Gradients Y-Axis Top to Bottom */
+    // Gradients Y-Axis Top to Bottom
     .#{$prefix}bgcgy\:platinum\|white {
       background: linear-gradient(0deg, $white 0, $white calc(50%), $platinum calc(50%), $platinum 100%);
     }
@@ -127,7 +127,7 @@
       background: linear-gradient(180deg, $white 3rem, $platinum 3rem);
     }
 
-    /* Gradients X-Axis Left to Right */
+    // Gradients X-Axis Left to Right
     .#{$prefix}bgcgx\:transparent\~40\%-black {
       background: linear-gradient(90deg, transparent 0%, rgba($black, 0.4) 100%);
     }
@@ -141,7 +141,7 @@
       background: linear-gradient(90deg, $silver 0%, $platinum 15%, $platinum 85%, $silver 100%);
     }
 
-    /* Alternate children */
+    // Alternate children
     .#{$prefix}bgc\:white-smoke-alt-children > :nth-child(even) {
       background-color: $white-smoke;
     }
