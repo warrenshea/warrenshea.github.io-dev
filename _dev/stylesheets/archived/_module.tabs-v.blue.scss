@@ -4,14 +4,14 @@
   [data-module='tabs.trigger'] {
     &[aria-selected='false'] {
     &+[data-module='tabs.panel'] {
-        margin-top:-1px;
+        margin-top: rem-calc(-1);
         display: none;
       }
     }
     &[aria-selected='true'] {
       z-index:1;
     &+[data-module='tabs.panel'] {
-        margin-top:-1px;
+        margin-top: rem-calc(-1);
         display: block;
         order:99;
         width:100%;
