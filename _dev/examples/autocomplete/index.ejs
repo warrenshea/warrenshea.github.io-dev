@@ -11,13 +11,13 @@
           <h2 class="play:bold fs:32px color:eerie-black pb:32px">Config: Single Select</h2>
           <div class="w:100%">
             <div class="sm+:w:8 lg+:w:4 align-self:centered" data-module="autocomplete" id="autocomplete-<%=id%>" data-autocomplete-filter="name" data-autocomplete-input-format='["#","num"," - ","name"]' data-autocomplete-source-type="fetch" data-autocomplete-source="/data/pokedex.json" data-autocomplete-type="single-select">
-              <div class="position:relative w:100% pt:4px">
+              <div class="position:relative w:100%">
                 <input type="text" data-module="autocomplete.input" id="<%=id%>" name="<%=id%>" role="combobox" aria-autocomplete="both" aria-owns="autocomplete-<%=id%>-results" aria-activedescendant="" autocomplete="off" aria-expanded="false" aria-required="true" aria-describedby="autocomplete-error" required>
                 <label for="<%=id%>" id="autocomplete-<%=id%>-label"><span class="description">Find a Pokémon</span></label>
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
               <div class="position:relative">
-                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;"></ul>
               </div>
               <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
             </div>
@@ -38,7 +38,7 @@
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
               <div class="position:relative">
-                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;"></ul>
               </div>
               <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
             </div>
@@ -59,7 +59,7 @@
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
               <div class="position:relative">
-                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;"></ul>
               </div>
               <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
             </div>
@@ -80,7 +80,7 @@
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
               <div class="position:relative">
-                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="-1" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;"></ul>
               </div>
               <span class="error-message sr-only" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Digimon</span>
               <span class="helper-description">There is a limit of 5 items</span>
@@ -102,7 +102,7 @@
               </div>
               <div data-module="autocomplete.sr-description" id="autocomplete-<%=id%>-sr-description" class="show-for-sr" aria-live="assertive"></div>
               <div class="position:relative">
-                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;overflow-y:scroll;overflow-x:hidden;"></ul>
+                <ul class="display:none unstyle-pl:0 pt:12px b-silver:1px position:absolute top:0 left:0 right:0 bgc:white" id="autocomplete-<%=id%>-results" data-module="autocomplete.results" data-autocomplete-max-results="13" data-bind="<%=id%>" role="listbox" aria-labelledby="autocomplete-<%=id%>-label" style="max-height: 400px;"></ul>
               </div>
               <span class="error-message" role="alert" data-module="autocomplete.error" id="autocomplete-error">Please enter a Pokémon</span>
               <span class="helper-description">Values saved are not the same as values displayed</span>
