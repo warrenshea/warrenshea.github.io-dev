@@ -1,5 +1,9 @@
+@import '_config/unit.scss';
+@import '_config/variables-dimensions.scss';
+@import '_config/breakpoint.scss';
+
 h2 { transition: opacity 0.5s ease; }
-.heading { height:86px; transition: opacity 0.5s ease; }
+.heading { height:rem-calc(86); transition: opacity 0.5s ease; }
 .description-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 13%, #f9f9f9 13%, #f9f9f9 15%, #fff 15.5%, #fff 100%); transition: opacity 0.5s ease; }
 .description-notes-line { background: linear-gradient(-75deg, #f9f9f9 0, #f9f9f9 9%, #f9f9f9 9%, #f9f9f9 11%, #fff 11.5%, #fff 100%); transition: opacity 0.5s ease; }
 .title-a11y { background: linear-gradient(105deg, #000 0, #000 92%, #666 92.5%, #666 100%); }
