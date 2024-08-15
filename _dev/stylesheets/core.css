@@ -1,32 +1,5 @@
-/* Variables, utility functions */
 /* file: variables-colors.scss------------------------------------------------ */
-/* PRIMARY COLOURS */
-/* BLUE COLOURS */
-/* RED COLOURS */
-/* YELLOW COLOURS */
-/* GRAYSCALE COLOURS */
-/* FEEDBACK COLOURS */
-/* SECONDARY COLOURS */
 /* file: variables-dimensions.scss------------------------------------------------ */
-/*rem-calc(375);*/
-/*rem-calc(1280);*/
-/*rem-calc(768);*/
-/*rem-calc(1024);*/
-/*rem-calc(1280);*/
-/* $mediaqueries object : "breakpoint" "prefix"
-  small down      | sm- | //not used
-  small only      | sm= | 0-767.99
-  small up        | sm+ | 0+
-  medium and down | md- | 0-1023.99
-  medium only     | md= | 768-1023.99
-  medium up       | md+ | 768+
-  large and down  | lg- | 0-1279.99
-  large only      | lg= | 1024-1279.99
-  large up        | lg+ | 1024+
-  xlarge and down | xl- | //not used since xl has no upper bound, this is equivalent to sm+
-  xlarge only     | xl= | //not used since xl has no upper bound, this is equivalent to xl+
-  xlarge up       | xl+ | 1280+
-*/
 /* file: variables-box-shadow.scss------------------------------------------------ */
 /* file: root.scss------------------------------------------------ */
 :root {
@@ -48,117 +21,56 @@
   }
 }
 
-/* file: normalize.scss------------------------------------------------ */
-/* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
-  /* 1 */
   -webkit-text-size-adjust: 100%;
-  /* 2 */
 }
 
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers.
- */
 body {
   margin: 0;
 }
 
-/**
- * Render the `main` element consistently in IE.
- */
 main {
   display: block;
 }
 
-/* Grouping content
-   ========================================================================== */
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 hr {
   box-sizing: content-box;
-  /* 1 */
   height: 0;
-  /* 1 */
   overflow: visible;
-  /* 2 */
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 pre {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Remove the gray background on active links in IE 10.
- */
 a {
   background-color: transparent;
 }
 
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
 abbr[title] {
   border-bottom: none;
-  /* 1 */
   text-decoration: underline;
-  /* 2 */
   text-decoration: underline dotted;
-  /* 2 */
 }
 
-/**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
 b,
 strong {
   font-weight: bolder;
 }
 
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
 code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  /* 1 */
   font-size: 1em;
-  /* 2 */
 }
 
-/**
- * Add the correct font size in all browsers.
- */
 small {
   font-size: 80%;
 }
 
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
 sub,
 sup {
   font-size: 75%;
@@ -175,59 +87,31 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove the border on images inside links in IE 10.
- */
 img {
   border-style: none;
 }
 
-/* Forms
-   ========================================================================== */
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
 button,
 input,
 optgroup,
 select,
 textarea {
   font-family: inherit;
-  /* 1 */
   font-size: 100%;
-  /* 1 */
   line-height: 1.15;
-  /* 1 */
   margin: 0;
-  /* 2 */
 }
 
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
 button,
 [type=button],
 [type=reset],
@@ -235,9 +119,6 @@ button,
   -webkit-appearance: button;
 }
 
-/**
- * Remove the inner border and padding in Firefox.
- */
 button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
@@ -246,9 +127,6 @@ button::-moz-focus-inner,
   padding: 0;
 }
 
-/**
- * Restore the focus styles unset by the previous rule.
- */
 button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
@@ -256,125 +134,64 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-/**
- * Correct the padding in Firefox.
- */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
-/**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
 legend {
   box-sizing: border-box;
-  /* 1 */
   color: inherit;
-  /* 2 */
   display: table;
-  /* 1 */
   max-width: 100%;
-  /* 1 */
   padding: 0;
-  /* 3 */
   white-space: normal;
-  /* 1 */
 }
 
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
 progress {
   vertical-align: baseline;
 }
 
-/**
- * Remove the default vertical scrollbar in IE 10+.
- */
 textarea {
   overflow: auto;
 }
 
-/**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
 [type=checkbox],
 [type=radio] {
   box-sizing: border-box;
-  /* 1 */
   padding: 0;
-  /* 2 */
 }
 
-/**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
 [type=number]::-webkit-inner-spin-button,
 [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
 [type=search] {
   -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  outline-offset: -0.125rem;
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 [type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  /* 1 */
   font: inherit;
-  /* 2 */
 }
 
-/* Interactive
-   ========================================================================== */
-/*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
 details {
   display: block;
 }
 
-/*
- * Add the correct display in all browsers.
- */
 summary {
   display: list-item;
 }
 
-/* Misc
-   ========================================================================== */
-/**
- * Add the correct display in IE 10+.
- */
 template {
   display: none;
 }
 
-/**
- * Add the correct display in IE 10.
- */
 [hidden] {
   display: none;
 }
@@ -399,10 +216,8 @@ html.storm-eagle body {
 }
 
 img {
-  /* Get rid of gap under images by making them display: inline-block; by default */
   display: inline-block;
   vertical-align: middle;
-  /* Grid defaults to get images and embeds to work properly */
   max-width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
@@ -426,7 +241,6 @@ button {
 }
 
 abbr[title] {
-  /* override */
   text-decoration: none;
 }
 
@@ -2966,7 +2780,7 @@ strong {
   }
 }
 .row.sm\+\:unstack > * {
-  flex: 1 1 0px;
+  flex: 1 1 0;
 }
 
 .row.md\+\:unstack > * {
@@ -2975,7 +2789,7 @@ strong {
 
 @media screen and (min-width: 48rem) {
   .row.md\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
 .row.lg\+\:unstack > * {
@@ -2984,7 +2798,7 @@ strong {
 
 @media screen and (min-width: 64rem) {
   .row.lg\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
 .row.xl\+\:unstack > * {
@@ -2993,7 +2807,7 @@ strong {
 
 @media screen and (min-width: 80rem) {
   .row.xl\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
 /* file: layout-flexbox-column-width-offset.scss------------------------------------------------ */
@@ -3966,7 +3780,6 @@ strong {
   }
 }
 /* file: layout-flexbox-alignment.scss------------------------------------------------ */
-/* for flex parent container */
 .align\:right {
   justify-content: flex-end;
 }
@@ -3999,7 +3812,6 @@ strong {
   align-items: stretch;
 }
 
-/* for flex childen */
 .align-self\:top {
   align-self: flex-start;
 }
@@ -4016,7 +3828,6 @@ strong {
   align-self: stretch;
 }
 
-/* the non-flex way to center a block element, so you don't need a parent flex container */
 .align-self\:centered {
   margin-left: auto;
   margin-right: auto;
@@ -4029,7 +3840,6 @@ strong {
 }
 
 @media screen and (max-width: 47.99rem) {
-  /* for flex parent container */
   .sm\=\:align\:right {
     justify-content: flex-end;
   }
@@ -4062,7 +3872,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .sm\=\:align-self\:top {
     align-self: flex-start;
   }
@@ -4079,7 +3888,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .sm\=\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4091,7 +3899,6 @@ strong {
     clear: both;
   }
 }
-/* for flex parent container */
 .sm\+\:align\:right {
   justify-content: flex-end;
 }
@@ -4124,7 +3931,6 @@ strong {
   align-items: stretch;
 }
 
-/* for flex childen */
 .sm\+\:align-self\:top {
   align-self: flex-start;
 }
@@ -4141,7 +3947,6 @@ strong {
   align-self: stretch;
 }
 
-/* the non-flex way to center a block element, so you don't need a parent flex container */
 .sm\+\:align-self\:centered {
   margin-left: auto;
   margin-right: auto;
@@ -4154,7 +3959,6 @@ strong {
 }
 
 @media screen and (max-width: 63.99rem) {
-  /* for flex parent container */
   .md-\:align\:right {
     justify-content: flex-end;
   }
@@ -4187,7 +3991,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .md-\:align-self\:top {
     align-self: flex-start;
   }
@@ -4204,7 +4007,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .md-\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4217,7 +4019,6 @@ strong {
   }
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
-  /* for flex parent container */
   .md\=\:align\:right {
     justify-content: flex-end;
   }
@@ -4250,7 +4051,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .md\=\:align-self\:top {
     align-self: flex-start;
   }
@@ -4267,7 +4067,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .md\=\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4280,7 +4079,6 @@ strong {
   }
 }
 @media screen and (min-width: 48rem) {
-  /* for flex parent container */
   .md\+\:align\:right {
     justify-content: flex-end;
   }
@@ -4313,7 +4111,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .md\+\:align-self\:top {
     align-self: flex-start;
   }
@@ -4330,7 +4127,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .md\+\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4343,7 +4139,6 @@ strong {
   }
 }
 @media screen and (max-width: 79.99rem) {
-  /* for flex parent container */
   .lg-\:align\:right {
     justify-content: flex-end;
   }
@@ -4376,7 +4171,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .lg-\:align-self\:top {
     align-self: flex-start;
   }
@@ -4393,7 +4187,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .lg-\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4406,7 +4199,6 @@ strong {
   }
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
-  /* for flex parent container */
   .lg\=\:align\:right {
     justify-content: flex-end;
   }
@@ -4439,7 +4231,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .lg\=\:align-self\:top {
     align-self: flex-start;
   }
@@ -4456,7 +4247,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .lg\=\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4469,7 +4259,6 @@ strong {
   }
 }
 @media screen and (min-width: 64rem) {
-  /* for flex parent container */
   .lg\+\:align\:right {
     justify-content: flex-end;
   }
@@ -4502,7 +4291,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .lg\+\:align-self\:top {
     align-self: flex-start;
   }
@@ -4519,7 +4307,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .lg\+\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -4532,7 +4319,6 @@ strong {
   }
 }
 @media screen and (min-width: 80rem) {
-  /* for flex parent container */
   .xl\+\:align\:right {
     justify-content: flex-end;
   }
@@ -4565,7 +4351,6 @@ strong {
     align-items: stretch;
   }
 
-  /* for flex childen */
   .xl\+\:align-self\:top {
     align-self: flex-start;
   }
@@ -4582,7 +4367,6 @@ strong {
     align-self: stretch;
   }
 
-  /* the non-flex way to center a block element, so you don't need a parent flex container */
   .xl\+\:align-self\:centered {
     margin-left: auto;
     margin-right: auto;
@@ -11804,7 +11588,6 @@ button.button\:yale-blue {
   overflow: hidden;
   height: 3.375rem;
   transition: none;
-  /* all .2s ease;*/
   border-radius: 0.25rem;
   line-height: 2rem;
   box-sizing: border-box;
@@ -12128,7 +11911,6 @@ button.sm\=\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -12451,7 +12233,6 @@ button.sm\+\:button\:yale-blue {
   overflow: hidden;
   height: 3.375rem;
   transition: none;
-  /* all .2s ease;*/
   border-radius: 0.25rem;
   line-height: 2rem;
   box-sizing: border-box;
@@ -12775,7 +12556,6 @@ button.md-\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -13099,7 +12879,6 @@ button.md\=\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -13423,7 +13202,6 @@ button.md\+\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -13747,7 +13525,6 @@ button.lg-\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -14071,7 +13848,6 @@ button.lg\=\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -14395,7 +14171,6 @@ button.lg\+\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -14719,7 +14494,6 @@ button.xl\+\:button\:yale-blue {
     overflow: hidden;
     height: 3.375rem;
     transition: none;
-    /* all .2s ease;*/
     border-radius: 0.25rem;
     line-height: 2rem;
     box-sizing: border-box;
@@ -15038,10 +14812,10 @@ button.xl\+\:button\:yale-blue[disabled=true] > .ic {
   left: 50%;
   position: absolute;
   top: 50%;
-  width: 120px;
-  height: 120px;
-  margin-left: -60px;
-  margin-top: -60px;
+  width: 7.5rem;
+  height: 7.5rem;
+  margin-left: -3.75rem;
+  margin-top: -3.75rem;
   background: rgb(1, 1, 1);
   border-radius: 100%;
   opacity: 0.3;
@@ -15483,20 +15257,11 @@ button.xl\+\:button\:focus:after {
 }
 
 /* file: interactive_form.scss------------------------------------------------ */
-/* Fieldset: Unstyle a fieldset */
 fieldset.unstyle {
   border: 0;
   padding: 0;
 }
 
-.form\:theme\:gl0b3x {
-  /* label styles */
-  /* input (text, email, password, search), select, and textarea styles */
-  /* helper description styles */
-  /* helper description styles */
-  /* select styles */
-  /* textarea styles */
-}
 .form\:theme\:gl0b3x input[type=text] + label,
 .form\:theme\:gl0b3x input[type=number] + label,
 .form\:theme\:gl0b3x input[type=email] + label,
@@ -15519,7 +15284,6 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=search] + label::before,
 .form\:theme\:gl0b3x select + label::before,
 .form\:theme\:gl0b3x textarea + label::before {
-  /* blue label line, hidden */
   z-index: 4;
   content: "";
   width: 100%;
@@ -15540,7 +15304,6 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=search] + label:after,
 .form\:theme\:gl0b3x select + label:after,
 .form\:theme\:gl0b3x textarea + label:after {
-  /* default gray label line */
   z-index: 3;
   content: "";
   width: 100%;
@@ -15604,7 +15367,6 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x input[type=search] + label span.description,
 .form\:theme\:gl0b3x select + label span.description,
 .form\:theme\:gl0b3x textarea + label span.description {
-  /* label description */
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -15775,11 +15537,8 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x textarea {
   transition: all 0.3s ease;
   padding-top: 0.5rem;
-  /* to remain consistent with input boxes */
   padding-bottom: 0.25rem;
-  /* to remain consistent with input boxes */
   margin-bottom: -0.625rem;
-  /* to remain consistent with input boxes */
   white-space: pre-wrap;
 }
 .form\:theme\:gl0b3x input[type=checkbox],
@@ -15863,7 +15622,6 @@ fieldset.unstyle {
   border: 0.125rem solid #3169b2;
 }
 .form\:theme\:gl0b3x input[type=checkbox]:focus + label:before {
-  /*border: rem-calc(2) solid $blue;*/
   box-shadow: 0 0 0 0.125rem #9bb6d9, 0 0 0 0.1875rem #1c3b65;
 }
 .form\:theme\:gl0b3x input[type=checkbox]:checked:disabled + label:before {
@@ -16227,10 +15985,6 @@ fieldset.unstyle {
   color: #ffffff;
 }
 
-.form\:theme\:card-checkboxes,
-.form\:theme\:card-radiobuttons {
-  /* helper description styles */
-}
 @keyframes focus-fade {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
@@ -16311,9 +16065,7 @@ fieldset.unstyle {
   visibility: hidden;
   position: absolute;
   top: -0.0625rem;
-  /* - Fix for IE11 - keep -1px, not 0px */
   right: -0.0625rem;
-  /* - Fix for IE11 - keep -1px, not 0px */
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0 0 0 0.125rem;
@@ -16823,12 +16575,10 @@ h4.heebo {
 }
 
 /* file: typography-font-size.scss------------------------------------------------ */
-/* use this to remove phantom space */
 .fs\:0 {
   font-size: 0;
 }
 
-/* from https://type-scale.com/ - 1.2 - Minor Third */
 .fs\:12px {
   font-size: 0.75rem;
 }
@@ -16849,22 +16599,18 @@ h4.heebo {
   font-size: 1.5rem;
 }
 
-/*h4*/
 .fs\:28px {
   font-size: 1.75rem;
 }
 
-/*h3*/
 .fs\:32px {
   font-size: 2rem;
 }
 
-/*h2*/
 .fs\:40px {
   font-size: 2.5rem;
 }
 
-/*h1*/
 @media screen and (max-width: 47.99rem) {
   .sm\=\:fs\:12px {
     font-size: 0.75rem;
@@ -16886,22 +16632,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .sm\=\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .sm\=\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .sm\=\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 .sm\+\:fs\:12px {
   font-size: 0.75rem;
@@ -16923,22 +16664,18 @@ h4.heebo {
   font-size: 1.5rem;
 }
 
-/*h4*/
 .sm\+\:fs\:28px {
   font-size: 1.75rem;
 }
 
-/*h3*/
 .sm\+\:fs\:32px {
   font-size: 2rem;
 }
 
-/*h2*/
 .sm\+\:fs\:40px {
   font-size: 2.5rem;
 }
 
-/*h1*/
 @media screen and (max-width: 63.99rem) {
   .md-\:fs\:12px {
     font-size: 0.75rem;
@@ -16960,22 +16697,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .md-\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .md-\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .md-\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (min-width: 48rem) and (max-width: 63.99rem) {
   .md\=\:fs\:12px {
@@ -16998,22 +16730,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .md\=\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .md\=\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .md\=\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (min-width: 48rem) {
   .md\+\:fs\:12px {
@@ -17036,22 +16763,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .md\+\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .md\+\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .md\+\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (max-width: 79.99rem) {
   .lg-\:fs\:12px {
@@ -17074,22 +16796,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .lg-\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .lg-\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .lg-\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (min-width: 64rem) and (max-width: 79.99rem) {
   .lg\=\:fs\:12px {
@@ -17112,22 +16829,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .lg\=\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .lg\=\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .lg\=\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (min-width: 64rem) {
   .lg\+\:fs\:12px {
@@ -17150,22 +16862,17 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .lg\+\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .lg\+\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .lg\+\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
 @media screen and (min-width: 80rem) {
   .xl\+\:fs\:12px {
@@ -17188,30 +16895,23 @@ h4.heebo {
     font-size: 1.5rem;
   }
 
-  /*h4*/
   .xl\+\:fs\:28px {
     font-size: 1.75rem;
   }
 
-  /*h3*/
   .xl\+\:fs\:32px {
     font-size: 2rem;
   }
 
-  /*h2*/
   .xl\+\:fs\:40px {
     font-size: 2.5rem;
   }
-
-  /*h1*/
 }
-/*@import '_global/typography-font-weight.scss';*/
 /* file: typography-line-height.scss------------------------------------------------ */
 .lh\:0 {
   line-height: 0;
 }
 
-/* used for phantom space below an image */
 .lh\:24 {
   line-height: 1.5;
 }
@@ -17233,7 +16933,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .sm\=\:lh\:24 {
     line-height: 1.5;
   }
@@ -17254,7 +16953,6 @@ h4.heebo {
   line-height: 0;
 }
 
-/* used for phantom space below an image */
 .sm\+\:lh\:24 {
   line-height: 1.5;
 }
@@ -17276,7 +16974,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .md-\:lh\:24 {
     line-height: 1.5;
   }
@@ -17298,7 +16995,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .md\=\:lh\:24 {
     line-height: 1.5;
   }
@@ -17320,7 +17016,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .md\+\:lh\:24 {
     line-height: 1.5;
   }
@@ -17342,7 +17037,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .lg-\:lh\:24 {
     line-height: 1.5;
   }
@@ -17364,7 +17058,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .lg\=\:lh\:24 {
     line-height: 1.5;
   }
@@ -17386,7 +17079,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .lg\+\:lh\:24 {
     line-height: 1.5;
   }
@@ -17408,7 +17100,6 @@ h4.heebo {
     line-height: 0;
   }
 
-  /* used for phantom space below an image */
   .xl\+\:lh\:24 {
     line-height: 1.5;
   }
@@ -17595,7 +17286,6 @@ h4.heebo {
   }
 }
 /* file: typography-misc.scss------------------------------------------------ */
-/* Unordered/Ordered List: Unstyle a list */
 ul.unstyle,
 ol.unstyle {
   list-style: none;
@@ -17619,9 +17309,9 @@ ul.checkmark-list > li {
   background-image: url("../assets/icon/check.blue.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: 24px 24px;
-  padding-left: 40px;
-  line-height: 24px;
+  background-size: 1.5rem 1.5rem;
+  padding-left: 2.5rem;
+  line-height: 1.5rem;
 }
 
 .ws\:normal {
@@ -23397,7 +23087,7 @@ ul.checkmark-list > li {
 .breadcrumbs ul li:nth-last-child(2)::before {
   white-space: pre;
   content: " ";
-  width: 24px;
+  width: 1.5rem;
   line-height: 1.5;
   background: url("../assets/icon/24/arrow-left.svg") center center;
 }
@@ -23445,7 +23135,7 @@ ul.checkmark-list > li {
   overflow: hidden;
 }
 [data-module=accordion] [data-module="accordion.panel"][data-accordion-panel=hide] {
-  height: 0px;
+  height: 0;
 }
 [data-module=accordion] :where(.accordion-header-py\:16px-px\:24px > div > *) > button {
   padding: 1rem 1.5rem;
@@ -23456,7 +23146,7 @@ ul.checkmark-list > li {
 
 /* file: module.tabs.scss------------------------------------------------ */
 [data-module=tabs] [data-module="tabs.panel"] {
-  margin-top: -1px;
+  margin-top: -0.0625rem;
   z-index: -1;
 }
 
@@ -23492,8 +23182,8 @@ ul.checkmark-list > li {
 }
 [data-module=dialog] button[data-dialog-close] {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 1.25rem;
+  right: 1.25rem;
 }
 
 /* file: module.popover.scss------------------------------------------------ */
@@ -23534,60 +23224,60 @@ ul.checkmark-list > li {
   content: "";
 }
 [data-module=popover][data-popover-direction=right]::before {
-  border-width: 11px;
-  left: -11px;
-  margin-top: -11px;
+  border-width: 0.6875rem;
+  left: -0.6875rem;
+  margin-top: -0.6875rem;
   border-left-width: 0;
   border-right-color: #ddd;
   top: 50%;
 }
 [data-module=popover][data-popover-direction=right]:after {
-  border-width: 10px;
-  left: -10px;
+  border-width: 0.625rem;
+  left: -0.625rem;
   transform: translate(0, -50%);
   border-left-width: 0;
   border-right-color: #fff;
   top: 50%;
 }
 [data-module=popover][data-popover-direction=top]::before {
-  border-width: 11px;
-  bottom: -11px;
-  left: calc(50% - 12px);
+  border-width: 0.6875rem;
+  bottom: -0.6875rem;
+  left: calc(50% - 0.75rem);
   border-bottom-width: 0;
   border-top-color: #ddd;
 }
 [data-module=popover][data-popover-direction=top]:after {
-  border-width: 10px;
-  bottom: -10px;
-  left: calc(50% - 11px);
+  border-width: 0.625rem;
+  bottom: -0.625rem;
+  left: calc(50% - 0.6875rem);
   border-bottom-width: 0;
   border-top-color: #fff;
 }
 @media screen and (min-width: 64rem) {
   [data-module=popover][data-popover-direction=bottom]::before {
-    border-width: 11px;
-    top: -11px;
-    left: calc(50% - 12px);
+    border-width: 0.6875rem;
+    top: -0.6875rem;
+    left: calc(50% - 0.75rem);
     border-top-width: 0;
     border-bottom-color: #ddd;
   }
   [data-module=popover][data-popover-direction=bottom]:after {
-    border-width: 10px;
-    top: -10px;
-    left: calc(50% - 11px);
+    border-width: 0.625rem;
+    top: -0.625rem;
+    left: calc(50% - 0.6875rem);
     border-top-width: 0;
     border-bottom-color: #fff;
   }
 }
 [data-module=popover] button[data-popover-close] {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.625rem;
+  right: 0.625rem;
 }
 @media screen and (min-width: 64rem) {
   [data-module=popover] button[data-popover-close] {
-    top: 20px;
-    right: 20px;
+    top: 1.25rem;
+    right: 1.25rem;
   }
 }
 
@@ -23614,12 +23304,12 @@ ul.checkmark-list > li {
   transition: background-color 1s, border-color 1s, transform 1s;
   height: 1.75rem;
   width: 1.75rem;
-  background: radial-gradient(circle, white 7px, #808080 9px, transparent 10px);
+  background: radial-gradient(circle, white 0.4375rem, #808080 0.5625rem, transparent 0.625rem);
   padding: 0;
   margin: 0 0.375rem;
 }
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control][data-carousel-indicator-active=true] {
-  background: radial-gradient(circle, #3169b2 7px, #808080 9px, transparent 10px);
+  background: radial-gradient(circle, #3169b2 0.4375rem, #808080 0.5625rem, transparent 0.625rem);
 }
 
 @media screen and (min-width: 48rem) {
@@ -23719,7 +23409,7 @@ ul.checkmark-list > li {
   opacity: 0;
   transition: opacity 0.5s;
   text-align: left;
-  max-width: 400px;
+  max-width: 25rem;
   font-size: 16px !important;
 }
 [data-module="module.toast"] .toast h1, [data-module="module.toast"] .toast h2, [data-module="module.toast"] .toast h3, [data-module="module.toast"] .toast h4, [data-module="module.toast"] .toast p, [data-module="module.toast"] .toast span, [data-module="module.toast"] .toast div, [data-module="module.toast"] .toast a, [data-module="module.toast"] .toast button {
@@ -23749,7 +23439,7 @@ ul.checkmark-list > li {
   border-bottom: 1px solid #c0c0c0;
   cursor: pointer;
   width: 100%;
-  padding: 12px 12px 10px;
+  padding: 0.75rem 0.75rem 0.625rem;
 }
 [data-module="autocomplete.results"] li span.name {
   text-align: left;
@@ -23762,7 +23452,6 @@ ul.checkmark-list > li {
   background-color: #e0e0e0;
 }
 
-/* Utility classes always go last, as they should always trump other pre-defined classes/styles. In general, we should never trump a utility class */
 /* file: helper-margin-padding.scss------------------------------------------------ */
 .m\:1px {
   margin: 0.0625rem;
@@ -36013,7 +35702,6 @@ ul.checkmark-list > li {
   border-right: 0.25rem transparent solid;
 }
 
-/* placed after the above to "overrride" it if necessary */
 .b\:0 {
   border: 0;
 }
@@ -37475,7 +37163,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .sm\=\:b\:0 {
     border: 0;
   }
@@ -38936,7 +38623,6 @@ ul.checkmark-list > li {
   border-right: 0.25rem transparent solid;
 }
 
-/* placed after the above to "overrride" it if necessary */
 .sm\+\:b\:0 {
   border: 0;
 }
@@ -40398,7 +40084,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .md-\:b\:0 {
     border: 0;
   }
@@ -41860,7 +41545,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .md\=\:b\:0 {
     border: 0;
   }
@@ -43322,7 +43006,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .md\+\:b\:0 {
     border: 0;
   }
@@ -44784,7 +44467,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .lg-\:b\:0 {
     border: 0;
   }
@@ -46246,7 +45928,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .lg\=\:b\:0 {
     border: 0;
   }
@@ -47708,7 +47389,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .lg\+\:b\:0 {
     border: 0;
   }
@@ -49170,7 +48850,6 @@ ul.checkmark-list > li {
     border-right: 0.25rem transparent solid;
   }
 
-  /* placed after the above to "overrride" it if necessary */
   .xl\+\:b\:0 {
     border: 0;
   }
@@ -52986,9 +52665,6 @@ ul.checkmark-list > li {
   background-color: #eeeeec;
 }
 
-/* | means it's a hard line distinction */
-/* ~ means it's a transitional gradient */
-/* Gradients Y-Axis Top to Bottom */
 .bgcgy\:platinum\|white {
   background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
 }
@@ -53049,7 +52725,6 @@ ul.checkmark-list > li {
   background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
 }
 
-/* Gradients X-Axis Left to Right */
 .bgcgx\:transparent\~40\%-black {
   background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
 }
@@ -53066,7 +52741,6 @@ ul.checkmark-list > li {
   background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
 }
 
-/* Alternate children */
 .bgc\:white-smoke-alt-children > :nth-child(even) {
   background-color: #f0f0f0;
 }
@@ -53168,9 +52842,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .sm\=\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -53231,7 +52902,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .sm\=\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -53248,7 +52918,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .sm\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -53349,9 +53018,6 @@ ul.checkmark-list > li {
   background-color: #eeeeec;
 }
 
-/* | means it's a hard line distinction */
-/* ~ means it's a transitional gradient */
-/* Gradients Y-Axis Top to Bottom */
 .sm\+\:bgcgy\:platinum\|white {
   background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
 }
@@ -53412,7 +53078,6 @@ ul.checkmark-list > li {
   background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
 }
 
-/* Gradients X-Axis Left to Right */
 .sm\+\:bgcgx\:transparent\~40\%-black {
   background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
 }
@@ -53429,7 +53094,6 @@ ul.checkmark-list > li {
   background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
 }
 
-/* Alternate children */
 .sm\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
   background-color: #f0f0f0;
 }
@@ -53531,9 +53195,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .md-\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -53594,7 +53255,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .md-\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -53611,7 +53271,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .md-\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -53713,9 +53372,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .md\=\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -53776,7 +53432,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .md\=\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -53793,7 +53448,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .md\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -53895,9 +53549,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .md\+\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -53958,7 +53609,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .md\+\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -53975,7 +53625,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .md\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -54077,9 +53726,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .lg-\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -54140,7 +53786,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .lg-\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -54157,7 +53802,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .lg-\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -54259,9 +53903,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .lg\=\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -54322,7 +53963,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .lg\=\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -54339,7 +53979,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .lg\=\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -54441,9 +54080,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .lg\+\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -54504,7 +54140,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .lg\+\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -54521,7 +54156,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .lg\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -54623,9 +54257,6 @@ ul.checkmark-list > li {
     background-color: #eeeeec;
   }
 
-  /* | means it's a hard line distinction */
-  /* ~ means it's a transitional gradient */
-  /* Gradients Y-Axis Top to Bottom */
   .xl\+\:bgcgy\:platinum\|white {
     background: linear-gradient(0deg, #ffffff 0, #ffffff 50%, #e0e0e0 50%, #e0e0e0 100%);
   }
@@ -54686,7 +54317,6 @@ ul.checkmark-list > li {
     background: linear-gradient(180deg, #ffffff 3rem, #e0e0e0 3rem);
   }
 
-  /* Gradients X-Axis Left to Right */
   .xl\+\:bgcgx\:transparent\~40\%-black {
     background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
@@ -54703,7 +54333,6 @@ ul.checkmark-list > li {
     background: linear-gradient(90deg, #c0c0c0 0%, #e0e0e0 15%, #e0e0e0 85%, #c0c0c0 100%);
   }
 
-  /* Alternate children */
   .xl\+\:bgc\:white-smoke-alt-children > :nth-child(even) {
     background-color: #f0f0f0;
   }
@@ -55412,20 +55041,18 @@ ul.checkmark-list > li {
   }
 }
 /* file: helper-misc.scss------------------------------------------------ */
-/* Visibility Helper Classes */
 .sr-only,
 .show-for-sr,
 .show-for-screen-reader-only,
 .show-on-focus {
   position: absolute;
-  left: -10000px;
+  left: -625rem;
   top: auto;
-  width: 1px;
-  height: 1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
   overflow: hidden;
 }
 
-/*hide-for-screen-reader-only doesn't exist as a CSS class - use aria-hidden="true" */
 .show-on-focus:active,
 .show-on-focus:focus {
   height: auto;
@@ -55465,7 +55092,6 @@ ul.checkmark-list > li {
   outline: 0;
 }
 
-/* Width Helper Classes */
 .w\:100\% {
   width: 100%;
 }
@@ -55482,7 +55108,6 @@ ul.checkmark-list > li {
   max-width: 40rem;
 }
 
-/* Height Helper Classes */
 .h\:100\% {
   height: 100%;
 }
@@ -55499,12 +55124,10 @@ ul.checkmark-list > li {
   max-height: 100%;
 }
 
-/* Image Helper Classes */
 .object-fit\:contain {
   object-fit: contain;
 }
 
-/* Layout Classes */
 .display\:flex {
   display: flex;
 }
@@ -55841,7 +55464,6 @@ ul.checkmark-list > li {
   vertical-align: middle;
 }
 
-/* Position Helper Classes */
 .position\:absolute {
   position: absolute;
 }
@@ -56346,23 +55968,18 @@ ul.checkmark-list > li {
     z-index: 2;
   }
 }
-/* Sizing Helper Classes */
 .box-sizing\:border-box {
   box-sizing: border-box;
 }
 
-/* Other Helper Classes */
 .cursor\:pointer {
   cursor: pointer;
 }
 
-/* would like to call this 'cursor' but conflicts with name */
 .cursor\:grab {
   cursor: grab;
 }
 
-/* would like to call this 'cursor' but conflicts with name */
-/* Float Helper Classes */
 .clearfix::before, .clearfix::after {
   content: " ";
   display: table;
