@@ -55,7 +55,7 @@
 }
 
 .row.sm\+\:unstack > * {
-  flex: 1 1 0px;
+  flex: 1 1 0;
 }
 
 .row.md\+\:unstack > * {
@@ -63,7 +63,7 @@
 }
 @include breakpoint(medium) {
   .row.md\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
 
@@ -72,7 +72,7 @@
 }
 @include breakpoint(large) {
   .row.lg\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
 
@@ -81,6 +81,6 @@
 }
 @include breakpoint(xlarge) {
   .row.xl\+\:unstack > * {
-    flex: 1 1 0px;
+    flex: 1 1 0;
   }
 }
