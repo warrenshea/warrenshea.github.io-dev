@@ -2,10 +2,10 @@
 .row0 > div.heading,
 .grid > div.heading,
 .grid0 > div.heading {
-  margin-top: 18px;
+  margin-top: rem-calc(18);
   text-align:center;
   font-family: 'heebo-bold';
-  height: 24px;
+  height: rem-calc(24);
 }
 .row > div:not(.heading),
 .row0 > div:not(.heading),
@@ -13,11 +13,11 @@
 .grid0 > div:not(.heading) {
   text-align:center;
   background-color: #FFFFFF90;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  height: 40px;
-  border: 0.0625rem #404040 solid;
-  border-radius:4px;
+  margin-top: rem-calc(8);
+  margin-bottom: rem-calc(8);
+  height: rem-calc(40);
+  border: rem-calc(1) #404040 solid;
+  border-radius:rem-calc(4);
 }
 .row > div:not(.heading):before,
 .row0 > div:not(.heading):before,
