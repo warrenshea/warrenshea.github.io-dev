@@ -1,13 +1,13 @@
 /* file: interactive_form.scss------------------------------------------------ */
 
-/* Fieldset: Unstyle a fieldset */
+// Fieldset: Unstyle a fieldset
 fieldset.unstyle {
   border: 0;
   padding: 0;
 }
 
 .form\:theme\:gl0b3x {
-  /* label styles */
+  // label styles
   input[type='text'] + label,
   input[type='number'] + label,
   input[type='email'] + label,
@@ -23,7 +23,7 @@ fieldset.unstyle {
     pointer-events: none;
     cursor: pointer;
     &::before {
-      /* blue label line, hidden */
+      // blue label line, hidden
       z-index: 4;
       content: '';
       width: 100%;
@@ -38,7 +38,7 @@ fieldset.unstyle {
       display: block;
     }
     &:after {
-      /* default gray label line */
+      // default gray label line
       z-index: 3;
       content: '';
       width: 100%;
@@ -66,7 +66,7 @@ fieldset.unstyle {
       }
     }
     span.description {
-      /* label description */
+      // label description
       display: block;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -95,7 +95,7 @@ fieldset.unstyle {
     }
   }
 
-  /* input (text, email, password, search), select, and textarea styles */
+  // input (text, email, password, search), select, and textarea styles
   input,
   select,
   textarea {
@@ -155,7 +155,7 @@ fieldset.unstyle {
     font-size: rem-calc(14);
     font-family: 'heebo-medium';
   }
-  /* helper description styles */
+  // helper description styles
   .error-message {
     width: 100%;
     min-width: rem-calc(150);
@@ -181,7 +181,7 @@ fieldset.unstyle {
     }
   }
 
-  /* helper description styles */
+  // helper description styles
   .helper-description {
     color: $onyx;
     font-size: rem-calc(14);
@@ -214,7 +214,7 @@ fieldset.unstyle {
     }
   }
 
-  /* select styles */
+  // select styles
   select {
     cursor: pointer;
     background-color: transparent;
@@ -225,12 +225,12 @@ fieldset.unstyle {
     appearance: none;
   }
 
-  /* textarea styles */
+  // textarea styles
   textarea {
     transition: all 0.3s ease;
-    padding-top: rem-calc(8); /* to remain consistent with input boxes */
-    padding-bottom: rem-calc(4); /* to remain consistent with input boxes */
-    margin-bottom: rem-calc(-10); /* to remain consistent with input boxes */
+    padding-top: rem-calc(8); // to remain consistent with input boxes
+    padding-bottom: rem-calc(4); // to remain consistent with input boxes
+    margin-bottom: rem-calc(-10); // to remain consistent with input boxes
     white-space: pre-wrap;
   }
 
@@ -307,7 +307,7 @@ fieldset.unstyle {
       border: rem-calc(2) solid $blue;
     }
     &:focus + label:before {
-      /*border: rem-calc(2) solid $blue;*/
+      //border: rem-calc(2) solid $blue;
       box-shadow: $box-shadow-custom-7;
     }
     &:checked:disabled + label:before {
@@ -663,7 +663,7 @@ fieldset.unstyle {
     }
   }
 
-  /* helper description styles */
+  // helper description styles
   .error-message {
     width: 100%;
     min-width: rem-calc(150);
@@ -718,9 +718,9 @@ fieldset.unstyle {
         visibility: hidden;
         position: absolute;
         top: rem-calc(-1);
-        /* - Fix for IE11 - keep -1px, not 0px */
+        // - Fix for IE11 - keep -1px, not 0px
         right: rem-calc(-1);
-        /* - Fix for IE11 - keep -1px, not 0px */
+        // - Fix for IE11 - keep -1px, not 0px
         width: rem-calc(24);
         height: rem-calc(24);
         border-radius: 0 0 0 rem-calc(2);
