@@ -62,7 +62,7 @@ $directions: (
       }
     }
 
-    /* placed after the above to "overrride" it if necessary */
+    // placed after the above to "overrride" it if necessary
     .#{$prefix}b\:0 {
       border: 0;
     }
