@@ -1,12 +1,12 @@
 /* file: module.archived-popover.scss------------------------------------------------ */
 @charset "UTF-8";
 
+@import '../_config/unit.scss';
 @import '../_config/variables-colors.scss';
 @import '../_config/variables-dimensions.scss';
-@import '../_config/unit.scss';
+@import '../_config/variables-box-shadow.scss';
 @import '../_config/breakpoint.scss';
 @import '../_config/media-queries.scss';
-@import '../_config/variables-box-shadow.scss';
 
 [data-module='archived-popover'] {
   position:fixed;
@@ -35,15 +35,15 @@
   }
   &.right {
     &::before{
-      border-width:11px;
-      left: -11px;
-      margin-top: -11px;
+      border-width:rem-calc(11);
+      left: rem-calc(-11);
+      margin-top: rem-calc(-11);
       border-left-width: 0;
       border-right-color: #bbb;
     }
     &:after{
-      border-width:10px;
-      left: -10px;
+      border-width:rem-calc(10);
+      left: rem-calc(-10);
       transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
@@ -51,11 +51,11 @@
   }
   button[data-archived-popover-close] {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: rem-calc(10);
+    right: rem-calc(10);
     @include breakpoint(large) {
-      top: 20px;
-      right: 20px;
+      top: rem-calc(20);
+      right: rem-calc(20);
     }
   }
   &[data-archived-popover='active'] {
@@ -70,8 +70,8 @@
       top:50%;
       bottom:auto;
       right:auto;
-      width:300px;
-      max-width:300px;
+      width: rem-calc(300);
+      max-width: rem-calc(300);
     }
   }
 }
