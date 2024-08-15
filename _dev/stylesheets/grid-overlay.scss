@@ -1,21 +1,21 @@
 @charset "UTF-8";
 
-@import '_config/variables-dimensions.scss';
 @import '_config/unit.scss';
+@import '_config/variables-dimensions.scss';
 
 .grid-background {
   background-size: rem-calc(16) rem-calc(16);
-  background-image: radial-gradient(circle, #ddd 2px, #f9f9f9 0);
+  background-image: radial-gradient(circle, #ddd rem-calc(2), #f9f9f9 0);
   background-position-x: center;
 }
-.sm-left { color:#999;width:198px;height:rem-calc(20);top:-2px;z-index:-1;left:calc(50% - 385px); }
-.sm-right { color:#999;width:198px;height:rem-calc(20);top:-2px;z-index:-1;right:calc(50% - 385px); }
-.md-left { color:#999;width:126px;height:rem-calc(20);top:-2px;z-index:-1;left:calc(50% - 511px); }
-.md-right { color:#999;width:126px;height:rem-calc(20);top:-2px;z-index:-1;right:calc(50% - 511px); }
-.lg-left { color:#999;width:127px;height:rem-calc(20);top:-2px;z-index:-1;left:calc(50% - 639px); }
-.lg-right { color:#999;width:127px;height:rem-calc(20);top:-2px;z-index:-1;right:calc(50% - 639px); }
-.xl-left { color:#999;width:50%;height:rem-calc(20);top:-2px;z-index:-2;right:50%;text-align:right;padding-right:670px; }
-.xl-right { color:#999;width:50%;height:rem-calc(20);top:-2px;z-index:-2;left:50%;text-align:left;padding-left:670px; }
+.sm-left { color:#999;width:rem-calc(198);height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - rem-calc(385)); }
+.sm-right { color:#999;width:rem-calc(198);height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - rem-calc(385)); }
+.md-left { color:#999;width:rem-calc(126);height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - rem-calc(511)); }
+.md-right { color:#999;width:rem-calc(126);height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - rem-calc(511)); }
+.lg-left { color:#999;width:rem-calc(127);height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - rem-calc(639)); }
+.lg-right { color:#999;width:rem-calc(127);height:rem-calc(20);top:rem-calc(-2);z-index:-1;right:calc(50% - rem-calc(639)); }
+.xl-left { color:#999;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;right:50%;text-align:right;padding-right:rem-calc(670); }
+.xl-right { color:#999;width:50%;height:rem-calc(20);top:rem-calc(-2);z-index:-2;left:50%;text-align:left;padding-left:rem-calc(670); }
 
 .grid-type-gap {
   column-gap: rem-calc(16);
