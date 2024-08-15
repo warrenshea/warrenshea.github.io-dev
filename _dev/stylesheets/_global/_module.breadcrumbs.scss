@@ -11,7 +11,7 @@
       &::before{
         white-space: pre;
         content:" ";
-        width:24px;
+        width:rem-calc(24);
         line-height:1.5;
         background:url('../assets/icon/24/arrow-left.svg') center center;
         @include breakpoint(xlarge) {
