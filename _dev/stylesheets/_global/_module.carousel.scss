@@ -26,11 +26,11 @@
       transition: background-color 1s, border-color 1s, transform 1s;
       height:rem-calc(28);
       width:rem-calc(28);
-      background: radial-gradient(circle, white 7px, $gray 9px, transparent 10px);
+      background: radial-gradient(circle, white rem-calc(7), $gray rem-calc(9), transparent rem-calc(10));
       padding:0;
       margin:0 rem-calc(6);
       &[data-carousel-indicator-active="true"] {
-        background: radial-gradient(circle, $blue 7px, $gray 9px, transparent 10px);
+        background: radial-gradient(circle, $blue rem-calc(7), $gray rem-calc(9), transparent rem-calc(10));
       }
     }
   }
