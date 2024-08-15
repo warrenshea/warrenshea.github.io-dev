@@ -25,8 +25,8 @@
     margin:auto;
     button[data-modal-close] {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: rem-calc(20);
+      right: rem-calc(20);
     }
     &[data-modal-container='active'] {
       opacity:1;
