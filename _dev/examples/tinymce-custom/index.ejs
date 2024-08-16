@@ -23,12 +23,12 @@
               </button>
 
               <span data-zs-tinymce-hide data-zs-tinymce-placeholder="popover" id="test," data-zs="test," class="tiny-mce-not-editable lh:0 position:relative vertical-align:middle" data-zs-module-name="popover" data-zs-branch="master">
-                <button class="tiny-mce-not-editable  flex-grow:0 ml:4px" popovertarget="test,popover:content" data-module="popover.trigger" onclick="storm_eagle.popover.open('test,popover:content',this);" aria-label="Popover information, opens in a new pop-up">
+                <button class="tiny-mce-not-editable  flex-grow:0 ml:4px" popovertarget="test,popover:content" data-module="popover.trigger" onclick="storm_eagle.popover.action.open('test,popover:content',this);" aria-label="Popover information, opens in a new pop-up">
                   <span class="ic ic-type:solid display:block ic-color:blue ic-size:16px ic-name:info-circle" aria-hidden="true"></span>
                 </button>
-                <span popover class="right" data-module="popover" id="test,popover:content" aria-labelledby="test,popover:bind">
+                <span popover data-module="popover" data-popover-direction="right" id="test,popover:content" aria-labelledby="test,popover:bind">
                   <span class="bgc:white w:100% md-:brrtx:4px lg+:brr:4px">
-                    <button data-popover-close onclick="storm_eagle.popover.close();" aria-label="Close information pop-up">
+                    <button data-popover-close onclick="storm_eagle.popover.action.close();" aria-label="Close information pop-up">
                       <span class="ic ic-type:solid display:block ic-color:blue ic-size:24px ic-name:times" aria-hidden="true"></span>
                     </button>
                     <span class="display:block lh:24 md-:py:16px md-:pl:16px md-:pr:48px lg+:py:24px lg+:pl:32px lg+:pr:56px">
