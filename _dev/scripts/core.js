@@ -1303,20 +1303,20 @@ storm_eagle.module('zs_highlighter', () => {
       if (storm_eagle.page.get_query_value('zs-highlight-mid')) {
         storm_eagle.page.get_query_value('zs-highlight-mid').split(",").forEach((mid_id) => {
           document.querySelectorAll(`[data-zs*='mid\\:${mid_id},']`).forEach((element) => {
-            element.classList.add("zs-hightlight-yellow","p:4px");
+            element.classList.add("zs-hightlight-yellow");
           })
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-cid')) {
         storm_eagle.page.get_query_value('zs-highlight-cid').split(",").forEach((cid_id) => {
           document.querySelectorAll(`[data-zs*='cid\\:${cid_id},']`).forEach((element) => {
-            element.classList.add("zs-hightlight-red","p:4px");
+            element.classList.add("zs-hightlight-red");
           })
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-branch')) {
         document.querySelectorAll(`[data-zs-branch=${storm_eagle.page.get_query_value('zs-highlight-branch')}]`).forEach((element) => {
-          element.classList.add("zs-hightlight-blue","p:4px");
+          element.classList.add("zs-hightlight-blue");
         })
       }
     },
