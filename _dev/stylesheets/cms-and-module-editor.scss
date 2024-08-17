@@ -72,7 +72,7 @@
 [data-zs-publish-page]:before { content: "Publish Page";  border:rem-calc(1) solid $positive; }
 [data-zs-publish-page].bgc\:positive:before { content: "Publish Page";  border:rem-calc(1) solid $positive; background: $positive; }
 
-[data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; padding: 16px !important; margin-top:0 !important; }
+[data-zs-page-editor-mode-add-border] { border: rem-calc(2) dashed $positive-light; padding: rem-calc(16) !important; margin-top:0 !important; }
 [data-zs-page-editor-mode-add-padding] {
   padding: rem-calc(8);
   &::before {
