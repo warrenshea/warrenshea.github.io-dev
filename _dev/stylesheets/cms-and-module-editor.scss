@@ -321,27 +321,6 @@
   }
 }
 
-#module-form-editor {
-  dl {
-    dt {
-      font-family: "heebo-bold", Arial, Sans-Serif;
-      font-weight: 700;
-    }
-    dd {
-      margin-left:0;
-    }
-  }
-}
-
-.isotope-card-tag {
-  margin: rem-calc(2) rem-calc(8);
-  padding: 0 rem-calc(8);
-  border-radius: rem-calc(4);
-  background: $blue;
-  color: $white;
-  font-family: 'heebo-bold';
-}
-
 .form\:theme\:cms {
   /* label styles */
   input[type='text'] + label,
