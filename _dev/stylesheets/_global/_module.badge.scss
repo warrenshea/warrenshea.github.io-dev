@@ -5,6 +5,10 @@
   color: $white;
   font-weight:700;
   padding: rem-calc(2) rem-calc(6);
-  margin: 0 rem-calc(4) 0 0;
+  margin: 0;
   font-size: rem-calc(14);
+  line-height: 1.5;
+  & + [data-module='badge']{
+    margin-left: rem-calc(4);
+  }
 }
