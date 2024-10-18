@@ -6,6 +6,8 @@ ul.unstyle-pl\:0,
 ol.unstyle-pl\:0 { list-style: none; padding-left:0; }
 dl.unstyle > dd { margin-left:0;}
 
+
+
 ul.checkmark-list {
   list-style: none;
   padding-left: 0;
@@ -14,8 +16,14 @@ ul.checkmark-list {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: rem-calc(24) rem-calc(24);
-    padding-left: rem-calc(40);
+    padding-left: rem-calc(32);
     line-height: rem-calc(24);
+  }
+
+  &.checkmark-list-li-pb\:16px {
+    > li {
+      padding-bottom: rem-calc(16);
+    }
   }
 }
 
