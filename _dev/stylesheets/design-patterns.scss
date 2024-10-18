@@ -41,7 +41,15 @@ main > section + .bgc\:eerie-black,
 main > .bgc\:silver + section,
 main > .bgc\:silver + div,
 main > div + .bgc\:silver,
-main > section + .bgc\:silver {
+main > section + .bgc\:silver,
+main > .bgc\:yinmn-blue + section,
+main > .bgc\:yinmn-blue + div,
+main > div + .bgc\:yinmn-blue,
+main > section + .bgc\:yinmn-blue,
+main > .bgc\:onyx + section,
+main > .bgc\:onyx + div,
+main > div + .bgc\:onyx,
+main > section + .bgc\:onyx {
   padding-top: rem-calc(32);
   @include breakpoint($medium-min) {
     padding-top: rem-calc(48);
