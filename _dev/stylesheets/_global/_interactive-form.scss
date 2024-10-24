@@ -402,6 +402,13 @@ fieldset.unstyle {
       @include label-hover-styles($white, $blue, $blue, $vista-blue);
     }
 
+    input[type='checkbox'][data-theme-color='positive'] {
+      & + label {
+        @include box-input-styles($positive, $white, $gray, $positive-dark);
+      }
+      @include label-hover-styles($white, $positive, $positive, $positive-dark);
+    }
+
     input[type='checkbox'][data-theme-color='red'] {
       & + label {
         @include box-input-styles($red, $white, $gray, $carmine);
