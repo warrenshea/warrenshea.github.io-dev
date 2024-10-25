@@ -1,7 +1,16 @@
 'use strict';
 /*
-  @TODO: a11y keyboard functionality
-  https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/
+  accordion.initialize();
+  accordion.setup
+  accordion.ui.initialize
+  accordion.ui.animate_panel_open
+  accordion.ui.animate_panel_close
+  accordion.event_listeners.initialize
+  accordion.event_listeners.header.click.update_accordion_item
+  accordion.event_listeners.header.focus.focus_class.add
+  accordion.event_listeners.header.focus.focus_class.remove
+  accordion.action.toggle_accordion_item
+  accordion.action.open
 */
 storm_eagle.module('accordion', () => {
   let self;
