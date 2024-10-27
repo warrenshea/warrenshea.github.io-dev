@@ -8,7 +8,7 @@ storm_eagle.module('tinymce', () => {
     height: 125,
     forced_root_block: 'faketag', //prevents a wrapping <p> tag as these should have no wrapper
     plugins: 'anchor charmap code codesample emoticons fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview save searchreplace table visualblocks visualchars wordcount',
-    toolbar: "undo redo | charmap",
+    toolbar: "undo redo | italic superscript | charmap",
     paste_as_text: true,
   };
 
