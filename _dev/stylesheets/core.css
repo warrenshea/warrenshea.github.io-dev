@@ -9432,6 +9432,17 @@ strong {
   border: 1px solid #202020;
 }
 
+.table-b-silver\:1px {
+  border-collapse: collapse;
+  border: 1px solid #c0c0c0;
+}
+.table-b-silver\:1px > thead > tr > th,
+.table-b-silver\:1px > thead > tr > td,
+.table-b-silver\:1px > tbody > tr > th,
+.table-b-silver\:1px > tbody > tr > td {
+  border: 1px solid #c0c0c0;
+}
+
 .th-bgc\:blue > thead > tr > th,
 .th-bgc\:blue > tbody > tr > th {
   background-color: #3169b2;
@@ -23495,13 +23506,9 @@ ul.checkmark-list.checkmark-list-li-pb\:16px > li {
   transition-timing-function: ease;
 }
 [data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"] {
-  opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.25s;
   transition-timing-function: ease;
-}
-[data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-active=true], [data-module=carousel][data-carousel-active=true] [data-module="carousel.item-group"] [data-module="carousel.item"][data-carousel-item-secondary-active=true] {
-  opacity: 1;
 }
 [data-module=carousel] [data-module="carousel.indicators-group"] [data-carousel-indicator-control] {
   border-radius: 50%;
