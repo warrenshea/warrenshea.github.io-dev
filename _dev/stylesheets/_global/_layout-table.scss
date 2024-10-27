@@ -9,6 +9,16 @@
     border: 1px solid $eerie-black;
   }
 }
+.table-b-silver\:1px {
+  border-collapse: collapse;
+  border: 1px solid $silver;
+  > thead > tr > th,
+  > thead > tr > td,
+  > tbody > tr > th,
+  > tbody > tr > td {
+    border: 1px solid $silver;
+  }
+}
 .th-bgc\:blue {
   > thead > tr > th,
   > tbody > tr > th {
