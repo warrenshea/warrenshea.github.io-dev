@@ -9,13 +9,13 @@
   &[data-carousel-active="true"] {
     [data-module="carousel.item-group"] {
       [data-module="carousel.item"] {
-        opacity: .6;
+        // opacity: .6;
         transition-property:opacity;
         transition-duration:.25s;
         transition-timing-function: ease;
         &[data-carousel-item-active="true"],
         &[data-carousel-item-secondary-active="true"]{
-          opacity: 1;
+          // opacity: 1;
         }
       }
     }
