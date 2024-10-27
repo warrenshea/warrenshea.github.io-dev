@@ -319,6 +319,15 @@
   }
 }
 
+pre.command-text {
+  background: $gray;
+  padding: rem-calc(1) rem-calc(4);
+  border-radius: rem-calc(4);
+  color: #eee;
+  display: inline;
+  margin: 0;
+}
+
 .form\:theme\:cms {
   // label styles
   input[type='text'] + label,
