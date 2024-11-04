@@ -15540,6 +15540,7 @@ fieldset.unstyle {
   background-repeat: no-repeat;
   background-position: right 0.5rem top 0.625rem;
   background-size: 1rem 1rem;
+  padding-right: 1.5rem;
   appearance: none;
 }
 .form\:theme\:gl0b3x textarea {
