@@ -40,7 +40,7 @@ body {
 		float:left;
 }
 .profile h3{
-		float:left:
+		float:left;
 		clear:both;
 		width:100%;
 }
@@ -82,15 +82,15 @@ body {
 		background-color:green;
 		font-weight:700;
 		color:#ffffff;
-		width:60%
+		width:60%;
 		margin-left:auto;
-		margin:right:auto;
+		margin-right:auto;
 		padding: 1em;
 }
 fieldset.group_form{
 	width:50%;
 	margin:.5em;
-	 	min-height: 170px;
+	min-height: 170px;
 	padding:.5em;
 	background-color:#ffffff;
 	border:1px solid #DED29E;
@@ -121,9 +121,7 @@ div.input-form {
 	margin-bottom: 10px;
 	line-height:120%;
 	padding:.2em 0 .2em .2em;
-
 }
-
 
 .page_wrapper{
 	width:95%;
@@ -558,7 +556,7 @@ div .divider {
 				height:20px;
 		 }
 		.profile h3{
-				float:none:
+				float:none;
 				clear:both;
 				width:90%;
 		}
