@@ -867,7 +867,7 @@ button[disabled]:focus {
 }
 .buttongroup {
 	display: flex;
-	flex-floe: row nowrap;
+	flex-flow: row nowrap;
 }
 .buttongroup .toggle {
 	width: 3em;
