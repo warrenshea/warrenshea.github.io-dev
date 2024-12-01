@@ -51,6 +51,16 @@ $directions: (
           border: #{$size-value} #{$color-value} solid;
         }
 
+        .#{$prefix}bx-#{'' + $color-name}\:#{$size-name} {
+          border-left: #{$size-value} #{$color-value} solid;
+          border-right: #{$size-value} #{$color-value} solid;
+        }
+
+        .#{$prefix}by-#{'' + $color-name}\:#{$size-name} {
+          border-top: #{$size-value} #{$color-value} solid;
+          border-bottom: #{$size-value} #{$color-value} solid;
+        }
+
         @each $direction in $directions {
           $direction-name: nth($direction, 1);
           $direction-value: nth($direction, 2);
