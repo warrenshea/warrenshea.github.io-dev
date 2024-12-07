@@ -20,6 +20,15 @@
         self.resize_listener();
         self.slider_listener();
       },
+      ready: () => {
+        document.querySelectorAll('[data-module="iframe-grid-overlay"]').forEach((el, index) => {
+          let id = el.getAttribute('id');
+          self.set_input_value(id);
+        });
+      },
+      set_input_value: (id) => {
+        state[id]['range_slider_width'].value = `  ${Math.abs(Math.ceil(state[id]['slider_1'].value / 2))}px`;
+      },
       add_message_listener: () => {
         window.addEventListener('message', (event) => {
           // console.log(`receiving message: ${event.data}`);
