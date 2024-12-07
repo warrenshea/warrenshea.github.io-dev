@@ -28,7 +28,8 @@ storm_eagle.module('accordion', () => {
           el,
           all_headers: el.querySelectorAll(':scope > div > * > [data-module="accordion.header"],:scope > [data-module="accordion.header"]'),
           all_panels: el.querySelectorAll(':scope > div > [data-module="accordion.panel"],:scope > [data-module="accordion.panel"]'),
-          active_setting: el.getAttribute('data-accordion-active'),
+          all_panel_collapse_allowed: el.getAttribute('data-accordion-collapse-allowed') === 'true',
+          active_mode: el.getAttribute('data-accordion-active-mode'),
           initial_active: JSON.parse(el.getAttribute('data-accordion-initial')),
         };
         self.ui.initialize(id);
@@ -116,13 +117,25 @@ storm_eagle.module('accordion', () => {
     },
     action: {
       toggle_accordion_item: (id, header) => {
-        const { all_headers, all_panels, active_setting } = state[id];
+        const { all_headers, all_panels, all_panel_collapse_allowed, active_mode } = state[id];
         const is_expanded = header.getAttribute('aria-expanded') === 'true';
-        const panelId = header.getAttribute('aria-controls');
-        const panel = document.getElementById(panelId);
+        const panel_id = header.getAttribute('aria-controls');
+        const panel = document.getElementById(panel_id);
+
+        // If collapsing is not allowed, ensure at least one panel stays open
+        if (!all_panel_collapse_allowed) {
+            const open_headers = Array.from(all_headers).filter(
+                (h) => h.getAttribute('aria-expanded') === 'true'
+            );
+
+            // If only one panel is open and the user is trying to close it, exit early
+            if (is_expanded && open_headers.length === 1) {
+                return;
+            }
+        }
 
         // Adjusting all panels and headers if 'single' mode is active
-        if (active_setting === 'single') {
+        if (active_mode === 'single') {
           all_headers.forEach(h => h.setAttribute('aria-expanded', 'false'));
           all_panels.forEach(p => self.ui.animate_panel_close(p));
         }
@@ -139,14 +152,14 @@ storm_eagle.module('accordion', () => {
       },
       open: (id, panel_id) => {
         if (state[id]) {
-          const { active_setting, all_panels } = state[id];
-          if (active_setting === 'single') {
+          const { active_mode, all_panels } = state[id];
+          if (active_mode === 'single') {
             all_panels.forEach((panel) => {
               panel.setAttribute("data-accordion-panel","hide");
             });
             document.getElementById(panel_id).setAttribute("data-accordion-panel","");
             storm_eagle.equalize_heights.force_resize();
-          } else if (active_setting === 'multiple') {
+          } else if (active_mode === 'multiple') {
             const panel = document.getElementById(panel_id);
             panel.setAttribute("data-accordion-panel", panel.getAttribute("data-accordion-panel") === "hide" ? "" : "hide");
             storm_eagle.equalize_heights.force_resize();
