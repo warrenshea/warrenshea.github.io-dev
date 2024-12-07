@@ -5,7 +5,10 @@
 
 .grid-background {
   background-size: rem-calc(16) rem-calc(16);
-  background-image: radial-gradient(circle, #ddd rem-calc(2), #f9f9f9 0);
+/*  background-color: #f9f9f9;
+  background-image: radial-gradient(circle, #ddd rem-calc(2), #f9f9f9 0);*/
+/*  background-color: #c0c0c0;*/
+  background-image: radial-gradient(circle, #aaa 0.125rem, #c0c0c0 0);
   background-position-x: center;
 }
 .sm-left { color:#999;width:rem-calc(198);height:rem-calc(20);top:rem-calc(-2);z-index:-1;left:calc(50% - rem-calc(385)); }
