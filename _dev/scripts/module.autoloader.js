@@ -1,5 +1,24 @@
 'use strict';
+/**
+ * Autoloader Module
+ *
+ * Automatically loads JavaScript modules based on the presence of specific elements in the DOM.
+ *
+ * Methods Overview:
+ * - autoloader.initialize()
+ *
+ * Structure:
+ * - Each module is defined with:
+ *   - `script_src`: Path to the module's script.
+ *   - `module_name`: Name of the module.
+ * - Modules are dynamically loaded when their corresponding DOM elements are found.
+ */
+
 storm_eagle.module('autoloader', () => {
+  /**
+   * Configuration object for all available modules.
+   * Maps module names to their script source and module names.
+   */
   const storm_eagle_module = {
     accordion: {
       script_src: '/scripts/module.accordion.js',
@@ -76,7 +95,14 @@ storm_eagle.module('autoloader', () => {
   };
 
   return {
+    /**
+     * Initializes the autoloader module.
+     * Checks for DOM elements corresponding to each module and dynamically loads the required JavaScript files.
+     */
     initialize: async () => {
+      /**
+       * Maps module names to their respective DOM query selectors.
+       */
       const modules = {
         accordion: '[data-module="accordion"]',
         carousel: "[data-module='carousel']",
@@ -99,15 +125,16 @@ storm_eagle.module('autoloader', () => {
       };
 
       for (const [script, query] of Object.entries(modules)) {
+        // Check if any elements matching the query exist in the DOM
         if (document.querySelectorAll(query).length > 0) {
           try {
+            // Dynamically load the script for the module
             await storm_eagle.util.load_javascript(storm_eagle_module[script]['script_src']);
           } catch (error) {
             console.error(`autoloader -> ${error}`);
           }
         }
       }
-
     },
   };
 });
