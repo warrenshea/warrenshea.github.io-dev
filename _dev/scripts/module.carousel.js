@@ -1,13 +1,40 @@
 'use strict';
+/**
+ * Carousel Module
+ *
+ * Handles the functionality of carousels, including state management, UI updates, and event listeners.
+ *
+ * Methods Overview:
+ * - carousel.initialize()
+ * - carousel.setup()
+ * - carousel.state.update()
+ * - carousel.ui.update()
+ * - carousel.ui.activate()
+ * - carousel.ui.disable()
+ * - carousel.event_listeners.initialize()
+ * - carousel.a11y.focusable_elements.enable()
+ * - carousel.a11y.focusable_elements.disable()
+ */
+
 storm_eagle.module('carousel', () => {
   let self;
-  let state = {};
+  let state = {}; // Stores the state of each carousel instance
+
   return {
+    /**
+     * Initializes the carousel module.
+     * Resets the state and sets up all carousels on the page.
+     */
     initialize: () => {
       self = storm_eagle.carousel;
       state = {};
       self.setup();
     },
+
+    /**
+     * Sets up all carousels on the page.
+     * Initializes state for each carousel and applies UI updates and event listeners.
+     */
     setup: () => {
       document.querySelectorAll('[data-module="carousel"]').forEach((el) => {
         const id = el.getAttribute('id');
@@ -33,13 +60,18 @@ storm_eagle.module('carousel', () => {
           offset_left: '',
           current_active_carousel_item: parseInt(el.getAttribute('data-carousel-item-active')) || 0,
         };
-        self.ui.update(id);
-        self.event_listeners.resize.initialize(id);
+        self.ui.update(id); // Update the UI for the carousel
+        self.event_listeners.resize.initialize(id); // Add resize event listeners
       });
     },
+
     state: {
+      /**
+       * Updates the state of a carousel.
+       * Reinitializes, calculates offsets, and sets other properties.
+       * @param {string} id - The ID of the carousel instance.
+       */
       update: (id) => {
-        //console.log("initialize");
         self.state.reinitiailize(id);
         self.state.set_offset_left(id);
         self.state.set_number_of_active(id);
@@ -47,21 +79,35 @@ storm_eagle.module('carousel', () => {
         self.state.set_indicators(id);
         self.state.set_item_width(id);
       },
+
+      /**
+       * Reinitializes the state for a specific carousel.
+       * Updates the list of items and recalculates arrays.
+       * @param {string} id - The ID of the carousel instance.
+       */
       reinitiailize: (id) => {
-        //console.log("set_items");
         const { el } = state[id];
         state[id]['items'] = el.querySelectorAll('[data-module="carousel.item"]:not(.display\\:none)');
         state[id]['transition_duration_array'] = JSON.parse(el.getAttribute('data-carousel-transition-duration'));
         state[id]['number_of_active_array'] = JSON.parse(el.getAttribute('data-carousel-number-active'));
         state[id]['offset_left_array'] = JSON.parse(el.getAttribute('data-carousel-offset'));
       },
+
+      /**
+       * Sets the breakpoint for responsive behavior.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_breakpoint: (id) => {
-        //console.log("set_breakpoint");
         const { el } = state[id];
         state[id]['breakpoint'] = el.getAttribute('data-carousel-breakpoint');
       },
+
+      /**
+       * Sets the offset left value for carousel items.
+       * This determines spacing for items based on the viewport size.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_offset_left: (id) => {
-        //console.log("set_offset_left");
         const { el, offset_left_array } = state[id];
         /* if the value is > 1, then use a pixel value for the offset */
         /* if the value is > 0 and < 1, use the value as a percentage (e.g. 1/4 = .25) */
@@ -73,7 +119,7 @@ storm_eagle.module('carousel', () => {
           } else {
             return 0;
           }
-        }
+        };
         if (storm_eagle.client.viewport.is_sm_only()) {
           state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[0]);
         } else if (storm_eagle.client.viewport.is_md_only()) {
@@ -84,8 +130,12 @@ storm_eagle.module('carousel', () => {
           state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[3]);
         }
       },
+
+      /**
+       * Sets the number of active items for a carousel based on the viewport size.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_number_of_active: (id) => {
-        //console.log("set_number_of_active");
         const { number_of_active_array } = state[id];
         if (storm_eagle.client.viewport.is_sm_only()) {
           state[id]['number_of_active'] = number_of_active_array[0];
@@ -97,8 +147,12 @@ storm_eagle.module('carousel', () => {
           state[id]['number_of_active'] = number_of_active_array[3];
         }
       },
+
+      /**
+       * Sets the transition duration for carousel animations.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_transition_duration: (id) => {
-        //console.log("set_transition_duration");
         const { transition_duration_array } = state[id];
         if (storm_eagle.client.viewport.is_sm_only()) {
           state[id]['transition_duration'] = transition_duration_array[0];
@@ -110,18 +164,26 @@ storm_eagle.module('carousel', () => {
           state[id]['transition_duration'] = transition_duration_array[3];
         }
       },
+
+      /**
+       * Creates indicators for carousel navigation and updates their state.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_indicators: (id) => {
-        //console.log("set_indicators");
         const { el, items, indicators_group, number_of_active, current_active_carousel_item } = state[id];
         indicators_group.innerHTML = '';
         for (let i = 0; i <= items.length - number_of_active; i++) {
           indicators_group.innerHTML += `<button name="carousel-control-button" data-carousel-indicator-control class="cursor:pointer"><span class="show-for-sr">Go to slide #${i + 1}</button>`;
         }
         state[id]['indicators_group_controls'] = el.querySelectorAll('[data-module="carousel.indicators-group"] > [data-carousel-indicator-control]');
-        state[id]['indicators_group_controls'][current_active_carousel_item].setAttribute("data-carousel-indicator-active","true");
+        state[id]['indicators_group_controls'][current_active_carousel_item].setAttribute("data-carousel-indicator-active", "true");
       },
+
+      /**
+       * Sets the width for carousel items based on the number of active items and offsets.
+       * @param {string} id - The ID of the carousel instance.
+       */
       set_item_width: (id) => {
-        // console.log("set_item_width");
         const { el, item_group, items, number_of_active, offset_left } = state[id];
         const item_width = (el.offsetWidth - 2 * offset_left) / number_of_active;
         state[id]['item_width'] = item_width;
@@ -131,9 +193,14 @@ storm_eagle.module('carousel', () => {
         item_group.style.width = `${offset_left + item_width * items.length}px`;
       },
     },
+
     ui: {
+      /**
+       * Checks if the carousel is active based on the breakpoint setting.
+       * @param {string} id - The ID of the carousel instance.
+       * @returns {boolean} True if active, otherwise false.
+       */
       is_active: (id) => {
-        //console.log("is_active");
         self.state.set_breakpoint(id);
         const { breakpoint } = state[id];
         switch (breakpoint) {
@@ -158,9 +225,15 @@ storm_eagle.module('carousel', () => {
           case 'xl+':
             return storm_eagle.client.viewport.is_xl_up();
           default:
-            return false; // Default case, handle as needed
+            return false;
         }
       },
+
+      /**
+       * Updates the UI for a specific carousel instance.
+       * Activates or disables the carousel based on its active state.
+       * @param {string} id - The ID of the carousel instance.
+       */
       update: (id) => {
         if (self.ui.is_active(id)) {
           self.state.update(id);
@@ -169,6 +242,11 @@ storm_eagle.module('carousel', () => {
           self.ui.disable(id);
         }
       },
+
+      /**
+       * Activates the carousel UI by enabling related elements and behaviors.
+       * @param {string} id - The ID of the carousel instance.
+       */
       activate: (id) => {
         self.event_listeners.initialize(id);
         self.ui.active_items.enable(id);
@@ -178,6 +256,11 @@ storm_eagle.module('carousel', () => {
         self.ui.transition.enable(id);
         self.a11y.focusable_elements.enable(id);
       },
+
+      /**
+       * Disables the carousel UI by disabling related elements and behaviors.
+       * @param {string} id - The ID of the carousel instance.
+       */
       disable: (id) => {
         self.ui.active_items.disable(id);
         self.ui.indicators_group.disable(id);
@@ -185,38 +268,68 @@ storm_eagle.module('carousel', () => {
         self.ui.item_group_position.disable(id);
         self.a11y.focusable_elements.disable(id);
       },
+
       active_items: {
+        /**
+         * Enables active carousel items by setting appropriate classes and attributes.
+         * @param {string} id - The ID of the carousel instance.
+         */
         enable: (id) => {
           const { el, item_group, items, indicators_group_controls, number_of_active, offset_left, item_width, current_active_carousel_item, transition_duration } = state[id];
           el.setAttribute("data-carousel-active","true");
           /* resets the active classes on the carousel items and adds the proper active classes */
           items.forEach((item) => {
-            item.setAttribute("data-carousel-item-active","");
-            item.setAttribute("data-carousel-item-secondary-active","false");
+            item.setAttribute("data-carousel-item-active", "");
+            item.setAttribute("data-carousel-item-secondary-active", "false");
           });
-          items[current_active_carousel_item].setAttribute("data-carousel-item-active","true");
-          items[current_active_carousel_item].setAttribute("data-carousel-item-secondary-active","true");
+
+          items[current_active_carousel_item].setAttribute("data-carousel-item-active", "true");
+          items[current_active_carousel_item].setAttribute("data-carousel-item-secondary-active", "true");
+
           for (let i = 0; i < number_of_active; i++) {
-            items[current_active_carousel_item + i].setAttribute("data-carousel-item-secondary-active","true");
+            items[current_active_carousel_item + i].setAttribute("data-carousel-item-secondary-active", "true");
           }
+
           /* resets the active classes on the carousel control and adds the proper active classes */
           indicators_group_controls.forEach((indicator_group_control) => {
             indicator_group_control.setAttribute("data-carousel-indicator-active","");
           });
-          indicators_group_controls[current_active_carousel_item].setAttribute("data-carousel-indicator-active","true");
+
+          indicators_group_controls[current_active_carousel_item].setAttribute("data-carousel-indicator-active", "true");
         },
+
+        /**
+         * Disables active carousel items by resetting their classes and attributes.
+         * @param {string} id - The ID of the carousel instance.
+         */
         disable: (id) => {
           const { el } = state[id];
-          el.setAttribute("data-carousel-active","");
+          el.setAttribute("data-carousel-active", "");
         },
       },
+
       indicators_group: {
-        enable: (id) => {
-        },
-        disable: (id) => {
-        }
+        /**
+         * Enables the indicators group for navigation (if needed).
+         * Placeholder for functionality.
+         * @param {string} id - The ID of the carousel instance.
+         */
+        enable: (id) => {},
+
+        /**
+         * Disables the indicators group for navigation (if needed).
+         * Placeholder for functionality.
+         * @param {string} id - The ID of the carousel instance.
+         */
+        disable: (id) => {},
       },
+
       controls: {
+        /**
+         * Enables carousel control buttons (previous and next).
+         * Updates their states based on the current active item.
+         * @param {string} id - The ID of the carousel instance.
+         */
         enable: (id) => {
           const { items, controls_next, controls_prev, control_active_classes, control_inactive_classes, control_class_queryselector, breakpoint, current_active_carousel_item, number_of_active } = state[id];
 
@@ -240,7 +353,7 @@ storm_eagle.module('carousel', () => {
           }
           /* hide chevrons */
           if (current_active_carousel_item === 0) {
-            controls_prev.setAttribute("disabled","");
+            controls_prev.setAttribute("disabled", "");
             temp_controls_prev.classList.add(...control_inactive_classes);
             temp_controls_prev.classList.remove(...control_active_classes);
           } else if (current_active_carousel_item === items.length - number_of_active) {
@@ -249,54 +362,88 @@ storm_eagle.module('carousel', () => {
             temp_controls_next.classList.remove(...control_active_classes);
           }
         },
-        disable: (id) => {
-        },
+
+        /**
+         * Disables carousel control buttons (previous and next).
+         * Placeholder for functionality.
+         * @param {string} id - The ID of the carousel instance.
+         */
+        disable: (id) => {},
       },
 
       item_group_position: {
+        /**
+         * Enables the positioning of the item group within the carousel.
+         * Sets the left offset based on the current active item.
+         * @param {string} id - The ID of the carousel instance.
+         */
         enable: (id) => {
           const { item_group, item_width, offset_left, current_active_carousel_item } = state[id];
-          /* changes the left offset */
           item_group.style.left = `${offset_left - current_active_carousel_item * item_width}px`;
         },
+
+        /**
+         * Disables the positioning of the item group within the carousel.
+         * Resets to default styles.
+         * @param {string} id - The ID of the carousel instance.
+         */
         disable: (id) => {
           const { item_group, items } = state[id];
           item_group.style.left = 0;
-          item_group.style.width = '100%';
-          item_group.style.height = 'auto';
+          item_group.style.width = "100%";
+          item_group.style.height = "auto";
           items.forEach((item) => {
             item.style.removeProperty("width");
           });
         },
       },
+
       transition: {
+        /**
+         * Enables transition effects for the carousel.
+         * Applies a transition duration for smooth animations.
+         * @param {string} id - The ID of the carousel instance.
+         */
         enable: (id) => {
           const { item_group, transition_duration } = state[id];
           /* ensures there's no transition duration except when we want the transition to occcur */
           setTimeout(() => {
             item_group.style.transitionDuration = '0s';
           }, transition_duration * 1000);
-        }
+        },
       },
     },
+
     event_listeners: {
+      /**
+       * Initializes all event listeners for a specific carousel instance.
+       * @param {string} id - The ID of the carousel instance.
+       */
       initialize: (id) => {
-        //console.log("event_listners initialize");
         self.event_listeners.indicator.initialize(id);
         self.event_listeners.control_buttons.initialize(id);
         self.event_listeners.swipe.initialize(id);
       },
+
       indicator: {
+        /**
+         * Initializes event listeners for carousel indicators.
+         * @param {string} id - The ID of the carousel instance.
+         */
         initialize: (id) => {
-          //console.log("indicator initialize");
           const { indicators_group_controls } = state[id];
           indicators_group_controls.forEach((el) => {
             el.removeEventListener('click', self.event_listeners.indicator.handle_change);
             el.addEventListener('click', self.event_listeners.indicator.handle_change);
           });
         },
+
+        /**
+         * Handles changes triggered by indicator clicks.
+         * Updates the current active item and triggers a UI update.
+         * @param {Event} event - The click event.
+         */
         handle_change: (event) => {
-          // console.log("indicator change");
           event.preventDefault();
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
           const { item_group, transition_duration } = state[id];
@@ -305,49 +452,88 @@ storm_eagle.module('carousel', () => {
           self.ui.update(id);
         },
       },
+
+      /**
+       * Handles control button (previous/next) events.
+       */
       control_buttons: {
+        /**
+         * Initializes event listeners for carousel control buttons (next and previous).
+         * @param {string} id - The ID of the carousel instance.
+         */
         initialize: (id) => {
-          //console.log("control_buttons initialize");
           const { controls_prev, controls_next } = state[id];
+
+          // Add event listener for the "Next" button
           controls_next.removeEventListener('click', self.event_listeners.control_buttons.handle_swipe_left);
           controls_next.addEventListener('click', self.event_listeners.control_buttons.handle_swipe_left);
+
+          // Add event listener for the "Previous" button
           controls_prev.removeEventListener('click', self.event_listeners.control_buttons.handle_swipe_right);
           controls_prev.addEventListener('click', self.event_listeners.control_buttons.handle_swipe_right);
         },
+
+        /**
+         * Handles the swipe left action (triggered by the "Next" button).
+         * @param {Event} event - The click event.
+         */
         handle_swipe_left: (event) => {
-          //console.log("handle_swipe_left");
           event.preventDefault();
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
           const { item_group } = state[id];
           item_group.dispatchEvent(new Event('swiped-left'));
         },
+
+        /**
+         * Handles the swipe right action (triggered by the "Previous" button).
+         * @param {Event} event - The click event.
+         */
         handle_swipe_right: (event) => {
-          //console.log("handle_swipe_right");
           event.preventDefault();
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
           const { item_group } = state[id];
           item_group.dispatchEvent(new Event('swiped-right'));
         },
       },
+
       resize: {
+        /**
+         * Initializes a resize observer for the carousel.
+         * Ensures the UI updates when the viewport size changes.
+         * @param {string} id - The ID of the carousel instance.
+         */
         initialize: (id) => {
-          //console.log("resize initialize");
           const { el } = state[id];
           const force_resize = () => {
             return self.ui.update(id);
           }
           storm_eagle.resize_observer(el, force_resize);
-        }
+        },
       },
+
       swipe: {
+        /**
+         * Initializes swipe event listeners for the carousel.
+         * Handles swiping left and right to navigate items.
+         * @param {string} id - The ID of the carousel instance.
+         */
         initialize: (id) => {
-          //console.log("swipe initialize");
           const { item_group } = state[id];
+
+          // Add swipe left listener
           item_group.removeEventListener('swiped-left', self.event_listeners.swipe.handle_swiped_left);
           item_group.addEventListener('swiped-left', self.event_listeners.swipe.handle_swiped_left);
+
+          // Add swipe right listener
           item_group.removeEventListener('swiped-right', self.event_listeners.swipe.handle_swiped_right);
           item_group.addEventListener('swiped-right', self.event_listeners.swipe.handle_swiped_right);
         },
+
+        /**
+         * Handles the swipe left action for the carousel.
+         * Moves to the next item if not at the end of the list.
+         * @param {Event} event - The swipe event.
+         */
         handle_swiped_left: (event) => {
           //console.log('go -> in the carousel');
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
@@ -358,6 +544,12 @@ storm_eagle.module('carousel', () => {
             self.ui.update(id);
           }
         },
+
+        /**
+         * Handles the swipe right action for the carousel.
+         * Moves to the previous item if not at the beginning of the list.
+         * @param {Event} event - The swipe event.
+         */
         handle_swiped_right: (event) => {
           //console.log('go <- in the carousel');
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
@@ -370,18 +562,26 @@ storm_eagle.module('carousel', () => {
         },
       },
     },
+
     a11y: {
       focusable_elements: {
+        /**
+         * Enables focusable elements in active carousel items.
+         * Disables focusable elements in inactive items.
+         * @param {string} id - The ID of the carousel instance.
+         */
         enable: (id) => {
           const { el } = state[id];
           /* ensures all elements in the carousel item with [data-carousel-item-secondary-active="false"] (partially visible) are not focusable */
+          // Disable focusable elements in inactive items
           el.querySelectorAll('[data-carousel-item-secondary-active="false"]').forEach((item) => {
             item.querySelectorAll(focus_trap_selector).forEach((focusable_element) => {
               focusable_element.setAttribute('tabindex', '-1');
-              focusable_element.setAttribute('disabled',"true");
+              focusable_element.setAttribute('disabled', "true");
             });
           });
           /* resets the elements for carousel item with [data-carousel-item-secondary-active="true"] */
+          // Enable focusable elements in active items
           el.querySelectorAll('[data-carousel-item-secondary-active="true"]').forEach((item) => {
             item.querySelectorAll("*").forEach((remove_disabled) => {
               if (remove_disabled.getAttribute('tabindex') === '-1') {
@@ -397,9 +597,15 @@ storm_eagle.module('carousel', () => {
               remove_focusable_element.removeAttribute('disabled');
             });
           });
-          /* reinitialize the focusable elements for the dialogs */
-          (storm_eagle.dialog) && storm_eagle.dialog.initialize();
+
+          // Reinitialize focusable elements for dialogs, if applicable
+          if (storm_eagle.dialog) storm_eagle.dialog.initialize();
         },
+
+        /**
+         * Disables focusable elements in all carousel items.
+         * @param {string} id - The ID of the carousel instance.
+         */
         disable: (id) => {
           const { items } = state[id];
           items.forEach((item) => {
