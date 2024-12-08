@@ -20,14 +20,14 @@ storm_eagle.module('grid_send_height', () => {
       function force_resize() {
         self.send_height();
       }
-      storm_eagle.resize_observer(document.querySelector("body"), force_resize);
+      storm_eagle.resize_observer(document.querySelector('body'), force_resize);
     },
     send_height: () => {
-      let height = document.querySelector("body").offsetHeight;
+      let height = document.querySelector('body').offsetHeight;
       if (height !== 0) {
-        const action = "update_height";
+        const action = 'update_height';
         const new_height = height;
-        const id = document.querySelector("body").getAttribute("data-iframe-id");
+        const id = document.querySelector('body').getAttribute('data-iframe-id');
         const query = { action, new_height, id };
         parent.postMessage(JSON.stringify(query), window.location.origin);
       }
