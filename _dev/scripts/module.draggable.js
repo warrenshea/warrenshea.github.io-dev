@@ -43,11 +43,11 @@ storm_eagle.module('draggable', () => {
 
           switch (type) {
             case "async_function":
-              //console.log("source type: async function");
+              //console.log('source type: async function');
               self.data.code = await storm_eagle.util.run_str_func(source);
               break;
             case "function":
-              //console.log("source type: function");
+              //console.log('source type: function');
               storm_eagle.util.run_str_func(source)
                 .then((result) => {
                   self.data.code = result;
@@ -57,11 +57,11 @@ storm_eagle.module('draggable', () => {
                 });
               break;
             case "query_selector":
-              //console.log("source type: query selector");
+              //console.log('source type: query selector');
               self.data.code = document.querySelector(source).innerHTML;
               break;
             case "string":
-              //console.log("source type: string");
+              //console.log('source type: string');
               self.data.code = source;
               break;
             default:
