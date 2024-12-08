@@ -156,10 +156,10 @@
           let { name, type, pathname, tags, color } = asset;
 
           //create the keyword database based off the tags
-          tags_array = tags.split(",");
+          tags_array = tags.split(',');
           let all_isotope_keywords = "";
           tags_array.forEach((el,index) => {
-            all_isotope_keywords += " keyword-" + el.toString().replace(/ /g,"-"); //convert space to dashes;
+            all_isotope_keywords += ' keyword-' + el.toString().replace(/ /g,'-'); //convert space to dashes;
           });
 
           //create each asset's html
@@ -176,7 +176,7 @@
       get_keyword_database: () => {
         let keyword_database = [];
         assets.forEach((asset) => {
-          let tags_array = asset.tags.split(",");
+          let tags_array = asset.tags.split(',');
           tags_array.forEach((tag) => {
             if(keyword_database.indexOf(tag) === -1) {
               keyword_database.push(tag.toString());
@@ -211,12 +211,12 @@
             document.getElementById("color").innerHTML = asset[0]["color"];
             document.getElementById("tags").innerHTML = `<br>` + asset[0]["tags"].replace(/,/g,"<br>");
             // document.getElementById("notes").innerHTML = asset[0]["notes"];
-            document.getElementById("pathname-light").innerHTML = `${asset[0]["pathname"].replace("duotone","light")}`;
-            document.getElementById("icon-light").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","light")}" class="" style="width:60px;height:60px;">`;
-            document.getElementById("pathname-regular").innerHTML = `${asset[0]["pathname"].replace("duotone","regular")}`;
-            document.getElementById("icon-regular").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","regular")}" class="" style="width:60px;height:60px;">`;
-            document.getElementById("pathname-solid").innerHTML = `${asset[0]["pathname"].replace("duotone","solid")}`;
-            document.getElementById("icon-solid").innerHTML = `<img src="${asset[0]["pathname"].replace("duotone","solid")}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("pathname-light").innerHTML = `${asset[0]["pathname"].replace('duotone', 'light')}`;
+            document.getElementById("icon-light").innerHTML = `<img src="${asset[0]["pathname"].replace('duotone', 'light')}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("pathname-regular").innerHTML = `${asset[0]["pathname"].replace('duotone', 'regular')}`;
+            document.getElementById("icon-regular").innerHTML = `<img src="${asset[0]["pathname"].replace('duotone', 'regular')}" class="" style="width:60px;height:60px;">`;
+            document.getElementById("pathname-solid").innerHTML = `${asset[0]["pathname"].replace('duotone', 'solid')}`;
+            document.getElementById("icon-solid").innerHTML = `<img src="${asset[0]["pathname"].replace('duotone', 'solid')}" class="" style="width:60px;height:60px;">`;
           });
         });
       },
