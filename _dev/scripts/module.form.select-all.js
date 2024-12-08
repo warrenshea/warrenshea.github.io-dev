@@ -14,7 +14,7 @@ storm_eagle.module('form.select_all', () => {
         state[id] = {
           el,
           type: el.getAttribute('data-select-all-type'),
-          type_elements: (el.getAttribute('data-select-all-type') === "checkbox") ? el.querySelectorAll("input[type='checkbox']") : el.querySelectorAll("button[type='button']") ,
+          type_elements: (el.getAttribute('data-select-all-type') === "checkbox") ? el.querySelectorAll('input[type="checkbox"]') : el.querySelectorAll('button[type="button"]') ,
           select_all_radiobuttons_id: el.getAttribute('data-select-all-bind'),
           onupdate: el.getAttribute('data-select-all-onupdate-func') || false,
         };
@@ -48,13 +48,13 @@ storm_eagle.module('form.select_all', () => {
           });
           if (count === 0) {
             /* None */
-            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).checked = true;
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.none"]`).checked = true;
           } else if (count === type_elements.length) {
             /* All */
-            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).checked = true;
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.all"]`).checked = true;
           } else {
             /* Some */
-            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.some']`).checked = true;
+            document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.some"]`).checked = true;
           }
           if (onupdate) {
             storm_eagle.util.run_str_func( onupdate, { id } );
@@ -63,18 +63,18 @@ storm_eagle.module('form.select_all', () => {
       },
       set_all_elements_true: () => {
         const select_all_options_id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all.options"]').getAttribute('id');
-        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute("id");
+        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute('id');
         self.ui.set_all_elements(id, true);
       },
       set_all_elements_false: () => {
         const select_all_options_id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="select-all.options"]').getAttribute('id');
-        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute("id");
+        const id = document.querySelector(`[data-select-all-bind=${select_all_options_id}]`).getAttribute('id');
         self.ui.set_all_elements(id, false);
       },
       set_all_elements: (id, value) => {
         const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
         type_elements.forEach((el) => {
-          if (el.getAttribute("data-module") === "parent-checkbox") {
+          if (el.getAttribute('data-module') === 'parent-checkbox') {
             storm_eagle.checkbox.set_aria_checked(el, value);
             storm_eagle.checkbox.set_checked(el, value);
           } else {
@@ -103,10 +103,10 @@ storm_eagle.module('form.select_all', () => {
       select_all_radiobuttons: {
         initialize: (id) => {
           const { select_all_radiobuttons_id } = state[id];
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).removeEventListener('click', self.ui.set_all_elements_true);
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.all']`).addEventListener('click', self.ui.set_all_elements_true);
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).removeEventListener('click', self.ui.set_all_elements_false);
-          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module='select-all.none']`).addEventListener('click', self.ui.set_all_elements_false);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.all"]`).removeEventListener('click', self.ui.set_all_elements_true);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.all"]`).addEventListener('click', self.ui.set_all_elements_true);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.none"]`).removeEventListener('click', self.ui.set_all_elements_false);
+          document.querySelector(`#${select_all_radiobuttons_id} > input[data-module="select-all.none"]`).addEventListener('click', self.ui.set_all_elements_false);
         }
       },
     },
