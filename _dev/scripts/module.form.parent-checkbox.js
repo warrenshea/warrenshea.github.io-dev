@@ -9,7 +9,7 @@ storm_eagle.module('form.parent_checkbox', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='parent-checkbox']").forEach((el) => {
+      document.querySelectorAll('[data-module="parent-checkbox"]').forEach((el) => {
         const id = el.getAttribute('id');
         const checkbox_ids = el.getAttribute('aria-controls').split(' ');
 
@@ -33,7 +33,7 @@ storm_eagle.module('form.parent_checkbox', () => {
           parent_checkbox.addEventListener('click', self.event_listeners.parent.update);
         },
         update: (event) => {
-          const id = event.currentTarget.getAttribute("id");
+          const id = event.currentTarget.getAttribute('id');
           self.state.update(id, id);
         },
       },
@@ -48,8 +48,8 @@ storm_eagle.module('form.parent_checkbox', () => {
         },
         update: (event) => {
           const el = event.currentTarget
-          const parent_id = storm_eagle.util.closest_parent(el,`[data-module="parent-checkbox.container"]`).querySelector(`[data-module="parent-checkbox"]`).getAttribute("id");
-          const id = el.getAttribute("id");
+          const parent_id = storm_eagle.util.closest_parent(el,`[data-module="parent-checkbox.container"]`).querySelector(`[data-module="parent-checkbox"]`).getAttribute('id');
+          const id = el.getAttribute('id');
           self.state.update(parent_id, id);
         },
       }
