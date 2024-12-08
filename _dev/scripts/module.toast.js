@@ -6,7 +6,7 @@ storm_eagle.module('toast', () => {
       const create_toast_container = () => {
         const toast_container = document.createElement('div');
         toast_container.classList.add('toast-container');
-        toast_container.setAttribute("data-module", "module.toast");
+        toast_container.setAttribute('data-module', 'module.toast');
         document.body.appendChild(toast_container);
         return toast_container;
       }
