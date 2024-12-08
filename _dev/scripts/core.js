@@ -25,7 +25,7 @@ const breakpoints = {
   xl_min: 1280,
 };
 
-const breakpoint_name = ['sm','md','lg','xl'];
+const breakpoint_name = ['sm', 'md', 'lg', 'xl'];
 
 //turns everything to tabindex=0
 const focus_trap_selector = [
@@ -819,7 +819,7 @@ var storm_eagle = (() => {
        * @param {object} params_obj - An object containing parameters to pass to the function.
        */
       run_str_func: async (func_str, params_obj = {}) => {
-        // console.log("run_str_func:", func_str);
+        // console.log('run_str_func:', func_str);
 
         // Check if func_str contains a comma and split it if so.
         if (func_str.includes(',')) {
@@ -1005,7 +1005,7 @@ var storm_eagle = (() => {
 
     /**
      * Observes an element and runs a function when the element is resized
-     * Replaces window.addEventListener("resize", event = { function(); }) as it performs better
+     * Replaces window.addEventListener('resize', event = { function(); }) as it performs better
      *
      * @param  { array } elements     elements we want to observe
      * @param  { function } func      callback function
@@ -1037,7 +1037,7 @@ var storm_eagle = (() => {
 
     /**
      * Observes an element and runs a function when the element is resized
-     * Replaces window.addEventListener("resize", event = { function(); }) as it performs better
+     * Replaces window.addEventListener('resize', event = { function(); }) as it performs better
      *
      * @param  { array } elements     elements we want to observe
      * @param  { function } func      callback function
@@ -1092,12 +1092,12 @@ storm_eagle.module('image_default_dimensions', () => {
     initialize: () => {
       const set_image_attribute = (image) => {
         if (image.offsetParent !== null) { // if the item isn't in a hidden
-          (!image.hasAttribute("height")) && image.setAttribute("height", image.offsetHeight);
-          (!image.hasAttribute("width")) && image.setAttribute("width", image.offsetWidth);
-          (image.getAttribute("loading") !== "eager") && image.setAttribute("loading","lazy");
+          (!image.hasAttribute('height')) && image.setAttribute('height', image.offsetHeight);
+          (!image.hasAttribute('width')) && image.setAttribute('width', image.offsetWidth);
+          (image.getAttribute('loading') !== 'eager') && image.setAttribute('loading', 'lazy');
         }
       }
-      document.querySelectorAll(`img`).forEach((image) => {
+      document.querySelectorAll('img').forEach((image) => {
         if (image.complete) {
           set_image_attribute(image);
         } else {
@@ -1206,7 +1206,7 @@ storm_eagle.module('equalize_heights', () => {
      */
     get_data_equal_height_items: () => {
       document.querySelectorAll('[data-equalize-height]:not([data-equalize-height=""])').forEach((el) => {
-        let new_item = el.getAttribute("data-equalize-height");
+        let new_item = el.getAttribute('data-equalize-height');
         if (_data_equal_height_array.indexOf(new_item) < 0) {
           _data_equal_height_array.push(new_item);
         }
@@ -1301,22 +1301,22 @@ storm_eagle.module('zs_highlighter', () => {
   return {
     initialize: () => {
       if (storm_eagle.page.get_query_value('zs-highlight-mid')) {
-        storm_eagle.page.get_query_value('zs-highlight-mid').split(",").forEach((mid_id) => {
+        storm_eagle.page.get_query_value('zs-highlight-mid').split(',').forEach((mid_id) => {
           document.querySelectorAll(`[data-zs*='mid\\:${mid_id},']`).forEach((element) => {
-            element.classList.add("zs-hightlight-yellow");
+            element.classList.add('zs-hightlight-yellow');
           })
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-cid')) {
-        storm_eagle.page.get_query_value('zs-highlight-cid').split(",").forEach((cid_id) => {
+        storm_eagle.page.get_query_value('zs-highlight-cid').split(',').forEach((cid_id) => {
           document.querySelectorAll(`[data-zs*='cid\\:${cid_id},']`).forEach((element) => {
-            element.classList.add("zs-hightlight-red");
+            element.classList.add('zs-hightlight-red');
           })
         });
       }
       if (storm_eagle.page.get_query_value('zs-highlight-branch')) {
         document.querySelectorAll(`[data-zs-branch=${storm_eagle.page.get_query_value('zs-highlight-branch')}]`).forEach((element) => {
-          element.classList.add("zs-hightlight-blue");
+          element.classList.add('zs-hightlight-blue');
         })
       }
     },
