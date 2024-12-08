@@ -87,10 +87,10 @@ storm_eagle.module('carousel', () => {
        */
       reinitiailize: (id) => {
         const { el } = state[id];
-        state[id]['items'] = el.querySelectorAll('[data-module="carousel.item"]:not(.display\\:none)');
-        state[id]['transition_duration_array'] = JSON.parse(el.getAttribute('data-carousel-transition-duration'));
-        state[id]['number_of_active_array'] = JSON.parse(el.getAttribute('data-carousel-number-active'));
-        state[id]['offset_left_array'] = JSON.parse(el.getAttribute('data-carousel-offset'));
+        state[id].items = el.querySelectorAll('[data-module="carousel.item"]:not(.display\\:none)');
+        state[id].transition_duration_array = JSON.parse(el.getAttribute('data-carousel-transition-duration'));
+        state[id].number_of_active_array = JSON.parse(el.getAttribute('data-carousel-number-active'));
+        state[id].offset_left_array = JSON.parse(el.getAttribute('data-carousel-offset'));
       },
 
       /**
@@ -99,7 +99,7 @@ storm_eagle.module('carousel', () => {
        */
       set_breakpoint: (id) => {
         const { el } = state[id];
-        state[id]['breakpoint'] = el.getAttribute('data-carousel-breakpoint');
+        state[id].breakpoint = el.getAttribute('data-carousel-breakpoint');
       },
 
       /**
@@ -111,23 +111,19 @@ storm_eagle.module('carousel', () => {
         const { el, offset_left_array } = state[id];
         /* if the value is > 1, then use a pixel value for the offset */
         /* if the value is > 0 and < 1, use the value as a percentage (e.g. 1/4 = .25) */
-        const calculate_pixel_value = (id, offset_value) => {
-          if (offset_value > 1) {
-            return offset_value;
-          } else if (offset_value > 0 && offset_value < 1) {
-            return el.offsetWidth * offset_value;
-          } else {
-            return 0;
-          }
+        const calculate_pixel_value = (offset_value) => {
+          if (offset_value > 1) return offset_value;
+          if (offset_value > 0 && offset_value < 1) return el.offsetWidth * offset_value;
+          return 0;
         };
         if (storm_eagle.client.viewport.is_sm_only()) {
-          state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[0]);
+          state[id].offset_left = calculate_pixel_value(id, offset_left_array[0]);
         } else if (storm_eagle.client.viewport.is_md_only()) {
-          state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[1]);
+          state[id].offset_left = calculate_pixel_value(id, offset_left_array[1]);
         } else if (storm_eagle.client.viewport.is_lg_only()) {
-          state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[2]);
+          state[id].offset_left = calculate_pixel_value(id, offset_left_array[2]);
         } else if (storm_eagle.client.viewport.is_xl_up()) {
-          state[id]['offset_left'] = calculate_pixel_value(id, offset_left_array[3]);
+          state[id].offset_left = calculate_pixel_value(id, offset_left_array[3]);
         }
       },
 
@@ -138,13 +134,13 @@ storm_eagle.module('carousel', () => {
       set_number_of_active: (id) => {
         const { number_of_active_array } = state[id];
         if (storm_eagle.client.viewport.is_sm_only()) {
-          state[id]['number_of_active'] = number_of_active_array[0];
+          state[id].number_of_active = number_of_active_array[0];
         } else if (storm_eagle.client.viewport.is_md_only()) {
-          state[id]['number_of_active'] = number_of_active_array[1];
+          state[id].number_of_active = number_of_active_array[1];
         } else if (storm_eagle.client.viewport.is_lg_only()) {
-          state[id]['number_of_active'] = number_of_active_array[2];
+          state[id].number_of_active = number_of_active_array[2];
         } else if (storm_eagle.client.viewport.is_xl_up()) {
-          state[id]['number_of_active'] = number_of_active_array[3];
+          state[id].number_of_active = number_of_active_array[3];
         }
       },
 
@@ -155,13 +151,13 @@ storm_eagle.module('carousel', () => {
       set_transition_duration: (id) => {
         const { transition_duration_array } = state[id];
         if (storm_eagle.client.viewport.is_sm_only()) {
-          state[id]['transition_duration'] = transition_duration_array[0];
+          state[id].transition_duration = transition_duration_array[0];
         } else if (storm_eagle.client.viewport.is_md_only()) {
-          state[id]['transition_duration'] = transition_duration_array[1];
+          state[id].transition_duration = transition_duration_array[1];
         } else if (storm_eagle.client.viewport.is_lg_only()) {
-          state[id]['transition_duration'] = transition_duration_array[2];
+          state[id].transition_duration = transition_duration_array[2];
         } else if (storm_eagle.client.viewport.is_xl_up()) {
-          state[id]['transition_duration'] = transition_duration_array[3];
+          state[id].transition_duration = transition_duration_array[3];
         }
       },
 
@@ -175,8 +171,8 @@ storm_eagle.module('carousel', () => {
         for (let i = 0; i <= items.length - number_of_active; i++) {
           indicators_group.innerHTML += `<button name="carousel-control-button" data-carousel-indicator-control class="cursor:pointer"><span class="show-for-sr">Go to slide #${i + 1}</button>`;
         }
-        state[id]['indicators_group_controls'] = el.querySelectorAll('[data-module="carousel.indicators-group"] > [data-carousel-indicator-control]');
-        state[id]['indicators_group_controls'][current_active_carousel_item].setAttribute("data-carousel-indicator-active", "true");
+        state[id].indicators_group_controls = el.querySelectorAll('[data-module="carousel.indicators-group"] > [data-carousel-indicator-control]');
+        state[id].indicators_group_controls[current_active_carousel_item].setAttribute('data-carousel-indicator-active', 'true');
       },
 
       /**
@@ -186,7 +182,7 @@ storm_eagle.module('carousel', () => {
       set_item_width: (id) => {
         const { el, item_group, items, number_of_active, offset_left } = state[id];
         const item_width = (el.offsetWidth - 2 * offset_left) / number_of_active;
-        state[id]['item_width'] = item_width;
+        state[id].item_width = item_width;
         items.forEach((item) => {
           item.style.width = `${item_width}px`;
         });
@@ -275,27 +271,27 @@ storm_eagle.module('carousel', () => {
          * @param {string} id - The ID of the carousel instance.
          */
         enable: (id) => {
-          const { el, item_group, items, indicators_group_controls, number_of_active, offset_left, item_width, current_active_carousel_item, transition_duration } = state[id];
-          el.setAttribute("data-carousel-active","true");
+          const { el, items, indicators_group_controls, number_of_active, current_active_carousel_item } = state[id];
+          el.setAttribute("data-carousel-active", "true");
           /* resets the active classes on the carousel items and adds the proper active classes */
           items.forEach((item) => {
-            item.setAttribute("data-carousel-item-active", "");
-            item.setAttribute("data-carousel-item-secondary-active", "false");
+            item.setAttribute('data-carousel-item-active', '');
+            item.setAttribute('data-carousel-item-secondary-active', 'false');
           });
 
-          items[current_active_carousel_item].setAttribute("data-carousel-item-active", "true");
-          items[current_active_carousel_item].setAttribute("data-carousel-item-secondary-active", "true");
+          items[current_active_carousel_item].setAttribute('data-carousel-item-active', 'true');
+          items[current_active_carousel_item].setAttribute('data-carousel-item-secondary-active', 'true');
 
           for (let i = 0; i < number_of_active; i++) {
-            items[current_active_carousel_item + i].setAttribute("data-carousel-item-secondary-active", "true");
+            items[current_active_carousel_item + i].setAttribute('data-carousel-item-secondary-active', 'true');
           }
 
           /* resets the active classes on the carousel control and adds the proper active classes */
           indicators_group_controls.forEach((indicator_group_control) => {
-            indicator_group_control.setAttribute("data-carousel-indicator-active","");
+            indicator_group_control.setAttribute('data-carousel-indicator-active', '');
           });
 
-          indicators_group_controls[current_active_carousel_item].setAttribute("data-carousel-indicator-active", "true");
+          indicators_group_controls[current_active_carousel_item].setAttribute('data-carousel-indicator-active', 'true');
         },
 
         /**
@@ -304,7 +300,7 @@ storm_eagle.module('carousel', () => {
          */
         disable: (id) => {
           const { el } = state[id];
-          el.setAttribute("data-carousel-active", "");
+          el.setAttribute('data-carousel-active', '');
         },
       },
 
@@ -331,7 +327,7 @@ storm_eagle.module('carousel', () => {
          * @param {string} id - The ID of the carousel instance.
          */
         enable: (id) => {
-          const { items, controls_next, controls_prev, control_active_classes, control_inactive_classes, control_class_queryselector, breakpoint, current_active_carousel_item, number_of_active } = state[id];
+          const { items, controls_next, controls_prev, control_active_classes, control_inactive_classes, control_class_queryselector, current_active_carousel_item, number_of_active } = state[id];
 
           let temp_controls_prev, temp_controls_next;
           if (control_class_queryselector) {
@@ -344,8 +340,8 @@ storm_eagle.module('carousel', () => {
 
           /* show both chevrons */
           if (items.length !== 1) {
-            controls_prev.removeAttribute("disabled");
-            controls_next.removeAttribute("disabled");
+            controls_prev.removeAttribute('disabled');
+            controls_next.removeAttribute('disabled');
             temp_controls_prev.classList.remove(...control_inactive_classes);
             temp_controls_next.classList.remove(...control_inactive_classes);
             temp_controls_prev.classList.add(...control_active_classes);
@@ -353,11 +349,11 @@ storm_eagle.module('carousel', () => {
           }
           /* hide chevrons */
           if (current_active_carousel_item === 0) {
-            controls_prev.setAttribute("disabled", "");
+            controls_prev.setAttribute('disabled', '');
             temp_controls_prev.classList.add(...control_inactive_classes);
             temp_controls_prev.classList.remove(...control_active_classes);
           } else if (current_active_carousel_item === items.length - number_of_active) {
-            controls_next.setAttribute("disabled","");
+            controls_next.setAttribute('disabled', '');
             temp_controls_next.classList.add(...control_inactive_classes);
             temp_controls_next.classList.remove(...control_active_classes);
           }
@@ -390,10 +386,10 @@ storm_eagle.module('carousel', () => {
         disable: (id) => {
           const { item_group, items } = state[id];
           item_group.style.left = 0;
-          item_group.style.width = "100%";
-          item_group.style.height = "auto";
+          item_group.style.width = '100%';
+          item_group.style.height = 'auto';
           items.forEach((item) => {
-            item.style.removeProperty("width");
+            item.style.removeProperty('width');
           });
         },
       },
@@ -448,7 +444,7 @@ storm_eagle.module('carousel', () => {
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
           const { item_group, transition_duration } = state[id];
           item_group.style.transitionDuration = `${transition_duration}s`;
-          state[id]['current_active_carousel_item'] = storm_eagle.util.index_in_parent(event.currentTarget);
+          state[id].current_active_carousel_item = storm_eagle.util.index_in_parent(event.currentTarget);
           self.ui.update(id);
         },
       },
@@ -537,10 +533,10 @@ storm_eagle.module('carousel', () => {
         handle_swiped_left: (event) => {
           //console.log('go -> in the carousel');
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
-          const { item_group, items, transition_duration, number_of_active, current_active_carousel_item } = state[id];
+          const { item_group, items, transition_duration, number_of_active } = state[id];
           item_group.style.transitionDuration = `${transition_duration}s`;
-          if (state[id]['current_active_carousel_item'] !== items.length - number_of_active) {
-            state[id]['current_active_carousel_item']++;
+          if (state[id].current_active_carousel_item !== items.length - number_of_active) {
+            state[id].current_active_carousel_item++;
             self.ui.update(id);
           }
         },
@@ -555,8 +551,8 @@ storm_eagle.module('carousel', () => {
           const id = storm_eagle.util.closest_parent(event.currentTarget, '[data-module="carousel"]').getAttribute('id');
           const { item_group, transition_duration } = state[id];
           item_group.style.transitionDuration = `${transition_duration}s`;
-          if (state[id]['current_active_carousel_item'] !== 0) {
-            state[id]['current_active_carousel_item']--;
+          if (state[id].current_active_carousel_item !== 0) {
+            state[id].current_active_carousel_item--;
             self.ui.update(id);
           }
         },
@@ -577,13 +573,13 @@ storm_eagle.module('carousel', () => {
           el.querySelectorAll('[data-carousel-item-secondary-active="false"]').forEach((item) => {
             item.querySelectorAll(focus_trap_selector).forEach((focusable_element) => {
               focusable_element.setAttribute('tabindex', '-1');
-              focusable_element.setAttribute('disabled', "true");
+              focusable_element.setAttribute('disabled', 'true');
             });
           });
           /* resets the elements for carousel item with [data-carousel-item-secondary-active="true"] */
           // Enable focusable elements in active items
           el.querySelectorAll('[data-carousel-item-secondary-active="true"]').forEach((item) => {
-            item.querySelectorAll("*").forEach((remove_disabled) => {
+            item.querySelectorAll('*').forEach((remove_disabled) => {
               if (remove_disabled.getAttribute('tabindex') === '-1') {
                 remove_disabled.setAttribute('tabindex', '0');
               }
