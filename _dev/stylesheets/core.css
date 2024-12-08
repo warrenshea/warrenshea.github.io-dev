@@ -15434,6 +15434,7 @@ fieldset.unstyle {
   border-bottom: 0;
   transition: all 0.3s ease-out;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .form\:theme\:gl0b3x input[type=text]:not(:disabled),
 .form\:theme\:gl0b3x input[type=number]:not(:disabled),
@@ -15452,6 +15453,10 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x select:disabled,
 .form\:theme\:gl0b3x textarea:disabled {
   background-color: #eee;
+}
+.form\:theme\:gl0b3x select {
+  padding-left: 0;
+  padding-right: 0;
 }
 .form\:theme\:gl0b3x input[type=text]:focus + label:before,
 .form\:theme\:gl0b3x input[type=text].focus + label:before,
