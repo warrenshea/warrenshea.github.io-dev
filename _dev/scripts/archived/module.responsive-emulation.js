@@ -8,11 +8,11 @@ storm_eagle.module('responsive_emulation', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='responsive-emulation']").forEach((el) => {
+      document.querySelectorAll('[data-module="responsive-emulation"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
-          container: el.querySelector("[data-module='responsive-emulation.container']"),
-          width: el.querySelector("[data-module='responsive-emulation.container']").style.width,
+          container: el.querySelector('[data-module="responsive-emulation.container"]'),
+          width: el.querySelector('[data-module="responsive-emulation.container"]').style.width,
         };
       });
     },
