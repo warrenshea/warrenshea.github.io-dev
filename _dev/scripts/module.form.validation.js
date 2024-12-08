@@ -87,7 +87,7 @@ storm_eagle.module('form.validation', () => {
     type: {
       inline: (el, form_name, form_element_name) => {
         for (let i = 0; i < state[form_name][form_element_name]['validation_criteria'].length; i++) {
-          //console.log(state[form_name][form_element_name]["validation_criteria"][i]);
+          //console.log(state[form_name][form_element_name]['validation_criteria'][i]);
 
           if (state[form_name][form_element_name]['validation_criteria'][i] === 'equals') {
             el = document.querySelector(`[name='${form_element_name}']`);
@@ -182,7 +182,7 @@ storm_eagle.module('form.validation', () => {
           }
         }
 
-        //console.log("error numbers:",error_number);
+        //console.log('error numbers:', error_number);
         if (error_number === 0) {
           if (typeof on_success_function === 'function') {
             if (on_success_function.constructor.name === 'AsyncFunction') {
