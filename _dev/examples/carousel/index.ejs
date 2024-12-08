@@ -129,14 +129,14 @@
         <div class="w:6 py:16px">
           <fieldset class="unstyle box-radio-buttons mb:8px">
             <legend class="pb:8px">Carousel Container Size</legend>
-            <input type="radio" name="carousel_container_size-1" onChange="storm_eagle.carousel_builder.update('1','container_size','w:100%');" id="full-width-1"><label for="full-width-1">100%</label>
-            <input type="radio" name="carousel_container_size-1" onChange="storm_eagle.carousel_builder.update('1','container_size','mw:1280px');" id="container-1280-1" checked><label for="container-1280-1">1280px</label>
+            <input type="radio" name="carousel_container_size-1" onChange="storm_eagle.carousel_builder.update('1', 'container_size', 'w:100%');" id="full-width-1"><label for="full-width-1">100%</label>
+            <input type="radio" name="carousel_container_size-1" onChange="storm_eagle.carousel_builder.update('1', 'container_size', 'mw:1280px');" id="container-1280-1" checked><label for="container-1280-1">1280px</label>
           </fieldset>
           <div class="position:relative overflow:hidden pb:32px">
             <label for="number_of_slides-1">Number of Slides</label>
             <div class="px:32px">
               <div data-module="slider.input-container">
-                <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('1','num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-1" name="number_of_slides-1" min="1" max="9" steps="1" value="1">
+                <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('1', 'num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-1" name="number_of_slides-1" min="1" max="9" steps="1" value="1">
                 <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
                 <ul data-module="slider.labels" class="position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
               </div>
@@ -144,15 +144,15 @@
           </div>
           <fieldset class="unstyle box-radio-buttons mb:8px">
             <legend class="pb:8px">Carousel is active on</legend>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','sm=');" id="sm_only-1"><label for="sm_only-1">sm=</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','sm+');" id="sm_up-1" checked><label for="sm_up-1">sm+</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','md-');" id="md_down-1"><label for="md_down-1">md-</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','md=');" id="md_only-1"><label for="md_only-1">md=</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','md+');" id="md_up-1"><label for="md_up-1">md+</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','lg-');" id="lg_down-1"><label for="lg_down-1">lg-</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','lg=');" id="lg_only-1"><label for="lg_only-1">lg=</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','lg+');" id="lg_up-1"><label for="lg_up-1">lg+</label>
-            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1','breakpoint','xl+');" id="xl_up-1"><label for="xl_up-1">xl+</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'sm=');" id="sm_only-1"><label for="sm_only-1">sm=</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'sm+');" id="sm_up-1" checked><label for="sm_up-1">sm+</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'md-');" id="md_down-1"><label for="md_down-1">md-</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'md=');" id="md_only-1"><label for="md_only-1">md=</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'md+');" id="md_up-1"><label for="md_up-1">md+</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'lg-');" id="lg_down-1"><label for="lg_down-1">lg-</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'lg=');" id="lg_only-1"><label for="lg_only-1">lg=</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'lg+');" id="lg_up-1"><label for="lg_up-1">lg+</label>
+            <input type="radio" name="carousel_active-1" onChange="storm_eagle.carousel_builder.update('1', 'breakpoint', 'xl+');" id="xl_up-1"><label for="xl_up-1">xl+</label>
           </fieldset>
         </div>
         <div class="w:6 py:16px">
@@ -183,7 +183,7 @@
                 </th>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-sm-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-sm',this.value);">
+                    <select id="carousel-num-active-sm-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1', 'number-active-elements-sm',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -199,7 +199,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-md-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-md',this.value);">
+                    <select id="carousel-num-active-md-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1', 'number-active-elements-md',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -215,7 +215,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-lg-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-lg',this.value);">
+                    <select id="carousel-num-active-lg-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1', 'number-active-elements-lg',this.value);">
                       <option value="1">1</option>
                       <option value="2" selected>2</option>
                       <option value="3">3</option>
@@ -231,7 +231,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-xl-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','number-active-elements-xl',this.value);">
+                    <select id="carousel-num-active-xl-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1', 'number-active-elements-xl',this.value);">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3" selected>3</option>
@@ -262,10 +262,10 @@
                     </span>
                   </div>
                 </th>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="32" onChange="storm_eagle.carousel_builder.update('1','left-offset-sm',this.value);" id="left-offset-sm-1"><label for="left-offset-sm-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('1','left-offset-md',this.value);" id="left-offset-md-1"><label for="left-offset-md-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.16667" onChange="storm_eagle.carousel_builder.update('1','left-offset-lg',this.value);" id="left-offset-lg-1"><label for="left-offset-lg-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.125" onChange="storm_eagle.carousel_builder.update('1','left-offset-xl',this.value);" id="left-offset-xl-1"><label for="left-offset-xl-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="32" onChange="storm_eagle.carousel_builder.update('1', 'left-offset-sm',this.value);" id="left-offset-sm-1"><label for="left-offset-sm-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('1', 'left-offset-md',this.value);" id="left-offset-md-1"><label for="left-offset-md-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.16667" onChange="storm_eagle.carousel_builder.update('1', 'left-offset-lg',this.value);" id="left-offset-lg-1"><label for="left-offset-lg-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.125" onChange="storm_eagle.carousel_builder.update('1', 'left-offset-xl',this.value);" id="left-offset-xl-1"><label for="left-offset-xl-1"><span class="description"></span></label></td>
               </tr>
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
@@ -283,10 +283,10 @@
                     </span>
                   </div>
                 </th>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.5" onChange="storm_eagle.carousel_builder.update('1','transition-speed-sm',this.value);" id="transition-speed-sm-1"><label for="transition-speed-sm-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-md',this.value);" id="transition-speed-md-1"><label for="transition-speed-md-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-lg',this.value);" id="transition-speed-lg-1"><label for="transition-speed-lg-1"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1','transition-speed-xl',this.value);" id="transition-speed-xl-1"><label for="transition-speed-xl-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.5" onChange="storm_eagle.carousel_builder.update('1', 'transition-speed-sm',this.value);" id="transition-speed-sm-1"><label for="transition-speed-sm-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1', 'transition-speed-md',this.value);" id="transition-speed-md-1"><label for="transition-speed-md-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1', 'transition-speed-lg',this.value);" id="transition-speed-lg-1"><label for="transition-speed-lg-1"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('1', 'transition-speed-xl',this.value);" id="transition-speed-xl-1"><label for="transition-speed-xl-1"><span class="description"></span></label></td>
               </tr>
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
@@ -306,7 +306,7 @@
                 </th>
                 <td colspan="4">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-active-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1','focused-item',this.value);">
+                    <select id="carousel-active-1" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('1', 'focused-item',this.value);">
                       <option value="1">1</option>
                       <option value="2" selected>2</option>
                       <option value="3">3</option>
@@ -428,14 +428,14 @@
         <div class="w:6 py:16px">
           <fieldset class="unstyle box-radio-buttons mb:8px">
             <legend class="pb:8px">Carousel Container Size</legend>
-            <input type="radio" name="carousel_container_size-2" onChange="storm_eagle.carousel_builder.update('2','container_size','w:100%');" id="full-width-2" checked><label for="full-width-2">100%</label>
-            <input type="radio" name="carousel_container_size-2" onChange="storm_eagle.carousel_builder.update('2','container_size','mw:1280px');" id="container-1280-2"><label for="container-1280-2">1280px</label>
+            <input type="radio" name="carousel_container_size-2" onChange="storm_eagle.carousel_builder.update('2', 'container_size', 'w:100%');" id="full-width-2" checked><label for="full-width-2">100%</label>
+            <input type="radio" name="carousel_container_size-2" onChange="storm_eagle.carousel_builder.update('2', 'container_size', 'mw:1280px');" id="container-1280-2"><label for="container-1280-2">1280px</label>
           </fieldset>
           <div class="position:relative overflow:hidden pb:32px">
             <label for="number_of_slides-2">Number of Slides</label>
             <div class="px:32px">
               <div data-module="slider.input-container">
-                <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('2','num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-2" name="number_of_slides-2" min="1" max="9" steps="1" value="1">
+                <input data-module="slider.input" data-slider id onChange="storm_eagle.carousel_builder.update('2', 'num_slides',this.value);" value="5" class="display:block align-self:centered w:100%" type="range" id="number_of_slides-2" name="number_of_slides-2" min="1" max="9" steps="1" value="1">
                 <span data-module="slider.background"><span data-module="slider.fill"></span></span></span></span>
                 <ul data-module="slider.labels" class="position:absolute text-align:center unstyle-pl:0 display:flex align:justify w:100%"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ul>
               </div>
@@ -443,15 +443,15 @@
           </div>
           <fieldset class="unstyle box-radio-buttons mb:8px">
             <legend class="pb:8px">Carousel is active on</legend>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','sm=');" id="sm_only-2"><label for="sm_only-2">sm=</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','sm+');" id="sm_up-2" checked><label for="sm_up-2">sm+</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','md-');" id="md_down-2"><label for="md_down-2">md-</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','md=');" id="md_only-2"><label for="md_only-2">md=</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','md+');" id="md_up-2"><label for="md_up-2">md+</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','lg-');" id="lg_down-2"><label for="lg_down-2">lg-</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','lg=');" id="lg_only-2"><label for="lg_only-2">lg=</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','lg+');" id="lg_up-2"><label for="lg_up-2">lg+</label>
-            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2','breakpoint','xl+');" id="xl_up-2"><label for="xl_up-2">xl+</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'sm=');" id="sm_only-2"><label for="sm_only-2">sm=</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'sm+');" id="sm_up-2" checked><label for="sm_up-2">sm+</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'md-');" id="md_down-2"><label for="md_down-2">md-</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'md=');" id="md_only-2"><label for="md_only-2">md=</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'md+');" id="md_up-2"><label for="md_up-2">md+</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'lg-');" id="lg_down-2"><label for="lg_down-2">lg-</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'lg=');" id="lg_only-2"><label for="lg_only-2">lg=</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'lg+');" id="lg_up-2"><label for="lg_up-2">lg+</label>
+            <input type="radio" name="carousel_active-2" onChange="storm_eagle.carousel_builder.update('2', 'breakpoint', 'xl+');" id="xl_up-2"><label for="xl_up-2">xl+</label>
           </fieldset>
         </div>
         <div class="w:6 py:16px">
@@ -482,7 +482,7 @@
                 </th>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-sm-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-sm',this.value);">
+                    <select id="carousel-num-active-sm-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2', 'number-active-elements-sm',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -498,7 +498,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-md-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-md',this.value);">
+                    <select id="carousel-num-active-md-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2', 'number-active-elements-md',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -514,7 +514,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-lg-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-lg',this.value);">
+                    <select id="carousel-num-active-lg-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2', 'number-active-elements-lg',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -530,7 +530,7 @@
                 </td>
                 <td class="position:relative br-onyx:1px">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-num-active-xl-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','number-active-elements-xl',this.value);">
+                    <select id="carousel-num-active-xl-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2', 'number-active-elements-xl',this.value);">
                       <option value="1" selected>1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -561,10 +561,10 @@
                     </span>
                   </div>
                 </th>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="32" onChange="storm_eagle.carousel_builder.update('2','left-offset-sm',this.value);" id="left-offset-sm-2"><label for="left-offset-sm-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-md',this.value);" id="left-offset-md-2"><label for="left-offset-md-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.16667" onChange="storm_eagle.carousel_builder.update('2','left-offset-lg',this.value);" id="left-offset-lg-2"><label for="left-offset-lg-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('2','left-offset-xl',this.value);" id="left-offset-xl-2"><label for="left-offset-xl-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="32" onChange="storm_eagle.carousel_builder.update('2', 'left-offset-sm',this.value);" id="left-offset-sm-2"><label for="left-offset-sm-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('2', 'left-offset-md',this.value);" id="left-offset-md-2"><label for="left-offset-md-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.16667" onChange="storm_eagle.carousel_builder.update('2', 'left-offset-lg',this.value);" id="left-offset-lg-2"><label for="left-offset-lg-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.25" onChange="storm_eagle.carousel_builder.update('2', 'left-offset-xl',this.value);" id="left-offset-xl-2"><label for="left-offset-xl-2"><span class="description"></span></label></td>
               </tr>
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
@@ -582,10 +582,10 @@
                     </span>
                   </div>
                 </th>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.5" onChange="storm_eagle.carousel_builder.update('2','transition-speed-sm',this.value);" id="transition-speed-sm-2"><label for="transition-speed-sm-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-md',this.value);" id="transition-speed-md-2"><label for="transition-speed-md-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-lg',this.value);" id="transition-speed-lg-2"><label for="transition-speed-lg-2"><span class="description"></span></label></td>
-                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2','transition-speed-xl',this.value);" id="transition-speed-xl-2"><label for="transition-speed-xl-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="0.5" onChange="storm_eagle.carousel_builder.update('2', 'transition-speed-sm',this.value);" id="transition-speed-sm-2"><label for="transition-speed-sm-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2', 'transition-speed-md',this.value);" id="transition-speed-md-2"><label for="transition-speed-md-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2', 'transition-speed-lg',this.value);" id="transition-speed-lg-2"><label for="transition-speed-lg-2"><span class="description"></span></label></td>
+                <td class="position:relative br-onyx:1px"><input type="text" class="text-align:center color:blue" style="width:70px;" value="1" onChange="storm_eagle.carousel_builder.update('2', 'transition-speed-xl',this.value);" id="transition-speed-xl-2"><label for="transition-speed-xl-2"><span class="description"></span></label></td>
               </tr>
               <tr class="bb-onyx:1px">
                 <th class="p:8px br-onyx:1px">
@@ -605,7 +605,7 @@
                 </th>
                 <td colspan="4">
                   <div class="align-self:centered position:relative" style="width:70px;">
-                    <select id="carousel-active-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2','focused-item',this.value);">
+                    <select id="carousel-active-2" class="ic-color:blue text-align:center" onChange="storm_eagle.carousel_builder.update('2', 'focused-item',this.value);">
                       <option value="1">1</option>
                       <option value="2" selected>2</option>
                       <option value="3">3</option>
