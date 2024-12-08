@@ -38,18 +38,18 @@ storm_eagle.module('isotope', () => {
           if (storm_eagle.form?.select_all) {
             return Promise.resolve();
           } else {
-            return await storm_eagle.util.load_javascript("/scripts/module.form.select-all.js");
+            return await storm_eagle.util.load_javascript('/scripts/module.form.select-all.js');
           }
         },
         autocomplete: async () => {
           if (storm_eagle.form?.autocomplete) {
             return Promise.resolve();
           } else {
-            return await storm_eagle.util.load_javascript("/scripts/module.form.autocomplete.js");
+            return await storm_eagle.util.load_javascript('/scripts/module.form.autocomplete.js');
           }
         },
         isotope_lib: async () => {
-          return await storm_eagle.util.load_javascript("/scripts/libs/isotope-v3.0.6.min.js");
+          return await storm_eagle.util.load_javascript('/scripts/libs/isotope-v3.0.6.min.js');
         },
       },
     },
@@ -60,7 +60,7 @@ storm_eagle.module('isotope', () => {
         state[id] = {
           el,
           isotope_object: null,
-          elements_container: el.querySelector("[data-module='isotope.elements-container']"),
+          elements_container: el.querySelector('[data-module="isotope.elements-container"]'),
           layout_mode: el.getAttribute('data-isotope-layout-mode'),
           sort_data_config: el.getAttribute('data-isotope-sort-data'),
           sort_by_id: el.getAttribute('data-isotope-sortBy-bind-id') || null,
@@ -244,7 +244,7 @@ storm_eagle.module('isotope', () => {
           if (el.offsetParent !== null) {
             const id = el.getAttribute('id');
             if (state[id]) {
-              //console.log("refresh_all");
+              //console.log('refresh_all');
               self.config.state.set.sort_by(id);
               self.config.state.set.sort_ascending(id);
               self.config.state.set.filter(id);
@@ -256,7 +256,7 @@ storm_eagle.module('isotope', () => {
       rearrange_heights: () => {
         document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
           if (el.offsetParent !== null) {
-            //console.log("rearrange_heights");
+            //console.log('rearrange_heights');
             const id = el.getAttribute('id');
             if (state[id]) {
               self.ui.refresh(id);
@@ -380,7 +380,7 @@ storm_eagle.module('isotope', () => {
         }, ['']); // Initialize with an array containing an empty string
 
         // Join the combined values with a comma and return
-        return combined_values.join(",");
+        return combined_values.join(',');
       },
     }
   };
