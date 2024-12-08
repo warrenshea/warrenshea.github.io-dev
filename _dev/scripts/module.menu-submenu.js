@@ -74,7 +74,7 @@ storm_eagle.module('menu_submenu', () => {
       },
       trigger_click: (event) => {
         const el = event.currentTarget;
-        const id = storm_eagle.util.closest_parent(el, `[data-module='menu']`).getAttribute("id");
+        const id = storm_eagle.util.closest_parent(el, `[data-module='menu']`).getAttribute('id');
         self.action.toggle_trigger(id, el);
       }
     },
