@@ -9,7 +9,7 @@ storm_eagle.module('modal', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='modal']").forEach((el) => {
+      document.querySelectorAll('[data-module="modal"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
@@ -22,7 +22,7 @@ storm_eagle.module('modal', () => {
     },
     event_listeners: {
       mousedown_close: (event) => {
-        if (event.target.querySelector("[data-module='modal.container']") || event.target.getAttribute('data-module') === 'modal') {
+        if (event.target.querySelector('[data-module="modal.container"]') || event.target.getAttribute('data-module') === 'modal') {
           self.close();
         }
       },
@@ -51,10 +51,10 @@ storm_eagle.module('modal', () => {
       /* updates modal visuals */
       document.querySelector('body').classList.add('overflow:hidden');
       if (trigger) {
-        trigger.setAttribute("data-modal-trigger","active");
+        trigger.setAttribute('data-modal-trigger', 'active');
       }
-      el.setAttribute("data-modal","active");
-      container.setAttribute("data-modal-container","active");
+      el.setAttribute('data-modal', 'active');
+      container.setAttribute('data-modal-container', 'active');
 
       /* removes focus from elements except in modal */
       focusable_elements.forEach((focusable_element) => {
@@ -88,12 +88,12 @@ storm_eagle.module('modal', () => {
       document.querySelector('body').classList.remove('overflow:hidden');
 
       /* updates modal visuals */
-      document.querySelector("[data-module='modal'][data-modal='active']").setAttribute('tabIndex', '-1');
-      document.querySelector("[data-module='modal'][data-modal='active']").setAttribute('aria-expanded', false);
-      document.querySelector("[data-module='modal.trigger'][data-modal-trigger='active']")?.removeAttribute("data-modal-trigger");
-      document.querySelector("[data-module='modal'][data-modal='active'] > [data-module='modal.container']").removeAttribute("data-modal-container");
-      document.querySelector("[data-module='modal'][data-modal='active']").removeAttribute("data-modal");
-      document.querySelectorAll("[data-module='modal']").forEach((el, index) => {
+      document.querySelector('[data-module="modal"][data-modal="active"]').setAttribute('tabIndex', '-1');
+      document.querySelector('[data-module="modal"][data-modal="active"]').setAttribute('aria-expanded', false);
+      document.querySelector('[data-module="modal.trigger"][data-modal-trigger="active"]')?.removeAttribute('data-modal-trigger');
+      document.querySelector('[data-module="modal"][data-modal="active"] > [data-module="modal.container"]').removeAttribute('data-modal-container');
+      document.querySelector('[data-module="modal"][data-modal="active"]').removeAttribute('data-modal');
+      document.querySelectorAll('[data-module="modal"]').forEach((el, index) => {
         const id = el.getAttribute('id');
         const { focusable_elements } = state[id];
 
@@ -105,7 +105,7 @@ storm_eagle.module('modal', () => {
         /* remove keyboard event listener */
         el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
       });
-      document.querySelectorAll("[data-module='modal.trigger']").forEach((trigger) => {
+      document.querySelectorAll('[data-module="modal.trigger"]').forEach((trigger) => {
         trigger.setAttribute('aria-expanded', false);
       });
 
