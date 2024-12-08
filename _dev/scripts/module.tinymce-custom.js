@@ -3,7 +3,7 @@
 chill_penguin.module('tinymce', () => {
   let self;
   let state = {};
-  const branch = chill_penguin.page.get_query_value("branch");
+  const branch = chill_penguin.page.get_query_value('branch');
 
   const tinymce_string = {
     height: 125,
