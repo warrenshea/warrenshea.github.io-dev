@@ -10,7 +10,7 @@ storm_eagle.module('dialog', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='dialog']").forEach((el) => {
+      document.querySelectorAll('[data-module="dialog"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
@@ -23,7 +23,7 @@ storm_eagle.module('dialog', () => {
     },
     event_listeners: {
       mousedown_close: (event) => {
-        if (event.target.querySelector("[data-module='dialog'], [data-module='dialog'] > *")) {
+        if (event.target.querySelector('[data-module="dialog"], [data-module="dialog"] > *')) {
           self.action.close();
         }
       },
@@ -96,12 +96,12 @@ storm_eagle.module('dialog', () => {
         document.documentElement.style.removeProperty('top');
         window.scrollTo(0,scroll_top);
 
-        document.querySelectorAll("dialog").forEach((dialog) => {
+        document.querySelectorAll('dialog').forEach((dialog) => {
           dialog.close();
         });
 
         /* updates dialog visuals */
-        document.querySelectorAll("[data-module='dialog']").forEach((el, index) => {
+        document.querySelectorAll('[data-module="dialog"]').forEach((el, index) => {
           const id = el.getAttribute('id');
           const { focusable_elements } = state[id];
 
@@ -113,7 +113,7 @@ storm_eagle.module('dialog', () => {
           /* remove keyboard event listener */
           el.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
         });
-        document.querySelectorAll("[data-module='dialog.trigger']").forEach((trigger) => {
+        document.querySelectorAll('[data-module="dialog.trigger"]').forEach((trigger) => {
           trigger.setAttribute('aria-expanded', false);
         });
 
@@ -139,7 +139,7 @@ storm_eagle.module('dialog_trigger', () => {
   return {
     initialize: () => {
       self = storm_eagle.dialog_trigger;
-      document.querySelectorAll("[data-module='dialog.trigger']").forEach((el) => {
+      document.querySelectorAll('[data-module="dialog.trigger"]').forEach((el) => {
         self.event_listeners.initialize(el);
       });
     },
@@ -150,7 +150,7 @@ storm_eagle.module('dialog_trigger', () => {
       },
       remove: {
         all: () => {
-          document.querySelectorAll("[data-module='dialog.trigger']").forEach((el) => {
+          document.querySelectorAll('[data-module="dialog.trigger"]').forEach((el) => {
             el.removeEventListener('click', self.event_listeners.trigger_open);
           });
         },
@@ -160,7 +160,7 @@ storm_eagle.module('dialog_trigger', () => {
       },
       trigger_open: (event) => {
         const el = event.currentTarget;
-        storm_eagle.dialog.action.open(el.getAttribute("data-dialog-bind-id"),el);
+        storm_eagle.dialog.action.open(el.getAttribute('data-dialog-bind-id'),el);
       },
     },
   };
