@@ -10,7 +10,7 @@ storm_eagle.module('slider', () => {
     },
     setup: () => {
       document.querySelectorAll('[data-module="slider.input-container"]').forEach((container) => {
-        const el = container.querySelector(":scope > [data-module='slider.input']");
+        const el = container.querySelector(':scope > [data-module="slider.input"]');
         const id = el.getAttribute('id');
         state[id] = {
           el,
@@ -18,7 +18,7 @@ storm_eagle.module('slider', () => {
           label_container: container.querySelector(':scope > [data-module="slider.labels"]'),
           labels: container.querySelectorAll(':scope > [data-module="slider.labels"] > * '),
           slider_fill: container.querySelector(':scope > [data-module="slider.background"] > [data-module="slider.fill"]'),
-          input_bind: el.getAttribute("data-slider-bind-input"),
+          input_bind: el.getAttribute('data-slider-bind-input'),
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
