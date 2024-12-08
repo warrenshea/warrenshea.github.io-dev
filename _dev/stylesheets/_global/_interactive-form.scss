@@ -121,12 +121,17 @@ fieldset.unstyle {
     border-bottom: 0;
     transition: all 0.3s ease-out;
     padding-left: rem-calc(8);
+    padding-right: rem-calc(8);
     &:not(:disabled) {
       background-color: #fafafa;
     }
     &:disabled {
       background-color: #eee;
     }
+  }
+  select {
+    padding-left: 0;
+    padding-right: 0;
   }
   input[type='text']:focus + label:before,
   input[type='text'].focus + label:before,
