@@ -15,7 +15,7 @@ storm_eagle.module('popover', () => {
       self.event_listeners.initialize();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='popover']").forEach((el, index) => {
+      document.querySelectorAll('[data-module="popover"]').forEach((el, index) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
@@ -28,7 +28,7 @@ storm_eagle.module('popover', () => {
     ui: {
       set_location: (id) => {
         const { el  } = state[id];
-        const trigger = document.querySelector("[data-module='popover.trigger'][data-popover-trigger='active']");
+        const trigger = document.querySelector('[data-module="popover.trigger"][data-popover-trigger="active"]');
 
         if (storm_eagle.client.viewport.is_md_down()) {
           el.style.top = 'initial';
@@ -37,7 +37,7 @@ storm_eagle.module('popover', () => {
         } else if (storm_eagle.client.viewport.is_lg_up()) {
           const scroll_top = window.pageYOffset || trigger.scrollTop;
           const trigger_location = trigger.getBoundingClientRect();
-          switch (el.getAttribute("data-popover-direction")) {
+          switch (el.getAttribute('data-popover-direction')) {
             case "top":
               el.style.left = `${trigger_location.left + trigger_location.width/2}px`;
               el.style.transform = `translate(-50%,-100%)`;
@@ -64,14 +64,14 @@ storm_eagle.module('popover', () => {
       },
       resize: () => {
         const force_resize = () => {
-          if (document.querySelector("[data-module='popover'][data-popover='active']")) {
-            self.ui.set_location(document.querySelector("[data-module='popover'][data-popover='active']").getAttribute('id'));
+          if (document.querySelector('[data-module="popover"][data-popover="active"]')) {
+            self.ui.set_location(document.querySelector('[data-module="popover"][data-popover="active"]').getAttribute('id'));
           }
         }
         storm_eagle.resize_observer(document.querySelector('body'), force_resize);
       },
       mousedown_close: (event) => {
-        if (event.target.querySelector("[data-module='popover'], [data-module='popover'] > *")) {
+        if (event.target.querySelector('[data-module="popover"], [data-module="popover"] > *')) {
           self.action.close();
         }
       },
@@ -99,12 +99,12 @@ storm_eagle.module('popover', () => {
         const { el, focusable_elements, remove_focusable_elements } = state[id];
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
         document.addEventListener('mousedown', self.event_listeners.mousedown_close);
-        document.querySelectorAll("[data-popover='active']").forEach((el) => {
-          el.removeAttribute("data-popover");
+        document.querySelectorAll('[data-popover="active"]').forEach((el) => {
+          el.removeAttribute('data-popover');
           el.hidePopover();
         });
-        document.querySelectorAll("[data-popover-trigger='active']").forEach((el) => {
-          el.removeAttribute("data-popover-trigger");
+        document.querySelectorAll('[data-popover-trigger="active"]').forEach((el) => {
+          el.removeAttribute('data-popover-trigger');
         });
 
         focusable_elements.forEach((focusable_element) => {
@@ -124,8 +124,8 @@ storm_eagle.module('popover', () => {
         self.a11y.last_tab_stop = state[id]['focusable_elements'][state[id]['focusable_elements'].length - 1];
 
         /* updates popover visuals */
-        el.setAttribute("data-popover","active");
-        trigger.setAttribute("data-popover-trigger","active");
+        el.setAttribute('data-popover', 'active');
+        trigger.setAttribute('data-popover-trigger', 'active');
         self.ui.set_location(id);
 
         /* set focus to popover (but not the self.a11y.first_tab_stop */
@@ -140,15 +140,15 @@ storm_eagle.module('popover', () => {
       close: () => {
         /* updates popover visuals */
         document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-        document.querySelector("[data-module='popover'][data-popover='active']")?.setAttribute('tabIndex', '-1');
-        document.querySelectorAll("[data-popover='active']").forEach((el) => {
-          el.removeAttribute("data-popover");
+        document.querySelector('[data-module="popover"][data-popover="active"]')?.setAttribute('tabIndex', '-1');
+        document.querySelectorAll('[data-popover="active"]').forEach((el) => {
+          el.removeAttribute('data-popover');
           el.hidePopover();
         });
-        document.querySelectorAll("[data-popover-trigger='active']").forEach((el) => {
-          el.removeAttribute("data-popover-trigger");
+        document.querySelectorAll('[data-popover-trigger="active"]').forEach((el) => {
+          el.removeAttribute('data-popover-trigger');
         });
-        document.querySelectorAll("[data-target='popover']").forEach((popover, index) => {
+        document.querySelectorAll('[data-target="popover"]').forEach((popover, index) => {
           const id = popover.getAttribute('id');
           const { focusable_elements } = state[id];
 
