@@ -17,7 +17,7 @@ storm_eagle.module('archived_popover', () => {
       self.event_listeners.initialize();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='archived-popover']").forEach((el, index) => {
+      document.querySelectorAll('[data-module="archived-popover"]').forEach((el, index) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
@@ -31,7 +31,7 @@ storm_eagle.module('archived_popover', () => {
     ui: {
       set_location: (id) => {
         const { el  } = state[id];
-        let trigger = document.querySelector("[data-module='archived-popover.trigger'][data-archived-popover='active']");
+        let trigger = document.querySelector('[data-module="archived-popover.trigger"][data-archived-popover="active"]');
 
         if (storm_eagle.client.viewport.is_md_down()) {
           el.style.top = 'initial';
@@ -43,9 +43,9 @@ storm_eagle.module('archived_popover', () => {
         }
       },
       create_popover_overlay: () => {
-        if (!document.querySelector("[data-module='archived-popover.overlay']")) {
+        if (!document.querySelector('[data-module="archived-popover.overlay"]')) {
           document.body.insertAdjacentHTML('beforeend', '<div data-module="archived-popover.overlay" class="popover-overlay"></div>');
-          overlay = document.querySelector("[data-module='archived-popover.overlay']");
+          overlay = document.querySelector('[data-module="archived-popover.overlay"]');
         }
       },
     },
@@ -55,14 +55,14 @@ storm_eagle.module('archived_popover', () => {
       },
       resize: () => {
         const force_resize = () => {
-          if (document.querySelector("[data-module='archived-popover'][data-archived-popover='active']")) {
-            self.ui.set_location(document.querySelector("[data-module='archived-popover'][data-archived-popover='active']").getAttribute('id'));
+          if (document.querySelector('[data-module="archived-popover"][data-archived-popover="active"]')) {
+            self.ui.set_location(document.querySelector('[data-module="archived-popover"][data-archived-popover="active"]').getAttribute('id'));
           }
         }
         storm_eagle.resize_observer(document.querySelector('body'), force_resize);
       },
       mousedown_close: (event) => {
-        if (overlay && event.target.getAttribute("data-module") === 'archived-popover.overlay') {
+        if (overlay && event.target.getAttribute('data-module') === 'archived-popover.overlay') {
           self.close();
         }
       },
@@ -107,9 +107,9 @@ storm_eagle.module('archived_popover', () => {
       self.a11y.last_tab_stop = state[id]['focusable_elements'][state[id]['focusable_elements'].length - 1];
 
       /* updates popover visuals */
-      el.setAttribute("data-archived-popover","active");
-      overlay.setAttribute("data-archived-popover","active");
-      trigger.setAttribute("data-archived-popover","active");
+      el.setAttribute('data-archived-popover', 'active');
+      overlay.setAttribute('data-archived-popover', 'active');
+      trigger.setAttribute('data-archived-popover', 'active');
       self.ui.set_location(id);
 
       /* set focus to popover (but not the self.a11y.first_tab_stop */
@@ -124,12 +124,12 @@ storm_eagle.module('archived_popover', () => {
     close: () => {
       /* updates popover visuals */
       document.removeEventListener('mousedown', self.event_listeners.mousedown_close);
-      document.querySelector("[data-module='archived-popover'][data-archived-popover='active']").setAttribute('tabIndex', '-1');
-      document.querySelector("[data-module='archived-popover'][data-archived-popover='active']").setAttribute('aria-expanded', false);
-      document.querySelectorAll("[data-archived-popover='active']").forEach((el) => {
-        el.setAttribute("data-archived-popover","");
+      document.querySelector('[data-module="archived-popover"][data-archived-popover="active"]').setAttribute('tabIndex', '-1');
+      document.querySelector('[data-module="archived-popover"][data-archived-popover="active"]').setAttribute('aria-expanded', false);
+      document.querySelectorAll('[data-archived-popover="active"]').forEach((el) => {
+        el.setAttribute('data-archived-popover', '');
       });
-      document.querySelectorAll("[data-target='archived-popover']").forEach((popover, index) => {
+      document.querySelectorAll('[data-target="archived-popover"]').forEach((popover, index) => {
         const id = popover.getAttribute('id');
         const { focusable_elements } = state[id];
 
@@ -141,7 +141,7 @@ storm_eagle.module('archived_popover', () => {
         /* remove keyboard event listener */
         popover.removeEventListener('keydown', self.event_listeners.keyboard_focus_trap);
       });
-      document.querySelectorAll("[data-module='archived-popover.trigger']").forEach((trigger) => {
+      document.querySelectorAll('[data-module="archived-popover.trigger"]').forEach((trigger) => {
         trigger.setAttribute('aria-expanded', false);
       });
 
