@@ -9,16 +9,16 @@ storm_eagle.module('show_more', () => {
       self.setup();
     },
     setup: () => {
-      document.querySelectorAll("[data-module='show-more']").forEach((el) => {
+      document.querySelectorAll('[data-module="show-more"]').forEach((el) => {
         const id = el.getAttribute('id');
         state[id] = {
           el,
           transition_duration: el.getAttribute('data-show-more-transition-duration'),
           offset: el.getAttribute('data-show-more-offset'),
-          container: el.querySelector("[data-module='show-more.container']"),
+          container: el.querySelector('[data-module="show-more.container"]'),
           container_height: '',
-          more_button: el.nextElementSibling.querySelector("[data-module='show-more.more']"),
-          less_button: el.nextElementSibling.querySelector("[data-module='show-more.less']"),
+          more_button: el.nextElementSibling.querySelector('[data-module="show-more.more"]'),
+          less_button: el.nextElementSibling.querySelector('[data-module="show-more.less"]'),
         };
         self.ui.initialize(id);
         self.event_listeners.initialize(id);
