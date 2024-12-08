@@ -69,15 +69,15 @@
       },
       calculate_grid_lines: (grid_overlay_wrapper, width) => {
         const wrapper = document.querySelector(`.${grid_overlay_wrapper}`);
-        wrapper.classList.remove("sm","md","lg","xl");
+        wrapper.classList.remove('sm', 'md', 'lg', 'xl');
         if (width >= breakpoints.sm_min && width < breakpoints.md_min) {
-          wrapper.classList.add("sm");
+          wrapper.classList.add('sm');
         } else if (width >= breakpoints.md_min && width < breakpoints.lg_min) {
-          wrapper.classList.add("md");
+          wrapper.classList.add('md');
         } else if (width >= breakpoints.lg_min && width < breakpoints.xl_min) {
-          wrapper.classList.add("lg");
+          wrapper.classList.add('lg');
         } else {
-          wrapper.classList.add("xl");
+          wrapper.classList.add('xl');
         }
         wrapper.style.width = `${width}px`;
       },
