@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-storm_eagle.module("header", () => {
+storm_eagle.module('header', () => {
   let self;
   let isMobileOpen = false;
   let isSignInOpen = false;
 
   return {
     initialize: () => {
-      self = storm_eagle["header"];
+      self = storm_eagle['header'];
     },
     ready: () => {
       self.addEventListeners();
@@ -19,27 +19,27 @@ storm_eagle.module("header", () => {
 
       isMobileOpen = value;
       (isSignInOpen) && self.setIsSignInOpen(false);
-      document.querySelector("[data-header-id=header-mobile-menu-button]").setAttribute('aria-expanded', isMobileOpen);
+      document.querySelector('[data-header-id="header-mobile-menu-button"]').setAttribute('aria-expanded', isMobileOpen);
       if (isMobileOpen) {
-        document.querySelector(".mobile-menu-container-wrapper").classList.add("active");
-        document.querySelector(".mobile-menu-container-wrapper").style.top = `${document.querySelector(".main-row-container").offsetTop + document.querySelector(".main-row-container").offsetHeight}px`;
-        document.querySelector(".mobile-menu-container-wrapper").style.height = `calc(100vh - ${document.querySelector(".main-row-container").offsetTop + document.querySelector(".main-row-container").offsetHeight}px`;
-        document.querySelector("body").classList.add("overflow:hidden","h:100vh");
-        document.querySelector("html").classList.add("overflow-y:scroll");
-        document.querySelector(".mobile-menu-container").classList.add("active");
-        document.querySelector(".hamburger-lines-container").classList.add("active")
-        document.querySelector(".hamburger-line-1").classList.add("active")
-        document.querySelector(".hamburger-line-2").classList.add("active")
-        document.querySelector(".hamburger-line-3").classList.add("active")
+        document.querySelector('.mobile-menu-container-wrapper').classList.add('active');
+        document.querySelector('.mobile-menu-container-wrapper').style.top = `${document.querySelector('.main-row-container').offsetTop + document.querySelector('.main-row-container').offsetHeight}px`;
+        document.querySelector('.mobile-menu-container-wrapper').style.height = `calc(100vh - ${document.querySelector('.main-row-container').offsetTop + document.querySelector('.main-row-container').offsetHeight}px`;
+        document.querySelector('body').classList.add('overflow:hidden', 'h:100vh');
+        document.querySelector('html').classList.add('overflow-y:scroll');
+        document.querySelector('.mobile-menu-container').classList.add('active');
+        document.querySelector('.hamburger-lines-container').classList.add('active')
+        document.querySelector('.hamburger-line-1').classList.add('active')
+        document.querySelector('.hamburger-line-2').classList.add('active')
+        document.querySelector('.hamburger-line-3').classList.add('active')
       } else {
-        document.querySelector(".mobile-menu-container-wrapper").classList.remove("active");
-        document.querySelector(".mobile-menu-container").classList.remove("active");
-        document.querySelector(".hamburger-lines-container").classList.remove("active")
-        document.querySelector(".hamburger-line-1").classList.remove("active")
-        document.querySelector(".hamburger-line-2").classList.remove("active")
-        document.querySelector(".hamburger-line-3").classList.remove("active")
-        document.querySelector("body").classList.remove("overflow:hidden","h:100vh");
-        document.querySelector("html").classList.remove("overflow-y:scroll");
+        document.querySelector('.mobile-menu-container-wrapper').classList.remove('active');
+        document.querySelector('.mobile-menu-container').classList.remove('active');
+        document.querySelector('.hamburger-lines-container').classList.remove('active')
+        document.querySelector('.hamburger-line-1').classList.remove('active')
+        document.querySelector('.hamburger-line-2').classList.remove('active')
+        document.querySelector('.hamburger-line-3').classList.remove('active')
+        document.querySelector('body').classList.remove('overflow:hidden', 'h:100vh');
+        document.querySelector('html').classList.remove('overflow-y:scroll');
       }
     },
     getIsSignInOpen: () => {
@@ -49,50 +49,50 @@ storm_eagle.module("header", () => {
 
       isSignInOpen = value;
       (isMobileOpen) && self.setIsMobileOpen(false);
-      document.querySelector("[data-header-id=header-log-in-button]").setAttribute('aria-expanded', isSignInOpen);
+      document.querySelector('[data-header-id="header-log-in-button"]').setAttribute('aria-expanded', isSignInOpen);
       if (isSignInOpen) {
-        document.querySelectorAll(".log-in-container").forEach((el) => {
-          el.classList.add("active");
+        document.querySelectorAll('.log-in-container').forEach((el) => {
+          el.classList.add('active');
         });
-        document.querySelector("[data-header-id=header-log-in-button]").classList.add("active");
-        document.querySelector("[data-header-id=log-in-menu-container-wrapper]").classList.add("active");
-        document.querySelector("[data-header-id=log-in-menu-container-wrapper]").style.top = `${document.querySelector(".main-row-container").offsetTop + document.querySelector(".main-row-container").offsetHeight}px`;
-        document.querySelector("[data-header-id=log-in-menu-container-wrapper]").style.height = `calc(100vh - ${document.querySelector(".main-row-container").offsetTop + document.querySelector(".main-row-container").offsetHeight}px`;
+        document.querySelector('[data-header-id="header-log-in-button"]').classList.add('active');
+        document.querySelector('[data-header-id="log-in-menu-container-wrapper"]').classList.add('active');
+        document.querySelector('[data-header-id="log-in-menu-container-wrapper"]').style.top = `${document.querySelector('.main-row-container').offsetTop + document.querySelector('.main-row-container').offsetHeight}px`;
+        document.querySelector('[data-header-id="log-in-menu-container-wrapper"]').style.height = `calc(100vh - ${document.querySelector('.main-row-container').offsetTop + document.querySelector('.main-row-container').offsetHeight}px`;
 
-        document.querySelector("[data-header-id=log-in-menu-container]").classList.add("active");
-        document.querySelector("[data-header-id=header-mobile-menu-button]").setAttribute('tabindex', "-1");
+        document.querySelector('[data-header-id="log-in-menu-container"]').classList.add('active');
+        document.querySelector('[data-header-id="header-mobile-menu-button"]').setAttribute('tabindex', '-1');
         setTimeout(() => {
           if (storm_eagle.client.viewport.is_lg_down()) {
-            document.querySelector("body").classList.add("overflow:hidden","h:100vh");
-            document.querySelector("html").classList.add("overflow-y:scroll");
+            document.querySelector('body').classList.add('overflow:hidden', 'h:100vh');
+            document.querySelector('html').classList.add('overflow-y:scroll');
           }
         },125);
       } else {
-        document.querySelectorAll(".log-in-container").forEach((el) => {
-          el.classList.remove("active");
+        document.querySelectorAll('.log-in-container').forEach((el) => {
+          el.classList.remove('active');
         });
-        document.querySelector("[data-header-id=header-log-in-button]").classList.remove("active");
-        document.querySelector("[data-header-id=log-in-menu-container-wrapper]").classList.remove("active");
-        document.querySelector("[data-header-id=log-in-menu-container]").classList.remove("active");
-        document.querySelector("[data-header-id=header-mobile-menu-button]").setAttribute('tabindex', "");
+        document.querySelector('[data-header-id="header-log-in-button"]').classList.remove('active');
+        document.querySelector('[data-header-id="log-in-menu-container-wrapper"]').classList.remove('active');
+        document.querySelector('[data-header-id="log-in-menu-container"]').classList.remove('active');
+        document.querySelector('[data-header-id="header-mobile-menu-button"]').setAttribute('tabindex', '');
         setTimeout(() => {
           if (storm_eagle.client.viewport.is_lg_down()) {
-            document.querySelector("body").classList.remove("overflow:hidden","h:100vh");
-            document.querySelector("html").classList.remove("overflow-y:scroll");
+            document.querySelector('body').classList.remove('overflow:hidden', 'h:100vh');
+            document.querySelector('html').classList.remove('overflow-y:scroll');
           }
         },125);
       }
     },
     addEventListeners: () => {
-      document.addEventListener("keydown", (e) => {
+      document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           e.preventDefault();
           self.setIsSignInOpen(false);
           self.setIsMobileOpen(false);
         }
       });
-      document.addEventListener("mousedown", (e) => {
-        if (document.querySelector("[data-header-id=log-in-move-container]").contains(e.target)) {
+      document.addEventListener('mousedown', (e) => {
+        if (document.querySelector('[data-header-id="log-in-move-container"]').contains(e.target)) {
           // console.log('clicked inside')
           return;
         }
@@ -105,8 +105,8 @@ storm_eagle.module("header", () => {
   };
 });
 
-storm_eagle.module("header_navigation_ui", () => {
-  "use strict";
+storm_eagle.module('header_navigation_ui', () => {
+  'use strict';
 
   let self;
 
@@ -659,19 +659,19 @@ storm_eagle.module("header_navigation_ui", () => {
 
   return {
     initialize: () => {
-      self = storm_eagle["header_navigation_ui"];
-      document.querySelector("[data-header-id=navigation]").innerHTML = self.populateNav(links,links.label,links.overview,links.resourceMenu,0,0,"menu",0,links.length);
+      self = storm_eagle['header_navigation_ui'];
+      document.querySelector('[data-header-id="navigation"]').innerHTML = self.populateNav(links, links.label, links.overview, links.resourceMenu, 0, 0, 'menu', 0, links.length);
     },
     ready: () => {
       self.setPageCurrent();
       self.addEventListeners();
     },
     setPageCurrent: () => {
-      let currentContent = "";
-      document.querySelectorAll(".mobile-menu-nav-links a").forEach((el) => {
-        if (el.hasAttribute("href")) {
-          if (self.isPageCurrent(el.getAttribute("href"))) {
-            el.setAttribute('aria-current', "page");
+      let currentContent = '';
+      document.querySelectorAll('.mobile-menu-nav-links a').forEach((el) => {
+        if (el.hasAttribute('href')) {
+          if (self.isPageCurrent(el.getAttribute('href'))) {
+            el.setAttribute('aria-current', 'page');
             currentContent = el.innerHTML;
             el.innerHTML = currentContent;
           }
@@ -694,76 +694,76 @@ storm_eagle.module("header_navigation_ui", () => {
       if (level === 0) {
         if (storm_eagle.client.viewport.is_xl_up()) {
           //is the menu active? hide the menu
-          if (document.getElementById(id).classList.contains("active")) {
+          if (document.getElementById(id).classList.contains('active')) {
             self.turnMainDark(false);
-            document.getElementById(id).classList.toggle("active");
-            el.parentNode.classList.toggle("active");
+            document.getElementById(id).classList.toggle('active');
+            el.parentNode.classList.toggle('active');
             el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true'));
           } else {
             //the menu is not active so set everything inactive and set the menu to active
-            document.querySelectorAll("li.menu_listitems[data-level='0'] > button[data-level='0']").forEach((el2) => {
+            document.querySelectorAll('li.menu_listitems[data-level="0"] > button[data-level="0"]').forEach((el2) => {
               el2.setAttribute('aria-expanded', false); //button
-              el2.classList.remove("active"); //button
-              el2.parentNode.classList.remove("active"); //li
+              el2.classList.remove('active'); //button
+              el2.parentNode.classList.remove('active'); //li
             });
-            document.querySelectorAll("li.menu_listitems[data-level='0'] > div.menu_wrapper[data-level='1']").forEach((el2) => {
-              el2.classList.remove("active"); //menu
+            document.querySelectorAll('li.menu_listitems[data-level="0"] > div.menu_wrapper[data-level="1"]').forEach((el2) => {
+              el2.classList.remove('active'); //menu
             });
             el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true')); //button
-            el.classList.toggle("active"); //button
-            el.parentNode.classList.toggle("active"); //li
-            document.getElementById(id).classList.toggle("active"); //menu
+            el.classList.toggle('active'); //button
+            el.parentNode.classList.toggle('active'); //li
+            document.getElementById(id).classList.toggle('active'); //menu
 
 
-            document.querySelectorAll("li.menu_listitems[data-level='1'] > button[data-level='1']").forEach((el2) => {
+            document.querySelectorAll('li.menu_listitems[data-level="1"] > button[data-level="1"]').forEach((el2) => {
               el2.setAttribute('aria-expanded', false); //button
-              el2.classList.remove("active"); //button
-              el2.parentNode.classList.remove("active"); //li
+              el2.classList.remove('active'); //button
+              el2.parentNode.classList.remove('active'); //li
             });
             //also set the first submenu as active
-            if (document.querySelector(".menu_wrapper.active li.menu_listitems[data-level='1'] > button")) {
-              let temp = document.querySelector(".menu_wrapper.active li.menu_listitems[data-level='1'] > button");
-              if (temp.classList.contains("active")) { } else { temp.click() };
+            if (document.querySelector('.menu_wrapper.active li.menu_listitems[data-level="1"] > button')) {
+              let temp = document.querySelector('.menu_wrapper.active li.menu_listitems[data-level="1"] > button');
+              if (temp.classList.contains('active')) { } else { temp.click() };
             }
 
             self.turnMainDark(true);
           }
         } else {
           //show the sub menu in mobile
-          document.getElementById(id).classList.toggle("active");
-          el.parentNode.classList.toggle("active");
+          document.getElementById(id).classList.toggle('active');
+          el.parentNode.classList.toggle('active');
           el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true'));
         }
       } else if (level === 1) {
         if (storm_eagle.client.viewport.is_xl_up()) {
-          if (document.getElementById(id).classList.contains("active")) { //is the menu active? hide the menu
-            el.classList.remove("active");
-            document.getElementById(id).classList.toggle("active");
-            el.parentNode.classList.toggle("active");
+          if (document.getElementById(id).classList.contains('active')) { //is the menu active? hide the menu
+            el.classList.remove('active');
+            document.getElementById(id).classList.toggle('active');
+            el.parentNode.classList.toggle('active');
             el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true'));
           } else { //the menu is not active so set everything inactive and set the menu to active
-            document.querySelectorAll("li.menu_listitems[data-level='1'] > button[data-level='1']").forEach((el2) => {
+            document.querySelectorAll('li.menu_listitems[data-level="1"] > button[data-level="1"]').forEach((el2) => {
               el2.setAttribute('aria-expanded', false);
             });
-            document.querySelectorAll("li.menu_listitems[data-level='1'] > div.menu_wrapper[data-level='1']").forEach((el2) => {
-              el2.classList.remove("active");
+            document.querySelectorAll('li.menu_listitems[data-level="1"] > div.menu_wrapper[data-level="1"]').forEach((el2) => {
+              el2.classList.remove('active');
             });
-            document.querySelectorAll("li.menu_listitems[data-level='1'] > ul.menu_list[data-level='2']").forEach((el2) => {
-              el2.classList.remove("active");
+            document.querySelectorAll('li.menu_listitems[data-level="1"] > ul.menu_list[data-level="2"]').forEach((el2) => {
+              el2.classList.remove('active');
             });
-            document.querySelectorAll("li.menu_listitems[data-level='1']").forEach((el2) => {
-              el2.classList.remove("active");
+            document.querySelectorAll('li.menu_listitems[data-level="1"]').forEach((el2) => {
+              el2.classList.remove('active');
             });
 
-            el.classList.add("active");
-            document.getElementById(id).classList.toggle("active");
-            el.parentNode.classList.toggle("active");
+            el.classList.add('active');
+            document.getElementById(id).classList.toggle('active');
+            el.parentNode.classList.toggle('active');
             el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true'));
           }
         } else {
           //show the sub menu in mobile
-          document.getElementById(id).classList.toggle("active");
-          el.parentNode.classList.toggle("active");
+          document.getElementById(id).classList.toggle('active');
+          el.parentNode.classList.toggle('active');
           el.setAttribute('aria-expanded', !(el.getAttribute('aria-expanded') === 'true'));
         }
       }
@@ -771,8 +771,8 @@ storm_eagle.module("header_navigation_ui", () => {
     populateNav: (menu,heading,overview,resourceMenu,level,index,newid,columnLength,submenuLength) => {
       level = level || 0;
       index = index || 0;
-      let opensInNewTab = "";
-      let temp = "";
+      let opensInNewTab = '';
+      let temp = '';
 
       let columnLengthCopy;
       let submenuCopy;
@@ -780,7 +780,7 @@ storm_eagle.module("header_navigation_ui", () => {
       if (level === 1) {
         columnLengthCopy = `data-column-threshold="small" }`;
       } else {
-        columnLengthCopy = `data-column-threshold="mall"  }`;
+        columnLengthCopy = `data-column-threshold="small" }`;
         submenuCopy = `data-submenu-threshold="small" }`;
       }
 
@@ -827,18 +827,18 @@ storm_eagle.module("header_navigation_ui", () => {
       return temp;
     },
     addEventListeners: () => {
-      document.addEventListener("mousedown", (e) => {
-        if (document.querySelector("[data-header-id=navigation]").contains(e.target)) {
+      document.addEventListener('mousedown', (e) => {
+        if (document.querySelector('[data-header-id="navigation"]').contains(e.target)) {
           // console.log('clicked inside')
           return;
         }
         if (storm_eagle.client.viewport.is_xl_up()) {
           // console.log('clicked outside scope')
-          document.querySelectorAll("li.menu_listitems[data-level='0'] > button[data-level='0']").forEach((el2) => {
+          document.querySelectorAll('li.menu_listitems[data-level="0"] > button[data-level="0"]').forEach((el2) => {
             el2.setAttribute('aria-expanded', false);
           });
-          document.querySelectorAll("li.menu_listitems[data-level='0'] > div.menu_wrapper[data-level='1']").forEach((el2) => {
-            el2.classList.remove("active");
+          document.querySelectorAll('li.menu_listitems[data-level="0"] > div.menu_wrapper[data-level="1"]').forEach((el2) => {
+            el2.classList.remove('active');
           });
         }
       });
@@ -846,21 +846,21 @@ storm_eagle.module("header_navigation_ui", () => {
   };
 });
 
-storm_eagle.module("custom_dropdown", () => {
-  "use strict";
+storm_eagle.module('custom_dropdown', () => {
+  'use strict';
 
   let self;
   let custom_dropdown_state = [];
 
   return {
     initialize: () => {
-      self = storm_eagle["custom_dropdown"];
-      document.querySelectorAll("[data-module='custom_dropdown']").forEach(el => {
-        let custom_dropdown_id = el.getAttribute("id");
+      self = storm_eagle['custom_dropdown'];
+      document.querySelectorAll('[data-module="custom_dropdown"]').forEach(el => {
+        let custom_dropdown_id = el.getAttribute('id');
         custom_dropdown_state[custom_dropdown_id] = {
           "active": false,
-          "input": el.querySelector("[data-module='custom_dropdown_input']"),
-          "options_container": el.querySelector("[data-module='custom_dropdown_options']"),
+          "input": el.querySelector('[data-module="custom_dropdown_input"]'),
+          "options_container": el.querySelector('[data-module="custom_dropdown_options"]'),
           "options": {}, //not ready yet,
           "totalItems": 0, //not ready yet,
           "focus": 0,
@@ -868,36 +868,36 @@ storm_eagle.module("custom_dropdown", () => {
       });
     },
     ready: () => {
-      document.querySelectorAll("[data-module='custom_dropdown']").forEach(el => {
-        let custom_dropdown_id = el.getAttribute("id");
-        custom_dropdown_state[custom_dropdown_id]["totalItems"] = el.querySelectorAll("[data-module='custom_dropdown_options'] > div.option").length;
-        custom_dropdown_state[custom_dropdown_id]["options"] = el.querySelectorAll("[data-module='custom_dropdown_options'] > div.option");
+      document.querySelectorAll('[data-module="custom_dropdown"]').forEach(el => {
+        let custom_dropdown_id = el.getAttribute('id');
+        custom_dropdown_state[custom_dropdown_id]['totalItems'] = el.querySelectorAll('[data-module="custom_dropdown_options"] > div.option').length;
+        custom_dropdown_state[custom_dropdown_id]['options'] = el.querySelectorAll('[data-module="custom_dropdown_options"] > div.option');
         self.addEventListeners(custom_dropdown_id);
       });
     },
     setIsOpen: (id,value) => {
       //console.log(id,value)
-      custom_dropdown_state[id]["active"] = value;
-      custom_dropdown_state[id]["input"].setAttribute('aria-expanded', custom_dropdown_state[id]["active"]);
-      if (custom_dropdown_state[id]["active"]) {
-        document.getElementById(id).classList.add("active");
-        custom_dropdown_state[id]["input"].setAttribute('aria-activedescendant', `${id}_${custom_dropdown_state[id]["focus"]}`);
-        custom_dropdown_state[id]["input"].classList.add('active');
-        custom_dropdown_state[id]["options_container"].classList.add('active');
+      custom_dropdown_state[id]['active'] = value;
+      custom_dropdown_state[id]['input'].setAttribute('aria-expanded', custom_dropdown_state[id]['active']);
+      if (custom_dropdown_state[id]['active']) {
+        document.getElementById(id).classList.add('active');
+        custom_dropdown_state[id]['input'].setAttribute('aria-activedescendant', `${id}_${custom_dropdown_state[id]['focus']}`);
+        custom_dropdown_state[id]['input'].classList.add('active');
+        custom_dropdown_state[id]['options_container'].classList.add('active');
       } else {
-        document.getElementById(id).classList.remove("active");
-        custom_dropdown_state[id]["input"].setAttribute('aria-activedescendant', ``);
-        custom_dropdown_state[id]["input"].classList.remove('active');
-        custom_dropdown_state[id]["options_container"].classList.remove('active');
+        document.getElementById(id).classList.remove('active');
+        custom_dropdown_state[id]['input'].setAttribute('aria-activedescendant', '');
+        custom_dropdown_state[id]['input'].classList.remove('active');
+        custom_dropdown_state[id]['options_container'].classList.remove('active');
 
       }
     },
     getIsOpen: (id) => {
-      return custom_dropdown_state[id]["active"];
+      return custom_dropdown_state[id]['active'];
     },
     addEventListeners: (id) => {
-      //console.log(custom_dropdown_state[id]["input"]);
-      custom_dropdown_state[id]["input"].addEventListener("keydown", (e) => {
+      //console.log(custom_dropdown_state[id]['input']);
+      custom_dropdown_state[id]['input'].addEventListener('keydown', (e) => {
         //console.log(e.key);
         // Cannot use Switch Statement due to event modifiers
         if (e.key === 'ArrowDown' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
@@ -911,25 +911,25 @@ storm_eagle.module("custom_dropdown", () => {
               // down
               self.setIsOpen(id,true); // Opens the listbox if it is not already displayed without moving focus or changing selection. DOM focus remains on the combobox.
             }
-          } else if (custom_dropdown_state[id]["focus"] < custom_dropdown_state[id]["totalItems"] - 1 && self.getIsOpen(id)) {
-            custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["focus"] + 1; // Moves visual focus to the next option. If visual focus is on the last option, visual focus does not move.
+          } else if (custom_dropdown_state[id]['focus'] < custom_dropdown_state[id]['totalItems'] - 1 && self.getIsOpen(id)) {
+            custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['focus'] + 1; // Moves visual focus to the next option. If visual focus is on the last option, visual focus does not move.
           }
         } else if (e.key === 'ArrowUp' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           e.preventDefault();
           if (!self.getIsOpen(id)) {
             // closed combobox
             self.setIsOpen(id,true); // First opens the listbox if it is not already displayed and..
-            custom_dropdown_state[id]["focus"] = 0; // ..then moves visual focus to the first option. DOM focus remains on the combobox.
-          } else if (custom_dropdown_state[id]["focus"] > 0 && self.getIsOpen(id)) {
+            custom_dropdown_state[id]['focus'] = 0; // ..then moves visual focus to the first option. DOM focus remains on the combobox.
+          } else if (custom_dropdown_state[id]['focus'] > 0 && self.getIsOpen(id)) {
             if (e.altKey) {
               // up + alt
               // TODO //Sets the value to the content of the focused option in the listbox.
               self.setIsOpen(id,false); // Closes the listbox.
-              custom_dropdown_state[id]["focus"] = -1; // Closes the listbox.
+              custom_dropdown_state[id]['focus'] = -1; // Closes the listbox.
               // @TODO //Sets visual focus on the combobox.
             } else {
               // up
-              custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["focus"] - 1; // Moves visual focus to the previous option. If visual focus is on the first option, visual focus does not move.
+              custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['focus'] - 1; // Moves visual focus to the previous option. If visual focus is on the first option, visual focus does not move.
             }
           }
         } else if (
@@ -939,11 +939,11 @@ storm_eagle.module("custom_dropdown", () => {
           e.preventDefault();
           if (!self.getIsOpen(id)) {
             self.setIsOpen(id,true); // Opens the listbox without moving focus or changing selection.
-          } else if (custom_dropdown_state[id]["focus"] === -1 && self.getIsOpen(id)) {
+          } else if (custom_dropdown_state[id]['focus'] === -1 && self.getIsOpen(id)) {
             self.setIsOpen(id,false); // Closes the listbox.
-          } else if (custom_dropdown_state[id]["focus"] >= 0 && self.getIsOpen(id)) {
-            custom_dropdown_state[id]["options"][custom_dropdown_state[id]["focus"]].click(); // Sets the value to the content of the focused option in the listbox.
-            custom_dropdown_state[id]["focus"] = -1; // Closes the listbox.
+          } else if (custom_dropdown_state[id]['focus'] >= 0 && self.getIsOpen(id)) {
+            custom_dropdown_state[id]['options'][custom_dropdown_state[id]['focus']].click(); // Sets the value to the content of the focused option in the listbox.
+            custom_dropdown_state[id]['focus'] = -1; // Closes the listbox.
             self.setIsOpen(id,false); // Closes the listbox.
             // @TODO //Sets visual focus on the combobox.
           }
@@ -951,59 +951,59 @@ storm_eagle.module("custom_dropdown", () => {
           e.preventDefault();
           if (!self.getIsOpen(id)) {
             self.setIsOpen(id,true); // Opens the listbox and..
-            custom_dropdown_state[id]["focus"] = 0; // ..moves visual focus to the first option.
-          } else if (custom_dropdown_state[id]["focus"] >= 0 && self.getIsOpen(id)) {
-            custom_dropdown_state[id]["focus"] = 0; // Moves visual focus to the first option.
+            custom_dropdown_state[id]['focus'] = 0; // ..moves visual focus to the first option.
+          } else if (custom_dropdown_state[id]['focus'] >= 0 && self.getIsOpen(id)) {
+            custom_dropdown_state[id]['focus'] = 0; // Moves visual focus to the first option.
           }
         } else if (e.key === 'End' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           e.preventDefault();
           if (!self.getIsOpen(id)) {
             self.setIsOpen(id,true); // Opens the listbox and,,,
-            custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["totalItems"] - 1; // ..moves visual focus to the last option.
-          } else if (custom_dropdown_state[id]["focus"] >= 0 && self.getIsOpen(id)) {
-            custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["totalItems"] - 1; //  Moves visual focus to the last option.
+            custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['totalItems'] - 1; // ..moves visual focus to the last option.
+          } else if (custom_dropdown_state[id]['focus'] >= 0 && self.getIsOpen(id)) {
+            custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['totalItems'] - 1; //  Moves visual focus to the last option.
           }
         } else if (e.key === 'PageUp' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           e.preventDefault();
           if (self.getIsOpen(id)) {
-            if (custom_dropdown_state[id]["focus"] - 10 >= 0) {
-              custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["focus"] - 10; // Jumps visual focus up 10 options..
+            if (custom_dropdown_state[id]['focus'] - 10 >= 0) {
+              custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['focus'] - 10; // Jumps visual focus up 10 options..
             } else {
-              custom_dropdown_state[id]["focus"] = 0; // ..(or to first option).
+              custom_dropdown_state[id]['focus'] = 0; // ..(or to first option).
             }
           }
         } else if (e.key === 'PageDown' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           e.preventDefault();
           if (self.getIsOpen(id)) {
-            if (custom_dropdown_state[id]["focus"] + 10 <= custom_dropdown_state[id]["totalItems"] - 1) {
-              custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["focus"] + 10; // Jumps visual focus down 10 options..
+            if (custom_dropdown_state[id]['focus'] + 10 <= custom_dropdown_state[id]['totalItems'] - 1) {
+              custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['focus'] + 10; // Jumps visual focus down 10 options..
             } else {
-              custom_dropdown_state[id]["focus"] = custom_dropdown_state[id]["totalItems"] - 1; // ..(or to last option).
+              custom_dropdown_state[id]['focus'] = custom_dropdown_state[id]['totalItems'] - 1; // ..(or to last option).
             }
           }
         } else if (e.key === 'Tab' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           // TODO //Sets the value to the content of the focused option in the listbox.
           self.setIsOpen(id,false); // Closes the listbox.
-          custom_dropdown_state[id]["focus"] = -1; // Closes the listbox.
+          custom_dropdown_state[id]['focus'] = -1; // Closes the listbox.
           // e.preventDefault(); //Performs the default action, moving focus to the next focusable element
         } else if (e.key === 'Escape' && (e.getModifierState('Control') || e.getModifierState('Alt') || true)) {
           e.preventDefault();
           self.setIsOpen(id,false); // Closes the listbox.
-          custom_dropdown_state[id]["focus"] = -1; // Closes the listbox.
+          custom_dropdown_state[id]['focus'] = -1; // Closes the listbox.
           // @TODO //Sets visual focus on the combobox.
         }
 
-        custom_dropdown_state[id]["options"].forEach((element) => {
+        custom_dropdown_state[id]['options'].forEach((element) => {
           //console.log(element);
           element.setAttribute('data-focus', false);
         });
 
-        if (custom_dropdown_state[id]["focus"] >= 0) {
-          custom_dropdown_state[id]["options"][custom_dropdown_state[id]["focus"]].setAttribute('data-focus', true);
-          custom_dropdown_state[id]["input"].setAttribute("aria-activedescendant", `${id}_${custom_dropdown_state[id]["focus"]}`);
+        if (custom_dropdown_state[id]['focus'] >= 0) {
+          custom_dropdown_state[id]['options'][custom_dropdown_state[id]['focus']].setAttribute('data-focus', true);
+          custom_dropdown_state[id]['input'].setAttribute('aria-activedescendant', `${id}_${custom_dropdown_state[id]['focus']}`);
         }
       });
-      document.addEventListener("mousedown", (e) => {
+      document.addEventListener('mousedown', (e) => {
         if (document.getElementById(id).contains(e.target)) {
           // console.log('clicked inside')
           return;
@@ -1017,8 +1017,8 @@ storm_eagle.module("custom_dropdown", () => {
   };
 });
 
-storm_eagle.module("dropdown_site_selector", () => {
-  "use strict";
+storm_eagle.module('dropdown_site_selector', () => {
+  'use strict';
 
   let self;
   const site_selector = [
@@ -1054,7 +1054,7 @@ storm_eagle.module("dropdown_site_selector", () => {
 
   return {
     initialize: () => {
-      self = storm_eagle["dropdown_site_selector"];
+      self = storm_eagle['dropdown_site_selector'];
       self.populateSelected();
       self.populateOptions();
     },
@@ -1072,32 +1072,32 @@ storm_eagle.module("dropdown_site_selector", () => {
       self.populateSelected();
     },
     populateSelected: () => {
-      let temp = "";
+      let temp = '';
       site_selector.forEach((dropdown,index) => {
         if (dropdown.isSelected === true) {
           temp += `${dropdown.content}`;
         }
       });
-      document.querySelector("[data-header-id=dropdown-site-selector-selected]").innerHTML = temp;
+      document.querySelector('[data-header-id="dropdown-site-selector-selected"]').innerHTML = temp;
     },
     populateOptions: () => {
-      let temp = "";
+      let temp = '';
       site_selector.forEach((dropdown,index) => {
         let onclick = (dropdown.isDisabled === false) ? ` onclick="storm_eagle.dropdown_site_selector.optionClick('${escape(dropdown.value)}', ${index});storm_eagle.custom_dropdown.setIsOpen('dropdown-site-selector',false);"` : ``;
         temp += `<div class="option" role="option" id="dropdown-site-selector_${index}" aria-selected="${dropdown.isSelected}" aria-disabled="${dropdown.isDisabled}" ${onclick}>`;
         temp += `  ${dropdown.content}`;
         temp += `</div>`;
       });
-      document.querySelector("[data-header-id=dropdown-listboxid-site-selector]").innerHTML = temp;
+      document.querySelector('[data-header-id="dropdown-listboxid-site-selector"]').innerHTML = temp;
 
-      temp = "";
+      temp = '';
       site_selector.forEach((dropdown,index) => {
         let active = (dropdown.isSelected === true) ? " active" : "";
         temp += `<li role="listitem" class="${active}">`;
         temp += `  <a href="${dropdown.value}">${dropdown.content}</a>`;
         temp += `</li>`;
       });
-      document.querySelector("[data-header-id=dropdown-list-site-selector]").innerHTML = temp;
+      document.querySelector('[data-header-id="dropdown-list-site-selector"]').innerHTML = temp;
     },
   };
 });
