@@ -23,8 +23,8 @@ storm_eagle.module('range_slider', () => {
           label_container: container.querySelector(':scope > [data-module="slider.labels"]'),
           labels: container.querySelectorAll(':scope > [data-module="slider.labels"] > * '),
           slider_fill: container.querySelector(':scope > [data-module="slider.background"] > [data-module="slider.fill"]'),
-          input_bind1: el1.getAttribute("data-slider-bind-input"),
-          input_bind2: el2.getAttribute("data-slider-bind-input"),
+          input_bind1: el1.getAttribute('data-slider-bind-input'),
+          input_bind2: el2.getAttribute('data-slider-bind-input'),
         };
         self.ui.initialize(id1);
         self.event_listeners.initialize(id1);
@@ -95,8 +95,8 @@ storm_eagle.module('range_slider', () => {
     action: {
       set_value: (id, new_value) => {
         const el = document.getElementById(id);
-        const id1 = (el.getAttribute('data-module') === "range-slider.input-1") ? el.getAttribute('id') : el.previousElementSibling.getAttribute('id');
-        const input_bind = el.getAttribute("data-slider-bind-input");
+        const id1 = (el.getAttribute('data-module') === 'range-slider.input-1') ? el.getAttribute('id') : el.previousElementSibling.getAttribute('id');
+        const input_bind = el.getAttribute('data-slider-bind-input');
         el.value = new_value;
         self.ui.update_slider_track(id1);
         if (input_bind) {
