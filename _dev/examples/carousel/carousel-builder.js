@@ -34,8 +34,8 @@ storm_eagle.module('carousel_builder', () => {
           break;
         case 'focused-item':
           document.querySelectorAll(`#carousel-${carousel_number} [data-module='carousel.item']`).forEach((item) => {
-            item.setAttribute("data-carousel-item-active","");
-            item.setAttribute("data-carousel-item-secondary-active","");
+            item.setAttribute('data-carousel-item-active', '');
+            item.setAttribute('data-carousel-item-secondary-active', '');
           });
           document.querySelector(`#carousel-${carousel_number} [data-module='carousel']`).setAttribute('data-carousel-item-active', value - 1);
           break;
@@ -62,11 +62,11 @@ storm_eagle.module('carousel_builder', () => {
           break;
         default:
       }
-      document.querySelectorAll("[data-module='carousel']").forEach((el) => {
+      document.querySelectorAll('[data-module="carousel"]').forEach((el) => {
         const id = el.getAttribute('id');
         storm_eagle.carousel.ui.disable(id);
       });
-      document.querySelectorAll("[data-module='carousel']").forEach((el) => {
+      document.querySelectorAll('[data-module="carousel"]').forEach((el) => {
         const id = el.getAttribute('id');
         storm_eagle.carousel.ui.update(id);
       });
