@@ -272,7 +272,7 @@ storm_eagle.module('carousel', () => {
          */
         enable: (id) => {
           const { el, items, indicators_group_controls, number_of_active, current_active_carousel_item } = state[id];
-          el.setAttribute("data-carousel-active", "true");
+          el.setAttribute('data-carousel-active', 'true');
           /* resets the active classes on the carousel items and adds the proper active classes */
           items.forEach((item) => {
             item.setAttribute('data-carousel-item-active', '');
