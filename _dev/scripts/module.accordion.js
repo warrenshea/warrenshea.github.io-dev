@@ -81,7 +81,7 @@ storm_eagle.module('accordion', () => {
 
         all_panels.forEach((panel, index) => {
           panel.style.height = '0px'; // Start all panels closed
-          panel.setAttribute("data-accordion-panel", "hide");
+          panel.setAttribute('data-accordion-panel', 'hide');
 
           if (initial_active[index]) {
             self.ui.animate_panel_open(panel, true); // Pass `true` if immediate animation is not required
@@ -107,7 +107,7 @@ storm_eagle.module('accordion', () => {
             }, 250);
           });
         }
-        panel.setAttribute("data-accordion-panel", "");
+        panel.setAttribute('data-accordion-panel', '');
       },
 
       /**
@@ -120,7 +120,7 @@ storm_eagle.module('accordion', () => {
         requestAnimationFrame(() => {
           panel.style.height = '0px';
         });
-        panel.setAttribute("data-accordion-panel", "hide");
+        panel.setAttribute('data-accordion-panel', 'hide');
       },
     },
 
@@ -148,7 +148,7 @@ storm_eagle.module('accordion', () => {
            */
           update_accordion_item: (event) => {
             const header = event.currentTarget;
-            const id = storm_eagle.util.closest_parent(header, `[data-module='accordion']`).getAttribute("id");
+            const id = storm_eagle.util.closest_parent(header, '[data-module="accordion"]').getAttribute('id');
             self.action.toggle_accordion_item(id, header);
           },
         },
@@ -227,13 +227,13 @@ storm_eagle.module('accordion', () => {
           const { active_mode, all_panels } = state[id];
           if (active_mode === 'single') {
             all_panels.forEach((panel) => {
-              panel.setAttribute("data-accordion-panel", "hide");
+              panel.setAttribute('data-accordion-panel', 'hide');
             });
-            document.getElementById(panel_id).setAttribute("data-accordion-panel", "");
+            document.getElementById(panel_id).setAttribute('data-accordion-panel', '');
             storm_eagle.equalize_heights.force_resize();
           } else if (active_mode === 'multiple') {
             const panel = document.getElementById(panel_id);
-            panel.setAttribute("data-accordion-panel", panel.getAttribute("data-accordion-panel") === "hide" ? "" : "hide");
+            panel.setAttribute('data-accordion-panel', panel.getAttribute('data-accordion-panel') === 'hide' ? '' : 'hide');
             storm_eagle.equalize_heights.force_resize();
           }
         } else {
