@@ -29,7 +29,7 @@ storm_eagle.module('tabs', () => {
       initialize: (id) => {
         const { all_triggers, all_panels, inactive_panel_classes } = state[id];
         state[id]['all_triggers'].forEach((trigger, index) => {
-          trigger.removeAttribute("hidden");
+          trigger.removeAttribute('hidden');
           trigger.setAttribute('aria-controls', state[id]['all_panels'][index].getAttribute('id'));
           if (all_panels[index].querySelector(':scope > div.display\\:none')) {
             all_panels[index].querySelector(':scope > div.display\\:none').innerHTML = trigger.innerHTML;
