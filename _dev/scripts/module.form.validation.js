@@ -173,6 +173,7 @@ storm_eagle.module('form.validation', () => {
                   self.ui.display_error_message(form_element_names[i], state[form_name][form_element_names[i]]['validation_criteria'][j], has_validation_passed);
                   if (has_validation_passed === false) {
                     self.ui.hightlight_error(form_element_names[i], type, false);
+                    error_number = 1;
                     break;
                   }
                 }
