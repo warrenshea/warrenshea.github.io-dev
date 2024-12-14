@@ -185,6 +185,7 @@
       line-height: 2rem;
       box-sizing: border-box;
       white-space: nowrap;
+      width: fit-content;
       &.uppercase {
         letter-spacing: rem-calc(.25);
         line-height: rem-calc(52);
