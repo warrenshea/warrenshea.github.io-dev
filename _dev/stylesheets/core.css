@@ -11600,6 +11600,7 @@ button.button\:yale-blue {
   line-height: 2rem;
   box-sizing: border-box;
   white-space: nowrap;
+  width: fit-content;
 }
 a.button\:blue.uppercase,
 button.button\:blue.uppercase,
@@ -11923,6 +11924,7 @@ button.sm\=\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.sm\=\:button\:blue.uppercase,
 button.sm\=\:button\:blue.uppercase,
@@ -12245,6 +12247,7 @@ button.sm\+\:button\:yale-blue {
   line-height: 2rem;
   box-sizing: border-box;
   white-space: nowrap;
+  width: fit-content;
 }
 a.sm\+\:button\:blue.uppercase,
 button.sm\+\:button\:blue.uppercase,
@@ -12568,6 +12571,7 @@ button.md-\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.md-\:button\:blue.uppercase,
 button.md-\:button\:blue.uppercase,
@@ -12891,6 +12895,7 @@ button.md\=\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.md\=\:button\:blue.uppercase,
 button.md\=\:button\:blue.uppercase,
@@ -13214,6 +13219,7 @@ button.md\+\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.md\+\:button\:blue.uppercase,
 button.md\+\:button\:blue.uppercase,
@@ -13537,6 +13543,7 @@ button.lg-\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.lg-\:button\:blue.uppercase,
 button.lg-\:button\:blue.uppercase,
@@ -13860,6 +13867,7 @@ button.lg\=\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.lg\=\:button\:blue.uppercase,
 button.lg\=\:button\:blue.uppercase,
@@ -14183,6 +14191,7 @@ button.lg\+\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.lg\+\:button\:blue.uppercase,
 button.lg\+\:button\:blue.uppercase,
@@ -14506,6 +14515,7 @@ button.xl\+\:button\:yale-blue {
     line-height: 2rem;
     box-sizing: border-box;
     white-space: nowrap;
+    width: fit-content;
   }
   a.xl\+\:button\:blue.uppercase,
 button.xl\+\:button\:blue.uppercase,
@@ -15453,10 +15463,6 @@ fieldset.unstyle {
 .form\:theme\:gl0b3x select:disabled,
 .form\:theme\:gl0b3x textarea:disabled {
   background-color: #eee;
-}
-.form\:theme\:gl0b3x select {
-  padding-left: 0;
-  padding-right: 0;
 }
 .form\:theme\:gl0b3x input[type=text]:focus + label:before,
 .form\:theme\:gl0b3x input[type=text].focus + label:before,
