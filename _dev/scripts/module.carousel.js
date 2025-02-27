@@ -117,13 +117,13 @@ storm_eagle.module('carousel', () => {
           return 0;
         };
         if (storm_eagle.client.viewport.is_sm_only()) {
-          state[id].offset_left = calculate_pixel_value(id, offset_left_array[0]);
+          state[id].offset_left = calculate_pixel_value(offset_left_array[0]);
         } else if (storm_eagle.client.viewport.is_md_only()) {
-          state[id].offset_left = calculate_pixel_value(id, offset_left_array[1]);
+          state[id].offset_left = calculate_pixel_value(offset_left_array[1]);
         } else if (storm_eagle.client.viewport.is_lg_only()) {
-          state[id].offset_left = calculate_pixel_value(id, offset_left_array[2]);
+          state[id].offset_left = calculate_pixel_value(offset_left_array[2]);
         } else if (storm_eagle.client.viewport.is_xl_up()) {
-          state[id].offset_left = calculate_pixel_value(id, offset_left_array[3]);
+          state[id].offset_left = calculate_pixel_value(offset_left_array[3]);
         }
       },
 
