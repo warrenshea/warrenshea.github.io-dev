@@ -142,6 +142,11 @@ storm_eagle.module('carousel', () => {
         } else if (storm_eagle.client.viewport.is_xl_up()) {
           state[id].number_of_active = number_of_active_array[3];
         }
+        /* Validate and adjust current_active_carousel_item if needed */
+        const max_index = state[id].items.length - state[id].number_of_active;
+        if (state[id].current_active_carousel_item > max_index) {
+          state[id].current_active_carousel_item = max_index;
+        }
       },
 
       /**
