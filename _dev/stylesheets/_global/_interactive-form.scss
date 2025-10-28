@@ -160,12 +160,12 @@ fieldset.unstyle {
   .error-message {
     width: 100%;
     min-width: rem-calc(150);
-    padding: 0 0 0 rem-calc(19);
+    padding: 0 0 0 rem-calc(22);
     font-size: rem-calc(14);
     font-family: 'heebo-regular';
     color: $negative;
     background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
-    background-size: rem-calc(16) rem-calc(16);
+    background-size: rem-calc(16) rem-calc(20);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
