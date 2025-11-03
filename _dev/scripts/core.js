@@ -60,15 +60,15 @@ const remove_focus_selector = [
  * storm_eagle.format.currency()
  * storm_eagle.format.percentage()
  * storm_eagle.reverse_format.get_numeric_value()
- * storm_eagle.button.is_checked()
- * storm_eagle.button.set_checked()
- * storm_eagle.checkbox.is_checked()
- * storm_eagle.checkbox.set_checked()
- * storm_eagle.checkbox.get_values()
- * storm_eagle.radiobutton.is_checked()
- * storm_eagle.radiobutton.set_checked()
- * storm_eagle.radiobutton.set_checked_from_value()
- * storm_eagle.radiobutton.get_value()
+ * storm_eagle.form.button.is_checked()
+ * storm_eagle.form.button.set_checked()
+ * storm_eagle.form.checkbox.is_checked()
+ * storm_eagle.form.checkbox.set_checked()
+ * storm_eagle.form.checkbox.get_values()
+ * storm_eagle.form.radiobutton.is_checked()
+ * storm_eagle.form.radiobutton.set_checked()
+ * storm_eagle.form.radiobutton.set_checked_from_value()
+ * storm_eagle.form.radiobutton.get_value()
  * storm_eagle.client.viewport.get_width()
  * storm_eagle.client.viewport.get_breakpoint()
  * storm_eagle.client.viewport.get_height()
@@ -396,102 +396,104 @@ var storm_eagle = (() => {
       },
     },
 
-    button: {
-      is_checked: (element) => {
-        return element.getAttribute('aria-checked') === 'true';
+    form: {
+      button: {
+        is_checked: (element) => {
+          return element.getAttribute('aria-checked') === 'true';
+        },
+
+        set_checked: (element, value) => {
+          element.setAttribute('aria-checked',value.toString());
+        },
+
+        get_values: (selector, attribute = null) => {
+          let button_values = [];
+          let elements = document.querySelectorAll(selector);
+          elements.forEach((el) => {
+            if (storm_eagle.form.button.is_checked(el)) {
+              button_values.push(attribute ? el.getAttribute(attribute) : el.value);
+            }
+          });
+          return button_values;
+        },
       },
 
-      set_checked: (element, value) => {
-        element.setAttribute('aria-checked',value.toString());
-      },
-
-      get_values: (selector, attribute = null) => {
-        let button_values = [];
-        let elements = document.querySelectorAll(selector);
-        elements.forEach((el) => {
-          if (storm_eagle.button.is_checked(el)) {
-            button_values.push(attribute ? el.getAttribute(attribute) : el.value);
+      checkbox: {
+        is_checked: (element) => {
+          if (typeof element.checked === 'boolean') {
+            return element.checked;
           }
-        });
-        return button_values;
-      },
-    },
+          // If ARIA checkbox widget
+          return element.getAttribute('aria-checked') === 'true';
+        },
 
-    checkbox: {
-      is_checked: (element) => {
-        if (typeof element.checked === 'boolean') {
-          return element.checked;
-        }
-        // If ARIA checkbox widget
-        return element.getAttribute('aria-checked') === 'true';
-      },
-
-      set_checked: (element, value) => {
-        if (typeof element.checked === 'boolean') {
-          switch (value.toString()) {
-            case 'true':
-              element.checked = true;
-              break;
-            case 'false':
-              element.checked = false;
-              break;
-            default:
-              break;
+        set_checked: (element, value) => {
+          if (typeof element.checked === 'boolean') {
+            switch (value.toString()) {
+              case 'true':
+                element.checked = true;
+                break;
+              case 'false':
+                element.checked = false;
+                break;
+              default:
+                break;
+            }
           }
-        }
+        },
+
+        /* this is specifically helpful for 'parent' checkboxes where the aria-checked could be 'mixed' */
+        set_aria_checked: (element, value) => {
+          element.setAttribute('aria-checked', value);
+        },
+
+        // Gets the values of the checkboxes as an array
+        get_values: (selector, attribute = null) => {
+          let checkbox_values = [];
+          let elements = document.querySelectorAll(selector);
+          elements.forEach((el) => {
+            if (storm_eagle.form.checkbox.is_checked(el)) {
+              checkbox_values.push(attribute ? el.getAttribute(attribute) : el.value);
+            }
+          });
+          return checkbox_values;
+        },
       },
 
-      /* this is specifically helpful for 'parent' checkboxes where the aria-checked could be 'mixed' */
-      set_aria_checked: (element, value) => {
-        element.setAttribute('aria-checked', value);
-      },
-
-      // Gets the values of the checkboxes as an array
-      get_values: (selector, attribute = null) => {
-        let checkbox_values = [];
-        let elements = document.querySelectorAll(selector);
-        elements.forEach((el) => {
-          if (storm_eagle.checkbox.is_checked(el)) {
-            checkbox_values.push(attribute ? el.getAttribute(attribute) : el.value);
+      radiobutton: {
+        is_checked: (element) => {
+          if (typeof element.checked === 'boolean') {
+            return element.checked;
           }
-        });
-        return checkbox_values;
-      },
-    },
+        },
 
-    radiobutton: {
-      is_checked: (element) => {
-        if (typeof element.checked === 'boolean') {
-          return element.checked;
-        }
-      },
-
-      //sets a selector or element as checked based on a true or false value
-      set_checked: (selector_or_element, value) => {
-        if (typeof selector_or_element === 'string') {
-          document.querySelector(selector_or_element).checked = value;
-        } else {
-          selector_or_element.checked = value;
-        }
-      },
-
-      //sets a selector or element as checked based the value passed (if it matches, checked is set to true)
-      set_checked_from_value: (selector, value) => {
-        document.querySelectorAll(selector).forEach((el) => {
-          if (el.value === value) {
-            el.checked = true;
-            return;
+        //sets a selector or element as checked based on a true or false value
+        set_checked: (selector_or_element, value) => {
+          if (typeof selector_or_element === 'string') {
+            document.querySelector(selector_or_element).checked = value;
+          } else {
+            selector_or_element.checked = value;
           }
-        });
-      },
+        },
 
-      // Gets the value of a radio button or any attribute
-      get_value: (selector, attribute = null) => {
-        const element = document.querySelector(`${selector}:checked`);
-        if (element) {
-          return attribute ? element.getAttribute(attribute) : element.value;
-        }
-        return null;
+        //sets a selector or element as checked based the value passed (if it matches, checked is set to true)
+        set_checked_from_value: (selector, value) => {
+          document.querySelectorAll(selector).forEach((el) => {
+            if (el.value === value) {
+              el.checked = true;
+              return;
+            }
+          });
+        },
+
+        // Gets the value of a radio button or any attribute
+        get_value: (selector, attribute = null) => {
+          const element = document.querySelector(`${selector}:checked`);
+          if (element) {
+            return attribute ? element.getAttribute(attribute) : element.value;
+          }
+          return null;
+        },
       },
     },
 
