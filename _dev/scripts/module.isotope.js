@@ -104,13 +104,13 @@ storm_eagle.module('isotope', () => {
           sort_by: (id) => {
             const { sort_by_id } = state[id];
             if (sort_by_id) {
-              state[id].sort_by_value = storm_eagle.radiobutton.get_value(`#${sort_by_id} > input`, 'data-isotope-sort-value');
+              state[id].sort_by_value = storm_eagle.form.radiobutton.get_value(`#${sort_by_id} > input`, 'data-isotope-sort-value');
             }
           },
           sort_ascending: (id) => {
             const { sort_ascending_id } = state[id];
             if (sort_ascending_id) {
-              state[id].sort_ascending_value = JSON.parse(storm_eagle.radiobutton.get_value(`#${sort_ascending_id} > input`, 'data-isotope-sort-value'));
+              state[id].sort_ascending_value = JSON.parse(storm_eagle.form.radiobutton.get_value(`#${sort_ascending_id} > input`, 'data-isotope-sort-value'));
             }
           },
           filter: (id) => {
@@ -136,11 +136,11 @@ storm_eagle.module('isotope', () => {
                       if (all_checkboxes_checked) {
                         state[id].filters[filter_groups_key[index]] = '*';
                       } else {
-                        let filter_group_checkbox_values = storm_eagle.checkbox.get_values(`#${filter_group_id} input`, 'data-isotope-filter-value');
+                        let filter_group_checkbox_values = storm_eagle.form.checkbox.get_values(`#${filter_group_id} input`, 'data-isotope-filter-value');
 
                         if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
                           const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
-                          const or_and_value = storm_eagle.radiobutton.get_value(`#${or_and_bind_id}  input`);
+                          const or_and_value = storm_eagle.form.radiobutton.get_value(`#${or_and_bind_id}  input`);
                           filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
                         }
                         //console.log(filter_group_checkbox_values);
@@ -148,7 +148,7 @@ storm_eagle.module('isotope', () => {
                       }
                       break;
                     case "radiobutton":
-                      state[id].filters[filter_groups_key[index]] = storm_eagle.radiobutton.get_value(`#${filter_group_id} input`,'data-isotope-filter-value');
+                      state[id].filters[filter_groups_key[index]] = storm_eagle.form.radiobutton.get_value(`#${filter_group_id} input`,'data-isotope-filter-value');
                       break;
                     case "input_autocomplete":
                       const autocomplete_el = document.querySelector(`#${filter_group_id}`);
@@ -172,11 +172,11 @@ storm_eagle.module('isotope', () => {
                       if (all_switches_checked) {
                         state[id].filters[filter_groups_key[index]] = '*';
                       } else {
-                        let filter_group_checkbox_values = storm_eagle.button.get_values(`#${filter_group_id} button`, 'data-isotope-filter-value');
+                        let filter_group_checkbox_values = storm_eagle.form.button.get_values(`#${filter_group_id} button`, 'data-isotope-filter-value');
 
                         if (filter_group_elem.hasAttribute('data-isotope-or-and-bind')) {
                           const or_and_bind_id = filter_group_elem.getAttribute('data-isotope-or-and-bind');
-                          const or_and_value = storm_eagle.button.get_value(`#${or_and_bind_id} button`);
+                          const or_and_value = storm_eagle.form.button.get_value(`#${or_and_bind_id} button`);
                           filter_group_checkbox_values = (or_and_value === 'and') ? [filter_group_checkbox_values.join('') || filter_no_results] : filter_group_checkbox_values;
                         }
                         //console.log(filter_group_checkbox_values);
