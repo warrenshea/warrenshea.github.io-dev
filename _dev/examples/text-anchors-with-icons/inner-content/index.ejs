@@ -1,0 +1,105 @@
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+
+    <main class="w:100% pb:96px pt:32px" role="main">
+     
+        <div class="w:12">
+          <h3 class="play:bold fs:20px">Anchor with left icon with left and right icons</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <a id class="anchor:blue" data-module="anchor" href="">
+              <span data-module="anchor.left-icon-wrapper"><span data-module="anchor.left-icon" class="display:inline-block mr:4px ic ic-size:16px ic-type:solid ic-name:dragon"></span></span>
+              <span data-module="anchor.content">Starting is the most important step</span>
+              <span data-module="anchor.right-icon-wrapper"><span data-module="anchor.right-icon" class="display:inline-block ml:4px ic ic-size:16px ic-type:solid ic-name:chevron-right"></span></span>
+            </a>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Button (that looks like an anchor) with left and right icons</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <button id class="anchor:blue" data-module="button" type="" value="" aria-label="">
+              <span data-module="anchor.left-icon-wrapper"><span data-module="anchor.left-icon" class="display:inline-block mr:4px ic ic-size:16px ic-type:solid ic-name:dragon"></span></span>
+              <span data-module="anchor.content">Starting is the most important step</span>
+              <span data-module="anchor.right-icon-wrapper"><span data-module="anchor.right-icon" class="display:inline-block ml:4px ic ic-size:16px ic-type:solid ic-name:chevron-right"></span></span>
+            </button>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Anchor with left icon</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <a id class="anchor:blue" data-module="anchor" href="">
+              <span data-module="anchor.left-icon-wrapper"><span data-module="anchor.left-icon" class="display:inline-block mr:4px ic ic-size:16px ic-type:solid ic-name:dragon"></span></span>
+              <span data-module="anchor.content">Starting is the most important step</span>
+            </a>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Button (that looks like an anchor) with left icon</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <button id class="anchor:blue" data-module="button" type="" value="" aria-label="">
+              <span data-module="anchor.left-icon-wrapper"><span data-module="anchor.left-icon" class="display:inline-block mr:4px ic ic-size:16px ic-type:solid ic-name:dragon"></span></span>
+              <span data-module="anchor.content">Starting is the most important step</span>
+            </button>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Anchor with right icon</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <a id class="anchor:blue" data-module="anchor" href="">
+              <span data-module="anchor.content">Starting is the most important step</span>
+              <span data-module="anchor.right-icon-wrapper"><span data-module="anchor.right-icon" class="display:inline-block ml:4px ic ic-size:16px ic-type:solid ic-name:chevron-right"></span></span>
+            </a>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Button (that looks like an anchor) with right icon</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <button id class="anchor:blue" data-module="button" type="" value="" aria-label="">
+              <span data-module="anchor.content">Starting is the most important step</span>
+              <span data-module="anchor.right-icon-wrapper"><span data-module="anchor.right-icon" class="display:inline-block ml:4px ic ic-size:16px ic-type:solid ic-name:chevron-right"></span></span>
+            </button>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Anchor with no icons</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <a id class="anchor:blue" data-module="anchor" href="">
+              <span data-module="anchor.content">Starting is the most important step</span>
+            </a>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+
+          <h3 class="play:bold fs:20px">Button (that looks like an anchor) with no icons</h3>
+          <p>Small changes compound into big results. Believe in the process, trust the path, and watch the growth. 
+            <button id class="anchor:blue" data-module="button" type="" value="" aria-label="">
+              <span data-module="anchor.content">Starting is the most important step</span>
+            </button>
+            Don't wait for the right time—momentum is built in motion, not in waiting. The perfect moment is a myth; your power is in beginning now.
+          </p>
+        </div>
+      </section>
+
+    </main>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+    <script>
+      storm_eagle.module('communicating_with_iframe_parent', () => {
+        'use strict';
+        let self;
+
+        return {
+          initialize: () => {
+            self = storm_eagle.communicating_with_iframe_parent;
+            self.add_message_listener();
+            self.send_height();
+          },
+          add_message_listener: () => {
+            window.addEventListener('message', event => {
+              self.send_height();
+            });
+          },
+          send_height: () => {
+            let height = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+            parent.postMessage(height, window.location.origin);
+          }
+        };
+      })
+    </script>
+<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
