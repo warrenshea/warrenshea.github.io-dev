@@ -1,0 +1,21 @@
+{
+    "index": {
+        "layout": false,
+        "pageData": {
+            "lang": "en",
+            "head": {
+                "title": "Text Anchors with Icons • warrenshea",
+                "urlEn": "/examples/text-anchors-with-icons/inner-content/",
+                "urlCanonical": "/examples/text-anchors-with-icons/inner-content/",
+                "metaPageKeywords": "",
+                "metaPageDescription": ""
+            },
+            "stylesheets": [
+                "/stylesheets/core.css"
+            ],
+            "scripts": [
+                "/scripts/module.anchor.js"
+            ]
+        }
+    }
+}
