@@ -37,11 +37,11 @@ storm_eagle.module('form.select_all', () => {
           const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
           type_elements.forEach((el) => {
             if (type === 'checkbox') {
-              if (storm_eagle.checkbox.is_checked(el)) {
+              if (storm_eagle.form.checkbox.is_checked(el)) {
                 count++;
               }
             } else if (type === 'switch') {
-              if (storm_eagle.button.is_checked(el)) {
+              if (storm_eagle.form.button.is_checked(el)) {
                 count++;
               }
             }
@@ -75,13 +75,13 @@ storm_eagle.module('form.select_all', () => {
         const { type, type_elements, select_all_radiobuttons_id, onupdate } = state[id];
         type_elements.forEach((el) => {
           if (el.getAttribute('data-module') === 'parent-checkbox') {
-            storm_eagle.checkbox.set_aria_checked(el, value);
-            storm_eagle.checkbox.set_checked(el, value);
+            storm_eagle.form.checkbox.set_aria_checked(el, value);
+            storm_eagle.form.checkbox.set_checked(el, value);
           } else {
             if (type === 'checkbox') {
-              storm_eagle.checkbox.set_checked(el, value);
+              storm_eagle.form.checkbox.set_checked(el, value);
             } else if (type === 'switch') {
-              storm_eagle.button.set_checked(el, value);
+              storm_eagle.form.button.set_checked(el, value);
             }
           }
         });
