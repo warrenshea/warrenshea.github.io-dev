@@ -1,4 +1,5 @@
 /* file: interactive-anchors-buttons.scss------------------------------------------------ */
+
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
   $prefix: nth($mediaquery, 2);
@@ -13,19 +14,17 @@
     a.#{$prefix}anchor\:yale-blue,
     button.#{$prefix}anchor\:yale-blue {
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
       font-family: 'heebo-bold';
       border: none;
       border-style: none;
       margin: 0;
       padding: 0;
       background-color: transparent;
-      > .ic.ic-size\:24px {
+      > span > .ic.ic-size\:24px {
         margin-top: rem-calc(-4);
         margin-bottom: 0;
       }
-      > .ic.ic-size\:16px {
+      > span > .ic.ic-size\:16px {
         margin-top: rem-calc(-1);
         margin-bottom: 0;
       }
@@ -34,7 +33,7 @@
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue {
       color: $blue;
-      > .ic {
+      > span > .ic {
         background-color: $blue;
       }
       &:hover,
@@ -45,7 +44,7 @@
       &:active:enabled {
         color: $yale-blue;
         text-decoration: underline;
-        > .ic {
+        > span > .ic {
           background-color: $yale-blue;
         }
       }
@@ -55,7 +54,7 @@
         color: $onyx;
         cursor: default;
         text-decoration: none;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -64,7 +63,7 @@
     a.#{$prefix}anchor\:white,
     button.#{$prefix}anchor\:white {
       color: $white;
-      > .ic {
+      > span > .ic {
         background-color: $white;
       }
       &:hover,
@@ -75,7 +74,7 @@
       &:active:enabled {
         color: $white;
         text-decoration: underline;
-        > .ic {
+        > span > .ic {
           background-color: $white;
         }
       }
@@ -85,7 +84,7 @@
         color: $white;
         cursor: default;
         text-decoration: none;
-        > .ic {
+        > span > .ic {
           background-color: $white;
         }
       }
@@ -94,7 +93,7 @@
     a.#{$prefix}anchor\:red,
     button.#{$prefix}anchor\:red {
       color: $red;
-      > .ic {
+      > span > .ic {
         background-color: $red;
       }
       &:hover,
@@ -105,7 +104,7 @@
       &:active:enabled {
         color: $red;
         text-decoration: underline;
-        > .ic {
+        > span > .ic {
           background-color: $red;
         }
       }
@@ -115,7 +114,7 @@
         color: $onyx;
         cursor: default;
         text-decoration: none;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -124,7 +123,7 @@
     a.#{$prefix}anchor\:yale-blue,
     button.#{$prefix}anchor\:yale-blue {
       color: $yale-blue;
-      > .ic {
+      > span > .ic {
         background-color: $yale-blue;
       }
       &:hover,
@@ -136,7 +135,7 @@
         color: $eerie-black;
         text-decoration: underline;
         text-decoration: none;
-        > .ic {
+        > span > .ic {
           background-color: $eerie-black;
         }
       }
@@ -145,7 +144,7 @@
       &[disabled='true'] {
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -186,6 +185,7 @@
       box-sizing: border-box;
       white-space: nowrap;
       width: fit-content;
+      vertical-align: middle;
       &.uppercase {
         letter-spacing: rem-calc(.25);
         line-height: rem-calc(52);
@@ -198,12 +198,12 @@
         height: 2rem;
         line-height: 0;
       }
-      > .ic.ic-size\:16px {
+      > span > .ic.ic-size\:16px {
         margin-top: rem-calc(-2);
         width: 1rem;
         height: 1rem;
       }
-      > .ic.ic-size\:24px {
+      > span > .ic.ic-size\:24px {
         margin-top: rem-calc(-2);
         width: 1.5rem;
         height: 1.5rem;
@@ -231,7 +231,7 @@
       &:active:enabled {
         background-color: $yale-blue;
       }
-      > .ic {
+      > span > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -242,7 +242,7 @@
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -254,14 +254,14 @@
       background-color: transparent;
       color: $blue;
       box-shadow: $box-shadow-custom-2;
-      > .ic {
+      > span > .ic {
         background-color: $blue;
       }
       &:hover,
       &:hover:enabled {
         border: rem-calc(2) solid $yale-blue;
         color: $yale-blue;
-        > .ic {
+        > span > .ic {
           background-color: $yale-blue;
         }
       }
@@ -272,7 +272,7 @@
         box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.35);
         border: rem-calc(2) solid $vista-blue;
         color: $yale-blue;
-        > .ic {
+        > span > .ic {
           background-color: $yale-blue;
         }
       }
@@ -284,7 +284,7 @@
         background-color: transparent;
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -295,7 +295,7 @@
       border: rem-calc(2) solid transparent;
       background-color: $white;
       color: $blue;
-      > .ic {
+      > span > .ic {
         background-color: $blue;
       }
       &:hover,
@@ -307,7 +307,7 @@
         border: rem-calc(2) solid transparent;
         background-color: $yale-blue;
         color: $white;
-        > .ic {
+        > span > .ic {
           background-color: $white;
         }
       }
@@ -318,7 +318,7 @@
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -338,7 +338,7 @@
         border: rem-calc(2) solid transparent;
         background-color: $negative;
       }
-      > .ic {
+      > span > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -348,7 +348,7 @@
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -368,7 +368,7 @@
         border: rem-calc(2) solid transparent;
         background-color: $eerie-black;
       }
-      > .ic {
+      > span > .ic {
         background-color: $white;
       }
       &:disabled,
@@ -378,7 +378,7 @@
         background-color: $silver;
         color: $onyx;
         cursor: default;
-        > .ic {
+        > span > .ic {
           background-color: $onyx;
         }
       }
@@ -386,6 +386,12 @@
   }
 }
 
+button.anchor\:blue,
+button.anchor\:white,
+button.anchor\:red,
+button.anchor\:yale-blue {
+  text-align: left;
+}
 
 .button\:blue::-moz-focus-inner,
 .button\:transparent::-moz-focus-inner,
@@ -474,6 +480,16 @@
     }
   }
 }
+
+[data-module='anchor.left-icon-wrapper'],
+[data-module='anchor.right-icon-wrapper'],
+[data-module='button.left-icon-wrapper'],
+[data-module='button.right-icon-wrapper'] {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
 
 .button\:blue:not(:active):after,
 .button\:transparent:not(:active):after,
