@@ -14,11 +14,11 @@ storm_eagle.module('form.parent_checkbox', () => {
         const checkbox_ids = el.getAttribute('aria-controls').split(' ');
 
         state[id] = {};
-        state[id][id] = storm_eagle.checkbox.is_checked(document.getElementById(id));
+        state[id][id] = storm_eagle.form.checkbox.is_checked(document.getElementById(id));
 
         self.event_listeners.parent.initialize(id);
         for (let i = 0; i < checkbox_ids.length; i++) {
-          state[id][checkbox_ids[i]] = storm_eagle.checkbox.is_checked(document.getElementById(checkbox_ids[i]));
+          state[id][checkbox_ids[i]] = storm_eagle.form.checkbox.is_checked(document.getElementById(checkbox_ids[i]));
           self.event_listeners.child.initialize(id, document.getElementById(checkbox_ids[i]));
         }
       });
@@ -59,24 +59,24 @@ storm_eagle.module('form.parent_checkbox', () => {
         const parent_checkbox = document.getElementById(id);
         const checkbox_clicked = document.getElementById(id_clicked);
         if (id === id_clicked) {
-          if (storm_eagle.checkbox.is_checked(parent_checkbox) === false) {
+          if (storm_eagle.form.checkbox.is_checked(parent_checkbox) === false) {
             for (const [key, value] of Object.entries(state[id])) {
               state[id][key] = false;
-              storm_eagle.checkbox.set_checked(document.getElementById(key), false);
+              storm_eagle.form.checkbox.set_checked(document.getElementById(key), false);
             }
-          } else if (storm_eagle.checkbox.is_checked(parent_checkbox) === true) {
+          } else if (storm_eagle.form.checkbox.is_checked(parent_checkbox) === true) {
             for (const [key, value] of Object.entries(state[id])) {
               state[id][key] = true;
-              storm_eagle.checkbox.set_checked(document.getElementById(key), true);
+              storm_eagle.form.checkbox.set_checked(document.getElementById(key), true);
             }
           }
         } else {
-          if (storm_eagle.checkbox.is_checked(checkbox_clicked) === true) {
+          if (storm_eagle.form.checkbox.is_checked(checkbox_clicked) === true) {
             state[id][id_clicked] = false;
-            storm_eagle.checkbox.set_checked(checkbox_clicked, false);
-          } else if (storm_eagle.checkbox.is_checked(checkbox_clicked) === false) {
+            storm_eagle.form.checkbox.set_checked(checkbox_clicked, false);
+          } else if (storm_eagle.form.checkbox.is_checked(checkbox_clicked) === false) {
             state[id][id_clicked] = true;
-            storm_eagle.checkbox.set_checked(checkbox_clicked, true);
+            storm_eagle.form.checkbox.set_checked(checkbox_clicked, true);
           }
         }
         self.state.parent(id);
@@ -87,7 +87,7 @@ storm_eagle.module('form.parent_checkbox', () => {
         let num_checkboxes = 0;
         for (const [key, value] of Object.entries(state[id])) {
           if (num_checkboxes > 0) {
-            if (storm_eagle.checkbox.is_checked(document.getElementById(key))) {
+            if (storm_eagle.form.checkbox.is_checked(document.getElementById(key))) {
               num_child_checkboxes_checked += 1;
             }
           }
