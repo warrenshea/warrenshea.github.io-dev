@@ -12,26 +12,8 @@ $properties: (
   pb\: : padding-bottom
 );
 
-$values: (
-  1px  : rem-calc(1),
-  2px  : rem-calc(2),
-  4px  : rem-calc(4),
-  8px  : rem-calc(8),
-  12px : rem-calc(12),
-  16px : rem-calc(16),
-  20px : rem-calc(20),
-  24px : rem-calc(24),
-  32px : rem-calc(32),
-  40px : rem-calc(40),
-  48px : rem-calc(48),
-  56px : rem-calc(56),
-  64px : rem-calc(64),
-  72px : rem-calc(72),
-  80px : rem-calc(80),
-  96px : rem-calc(96),
-  0    : 0,
-  auto : auto
-);
+$values: (1px, 2px, 4px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 56px, 64px, 72px, 80px, 96px, 0, auto);
+
 
 @each $mediaquery in $mediaqueries {
   $breakpoint: nth($mediaquery, 1);
@@ -40,36 +22,34 @@ $values: (
   @include breakpoint($breakpoint) {
 
     @each $value in $values {
-      $css-value: nth($value, 1);
-      $actual-value: nth($value, 2);
 
       @each $property in $properties {
         $key: nth($property, 1);
         $css-property: nth($property, 2);
 
-        .#{$prefix}#{$key}#{$css-value} {
-          #{$css-property}: #{$actual-value};
+        .#{$prefix}#{$key}#{$value} {
+          #{$css-property}: #{$value};
         }
       }
 
-      .#{$prefix}mx\:#{$css-value} {
-        margin-left: #{$actual-value};
-        margin-right: #{$actual-value};
+      .#{$prefix}mx\:#{$value} {
+        margin-left: #{$value};
+        margin-right: #{$value};
       }
 
-      .#{$prefix}my\:#{$css-value} {
-        margin-top: #{$actual-value};
-        margin-bottom: #{$actual-value};
+      .#{$prefix}my\:#{$value} {
+        margin-top: #{$value};
+        margin-bottom: #{$value};
       }
 
-      .#{$prefix}px\:#{$css-value} {
-        padding-left: #{$actual-value};
-        padding-right: #{$actual-value};
+      .#{$prefix}px\:#{$value} {
+        padding-left: #{$value};
+        padding-right: #{$value};
       }
 
-      .#{$prefix}py\:#{$css-value} {
-        padding-top: #{$actual-value};
-        padding-bottom: #{$actual-value};
+      .#{$prefix}py\:#{$value} {
+        padding-top: #{$value};
+        padding-bottom: #{$value};
       }
 
     }
