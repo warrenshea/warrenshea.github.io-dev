@@ -20,14 +20,6 @@
       margin: 0;
       padding: 0;
       background-color: transparent;
-      > span > .ic.ic-size\:24px {
-        margin-top: rem-calc(-4);
-        margin-bottom: 0;
-      }
-      > span > .ic.ic-size\:16px {
-        margin-top: rem-calc(-1);
-        margin-bottom: 0;
-      }
     }
 
     a.#{$prefix}anchor\:blue,
@@ -391,6 +383,8 @@ button.anchor\:white,
 button.anchor\:red,
 button.anchor\:yale-blue {
   text-align: left;
+  display: inline-flex;
+  vertical-align: middle;
 }
 
 .button\:blue::-moz-focus-inner,
