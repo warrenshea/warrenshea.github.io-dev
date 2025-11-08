@@ -81,8 +81,25 @@
   }
 }
 [data-zs-page-editor-mode-remove-border] { border: rem-calc(2) dashed $negative-light; }
-[data-zs-page-editor-mode-reorder-border] { border: rem-calc(2) dashed $blue; padding: rem-calc(16) !important; margin-top:0 !important; }
-[data-zs-page-editor-mode-reorder-child-border] { border: rem-calc(4) solid $blue; padding: rem-calc(16) !important; margin-top:0 !important; }
+[data-zs-page-editor-mode-reorder-border] {
+  background-image:
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0),
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0),
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0),
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0),
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0),
+    radial-gradient(circle, #303030 .125rem, #FFF .125rem, #FFF .1875rem, transparent 0);
+  background-size: 8px 8px;
+  background-repeat: no-repeat;
+  background-position:
+    4px 4px,
+    12px 4px,
+    4px 12px,
+    12px 12px,
+    4px 20px,
+    12px 20px;
+}
+[data-zs-page-editor-mode-reorder-child-border] { border: rem-calc(2) dashed $blue; padding: rem-calc(16) !important; margin-top:0 !important; }
 [data-zs-page-editor-mode-edit-border] { border: rem-calc(2) dashed $cocoa-brown; }
 [data-zs-page-editor-mode-publish-border] { border: rem-calc(2) dashed $english-violet; }
 
