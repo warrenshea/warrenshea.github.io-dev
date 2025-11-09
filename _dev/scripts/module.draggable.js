@@ -22,7 +22,7 @@ storm_eagle.module('draggable', () => {
         };
         self.event_listeners.trigger.initialize(id);
       });
-      document.querySelectorAll('[data-module="module.draggable"] [data-module="draggable.droparea"]').forEach((el) => {
+      document.querySelectorAll('[data-module="module.draggable"] [data-module="draggable.slot"]').forEach((el) => {
         self.event_listeners.destination.initialize(el);
       });
     },
