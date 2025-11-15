@@ -24,6 +24,10 @@ storm_eagle.module('autoloader', () => {
       script_src: '/scripts/module.accordion.js',
       module_name: 'accordion',
     },
+    anchor: {
+      script_src: '/scripts/module.anchor.js',
+      module_name: 'accordion',
+    },
     carousel: {
       script_src: '/scripts/module.carousel.js',
       module_name: 'carousel',
@@ -105,6 +109,7 @@ storm_eagle.module('autoloader', () => {
        */
       const modules = {
         accordion: '[data-module="accordion"]',
+        anchor: '[data-module="anchor"]',
         carousel: "[data-module='carousel']",
         dialog: "[data-module='dialog']",
         form_autocomplete: "[data-module='autocomplete']",
