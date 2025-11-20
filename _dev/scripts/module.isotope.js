@@ -75,6 +75,7 @@ storm_eagle.module('isotope', () => {
           filter_groups_key: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group') || null),
           filter_groups_types: filter_groups_ids.map(id => document.querySelector(`[data-isotope-filter-group][id="${id}"]`)?.getAttribute('data-isotope-filter-group-type') || null),
           filtered_elements_id: el.getAttribute('data-isotope-number-filtered-elements-bind-id') || null,
+          refresh_timeout: parseInt(el.getAttribute('data-isotope-refresh-timeout'), 10) || 100,
           custom_styles: JSON.parse(el.getAttribute('data-isotope-zebra-stripes')) || [],
           onupdate: el.getAttribute('data-isotope-onupdate-func') || false,
         };
@@ -219,7 +220,7 @@ storm_eagle.module('isotope', () => {
         //console.log(state[id].isotope_object);
       },
       refresh: (id) => {
-        const { filter_no_results, onupdate } = state[id];
+        const { filter_no_results, onupdate, refresh_timeout } = state[id];
         setTimeout(() => {
           //console.log(self.config.state.get.filter(id));
           const new_config = {
@@ -237,7 +238,7 @@ storm_eagle.module('isotope', () => {
           setTimeout(() => {
             storm_eagle.equalize_heights.force_resize();
           },500);
-        },100);
+        },refresh_timeout);
       },
       refresh_all: () => {
         document.querySelectorAll('[data-module="isotope"]').forEach((el) => {
