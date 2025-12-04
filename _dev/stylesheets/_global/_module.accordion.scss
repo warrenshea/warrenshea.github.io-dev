@@ -1,8 +1,9 @@
 /* file: module.accordion.scss------------------------------------------------ */
 [data-module='accordion'] {
   [data-module='accordion.header'] {
+    text-align: left;
     &[aria-expanded='false'] {
-      > span {
+      > [data-module='accordion.icon'] {
         > [data-module='accordion.active'] {
           display: block;
         }
@@ -12,7 +13,7 @@
       }
     }
     &[aria-expanded='true'] {
-      > span {
+      > [data-module='accordion.icon'] {
         > [data-module='accordion.active'] {
           display: none;
         }
@@ -29,20 +30,39 @@
   }
   [data-module='accordion.panel'] {
     transition: height .25s ease;
-    overflow:hidden;
+    overflow: hidden;
     // someday....
     // height: calc-size(auto);
     &[data-accordion-panel='hide'] {
-      height:0;
+      height: 0;
     }
   }
   // Design Patterns
-  & :where(.accordion-header-py\:16px-px\:24px > div > *) > button {
-    padding: rem-calc(16) rem-calc(24);
+  & :where([data-accordion-icons=right] > div > *) > button {
+    display: flex;
+    justify-content: space-between;
   }
-
+  & :where([data-accordion-icons=left] > div > *) > button {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  & :where([data-accordion-icons=right].accordion-header-px\:24px > div > *) > button > [data-module='accordion.icon'] {
+    padding-left: 24px;
+  }
+  & :where([data-accordion-icons=left].accordion-header-px\:24px > div > *) > button > [data-module='accordion.icon'] {
+    padding-right: 24px;
+  }
+  & :where(.accordion-header-px\:24px > div > *) > button {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  & :where(.accordion-header-py\:16px > div > *) > button {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
   & :where(.accordion-panel-p\:24px > div > div[data-module='accordion.panel']) > div {
-    padding: rem-calc(24);
+    padding: 24px;
   }
 }
 
