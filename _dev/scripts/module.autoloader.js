@@ -26,7 +26,7 @@ storm_eagle.module('autoloader', () => {
     },
     anchor: {
       script_src: '/scripts/module.anchor.js',
-      module_name: 'accordion',
+      module_name: 'anchor',
     },
     carousel: {
       script_src: '/scripts/module.carousel.js',
