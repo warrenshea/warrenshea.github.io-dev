@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Isotope • warrenshea",
+        "urlEn": "/examples/isotope/",
+        "urlCanonical": "/examples/isotope/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
 <style>
 
@@ -398,7 +410,7 @@ fairy='#ec73e9';
         <section class="row">
           <strong class="pt:16px">Results: <span id="results-number"></span></strong>
           <div class="w:12 one" data-module="isotope.elements-container">
-<%  let pokemons = JSON.parse(include(`${process.env.PWD}/_dev/data/pokedex.json`));
+<%  let pokemons = JSON.parse(include(`${root}/data/pokedex.json`));
     const generation_map = {
       1: "generation-one",
       2: "generation-two",
@@ -453,5 +465,7 @@ fairy='#ec73e9';
         </section>
       </div>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.isotope.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
