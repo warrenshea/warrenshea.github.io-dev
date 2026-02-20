@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Carousel • warrenshea",
+        "urlEn": "/examples/carousel/",
+        "urlCanonical": "/examples/carousel/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100% pb:96px" role="main">
 
       <section class="row py:32px">
@@ -626,5 +638,11 @@
       </section>
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.carousel.js",
+        "/examples/carousel/carousel-builder.js",
+        "/scripts/module.popover.js",
+        "/scripts/module.dialog.js",
+        "/scripts/module.slider.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
