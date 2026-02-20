@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Waypoint • warrenshea",
+        "urlEn": "/examples/waypoint/",
+        "urlCanonical": "/examples/waypoint/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100%" role="main">
 
       <section class="row py:32px">
@@ -43,5 +55,8 @@
       <hr class="position:fixed w:100% p:0 m:0 b:0 bgc:red z-index:-1" style="top:750px;height:1px;">
       <div class="position:fixed p:0 m:0 b:0 bgc:white pr:8px" style="top:750px;transform:translateY(-50%);">750px</div>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js",
+        "/scripts/module.waypoint.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
