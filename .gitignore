@@ -7,3 +7,4 @@ _dist
 _dev/stylesheets/core.css
 _dev/notes
 *.css
+*.css.map
