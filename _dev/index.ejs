@@ -1,5 +1,17 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
-
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "warrenshea.github.io Sandbox and Code Examples",
+        "urlEn": "",
+        "urlCanonical": "",
+        "metaPageKeywords": "Web Developer, HTML, HTML5, CSS, CSS3, JavaScript, React",
+        "metaPageDescription": "A portfolio with code examples and notes made by and for Warren Shea."
+    },
+    "stylesheets": [
+        "/stylesheets/core.css",
+        "/stylesheets/home.css"
+    ],      
+})%>
     <header class="w:100% bgc:platinum">
       <a href="#skip-nav" class="show-on-focus color:white" aria-label="Skip navigation">Skip navigation</a>
       <div class="bgc:yale-blue pt:16px pb:24px">
@@ -25,7 +37,6 @@
       <span id="skip-nav" class="show-for-screen-reader-only">Navigation Skipped</a>
     </header>
     <main class="w:100% bgc:platinum" role="main">
-
 <!--
       <section class="row pb:48px">
         <h2 class="w:12 fs:32px play:bold pt:48px pb:24px opacity:0%" id="projects-code-examples">About Me</h2>
@@ -1026,5 +1037,8 @@
 
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, {
+  "scripts": [
+    "/scripts/home.js"
+  ]})%>
+<%- include(`${root}/_layouts/_default.footer.ejs`)%>
