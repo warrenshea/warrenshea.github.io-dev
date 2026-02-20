@@ -5,26 +5,31 @@
   "main": "index.js",
   "author": "Warren Shea",
   "license": "ISC",
-  "dependencies": {
-    "autoprefixer": "^9.8.6",
-    "browser-sync": "^2.26.12",
-    "child_process": "^1.0.2",
-    "del": "^5.1.0",
-    "dotenv": "^16.3.1",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2",
-    "harp": "^0.34.0",
-    "regenerator-runtime": "^0.11.1",
-    "sass": "^1.49.11",
-    "util": "^0.12.5",
-    "yargs": "^15.4.1"
-  },
   "scripts": {
-    "compile": "(echo _dev _dist) | xargs harp compile"
+    "start": "npm run sass:build && concurrently \"npm run sass:watch\" \"npm run server\"  \"npm run browsersync\"",
+    "sass:build": "sass _dev/stylesheets/:_dev/stylesheets --style compressed",
+    "sass:watch": "sass --watch _dev/stylesheets/:_dev/stylesheets --style compressed",
+    "browsersync": "node scripts/browser-sync-reload.mjs",
+    "server": "nodemon --env-file=.env app.mjs",
+    "build": "node --env-file=.env scripts/build.mjs"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11",
+    "sass": "^1.97.3"
+  },
+  "nodemonConfig": {
+    "ext": "mjs,js,html,ejs,css,scss",
+    "ignore": [
+      "_dist",
+      "node_modules"
+    ],
+    "watch": [
+      "_dev",
+      "server.js"
+    ]
   }
 }
