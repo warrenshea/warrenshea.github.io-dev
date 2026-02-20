@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Responsive 2D Table • warrenshea",
+        "urlEn": "/examples/responsive-2d-table/inner-content/",
+        "urlCanonical": "/examples/responsive-2d-table/inner-content/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <table class="w:100% bb-gray:1px br-gray:1px" id="table" tabindex="0">
       <caption class="show-for-screen-reader-only">
         A Pokémon chart indicating Pokémon and their type
@@ -90,7 +102,7 @@
         </tr>
       </tbody>
     </table>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [] }) %>
     <script>
       storm_eagle.module('communicating_with_iframe_parent', () => {
         'use strict';
@@ -114,4 +126,4 @@
         };
       })
     </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
