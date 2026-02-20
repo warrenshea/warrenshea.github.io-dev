@@ -1,4 +1,17 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Grid (Layout) • warrenshea",
+        "urlEn": "/examples/grid/",
+        "urlCanonical": "/examples/grid/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css",
+        "/stylesheets/grid-overlay.css"
+    ]
+}) %>
     <main class="w:100%" role="main">
       <section class="row py:32px">
         <h1 class="w:12 play:bold fs:40px color:eerie-black">Grid and Legacy Grid Examples</h1>
@@ -63,7 +76,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-standard",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-standard.html"
@@ -76,7 +89,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-standard-wrap",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-standard-wrap.html"
@@ -89,7 +102,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-standard-centered",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-standard-centered.html"
@@ -102,7 +115,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-rare",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-rare.html"
@@ -135,7 +148,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-flexible",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-flexible.html"
@@ -148,7 +161,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-gap-split",
       grid_type: "grid-type-gap",
       iframe: "iframe-cssgrid-gap-split.html"
@@ -175,7 +188,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-standard",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-standard.html"
@@ -188,7 +201,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-standard-wrap",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-standard-wrap.html"
@@ -201,7 +214,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-standard-centered",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-standard-centered.html"
@@ -214,7 +227,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-rare",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-rare.html"
@@ -247,7 +260,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-flexible",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-flexible.html"
@@ -260,7 +273,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-cssgrid-legacy-split",
       grid_type: "grid-type-legacy",
       iframe: "iframe-cssgrid-legacy-split.html"
@@ -310,7 +323,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-standard",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-standard.html"
@@ -323,7 +336,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-standard-wrap",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-standard-wrap.html"
@@ -336,7 +349,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-standard-centered",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-standard-centered.html"
@@ -349,7 +362,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-rare",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-rare.html"
@@ -382,7 +395,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-flexible",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-flexible.html"
@@ -395,7 +408,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-gap-split",
       grid_type: "grid-type-gap",
       iframe: "iframe-flexbox-gap-split.html"
@@ -422,7 +435,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-standard",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-standard.html"
@@ -435,7 +448,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-standard-wrap",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-standard-wrap.html"
@@ -448,7 +461,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-standard-centered",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-standard-centered.html"
@@ -461,7 +474,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-rare",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-rare.html"
@@ -494,7 +507,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-flexible",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-flexible.html"
@@ -507,7 +520,7 @@
             </div>
           </div>
 
-<%- include(`${process.env.PWD}/_dev/_includes/_grid-overlay.ejs`, {
+<%- include(`${root}/_includes/_grid-overlay.ejs`, {
       id: "grid-overlay-flexbox-legacy-split",
       grid_type: "grid-type-legacy",
       iframe: "iframe-flexbox-legacy-split.html"
@@ -518,5 +531,11 @@
       </div>
 
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.tabs.js",
+        "/scripts/module.grid-overlay.js",
+        "/scripts/module.slider.js",
+        "/scripts/module.form.switch.button.js",
+        "/scripts/module.range-slider.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
