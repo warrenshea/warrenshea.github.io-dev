@@ -1,9 +1,9 @@
     <script src="/scripts/core.js"></script>
     <%
-      if (pageData.scripts) {
-      let pageScripts = pageData.scripts;
-      if(!(Array.isArray(pageData.scripts))){
-        pageScripts = [pageData.scripts];
+      if (scripts) {
+      let pageScripts = scripts;
+      if(!(Array.isArray(scripts))){
+        pageScripts = [scripts];
       }      
         pageScripts.forEach((script,index)=>{ %>
     <script src="<%-script%>"/></script>
