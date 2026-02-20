@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Tabs v.Blue • warrenshea",
+        "urlEn": "/examples/tabs-v.blue/",
+        "urlCanonical": "/examples/tabs-v.blue/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <main class="w:100% pb:96px" role="main">
       <section class="mw:1280px align-self:centered pt:32px">
@@ -88,5 +100,8 @@
 
 
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.tabs-v.blue.js",
+        "/scripts/module.show-more.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
