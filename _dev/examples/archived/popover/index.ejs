@@ -1,4 +1,17 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Popover • warrenshea",
+        "urlEn": "/examples/archived/popover/",
+        "urlCanonical": "/examples/archived/popover/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css",
+        "/stylesheets/archived/module.popover.css"
+    ]
+}) %>
     <main class="w:100%" role="main">
 
       <section class="row py:32px">
@@ -72,5 +85,7 @@
         </span>
       </section>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/archived/module.popover.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
