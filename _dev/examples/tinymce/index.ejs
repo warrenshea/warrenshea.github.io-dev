@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "TinyMCE RTE (Rich Text Editor) • warrenshea",
+        "urlEn": "/examples/tinymce/",
+        "urlCanonical": "/examples/tinymce/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="pb:96px" role="main">
 
       <section class="row py:32px">
@@ -180,5 +192,8 @@
       </section>
     </main>
     <script src="https://cdn.tiny.cloud/1/<%=process.env.TINYMCE_API%>/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.popover.js",
+        "/scripts/module.tinymce.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
