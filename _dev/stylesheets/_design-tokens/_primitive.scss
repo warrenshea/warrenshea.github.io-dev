@@ -1,0 +1,80 @@
+// file: _primitive.scsss------------------------------------------------
+:root {
+    // PRIMARY COLOURS
+    --color-blue: #3169b2;
+    --color-red: #ab1e23;
+    --color-yellow: #f4c026;
+
+    // BLUE COLOURS
+    --color-yale-blue: #1c3b65;
+    --color-yale-blue-rgb: 28, 59, 101;
+    --color-yinmn-blue: #27528c;
+    --color-vista-blue: #789ccc;
+    --color-powder-blue: #9bb6d9;
+    --color-powder-blue-rgb: 155, 182, 217;
+    --color-columbia-blue: #becfe6;
+
+    // RED COLOURS
+    --color-falu-red: #80171a;
+    --color-carmine: #9b1b20;
+    --color-auburn: #b63b3f;
+    --color-bittersweet-shimmer: #c0575a;
+    --color-old-rose: #d58f91;
+
+    // YELLOW COLOURS
+    --color-dark-goldenrod: #b7901d;
+    --color-dutch-white: #fdf0c9;
+
+    // GRAYSCALE COLOURS
+    --color-black: #000000;
+    --color-black-rgb: 0, 0, 0;
+    --color-eerie-black: #202020;
+    --color-eerie-black-rgb: 32, 32, 32;
+    --color-onyx: #404040;
+    --color-gray: #808080;
+    --color-silver: #c0c0c0;
+    --color-platinum: #e0e0e0;
+    --color-white-smoke: #f0f0f0;
+    --color-white: #ffffff;
+
+    // FEEDBACK COLOURS
+    --color-positive-dark: #05340f;
+    --color-positive: #09681d;
+    --color-positive-light: #84b48e;
+    --color-negative-dark: #500808;
+    --color-negative: #a01010;
+    --color-negative-light: #d08888;
+    --color-warning: #c0791d;
+    --color-disabled: #eeeeec;
+
+    // SECONDARY COLOURS
+    --color-english-violet: #6e446b;
+    --color-cocoa-brown: #d06f25;
+
+    --box-shadow-custom-1: 0 0 2px 0 rgba(var(--color-eerie-black-rgb),0.12), 0 2px 2px 0 rgba(var(--color-eerie-black-rgb),0.07);
+    --box-shadow-custom-2: 0 2px 8px 0 rgba(var(--color-eerie-black-rgb),0.04), 0 4px 24px 0 rgba(var(--color-eerie-black-rgb),0.1);
+    --box-shadow-custom-3: 0 1px 2px 2px rgba(var(--color-eerie-black-rgb), 0.12);
+    --box-shadow-custom-4: 0 0 2px 0 rgba(var(--color-eerie-black-rgb),0.04), 0 2px 2px 0 rgba(var(--color-eerie-black-rgb),0.04), 0 4px 4px 0 rgba(var(--color-eerie-black-rgb),0.1);
+    --box-shadow-custom-5: 0 2px 10px 0 rgba(var(--color-black),.3);
+    --box-shadow-custom-6: 0 0 8px 0 rgba(var(--color-eerie-black-rgb),0.12), 0 4px 24px 0 rgba(var(--color-eerie-black-rgb),0.07);
+    --box-shadow-custom-7: 0 0 0 2px var(--color-powder-blue-rgb), 0 0 0 3px var(--color-yale-blue-rgb);
+
+    --min-page-width-375: 375px;
+    --max-page-width-1280: 1280px;
+
+    --small-min: 0;
+    --medium-min: 768px;
+    --large-min: 1024px;
+    --xlarge-min: 1280px;
+
+}
+
+
+
+    
+    
+    
+    
+    
+    
+    
