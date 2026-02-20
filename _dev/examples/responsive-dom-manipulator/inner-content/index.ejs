@@ -1,4 +1,17 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Responsive DOM Manipulator • warrenshea",
+        "urlEn": "/examples/responsive-dom-manipulator/inner-content/",
+        "urlCanonical": "/examples/responsive-dom-manipulator/inner-content/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css",
+        "responsive-dom-manipulator.css"
+    ]
+}) %>
         <section class="responsive-dom-manipulator-example" data-equalize-height="example">
           <div class="desktop-row-container">
             <div class="display:flex lg=:flex-grow:0 xl+:flex-grow:1">
@@ -95,7 +108,7 @@
             </div>
           </div>
         </section>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [] }) %>
     <script>
       storm_eagle.module('communicating_with_iframe_parent', () => {
         'use strict';
@@ -119,4 +132,4 @@
         };
       })
     </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
