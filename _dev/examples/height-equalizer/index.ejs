@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Height Equalizer • warrenshea",
+        "urlEn": "/examples/height-equalizer/",
+        "urlCanonical": "/examples/height-equalizer/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100%" role="main">
 
       <section class="row py:32px">
@@ -248,5 +260,7 @@ storm_eagle.module('equalize_heights', () => {
         <pre><code class="language-javascript" data-code-snippet="prism-code-javascript"></code></pre>
       </div>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/prism.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
