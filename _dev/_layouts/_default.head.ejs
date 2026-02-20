@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html class="storm-eagle" lang="<%- pageData.lang %>">
+<html class="storm-eagle" lang="<%- lang %>">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%- pageData.head.title %></title>
-    <link rel="alternate" hreflang="en" href="https://warrenshea.github.io<%- pageData.head.urlEn %>">
-    <link rel="canonical" href="https://warrenshea.github.io<%- pageData.head.urlCanonical %>">
-    <meta name="keywords" content="<%- pageData.head.metaPageKeywords %>">
-    <meta name="description" content="<%- pageData.head.metaPageDescription %>">
-<%if (pageData.stylesheets){
-    let pageStylesheets = pageData.stylesheets;
-    if(!(Array.isArray(pageData.stylesheets))){
-      pageStylesheets = [pageData.stylesheets];
+    <title><%- head.title %></title>
+    <link rel="alternate" hreflang="en" href="https://warrenshea.github.io<%- head.urlEn %>">
+    <link rel="canonical" href="https://warrenshea.github.io<%- head.urlCanonical %>">
+    <meta name="keywords" content="<%- head.metaPageKeywords %>">
+    <meta name="description" content="<%- head.metaPageDescription %>">
+<%if (stylesheets){
+    let pageStylesheets = stylesheets;
+    if(!(Array.isArray(stylesheets))){
+      pageStylesheets = [stylesheets];
     }         
     pageStylesheets.forEach((stylesheet,index)=>{ %>
     <link href="<%-stylesheet%>" rel="stylesheet" type="text/css">
