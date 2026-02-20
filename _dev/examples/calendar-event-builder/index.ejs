@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Calendar Event Builder • warrenshea",
+        "urlEn": "/examples/calendar-event-builder/",
+        "urlCanonical": "/examples/calendar-event-builder/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100% pb:96px" role="main">
 
       <section class="row py:32px">
@@ -41,5 +53,8 @@
         </div>
       </section>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.calendar-event-builder.js",
+        "/scripts/module.form.theme.gl0b3x.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
