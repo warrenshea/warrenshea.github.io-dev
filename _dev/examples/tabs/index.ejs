@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Tabs • warrenshea",
+        "urlEn": "/examples/tabs/",
+        "urlCanonical": "/examples/tabs/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <main class="w:100% pb:96px" role="main">
 
@@ -140,5 +152,7 @@
       </section>
 
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.tabs.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
