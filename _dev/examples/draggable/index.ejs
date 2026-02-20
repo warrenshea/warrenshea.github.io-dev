@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Draggable • warrenshea",
+        "urlEn": "/examples/draggable/",
+        "urlCanonical": "/examples/draggable/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <main class="w:100%" role="main">
 
@@ -115,7 +127,9 @@ let draggable_test_11 = `<div class="w:100% b-onyx:1px align:middle cursor:grab 
         </div>
       </section>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.draggable.js"
+    ] }) %>
     <script>
       var draggable_test = {};
       draggable_test.asyncFunction_1 = async () => {
@@ -182,4 +196,4 @@ let draggable_test_11 = `<div class="w:100% b-onyx:1px align:middle cursor:grab 
         return `<%-draggable_test_10%>`;
       }
     </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
