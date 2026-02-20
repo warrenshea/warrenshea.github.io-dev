@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Font Awesome 5.15.3 Icon Library • warrenshea",
+        "urlEn": "/examples/font-awesome-5-icon-library/",
+        "urlCanonical": "/examples/font-awesome-5-icon-library/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <style>
       .assets {
@@ -131,7 +143,11 @@
       </div>
     </div>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.isotope.js",
+        "assets.js",
+        "/scripts/module.form.theme.gl0b3x.js"
+    ] }) %>
 <script>
   storm_eagle.module('fa5dam', () => {
     'use strict';
@@ -223,4 +239,4 @@
     };
   });
 </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
