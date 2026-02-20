@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Text Anchors with Icons • warrenshea",
+        "urlEn": "/examples/text-anchors-with-icons/",
+        "urlCanonical": "/examples/text-anchors-with-icons/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <main class="w:100% pb:96px pt:32px" role="main">
      
@@ -21,7 +33,9 @@
       </section>
 
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.slider.js"
+    ] }) %>
     <script>
       storm_eagle.module('communicating_with_iframe', () => {
         'use strict';
@@ -40,4 +54,4 @@
         };
       });
     </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
