@@ -1,4 +1,17 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Communicating Windows - Child • warrenshea",
+        "urlEn": "/examples/communicating-windows/child/",
+        "urlCanonical": "/examples/communicating-windows/child/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css",
+        "/stylesheets/libs/prism-v1.29.0.min.css"
+    ]
+}) %>
 
     <main class="w:100% pb:96px" role="main">
       <section class="row py:32px">
@@ -26,7 +39,11 @@
       </section>
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/libs/prism-v1.29.0.min.js",
+        "/scripts/module.form.theme.gl0b3x.js",
+        "/scripts/prism.js"
+    ] }) %>
     <script>
       storm_eagle.module('communicating_with_parent_window', () => {
         'use strict';
@@ -52,4 +69,4 @@
         };
       })
     </script>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
