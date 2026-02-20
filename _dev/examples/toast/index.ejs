@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Toast • warrenshea",
+        "urlEn": "/examples/toast/",
+        "urlCanonical": "/examples/toast/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
     <style>
       button.button\:blue.bgc\:onyx,
@@ -72,5 +84,7 @@
       </section>
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.toast.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
