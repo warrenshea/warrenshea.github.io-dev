@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Autocomplete • warrenshea",
+        "urlEn": "/examples/autocomplete/",
+        "urlCanonical": "/examples/autocomplete/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100% pb:96px" role="main">
 
       <section class="row py:32px">
@@ -113,5 +125,8 @@
 
       <div style="height:500px"></div>
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.form.autocomplete.js",
+        "/scripts/module.form.theme.gl0b3x.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
