@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Accordion • warrenshea",
+        "urlEn": "/examples/accordion/",
+        "urlCanonical": "/examples/accordion/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
     <main class="w:100% pb:96px" role="main">
 
       <section class="row py:32px">
@@ -246,5 +258,7 @@
       </section>
 
     </main>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/module.accordion.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
