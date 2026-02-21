@@ -1,9 +1,7 @@
 /* file: helper-opacity.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@use '../_config/_breakpoint.scss' as breakpoint;
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}opacity\:0\% {
       opacity: 0;
     }
