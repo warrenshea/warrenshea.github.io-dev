@@ -1,29 +1,30 @@
 /* file: layout-table.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
 .table-b-eerie-black\:1px {
   border-collapse: collapse;
-  border: 1px solid $eerie-black;
+  border: 1px solid var(--color-eerie-black);
   > thead > tr > th,
   > thead > tr > td,
   > tbody > tr > th,
   > tbody > tr > td {
-    border: 1px solid $eerie-black;
+    border: 1px solid var(--color-eerie-black);
   }
 }
 .table-b-silver\:1px {
   border-collapse: collapse;
-  border: 1px solid $silver;
+  border: 1px solid var(--color-silver);
   > thead > tr > th,
   > thead > tr > td,
   > tbody > tr > th,
   > tbody > tr > td {
-    border: 1px solid $silver;
+    border: 1px solid var(--color-silver);
   }
 }
 .th-bgc\:blue {
   > thead > tr > th,
   > tbody > tr > th {
-    background-color: $blue;
-    color: $white;
+    background-color: var(--color-blue);
+    color: var(--color-white);
     font-family: 'heebo-bold';
   }
 }
@@ -36,24 +37,24 @@
 .td-p\:4px {
   > thead > tr > td,
   > tbody > tr > td {
-    padding: rem-calc(4);
+    padding: 4px;
   }
 }
 .td-p\:8px {
   > thead > tr > td,
   > tbody > tr > td {
-    padding: rem-calc(8);
+    padding: 8px;
   }
 }
 .th-p\:4px {
   > thead > tr > th,
   > tbody > tr > th {
-    padding: rem-calc(4);
+    padding: 4px;
   }
 }
 .th-p\:8px {
   > thead > tr > th,
   > tbody > tr > th {
-    padding: rem-calc(8);
+    padding: 8px;
   }
 }
