@@ -1,39 +1,37 @@
 /* file: helper-border-box-shadow.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@use '../_config/_breakpoint.scss' as breakpoint;
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}bxs\:0 {
       box-shadow: none;
     }
 
     .#{$prefix}bxs\:1 {
-      box-shadow: $box-shadow-custom-1;
+      box-shadow: var(--box-shadow-custom-1);
     }
 
     .#{$prefix}bxs\:2 {
-      box-shadow: $box-shadow-custom-2;
+      box-shadow: var(--box-shadow-custom-2);
     }
 
     .#{$prefix}bxs\:3 {
-      box-shadow: $box-shadow-custom-3;
+      box-shadow: var(--box-shadow-custom-3);
     }
 
     .#{$prefix}bxs\:4 {
-      box-shadow: $box-shadow-custom-4;
+      box-shadow: var(--box-shadow-custom-4);
     }
 
     .#{$prefix}bxs\:5 {
-      box-shadow: $box-shadow-custom-5;
+      box-shadow: var(--box-shadow-custom-5);
     }
 
     .#{$prefix}bxs\:6 {
-      box-shadow: $box-shadow-custom-6;
+      box-shadow: var(--box-shadow-custom-6);
     }
 
     .#{$prefix}bxs\:7 {
-      box-shadow: $box-shadow-custom-7;
+      box-shadow: var(--box-shadow-custom-7);
     }
 
   }
