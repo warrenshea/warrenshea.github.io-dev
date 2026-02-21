@@ -1,12 +1,13 @@
 /* file: default.scss------------------------------------------------ */
+
 html.storm-eagle {
   font-size: 16px;
   line-height: 1.5;
-  color: $eerie-black;
+  color: var(--color-eerie-black);
   font-family:"heebo-light", Arial, Sans-Serif;
   box-sizing: border-box;
   body {
-    min-width: $min-page-width-375;
+    min-width: var(--min-page-width-375);
     margin:0;
   }
 }
@@ -29,7 +30,7 @@ img {
 }
 
 a {
-  color: $blue;
+  color: var(--color-blue);
   text-decoration: none;
   cursor: pointer;
   &:hover {
