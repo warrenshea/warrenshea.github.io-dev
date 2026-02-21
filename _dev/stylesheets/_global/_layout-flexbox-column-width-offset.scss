@@ -1,11 +1,9 @@
 /* file: layout-flexbox-column-width-offset.scss------------------------------------------------ */
 @use 'sass:math';
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     @for $i from 0 through 11 {
       $percentage-num: math.div(100, 12);
       $percentage: $i * $percentage-num * 1%;
