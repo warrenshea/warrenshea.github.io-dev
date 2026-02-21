@@ -1,9 +1,8 @@
 /* file: layout-order.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}order\:1 { order: 1; }
     .#{$prefix}order\:2 { order: 2; }
     .#{$prefix}order\:3 { order: 3; }
