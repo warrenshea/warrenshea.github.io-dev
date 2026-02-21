@@ -1,9 +1,8 @@
 /* file: layout-flexbox-alignment.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     // for flex parent container
     .#{$prefix}align\:right {justify-content: flex-end;}
     .#{$prefix}align\:center {justify-content: center;}
