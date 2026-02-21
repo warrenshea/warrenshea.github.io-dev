@@ -1,25 +1,27 @@
 /* file: layout-cssgrid-row-column.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 .grid {
   display:grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-column-gap: var(--column-gap);
-  max-width: $max-page-width-1280;
+  max-width: var(--max-page-width-1280);
   margin-left: auto;
   margin-right: auto;
-  padding-left: rem-calc(24);
-  padding-right: rem-calc(24);
+  padding-left: 24px;
+  padding-right: 24px;
 
-  @include breakpoint(medium only) {
-    padding-left: rem-calc(32);
-    padding-right: rem-calc(32);
+  @include breakpoint.breakpoint(medium only) {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  @include breakpoint(large only) {
-    padding-left: rem-calc(32);
-    padding-right: rem-calc(32);
+  @include breakpoint.breakpoint(large only) {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  @include breakpoint(xlarge up) {
-    padding-left: rem-calc(0);
-    padding-right: rem-calc(0);
+  @include breakpoint.breakpoint(xlarge up) {
+    padding-left: 0;
+    padding-right: 0;
   }
   > * {
     grid-column: span 12;
@@ -27,32 +29,32 @@
 }
 
 .grid-p {
-  padding-left: rem-calc(24);
-  padding-right: rem-calc(24);
-  @include breakpoint(medium only) {
-    padding-left: rem-calc(32);
-    padding-right: rem-calc(32);
+  padding-left: 24px;
+  padding-right: 24px;
+  @include breakpoint.breakpoint(medium only) {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  @include breakpoint(large only) {
-    padding-left: rem-calc(32);
-    padding-right: rem-calc(32);
+  @include breakpoint.breakpoint(large only) {
+    padding-left: 32px;
+    padding-right: 32px;
   }
-  @include breakpoint(xlarge up) {
-    padding-left: rem-calc(0);
-    padding-right: rem-calc(0);
+  @include breakpoint.breakpoint(xlarge up) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 .grid .grid {
-  padding-left: rem-calc(0);
-  padding-right: rem-calc(0);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .grid0 {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-column-gap: 0;
-  max-width: $max-page-width-1280;
+  max-width: var(--max-page-width-1280);
   margin-left: auto;
   margin-right: auto;
 }
