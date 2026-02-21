@@ -1,14 +1,17 @@
 /* file: helper-misc.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 // Visibility Helper Classes
 .sr-only,
 .show-for-sr,
 .show-for-screen-reader-only, // preferred class to use
 .show-on-focus {
   position: absolute;
-  left: rem-calc(-10000);
+  left: -10000px;
   top: auto;
-  width: rem-calc(1);
-  height: rem-calc(1);
+  width: 1px;
+  height: 1px;
   overflow: hidden;
 }
 // hide-for-screen-reader-only doesn't exist as a CSS class - use aria-hidden="true"
@@ -57,7 +60,7 @@
   max-width: 100%;
 }
 .mw\:1280px {
-  max-width: $max-page-width-1280;
+  max-width: var(--max-page-width-1280);
 }
 .mw\:640px {
   max-width: 40rem;
@@ -83,11 +86,8 @@
 }
 
 // Layout Classes
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}display\:flex {
       display: flex;
     }
@@ -123,11 +123,8 @@
 }
 
 // Position Helper Classes
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}position\:absolute {
       position: absolute;
     }
@@ -143,11 +140,8 @@
   }
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}top\:0 {
       top: 0;
     }
@@ -163,11 +157,8 @@
   }
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}z-index\:-1 {
       z-index: -1;
     }
