@@ -1,29 +1,27 @@
 /* file: helper-color.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@use '../_config/_breakpoint.scss' as breakpoint;
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}color\:white {
-      color: $white;
+      color: var(--color-white);
     }
     .#{$prefix}color\:blue {
-      color: $blue;
+      color: var(--color-blue);
     }
     .#{$prefix}color\:eerie-black {
-      color: $eerie-black;
+      color: var(--color-eerie-black);
     }
     .#{$prefix}color\:gray {
-      color: $gray;
+      color: var(--color-gray);
     }
     .#{$prefix}color\:yale-blue {
-      color: $yale-blue;
+      color: var(--color-yale-blue);
     }
     .#{$prefix}color\:positive {
-      color: $positive;
+      color: var(--color-positive);
     }
     .#{$prefix}color\:negative {
-      color: $negative;
+      color: var(--color-negative);
     }
   }
 }
