@@ -1,21 +1,22 @@
 /* file: layout-cssgrid-gap.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
+@use 'sass:list';
+
 $sizes: (
   0    : 0,
-  4px  : rem-calc(4),
-  8px  : rem-calc(8),
-  16px : rem-calc(16),
-  24px : rem-calc(24),
-  32px : rem-calc(32)
+  4px  : unit.rem-calc(4),
+  8px  : unit.rem-calc(8),
+  16px : unit.rem-calc(16),
+  24px : unit.rem-calc(24),
+  32px : unit.rem-calc(32)
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     @each $size in $sizes {
-      $size-name: nth($size, 1);
-      $size-value: nth($size, 2);
+      $size-name: list.nth($size, 1);
+      $size-value: list.nth($size, 2);
 
       .#{$prefix}gap\:#{$size-name} {
         gap: #{$size-value};
@@ -34,10 +35,10 @@ $sizes: (
 
 .row-gap-grid {
   row-gap: 1rem;
-  @include breakpoint(medium up) {
+  @include breakpoint.breakpoint(medium up) {
     row-gap: 1.5rem;
   }
-  @include breakpoint(xlarge up) {
+  @include breakpoint.breakpoint(xlarge up) {
     row-gap: 2rem;
   }
 }
