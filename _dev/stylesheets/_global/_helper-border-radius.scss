@@ -1,12 +1,15 @@
 /* file: helper-border-radius.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 $sizes: (
   0    : 0,
-  4px  : rem-calc(4),
-  8px  : rem-calc(8),
-  16px : rem-calc(16),
-  24px : rem-calc(24),
-  32px : rem-calc(32),
-  48px : rem-calc(48),
+  4px  : unit.rem-calc(4),
+  8px  : unit.rem-calc(8),
+  16px : unit.rem-calc(16),
+  24px : unit.rem-calc(24),
+  32px : unit.rem-calc(32),
+  48px : unit.rem-calc(48),
   50\% : 50%
 );
 
@@ -17,22 +20,19 @@ $directions: (
   brrbr : bottom-right
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     @each $size in $sizes {
-      $size-name: nth($size, 1);
-      $size-value: nth($size, 2);
+      $size-name: list.nth($size, 1);
+      $size-value: list.nth($size, 2);
 
       .#{$prefix}brr\:#{$size-name} {
         border-radius: #{$size-value};
       }
 
       @each $direction in $directions {
-        $direction-name: nth($direction, 1);
-        $direction-value: nth($direction, 2);
+        $direction-name: list.nth($direction, 1);
+        $direction-value: list.nth($direction, 2);
 
         .#{$prefix}#{$direction-name}\:#{$size-name} {
           border-#{$direction-value}-radius: #{$size-value};
@@ -60,8 +60,8 @@ $directions: (
       }
     }
     @each $direction in $directions {
-      $direction-name: nth($direction, 1);
-      $direction-value: nth($direction, 2);
+      $direction-name: list.nth($direction, 1);
+      $direction-value: list.nth($direction, 2);
 
       .#{$prefix}#{$direction-name}\:0 {
         border-#{$direction-value}-radius: 0;
