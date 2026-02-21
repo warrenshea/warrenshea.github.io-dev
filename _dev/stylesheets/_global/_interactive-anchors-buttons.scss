@@ -1,10 +1,9 @@
 /* file: interactive-anchors-buttons.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue,
     a.#{$prefix}anchor\:white,
@@ -24,9 +23,9 @@
 
     a.#{$prefix}anchor\:blue,
     button.#{$prefix}anchor\:blue {
-      color: $blue;
+      color: var(--color-blue);
       > span > .ic {
-        background-color: $blue;
+        background-color: var(--color-blue);
       }
       &:hover,
       &:hover:enabled,
@@ -34,29 +33,29 @@
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $yale-blue;
+        color: var(--color-yale-blue);
         text-decoration: underline;
         > span > .ic {
-          background-color: $yale-blue;
+          background-color: var(--color-yale-blue);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        color: $onyx;
+        color: var(--color-onyx);
         cursor: default;
         text-decoration: none;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}anchor\:white,
     button.#{$prefix}anchor\:white {
-      color: $white;
+      color: var(--color-white);
       > span > .ic {
-        background-color: $white;
+        background-color: var(--color-white);
       }
       &:hover,
       &:hover:enabled,
@@ -64,29 +63,29 @@
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $white;
+        color: var(--color-white);
         text-decoration: underline;
         > span > .ic {
-          background-color: $white;
+          background-color: var(--color-white);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        color: $white;
+        color: var(--color-white);
         cursor: default;
         text-decoration: none;
         > span > .ic {
-          background-color: $white;
+          background-color: var(--color-white);
         }
       }
     }
 
     a.#{$prefix}anchor\:red,
     button.#{$prefix}anchor\:red {
-      color: $red;
+      color: var(--color-red);
       > span > .ic {
-        background-color: $red;
+        background-color: var(--color-red);
       }
       &:hover,
       &:hover:enabled,
@@ -94,29 +93,29 @@
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $red;
+        color: var(--color-red);
         text-decoration: underline;
         > span > .ic {
-          background-color: $red;
+          background-color: var(--color-red);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        color: $onyx;
+        color: var(--color-onyx);
         cursor: default;
         text-decoration: none;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}anchor\:yale-blue,
     button.#{$prefix}anchor\:yale-blue {
-      color: $yale-blue;
+      color: var(--color-yale-blue);
       > span > .ic {
-        background-color: $yale-blue;
+        background-color: var(--color-yale-blue);
       }
       &:hover,
       &:hover:enabled,
@@ -124,31 +123,28 @@
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        color: $eerie-black;
+        color: var(--color-eerie-black);
         text-decoration: underline;
         text-decoration: none;
         > span > .ic {
-          background-color: $eerie-black;
+          background-color: var(--color-eerie-black);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        color: $onyx;
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
   }
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     a.#{$prefix}button\:blue,
     button.#{$prefix}button\:blue,
     a.#{$prefix}button\:transparent,
@@ -163,24 +159,24 @@
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      font-size: rem-calc(14);
+      font-size: unit.rem-calc(14);
       text-align: center;
       font-family: 'heebo-bold';
       font-weight: 700;
-      padding: 0 2rem;
+      padding: 0 32px;
       overflow: hidden;
-      height: rem-calc(54);
+      height: unit.rem-calc(54);
       transition: none; // all .2s ease;
-      border-radius: rem-calc(4);
-      //border-radius: rem-calc(28);
+      border-radius: unit.rem-calc(4);
+      //border-radius: unit.rem-calc(28);
       line-height: 2rem;
       box-sizing: border-box;
       white-space: nowrap;
       width: fit-content;
       vertical-align: middle;
       &.uppercase {
-        letter-spacing: rem-calc(.25);
-        line-height: rem-calc(52);
+        letter-spacing: unit.rem-calc(.25);
+        line-height: unit.rem-calc(52);
         &.small {
           line-height: 0;
         }
@@ -191,104 +187,104 @@
         line-height: 0;
       }
       > span > .ic.ic-size\:16px {
-        margin-top: rem-calc(-2);
+        margin-top: -2px;
         width: 1rem;
         height: 1rem;
       }
       > span > .ic.ic-size\:24px {
-        margin-top: rem-calc(-2);
+        margin-top: -2px;
         width: 1.5rem;
         height: 1.5rem;
       }
       &:focus {
-        box-shadow: $box-shadow-custom-7;
+        box-shadow: var(--box-shadow-custom-7);
         outline:0;
       }
     }
 
     a.#{$prefix}button\:blue,
     button.#{$prefix}button\:blue {
-      border: rem-calc(2) solid $blue;
-      background-color: $blue;
-      color: $white;
-      box-shadow: $box-shadow-custom-2;
+      border: 2px solid var(--color-blue);
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      box-shadow: var(--box-shadow-custom-2);
       &:hover,
       &:hover:enabled {
-        border: rem-calc(2) solid $yale-blue;
-        background-color: $yale-blue;
+        border: 2px solid var(--color-yale-blue);
+        background-color: var(--color-yale-blue);
       }
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        background-color: $yale-blue;
+        background-color: var(--color-yale-blue);
       }
       > span > .ic {
-        background-color: $white;
+        background-color: var(--color-white);
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
         box-shadow: none;
-        border: rem-calc(2) solid $silver;
-        background-color: $silver;
-        color: $onyx;
+        border: 2px solid var(--color-silver);
+        background-color: var(--color-silver);
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}button\:transparent,
     button.#{$prefix}button\:transparent {
-      border: rem-calc(2) solid $blue;
+      border: 2px solid var(--color-blue);
       background-color: transparent;
-      color: $blue;
-      box-shadow: $box-shadow-custom-2;
+      color: var(--color-blue);
+      box-shadow: var(--box-shadow-custom-2);
       > span > .ic {
-        background-color: $blue;
+        background-color: var(--color-blue);
       }
       &:hover,
       &:hover:enabled {
-        border: rem-calc(2) solid $yale-blue;
-        color: $yale-blue;
+        border: 2px solid var(--color-yale-blue);
+        color: var(--color-yale-blue);
         > span > .ic {
-          background-color: $yale-blue;
+          background-color: var(--color-yale-blue);
         }
       }
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.35);
-        border: rem-calc(2) solid $vista-blue;
-        color: $yale-blue;
+        box-shadow: 0 0 4px 3pxrgba(var(--color-vista-blue), 0.35);
+        border: 2px solid var(--color-vista-blue);
+        color: var(--color-yale-blue);
         > span > .ic {
-          background-color: $yale-blue;
+          background-color: var(--color-yale-blue);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
         box-shadow: none;
-        border: rem-calc(2) solid $silver;
+        border: 2px solid var(--color-silver);
         background-color: transparent;
-        color: $onyx;
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}button\:white,
     button.#{$prefix}button\:white {
-      border: rem-calc(2) solid transparent;
-      background-color: $white;
-      color: $blue;
+      border: 2px solid transparent;
+      background-color: var(--color-white);
+      color: var(--color-blue);
       > span > .ic {
-        background-color: $blue;
+        background-color: var(--color-blue);
       }
       &:hover,
       &:hover:enabled,
@@ -296,82 +292,82 @@
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        border: rem-calc(2) solid transparent;
-        background-color: $yale-blue;
-        color: $white;
+        border: 2px solid transparent;
+        background-color: var(--color-yale-blue);
+        color: var(--color-white);
         > span > .ic {
-          background-color: $white;
+          background-color: var(--color-white);
         }
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        border: rem-calc(2) solid $silver;
-        background-color: $silver;
-        color: $onyx;
+        border: 2px solid var(--color-silver);
+        background-color: var(--color-silver);
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}button\:red,
     button.#{$prefix}button\:red {
-      border: rem-calc(2) solid transparent;
-      background-color: $red;
-      color: $white;
+      border: 2px solid transparent;
+      background-color: var(--color-red);
+      color: var(--color-white);
       &:hover,
       &:hover:enabled,
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        border: rem-calc(2) solid transparent;
-        background-color: $negative;
+        border: 2px solid transparent;
+        background-color: var(--color-negative);
       }
       > span > .ic {
-        background-color: $white;
+        background-color: var(--color-white);
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        border: rem-calc(2) solid $silver;
-        background-color: $silver;
-        color: $onyx;
+        border: 2px solid var(--color-silver);
+        background-color: var(--color-silver);
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
 
     a.#{$prefix}button\:yale-blue,
     button.#{$prefix}button\:yale-blue {
-      border: rem-calc(2) solid transparent;
-      background-color: $yale-blue;
-      color: $white;
+      border: 2px solid transparent;
+      background-color: var(--color-yale-blue);
+      color: var(--color-white);
       &:hover,
       &:hover:enabled,
       &:focus,
       &:focus:enabled,
       &:active,
       &:active:enabled {
-        border: rem-calc(2) solid transparent;
-        background-color: $eerie-black;
+        border: 2px solid transparent;
+        background-color: var(--color-eerie-black);
       }
       > span > .ic {
-        background-color: $white;
+        background-color: var(--color-white);
       }
       &:disabled,
       &.disabled,
       &[disabled='true'] {
-        border: rem-calc(2) solid $silver;
-        background-color: $silver;
-        color: $onyx;
+        border: 2px solid var(--color-silver);
+        background-color: var(--color-silver);
+        color: var(--color-onyx);
         cursor: default;
         > span > .ic {
-          background-color: $onyx;
+          background-color: var(--color-onyx);
         }
       }
     }
@@ -405,10 +401,10 @@ button.anchor\:yale-blue {
   left: 50%;
   position: absolute;
   top: 50%;
-  width: rem-calc(120);
-  height: rem-calc(120);
-  margin-left: rem-calc(-60);
-  margin-top: rem-calc(-60);
+  width: unit.rem-calc(120);
+  height: unit.rem-calc(120);
+  margin-left: -60px;
+  margin-top: -60px;
   background: rgba(1, 1, 1, 1.03);
   border-radius: 100%;
   opacity: .3;
@@ -429,11 +425,8 @@ button.anchor\:yale-blue {
 }
 
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     a.#{$prefix}button\:blue:not(:active):after,
     button.#{$prefix}button\:blue:not(:active):after,
     a.#{$prefix}button\:transparent:not(:active):after,
