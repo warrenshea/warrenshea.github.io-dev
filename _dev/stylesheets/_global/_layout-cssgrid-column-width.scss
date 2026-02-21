@@ -1,11 +1,9 @@
 /* file: layout-cssgrid-column-width.scss------------------------------------------------ */
 @use 'sass:math';
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     .#{$prefix}gc\:auto {
       grid-column: auto;
@@ -30,7 +28,7 @@
     }
   }
 
-  @include breakpoint($breakpoint) {
+  @include breakpoint.breakpoint($breakpoint-name) {
     @for $i from 1 through 12 {
       $fraction: math.div(1, $i) * 100%;
 
