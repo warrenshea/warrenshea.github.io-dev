@@ -1,9 +1,8 @@
 /* file: animation.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     $easing_type: 'linear', 'ease', 'ease-in', 'ease-out', 'ease-in-out';
     // .sm+:ani-timing:linear
     @each $ease_fn in $easing_type {
