@@ -22,7 +22,7 @@ storm_eagle.module('form.theme.gl0b3x', () => {
     ui: {
       force_textarea_autoexpand: (element) => {
         element.style.height = 'inherit';
-        element.style.height = `${element.scrollHeight + 6}px`;
+        element.style.height = `${(element.scrollHeight + 6) / 16}rem`;
         storm_eagle.equalize_heights.force_resize();
       },
       force_set_active_label: (element) => {
