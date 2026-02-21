@@ -1,71 +1,69 @@
 /* file: helper-background.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@use '../_config/_breakpoint.scss' as breakpoint;
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}bgc\:yale-blue {
-      background-color: $yale-blue;
+      background-color: var(--color-yale-blue);
     }
     .#{$prefix}bgc\:yinmn-blue {
-      background-color: $yinmn-blue;
+      background-color: var(--color-yinmn-blue);
     }
     .#{$prefix}bgc\:blue {
-      background-color: $blue;
+      background-color: var(--color-blue);
     }
     .#{$prefix}bgc\:vista-blue {
-      background-color: $vista-blue;
+      background-color: var(--color-vista-blue);
     }
     .#{$prefix}bgc\:powder-blue {
-      background-color: $powder-blue;
+      background-color: var(--color-powder-blue);
     }
     .#{$prefix}bgc\:columbia-blue {
-      background-color: $columbia-blue;
+      background-color: var(--color-columbia-blue);
     }
     .#{$prefix}bgc\:red {
-      background-color: $red;
+      background-color: var(--color-red);
     }
     .#{$prefix}bgc\:yellow {
-      background-color: $yellow;
+      background-color: var(--color-yellow);
     }
     .#{$prefix}bgc\:dark-goldenrod {
-      background-color: $dark-goldenrod;
+      background-color: var(--color-dark-goldenrod);
     }
     .#{$prefix}bgc\:black {
       background-color: black;
     }
     .#{$prefix}bgc\:black\:50\% {
-      background-color: rgba($black, 0.5);
+      background-color: rgba(var(--color-black), 0.5);
     }
     .#{$prefix}bgc\:eerie-black {
-      background-color: $eerie-black;
+      background-color: var(--color-eerie-black);
     }
     .#{$prefix}bgc\:onyx {
-      background-color: $onyx;
+      background-color: var(--color-onyx);
     }
     .#{$prefix}bgc\:gray {
-      background-color: $gray;
+      background-color: var(--color-gray);
     }
     .#{$prefix}bgc\:silver {
-      background-color: $silver;
+      background-color: var(--color-silver);
     }
     .#{$prefix}bgc\:platinum {
-      background-color: $platinum;
+      background-color: var(--color-platinum);
     }
     .#{$prefix}bgc\:white-smoke {
-      background-color: $white-smoke;
+      background-color: var(--color-white-smoke);
     }
     .#{$prefix}bgc\:white {
-      background-color: $white;
+      background-color: var(--color-white);
     }
     .#{$prefix}bgc\:white\:50\% {
-      background-color: rgba($white, 0.5);
+      background-color: rgba(var(--color-white), 0.5);
     }
     .#{$prefix}bgc\:positive-light {
-      background-color: $positive-light;
+      background-color: var(--color-positive-light);
     }
     .#{$prefix}bgc\:negative-light {
-      background-color: $negative-light;
+      background-color: var(--color-negative-light);
     }
     .#{$prefix}bgc\:none {
       background-color: none;
@@ -74,7 +72,7 @@
       background-color: transparent;
     }
     .#{$prefix}bgc\:disabled {
-      background-color: $disabled;
+      background-color: var(--color-disabled);
     }
 
     // | means it's a hard line distinction
@@ -82,77 +80,74 @@
 
     // Gradients Y-Axis Top to Bottom
     .#{$prefix}bgcgy\:platinum\|white {
-      background: linear-gradient(0deg, $white 0, $white calc(50%), $platinum calc(50%), $platinum 100%);
+      background: linear-gradient(0deg, var(--color-white) 0, var(--color-white) calc(50%), var(--color-platinum) calc(50%), var(--color-platinum) 100%);
     }
     .#{$prefix}bgcgy\:platinum\|16px-white {
-      background: linear-gradient(0deg, $white 0, $white 1rem, $platinum 1rem);
+      background: linear-gradient(0deg, var(--color-white) 0, var(--color-white) 1rem, var(--color-platinum) 1rem);
     }
     .#{$prefix}bgcgy\:platinum\|32px-white {
-      background: linear-gradient(0deg, $white 0, $white 2rem, $platinum 2rem);
+      background: linear-gradient(0deg, var(--color-white) 0, var(--color-white) 2rem, var(--color-platinum) 2rem);
     }
     .#{$prefix}bgcgy\:16px-platinum\|white {
-      background: linear-gradient(180deg, $platinum 1rem, $white 1rem);
+      background: linear-gradient(180deg, var(--color-platinum) 1rem, var(--color-white) 1rem);
     }
     .#{$prefix}bgcgy\:32px-platinum\|white {
-      background: linear-gradient(180deg, $platinum 2rem, $white 2rem);
+      background: linear-gradient(180deg, var(--color-platinum) 2rem, var(--color-white) 2rem);
     }
     .#{$prefix}bgcgy\:64px-platinum\|white {
-      background: linear-gradient(180deg, $platinum 4rem, $white 4rem);
+      background: linear-gradient(180deg, var(--color-platinum) 4rem, var(--color-white) 4rem);
     }
     .#{$prefix}bgcgy\:transparent\|platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), transparent calc(50%), transparent 100%);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) calc(50%), transparent calc(50%), transparent 100%);
     }
     .#{$prefix}bgcgy\:transparent\|16px-platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum 1rem, transparent 1rem);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) 1rem, transparent 1rem);
     }
     .#{$prefix}bgcgy\:transparent\|80px-platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum 5rem, transparent 5rem);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) 5rem, transparent 5rem);
     }
     .#{$prefix}bgcgy\:transparent\|white {
-      background: linear-gradient(0deg, $white 0, $white calc(50%), transparent calc(50%), transparent 100%);
+      background: linear-gradient(0deg, var(--color-white) 0, var(--color-white) calc(50%), transparent calc(50%), transparent 100%);
     }
     .#{$prefix}bgcgy\:white\|platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum calc(50%), $white calc(50%), $white 100%);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) calc(50%), var(--color-white) calc(50%), var(--color-white) 100%);
     }
     .#{$prefix}bgcgy\:white\|8px-platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum 0.5rem, $white 0.5rem);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) 0.5rem, var(--color-white) 0.5rem);
     }
     .#{$prefix}bgcgy\:white\|16px-platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum 1rem, $white 1rem);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) 1rem, var(--color-white) 1rem);
     }
     .#{$prefix}bgcgy\:white\|112px-platinum {
-      background: linear-gradient(0deg, $platinum 0, $platinum 7rem, $white 7rem);
+      background: linear-gradient(0deg, var(--color-platinum) 0, var(--color-platinum) 7rem, var(--color-white) 7rem);
     }
     .#{$prefix}bgcgy\:48px-white\|platinum {
-      background: linear-gradient(180deg, $white 3rem, $platinum 3rem);
+      background: linear-gradient(180deg, var(--color-white) 3rem, var(--color-platinum) 3rem);
     }
 
     // Gradients X-Axis Left to Right
     .#{$prefix}bgcgx\:transparent\~40\%-black {
-      background: linear-gradient(90deg, transparent 0%, rgba($black, 0.4) 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(var(--color-black), 0.4) 100%);
     }
     .#{$prefix}bgcgx\:yale-blue\~eerie-black {
-      background: linear-gradient(90deg, $yale-blue 0%, $eerie-black 100%);
+      background: linear-gradient(90deg, var(--color-yale-blue) 0%, var(--color-eerie-black) 100%);
     }
     .#{$prefix}bgcgx\:15\%-white\~70\%-red\~15\%-white {
       background: linear-gradient(90deg, white 0%, red 15%, red 85%, white 100%);
     }
     .#{$prefix}bgcgx\:15\%-silver\~70\%-platinum\~15\%-silver {
-      background: linear-gradient(90deg, $silver 0%, $platinum 15%, $platinum 85%, $silver 100%);
+      background: linear-gradient(90deg, var(--color-silver) 0%, var(--color-platinum) 15%, var(--color-platinum) 85%, var(--color-silver) 100%);
     }
 
     // Alternate children
     .#{$prefix}bgc\:white-smoke-alt-children > :nth-child(even) {
-      background-color: $white-smoke;
+      background-color: var(--color-white-smoke);
     }
   }
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}bgimg-focus\:left {
       background-position: center left;
     }
@@ -165,7 +160,7 @@
   }
 }
 
-@include breakpoint(xlarge up) {
+@include breakpoint.breakpoint(xlarge up) {
   .xl\+\:bgimg-mw-1280px-l\:1 {
     position: absolute;
     top: 0;
