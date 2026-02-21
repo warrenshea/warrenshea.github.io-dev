@@ -1,4 +1,5 @@
 /* file: interactive_form.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
 
 // Fieldset: Unstyle a fieldset
 fieldset.unstyle {
@@ -27,10 +28,10 @@ fieldset.unstyle {
       z-index: 4;
       content: '';
       width: 100%;
-      height: rem-calc(2);
+      height: unit.rem-calc(2);
       bottom: 0;
       left: 0;
-      background: $blue;
+      background-color: var(--color-blue);
       transform: scaleX(0);
       transition: all 0.3s linear;
       position: relative;
@@ -42,27 +43,27 @@ fieldset.unstyle {
       z-index: 3;
       content: '';
       width: 100%;
-      height: rem-calc(2);
-      bottom: rem-calc(2);
+      height: unit.rem-calc(2);
+      bottom: unit.rem-calc(2);
       left: 0;
-      background: $silver;
+      background-color: var(--color-silver);
       position: relative;
       top: unset;
       display: block;
     }
     &.error-field:before {
-      background: $negative;
+      background-color: var(--color-negative);
     }
     &.error-field:after {
-      background: $negative;
+      background-color: var(--color-negative);
     }
     &.valid:before {
-      background: #0b8224;
+      background-color: #0b8224;
     }
     &.disabled {
-      color: $onyx;
+      color: var(--color-onyx);
       span.description {
-        color: $onyx;
+        color: var(--color-onyx);
       }
     }
     span.description {
@@ -71,27 +72,27 @@ fieldset.unstyle {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      font-size: rem-calc(16);
-      color: $blue;
-      letter-spacing: rem-calc(0.25);
+      font-size: unit.rem-calc(16);
+      color: var(--color-blue);
+      letter-spacing: unit.rem-calc(0.25);
       transition: 0.3s ease-out;
-      top: rem-calc(32);
-      padding-left: rem-calc(8);
+      top: unit.rem-calc(32);
+      padding-left: 8px;
       position: absolute;
     }
     &.force-active-label,
     &.active-label {
       span.description {
-        top: rem-calc(2);
-        padding-left: rem-calc(2);
-        font-size: rem-calc(14);
+        top: unit.rem-calc(2);
+        padding-left: 2px;
+        font-size: unit.rem-calc(14);
         font-family: 'heebo-medium';
       }
     }
   }
   textarea + label {
     span.description {
-      top: rem-calc(30);
+      top: unit.rem-calc(30);
     }
   }
 
@@ -99,10 +100,10 @@ fieldset.unstyle {
   input,
   select,
   textarea {
-    color: $eerie-black;
+    color: var(--color-eerie-black);
     transition: all 0.3s ease-out;
     :disabled {
-      color: $black;
+      color: var(--color-black);
     }
   }
 
@@ -114,14 +115,14 @@ fieldset.unstyle {
   select,
   textarea {
     width: 100%;
-    height: rem-calc(36);
-    margin-top: rem-calc(24);
+    height: unit.rem-calc(36);
+    margin-top: 24px;
     white-space: nowrap;
-    border: rem-calc(1) solid #e0e0e0;
+    border: 1px solid #e0e0e0;
     border-bottom: 0;
     transition: all 0.3s ease-out;
-    padding-left: rem-calc(8);
-    padding-right: rem-calc(8);
+    padding-left: 8px;
+    padding-right: 8px;
     &:not(:disabled) {
       background-color: #fafafa;
     }
@@ -151,27 +152,27 @@ fieldset.unstyle {
   select:focus + label span.description,
   textarea:focus + label span.description,
   textarea.focus + label span.description {
-    top: rem-calc(2);
-    padding-left: rem-calc(2);
-    font-size: rem-calc(14);
+    top: unit.rem-calc(2);
+    padding-left: 2px;
+    font-size: unit.rem-calc(14);
     font-family: 'heebo-medium';
   }
   // helper description styles
   .error-message {
     width: 100%;
-    min-width: rem-calc(150);
-    padding: 0 0 0 rem-calc(22);
-    font-size: rem-calc(14);
+    min-width: unit.rem-calc(150);
+    padding: 0 0 0 unit.rem-calc(22);
+    font-size: unit.rem-calc(14);
     font-family: 'heebo-regular';
-    color: $negative;
+    color: var(--color-negative);
     background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
-    background-size: rem-calc(16) rem-calc(20);
+    background-size: unit.rem-calc(16) unit.rem-calc(20);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
-    margin-top: rem-calc(4);
+    margin-top: 4px;
     display: none;
-    margin-bottom: rem-calc(6);
+    margin-bottom: 6px;
     &.has-error {
       visibility: visible;
       opacity: 1;
@@ -184,25 +185,25 @@ fieldset.unstyle {
 
   // helper description styles
   .helper-description {
-    color: $onyx;
-    font-size: rem-calc(14);
-    margin-top: rem-calc(4);
-    letter-spacing: rem-calc(0.25);
+    color: var(--color-onyx);
+    font-size: unit.rem-calc(14);
+    margin-top: 4px;
+    letter-spacing: unit.rem-calc(0.25);
   }
 
   .helper-description-pass-fail {
     list-style: none;
     padding-left: 0;
-    color: $onyx;
-    font-size: rem-calc(14);
+    color: var(--color-onyx);
+    font-size: unit.rem-calc(14);
     li {
       display: flex;
-      line-height: rem-calc(24);
-      padding: rem-calc(2) rem-calc(6) rem-calc(2) rem-calc(32);
+      line-height: unit.rem-calc(24);
+      padding: 2px 6px 2px 2rem;
       background-image: url(../assets/icon/times.negative.svg);
       background-repeat: no-repeat;
-      background-position: top rem-calc(2) left rem-calc(2);
-      background-size: rem-calc(24) rem-calc(24);
+      background-position: top unit.rem-calc(2) left unit.rem-calc(2);
+      background-size: unit.rem-calc(24) unit.rem-calc(24);
       > span {
         display: flex;
       }
@@ -221,17 +222,17 @@ fieldset.unstyle {
     background-color: transparent;
     background-image: url('../assets/icon/chevron-down.blue.svg');
     background-repeat: no-repeat;
-    background-position: right rem-calc(8) top rem-calc(10);
-    background-size: rem-calc(16) rem-calc(16);
+    background-position: right unit.rem-calc(8) top unit.rem-calc(10);
+    background-size: unit.rem-calc(16) unit.rem-calc(16);
     appearance: none;
   }
 
   // textarea styles
   textarea {
     transition: all 0.3s ease;
-    padding-top: rem-calc(8); // to remain consistent with input boxes
-    padding-bottom: rem-calc(4); // to remain consistent with input boxes
-    margin-bottom: rem-calc(-10); // to remain consistent with input boxes
+    padding-top: unit.rem-calc(8); // to remain consistent with input boxes
+    padding-bottom: unit.rem-calc(4); // to remain consistent with input boxes
+    margin-bottom: -10px; // to remain consistent with input boxes
     white-space: pre-wrap;
   }
 
@@ -247,16 +248,16 @@ fieldset.unstyle {
     & + label {
       cursor: pointer;
       position: relative;
-      padding-left: rem-calc(32);
-      letter-spacing: rem-calc(0.15);
-      line-height: rem-calc(24);
+      padding-left: unit.rem-calc(32);
+      letter-spacing: unit.rem-calc(0.15);
+      line-height: unit.rem-calc(24);
       &::before {
         content: '';
         position: absolute;
         left: 0;
-        width: rem-calc(24);
-        height: rem-calc(24);
-        border: rem-calc(2) solid $gray;
+        width: unit.rem-calc(24);
+        height: unit.rem-calc(24);
+        border: 2px solid var(--color-gray); 
         &:hover {
           cursor: pointer;
         }
@@ -267,28 +268,28 @@ fieldset.unstyle {
       cursor: pointer;
     }
     &:focus + label {
-      outline: rem-calc(2) solid #000;
+      outline: 2px solid #000;
     }
     &:checked:focus + label {
-      outline: rem-calc(2) solid #000;
+      outline: 2px solid #000;
     }
     &:checked:focus + label {
-      box-shadow: $box-shadow-custom-7;
+      box-shadow: var(--box-shadow-custom-7);
     }
     &:focus + label:before {
-      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+      box-shadow: 0 0 4px 3pxrgba(var(--color-vista-blue), 0.65);
     }
     &:checked:focus + label:before {
-      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+      box-shadow: 0 0 4px 3pxrgba(var(--color-vista-blue), 0.65);
     }
     &.has-error + label:before {
-      border: rem-calc(2) solid $negative;
+      border: 2px solid var(--color-negative);
     }
     &:disabled + label {
-      color: $onyx;
+      color: var(--color-onyx);
       &::before {
-        background-color: $silver;
-        border: rem-calc(2) solid $onyx;
+        background-color: var(--color-silver);
+        border: 2px solid var(--color-onyx);
       }
     }
   }
@@ -296,31 +297,31 @@ fieldset.unstyle {
   input[type='checkbox'] {
     & + label {
       &::before {
-        border-radius: rem-calc(4);
+        border-radius: unit.rem-calc(4);
       }
     }
     &:checked + label:before {
-      background-color: $blue;
+      background-color: var(--color-blue);
       background-image: url('../assets/icon/check.white.svg');
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: rem-calc(15);
-      border: rem-calc(2) solid $blue;
+      background-size: unit.rem-calc(15);
+      border: 2px solid var(--color-blue);
     }
     &:focus + label:before {
-      //border: rem-calc(2) solid $blue;
-      box-shadow: $box-shadow-custom-7;
+      //border: 2px solid var(--color-blue);
+      box-shadow: var(--box-shadow-custom-7);
     }
     &:checked:disabled + label:before {
-      background-color: $onyx;
+      background-color: var(--color-onyx);
       background-image: url('../assets/icon/check.white.svg');
-      border: rem-calc(2) solid $onyx;
+      border: 2px solid var(--color-onyx);
     }
   }
 
   [data-module="parent-checkbox.container"] {
     & > input[type='checkbox'][aria-checked='mixed'] + label:before {
-      background-color: $blue;
+      background-color: var(--color-blue);
       background-image: url('../assets/icon/dash.white.svg');
     }
     & > input[type='checkbox'][aria-checked='false'] + label:before {
@@ -328,7 +329,7 @@ fieldset.unstyle {
       background-image: none;
     }
     & > input[type='checkbox'][aria-checked='true'] + label:before {
-      background-color: $blue;
+      background-color: var(--color-blue);
       background-image: url('../assets/icon/check.white.svg');
     }
   }
@@ -336,42 +337,41 @@ fieldset.unstyle {
   input[type='radio'] {
     & + label {
       &::before {
-        border-radius: 50%;
+        border-radius: 999px;
         transition:
           background-color ease-in-out 250ms,
           border ease-in-out 250ms;
       }
     }
     &:checked + label:before {
-      background-color: $white;
-      border: rem-calc(6) solid $blue;
+      background-color: var(--color-white);
+      border: unit.rem-calc(6) solid var(--color-blue);
     }
     &:focus + label:before {
       background-color: transparent;
-      border: rem-calc(2) solid $gray;
+      border: unit.rem-calc(2) solid var(--color-gray);
     }
     &:checked:focus + label:before {
-      background-color: $white;
-      border: rem-calc(6) solid $blue;
-      box-shadow: $box-shadow-custom-7;
+      background-color: var(--color-white);
+      border: unit.rem-calc(6) solid var(--color-blue);
+      box-shadow: var(--box-shadow-custom-7);
     }
-
     &:checked:disabled + label:before {
-      background-color: $silver;
-      border: rem-calc(6) solid $onyx;
+      background-color: var(--color-silver);
+      border: unit.rem-calc(6) solid var(--color-onyx);
     }
   }
 
   @mixin box-input-styles($color, $bg-color, $border-color, $box-shadow) {
-    padding: rem-calc(4) rem-calc(16);
+    padding: 4px 16px;
     font-family: 'heebo-bold';
-    font-size: rem-calc(14);
+    font-size: unit.rem-calc(14);
     color: $color;
     background-color: $bg-color;
     width: 100%;
-    border: rem-calc(2) solid $border-color;
+    border: 2px solid $border-color;
     line-height: 2.25rem;
-    border-radius: rem-calc(4);
+    border-radius: unit.rem-calc(4);
     transition: all 0.3s ease;
     box-shadow: 0 0 0 0 rgba($box-shadow, 0.65);
     white-space: nowrap;
@@ -385,11 +385,11 @@ fieldset.unstyle {
     &:checked + label {
       color: $color;
       background-color: $bg-color;
-      border: rem-calc(2) $border-color solid;
+      border: 2px $border-color solid;
     }
     &:checked:focus + label {
-      border: rem-calc(2) $box-shadow solid;
-      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($box-shadow, 0.65);
+      border: 2px $box-shadow solid;
+      box-shadow: 0 0 4px 3pxrgba($box-shadow, 0.65);
     }
   }
 
@@ -398,47 +398,47 @@ fieldset.unstyle {
     input[type='checkbox'],
     input[type='radio'] {
       & + label {
-        @include box-input-styles($blue, $white, $gray, $vista-blue);
+        @include box-input-styles(var(--color-blue), var(--color-white), var(--color-gray), var(--color-vista-blue));
       }
-      @include label-hover-styles($white, $blue, $blue, $vista-blue);
+      @include label-hover-styles(var(--color-white), var(--color-blue), var(--color-blue), var(--color-vista-blue));
     }
 
     input[type='checkbox'][data-theme-color='positive'] {
       & + label {
-        @include box-input-styles($positive, $white, $gray, $positive-dark);
+        @include box-input-styles(var(--color-positive), var(--color-white), var(--color-gray), var(--color-positive-dark));
       }
-      @include label-hover-styles($white, $positive, $positive, $positive-dark);
+      @include label-hover-styles(var(--color-white), var(--color-positive), var(--color-positive), var(--color-positive-dark));
     }
 
     input[type='checkbox'][data-theme-color='red'] {
       & + label {
-        @include box-input-styles($red, $white, $gray, $carmine);
+        @include box-input-styles(var(--color-red), var(--color-white), var(--color-gray), var(--color-carmine));
       }
-      @include label-hover-styles($white, $red, $red, $carmine);
+      @include label-hover-styles(var(--color-white), var(--color-red), var(--color-red), var(--color-carmine));
     }
 
     &[data-theme-color='red'] {
       input[type='checkbox'] {
         & + label {
-          @include box-input-styles($red, $white, $gray, $carmine);
+          @include box-input-styles(var(--color-red), var(--color-white), var(--color-gray), var(--color-carmine));
         }
-        @include label-hover-styles($white, $red, $red, $carmine);
+        @include label-hover-styles(var(--color-white), var(--color-red), var(--color-red), var(--color-carmine));
       }
     }
 
     &[data-theme-color='dark-goldenrod'] {
       input[type='checkbox'] {
         & + label {
-          @include box-input-styles($dark-goldenrod, $white, $gray, $dark-goldenrod);
+          @include box-input-styles(var(--color-dark-goldenrod), var(--color-white), var(--color-gray), var(--color-dark-goldenrod));
         }
-        @include label-hover-styles($white, $dark-goldenrod, $dark-goldenrod, $dark-goldenrod);
+        @include label-hover-styles(var(--color-white), var(--color-dark-goldenrod), var(--color-dark-goldenrod), var(--color-dark-goldenrod));
       }
     }
   }
 
   .box-checkboxes input[type='checkbox'][aria-checked='mixed'] + label {
-    color: $white;
-    background-color: $powder-blue;
+    color: var(--color-white);
+    background-color: var(--color-powder-blue);
   }
 
   [data-module="autocomplete.multiselect"] input[type='text'][data-module='autocomplete.input']{
@@ -449,16 +449,16 @@ fieldset.unstyle {
   [data-module='range-slider.input-container'] {
     [data-module='slider.background'] {
       position: relative;
-      background-color: $silver;
-      height: rem-calc(4);
-      border-radius: rem-calc(4);
+      background-color: var(--color-silver);
+      height: unit.rem-calc(4);
+      border-radius: unit.rem-calc(4);
       display: block;
-      margin: rem-calc(-12) auto rem-calc(12);
+      margin: 0 auto unit.rem-calc(12);
       [data-module='slider.fill'] {
         z-index: 1;
-        background-color: $blue;
-        height: rem-calc(4);
-        border-radius: rem-calc(4);
+        background-color: var(--color-blue);
+        height: unit.rem-calc(4);
+        border-radius: unit.rem-calc(4);
         position: absolute;
       }
     }
@@ -469,32 +469,35 @@ fieldset.unstyle {
 
   [data-module='slider.input-container'] {
     &.fit {
-      width: calc(100% - rem-calc(24));
-      margin-left: rem-calc(12);
+      width: calc(100% - unit.rem-calc(24));
+      margin-left:unit.rem-calc(12);
     }
     input[type='range'][data-slider] {
       position: relative;
-      height: rem-calc(24);
+      height: unit.rem-calc(24);
       appearance: none;
       background: none;
       z-index: 2;
       cursor: grab;
-      width: calc(100% + rem-calc(24));
-      margin-left: rem-calc(-12);
+      width: calc(100% + unit.rem-calc(24));
+      margin-left: unit.rem-calc(-12);
       &:active {
         cursor: grabbing;
       }
       &::-webkit-slider-thumb {
         z-index: 2;
         box-shadow:
-          0 0 rem-calc(2) 0 rgba(0, 0, 0, 0.5),
-          0 rem-calc(2) rem-calc(2) 0 rgba(0, 0, 0, 0.25);
-        height: rem-calc(24);
-        width: rem-calc(24);
-        border-radius: 50%;
+          0 0 2px 0 rgba(0, 0, 0, 0.5),
+          0 2px 2px 0 rgba(0, 0, 0, 0.25);
+        height: unit.rem-calc(24);
+        width: unit.rem-calc(24);
+        border-radius: 999px;
         background: #fff;
         appearance: none;
-        margin-top: rem-calc(2);
+        margin-top: 2px;
+      }
+      & + [data-module='slider.background'] {
+        margin-top: unit.rem-calc(-12);
       }
     }
   }
@@ -502,20 +505,20 @@ fieldset.unstyle {
   [data-module='range-slider.input-container'] {
     position: relative;
     &.fit {
-      width: calc(100% - rem-calc(24));
-      margin-left: rem-calc(12);
+      width: calc(100% - unit.rem-calc(24));
+      margin-left: 12px;
     }
     input[type='range'][data-range-slider] {
       position: relative;
       -webkit-appearance: none;
-      height: rem-calc(24);
+      height: unit.rem-calc(24);
       appearance: none;
       background: none;
       cursor: grab;
       z-index: 2;
       // offset the range to center the thumbs
-      width: calc(100% + rem-calc(24));
-      margin-left: rem-calc(-12);
+      width: calc(100% + unit.rem-calc(24));
+      margin-left: unit.rem-calc(-12);
       &:not(:only-of-type) {
         pointer-events: none;
       }
@@ -526,25 +529,25 @@ fieldset.unstyle {
         z-index: 2;
         -webkit-appearance: none;
         appearance: none;
-        height: rem-calc(24);
-        width: rem-calc(24);
+        height: unit.rem-calc(24);
+        width: unit.rem-calc(24);
         // transform: var(--thumb-transform);
-        border-radius: 50%;
+        border-radius: 999px;
         background: #fff;
         box-shadow:
-          0 0 rem-calc(2) 0 rgba(0, 0, 0, 0.5),
-          0 rem-calc(2) rem-calc(2) 0 rgba(0, 0, 0, 0.25);
+          0 0 2px 0 rgba(0, 0, 0, 0.5),
+          0 2px 2px 0 rgba(0, 0, 0, 0.25);
         border: none;
         pointer-events: auto;
         -webkit-transition: 0.1s;
         transition: 0.1s;
-        margin-top: rem-calc(2);
+        margin-top: 2px;
       }
       &:nth-of-type(1) {
         position: absolute;
       }
-      &[data-range-slider] + input[type='range'][data-range-slider] + [data-module='slider.background'] {
-        margin-top: rem-calc(-20);
+      & + input[type='range'][data-range-slider] + [data-module='slider.background'] {
+        margin-top: unit.rem-calc(-12);
       }
     }
   }
@@ -553,64 +556,64 @@ fieldset.unstyle {
   button[role='switch'][data-module='switch.button']{
     position: relative;
     display: inline-block;
-    height: rem-calc($switch+8);
+    height: unit.rem-calc($switch+8);
     cursor: pointer;
     [data-module='switch.slider'] {
       cursor: pointer;
       display:flex;
       align-items: center;
       transition: background-color 0.4s;
-      border-radius: rem-calc($switch+8);
-      height: rem-calc($switch+8);
+      border-radius: 999px;
+      height: unit.rem-calc($switch+8);
       [data-module='switch.thumb'] {
         position: absolute;
         content: "";
-        height: rem-calc($switch);
-        width: rem-calc($switch);
-        left: rem-calc(4);
-        bottom: rem-calc(4);
+        height: unit.rem-calc($switch);
+        width: unit.rem-calc($switch);
+        left: unit.rem-calc(4);
+        bottom: unit.rem-calc(4);
         transition: left 0.4s, background-color 0.4s;
-        border-radius: 50%;
+        border-radius: 999px;
       }
       [data-module='switch.text'] {
         width: 100%;
         transition: color 0.4s;
-        padding:0 rem-calc(25);
+        padding:0 unit.rem-calc(25);
       }
       &:has([data-module='switch.thumb']) {
         [data-module='switch.text'] {
-          padding:0 rem-calc(35);
+          padding:0 unit.rem-calc(35);
         }
       }
     }
     &[data-theme-size='small']{
       $switch: 16;
-      height: rem-calc($switch+8);
+      height: unit.rem-calc($switch+8);
       [data-module='switch.slider'] {
-        height: rem-calc($switch+8);
-        border-radius: rem-calc($switch+8);
+        height: unit.rem-calc($switch+8);
+        border-radius: unit.rem-calc($switch+8);
         [data-module='switch.thumb'] {
-          height: rem-calc($switch);
-          width: rem-calc($switch);
+          height: unit.rem-calc($switch);
+          width: unit.rem-calc($switch);
         }
         [data-module='switch.text'] {
-          padding:0 rem-calc(15);
+          padding:0 15px;
         }
         &:has([data-module='switch.thumb']) {
           [data-module='switch.text'] {
-            padding:0 rem-calc(25);
+            padding:0 25px;
           }
         }
       }
     }
     &[aria-checked='true'] {
       [data-module='switch.thumb']{
-        left: calc(100% - rem-calc($switch + 12));
+        left: calc(100% - unit.rem-calc($switch + 12));
       }
     }
     &[aria-checked='true'][data-theme-size='small'] {
       [data-module='switch.thumb']{
-        left: calc(100% - rem-calc($switch + 4));
+        left: calc(100% - unit.rem-calc($switch + 4));
       }
     }
     & + label {
@@ -618,38 +621,38 @@ fieldset.unstyle {
     }
     &[data-theme-color='blue'] {
       [data-module='switch.slider'] {
-        background: $platinum;
+        background: var(--color-platinum);
         [data-module='switch.thumb'] {
-          background: $white;
+          background: var(--color-white);
         }
         [data-module='switch.text'] {
-          color: $gray;
+          color: var(--color-gray);
         }
       }
       &[aria-checked='true'] {
         [data-module='switch.slider'] {
-          background: $blue;
+          background: var(--color-blue);
           [data-module='switch.text'] {
-            color: $white;
+            color: var(--color-white);
           }
         }
       }
     }
     &[data-theme-color='red'] {
       [data-module='switch.slider'] {
-        background: $platinum;
+        background: var(--color-platinum);
         [data-module='switch.thumb'] {
-          background: $white;
+          background: var(--color-white);
         }
         [data-module='switch.text'] {
-          color: $gray;
+          color: var(--color-gray);
         }
       }
       &[aria-checked='true'] {
         [data-module='switch.slider'] {
-          background: $red;
+          background: var(--color-red);
           [data-module='switch.text'] {
-            color: $white;
+            color: var(--color-white);
           }
         }
       }
@@ -666,27 +669,27 @@ fieldset.unstyle {
     }
     100% {
       box-shadow:
-        0 0 0 rem-calc(10) $powder-blue,
-        0 0 0 rem-calc(10) $yale-blue;
+        0 0 0 10px var(--color-powder-blue),
+        0 0 0 10px var(--color-yale-blue);
     }
   }
 
   // helper description styles
   .error-message {
     width: 100%;
-    min-width: rem-calc(150);
-    padding: 0 0 0 rem-calc(19);
-    font-size: rem-calc(14);
+    min-width: unit.rem-calc(150);
+    padding: 0 0 0 19px;
+    font-size: unit.rem-calc(14);
     font-family: 'heebo-regular';
-    color: $negative;
+    color: var(--color-negative);
     background: url(../assets/icon/exclamation-circle.negative.svg) no-repeat top left;
-    background-size: rem-calc(16) rem-calc(16);
+    background-size: unit.rem-calc(16) unit.rem-calc(16);
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
-    margin-top: rem-calc(4);
+    margin-top: 4px;
     display: none;
-    margin-bottom: rem-calc(6);
+    margin-bottom: 6px;
     &.has-error {
       visibility: visible;
       opacity: 1;
@@ -708,13 +711,13 @@ fieldset.unstyle {
     & + label {
       position: relative;
       width: 100%;
-      min-height: rem-calc(170);
+      min-height: unit.rem-calc(170);
       display: inline-block;
       transition: all 0.3s ease-out;
-      box-shadow: $box-shadow-custom-1;
+      box-shadow: var(--box-shadow-custom-1);
       &:hover {
         cursor: pointer;
-        box-shadow: $box-shadow-custom-6;
+        box-shadow: var(--box-shadow-custom-6);
       }
       &:active {
         opacity: 1;
@@ -725,65 +728,65 @@ fieldset.unstyle {
         opacity: 0;
         visibility: hidden;
         position: absolute;
-        top: rem-calc(-1);
+        top: unit.rem-calc(-1);
         // - Fix for IE11 - keep -1px, not 0px
-        right: rem-calc(-1);
+        right: unit.rem-calc(-1);
         // - Fix for IE11 - keep -1px, not 0px
-        width: rem-calc(24);
-        height: rem-calc(24);
-        border-radius: 0 0 0 rem-calc(2);
+        width: unit.rem-calc(24);
+        height: unit.rem-calc(24);
+        border-radius: 0 0 0 2px;
         background-image: url('../assets/icon/chevron-down.blue.svg');
         background-repeat: no-repeat;
         background-color: #68bbe8;
-        background-size: rem-calc(16) rem-calc(16);
+        background-size: unit.rem-calc(16) unit.rem-calc(16);
         background-position: center center;
         transition: all 0.3s ease-in;
       }
       div.image {
         text-align: center;
-        width: rem-calc(96);
-        height: rem-calc(72);
-        margin: rem-calc(16) auto 0;
+        width: unit.rem-calc(96);
+        height: unit.rem-calc(72);
+        margin: 16px auto 0;
       }
       div.description {
         text-align: center;
-        padding: rem-calc(8) 0 0 0;
+        padding: 8px 0 0 0;
         font-family: 'heebo-bold';
-        font-size: rem-calc(16);
-        color: $eerie-black;
+        font-size: unit.rem-calc(16);
+        color: var(--color-eerie-black);
       }
     }
     &:focus {
-      background: $blue;
-      border: rem-calc(2) solid $blue;
-      color: $white;
-      box-shadow: 0 0 rem-calc(4) rem-calc(3) rgba($vista-blue, 0.65);
+      background: var(--color-blue);
+      border: 2px solid var(--color-blue);
+      color: var(--color-white);
+      box-shadow: 0 0 4px 3pxrgba(var(--color-vista-blue), 0.65);
     }
 
     &:checked + label,
     &:checked:focus + label {
-      border: rem-calc(2) solid $blue;
+      border: 2px solid var(--color-blue);
       div.check {
         opacity: 1;
         visibility: visible;
-        background: $blue url('../assets/icon/check.white.svg') rem-calc(8) no-repeat;
+        background: var(--color-blue) url('../assets/icon/check.white.svg') unit.rem-calc(8) no-repeat;
         background-position: center center;
-        background-size: rem-calc(16);
+        background-size: unit.rem-calc(16);
       }
     }
     &:focus + label,
     &:checked:focus + label {
-      border: rem-calc(2) solid $blue;
+      border: 2px solid var(--color-blue);
       div.check {
-        background-color: $blue;
+        background-color: var(--color-blue);
         display: block;
       }
     }
     &:checked:focus + label {
-      box-shadow: $box-shadow-custom-7;
+      box-shadow: var(--box-shadow-custom-7);
     }
     .error-field label {
-      border: rem-calc(2) solid $negative;
+      border: 2px solid var(--color-negative);
     }
   }
 }
