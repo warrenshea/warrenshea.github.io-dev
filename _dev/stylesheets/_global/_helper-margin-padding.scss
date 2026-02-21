@@ -1,55 +1,48 @@
 /* file: helper-margin-padding.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_breakpoint.scss' as breakpoint;
 $properties: (
-  m\:  : margin,
-  mt\: : margin-top,
-  ml\: : margin-left,
-  mr\: : margin-right,
-  mb\: : margin-bottom,
-  p\:  : padding,
-  pt\: : padding-top,
-  pl\: : padding-left,
-  pr\: : padding-right,
-  pb\: : padding-bottom
+  m  : margin,
+  mt : margin-top,
+  ml : margin-left,
+  mr : margin-right,
+  mb : margin-bottom,
+  p  : padding,
+  pt : padding-top,
+  pl : padding-left,
+  pr : padding-right,
+  pb : padding-bottom
+);
+
+$compound-properties: (
+  mx : (margin-left, margin-right),
+  my : (margin-top, margin-bottom),
+  px : (padding-left, padding-right),
+  py : (padding-top, padding-bottom)
 );
 
 $values: (1px, 2px, 4px, 8px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 56px, 64px, 72px, 80px, 96px, 0, auto);
 
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     @each $value in $values {
 
-      @each $property in $properties {
-        $key: nth($property, 1);
-        $css-property: nth($property, 2);
-
-        .#{$prefix}#{$key}#{$value} {
-          #{$css-property}: #{$value};
+      // Single properties
+      @each $key, $css-property in $properties {
+        .#{$prefix}#{$key}\:#{$value} {
+          #{$css-property}: $value;
         }
       }
-
-      .#{$prefix}mx\:#{$value} {
-        margin-left: #{$value};
-        margin-right: #{$value};
-      }
-
-      .#{$prefix}my\:#{$value} {
-        margin-top: #{$value};
-        margin-bottom: #{$value};
-      }
-
-      .#{$prefix}px\:#{$value} {
-        padding-left: #{$value};
-        padding-right: #{$value};
-      }
-
-      .#{$prefix}py\:#{$value} {
-        padding-top: #{$value};
-        padding-bottom: #{$value};
+      
+      // Compound properties (mx, my, px, py)
+      @each $key, $css-properties in $compound-properties {
+        .#{$prefix}#{$key}\:#{$value} {
+          @each $css-property in $css-properties {
+            #{$css-property}: $value;
+          }
+        }
       }
 
     }
