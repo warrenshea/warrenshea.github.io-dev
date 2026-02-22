@@ -1,49 +1,48 @@
 /* file: layout-visibility-breakpoint.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}hide { display: none !important; }
   }
 }
 
-@include breakpoint(medium) {
+@include breakpoint.breakpoint(medium) {
   .sm\=\:show {
     display: none !important;
   }
 }
-@include breakpoint(small only) {
+@include breakpoint.breakpoint(small only) {
   .md\+\:show {
     display: none !important;
   }
 }
-@media screen and #{breakpoint(large)}, screen and #{breakpoint(small only)} {
+@include breakpoint.breakpoint-combine(large up, small only) {
   .md\=\:show {
     display: none !important;
   }
 }
-@media screen and #{breakpoint(large up)} {
+@include breakpoint.breakpoint(large up) {
   .md\-\:show {
     display: none !important;
   }
 }
-@include breakpoint(medium down) {
+@include breakpoint.breakpoint(medium down) {
   .lg\+\:show {
     display: none !important;
   }
 }
-@media screen and #{breakpoint(xlarge)}, screen and #{breakpoint(medium down)} {
+@include breakpoint.breakpoint-combine(xlarge up, medium down) {
   .lg\=\:show {
     display: none !important;
   }
 }
-@media screen and #{breakpoint(xlarge up)} {
+@include breakpoint.breakpoint(xlarge up) {
   .lg\-\:show {
     display: none !important;
   }
 }
-@include breakpoint(large down) {
+@include breakpoint.breakpoint(large down) {
   .xl\+\:show {
     display: none !important;
   }
