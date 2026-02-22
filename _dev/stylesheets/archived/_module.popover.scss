@@ -1,12 +1,8 @@
 /* file: module.archived-popover.scss------------------------------------------------ */
 @charset "UTF-8";
 
-@import '../_config/unit.scss';
-@import '../_config/variables-colors.scss';
-@import '../_config/variables-dimensions.scss';
-@import '../_config/variables-box-shadow.scss';
-@import '../_config/breakpoint.scss';
-@import '../_config/media-queries.scss';
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 
 [data-module='archived-popover'] {
   position:fixed;
@@ -35,15 +31,15 @@
   }
   &.right {
     &::before{
-      border-width:rem-calc(11);
-      left: rem-calc(-11);
-      margin-top: rem-calc(-11);
+      border-width:unit.rem-calc(11);
+      left: unit.rem-calc(-11);
+      margin-top: -11px;
       border-left-width: 0;
       border-right-color: #bbb;
     }
     &:after{
-      border-width:rem-calc(10);
-      left: rem-calc(-10);
+      border-width:unit.rem-calc(10);
+      left: unit.rem-calc(-10);
       transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
@@ -51,27 +47,27 @@
   }
   button[data-archived-popover-close] {
     position: absolute;
-    top: rem-calc(10);
-    right: rem-calc(10);
-    @include breakpoint(large) {
-      top: rem-calc(20);
-      right: rem-calc(20);
+    top: unit.rem-calc(10);
+    right: unit.rem-calc(10);
+    @include breakpoint.breakpoint(large) {
+      top: unit.rem-calc(20);
+      right: unit.rem-calc(20);
     }
   }
   &[data-archived-popover='active'] {
-    box-shadow: $box-shadow-custom-2;
+    box-shadow: var(--box-shadow-custom-2);
     display:block;
     bottom:0;
     z-index: 1051;
     visibility: visible;
-    @include breakpoint(large) {
-      box-shadow: $box-shadow-custom-1;
+    @include breakpoint.breakpoint(large) {
+      box-shadow: var(--box-shadow-custom-1);
       position:absolute;
       top:50%;
       bottom:auto;
       right:auto;
-      width: rem-calc(300);
-      max-width: rem-calc(300);
+      width: unit.rem-calc(300);
+      max-width: unit.rem-calc(300);
     }
   }
 }
