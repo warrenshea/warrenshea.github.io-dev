@@ -1,9 +1,8 @@
 /* file: typography-text-alignment.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}text-align\:left { text-align: left; }
     .#{$prefix}text-align\:center { text-align: center; }
     .#{$prefix}text-align\:right { text-align: right; }
