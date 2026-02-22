@@ -1,9 +1,11 @@
 /* file: module.breadcrumbs.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 .breadcrumbs ul {
   li {
     align-items: center;
     display:none;
-    @include breakpoint(xlarge) {
+    @include breakpoint.breakpoint(xlarge) {
       display:inline-flex;
     }
     &:nth-last-child(2) {
@@ -11,10 +13,10 @@
       &::before{
         white-space: pre;
         content:" ";
-        width:rem-calc(24);
+        width:unit.rem-calc(24);
         line-height:1.5;
         background:url('../assets/icon/24/arrow-left.svg') center center;
-        @include breakpoint(xlarge) {
+        @include breakpoint.breakpoint(xlarge) {
           display:none;
         }
       }
@@ -29,7 +31,7 @@
   li span.breadcrumb-chevron-right {
     align-items: center;
     display:none;
-    @include breakpoint(xlarge) {
+    @include breakpoint.breakpoint(xlarge) {
       display:inline-flex;
     }
   }
