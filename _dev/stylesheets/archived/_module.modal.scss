@@ -1,4 +1,5 @@
 /* file: module.modal.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
 [data-module='modal'] {
   opacity:0;
   width: 100%;
@@ -11,7 +12,7 @@
   &[data-modal='active'] {
     opacity:1;
     transition: all 1.3s ease;
-    background-color: #{$black}75;
+    background-color: #{var(--color-black)}75;
     z-index: 10000;
     display: flex;
     overflow-x:hidden;
@@ -25,8 +26,8 @@
     margin:auto;
     button[data-modal-close] {
       position: absolute;
-      top: rem-calc(20);
-      right: rem-calc(20);
+      top: unit.rem-calc(20);
+      right: unit.rem-calc(20);
     }
     &[data-modal-container='active'] {
       opacity:1;
