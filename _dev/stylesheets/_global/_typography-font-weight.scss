@@ -1,9 +1,8 @@
 /* file: typography-font-weight.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}fw\:light {
       font-weight: 300;
     }
