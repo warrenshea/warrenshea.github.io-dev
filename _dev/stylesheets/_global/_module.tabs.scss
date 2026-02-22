@@ -1,7 +1,9 @@
 /* file: module.tabs.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+
 [data-module='tabs'] {
   [data-module='tabs.panel'] {
-    margin-top: rem-calc(-1);
+    margin-top: -1px;
     z-index:-1;
   }
 }
