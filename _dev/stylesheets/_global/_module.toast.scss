@@ -1,22 +1,23 @@
 /* file: module.toast.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
 [data-module="module.toast"] {
   display: flex;
   align-items:flex-end;
   flex-direction: column;
   position: fixed;
-  bottom: rem-calc(24);
-  right: rem-calc(24);
+  bottom: 24px;
+  right: 24px;
   .toast {
-    padding: rem-calc(16);
-    margin-bottom: rem-calc(24);
-    border-radius: rem-calc(4);
+    padding: 16px;
+    margin-bottom: 24px;
+    border-radius: unit.rem-calc(4);
     opacity: 0;
     transition: opacity 0.5s;
     text-align: left;
-    max-width: rem-calc(400);
-    font-size:16px !important;
+    max-width: unit.rem-calc(400);
+    font-size: 1rem !important;
     h1,h2,h3,h4,p,span,div,a,button {
-      font-size:16px !important;
+      font-size: 1rem !important;
       line-height: 1.15 !important;
     }
   }
