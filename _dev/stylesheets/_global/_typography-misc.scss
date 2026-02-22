@@ -1,4 +1,7 @@
 /* file: typography-misc.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 // Unordered/Ordered List: Unstyle a list
 ul.unstyle,
 ol.unstyle { list-style: none; }
@@ -13,14 +16,14 @@ ul.checkmark-list {
     background-image: url('../assets/icon/check.blue.svg');
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: rem-calc(24) rem-calc(24);
-    padding-left: rem-calc(32);
-    line-height: rem-calc(24);
+    background-size: unit.rem-calc(24) unit.rem-calc(24);
+    padding-left: 32px;
+    line-height: unit.rem-calc(24);
   }
 
   &.checkmark-list-li-pb\:16px {
     > li {
-      padding-bottom: rem-calc(16);
+      padding-bottom: 16px;
     }
   }
 }
@@ -31,15 +34,12 @@ $whitespaces: (
   breakword : break-word
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     @each $whitespace in $whitespaces {
-      $whitespace-name: nth($whitespace, 1);
-      $whitespace-value: nth($whitespace, 2);
+      $whitespace-name: list.nth($whitespace, 1);
+      $whitespace-value: list.nth($whitespace, 2);
 
       .#{$prefix}ws\:#{$whitespace-name} {
         white-space: #{$whitespace-value};
@@ -48,11 +48,8 @@ $whitespaces: (
   }
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}uppercase { text-transform: uppercase; }
     .#{$prefix}capitalize { text-transform: capitalize; }
   }
