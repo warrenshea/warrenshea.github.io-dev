@@ -1,13 +1,14 @@
 /* file: root.scss------------------------------------------------ */
+@use '../_config/_breakpoint.scss' as breakpoint;
 :root {
   --column-gap: 1rem;
-  @include breakpoint(medium only) {
+  @include breakpoint.breakpoint(medium only) {
     --column-gap: 1.5rem;
   }
-  @include breakpoint(large only) {
+  @include breakpoint.breakpoint(large only) {
     --column-gap: 1.5rem;
   }
-  @include breakpoint(xlarge up) {
+  @include breakpoint.breakpoint(xlarge up) {
     --column-gap: 2rem;
   }
 }
