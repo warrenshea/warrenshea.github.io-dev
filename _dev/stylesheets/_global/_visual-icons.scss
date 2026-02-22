@@ -1,4 +1,7 @@
 /* file: visual-icons.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 .ic {
   mask-repeat: no-repeat;
   mask-position: center;
@@ -74,28 +77,25 @@ $types: (
 }
 
 $colors: (
-  blue      : $blue,
-  yale-blue : $yale-blue,
-  white     : $white,
-  disabled  : $disabled,
-  silver    : $silver,
-  onyx      : $onyx,
-  black     : $black,
-  red       : $red,
-  negative  : $negative,
-  positive  : $positive,
-  warning   : $warning,
+  blue      : var(--color-blue),
+  yale-blue : var(--color-yale-blue),
+  white     : var(--color-white),
+  disabled  : var(--color-disabled),
+  silver    : var(--color-silver),
+  onyx      : var(--color-onyx),
+  black     : var(--color-black),
+  red       : var(--color-red),
+  negative  : var(--color-negative),
+  positive  : var(--color-positive),
+  warning   : var(--color-warning),
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     @each $color in $colors {
-      $color-name: nth($color, 1);
-      $color-value: nth($color, 2);
+      $color-name: list.nth($color, 1);
+      $color-value: list.nth($color, 2);
 
       .#{$prefix}ic-color\:#{"" + $color-name} {
         background-color: #{$color-value};
@@ -105,25 +105,22 @@ $colors: (
 }
 
 $sizes: (
-  12px : rem-calc(12),
-  16px : rem-calc(16),
-  20px : rem-calc(20),
-  24px : rem-calc(24),
-  32px : rem-calc(32),
-  48px : rem-calc(48),
-  72px : rem-calc(72),
-  96px : rem-calc(96),
+  12px : unit.rem-calc(12),
+  16px : unit.rem-calc(16),
+  20px : unit.rem-calc(20),
+  24px : unit.rem-calc(24),
+  32px : unit.rem-calc(32),
+  48px : unit.rem-calc(48),
+  72px : unit.rem-calc(72),
+  96px : unit.rem-calc(96),
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     @each $size in $sizes {
-      $size-name: nth($size, 1);
-      $size-value: nth($size, 2);
+      $size-name: list.nth($size, 1);
+      $size-value: list.nth($size, 2);
 
       .#{$prefix}ic-size\:#{$size-name} {
         width: #{$size-value};
