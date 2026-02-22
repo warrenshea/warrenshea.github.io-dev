@@ -1,14 +1,18 @@
 /* file: module.popover.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
+
 [data-module='popover'] {
-  box-shadow: $box-shadow-custom-2;
+  box-shadow: var(--box-shadow-custom-2);
   bottom:0;
   border:0;
   overflow:visible;
   right: 0;
   width:100%;
-  @include breakpoint(large) {
+  padding: 0; //override default padding
+  @include breakpoint.breakpoint(large) {
     position: absolute;
-    box-shadow: $box-shadow-custom-1;
+    box-shadow: var(--box-shadow-custom-1);
     top:50%;
     bottom:auto;
     right:auto;
@@ -34,16 +38,16 @@
   }
   &[data-popover-direction='right'] {
     &::before{
-      border-width: rem-calc(11);
-      left: rem-calc(-11);
-      margin-top: rem-calc(-11);
+      border-width: 11px;
+      left: -11px;
+      margin-top: -11px;
       border-left-width: 0;
       border-right-color: #ddd;
       top: 50%;
     }
     &:after{
-      border-width: rem-calc(10);
-      left: rem-calc(-10);
+      border-width: 10px;
+      left: -10px;
       transform: translate(0, -50%);
       border-left-width: 0;
       border-right-color: #fff;
@@ -52,33 +56,33 @@
   }
   &[data-popover-direction='top'] {
     &::before{
-      border-width: rem-calc(11);
-      bottom: rem-calc(-11);
-      left: calc(50% - rem-calc(12));
+      border-width: 11px;
+      bottom: -11px;
+      left: calc(50% - 12px);
       border-bottom-width: 0;
       border-top-color: #ddd;
     }
     &:after{
-      border-width: rem-calc(10);
-      bottom: rem-calc(-10);
-      left: calc(50% - rem-calc(11));
+      border-width: 10px;
+      bottom: -10px;
+      left: calc(50% - 11px);
       border-bottom-width: 0;
       border-top-color: #fff;
     }
   }
   &[data-popover-direction='bottom'] {
-    @include breakpoint(large) {
+    @include breakpoint.breakpoint(large) {
       &::before{
-        border-width: rem-calc(11);
-        top: rem-calc(-11);
-        left: calc(50% - rem-calc(12));
+        border-width: 11px;
+        top: -11px;
+        left: calc(50% - 12px);
         border-top-width: 0;
         border-bottom-color: #ddd;
       }
       &:after{
-        border-width: rem-calc(10);
-        top: rem-calc(-10);
-        left: calc(50% - rem-calc(11));
+        border-width: 10px;
+        top: -10px;
+        left: calc(50% - 11px);
         border-top-width: 0;
         border-bottom-color: #fff;
       }
@@ -86,11 +90,18 @@
   }
   button[data-popover-close] {
     position: absolute;
-    top: rem-calc(10);
-    right: rem-calc(10);
-    @include breakpoint(large) {
-      top: rem-calc(20);
-      right: rem-calc(20);
+    top: 8px;
+    right: 8px;
+    @include breakpoint.breakpoint(large) {
+      top: 12px;
+      right: 12px;
+    }
+  }
+  [data-module="popover.content"] {
+    display:block;
+    padding: 16px unit.rem-calc(40) 16px 16px;
+    @include breakpoint.breakpoint(large) {
+      padding:24px unit.rem-calc(56) 24px 32px;
     }
   }
 }
