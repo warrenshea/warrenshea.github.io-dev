@@ -1,4 +1,7 @@
 /* file: module.carousel.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
+
 [data-module="carousel"] {
   overflow:hidden;
   [data-module="carousel.item-group"] {
@@ -24,13 +27,13 @@
     [data-carousel-indicator-control] {
       border-radius: 50%;
       transition: background-color 1s, border-color 1s, transform 1s;
-      height:rem-calc(28);
-      width:rem-calc(28);
-      background: radial-gradient(circle, white rem-calc(7), $gray rem-calc(9), transparent rem-calc(10));
+      height:unit.rem-calc(28);
+      width:unit.rem-calc(28);
+      background: radial-gradient(circle, white unit.rem-calc(7), var(--color-gray) unit.rem-calc(9), transparent unit.rem-calc(10));
       padding:0;
-      margin:0 rem-calc(6);
+      margin:0 6px;
       &[data-carousel-indicator-active="true"] {
-        background: radial-gradient(circle, $blue rem-calc(7), $gray rem-calc(9), transparent rem-calc(10));
+        background: radial-gradient(circle, var(--color-blue) unit.rem-calc(7), var(--color-gray) unit.rem-calc(9), transparent unit.rem-calc(10));
       }
     }
   }
@@ -40,7 +43,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @include breakpoint(medium) {
+    @include breakpoint.breakpoint(medium) {
       display:none;
     }
   }
@@ -50,7 +53,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @media screen and #{breakpoint(large up)} {
+    @include breakpoint.breakpoint(large up) {
       display:none;
     }
   }
@@ -60,7 +63,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @media screen and #{breakpoint(large)}, screen and #{breakpoint(small only)} {
+    @include breakpoint.breakpoint-combine(large up, small only) {
       display:none;
     }
   }
@@ -70,7 +73,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @include breakpoint(small only) {
+    @include breakpoint.breakpoint(small only) {
       display:none;
     }
   }
@@ -80,7 +83,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @media screen and #{breakpoint(xlarge up)} {
+    @include breakpoint.breakpoint(xlarge up) {
       display:none;
     }
   }
@@ -90,7 +93,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @media screen and #{breakpoint(xlarge)}, screen and #{breakpoint(medium down)} {
+    @include breakpoint.breakpoint-combine(xlarge up, medium down) {
       display:none;
     }
   }
@@ -100,7 +103,7 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @include breakpoint(medium down) {
+    @include breakpoint.breakpoint(medium down) {
       display:none;
     }
   }
@@ -110,20 +113,20 @@
   [data-module="carousel.indicators-group"],
   [data-carousel-control-prev],
   [data-carousel-control-next] {
-    @include breakpoint(large down) {
+    @include breakpoint.breakpoint(large down) {
       display:none;
     }
   }
 }
 .carousel-column-gap-grid [data-module="carousel.item-group"] [data-module="carousel.item"] {
-  padding-left: rem-calc(8);
-  padding-right: rem-calc(8);
-  @include breakpoint(medium up) {
-    padding-left: rem-calc(12);
-    padding-right: rem-calc(12);
+  padding-left: 8px;
+  padding-right: 8px;
+  @include breakpoint.breakpoint(medium up) {
+    padding-left: 12px;
+    padding-right: 12px;
   }
-  @include breakpoint(xlarge up) {
-    padding-left: rem-calc(16);
-    padding-right: rem-calc(16);
+  @include breakpoint.breakpoint(xlarge up) {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
