@@ -1,4 +1,6 @@
 /* file: typography-font--play.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+@use '../_config/_breakpoint.scss' as breakpoint;
 @font-face {
   font-family: 'play-regular';
   font-style: normal;
@@ -14,11 +16,8 @@
   font-display: swap;
 }
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}play\:regular {
       font-family: 'play-regular', Arial, Sans-Serif;
       font-weight: 400;
@@ -33,27 +32,27 @@
 h1.play {
   font-weight:700;
   font-family: 'play-bold', Arial, Sans-Serif;
-  font-size: rem-calc(40);
-  line-height: rem-calc(40);
+  font-size: unit.rem-calc(40);
+  line-height: unit.rem-calc(40);
 }
 
 h2.play {
   font-weight:700;
   font-family: 'play-bold', Arial, Sans-Serif;
-  font-size: rem-calc(32);
-  line-height: rem-calc(32);
+  font-size: unit.rem-calc(32);
+  line-height: unit.rem-calc(32);
 }
 
 h3.play {
   font-weight:700;
   font-family: 'play-bold', Arial, Sans-Serif;
-  font-size: rem-calc(28);
-  line-height: rem-calc(28);
+  font-size: unit.rem-calc(28);
+  line-height: unit.rem-calc(28);
 }
 
 h4.play {
   font-weight:700;
   font-family: 'play-bold', Arial, Sans-Serif;
-  font-size: rem-calc(24);
-  line-height: rem-calc(24);
+  font-size: unit.rem-calc(24);
+  line-height: unit.rem-calc(24);
 }
