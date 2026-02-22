@@ -1,11 +1,13 @@
 /* file: module.autocomplete.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+
 [data-module='autocomplete.multiselect-tags']{
   &[data-theme-bgc-color='blue'] > div {
-    background-color: $blue;
+    background-color: var(--color-blue);
     color:white;
   }
   &[data-theme-bgc-color='red'] > div {
-    background-color: $red;
+    background-color: var(--color-red);
     color:white;
   }
 }
@@ -16,22 +18,22 @@
   overflow-x:hidden;
   li {
     display: flex;
-    font-size: rem-calc(14);
+    font-size: unit.rem-calc(14);
     line-height: 1.5;
-    border-bottom: 1px solid $silver;
+    border-bottom: 1px solid var(--color-silver);
     cursor:pointer;
     width:100%;
-    padding: rem-calc(12) rem-calc(12) rem-calc(10);
+    padding: 12px 12px 10px;
     span.name {
       text-align:left;
       flex-grow:1;
     }
     .match {
-      color:$blue;
+      color: var(--color-blue);
     }
     &:hover,
     &.selected{
-      background-color: $platinum;
+      background-color: var(--color-platinum);
     }
   }
 }
