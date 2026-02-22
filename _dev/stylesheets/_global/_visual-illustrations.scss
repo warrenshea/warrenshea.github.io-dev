@@ -1,4 +1,7 @@
 /* file: visual-illustrations.scss------------------------------------------------ */
+@use 'sass:list';
+@use '../_config/_breakpoint.scss' as breakpoint;
+
 $sizes: (
   xs : (96px,72px),
   sm : (120px,96px),
@@ -7,15 +10,12 @@ $sizes: (
   xl : (320px,280px)
 );
 
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
-
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
 
     @each $size-name, $specs in $sizes {
-      $size-width-value: nth($specs, 1);
-      $size-height-value: nth($specs, 2);
+      $size-width-value: list.nth($specs, 1);
+      $size-height-value: list.nth($specs, 2);
 
       .#{$prefix}illustration-size\:#{$size-name} {
         width: #{$size-width-value};
