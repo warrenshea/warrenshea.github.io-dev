@@ -1,4 +1,6 @@
 /* file: module.accordion.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
+
 [data-module='accordion'] {
   [data-module='accordion.header'] {
     text-align: left;
@@ -24,8 +26,8 @@
     }
     &:focus {
       outline: 0;
-      border-radius: rem-calc(8);
-      box-shadow: 0 0 0 rem-calc(1) $yale-blue, inset 0 0 0 rem-calc(1) $yale-blue;
+      border-radius: unit.rem-calc(8);
+      box-shadow: 0 0 0 1px var(--color-yale-blue), inset 0 0 0 1px var(--color-yale-blue);
     }
   }
   [data-module='accordion.panel'] {
