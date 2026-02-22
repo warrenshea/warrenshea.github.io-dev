@@ -1,9 +1,8 @@
 /* file: typography-line-height.scss------------------------------------------------ */
-@each $mediaquery in $mediaqueries {
-  $breakpoint: nth($mediaquery, 1);
-  $prefix: nth($mediaquery, 2);
+@use '../_config/_breakpoint.scss' as breakpoint;
 
-  @include breakpoint($breakpoint) {
+@each $breakpoint-name, $prefix in breakpoint.$breakpoint-prefixes {
+  @include breakpoint.breakpoint($breakpoint-name) {
     .#{$prefix}lh\:0 { line-height: 0; } // used for phantom space below an image
     .#{$prefix}lh\:24 { line-height: 1.5; }
     .#{$prefix}lh\:32 { line-height: 2; }
