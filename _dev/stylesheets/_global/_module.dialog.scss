@@ -1,4 +1,5 @@
 /* file: module.dialog.scss------------------------------------------------ */
+@use '../_config/_unit.scss' as unit;
 [data-module='dialog'] {
   &[data-dialog-overlay='false']{
     &::backdrop {
@@ -7,7 +8,7 @@
   }
   &[data-dialog-overlay='true']{
     &::backdrop {
-      background-color: #{$black}75;
+      background-color: #{var(--color-black)}75;
     }
   }
   &[open] {
@@ -15,7 +16,7 @@
   }
   button[data-dialog-close] {
     position: absolute;
-    top: rem-calc(20);
-    right: rem-calc(20);
+    top: unit.rem-calc(20);
+    right: unit.rem-calc(20);
   }
 }
