@@ -1,11 +1,12 @@
 /* file: layout-visibility-orientation.scss------------------------------------------------ */
+@use '../_config/_breakpoint.scss' as breakpoint;
 .show-for-landscape,
 .hide-for-portrait {
   display: block !important;
-  @include breakpoint(landscape) {
+  @include breakpoint.breakpoint(landscape) {
     display: block !important;
   }
-  @include breakpoint(portrait) {
+  @include breakpoint.breakpoint(portrait) {
     display: none !important;
   }
 }
@@ -13,10 +14,10 @@
 .hide-for-landscape,
 .show-for-portrait {
   display: none !important;
-  @include breakpoint(landscape) {
+  @include breakpoint.breakpoint(landscape) {
     display: none !important;
   }
-  @include breakpoint(portrait) {
+  @include breakpoint.breakpoint(portrait) {
     display: block !important;
   }
 }
