@@ -1,24 +1,20 @@
 /* file: design-patterns.scss------------------------------------------------ */
 @charset "UTF-8";
 
-@import '_config/unit.scss';
-@import '_config/variables-colors.scss';
-@import '_config/variables-dimensions.scss';
-@import '_config/variables-box-shadow.scss';
-@import '_config/breakpoint.scss';
-@import '_config/media-queries.scss';
+@use '_config/_unit.scss' as unit;
+@use '_config/_breakpoint.scss' as breakpoint;
 
 main > div,
 main > section {
-  padding-top: rem-calc(32);
-  padding-bottom: rem-calc(32);
-  @include breakpoint($medium-min) {
-    padding-top: rem-calc(48);
-    padding-bottom: rem-calc(48);
+  padding-top: 32px;
+  padding-bottom: 32px;
+  @include breakpoint.breakpoint(medium up) {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
-  @include breakpoint($xlarge-min) {
-    padding-top: rem-calc(64);
-    padding-bottom: rem-calc(64);
+  @include breakpoint.breakpoint(xlarge up) {
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 }
 
@@ -50,23 +46,23 @@ main > .bgc\:onyx + section,
 main > .bgc\:onyx + div,
 main > div + .bgc\:onyx,
 main > section + .bgc\:onyx {
-  padding-top: rem-calc(32);
-  @include breakpoint($medium-min) {
-    padding-top: rem-calc(48);
+  padding-top: 32px;
+  @include breakpoint.breakpoint(medium up) {
+    padding-top: 48px;
   }
-  @include breakpoint($xlarge-min) {
-    padding-top: rem-calc(64);
+  @include breakpoint.breakpoint(xlarge up) {
+    padding-top: 64px;
   }
 }
 
 .zs-hightlight-blue {
-  box-shadow: 0 0 rem-calc(5) rem-calc(4) $blue !important;
+  box-shadow: 0 0 5px 4px var(--color-blue) !important;
 }
 
 .zs-hightlight-yellow {
-  box-shadow: 0 0 rem-calc(5) rem-calc(4) $yellow !important;
+  box-shadow: 0 0 5px 4px var(--color-yellow) !important;
 }
 
 .zs-hightlight-red {
-  box-shadow: 0 0 rem-calc(5) rem-calc(4) $red !important;
+  box-shadow: 0 0 5px 4px var(--color-red) !important;
 }
