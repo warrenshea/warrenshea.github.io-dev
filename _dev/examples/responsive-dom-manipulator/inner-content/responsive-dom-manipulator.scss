@@ -1,22 +1,18 @@
-@import '../../../stylesheets/_config/unit.scss';
-@import '../../../stylesheets/_config/variables-colors.scss';
-@import '../../../stylesheets/_config/variables-dimensions.scss';
-@import '../../../stylesheets/_config/variables-box-shadow.scss';
-@import '../../../stylesheets/_config/breakpoint.scss';
-@import '../../../stylesheets/_config/media-queries.scss';
+@use '../../../stylesheets/_config/_unit.scss' as unit;
+@use '../../../stylesheets/_config/_breakpoint.scss' as breakpoint;
 
 section.responsive-dom-manipulator-example {
-  border: 1px solid $onyx;
+  border: 1px solid var(--color-onyx);
 
   a {
-    border:rem-calc(10) solid lightgray;
-    padding:rem-calc(4);
+    border: 10px solid lightgray;
+    padding:4px;
     display:flex;
     flex-flow:column;
     align-items: center;
     height:100%;
     &:focus {
-      border:rem-calc(10) solid red;
+      border: 10px solid red;
     }
   }
 
@@ -24,7 +20,7 @@ section.responsive-dom-manipulator-example {
     flex-grow: 0;
   }
 
-  @include breakpoint(large up) {
+  @include breakpoint.breakpoint(large up) {
     .box-1{
       justify-content: flex-start;
       position: relative;
@@ -33,7 +29,7 @@ section.responsive-dom-manipulator-example {
       justify-content: flex-start;
     }
   }
-  @include breakpoint(xlarge up) {
+  @include breakpoint.breakpoint(xlarge up) {
     .box-6 {
       position: initial;
     }
@@ -50,30 +46,30 @@ section.responsive-dom-manipulator-example {
     width:100%;
     display:flex;
     justify-content: flex-end;
-    max-width:rem-calc(1440);
+    max-width:unit.rem-calc(1440);
     margin:0 auto;
   }
 
   .main-row {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid $onyx;
+    border-bottom: 1px solid var(--color-onyx);
     position: relative;
-    @include breakpoint(large up) {
+    @include breakpoint.breakpoint(large up) {
       justify-content: flex-start;
       border-bottom: 0;
     }
-    @include breakpoint(xlarge up) {
-      max-width:rem-calc(1440);
+    @include breakpoint.breakpoint(xlarge up) {
+      max-width:unit.rem-calc(1440);
       margin:0 auto;
     }
   }
 
     .hamburger-icon-container {
-      width: rem-calc(72);
+      width: unit.rem-calc(72);
       display: block;
       cursor: pointer;
-      @include breakpoint(large up) {
+      @include breakpoint.breakpoint(large up) {
         display:none;
       }
       > button {
@@ -87,7 +83,7 @@ section.responsive-dom-manipulator-example {
         white-space: nowrap;
         padding: 0;
         margin: 0;
-        min-width: rem-calc(40);
+        min-width: unit.rem-calc(40);
         justify-content: center;
         display:block;
       }
@@ -105,7 +101,7 @@ section.responsive-dom-manipulator-example {
     }
 
     .mobile-menu-container {
-      border-top: 1px solid $onyx;
+      border-top: 1px solid var(--color-onyx);
       width: 100%;
       background-color: #f5f6f7;
       flex-flow:column;
