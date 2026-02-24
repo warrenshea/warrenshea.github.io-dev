@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Maverick CMS • warrenshea",
+        "urlEn": "/maverick/cms/",
+        "urlCanonical": "/maverick/cms/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
   <style>
     html{overflow-x:hidden;overflow-y:scroll;min-width:600px}
@@ -248,5 +260,11 @@
       </section>
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/libs/jquery-v1.12.4.min.js",
+        "/scripts/module.slider.js",
+        "/scripts/module.isotope.js",
+        "/maverick/resources/scripts/maverick/style-guide.cms.class-config.js",
+        "/maverick/resources/scripts/maverick/style-guide.cms.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
