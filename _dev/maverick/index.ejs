@@ -1,4 +1,16 @@
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.head.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.head.ejs`, {
+    "lang": "en",
+    "head": {
+        "title": "Maverick • warrenshea",
+        "urlEn": "/maverick/",
+        "urlCanonical": "/maverick/",
+        "metaPageKeywords": "",
+        "metaPageDescription": ""
+    },
+    "stylesheets": [
+        "/stylesheets/core.css"
+    ]
+}) %>
 
       <style>
         html{overflow-y:scroll}
@@ -265,5 +277,9 @@
       </div>
     </main>
 
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.scripts.ejs`, pageData) %>
-<%- include(`${process.env.PWD}/_dev/_layouts/_default.footer.ejs`, pageData) %>
+<%- include(`${root}/_layouts/_default.scripts.ejs`, { "scripts": [
+        "/scripts/libs/jquery-v1.12.4.min.js",
+        "/scripts/module.slider.js",
+        "/maverick/resources/scripts/maverick/style-guide.default.js"
+    ] }) %>
+<%- include(`${root}/_layouts/_default.footer.ejs`) %>
